@@ -1,0 +1,12 @@
+[
+  { "port": "só", "francais": "seulement" },
+  { "port": "olá", "francais": "bonjour" },
+  { "port": "obrigado", "francais": "merci" },
+  { "port": "sim", "francais": "oui" },
+  { "port": "não", "francais": "non" },
+  { "port": "água", "francais": "eau" },
+  { "port": "casa", "francais": "maison" },
+  { "port": "livro", "francais": "livre" },
+  { "port": "amigo", "francais": "ami" },
+  { "port": "tempo", "francais": "temps" }
+]

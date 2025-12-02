@@ -1,0 +1,62 @@
+[
+  {
+    "port": "ser",
+    "francais": "être (état définitif)",
+    "present": [
+      "eu sou",
+      "tu és",
+      "ele é",
+      "nós somos",
+      "vós sois",
+      "eles são"
+    ]
+  },
+  {
+    "port": "estar",
+    "francais": "être (état temporaire)",
+    "present": [
+      "eu estou",
+      "tu estás",
+      "ele está",
+      "nós estamos",
+      "vós estais",
+      "eles estão"
+    ]
+  },
+  {
+    "port": "ter",
+    "francais": "avoir",
+    "present": [
+      "eu tenho",
+      "tu tens",
+      "ele tem",
+      "nós temos",
+      "vós tendes",
+      "eles têm"
+    ]
+  },
+  {
+    "port": "fazer",
+    "francais": "faire",
+    "present": [
+      "eu faço",
+      "tu fazes",
+      "ele faz",
+      "nós fazemos",
+      "vós fazeis",
+      "eles fazem"
+    ]
+  },
+  {
+    "port": "ir",
+    "francais": "aller",
+    "present": [
+      "eu vou",
+      "tu vais",
+      "ele vai",
+      "nós vamos",
+      "vós ides",
+      "eles vão"
+    ]
+  }
+]
