@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   portuguese-learning:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: charly37/portuguese-learning:latest
     ports:
       - "3000:3000"
     restart: unless-stopped

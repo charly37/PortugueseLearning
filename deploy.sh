@@ -54,15 +54,10 @@ print_info "Stopping existing container if running..."
 docker compose down 2>/dev/null || true
 print_success "Existing container stopped"
 
-# Remove old images to save space (optional)
-print_info "Cleaning up old Docker images..."
-docker image prune -f
-print_success "Old images cleaned"
-
-# Build the Docker image
-print_info "Building Docker image..."
-docker compose build --no-cache
-print_success "Docker image built successfully"
+# Pull the latest image from Docker Hub
+print_info "Pulling latest image from Docker Hub..."
+docker pull charly37/portuguese-learning:latest
+print_success "Image pulled successfully"
 
 # Start the container
 print_info "Starting the application..."
