@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Portuguese Learning - CI/CD Deployment Script
-# This script builds and deploys the application using Docker
+# This script pulls and deploys the application using Docker
 
 set -e  # Exit on error
 
@@ -10,7 +10,7 @@ echo "Portuguese Learning - Deployment Script"
 echo "========================================"
 
 # Configuration
-IMAGE_NAME="portuguese-learning"
+IMAGE_NAME="charly37/portuguese-learning:latest"
 CONTAINER_NAME="portuguese-learning-app"
 PORT=3000
 
@@ -41,27 +41,26 @@ if ! command -v docker &> /dev/null; then
 fi
 print_success "Docker is installed"
 
-# Check if Docker Compose is installed
-print_info "Checking Docker Compose installation..."
-if ! command -v docker compose &> /dev/null; then
-    print_error "Docker Compose is not installed. Please install Docker Compose first."
-    exit 1
-fi
-print_success "Docker Compose is installed"
-
 # Stop and remove existing container if it exists
 print_info "Stopping existing container if running..."
-docker compose down 2>/dev/null || true
+docker stop $CONTAINER_NAME 2>/dev/null || true
+docker rm $CONTAINER_NAME 2>/dev/null || true
 print_success "Existing container stopped"
 
 # Pull the latest image from Docker Hub
 print_info "Pulling latest image from Docker Hub..."
-docker pull charly37/portuguese-learning:latest
+docker pull $IMAGE_NAME
 print_success "Image pulled successfully"
 
 # Start the container
 print_info "Starting the application..."
-docker compose up -d
+docker run -d \
+  --name $CONTAINER_NAME \
+  -p $PORT:3000 \
+  -e NODE_ENV=production \
+  -e PORT=3000 \
+  --restart unless-stopped \
+  $IMAGE_NAME
 print_success "Application started successfully"
 
 # Wait for the application to be ready
@@ -73,7 +72,7 @@ if docker ps | grep -q $CONTAINER_NAME; then
     print_success "Container is running"
 else
     print_error "Container failed to start"
-    docker compose logs
+    docker logs $CONTAINER_NAME
     exit 1
 fi
 
@@ -83,7 +82,7 @@ if curl -f http://localhost:$PORT/api/health > /dev/null 2>&1; then
     print_success "Application is healthy and responding"
 else
     print_error "Application health check failed"
-    docker compose logs
+    docker logs $CONTAINER_NAME
     exit 1
 fi
 
@@ -95,8 +94,9 @@ echo ""
 echo "Application is running at: http://localhost:$PORT"
 echo ""
 echo "Useful commands:"
-echo "  View logs:        docker compose logs -f"
-echo "  Stop app:         docker compose down"
-echo "  Restart app:      docker compose restart"
-echo "  View status:      docker compose ps"
+echo "  View logs:        docker logs -f $CONTAINER_NAME"
+echo "  Stop app:         docker stop $CONTAINER_NAME"
+echo "  Restart app:      docker restart $CONTAINER_NAME"
+echo "  View status:      docker ps"
+echo "  Remove app:       docker stop $CONTAINER_NAME && docker rm $CONTAINER_NAME"
 echo ""
