@@ -15,6 +15,9 @@ const challenges = JSON.parse(fs.readFileSync(challengesPath, 'utf-8'));
 const verbChallengesPath = path.join(__dirname, '../data/verb-challenges.json');
 const verbChallenges = JSON.parse(fs.readFileSync(verbChallengesPath, 'utf-8'));
 
+const idiomChallengesPath = path.join(__dirname, '../data/idiom-challenges.json');
+const idiomChallenges = JSON.parse(fs.readFileSync(idiomChallengesPath, 'utf-8'));
+
 // API routes
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', message: 'Server is running' });
@@ -27,6 +30,11 @@ app.get('/api/challenge', (req: Request, res: Response) => {
 
 app.get('/api/verb-challenge', (req: Request, res: Response) => {
   const randomChallenge = verbChallenges[Math.floor(Math.random() * verbChallenges.length)];
+  res.json(randomChallenge);
+});
+
+app.get('/api/idiom-challenge', (req: Request, res: Response) => {
+  const randomChallenge = idiomChallenges[Math.floor(Math.random() * idiomChallenges.length)];
   res.json(randomChallenge);
 });
 

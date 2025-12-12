@@ -1,62 +1,475 @@
 [
-  {
-    "port": "ser",
-    "francais": "être (état définitif)",
-    "present": [
-      "eu sou",
-      "tu és",
-      "ele é",
-      "nós somos",
-      "vós sois",
-      "eles são"
+    {"port":"ser",
+    "francais":"être (état definitif)",
+    "present":[
+        "eu sou",
+        "tu és",
+        "ele é",
+        "nós somos",
+        "vós sois",
+        "eles são"
+        ]
+    },
+    {"port":"ter",
+    "francais":"avoir",
+    "present":[
+        "eu tenho",
+        "tu tens",
+        "ele tem",
+        "nós temos",
+        "vós tendes",
+        "eles têm"
+        ]
+    },
+    {"port":"estar",
+    "francais":"être (état temporaire)",
+    "present":[
+        "eu estou",
+        "tu estás",
+        "ele está",
+        "nós estamos",
+        "vós estais",
+        "eles estão"
+        ]
+    },
+    {"port":"fazer",
+    "francais":"faire",
+    "present":[
+        "eu faço",
+        "tu fazes",
+        "ele faz",
+        "nós fazemos",
+        "vós fazeis",
+        "eles fazem"
+        ]
+    },
+    {"port":"poder",
+    "francais":"pouvoir",
+    "present":[
+        "eu posso",
+        "tu podes",
+        "ele pode",
+        "nós podemos",
+        "vós podeis",
+        "eles podem"
+        ]
+    },
+    {"port":"ir",
+    "francais":"aller",
+    "present":[
+        "eu vou",
+        "tu vais",
+        "ele vai",
+        "nós vamos",
+        "vós ides",
+        "eles vão"
+        ]
+    },
+    {"port":"dar",
+    "francais":"donner",
+    "present":[
+        "eu dou",
+        "tu dás",
+        "ele dá",
+        "nós damos",
+        "vós dais",
+        "eles dão"
+        ]
+    },
+    {"port":"ver",
+    "francais":"voir",
+    "present":[
+        "eu vejo",
+        "tu vês",
+        "ele vê",
+        "nós vemos",
+        "vós vedes",
+        "eles veem"
+        ]
+    },
+    {"port":"dizer",
+    "francais":"dire",
+    "present":[
+        "eu digo",
+        "tu dizes",
+        "ele diz",
+        "nós dizemos",
+        "vós dizeis",
+        "eles dizem"
+        ]
+    },
+    {"port":"saber",
+    "francais":"savoir",
+    "present":[
+        "eu sei",
+        "tu sabes",
+        "ele sabe",
+        "nós sabemos",
+        "vós sabeis",
+        "eles sabem"
+        ]
+    },
+    {"port":"vir",
+    "francais":"venir",
+    "present":[
+        "eu venho",
+        "tu vens",
+        "ele vem",
+        "nós vimos",
+        "vós vindes",
+        "eles vêm"
+        ]
+    },
+    {"port":"falar",
+    "francais":"parler",
+    "present":[
+        "eu falo",
+        "tu falas",
+        "ele fala",
+        "nós falamos",
+        "vós falais",
+        "eles falam"
+        ]
+    },
+    {"port":"querer",
+    "francais":"vouloir",
+    "present":[
+        "eu quero",
+        "tu queres",
+        "ele quer",
+        "nós queremos",
+        "vós quereis",
+        "eles querem"
+        ]
+    },
+    {"port":"chegar",
+    "francais":"arriver",
+    "present":[
+        "eu chego",
+        "tu chegas",
+        "ele chega",
+        "nós chegamos",
+        "vós chegais",
+        "eles chegam"
+        ]
+    },
+    {"port":"ficar",
+    "francais":"rester",
+    "present":[
+        "eu fico",
+        "tu ficas",
+        "ele fica",
+        "nós ficamos",
+        "vós ficais",
+        "eles ficam"
+        ]
+    },
+    {"port":"trabalhar",
+    "francais":"travailler",
+    "present":[
+        "eu trabalho",
+        "tu trabalhas",
+        "ele trabalha",
+        "nós trabalhamos",
+        "vós trabalhais",
+        "eles trabalham"
+        ]
+    },
+    {"port":"viver",
+    "francais":"vivre",
+    "present":[
+        "eu vivo",
+        "tu vives",
+        "ele vive",
+        "nós vivemos",
+        "vós viveis",
+        "eles vivem"
+        ]
+    },
+    {"port":"deixar",
+    "francais":"laisser",
+    "present":[
+        "eu deixo",
+        "tu deixas",
+        "ele deixa",
+        "nós deixamos",
+        "vós deixais",
+        "eles deixam"
+        ]
+    },
+    {"port":"encontrar",
+    "francais":"trouver/rencontrer",
+    "present":[
+        "eu encontro",
+        "tu encontras",
+        "ele encontra",
+        "nós encontramos",
+        "vós encontrais",
+        "eles encontram"
+        ]
+    },
+    {"port":"pensar",
+    "francais":"penser",
+    "present":[
+        "eu penso",
+        "tu pensas",
+        "ele pensa",
+        "nós pensamos",
+        "vós pensais",
+        "eles pensam"
+        ]
+    },
+    {"port":"gostar",
+    "francais":"aimer (pas amour)",
+    "present":[
+        "eu gosto",
+        "tu gostas",
+        "ele gosta",
+        "nós gostamos",
+        "vós gostais",
+        "eles gostam"
+        ]
+    },
+    {"port":"conhecer",
+    "francais":"connaître (quelqu un,lieu)",
+    "present":[
+        "eu conheço",
+        "tu conheces",
+        "ele conhece",
+        "nós conhecemos",
+        "vós conheceis",
+        "eles conhecem"
+        ]
+    },
+    {"port":"levar",
+    "francais":"porter/emmener",
+    "present":[
+        "eu levo",
+        "tu levas",
+        "ele leva",
+        "nós levamos",
+        "vós levais",
+        "eles levam"
+        ]
+    },
+    {"port":"passar",
+    "francais":"passer",
+    "present":[
+        "eu passo",
+        "tu passas",
+        "ele passa",
+        "nós passamos",
+        "vós passais",
+        "eles passam"
+        ]
+    },
+    {"port":"entrar",
+    "francais":"entrer",
+    "present":[
+        "eu entro",
+        "tu entras",
+        "ele entra",
+        "nós entramos",
+        "vós entrais",
+        "eles entram"
+        ]
+    },
+    {"port":"sair",
+    "francais":"sortir",
+    "present":[
+        "eu saio",
+        "tu sais",
+        "ele sai",
+        "nós saímos",
+        "vós saís",
+        "eles saem"
+        ]
+    },
+    {"port":"começar",
+    "francais":"commencer",
+    "present":[
+        "eu começo",
+        "tu começas",
+        "ele começa",
+        "nós começamos",
+        "vós começais",
+        "eles começam"
+        ]
+    },
+    {"port":"acabar",
+    "francais":"finir/terminer",
+    "present":[
+        "eu acabo",
+        "tu acabas",
+        "ele acaba",
+        "nós acabamos",
+        "vós acabais",
+        "eles acabam"
+        ]
+    },
+    {"port":"morrer",
+    "francais":"mourir",
+    "present":[
+        "eu morro",
+        "tu morres",
+        "ele morre",
+        "nós morremos",
+        "vós morreis",
+        "eles morrem"
+        ]
+    },
+    {"port":"nascer",
+    "francais":"naître",
+    "present":[
+        "eu nasço",
+        "tu nasces",
+        "ele nasce",
+        "nós nascemos",
+        "vós nasceis",
+        "eles nascem"
+        ]
+    },
+    {"port":"comprar",
+    "francais":"acheter",
+    "present":[
+        "eu compro",
+        "tu compras",
+        "ele compra",
+        "nós compramos",
+        "vós comprais",
+        "eles compram"
+        ]
+    },
+    {"port":"vender",
+    "francais":"vendre",
+    "present":[
+        "eu vendo",
+        "tu vendes",
+        "ele vende",
+        "nós vendemos",
+        "vós vendeis",
+        "eles vendem"
+        ]
+    },
+    {"port":"estudar",
+    "francais":"étudier",
+    "present":[
+        "eu estudo",
+        "tu estudas",
+        "ele estuda",
+        "nós estudamos",
+        "vós estudais",
+        "eles estudam"
+        ]
+    },
+    {"port":"aprender",
+    "francais":"apprendre",
+    "present":[
+        "eu aprendo",
+        "tu aprendes",
+        "ele aprende",
+        "nós aprendemos",
+        "vós aprendeis",
+        "eles aprendem"
+        ]
+    },
+    {"port":"ensinar",
+    "francais":"enseigner",
+    "present":[
+        "eu ensino",
+        "tu ensinas",
+        "ele ensina",
+        "nós ensinamos",
+        "vós ensinais",
+        "eles ensinam"
+        ]
+    },
+    {"port":"ouvir",
+    "francais":"entendre/écouter",
+    "present":[
+        "eu ouço",
+        "tu ouves",
+        "ele ouve",
+        "nós ouvimos",
+        "vós ouvis",
+        "eles ouvem"
+        ]
+    },
+    {"port":"comer",
+    "francais":"manger",
+    "present":[
+        "eu como",
+        "tu comes",
+        "ele come",
+        "nós comemos",
+        "vós comeis",
+        "eles comem"
+        ]
+    },
+    {"port":"beber",
+    "francais":"boire",
+    "present":[
+        "eu bebo",
+        "tu bebes",
+        "ele bebe",
+        "nós bebemos",
+        "vós bebeis",
+        "eles bebem"
+        ]
+    },
+    {"port":"dormir",
+    "francais":"dormir",
+    "present":[
+        "eu durmo",
+        "tu dormes",
+        "ele dorme",
+        "nós dormimos",
+        "vós dormis",
+        "eles dormem"
+        ]
+    },
+    {"port":"acordar",
+    "francais":"se réveiller",
+    "present":[
+        "eu acordo",
+        "tu acordas",
+        "ele acorda",
+        "nós acordamos",
+        "vós acordais",
+        "eles acordam"
+        ]
+    },
+    {"port":"chorar",
+    "francais":"pleurer",
+    "present":[
+        "eu choro",
+        "tu choras",
+        "ele chora",
+        "nós choramos",
+        "vós chorais",
+        "eles choram"
+        ]
+    },
+    {"port":"esperar",
+    "francais":"attendre/espérer",
+    "present":[
+        "eu espero",
+        "tu esperas",
+        "ele espera",
+        "nós esperamos",
+        "vós esperais",
+        "eles esperam"
+        ]
+    },
+    {"port":"brincar",
+    "francais":"jouer (enfant)",
+    "present":[
+        "eu brinco",
+        "tu brincas",
+        "ele brinca",
+        "nós brincamos",
+        "vós brincais",
+        "eles brincam"
     ]
-  },
-  {
-    "port": "estar",
-    "francais": "être (état temporaire)",
-    "present": [
-      "eu estou",
-      "tu estás",
-      "ele está",
-      "nós estamos",
-      "vós estais",
-      "eles estão"
-    ]
-  },
-  {
-    "port": "ter",
-    "francais": "avoir",
-    "present": [
-      "eu tenho",
-      "tu tens",
-      "ele tem",
-      "nós temos",
-      "vós tendes",
-      "eles têm"
-    ]
-  },
-  {
-    "port": "fazer",
-    "francais": "faire",
-    "present": [
-      "eu faço",
-      "tu fazes",
-      "ele faz",
-      "nós fazemos",
-      "vós fazeis",
-      "eles fazem"
-    ]
-  },
-  {
-    "port": "ir",
-    "francais": "aller",
-    "present": [
-      "eu vou",
-      "tu vais",
-      "ele vai",
-      "nós vamos",
-      "vós ides",
-      "eles vão"
-    ]
-  }
+    }
 ]

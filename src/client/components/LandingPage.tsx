@@ -4,9 +4,10 @@ import { Container, Box, Typography, Button, Grid } from '@mui/material';
 interface LandingPageProps {
   onStartLearning: () => void;
   onVerbChallenge: () => void;
+  onIdiomChallenge: () => void;
 }
 
-const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChallenge }) => {
+const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChallenge, onIdiomChallenge }) => {
   return (
     <Container maxWidth="md">
       <Box
@@ -30,13 +31,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChalle
         </Typography>
         
         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '700px', mt: 2 }}>
-          This website is designed to help you learn Portuguese through vocabulary and verb challenges. 
-          Practice translating words between Portuguese and French, learn verb conjugations, and improve 
-          your language skills one word at a time.
+          This website is designed to help you learn Portuguese through vocabulary, verb, and idiom challenges. 
+          Practice translating words between Portuguese and French, learn verb conjugations, master common idioms, 
+          and improve your language skills one word at a time.
         </Typography>
         
-        <Grid container spacing={2} sx={{ mt: 3, maxWidth: '500px' }}>
-          <Grid item xs={12} sm={6}>
+        <Grid container spacing={2} sx={{ mt: 3, maxWidth: '600px' }}>
+          <Grid item xs={12} sm={4}>
             <Button 
               variant="contained" 
               color="primary" 
@@ -48,7 +49,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChalle
               Word Challenge
             </Button>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={4}>
             <Button 
               variant="contained" 
               color="secondary" 
@@ -58,6 +59,23 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChalle
               sx={{ py: 1.5 }}
             >
               Verb Challenge
+            </Button>
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <Button 
+              variant="contained" 
+              sx={{ 
+                py: 1.5,
+                backgroundColor: '#ff9800',
+                '&:hover': {
+                  backgroundColor: '#f57c00',
+                }
+              }}
+              size="large"
+              onClick={onIdiomChallenge}
+              fullWidth
+            >
+              Idiom Challenge
             </Button>
           </Grid>
         </Grid>
