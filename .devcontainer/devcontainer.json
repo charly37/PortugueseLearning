@@ -9,7 +9,21 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [3000, 8080, 9323],
+	"portsAttributes": {
+		"3000": {
+			"label": "Backend Server",
+			"onAutoForward": "notify"
+		},
+		"8080": {
+			"label": "Webpack Dev Server",
+			"onAutoForward": "notify"
+		},
+		"9323": {
+			"label": "Playwright UI",
+			"onAutoForward": "silent"
+		}
+	},
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
