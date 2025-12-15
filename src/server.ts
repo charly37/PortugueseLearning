@@ -8,7 +8,9 @@ import connectDB from './config/database';
 import authRoutes from './routes/auth';
 
 // Load environment variables
-dotenv.config();
+// In test mode, use .env.test; otherwise use .env
+const envFile = process.env.NODE_ENV === 'test' ? '.env.test' : '.env';
+dotenv.config({ path: envFile });
 
 const app = express();
 const PORT = process.env.PORT || 3000;

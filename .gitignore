@@ -2,6 +2,7 @@ node_modules/
 dist/
 public/
 .env
+.env.test
 *.log
 .DS_Store
 test-results/
