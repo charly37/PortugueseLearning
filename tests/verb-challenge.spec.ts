@@ -1,8 +1,29 @@
 import { test, expect } from '@playwright/test';
+import { registerAndLogin, login } from './helpers/auth-helper';
 
 test.describe('Verb Challenge', () => {
+  let testUser: { username: string; email: string; password: string };
+
+  test.beforeAll(async ({ browser }) => {
+    // Create one user for all tests in this suite
+    testUser = {
+      username: `verbtest_${Date.now()}`,
+      email: `verbtest_${Date.now()}@example.com`,
+      password: 'testpassword123'
+    };
+
+    // Register the user once
+    const page = await browser.newPage();
+    await registerAndLogin(page, testUser.username, testUser.email, testUser.password);
+    await page.close();
+  });
+
+  test.beforeEach(async ({ page }) => {
+    // Login with the existing user before each test
+    await login(page, testUser.email, testUser.password);
+  });
+
   test('should navigate to verb challenge', async ({ page }) => {
-    await page.goto('/');
     
     // Click Verb Challenge button
     await page.click('text=Verb Challenge');
@@ -13,7 +34,7 @@ test.describe('Verb Challenge', () => {
   });
 
   test('should start a verb challenge and show French verb', async ({ page }) => {
-    await page.goto('/');
+
     await page.click('text=Verb Challenge');
     
     // Click Start Challenge button
@@ -27,7 +48,7 @@ test.describe('Verb Challenge', () => {
   });
 
   test('should validate correct verb answer and show conjugations', async ({ page }) => {
-    await page.goto('/');
+
     await page.click('text=Verb Challenge');
     await page.click('text=Start Challenge');
     
@@ -43,7 +64,7 @@ test.describe('Verb Challenge', () => {
   });
 
   test('should validate incorrect verb answer', async ({ page }) => {
-    await page.goto('/');
+
     await page.click('text=Verb Challenge');
     await page.click('text=Start Challenge');
     
@@ -59,7 +80,7 @@ test.describe('Verb Challenge', () => {
   });
 
   test('should support keyboard Enter key to submit', async ({ page }) => {
-    await page.goto('/');
+
     await page.click('text=Verb Challenge');
     await page.click('text=Start Challenge');
     
@@ -75,7 +96,7 @@ test.describe('Verb Challenge', () => {
   });
 
   test('should navigate back to home from verb challenge', async ({ page }) => {
-    await page.goto('/');
+
     await page.click('text=Verb Challenge');
     
     // Click back to home

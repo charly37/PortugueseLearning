@@ -1,8 +1,29 @@
 import { test, expect } from '@playwright/test';
+import { registerAndLogin, login } from './helpers/auth-helper';
 
 test.describe('Word Challenge', () => {
+  let testUser: { username: string; email: string; password: string };
+
+  test.beforeAll(async ({ browser }) => {
+    // Create one user for all tests in this suite
+    testUser = {
+      username: `wordtest_${Date.now()}`,
+      email: `wordtest_${Date.now()}@example.com`,
+      password: 'testpassword123'
+    };
+
+    // Register the user once
+    const page = await browser.newPage();
+    await registerAndLogin(page, testUser.username, testUser.email, testUser.password);
+    await page.close();
+  });
+
+  test.beforeEach(async ({ page }) => {
+    // Login with the existing user before each test
+    await login(page, testUser.email, testUser.password);
+  });
+
   test('should load landing page and navigate to word challenge', async ({ page }) => {
-    await page.goto('/');
     
     // Verify landing page loads
     await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
@@ -15,7 +36,6 @@ test.describe('Word Challenge', () => {
   });
 
   test('should start a word challenge and show French word', async ({ page }) => {
-    await page.goto('/');
     await page.click('text=Word Challenge');
     
     // Click Start Challenge button
@@ -29,7 +49,6 @@ test.describe('Word Challenge', () => {
   });
 
   test('should validate correct answer', async ({ page }) => {
-    await page.goto('/');
     await page.click('text=Word Challenge');
     await page.click('text=Start Challenge');
     
@@ -45,7 +64,6 @@ test.describe('Word Challenge', () => {
   });
 
   test('should validate incorrect answer', async ({ page }) => {
-    await page.goto('/');
     await page.click('text=Word Challenge');
     await page.click('text=Start Challenge');
     
@@ -62,7 +80,6 @@ test.describe('Word Challenge', () => {
   });
 
   test('should navigate to next challenge', async ({ page }) => {
-    await page.goto('/');
     await page.click('text=Word Challenge');
     await page.click('text=Start Challenge');
     
@@ -80,7 +97,6 @@ test.describe('Word Challenge', () => {
   });
 
   test('should navigate back to home', async ({ page }) => {
-    await page.goto('/');
     await page.click('text=Word Challenge');
     
     // Click back to home

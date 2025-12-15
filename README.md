@@ -6,6 +6,9 @@ A full-stack web application built with Express.js, TypeScript, and Material-UI.
 
 - Express.js backend with TypeScript
 - React frontend with Material-UI components
+- User authentication with registration and login
+- MongoDB Atlas integration for user data storage
+- Session management with secure cookies
 - Three interactive challenge types: Word, Verb, and Idiom challenges
 - Development and production build configurations
 - Hot reload for development
@@ -16,6 +19,7 @@ A full-stack web application built with Express.js, TypeScript, and Material-UI.
 
 - Node.js (v18 or higher)
 - npm or yarn
+- MongoDB Atlas account (free tier available at [mongodb.com](https://www.mongodb.com/cloud/atlas))
 
 ## Installation
 
@@ -26,6 +30,35 @@ npm install
 # Install Playwright browsers and system dependencies (required for testing)
 npx playwright install --with-deps chromium
 ```
+
+## Environment Setup
+
+1. Copy the `.env.example` file to create a `.env` file:
+
+```bash
+cp .env.example .env
+```
+
+2. Update the `.env` file with your MongoDB Atlas credentials:
+
+```env
+MONGODB_URI=mongodb+srv://<db_username>:<db_password>@cluster0.kn6sc.mongodb.net/?appName=Cluster0
+SESSION_SECRET=your-secret-key-change-in-production
+NODE_ENV=development
+PORT=3000
+```
+
+Replace `<db_username>` and `<db_password>` with your actual MongoDB Atlas credentials.
+
+### MongoDB Atlas Setup
+
+1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create a free account or sign in
+3. Create a new cluster (free tier is sufficient)
+4. Create a database user with username and password
+5. Add your IP address to the IP whitelist (or allow access from anywhere for development: 0.0.0.0/0)
+6. Get your connection string from the "Connect" button
+7. Replace `<db_username>` and `<db_password>` in your `.env` file
 
 ## Development
 
@@ -57,12 +90,28 @@ npm start
 ```
 ├── src/
 │   ├── server.ts          # Express.js server
+│   ├── config/
+│   │   └── database.ts    # MongoDB connection
+│   ├── models/
+│   │   └── User.ts        # User model
+│   ├── routes/
+│   │   └── auth.ts        # Authentication routes
 │   └── client/            # React frontend
 │       ├── index.tsx      # React entry point
-│       ├── App.tsx        # Main App component
+│       ├── App.tsx        # Main App component with auth state
+│       ├── components/
+│       │   ├── LoginPage.tsx       # Login page
+│       │   ├── RegisterPage.tsx    # Registration page
+│       │   ├── LandingPage.tsx     # Home page with user info
+│       │   ├── ChallengePage.tsx   # Word challenges
+│       │   ├── VerbChallengePage.tsx
+│       │   └── IdiomChallengePage.tsx
 │       └── index.html     # HTML template
+├── data/                  # Challenge data
 ├── dist/                  # Compiled server code
 ├── public/                # Built client assets
+├── .env                   # Environment variables (not in git)
+├── .env.example           # Environment template
 ├── package.json
 ├── tsconfig.json          # TypeScript config for client
 ├── tsconfig.server.json   # TypeScript config for server

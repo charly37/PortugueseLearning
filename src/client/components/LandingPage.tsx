@@ -1,13 +1,31 @@
 import React from 'react';
-import { Container, Box, Typography, Button, Grid } from '@mui/material';
+import { Container, Box, Typography, Button, Grid, Paper, Chip } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
+import PersonIcon from '@mui/icons-material/Person';
+
+interface User {
+  id: string;
+  username: string;
+  email: string;
+}
 
 interface LandingPageProps {
+  user: User | null;
   onStartLearning: () => void;
   onVerbChallenge: () => void;
   onIdiomChallenge: () => void;
+  onViewProfile: () => void;
+  onLogout: () => void;
 }
 
-const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChallenge, onIdiomChallenge }) => {
+const LandingPage: React.FC<LandingPageProps> = ({ 
+  user, 
+  onStartLearning, 
+  onVerbChallenge, 
+  onIdiomChallenge,
+  onViewProfile,
+  onLogout 
+}) => {
   return (
     <Container maxWidth="md">
       <Box
@@ -19,8 +37,42 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStartLearning, onVerbChalle
           minHeight: '100vh',
           gap: 3,
           textAlign: 'center',
+          position: 'relative',
         }}
       >
+        {/* User info bar at the top */}
+        {user && (
+          <Paper
+            elevation={2}
+            sx={{
+              position: 'absolute',
+              top: 20,
+              right: 20,
+              p: 2,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <Chip
+              icon={<PersonIcon />}
+              label={user.username}
+              color="primary"
+              variant="outlined"
+              onClick={onViewProfile}
+              sx={{ cursor: 'pointer' }}
+            />
+            <Button
+              variant="outlined"
+              color="error"
+              size="small"
+              startIcon={<LogoutIcon />}
+              onClick={onLogout}
+            >
+              Logout
+            </Button>
+          </Paper>
+        )}
         
         <Typography variant="h2" component="h1" gutterBottom>
           Welcome to Portuguese Learning

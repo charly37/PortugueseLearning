@@ -1,8 +1,29 @@
 import { test, expect } from '@playwright/test';
+import { registerAndLogin, login } from './helpers/auth-helper';
 
 test.describe('Idiom Challenge', () => {
+  let testUser: { username: string; email: string; password: string };
+
+  test.beforeAll(async ({ browser }) => {
+    // Create one user for all tests in this suite
+    testUser = {
+      username: `idiomtest_${Date.now()}`,
+      email: `idiomtest_${Date.now()}@example.com`,
+      password: 'testpassword123'
+    };
+
+    // Register the user once
+    const page = await browser.newPage();
+    await registerAndLogin(page, testUser.username, testUser.email, testUser.password);
+    await page.close();
+  });
+
+  test.beforeEach(async ({ page }) => {
+    // Login with the existing user before each test
+    await login(page, testUser.email, testUser.password);
+  });
+
   test('should navigate to idiom challenge', async ({ page }) => {
-    await page.goto('/');
     
     // Click Idiom Challenge button
     await page.getByRole('button', { name: 'Idiom Challenge' }).click();
@@ -15,7 +36,7 @@ test.describe('Idiom Challenge', () => {
 
 
   test('should start challenge and allow answer submission', async ({ page }) => {
-    await page.goto('/');
+
     await page.getByRole('button', { name: 'Idiom Challenge' }).click();
     
     // Use getByRole for more reliable button selection
@@ -33,7 +54,7 @@ test.describe('Idiom Challenge', () => {
   });
 
   test('should validate incorrect idiom answer', async ({ page }) => {
-    await page.goto('/');
+
     await page.getByRole('button', { name: 'Idiom Challenge' }).click();
     await page.getByRole('button', { name: 'Start Challenge' }).click();
     
@@ -50,7 +71,7 @@ test.describe('Idiom Challenge', () => {
   });
 
   test('should disable input after checking answer', async ({ page }) => {
-    await page.goto('/');
+
     await page.getByRole('button', { name: 'Idiom Challenge' }).click();
     await page.getByRole('button', { name: 'Start Challenge' }).click();
     
@@ -64,7 +85,7 @@ test.describe('Idiom Challenge', () => {
   });
 
   test('should load next idiom challenge', async ({ page }) => {
-    await page.goto('/');
+
     await page.getByRole('button', { name: 'Idiom Challenge' }).click();
     await page.getByRole('button', { name: 'Start Challenge' }).click();
     
@@ -83,7 +104,7 @@ test.describe('Idiom Challenge', () => {
   });
 
   test('should navigate back to home from idiom challenge', async ({ page }) => {
-    await page.goto('/');
+
     await page.getByRole('button', { name: 'Idiom Challenge' }).click();
     
     // Click back to home using button selector
