@@ -41,17 +41,6 @@ if ! command -v docker &> /dev/null; then
 fi
 print_success "Docker is installed"
 
-# Stop and remove existing container if it exists
-print_info "Stopping existing container if running..."
-docker stop $CONTAINER_NAME 2>/dev/null || true
-docker rm $CONTAINER_NAME 2>/dev/null || true
-print_success "Existing container stopped"
-
-# Pull the latest image from Docker Hub
-print_info "Pulling latest image from Docker Hub..."
-docker pull $IMAGE_NAME
-print_success "Image pulled successfully"
-
 # Check for required environment variables
 print_info "Checking required environment variables..."
 if [ -z "$MONGODB_URI" ]; then
@@ -65,6 +54,17 @@ if [ -z "$SESSION_SECRET" ]; then
     exit 1
 fi
 print_success "Required environment variables are set"
+
+# Stop and remove existing container if it exists
+print_info "Stopping existing container if running..."
+docker stop $CONTAINER_NAME 2>/dev/null || true
+docker rm $CONTAINER_NAME 2>/dev/null || true
+print_success "Existing container stopped"
+
+# Pull the latest image from Docker Hub
+print_info "Pulling latest image from Docker Hub..."
+docker pull $IMAGE_NAME
+print_success "Image pulled successfully"
 
 # Start the container
 print_info "Starting the application..."
