@@ -74,13 +74,27 @@ jobs:
     - name: Build Docker image
       run: docker build -t portuguese-learning:latest .
 
-    - name: Test Docker image
+    - name: Test Docker image with MongoDB
       run: |
-        docker run -d -p 3000:3000 --name test-app portuguese-learning:latest
+        # Start MongoDB container
+        docker run -d --name test-mongo -p 27017:27017 mongo:latest
+        sleep 5
+        
+        # Start app container with MongoDB connection
+        docker run -d -p 3000:3000 --name test-app \
+          -e MONGODB_URI=mongodb://172.17.0.1:27017/portuguese-test \
+          -e SESSION_SECRET=test-secret-key \
+          portuguese-learning:latest
+        
+        # Wait for app to start
         sleep 10
+        
+        # Test health endpoint
         curl -f http://localhost:3000/api/health || exit 1
-        docker stop test-app
-        docker rm test-app
+        
+        # Cleanup
+        docker stop test-app test-mongo
+        docker rm test-app test-mongo
 
     - name: Push to Docker Hub
       run: |
