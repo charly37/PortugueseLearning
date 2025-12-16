@@ -12,6 +12,7 @@
     "dev:client": "webpack serve --mode development",
     "start": "node dist/server.js",
     "test": "./run-tests.sh",
+    "test:server": "ts-node-dev --respawn --transpile-only --project tsconfig.server.json src/server.ts",
     "test:headed": "./run-tests.sh --headed",
     "test:ui": "./run-tests.sh --ui",
     "test:report": "playwright show-report"

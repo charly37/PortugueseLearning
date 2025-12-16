@@ -56,16 +56,17 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
         body: JSON.stringify({ username, email, password }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
+        const data = await response.json();
         setError(data.message || 'Registration failed');
         setLoading(false);
         return;
       }
 
+      const data = await response.json();
       onRegisterSuccess(data.user);
     } catch (err) {
+      console.error('Registration error:', err);
       setError('An error occurred. Please try again.');
       setLoading(false);
     }

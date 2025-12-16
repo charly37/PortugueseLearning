@@ -35,16 +35,17 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onNavigateToRegis
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
+        const data = await response.json();
         setError(data.message || 'Login failed');
         setLoading(false);
         return;
       }
 
+      const data = await response.json();
       onLoginSuccess(data.user);
     } catch (err) {
+      console.error('Login error:', err);
       setError('An error occurred. Please try again.');
       setLoading(false);
     }
