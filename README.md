@@ -147,6 +147,53 @@ npm run test:report
 
 All tests run automatically in the CI/CD pipeline before building and deploying the Docker container.
 
+## Docker Deployment
+
+### Building and Running with Docker
+
+```bash
+# Build the Docker image
+docker build -t portuguese-learning .
+
+# Run the container (requires environment variables)
+docker run -d \
+  --name portuguese-learning-app \
+  -p 3000:3000 \
+  -e MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.mongodb.net/portuguese-learning" \
+  -e SESSION_SECRET="your-secure-random-secret" \
+  portuguese-learning:latest
+```
+
+### Automated Deployment Script
+
+The project includes a deployment script that pulls the latest Docker image and starts the application:
+
+```bash
+# Set required environment variables first
+export MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.mongodb.net/portuguese-learning"
+export SESSION_SECRET="your-secure-random-secret"
+
+# Run the deployment script
+./deploy.sh
+```
+
+**Important:** The deployment script requires `MONGODB_URI` and `SESSION_SECRET` environment variables to be set before running. The script will check for these variables and fail with a helpful error message if they're missing.
+
+### Docker Compose (with MongoDB)
+
+Alternatively, use Docker Compose to run both the application and MongoDB locally:
+
+```bash
+# Start both services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+```
+
 ## Available Scripts
 
 - `npm run dev` - Run both server and client in development mode

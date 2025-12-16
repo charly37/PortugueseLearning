@@ -52,6 +52,20 @@ print_info "Pulling latest image from Docker Hub..."
 docker pull $IMAGE_NAME
 print_success "Image pulled successfully"
 
+# Check for required environment variables
+print_info "Checking required environment variables..."
+if [ -z "$MONGODB_URI" ]; then
+    print_error "MONGODB_URI environment variable is not set"
+    echo "Please set it with: export MONGODB_URI=your_mongodb_connection_string"
+    exit 1
+fi
+if [ -z "$SESSION_SECRET" ]; then
+    print_error "SESSION_SECRET environment variable is not set"
+    echo "Please set it with: export SESSION_SECRET=your_secret_key"
+    exit 1
+fi
+print_success "Required environment variables are set"
+
 # Start the container
 print_info "Starting the application..."
 docker run -d \
@@ -59,6 +73,8 @@ docker run -d \
   -p $PORT:3000 \
   -e NODE_ENV=production \
   -e PORT=3000 \
+  -e MONGODB_URI="$MONGODB_URI" \
+  -e SESSION_SECRET="$SESSION_SECRET" \
   --restart unless-stopped \
   $IMAGE_NAME
 print_success "Application started successfully"
