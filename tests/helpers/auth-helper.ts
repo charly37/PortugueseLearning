@@ -29,8 +29,8 @@ export async function registerAndLogin(
   // Submit form
   await page.getByRole('button', { name: /Register/i }).click();
   
-  // Wait for landing page to load
-  await page.waitForSelector('h1:has-text("Welcome to Portuguese Learning")', { timeout: 10000 });
+  // Wait for landing page to load - check for Welcome message with username
+  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 10000 });
 }
 
 /**
@@ -50,8 +50,8 @@ export async function login(
   // Submit form
   await page.getByRole('button', { name: /Login/i }).click();
   
-  // Wait for landing page to load
-  await page.waitForSelector('text=Welcome to Portuguese Learning', { timeout: 10000 });
+  // Wait for landing page to load - check for Welcome message
+  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 10000 });
 }
 
 /**

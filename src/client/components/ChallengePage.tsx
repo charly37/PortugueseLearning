@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip } from '@mui/material';
 
 interface Challenge {
   port: string;
@@ -60,104 +60,104 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ onBackHome }) => {
   };
 
   return (
-    <Container maxWidth="md">
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '100vh',
-          gap: 3,
-          position: 'relative',
-        }}
-      >
-        <Button
-          onClick={onBackHome}
-          sx={{ position: 'absolute', top: 20, left: 20 }}
+    <Box sx={{ pt: 10, pb: 6, bgcolor: 'background.default', minHeight: '100vh' }}>
+      <Container maxWidth="md">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            py: 4,
+          }}
         >
-          ← Back to Home
-        </Button>
-
-        <Typography variant="h3" component="h1" gutterBottom>
-          Portuguese Vocabulary Challenge
-        </Typography>
-        
-        <Typography variant="h6" color="text.secondary" gutterBottom>
-          Translate from French to Portuguese
-        </Typography>
-
-        {challenge && (
-          <Card sx={{ minWidth: 400, mt: 2 }}>
-            <CardContent>
-              <Typography variant="h6" color="text.secondary" gutterBottom>
-                Français
-              </Typography>
-              <Typography variant="h4" component="div" gutterBottom sx={{ mb: 3 }}>
-                {challenge.francais}
-              </Typography>
-              
-              <TextField
-                fullWidth
-                label="Your Portuguese answer"
-                variant="outlined"
-                value={userAnswer}
-                onChange={(e) => setUserAnswer(e.target.value)}
-                onKeyPress={handleKeyPress}
-                disabled={showAnswer}
-                autoFocus
-                sx={{ mb: 2 }}
-              />
-
-              {feedback && (
-                <Alert severity={feedback.type} sx={{ mb: 2 }}>
-                  {feedback.message}
-                </Alert>
-              )}
-
-              {!showAnswer ? (
-                <Button 
-                  variant="contained" 
-                  color="primary" 
-                  fullWidth
-                  onClick={checkAnswer}
-                  disabled={!userAnswer.trim()}
-                >
-                  Check Answer
-                </Button>
-              ) : (
-                <Button 
-                  variant="contained" 
-                  color="secondary" 
-                  fullWidth
-                  onClick={fetchChallenge}
-                >
-                  Next Challenge
-                </Button>
-              )}
-            </CardContent>
-          </Card>
-        )}
-
-        {error && (
-          <Typography color="error" variant="body1">
-            {error}
+          <Chip label="Word Challenge" color="primary" sx={{ mb: 2 }} />
+          
+          <Typography variant="h3" component="h1" gutterBottom align="center">
+            Portuguese Vocabulary
           </Typography>
-        )}
+          
+          <Typography variant="body1" color="text.secondary" gutterBottom sx={{ mb: 4 }}>
+            Translate from French to Portuguese
+          </Typography>
 
-        {!challenge && (
-          <Button 
-            variant="contained" 
-            color="primary" 
-            size="large"
-            onClick={fetchChallenge}
-            disabled={loading}
-          >
-            {loading ? <CircularProgress size={24} /> : 'Start Challenge'}
-          </Button>
-        )}
-      </Box>
-    </Container>
+          {!challenge && !loading && (
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              onClick={fetchChallenge}
+              sx={{ mb: 4 }}
+            >
+              Start Challenge
+            </Button>
+          )}
+
+          {loading && <CircularProgress sx={{ my: 4 }} />}
+
+          {challenge && (
+            <Card sx={{ width: '100%', maxWidth: 500, mt: 2 }} elevation={3}>
+              <CardContent sx={{ p: 4 }}>
+                <Box sx={{ textAlign: 'center', mb: 4 }}>
+                  <Typography variant="subtitle2" color="text.secondary" gutterBottom>
+                    Français
+                  </Typography>
+                  <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'primary.main' }}>
+                    {challenge.francais}
+                  </Typography>
+                </Box>
+                
+                <TextField
+                  fullWidth
+                  label="Your Portuguese answer"
+                  variant="outlined"
+                  value={userAnswer}
+                  onChange={(e) => setUserAnswer(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  disabled={showAnswer}
+                  autoFocus
+                  sx={{ mb: 2 }}
+                />
+
+                {feedback && (
+                  <Alert severity={feedback.type} sx={{ mb: 2 }}>
+                    {feedback.message}
+                  </Alert>
+                )}
+
+                {!showAnswer ? (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    size="large"
+                    onClick={checkAnswer}
+                    disabled={!userAnswer.trim()}
+                  >
+                    Check Answer
+                  </Button>
+                ) : (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    size="large"
+                    onClick={fetchChallenge}
+                  >
+                    Next Challenge
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          )}
+
+          {error && (
+            <Alert severity="error" sx={{ mt: 2 }}>
+              {error}
+            </Alert>
+          )}
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

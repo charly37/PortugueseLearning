@@ -26,17 +26,17 @@ test.describe('Word Challenge', () => {
   test('should load landing page and navigate to word challenge', async ({ page }) => {
     
     // Verify landing page loads
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
+    await expect(page.locator('h1')).toContainText('Welcome');
     
     // Click Word Challenge button
-    await page.click('text=Word Challenge');
+    await page.click('button >> text=Start Learning');
     
     // Verify we're on the challenge page
-    await expect(page.locator('h1')).toContainText('Portuguese Vocabulary Challenge');
+    await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
   });
 
   test('should start a word challenge and show French word', async ({ page }) => {
-    await page.click('text=Word Challenge');
+    await page.click('button >> text=Start Learning');
     
     // Click Start Challenge button
     await page.click('text=Start Challenge');
@@ -49,7 +49,7 @@ test.describe('Word Challenge', () => {
   });
 
   test('should validate correct answer', async ({ page }) => {
-    await page.click('text=Word Challenge');
+    await page.click('button >> text=Start Learning');
     await page.click('text=Start Challenge');
     
     // Wait for challenge to load
@@ -64,7 +64,7 @@ test.describe('Word Challenge', () => {
   });
 
   test('should validate incorrect answer', async ({ page }) => {
-    await page.click('text=Word Challenge');
+    await page.click('button >> text=Start Learning');
     await page.click('text=Start Challenge');
     
     // Wait for challenge to load
@@ -80,7 +80,7 @@ test.describe('Word Challenge', () => {
   });
 
   test('should navigate to next challenge', async ({ page }) => {
-    await page.click('text=Word Challenge');
+    await page.click('button >> text=Start Learning');
     await page.click('text=Start Challenge');
     
     // Wait for challenge and answer it
@@ -97,12 +97,12 @@ test.describe('Word Challenge', () => {
   });
 
   test('should navigate back to home', async ({ page }) => {
-    await page.click('text=Word Challenge');
+    await page.click('button >> text=Start Learning');
     
     // Click back to home
-    await page.click('text=Back to Home');
+    await page.click('button >> text=Home');
     
     // Verify we're back on landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
+    await expect(page.locator('h1')).toContainText('Welcome');
   });
 });

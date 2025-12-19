@@ -25,7 +25,7 @@ test.describe('Profile Page', () => {
 
   test('should navigate to profile page by clicking username', async ({ page }) => {
     // Click on username chip
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Should be on profile page
     await expect(page.locator('h1')).toContainText('My Profile');
@@ -33,7 +33,7 @@ test.describe('Profile Page', () => {
 
   test('should display user information on profile page', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Verify profile information is displayed
     await expect(page.locator('h4')).toContainText(testUser.username);
@@ -52,7 +52,7 @@ test.describe('Profile Page', () => {
 
   test('should display user avatar with initial', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Check avatar displays first letter of username
     const firstLetter = testUser.username.charAt(0).toUpperCase();
@@ -61,7 +61,7 @@ test.describe('Profile Page', () => {
 
   test('should display member since date', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Verify member since date is shown
     await expect(page.getByText('Member Since')).toBeVisible();
@@ -72,19 +72,19 @@ test.describe('Profile Page', () => {
 
   test('should navigate back to landing page from profile', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     await expect(page.locator('h1')).toContainText('My Profile');
     
     // Click back button
-    await page.getByRole('button', { name: /Back/i }).click();
+    await page.getByRole('button', { name: 'Back' }).click();
     
     // Should be back on landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
+    await expect(page.locator('h1')).toContainText('Welcome');
   });
 
   test('should show profile icon on profile page', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Profile page should have person icons
     const profileIcons = page.locator('[data-testid="PersonIcon"]');
@@ -93,7 +93,7 @@ test.describe('Profile Page', () => {
 
   test('should show email icon on profile page', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Profile page should have email icon
     const emailIcon = page.locator('[data-testid="EmailIcon"]');
@@ -102,7 +102,7 @@ test.describe('Profile Page', () => {
 
   test('should show calendar icon for member since date', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Profile page should have calendar icon
     const calendarIcon = page.locator('[data-testid="CalendarTodayIcon"]');
@@ -111,7 +111,7 @@ test.describe('Profile Page', () => {
 
   test('should display motivational message', async ({ page }) => {
     // Navigate to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     
     // Check for motivational message
     await expect(page.getByText(/Keep learning/i)).toBeVisible();
@@ -119,15 +119,15 @@ test.describe('Profile Page', () => {
 
   test('should maintain session when navigating to and from profile', async ({ page }) => {
     // Go to profile
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     await expect(page.locator('h1')).toContainText('My Profile');
     
     // Go back to landing
-    await page.getByRole('button', { name: /Back/i }).click();
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
+    await page.getByRole('button', { name: 'Back' }).click();
+    await expect(page.locator('h1')).toContainText('Welcome');
     
     // Go to profile again
-    await page.getByText(testUser.username).click();
+    await page.getByRole('button', { name: testUser.username }).click();
     await expect(page.locator('h1')).toContainText('My Profile');
     
     // Should still show correct user info

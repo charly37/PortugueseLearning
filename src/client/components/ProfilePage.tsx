@@ -1,18 +1,18 @@
 import React from 'react';
-import { 
-  Container, 
-  Box, 
-  Typography, 
-  Button, 
+import {
+  Container,
+  Box,
+  Typography,
   Paper,
   Avatar,
   Divider,
-  Stack
+  Stack,
+  Button
 } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 interface User {
   id: string;

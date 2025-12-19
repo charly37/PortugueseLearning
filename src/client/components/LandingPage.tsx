@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Box, Typography, Button, Grid, Paper, Chip } from '@mui/material';
-import LogoutIcon from '@mui/icons-material/Logout';
-import PersonIcon from '@mui/icons-material/Person';
+import { Container, Box, Typography, Button, Grid, Paper } from '@mui/material';
+import SchoolIcon from '@mui/icons-material/School';
+import TranslateIcon from '@mui/icons-material/Translate';
+import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 
 interface User {
   id: string;
@@ -23,116 +24,146 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onStartLearning, 
   onVerbChallenge, 
   onIdiomChallenge,
-  onViewProfile,
-  onLogout 
 }) => {
   return (
-    <Container maxWidth="md">
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '100vh',
-          gap: 3,
-          textAlign: 'center',
-          position: 'relative',
-        }}
-      >
-        {/* User info bar at the top */}
-        {user && (
-          <Paper
-            elevation={2}
-            sx={{
-              position: 'absolute',
-              top: 20,
-              right: 20,
-              p: 2,
-              display: 'flex',
-              alignItems: 'center',
-              gap: 2,
-            }}
-          >
-            <Chip
-              icon={<PersonIcon />}
-              label={user.username}
-              color="primary"
-              variant="outlined"
-              onClick={onViewProfile}
-              sx={{ cursor: 'pointer' }}
-            />
-            <Button
-              variant="outlined"
-              color="error"
-              size="small"
-              startIcon={<LogoutIcon />}
-              onClick={onLogout}
-            >
-              Logout
-            </Button>
-          </Paper>
-        )}
-        
-        <Typography variant="h2" component="h1" gutterBottom>
-          Welcome to Portuguese Learning
-        </Typography>
-        
-        <Typography variant="h5" color="text.secondary" gutterBottom sx={{ maxWidth: '600px' }}>
-          Master Portuguese vocabulary with our interactive learning platform
-        </Typography>
-        
-        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '700px', mt: 2 }}>
-          This website is designed to help you learn Portuguese through vocabulary, verb, and idiom challenges. 
-          Practice translating words between Portuguese and French, learn verb conjugations, master common idioms, 
-          and improve your language skills one word at a time.
-        </Typography>
-        
-        <Grid container spacing={2} sx={{ mt: 3, maxWidth: '600px' }}>
-          <Grid item xs={12} sm={4}>
-            <Button 
-              variant="contained" 
-              color="primary" 
-              size="large"
-              onClick={onStartLearning}
-              fullWidth
-              sx={{ py: 1.5 }}
-            >
-              Word Challenge
-            </Button>
+    <Box sx={{ pt: 10, pb: 6, bgcolor: 'background.default', minHeight: '100vh' }}>
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            py: 6,
+          }}
+        >
+          <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700, mb: 2 }}>
+            Welcome{user ? `, ${user.username}` : ''}! 👋
+          </Typography>
+          
+          <Typography variant="h5" color="text.secondary" gutterBottom sx={{ maxWidth: '700px', mb: 2 }}>
+            Master Portuguese with Interactive Challenges
+          </Typography>
+          
+          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '800px', mb: 6 }}>
+            Practice vocabulary, verb conjugations, and idioms through interactive exercises. 
+            Learn Portuguese efficiently with our comprehensive learning platform.
+          </Typography>
+          
+          <Grid container spacing={3} sx={{ maxWidth: '900px' }}>
+            <Grid item xs={12} md={4}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 4,
+                  },
+                }}
+              >
+                <TranslateIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+                  Word Challenge
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
+                  Build your vocabulary by translating words from French to Portuguese
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  onClick={onStartLearning}
+                  fullWidth
+                >
+                  Start Learning
+                </Button>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 4,
+                  },
+                }}
+              >
+                <SchoolIcon sx={{ fontSize: 48, color: 'secondary.main', mb: 2 }} />
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+                  Verb Challenge
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
+                  Master verb conjugations in the present tense
+                </Typography>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={onVerbChallenge}
+                  fullWidth
+                >
+                  Practice Verbs
+                </Button>
+              </Paper>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 4,
+                  },
+                }}
+              >
+                <RecordVoiceOverIcon sx={{ fontSize: 48, color: '#ff9800', mb: 2 }} />
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+                  Idiom Challenge
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
+                  Learn common Portuguese idioms and expressions
+                </Typography>
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={onIdiomChallenge}
+                  fullWidth
+                  sx={{
+                    bgcolor: '#ff9800',
+                    '&:hover': {
+                      bgcolor: '#f57c00',
+                    },
+                  }}
+                >
+                  Learn Idioms
+                </Button>
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={4}>
-            <Button 
-              variant="contained" 
-              color="secondary" 
-              size="large"
-              onClick={onVerbChallenge}
-              fullWidth
-              sx={{ py: 1.5 }}
-            >
-              Verb Challenge
-            </Button>
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <Button 
-              variant="contained" 
-              sx={{ 
-                py: 1.5,
-                backgroundColor: '#ff9800',
-                '&:hover': {
-                  backgroundColor: '#f57c00',
-                }
-              }}
-              size="large"
-              onClick={onIdiomChallenge}
-              fullWidth
-            >
-              Idiom Challenge
-            </Button>
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

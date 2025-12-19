@@ -26,16 +26,16 @@ test.describe('Verb Challenge', () => {
   test('should navigate to verb challenge', async ({ page }) => {
     
     // Click Verb Challenge button
-    await page.click('text=Verb Challenge');
+    await page.click('button >> text=Practice Verbs');
     
     // Verify we're on the verb challenge page
-    await expect(page.locator('h1')).toContainText('Portuguese Verb Challenge');
+    await expect(page.locator('h1')).toContainText('Portuguese Verbs');
     await expect(page.locator('text=Translate verbs from French to Portuguese')).toBeVisible();
   });
 
   test('should start a verb challenge and show French verb', async ({ page }) => {
 
-    await page.click('text=Verb Challenge');
+    await page.click('button >> text=Practice Verbs');
     
     // Click Start Challenge button
     await page.click('text=Start Challenge');
@@ -49,7 +49,7 @@ test.describe('Verb Challenge', () => {
 
   test('should validate correct verb answer and show conjugations', async ({ page }) => {
 
-    await page.click('text=Verb Challenge');
+    await page.click('button >> text=Practice Verbs');
     await page.click('text=Start Challenge');
     
     // Wait for challenge to load
@@ -65,7 +65,7 @@ test.describe('Verb Challenge', () => {
 
   test('should validate incorrect verb answer', async ({ page }) => {
 
-    await page.click('text=Verb Challenge');
+    await page.click('button >> text=Practice Verbs');
     await page.click('text=Start Challenge');
     
     // Wait for challenge to load
@@ -81,7 +81,7 @@ test.describe('Verb Challenge', () => {
 
   test('should support keyboard Enter key to submit', async ({ page }) => {
 
-    await page.click('text=Verb Challenge');
+    await page.click('button >> text=Practice Verbs');
     await page.click('text=Start Challenge');
     
     // Wait for challenge to load
@@ -97,12 +97,12 @@ test.describe('Verb Challenge', () => {
 
   test('should navigate back to home from verb challenge', async ({ page }) => {
 
-    await page.click('text=Verb Challenge');
+    await page.click('button >> text=Practice Verbs');
     
     // Click back to home
-    await page.click('text=Back to Home');
+    await page.click('button >> text=Home');
     
     // Verify we're back on landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
+    await expect(page.locator('h1')).toContainText('Welcome');
   });
 });

@@ -26,10 +26,10 @@ test.describe('Idiom Challenge', () => {
   test('should navigate to idiom challenge', async ({ page }) => {
     
     // Click Idiom Challenge button
-    await page.getByRole('button', { name: 'Idiom Challenge' }).click();
+    await page.getByRole('button', { name: 'Learn Idioms' }).click();
     
     // Verify we're on the idiom challenge page
-    await expect(page.locator('h1')).toContainText('Portuguese Idiom Challenge');
+    await expect(page.locator('h1')).toContainText('Portuguese Idioms');
     await expect(page.locator('text=Translate idioms from French to Portuguese')).toBeVisible();
   });
 
@@ -37,7 +37,7 @@ test.describe('Idiom Challenge', () => {
 
   test('should start challenge and allow answer submission', async ({ page }) => {
 
-    await page.getByRole('button', { name: 'Idiom Challenge' }).click();
+    await page.getByRole('button', { name: 'Learn Idioms' }).click();
     
     // Use getByRole for more reliable button selection
     await page.getByRole('button', { name: 'Start Challenge' }).click();
@@ -55,7 +55,7 @@ test.describe('Idiom Challenge', () => {
 
   test('should validate incorrect idiom answer', async ({ page }) => {
 
-    await page.getByRole('button', { name: 'Idiom Challenge' }).click();
+    await page.getByRole('button', { name: 'Learn Idioms' }).click();
     await page.getByRole('button', { name: 'Start Challenge' }).click();
     
     // Wait for challenge to load
@@ -72,7 +72,7 @@ test.describe('Idiom Challenge', () => {
 
   test('should disable input after checking answer', async ({ page }) => {
 
-    await page.getByRole('button', { name: 'Idiom Challenge' }).click();
+    await page.getByRole('button', { name: 'Learn Idioms' }).click();
     await page.getByRole('button', { name: 'Start Challenge' }).click();
     
     // Wait for challenge and answer it
@@ -86,7 +86,7 @@ test.describe('Idiom Challenge', () => {
 
   test('should load next idiom challenge', async ({ page }) => {
 
-    await page.getByRole('button', { name: 'Idiom Challenge' }).click();
+    await page.getByRole('button', { name: 'Learn Idioms' }).click();
     await page.getByRole('button', { name: 'Start Challenge' }).click();
     
     // Wait for challenge and answer it
@@ -105,12 +105,12 @@ test.describe('Idiom Challenge', () => {
 
   test('should navigate back to home from idiom challenge', async ({ page }) => {
 
-    await page.getByRole('button', { name: 'Idiom Challenge' }).click();
+    await page.getByRole('button', { name: 'Learn Idioms' }).click();
     
-    // Click back to home using button selector
-    await page.getByRole('button', { name: /Back to Home/i }).click();
+    // Click Home button in header to go back
+    await page.getByRole('button', { name: 'Home' }).click();
     
     // Verify we're back on landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
+    await expect(page.locator('h1')).toContainText('Welcome');
   });
 });

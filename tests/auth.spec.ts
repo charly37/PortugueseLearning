@@ -58,11 +58,11 @@ test.describe('Authentication', () => {
     // Submit form
     await page.getByRole('button', { name: /Register/i }).click();
     
-    // Should redirect to landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning', { timeout: 10000 });
+    // Should redirect to landing page with personalized greeting
+    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
     
-    // Should see username in header
-    await expect(page.getByText(testUser.username)).toBeVisible();
+    // Should see username in header chip (button)
+    await expect(page.getByRole('button', { name: testUser.username })).toBeVisible();
   });
 
   test('should not register with invalid email', async ({ page }) => {
@@ -130,8 +130,8 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning', { timeout: 10000 });
+    // Wait for landing page with personalized greeting
+    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
     
     // Logout
     await page.getByRole('button', { name: /Logout/i }).click();
@@ -142,9 +142,9 @@ test.describe('Authentication', () => {
     await page.getByLabel('Password').fill(uniqueUser.password);
     await page.getByRole('button', { name: /Login/i }).click();
     
-    // Should redirect to landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning', { timeout: 10000 });
-    await expect(page.getByText(uniqueUser.username)).toBeVisible();
+    // Should redirect to landing page with personalized greeting
+    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible();
   });
 
   test('should not login with invalid credentials', async ({ page }) => {
@@ -177,8 +177,8 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning', { timeout: 10000 });
+    // Wait for landing page with personalized greeting
+    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
     
     // Logout
     await page.getByRole('button', { name: 'Logout', exact: true }).click();
@@ -228,14 +228,14 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning', { timeout: 10000 });
+    // Wait for landing page with personalized greeting
+    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
     
     // Reload page
     await page.reload();
     
-    // Should still be on landing page
-    await expect(page.locator('h1')).toContainText('Welcome to Portuguese Learning');
-    await expect(page.getByText(uniqueUser.username)).toBeVisible();
+    // Should still be on landing page with personalized greeting
+    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible();
   });
 });

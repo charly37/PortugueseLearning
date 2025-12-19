@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, CircularProgress, Box } from '@mui/material';
+import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import ChallengePage from './components/ChallengePage';
 import VerbChallengePage from './components/VerbChallengePage';
@@ -17,6 +18,43 @@ const theme = createTheme({
     },
     secondary: {
       main: '#dc004e',
+    },
+    background: {
+      default: '#f5f5f5',
+    },
+  },
+  typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    h3: {
+      fontWeight: 600,
+    },
+    h4: {
+      fontWeight: 600,
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+          borderRadius: 8,
+          fontWeight: 500,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+        },
+      },
     },
   },
 });
@@ -97,40 +135,56 @@ const App: React.FC = () => {
     );
   }
 
+  const showHeader = currentPage !== 'login' && currentPage !== 'register';
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {currentPage === 'login' ? (
-        <LoginPage 
-          onLoginSuccess={handleLoginSuccess}
-          onNavigateToRegister={() => setCurrentPage('register')}
-        />
-      ) : currentPage === 'register' ? (
-        <RegisterPage 
-          onRegisterSuccess={handleRegisterSuccess}
-          onNavigateToLogin={() => setCurrentPage('login')}
-        />
-      ) : currentPage === 'landing' ? (
-        <LandingPage 
+      {showHeader && (
+        <Header
           user={user}
-          onStartLearning={() => setCurrentPage('challenge')}
-          onVerbChallenge={() => setCurrentPage('verb-challenge')}
-          onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
-          onViewProfile={() => setCurrentPage('profile')}
+          currentPage={currentPage}
+          onNavigateHome={() => setCurrentPage('landing')}
+          onNavigateProfile={() => setCurrentPage('profile')}
           onLogout={handleLogout}
         />
-      ) : currentPage === 'profile' ? (
-        <ProfilePage 
-          user={user}
-          onBackHome={() => setCurrentPage('landing')}
-        />
-      ) : currentPage === 'challenge' ? (
-        <ChallengePage onBackHome={() => setCurrentPage('landing')} />
-      ) : currentPage === 'verb-challenge' ? (
-        <VerbChallengePage onBackHome={() => setCurrentPage('landing')} />
-      ) : (
-        <IdiomChallengePage onBackHome={() => setCurrentPage('landing')} />
       )}
+      <Box sx={{ minHeight: '100vh' }}>
+        {currentPage === 'login' && (
+          <LoginPage
+            onLoginSuccess={handleLoginSuccess}
+            onNavigateToRegister={() => setCurrentPage('register')}
+          />
+        )}
+        {currentPage === 'register' && (
+          <RegisterPage
+            onRegisterSuccess={handleRegisterSuccess}
+            onNavigateToLogin={() => setCurrentPage('login')}
+          />
+        )}
+        {currentPage === 'landing' && (
+          <LandingPage
+            user={user}
+            onStartLearning={() => setCurrentPage('challenge')}
+            onVerbChallenge={() => setCurrentPage('verb-challenge')}
+            onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
+            onViewProfile={() => setCurrentPage('profile')}
+            onLogout={handleLogout}
+          />
+        )}
+        {currentPage === 'challenge' && (
+          <ChallengePage onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'verb-challenge' && (
+          <VerbChallengePage onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'idiom-challenge' && (
+          <IdiomChallengePage onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'profile' && (
+          <ProfilePage user={user} onBackHome={() => setCurrentPage('landing')} />
+        )}
+      </Box>
     </ThemeProvider>
   );
 };
