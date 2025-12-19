@@ -16,6 +16,8 @@ interface HeaderProps {
   onNavigateHome?: () => void;
   onNavigateProfile?: () => void;
   onLogout?: () => void;
+  onNavigateLogin?: () => void;
+  onNavigateRegister?: () => void;
   showNavigation?: boolean;
 }
 
@@ -25,6 +27,8 @@ const Header: React.FC<HeaderProps> = ({
   onNavigateHome,
   onNavigateProfile,
   onLogout,
+  onNavigateLogin,
+  onNavigateRegister,
   showNavigation = true,
 }) => {
   return (
@@ -36,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({
 
         <Box sx={{ flexGrow: 1 }} />
 
-        {user && showNavigation && (
+        {showNavigation && (
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
             {currentPage !== 'landing' && (
               <Button
@@ -48,27 +52,54 @@ const Header: React.FC<HeaderProps> = ({
               </Button>
             )}
             
-            <Chip
-              icon={<PersonIcon />}
-              label={user.username}
-              onClick={onNavigateProfile}
-              sx={{
-                bgcolor: 'rgba(255, 255, 255, 0.15)',
-                color: 'white',
-                cursor: 'pointer',
-                '&:hover': {
-                  bgcolor: 'rgba(255, 255, 255, 0.25)',
-                },
-              }}
-            />
-            
-            <Button
-              color="inherit"
-              startIcon={<LogoutIcon />}
-              onClick={onLogout}
-            >
-              Logout
-            </Button>
+            {user ? (
+              <>
+                <Chip
+                  icon={<PersonIcon />}
+                  label={user.username}
+                  onClick={onNavigateProfile}
+                  sx={{
+                    bgcolor: 'rgba(255, 255, 255, 0.15)',
+                    color: 'white',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      bgcolor: 'rgba(255, 255, 255, 0.25)',
+                    },
+                  }}
+                />
+                
+                <Button
+                  color="inherit"
+                  startIcon={<LogoutIcon />}
+                  onClick={onLogout}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button
+                  color="inherit"
+                  onClick={onNavigateLogin}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={{ 
+                    color: 'white', 
+                    borderColor: 'white',
+                    '&:hover': {
+                      borderColor: 'white',
+                      bgcolor: 'rgba(255, 255, 255, 0.1)',
+                    }
+                  }}
+                  onClick={onNavigateRegister}
+                >
+                  Register
+                </Button>
+              </>
+            )}
           </Box>
         )}
       </Toolbar>

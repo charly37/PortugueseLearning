@@ -1,24 +1,22 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Authentication', () => {
-  test('should display login page on first visit', async ({ page }) => {
+  test('should display landing page on first visit with login option', async ({ page }) => {
     await page.goto('/');
     
-    // Verify we're on the login page
-    await expect(page.locator('h1')).toContainText('Login');
-    await expect(page.getByLabel('Email')).toBeVisible();
-    await expect(page.getByLabel('Password')).toBeVisible();
-    await expect(page.getByRole('button', { name: /Login/i })).toBeVisible();
+    // Verify we're on the landing page
+    await expect(page.locator('h1')).toContainText('Welcome');
+    
+    // Verify login button is visible in header
+    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Register' })).toBeVisible();
   });
 
   test('should navigate to register page', async ({ page }) => {
     await page.goto('/');
     
-    // Wait for login page
-    await page.waitForSelector('h1:has-text("Login")');
-    
-    // Click on register link
-    await page.getByRole('button', { name: /Register here/i }).click();
+    // Click Register button in header
+    await page.getByRole('button', { name: 'Register' }).click();
     
     // Wait for register page
     await page.waitForSelector('h1:has-text("Register")');
@@ -40,11 +38,8 @@ test.describe('Authentication', () => {
 
     await page.goto('/');
     
-    // Wait for login page
-    await page.waitForSelector('h1:has-text("Login")');
-    
-    // Navigate to register page
-    await page.getByRole('button', { name: /Register here/i }).click();
+    // Navigate to register page from landing page
+    await page.getByRole('button', { name: 'Register' }).click();
     
     // Wait for register page
     await page.waitForSelector('h1:has-text("Register")');
@@ -67,7 +62,7 @@ test.describe('Authentication', () => {
 
   test('should not register with invalid email', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: /Register here/i }).click();
+    await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
     
     await page.getByLabel('Username').fill('testuser');
@@ -82,7 +77,7 @@ test.describe('Authentication', () => {
 
   test('should not register with password mismatch', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: /Register here/i }).click();
+    await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
     
     await page.getByLabel('Username').fill('testuser');
@@ -98,7 +93,7 @@ test.describe('Authentication', () => {
 
   test('should not register with short password', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: /Register here/i }).click();
+    await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
     
     await page.getByLabel('Username').fill('testuser');
@@ -121,7 +116,7 @@ test.describe('Authentication', () => {
     };
     
     await page.goto('/');
-    await page.getByRole('button', { name: /Register here/i }).click();
+    await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
     
     await page.getByLabel('Username').fill(uniqueUser.username);
@@ -136,8 +131,11 @@ test.describe('Authentication', () => {
     // Logout
     await page.getByRole('button', { name: /Logout/i }).click();
     
-    // Now login with the same credentials
-    await expect(page.locator('h1')).toContainText('Login');
+    // Now login with the same credentials - first navigate to login page
+    await expect(page.locator('h1')).toContainText('Welcome');
+    await page.getByRole('button', { name: 'Login' }).click();
+    await page.waitForSelector('h1:has-text("Login")');
+    
     await page.getByLabel('Email').fill(uniqueUser.email);
     await page.getByLabel('Password').fill(uniqueUser.password);
     await page.getByRole('button', { name: /Login/i }).click();
@@ -149,6 +147,10 @@ test.describe('Authentication', () => {
 
   test('should not login with invalid credentials', async ({ page }) => {
     await page.goto('/');
+    
+    // Navigate to login page
+    await page.getByRole('button', { name: 'Login' }).click();
+    await page.waitForSelector('h1:has-text("Login")');
     
     await page.getByLabel('Email').fill('nonexistent@example.com');
     await page.getByLabel('Password').fill('wrongpassword');
@@ -168,7 +170,7 @@ test.describe('Authentication', () => {
     };
     
     await page.goto('/');
-    await page.getByRole('button', { name: /Register here/i }).click();
+    await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
     
     await page.getByLabel('Username').fill(uniqueUser.username);
@@ -183,18 +185,18 @@ test.describe('Authentication', () => {
     // Logout
     await page.getByRole('button', { name: 'Logout', exact: true }).click();
     
-    // Should redirect to login page
-    await expect(page.locator('h1')).toContainText('Login');
+    // Should stay on landing page, but now as guest
+    await expect(page.locator('h1')).toContainText('Welcome');
+    
+    // Verify logout was successful - Login button should be visible
+    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
   });
 
   test('should navigate back to login from register page', async ({ page }) => {
     await page.goto('/');
     
-    // Wait for login page
-    await page.waitForSelector('h1:has-text("Login")');
-    
-    // Navigate to register page
-    await page.getByRole('button', { name: /Register here/i }).click();
+    // Navigate to register page from landing page
+    await page.getByRole('button', { name: 'Register' }).click();
     
     // Wait for and verify register page
     await page.waitForSelector('h1:has-text("Register")');
@@ -206,7 +208,7 @@ test.describe('Authentication', () => {
     // Wait for login page
     await page.waitForSelector('h1:has-text("Login")');
     
-    // Should be back on login page
+    // Should be on login page
     await expect(page.locator('h1')).toContainText('Login');
   });
 
@@ -219,7 +221,7 @@ test.describe('Authentication', () => {
     };
     
     await page.goto('/');
-    await page.getByRole('button', { name: /Register here/i }).click();
+    await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
     
     await page.getByLabel('Username').fill(uniqueUser.username);

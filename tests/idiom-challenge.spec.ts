@@ -1,26 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { registerAndLogin, login } from './helpers/auth-helper';
 
 test.describe('Idiom Challenge', () => {
-  let testUser: { username: string; email: string; password: string };
-
-  test.beforeAll(async ({ browser }) => {
-    // Create one user for all tests in this suite
-    testUser = {
-      username: `idiomtest_${Date.now()}`,
-      email: `idiomtest_${Date.now()}@example.com`,
-      password: 'testpassword123'
-    };
-
-    // Register the user once
-    const page = await browser.newPage();
-    await registerAndLogin(page, testUser.username, testUser.email, testUser.password);
-    await page.close();
-  });
-
   test.beforeEach(async ({ page }) => {
-    // Login with the existing user before each test
-    await login(page, testUser.email, testUser.password);
+    // Navigate to the app (no login required)
+    await page.goto('http://localhost:8080');
   });
 
   test('should navigate to idiom challenge', async ({ page }) => {

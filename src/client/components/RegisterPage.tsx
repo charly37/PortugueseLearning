@@ -13,9 +13,10 @@ import {
 interface RegisterPageProps {
   onRegisterSuccess: (user: { id: string; username: string; email: string }) => void;
   onNavigateToLogin: () => void;
+  onContinueAsGuest?: () => void;
 }
 
-const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNavigateToLogin }) => {
+const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNavigateToLogin, onContinueAsGuest }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -171,6 +172,18 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
               </Link>
             </Typography>
           </Box>
+
+          {onContinueAsGuest && (
+            <Box sx={{ mt: 2, textAlign: 'center' }}>
+              <Button
+                variant="text"
+                onClick={onContinueAsGuest}
+                sx={{ textTransform: 'none' }}
+              >
+                Continue as Guest
+              </Button>
+            </Box>
+          )}
         </Paper>
       </Box>
     </Container>

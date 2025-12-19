@@ -69,7 +69,7 @@ interface User {
 }
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<PageType>('login');
+  const [currentPage, setCurrentPage] = useState<PageType>('landing');
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -85,13 +85,11 @@ const App: React.FC = () => {
       
       if (data.authenticated && data.user) {
         setUser(data.user);
-        setCurrentPage('landing');
-      } else {
-        setCurrentPage('login');
       }
+      // Always allow access to landing page, even if not authenticated
     } catch (error) {
       console.error('Auth check failed:', error);
-      setCurrentPage('login');
+      // Continue to landing page even if auth check fails
     } finally {
       setLoading(false);
     }
@@ -111,7 +109,7 @@ const App: React.FC = () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
       setUser(null);
-      setCurrentPage('login');
+      setCurrentPage('landing');
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -147,6 +145,8 @@ const App: React.FC = () => {
           onNavigateHome={() => setCurrentPage('landing')}
           onNavigateProfile={() => setCurrentPage('profile')}
           onLogout={handleLogout}
+          onNavigateLogin={() => setCurrentPage('login')}
+          onNavigateRegister={() => setCurrentPage('register')}
         />
       )}
       <Box sx={{ minHeight: '100vh' }}>
@@ -181,8 +181,14 @@ const App: React.FC = () => {
         {currentPage === 'idiom-challenge' && (
           <IdiomChallengePage onBackHome={() => setCurrentPage('landing')} />
         )}
-        {currentPage === 'profile' && (
+        {currentPage === 'profile' && user && (
           <ProfilePage user={user} onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'profile' && !user && (
+          <LoginPage
+            onLoginSuccess={handleLoginSuccess}
+            onNavigateToRegister={() => setCurrentPage('register')}
+          />
         )}
       </Box>
     </ThemeProvider>

@@ -11,11 +11,11 @@ export async function registerAndLogin(
 ): Promise<void> {
   await page.goto('/');
   
-  // Wait for login page to load
-  await page.waitForSelector('h1:has-text("Login")', { timeout: 5000 });
+  // Wait for landing page to load
+  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 5000 });
   
-  // Click register link and wait for navigation
-  await page.getByRole('button', { name: /Register here/i }).click();
+  // Navigate to register page from landing page
+  await page.getByRole('button', { name: 'Register' }).click();
   
   // Wait for register page to load
   await page.waitForSelector('h1:has-text("Register")', { timeout: 5000 });
@@ -43,6 +43,11 @@ export async function login(
 ): Promise<void> {
   await page.goto('/');
   
+  // Wait for landing page and navigate to login page
+  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 5000 });
+  await page.getByRole('button', { name: 'Login' }).click();
+  await page.waitForSelector('h1:has-text("Login")', { timeout: 5000 });
+  
   // Fill in login form
   await page.getByLabel('Email').fill(email);
   await page.getByLabel('Password').fill(password);
@@ -60,6 +65,6 @@ export async function login(
 export async function logout(page: Page): Promise<void> {
   await page.getByRole('button', { name: /Logout/i }).click();
   
-  // Wait for login page to load
-  await page.waitForSelector('text=Login', { timeout: 5000 });
+  // Wait for landing page to load (logout now redirects to landing page)
+  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 5000 });
 }
