@@ -1,5 +1,17 @@
 // Utility functions for challenge submission
 
+/**
+ * Normalize a string by removing accents/diacritics for flexible comparison
+ * Example: "lâmpada" becomes "lampada"
+ */
+export const normalizeString = (str: string): string => {
+  return str
+    .normalize('NFD') // Decompose characters with diacritics
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks
+    .toLowerCase()
+    .trim();
+};
+
 export const submitChallengeAttempt = async (
   challengeId: string,
   challengeType: 'word' | 'idiom' | 'verb',

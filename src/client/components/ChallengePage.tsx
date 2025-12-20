@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip } from '@mui/material';
-import { submitChallengeAttempt } from '../utils/challengeUtils';
+import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
 interface Challenge {
   port: string;
@@ -44,13 +44,13 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ onBackHome }) => {
   const checkAnswer = async () => {
     if (!challenge || !userAnswer.trim()) return;
 
-    const normalizedAnswer = userAnswer.trim().toLowerCase();
-    const normalizedCorrect = challenge.port.toLowerCase();
+    const normalizedAnswer = normalizeString(userAnswer);
+    const normalizedCorrect = normalizeString(challenge.port);
     const isCorrect = normalizedAnswer === normalizedCorrect;
     const timeSpent = Date.now() - startTime;
 
     if (isCorrect) {
-      setFeedback({ type: 'success', message: 'Correct! Well done! 🎉' });
+      setFeedback({ type: 'success', message: `Correct! Well done! 🎉 The answer is: ${challenge.port}` });
       setShowAnswer(true);
     } else {
       setFeedback({ type: 'error', message: `Incorrect. The correct answer is: ${challenge.port}` });

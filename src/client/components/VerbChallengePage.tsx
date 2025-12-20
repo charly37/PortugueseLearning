@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, List, ListItem, ListItemText, Chip, Divider } from '@mui/material';
-import { submitChallengeAttempt } from '../utils/challengeUtils';
+import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
 interface VerbChallenge {
   port: string;
@@ -45,13 +45,13 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ onBackHome }) => 
   const checkAnswer = async () => {
     if (!challenge || !userAnswer.trim()) return;
 
-    const normalizedAnswer = userAnswer.trim().toLowerCase();
-    const normalizedCorrect = challenge.port.toLowerCase();
+    const normalizedAnswer = normalizeString(userAnswer);
+    const normalizedCorrect = normalizeString(challenge.port);
     const isCorrect = normalizedAnswer === normalizedCorrect;
     const timeSpent = Date.now() - startTime;
 
     if (isCorrect) {
-      setFeedback({ type: 'success', message: 'Correct! Well done! 🎉' });
+      setFeedback({ type: 'success', message: `Correct! Well done! 🎉 The answer is: ${challenge.port}` });
       setShowAnswer(true);
     } else {
       setFeedback({ type: 'error', message: `Incorrect. The correct answer is: ${challenge.port}` });
