@@ -6,6 +6,7 @@ import MongoStore from 'connect-mongo';
 import dotenv from 'dotenv';
 import connectDB from './config/database';
 import authRoutes from './routes/auth';
+import challengeRoutes from './routes/challenge';
 
 // Load environment variables
 // In test mode, use .env.test; otherwise use .env
@@ -43,6 +44,9 @@ app.use(
 // Authentication routes
 app.use('/api/auth', authRoutes);
 
+// Challenge routes
+app.use('/api/challenge', challengeRoutes);
+
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));
 
@@ -61,6 +65,22 @@ app.get('/api/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
+app.get('/api/challenges/word', (req: Request, res: Response) => {
+  const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
+  res.json(randomChallenge);
+});
+
+app.get('/api/challenges/verb', (req: Request, res: Response) => {
+  const randomChallenge = verbChallenges[Math.floor(Math.random() * verbChallenges.length)];
+  res.json(randomChallenge);
+});
+
+app.get('/api/challenges/idiom', (req: Request, res: Response) => {
+  const randomChallenge = idiomChallenges[Math.floor(Math.random() * idiomChallenges.length)];
+  res.json(randomChallenge);
+});
+
+// Legacy routes for backward compatibility
 app.get('/api/challenge', (req: Request, res: Response) => {
   const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
   res.json(randomChallenge);

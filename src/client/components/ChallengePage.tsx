@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip } from '@mui/material';
+import { submitChallengeAttempt } from '../utils/challengeUtils';
 
 interface Challenge {
   port: string;
@@ -17,6 +18,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ onBackHome }) => {
   const [userAnswer, setUserAnswer] = useState('');
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [startTime, setStartTime] = useState<number>(Date.now());
 
   const fetchChallenge = async () => {
     setLoading(true);
@@ -24,6 +26,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ onBackHome }) => {
     setUserAnswer('');
     setFeedback(null);
     setShowAnswer(false);
+    setStartTime(Date.now());
     try {
       const response = await fetch('/api/challenge');
       if (!response.ok) {
@@ -38,19 +41,31 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ onBackHome }) => {
     }
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     if (!challenge || !userAnswer.trim()) return;
 
     const normalizedAnswer = userAnswer.trim().toLowerCase();
     const normalizedCorrect = challenge.port.toLowerCase();
+    const isCorrect = normalizedAnswer === normalizedCorrect;
+    const timeSpent = Date.now() - startTime;
 
-    if (normalizedAnswer === normalizedCorrect) {
+    if (isCorrect) {
       setFeedback({ type: 'success', message: 'Correct! Well done! 🎉' });
       setShowAnswer(true);
     } else {
       setFeedback({ type: 'error', message: `Incorrect. The correct answer is: ${challenge.port}` });
       setShowAnswer(true);
     }
+
+    // Submit attempt if user is logged in
+    await submitChallengeAttempt(
+      challenge.francais,
+      'word',
+      isCorrect,
+      userAnswer.trim(),
+      challenge.port,
+      timeSpent
+    );
   };
 
   const handleKeyPress = (event: React.KeyboardEvent) => {

@@ -50,7 +50,9 @@ router.post('/register', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        createdAt: user.createdAt
+        createdAt: user.createdAt,
+        totalScore: user.totalScore,
+        level: user.level
       }
     });
   } catch (error) {
@@ -90,7 +92,9 @@ router.post('/login', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        createdAt: user.createdAt
+        createdAt: user.createdAt,
+        totalScore: user.totalScore,
+        level: user.level
       }
     });
   } catch (error) {
@@ -128,7 +132,9 @@ router.get('/check-auth', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        createdAt: user.createdAt
+        createdAt: user.createdAt,
+        totalScore: user.totalScore,
+        level: user.level
       }
     });
   } catch (error) {
