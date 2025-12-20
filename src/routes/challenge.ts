@@ -47,6 +47,17 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
+    // Initialize progress fields for existing users who don't have them
+    if (!user.progress) {
+      user.progress = {
+        word: { totalAttempts: 0, correctAnswers: 0, streak: 0, completedChallenges: [] },
+        idiom: { totalAttempts: 0, correctAnswers: 0, streak: 0, completedChallenges: [] },
+        verb: { totalAttempts: 0, correctAnswers: 0, streak: 0, completedChallenges: [] }
+      };
+    }
+    if (user.totalScore === undefined) user.totalScore = 0;
+    if (user.level === undefined) user.level = 1;
+
     const progressKey = challengeType as 'word' | 'idiom' | 'verb';
     user.progress[progressKey].totalAttempts += 1;
     
@@ -120,23 +131,37 @@ router.get('/progress', requireAuth, async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
+    // Initialize progress fields for existing users who don't have them
+    if (!user.progress) {
+      user.progress = {
+        word: { totalAttempts: 0, correctAnswers: 0, streak: 0, completedChallenges: [] },
+        idiom: { totalAttempts: 0, correctAnswers: 0, streak: 0, completedChallenges: [] },
+        verb: { totalAttempts: 0, correctAnswers: 0, streak: 0, completedChallenges: [] }
+      };
+    }
+    if (user.totalScore === undefined) user.totalScore = 0;
+    if (user.level === undefined) user.level = 1;
+    
+    // Save the updated user with initialized fields
+    await user.save();
+
     const calculateStats = (progressData: any) => ({
-      totalAttempts: progressData.totalAttempts,
-      correctAnswers: progressData.correctAnswers,
-      accuracy: progressData.totalAttempts > 0 
+      totalAttempts: progressData?.totalAttempts || 0,
+      correctAnswers: progressData?.correctAnswers || 0,
+      accuracy: progressData?.totalAttempts > 0 
         ? Math.round((progressData.correctAnswers / progressData.totalAttempts) * 100)
         : 0,
-      streak: progressData.streak,
-      completedChallenges: progressData.completedChallenges.length,
-      lastAttemptDate: progressData.lastAttemptDate
+      streak: progressData?.streak || 0,
+      completedChallenges: progressData?.completedChallenges?.length || 0,
+      lastAttemptDate: progressData?.lastAttemptDate
     });
 
     res.json({
-      totalScore: user.totalScore,
-      level: user.level,
-      word: calculateStats(user.progress.word),
-      idiom: calculateStats(user.progress.idiom),
-      verb: calculateStats(user.progress.verb)
+      totalScore: user.totalScore || 0,
+      level: user.level || 1,
+      word: calculateStats(user.progress?.word),
+      idiom: calculateStats(user.progress?.idiom),
+      verb: calculateStats(user.progress?.verb)
     });
   } catch (error) {
     console.error('Get progress error:', error);
