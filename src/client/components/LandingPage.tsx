@@ -17,6 +17,9 @@ interface LandingPageProps {
   onIdiomChallenge: () => void;
   onViewProfile: () => void;
   onLogout: () => void;
+  onViewWordStats: () => void;
+  onViewVerbStats: () => void;
+  onViewIdiomStats: () => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ 
@@ -24,6 +27,9 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onStartLearning, 
   onVerbChallenge, 
   onIdiomChallenge,
+  onViewWordStats,
+  onViewVerbStats,
+  onViewIdiomStats,
 }) => {
   return (
     <Box sx={{ pt: 10, pb: 6, bgcolor: 'background.default', minHeight: '100vh' }}>
@@ -80,9 +86,21 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   size="large"
                   onClick={onStartLearning}
                   fullWidth
+                  sx={{ mb: user ? 1 : 0 }}
                 >
                   Start Learning
                 </Button>
+                {user && (
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    size="medium"
+                    onClick={onViewWordStats}
+                    fullWidth
+                  >
+                    My Stats
+                  </Button>
+                )}
               </Paper>
             </Grid>
 
@@ -115,9 +133,21 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   size="large"
                   onClick={onVerbChallenge}
                   fullWidth
+                  sx={{ mb: user ? 1 : 0 }}
                 >
                   Practice Verbs
                 </Button>
+                {user && (
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    size="medium"
+                    onClick={onViewVerbStats}
+                    fullWidth
+                  >
+                    My Stats
+                  </Button>
+                )}
               </Paper>
             </Grid>
 
@@ -150,6 +180,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   onClick={onIdiomChallenge}
                   fullWidth
                   sx={{
+                    mb: user ? 1 : 0,
                     bgcolor: '#ff9800',
                     '&:hover': {
                       bgcolor: '#f57c00',
@@ -158,6 +189,24 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 >
                   Learn Idioms
                 </Button>
+                {user && (
+                  <Button
+                    variant="outlined"
+                    size="medium"
+                    onClick={onViewIdiomStats}
+                    fullWidth
+                    sx={{
+                      color: '#ff9800',
+                      borderColor: '#ff9800',
+                      '&:hover': {
+                        borderColor: '#f57c00',
+                        bgcolor: '#ff980010',
+                      },
+                    }}
+                  >
+                    My Stats
+                  </Button>
+                )}
               </Paper>
             </Grid>
           </Grid>

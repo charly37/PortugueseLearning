@@ -9,6 +9,7 @@ import IdiomChallengePage from './components/IdiomChallengePage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import ProfilePage from './components/ProfilePage';
+import ChallengeStatsPage from './components/ChallengeStatsPage';
 
 const theme = createTheme({
   palette: {
@@ -59,7 +60,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'challenge' | 'verb-challenge' | 'idiom-challenge' | 'login' | 'register' | 'profile';
+type PageType = 'landing' | 'challenge' | 'verb-challenge' | 'idiom-challenge' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
 
 interface User {
   id: string;
@@ -170,6 +171,9 @@ const App: React.FC = () => {
             onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
             onViewProfile={() => setCurrentPage('profile')}
             onLogout={handleLogout}
+            onViewWordStats={() => setCurrentPage('word-stats')}
+            onViewVerbStats={() => setCurrentPage('verb-stats')}
+            onViewIdiomStats={() => setCurrentPage('idiom-stats')}
           />
         )}
         {currentPage === 'challenge' && (
@@ -188,6 +192,27 @@ const App: React.FC = () => {
           <LoginPage
             onLoginSuccess={handleLoginSuccess}
             onNavigateToRegister={() => setCurrentPage('register')}
+          />
+        )}
+        {currentPage === 'word-stats' && (
+          <ChallengeStatsPage 
+            challengeType="word"
+            onBackHome={() => setCurrentPage('landing')}
+            onStartChallenge={() => setCurrentPage('challenge')}
+          />
+        )}
+        {currentPage === 'verb-stats' && (
+          <ChallengeStatsPage 
+            challengeType="verb"
+            onBackHome={() => setCurrentPage('landing')}
+            onStartChallenge={() => setCurrentPage('verb-challenge')}
+          />
+        )}
+        {currentPage === 'idiom-stats' && (
+          <ChallengeStatsPage 
+            challengeType="idiom"
+            onBackHome={() => setCurrentPage('landing')}
+            onStartChallenge={() => setCurrentPage('idiom-challenge')}
           />
         )}
       </Box>
