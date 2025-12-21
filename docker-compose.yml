@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   app:
     image: charly37/portuguese-learning:latest
