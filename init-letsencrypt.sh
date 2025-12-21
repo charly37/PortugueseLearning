@@ -35,7 +35,7 @@ echo
 
 # Create dummy certificate for nginx to start
 echo "### Creating dummy certificate for $DOMAIN..."
-mkdir -p "$DATA_PATH/conf/live/$DOMAIN"
+sudo mkdir -p "$DATA_PATH/conf/live/$DOMAIN"
 docker compose run --rm --entrypoint "\
     openssl req -x509 -nodes -newkey rsa:$RSA_KEY_SIZE -days 1 \
     -keyout /etc/letsencrypt/live/$DOMAIN/privkey.pem \
