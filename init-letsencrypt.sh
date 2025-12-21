@@ -27,9 +27,10 @@ fi
 
 # Download recommended TLS parameters
 echo "### Downloading recommended TLS parameters..."
-mkdir -p "$DATA_PATH/conf"
-curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf > "$DATA_PATH/conf/options-ssl-nginx.conf"
-curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem > "$DATA_PATH/conf/ssl-dhparams.pem"
+sudo mkdir -p "$DATA_PATH/conf"
+sudo curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot-nginx/certbot_nginx/_internal/tls_configs/options-ssl-nginx.conf -o "$DATA_PATH/conf/options-ssl-nginx.conf"
+sudo curl -s https://raw.githubusercontent.com/certbot/certbot/master/certbot/certbot/ssl-dhparams.pem -o "$DATA_PATH/conf/ssl-dhparams.pem"
+sudo chmod -R 755 "$DATA_PATH/conf"
 echo
 
 # Create dummy certificate for nginx to start
