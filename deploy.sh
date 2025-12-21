@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Portuguese Learning - CI/CD Deployment Script
-# This script pulls and deploys the application using Docker
+# This script pulls and deploys the application using Docker Compose
 
 set -e  # Exit on error
 
@@ -11,8 +11,6 @@ echo "========================================"
 
 # Configuration
 IMAGE_NAME="charly37/portuguese-learning:latest"
-CONTAINER_NAME="portuguese-learning-app"
-PORT=3000
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -33,13 +31,20 @@ print_error() {
     echo -e "${RED}✗ $1${NC}"
 }
 
-# Check if Docker is installed
+# Check if Docker and Docker Compose are installed
 print_info "Checking Docker installation..."
 if ! command -v docker &> /dev/null; then
     print_error "Docker is not installed. Please install Docker first."
     exit 1
 fi
 print_success "Docker is installed"
+
+print_info "Checking Docker Compose installation..."
+if ! command -v docker compose &> /dev/null; then
+    print_error "Docker Compose is not installed. Please install Docker Compose first."
+    exit 1
+fi
+print_success "Docker Compose is installed"
 
 # Check for required environment variables
 print_info "Checking required environment variables..."
@@ -55,50 +60,59 @@ if [ -z "$SESSION_SECRET" ]; then
 fi
 print_success "Required environment variables are set"
 
-# Stop and remove existing container if it exists
-print_info "Stopping existing container if running..."
-docker stop $CONTAINER_NAME 2>/dev/null || true
-docker rm $CONTAINER_NAME 2>/dev/null || true
-print_success "Existing container stopped"
+# Check if .env file exists, if not create it
+print_info "Setting up .env file..."
+cat > .env <<EOF
+MONGODB_URI=${MONGODB_URI}
+SESSION_SECRET=${SESSION_SECRET}
+EOF
+print_success ".env file created"
+
+# Stop existing containers if running
+print_info "Stopping existing containers..."
+docker compose down 2>/dev/null || true
+print_success "Existing containers stopped"
 
 # Pull the latest image from Docker Hub
 print_info "Pulling latest image from Docker Hub..."
 docker pull $IMAGE_NAME
 print_success "Image pulled successfully"
 
-# Start the container
-print_info "Starting the application..."
-docker run -d \
-  --name $CONTAINER_NAME \
-  -p $PORT:3000 \
-  -e NODE_ENV=production \
-  -e PORT=3000 \
-  -e MONGODB_URI="$MONGODB_URI" \
-  -e SESSION_SECRET="$SESSION_SECRET" \
-  --restart unless-stopped \
-  $IMAGE_NAME
+# Start the containers with Docker Compose
+print_info "Starting application with Docker Compose..."
+docker compose up -d
 print_success "Application started successfully"
 
 # Wait for the application to be ready
 print_info "Waiting for application to be ready..."
 sleep 5
 
-# Check if the container is running
-if docker ps | grep -q $CONTAINER_NAME; then
-    print_success "Container is running"
+# Check if containers are running
+if docker compose ps | grep -q "Up"; then
+    print_success "Containers are running"
 else
-    print_error "Container failed to start"
-    docker logs $CONTAINER_NAME
+    print_error "Containers failed to start"
+    docker compose logs
+    exit 1
+fi
+
+# Test nginx
+print_info "Testing nginx..."
+if curl -f http://localhost/nginx-health > /dev/null 2>&1; then
+    print_success "Nginx is healthy"
+else
+    print_error "Nginx health check failed"
+    docker compose logs nginx
     exit 1
 fi
 
 # Test the application
 print_info "Testing application health..."
-if curl -f http://localhost:$PORT/api/health > /dev/null 2>&1; then
+if curl -f http://localhost/api/health > /dev/null 2>&1; then
     print_success "Application is healthy and responding"
 else
     print_error "Application health check failed"
-    docker logs $CONTAINER_NAME
+    docker compose logs app
     exit 1
 fi
 
@@ -107,12 +121,16 @@ echo "========================================"
 print_success "Deployment completed successfully!"
 echo "========================================"
 echo ""
-echo "Application is running at: http://localhost:$PORT"
+echo "Application is running at: http://localhost"
+echo "Nginx health check: http://localhost/nginx-health"
 echo ""
 echo "Useful commands:"
-echo "  View logs:        docker logs -f $CONTAINER_NAME"
-echo "  Stop app:         docker stop $CONTAINER_NAME"
-echo "  Restart app:      docker restart $CONTAINER_NAME"
-echo "  View status:      docker ps"
-echo "  Remove app:       docker stop $CONTAINER_NAME && docker rm $CONTAINER_NAME"
+echo "  View all logs:        docker compose logs -f"
+echo "  View nginx logs:      docker compose logs -f nginx"
+echo "  View app logs:        docker compose logs -f app"
+echo "  Stop all:             docker compose down"
+echo "  Restart all:          docker compose restart"
+echo "  Restart nginx:        docker compose restart nginx"
+echo "  Restart app:          docker compose restart app"
+echo "  View status:          docker compose ps"
 echo ""
