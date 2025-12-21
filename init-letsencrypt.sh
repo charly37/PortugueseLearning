@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Initialize Let's Encrypt SSL certificates
-# This script should be run once before starting the services with docker-compose
+# This script should be run once before starting the services with docker compose
 
 if [ -z "$1" ]; then
     echo "Usage: ./init-letsencrypt.sh <domain> [<email>]"
@@ -35,7 +35,7 @@ echo
 # Create dummy certificate for nginx to start
 echo "### Creating dummy certificate for $DOMAIN..."
 mkdir -p "$DATA_PATH/conf/live/$DOMAIN"
-docker-compose run --rm --entrypoint "\
+docker compose run --rm --entrypoint "\
     openssl req -x509 -nodes -newkey rsa:$RSA_KEY_SIZE -days 1 \
     -keyout /etc/letsencrypt/live/$DOMAIN/privkey.pem \
     -out /etc/letsencrypt/live/$DOMAIN/fullchain.pem \
@@ -44,12 +44,12 @@ echo
 
 # Start nginx
 echo "### Starting nginx..."
-docker-compose up --force-recreate -d nginx
+docker compose up --force-recreate -d nginx
 echo
 
 # Delete dummy certificate
 echo "### Deleting dummy certificate for $DOMAIN..."
-docker-compose run --rm --entrypoint "\
+docker compose run --rm --entrypoint "\
     rm -Rf /etc/letsencrypt/live/$DOMAIN && \
     rm -Rf /etc/letsencrypt/archive/$DOMAIN && \
     rm -Rf /etc/letsencrypt/renewal/$DOMAIN.conf" certbot
@@ -71,7 +71,7 @@ else
     STAGING_ARG=""
 fi
 
-docker-compose run --rm --entrypoint "\
+docker compose run --rm --entrypoint "\
     certbot certonly --webroot -w /var/www/certbot \
     $STAGING_ARG \
     $EMAIL_ARG \
@@ -84,7 +84,7 @@ echo
 
 # Reload nginx
 echo "### Reloading nginx..."
-docker-compose exec nginx nginx -s reload
+docker compose exec nginx nginx -s reload
 
 echo "### SSL certificate successfully obtained!"
 echo "### You can now access your application at https://$DOMAIN"
