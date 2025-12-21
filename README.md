@@ -2,6 +2,17 @@
 
 A full-stack web application built with Express.js, TypeScript, and Material-UI.
 
+## Documentation
+
+All detailed documentation is located in the [`docs/`](docs/) folder:
+
+- **[Design Documentation](docs/design.md)** - Architecture and design decisions
+- **[Authentication Setup](docs/AUTHENTICATION_SETUP.md)** - User authentication implementation
+- **[Testing Guide](docs/TESTING.md)** - Playwright testing setup and usage
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Docker and CI/CD deployment
+- **[HTTPS Setup](docs/HTTPS_SETUP.md)** - SSL certificate configuration with Let's Encrypt
+- **[Progress Tracking](docs/PROGRESS_TRACKING.md)** - Development progress and milestones
+
 ## Features
 
 - Express.js backend with TypeScript
