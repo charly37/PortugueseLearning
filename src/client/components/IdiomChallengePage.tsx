@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip } from '@mui/material';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
@@ -19,6 +19,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ onBackHome }) =
   const [feedback, setFeedback] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [startTime, setStartTime] = useState<number>(Date.now());
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const fetchChallenge = async () => {
     setLoading(true);
@@ -73,6 +74,27 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ onBackHome }) =
       checkAnswer();
     }
   };
+
+  // Focus input when new challenge loads
+  useEffect(() => {
+    if (challenge && !showAnswer) {
+      inputRef.current?.focus();
+    }
+  }, [challenge, showAnswer]);
+
+  // Global keyboard listener for when answer is shown
+  useEffect(() => {
+    const handleGlobalKeyPress = (event: KeyboardEvent) => {
+      if (event.key === 'Enter' && showAnswer && challenge) {
+        fetchChallenge();
+      }
+    };
+
+    window.addEventListener('keydown', handleGlobalKeyPress);
+    return () => {
+      window.removeEventListener('keydown', handleGlobalKeyPress);
+    };
+  }, [showAnswer, challenge]);
 
   return (
     <Box sx={{ pt: 10, pb: 6, bgcolor: 'background.default', minHeight: '100vh' }}>
@@ -134,7 +156,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ onBackHome }) =
                   onChange={(e) => setUserAnswer(e.target.value)}
                   onKeyPress={handleKeyPress}
                   disabled={showAnswer}
-                  autoFocus
+                  inputRef={inputRef}
                   sx={{ mb: 2 }}
                 />
 
