@@ -68,20 +68,19 @@ SESSION_SECRET=${SESSION_SECRET}
 EOF
 print_success ".env file created"
 
-# Stop existing containers if running
-print_info "Stopping existing containers..."
-docker compose down 2>/dev/null || true
-print_success "Existing containers stopped"
-
-# Pull the latest image from Docker Hub
-print_info "Pulling latest image from Docker Hub..."
-docker pull $IMAGE_NAME
+# Pull the latest app image from Docker Hub
+print_info "Pulling latest app image from Docker Hub..."
+docker compose pull app
 print_success "Image pulled successfully"
 
-# Start the containers with Docker Compose
-print_info "Starting application with Docker Compose..."
-docker compose up -d
-print_success "Application started successfully"
+# Restart only the app container (nginx stays running)
+print_info "Restarting app container..."
+docker compose up -d app
+print_success "Application restarted successfully"
+
+# Note: nginx container is not restarted to avoid downtime
+# If you need to restart nginx (e.g., after config changes), run:
+#   docker compose restart nginx
 
 # Wait for the application to be ready
 print_info "Waiting for application to be ready..."
