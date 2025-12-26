@@ -13,39 +13,34 @@ test.describe('Landing Page', () => {
     // Verify subtitle
     await expect(page.locator('text=Master Portuguese')).toBeVisible();
     
-    // Verify all three challenge buttons are visible
-    await expect(page.getByRole('button', { name: 'Start Learning' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Practice Verbs' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Learn Idioms' })).toBeVisible();
+    // Verify all challenge buttons are visible (Practice and Challenge for each type)
+    await expect(page.getByRole('button', { name: 'Practice', exact: true }).first()).toBeVisible();
+    await expect(page.getByRole('button', { name: /Challenge \(20 turns\)/ }).first()).toBeVisible();
   });
 
   test('should have all challenge buttons clickable', async ({ page }) => {
-    // Test Word Challenge button
-    const wordButton = page.getByRole('button', { name: 'Start Learning' });
+    // Test Word Practice button
+    const wordButton = page.getByRole('button', { name: 'Practice', exact: true }).first();
     await expect(wordButton).toBeEnabled();
     
-    // Test Verb Challenge button
-    const verbButton = page.getByRole('button', { name: 'Practice Verbs' });
-    await expect(verbButton).toBeEnabled();
-    
-    // Test Idiom Challenge button
-    const idiomButton = page.getByRole('button', { name: 'Learn Idioms' });
-    await expect(idiomButton).toBeEnabled();
+    // Test all challenge buttons
+    const challengeButtons = page.getByRole('button', { name: /Challenge \(20 turns\)/ });
+    await expect(challengeButtons.first()).toBeEnabled();
   });
 
   test('should navigate between different challenges', async ({ page }) => {
-    // Navigate to Word Challenge
-    await page.getByRole('button', { name: 'Start Learning' }).click();
+    // Navigate to Word Practice
+    await page.getByRole('button', { name: 'Practice', exact: true }).first().click();
     await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
     await page.getByRole('button', { name: 'Home' }).click();
     
-    // Navigate to Verb Challenge
-    await page.getByRole('button', { name: 'Practice Verbs' }).click();
+    // Navigate to Verb Practice (second Practice button)
+    await page.getByRole('button', { name: 'Practice', exact: true }).nth(1).click();
     await expect(page.locator('h1')).toContainText('Portuguese Verbs');
     await page.getByRole('button', { name: 'Home' }).click();
     
-    // Navigate to Idiom Challenge
-    await page.getByRole('button', { name: 'Learn Idioms' }).click();
+    // Navigate to Idiom Practice (third Practice button)
+    await page.getByRole('button', { name: 'Practice', exact: true }).nth(2).click();
     await expect(page.locator('h1')).toContainText('Portuguese Idioms');
     await page.getByRole('button', { name: 'Home' }).click();
     

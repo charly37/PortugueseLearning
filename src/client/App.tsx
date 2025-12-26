@@ -60,7 +60,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'challenge' | 'verb-challenge' | 'idiom-challenge' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
+type PageType = 'landing' | 'word-practice' | 'word-challenge' | 'verb-practice' | 'verb-challenge' | 'idiom-practice' | 'idiom-challenge' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
 
 interface User {
   id: string;
@@ -166,8 +166,11 @@ const App: React.FC = () => {
         {currentPage === 'landing' && (
           <LandingPage
             user={user}
-            onStartLearning={() => setCurrentPage('challenge')}
+            onWordPractice={() => setCurrentPage('word-practice')}
+            onWordChallenge={() => setCurrentPage('word-challenge')}
+            onVerbPractice={() => setCurrentPage('verb-practice')}
             onVerbChallenge={() => setCurrentPage('verb-challenge')}
+            onIdiomPractice={() => setCurrentPage('idiom-practice')}
             onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
             onViewProfile={() => setCurrentPage('profile')}
             onLogout={handleLogout}
@@ -176,14 +179,23 @@ const App: React.FC = () => {
             onViewIdiomStats={() => setCurrentPage('idiom-stats')}
           />
         )}
-        {currentPage === 'challenge' && (
-          <ChallengePage onBackHome={() => setCurrentPage('landing')} />
+        {currentPage === 'word-practice' && (
+          <ChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'word-challenge' && (
+          <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'verb-practice' && (
+          <VerbChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} />
         )}
         {currentPage === 'verb-challenge' && (
-          <VerbChallengePage onBackHome={() => setCurrentPage('landing')} />
+          <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} />
+        )}
+        {currentPage === 'idiom-practice' && (
+          <IdiomChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} />
         )}
         {currentPage === 'idiom-challenge' && (
-          <IdiomChallengePage onBackHome={() => setCurrentPage('landing')} />
+          <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} />
         )}
         {currentPage === 'profile' && user && (
           <ProfilePage user={user} onBackHome={() => setCurrentPage('landing')} />
@@ -198,7 +210,7 @@ const App: React.FC = () => {
           <ChallengeStatsPage 
             challengeType="word"
             onBackHome={() => setCurrentPage('landing')}
-            onStartChallenge={() => setCurrentPage('challenge')}
+            onStartChallenge={() => setCurrentPage('word-challenge')}
           />
         )}
         {currentPage === 'verb-stats' && (

@@ -11,18 +11,19 @@ test.describe('Word Challenge', () => {
     // Verify landing page loads
     await expect(page.locator('h1')).toContainText('Welcome');
     
-    // Click Word Challenge button
-    await page.click('button >> text=Start Learning');
+    // Click Word Practice button
+    await page.click('button >> text=Practice >> nth=0');
     
     // Verify we're on the challenge page
     await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
   });
 
   test('should start a word challenge and show French word', async ({ page }) => {
-    await page.click('button >> text=Start Learning');
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.first().click();
     
-    // Click Start Challenge button
-    await page.click('text=Start Challenge');
+    // Click Start Practice button
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -32,8 +33,9 @@ test.describe('Word Challenge', () => {
   });
 
   test('should validate correct answer', async ({ page }) => {
-    await page.click('button >> text=Start Learning');
-    await page.click('text=Start Challenge');
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.first().click();
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -47,8 +49,9 @@ test.describe('Word Challenge', () => {
   });
 
   test('should validate incorrect answer', async ({ page }) => {
-    await page.click('button >> text=Start Learning');
-    await page.click('text=Start Challenge');
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.first().click();
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -63,8 +66,9 @@ test.describe('Word Challenge', () => {
   });
 
   test('should navigate to next challenge', async ({ page }) => {
-    await page.click('button >> text=Start Learning');
-    await page.click('text=Start Challenge');
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.first().click();
+    await page.click('text=Start Practice');
     
     // Wait for challenge and answer it
     await expect(page.locator('text=Français')).toBeVisible();
@@ -80,7 +84,8 @@ test.describe('Word Challenge', () => {
   });
 
   test('should navigate back to home', async ({ page }) => {
-    await page.click('button >> text=Start Learning');
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.first().click();
     
     // Click back to home
     await page.click('button >> text=Home');

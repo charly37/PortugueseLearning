@@ -8,8 +8,9 @@ test.describe('Verb Challenge', () => {
 
   test('should navigate to verb challenge', async ({ page }) => {
     
-    // Click Verb Challenge button
-    await page.click('button >> text=Practice Verbs');
+    // Click Verb Practice button (second Practice button on page)
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.nth(1).click();
     
     // Verify we're on the verb challenge page
     await expect(page.locator('h1')).toContainText('Portuguese Verbs');
@@ -18,10 +19,12 @@ test.describe('Verb Challenge', () => {
 
   test('should start a verb challenge and show French verb', async ({ page }) => {
 
-    await page.click('button >> text=Practice Verbs');
+    // Click Verb Practice button (second Practice button on page)
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.nth(1).click();
     
-    // Click Start Challenge button
-    await page.click('text=Start Challenge');
+    // Click Start Practice button
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -32,8 +35,10 @@ test.describe('Verb Challenge', () => {
 
   test('should validate correct verb answer and show conjugations', async ({ page }) => {
 
-    await page.click('button >> text=Practice Verbs');
-    await page.click('text=Start Challenge');
+    // Click Verb Practice button (second Practice button on page)
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.nth(1).click();
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -48,8 +53,10 @@ test.describe('Verb Challenge', () => {
 
   test('should validate incorrect verb answer', async ({ page }) => {
 
-    await page.click('button >> text=Practice Verbs');
-    await page.click('text=Start Challenge');
+    // Click Verb Practice button (second Practice button on page)
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.nth(1).click();
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -64,8 +71,10 @@ test.describe('Verb Challenge', () => {
 
   test('should support keyboard Enter key to submit', async ({ page }) => {
 
-    await page.click('button >> text=Practice Verbs');
-    await page.click('text=Start Challenge');
+    // Click Verb Practice button (second Practice button on page)
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.nth(1).click();
+    await page.click('text=Start Practice');
     
     // Wait for challenge to load
     await expect(page.locator('text=Français')).toBeVisible();
@@ -80,7 +89,9 @@ test.describe('Verb Challenge', () => {
 
   test('should navigate back to home from verb challenge', async ({ page }) => {
 
-    await page.click('button >> text=Practice Verbs');
+    // Click Verb Practice button (second Practice button on page)
+    const practiceButtons = page.locator('button >> text=Practice');
+    await practiceButtons.nth(1).click();
     
     // Click back to home
     await page.click('button >> text=Home');

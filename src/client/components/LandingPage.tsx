@@ -12,8 +12,11 @@ interface User {
 
 interface LandingPageProps {
   user: User | null;
-  onStartLearning: () => void;
+  onWordPractice: () => void;
+  onWordChallenge: () => void;
+  onVerbPractice: () => void;
   onVerbChallenge: () => void;
+  onIdiomPractice: () => void;
   onIdiomChallenge: () => void;
   onViewProfile: () => void;
   onLogout: () => void;
@@ -24,8 +27,11 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ 
   user, 
-  onStartLearning, 
-  onVerbChallenge, 
+  onWordPractice,
+  onWordChallenge,
+  onVerbPractice,
+  onVerbChallenge,
+  onIdiomPractice,
   onIdiomChallenge,
   onViewWordStats,
   onViewVerbStats,
@@ -84,11 +90,21 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   variant="contained"
                   color="primary"
                   size="large"
-                  onClick={onStartLearning}
+                  onClick={onWordPractice}
+                  fullWidth
+                  sx={{ mb: 1 }}
+                >
+                  Practice
+                </Button>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  onClick={onWordChallenge}
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
                 >
-                  Start Learning
+                  Challenge (20 turns)
                 </Button>
                 {user && (
                   <Button
@@ -131,11 +147,21 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   variant="contained"
                   color="secondary"
                   size="large"
+                  onClick={onVerbPractice}
+                  fullWidth
+                  sx={{ mb: 1 }}
+                >
+                  Practice
+                </Button>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  size="large"
                   onClick={onVerbChallenge}
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
                 >
-                  Practice Verbs
+                  Challenge (20 turns)
                 </Button>
                 {user && (
                   <Button
@@ -177,17 +203,34 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 <Button
                   variant="contained"
                   size="large"
-                  onClick={onIdiomChallenge}
+                  onClick={onIdiomPractice}
                   fullWidth
                   sx={{
-                    mb: user ? 1 : 0,
+                    mb: 1,
                     bgcolor: '#ff9800',
                     '&:hover': {
                       bgcolor: '#f57c00',
                     },
                   }}
                 >
-                  Learn Idioms
+                  Practice
+                </Button>
+                <Button
+                  variant="outlined"
+                  size="large"
+                  onClick={onIdiomChallenge}
+                  fullWidth
+                  sx={{
+                    mb: user ? 1 : 0,
+                    color: '#ff9800',
+                    borderColor: '#ff9800',
+                    '&:hover': {
+                      borderColor: '#f57c00',
+                      bgcolor: '#ff980010',
+                    },
+                  }}
+                >
+                  Challenge (20 turns)
                 </Button>
                 {user && (
                   <Button
