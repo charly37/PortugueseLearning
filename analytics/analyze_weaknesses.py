@@ -41,12 +41,15 @@ class WeaknessAnalyzer:
             Dictionary containing weakness analysis
         """
         cutoff_date = datetime.now() - timedelta(days=days_back)
+        print(f"  Analyzing user {user_id} from {cutoff_date.strftime('%Y-%m-%d')} onwards")
+        print(f"  User ID type: {type(user_id)}")
         
         # Fetch user's attempts
         attempts = list(self.attempts_collection.find({
             'userId': user_id,
             'attemptedAt': {'$gte': cutoff_date}
         }))
+        print(f"  Found {len(attempts)} attempts for user {user_id}")
         
         if not attempts:
             return {
@@ -150,6 +153,14 @@ class WeaknessAnalyzer:
             min_attempts: Minimum attempts required to run analysis
         """
         cutoff_date = datetime.now() - timedelta(days=days_back)
+        print(f"[{datetime.now()}] Analyzing from {cutoff_date.strftime('%Y-%m-%d %H:%M:%S')} to now")
+        print(f"[{datetime.now()}] Minimum attempts required: {min_attempts}")
+        
+        # Check total attempts in database
+        total_attempts = self.attempts_collection.count_documents({})
+        recent_attempts = self.attempts_collection.count_documents({'attemptedAt': {'$gte': cutoff_date}})
+        print(f"[{datetime.now()}] Total attempts in database: {total_attempts}")
+        print(f"[{datetime.now()}] Recent attempts (last {days_back} days): {recent_attempts}")
         
         # Find users with recent activity
         active_user_ids = self.attempts_collection.distinct(
@@ -158,6 +169,7 @@ class WeaknessAnalyzer:
         )
         
         print(f"[{datetime.now()}] Found {len(active_user_ids)} active users")
+        print(f"[{datetime.now()}] Active user IDs: {active_user_ids}")
         
         updated_count = 0
         skipped_count = 0
@@ -170,11 +182,12 @@ class WeaknessAnalyzer:
             })
             
             if attempt_count < min_attempts:
+                print(f"  Skipping user {user_id}: only {attempt_count} attempts (need {min_attempts})")
                 skipped_count += 1
                 continue
             
             # Analyze weaknesses
-            weaknesses = self.analyze_user_weaknesses(str(user_id), days_back)
+            weaknesses = self.analyze_user_weaknesses(user_id, days_back)
             
             # Update user document
             if self.update_user_weaknesses(user_id, weaknesses):
