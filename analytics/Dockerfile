@@ -4,6 +4,9 @@ FROM python:3.11-alpine
 # Set working directory
 WORKDIR /app
 
+# Disable Python output buffering for Docker logs
+ENV PYTHONUNBUFFERED=1
+
 # Copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -12,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY *.py .
 
 # Run the scheduler
-CMD ["python", "scheduler.py"]
+CMD ["python", "-u", "scheduler.py"]
