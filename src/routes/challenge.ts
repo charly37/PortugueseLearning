@@ -65,32 +65,37 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
       user.progress[progressKey].correctAnswers += 1;
       user.totalScore += 10; // 10 points per correct answer
       
-      // Update streak
-      const lastAttempt = user.progress[progressKey].lastAttemptDate;
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-      
-      if (lastAttempt) {
-        const lastAttemptDate = new Date(lastAttempt);
-        lastAttemptDate.setHours(0, 0, 0, 0);
-        const dayDiff = Math.floor((today.getTime() - lastAttemptDate.getTime()) / (1000 * 60 * 60 * 24));
-        
-        if (dayDiff === 1) {
-          user.progress[progressKey].streak += 1;
-        } else if (dayDiff > 1) {
-          user.progress[progressKey].streak = 1;
-        }
-      } else {
-        user.progress[progressKey].streak = 1;
-      }
-      
       // Add to completed challenges if not already there
       if (!user.progress[progressKey].completedChallenges.includes(challengeId)) {
         user.progress[progressKey].completedChallenges.push(challengeId);
       }
+    }
+    
+    // Update streak based on consecutive days of activity (regardless of correct/incorrect)
+    const lastAttempt = user.progress[progressKey].lastAttemptDate;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    if (lastAttempt) {
+      const lastAttemptDate = new Date(lastAttempt);
+      lastAttemptDate.setHours(0, 0, 0, 0);
+      const dayDiff = Math.floor((today.getTime() - lastAttemptDate.getTime()) / (1000 * 60 * 60 * 24));
+      
+      if (dayDiff === 0) {
+        // Same day - maintain current streak (but ensure it's at least 1)
+        if (user.progress[progressKey].streak === 0) {
+          user.progress[progressKey].streak = 1;
+        }
+      } else if (dayDiff === 1) {
+        // Consecutive day - increment streak
+        user.progress[progressKey].streak += 1;
+      } else if (dayDiff > 1) {
+        // Missed days - reset streak to 1
+        user.progress[progressKey].streak = 1;
+      }
     } else {
-      // Reset streak on incorrect answer
-      user.progress[progressKey].streak = 0;
+      // First attempt ever - start streak at 1
+      user.progress[progressKey].streak = 1;
     }
     
     user.progress[progressKey].lastAttemptDate = new Date();
