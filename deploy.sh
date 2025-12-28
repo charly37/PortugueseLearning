@@ -68,15 +68,15 @@ SESSION_SECRET=${SESSION_SECRET}
 EOF
 print_success ".env file created"
 
-# Pull the latest app image from Docker Hub
-print_info "Pulling latest app image from Docker Hub..."
-docker compose pull app
-print_success "Image pulled successfully"
+# Pull the latest images from Docker Hub
+print_info "Pulling latest images from Docker Hub..."
+docker compose pull app analytics
+print_success "Images pulled successfully"
 
-# Restart only the app container (nginx stays running)
-print_info "Restarting app container..."
-docker compose up -d app
-print_success "Application restarted successfully"
+# Restart app and analytics containers (nginx stays running)
+print_info "Restarting app and analytics containers..."
+docker compose up -d app analytics
+print_success "Containers restarted successfully"
 
 # Note: nginx container is not restarted to avoid downtime
 # If you need to restart nginx (e.g., after config changes), run:
@@ -115,6 +115,15 @@ else
     exit 1
 fi
 
+# Check analytics container is running
+print_info "Checking analytics container..."
+if docker compose ps analytics | grep -q "Up"; then
+    print_success "Analytics scheduler is running (runs daily at 2 AM)"
+else
+    print_error "Analytics container failed to start"
+    docker compose logs analytics
+fi
+
 echo ""
 echo "========================================"
 print_success "Deployment completed successfully!"
@@ -127,9 +136,11 @@ echo "Useful commands:"
 echo "  View all logs:        docker compose logs -f"
 echo "  View nginx logs:      docker compose logs -f nginx"
 echo "  View app logs:        docker compose logs -f app"
+echo "  View analytics logs:  docker compose logs -f analytics"
 echo "  Stop all:             docker compose down"
 echo "  Restart all:          docker compose restart"
 echo "  Restart nginx:        docker compose restart nginx"
 echo "  Restart app:          docker compose restart app"
+echo "  Restart analytics:    docker compose restart analytics"
 echo "  View status:          docker compose ps"
 echo ""

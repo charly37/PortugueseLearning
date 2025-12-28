@@ -10,6 +10,14 @@ services:
     networks:
       - app-network
 
+  analytics:
+    image: charly37/portuguese-learning-analytics:latest
+    restart: unless-stopped
+    environment:
+      - MONGODB_URI=${MONGODB_URI}
+    networks:
+      - app-network
+
   nginx:
     image: nginx:alpine
     restart: unless-stopped

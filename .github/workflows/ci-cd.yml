@@ -71,8 +71,11 @@ jobs:
         username: ${{ vars.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build Docker image
+    - name: Build App Docker image
       run: docker build -t portuguese-learning:latest .
+
+    - name: Build Analytics Docker image
+      run: docker build -t portuguese-learning-analytics:latest -f analytics/Dockerfile analytics/
 
     - name: Test Docker image with MongoDB
       run: |
@@ -100,3 +103,5 @@ jobs:
       run: |
         docker tag portuguese-learning:latest ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
+        docker tag portuguese-learning-analytics:latest ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest

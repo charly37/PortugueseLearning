@@ -218,3 +218,61 @@ docker-compose down
 - `npm run test:headed` - Run tests with visible browser
 - `npm run test:ui` - Open Playwright UI for interactive testing
 - `npm run test:report` - View the latest test report
+
+## TODO
+
+### Implement TTL Index for Challenge Attempts Cleanup
+
+To prevent unbounded growth of the `challengeattempts` collection, implement MongoDB TTL (Time To Live) indexing:
+
+**Why:** Without cleanup, the `challengeattempts` collection will grow indefinitely as users practice challenges.
+
+**Solution:** Create a TTL index to automatically delete attempts older than 90 days:
+
+```javascript
+// Run once in MongoDB shell or via Node.js startup script
+db.challengeattempts.createIndex(
+  { "attemptedAt": 1 },
+  { expireAfterSeconds: 7776000 }  // 90 days = 7,776,000 seconds
+)
+```
+
+**Implementation options:**
+1. Add to a database initialization script
+2. Run manually via MongoDB shell
+3. Add to Node.js server startup (check if index exists, create if not)
+
+**Benefits:**
+- Automatic cleanup (no maintenance needed)
+- Keeps 90 days of data (sufficient for weakness analysis in [`analytics/`](analytics/))
+- Bounded storage growth
+- No impact on user documents (they stay small)
+
+## TODO
+
+### Implement TTL Index for Challenge Attempts Cleanup
+
+To prevent unbounded growth of the `challengeattempts` collection, implement MongoDB TTL (Time To Live) indexing:
+
+**Why:** Without cleanup, the `challengeattempts` collection will grow indefinitely as users practice challenges.
+
+**Solution:** Create a TTL index to automatically delete attempts older than 90 days:
+
+```javascript
+// Run once in MongoDB shell or via Node.js startup script
+db.challengeattempts.createIndex(
+  { "attemptedAt": 1 },
+  { expireAfterSeconds: 7776000 }  // 90 days = 7,776,000 seconds
+)
+```
+
+**Implementation options:**
+1. Add to a database initialization script
+2. Run manually via MongoDB shell
+3. Add to Node.js server startup (check if index exists, create if not)
+
+**Benefits:**
+- Automatic cleanup (no maintenance needed)
+- Keeps 90 days of data (sufficient for weakness analysis in [`analytics/`](analytics/))
+- Bounded storage growth
+- No impact on user documents (they stay small)

@@ -1,0 +1,215 @@
+#!/usr/bin/env python3
+"""
+Analyze user challenge attempts to identify weaknesses and update user profiles.
+Runs as a scheduled batch job.
+"""
+
+import os
+import sys
+from datetime import datetime, timedelta
+from collections import defaultdict
+from typing import Dict, List, Any
+from pymongo import MongoClient
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+class WeaknessAnalyzer:
+    def __init__(self):
+        """Initialize MongoDB connection."""
+        mongodb_uri = os.getenv('MONGODB_URI')
+        if not mongodb_uri:
+            raise ValueError('MONGODB_URI not found in environment variables')
+        
+        self.client = MongoClient(mongodb_uri)
+        self.db = self.client.get_default_database()
+        self.users_collection = self.db['users']
+        self.attempts_collection = self.db['challengeattempts']
+        
+        print(f"[{datetime.now()}] Connected to MongoDB")
+    
+    def analyze_user_weaknesses(self, user_id: str, days_back: int = 30) -> Dict[str, Any]:
+        """
+        Analyze a user's challenge attempts to identify weaknesses.
+        
+        Args:
+            user_id: MongoDB ObjectId as string
+            days_back: Number of days to look back for analysis
+            
+        Returns:
+            Dictionary containing weakness analysis
+        """
+        cutoff_date = datetime.now() - timedelta(days=days_back)
+        
+        # Fetch user's attempts
+        attempts = list(self.attempts_collection.find({
+            'userId': user_id,
+            'attemptedAt': {'$gte': cutoff_date}
+        }))
+        
+        if not attempts:
+            return {
+                'totalAttempts': 0,
+                'weakWords': [],
+                'weakCategories': {},
+                'overallAccuracy': 0.0
+            }
+        
+        # Track statistics per word/phrase
+        word_stats = defaultdict(lambda: {'correct': 0, 'total': 0, 'word': ''})
+        category_stats = defaultdict(lambda: {'correct': 0, 'total': 0})
+        
+        for attempt in attempts:
+            challenge_id = attempt.get('challengeId', '')
+            challenge_type = attempt.get('challengeType', 'word')
+            correct = attempt.get('correct', False)
+            correct_answer = attempt.get('correctAnswer', '')
+            
+            # Track per word
+            word_stats[challenge_id]['total'] += 1
+            word_stats[challenge_id]['word'] = correct_answer
+            if correct:
+                word_stats[challenge_id]['correct'] += 1
+            
+            # Track per category
+            category_stats[challenge_type]['total'] += 1
+            if correct:
+                category_stats[challenge_type]['correct'] += 1
+        
+        # Calculate weak words (accuracy < 50% and attempted at least 3 times)
+        weak_words = []
+        for word_id, stats in word_stats.items():
+            if stats['total'] >= 3:
+                accuracy = stats['correct'] / stats['total']
+                if accuracy < 0.5:
+                    weak_words.append({
+                        'challengeId': word_id,
+                        'word': stats['word'],
+                        'accuracy': round(accuracy * 100, 2),
+                        'attempts': stats['total']
+                    })
+        
+        # Sort by lowest accuracy
+        weak_words.sort(key=lambda x: x['accuracy'])
+        
+        # Calculate category accuracies
+        weak_categories = {}
+        for category, stats in category_stats.items():
+            accuracy = stats['correct'] / stats['total'] if stats['total'] > 0 else 0
+            weak_categories[category] = {
+                'accuracy': round(accuracy * 100, 2),
+                'attempts': stats['total']
+            }
+        
+        # Overall accuracy
+        total_attempts = len(attempts)
+        total_correct = sum(1 for a in attempts if a.get('correct', False))
+        overall_accuracy = (total_correct / total_attempts * 100) if total_attempts > 0 else 0
+        
+        return {
+            'totalAttempts': total_attempts,
+            'weakWords': weak_words[:10],  # Top 10 weakest words
+            'weakCategories': weak_categories,
+            'overallAccuracy': round(overall_accuracy, 2),
+            'analyzedAt': datetime.now()
+        }
+    
+    def update_user_weaknesses(self, user_id: str, weaknesses: Dict[str, Any]) -> bool:
+        """
+        Update user document with weakness analysis.
+        
+        Args:
+            user_id: MongoDB ObjectId as string
+            weaknesses: Dictionary containing weakness data
+            
+        Returns:
+            True if update successful
+        """
+        try:
+            result = self.users_collection.update_one(
+                {'_id': user_id},
+                {
+                    '$set': {
+                        'weaknesses': weaknesses,
+                        'weaknessesUpdatedAt': datetime.now()
+                    }
+                }
+            )
+            return result.modified_count > 0 or result.matched_count > 0
+        except Exception as e:
+            print(f"Error updating user {user_id}: {e}")
+            return False
+    
+    def analyze_all_users(self, days_back: int = 30, min_attempts: int = 10):
+        """
+        Analyze weaknesses for all active users.
+        
+        Args:
+            days_back: Number of days to look back for analysis
+            min_attempts: Minimum attempts required to run analysis
+        """
+        cutoff_date = datetime.now() - timedelta(days=days_back)
+        
+        # Find users with recent activity
+        active_user_ids = self.attempts_collection.distinct(
+            'userId',
+            {'attemptedAt': {'$gte': cutoff_date}}
+        )
+        
+        print(f"[{datetime.now()}] Found {len(active_user_ids)} active users")
+        
+        updated_count = 0
+        skipped_count = 0
+        
+        for user_id in active_user_ids:
+            # Check if user has minimum attempts
+            attempt_count = self.attempts_collection.count_documents({
+                'userId': user_id,
+                'attemptedAt': {'$gte': cutoff_date}
+            })
+            
+            if attempt_count < min_attempts:
+                skipped_count += 1
+                continue
+            
+            # Analyze weaknesses
+            weaknesses = self.analyze_user_weaknesses(str(user_id), days_back)
+            
+            # Update user document
+            if self.update_user_weaknesses(user_id, weaknesses):
+                updated_count += 1
+                print(f"  Updated user {user_id}: {weaknesses['totalAttempts']} attempts, "
+                      f"{len(weaknesses['weakWords'])} weak words")
+        
+        print(f"[{datetime.now()}] Analysis complete:")
+        print(f"  - Updated: {updated_count} users")
+        print(f"  - Skipped: {skipped_count} users (insufficient attempts)")
+    
+    def close(self):
+        """Close MongoDB connection."""
+        self.client.close()
+        print(f"[{datetime.now()}] MongoDB connection closed")
+
+
+def main():
+    """Main entry point for the script."""
+    print(f"[{datetime.now()}] Starting weakness analysis job")
+    
+    try:
+        analyzer = WeaknessAnalyzer()
+        
+        # Run analysis for last 30 days, minimum 10 attempts
+        analyzer.analyze_all_users(days_back=30, min_attempts=10)
+        
+        analyzer.close()
+        print(f"[{datetime.now()}] Job completed successfully")
+        sys.exit(0)
+        
+    except Exception as e:
+        print(f"[{datetime.now()}] ERROR: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()
