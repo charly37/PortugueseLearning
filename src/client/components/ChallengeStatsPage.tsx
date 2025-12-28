@@ -43,6 +43,28 @@ interface AttemptHistory {
   attemptedAt: string;
 }
 
+interface WeakWord {
+  challengeId: string;
+  word: string;
+  accuracy: number;
+  attempts: number;
+}
+
+interface WeakCategory {
+  accuracy: number;
+  attempts: number;
+}
+
+interface Weaknesses {
+  totalAttempts: number;
+  weakWords: WeakWord[];
+  weakCategories: {
+    [key: string]: WeakCategory;
+  };
+  overallAccuracy: number;
+  analyzedAt: string;
+}
+
 interface ChallengeStatsPageProps {
   challengeType: 'word' | 'idiom' | 'verb';
   onBackHome: () => void;
@@ -56,6 +78,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
 }) => {
   const [stats, setStats] = useState<ChallengeProgress | null>(null);
   const [history, setHistory] = useState<AttemptHistory[]>([]);
+  const [weaknesses, setWeaknesses] = useState<Weaknesses | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -76,6 +99,11 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
       
       const data = await response.json();
       setStats(data[challengeType]);
+      
+      // Set weaknesses if available
+      if (data.weaknesses) {
+        setWeaknesses(data.weaknesses);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
@@ -412,6 +440,83 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                 </Paper>
               </Grid>
             )}
+
+            {/* Weaknesses Section */}
+            {weaknesses && weaknesses.weakWords && weaknesses.weakWords.length > 0 && (
+              <Grid item xs={12}>
+                <Paper sx={{ p: 3 }}>
+                  <Typography variant="h6" gutterBottom>
+                    Areas for Improvement
+                  </Typography>
+                  <Divider sx={{ mb: 2 }} />
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                    Based on your recent performance, these words need more practice:
+                  </Typography>
+                  <List>
+                    {weaknesses.weakWords.map((weakWord, index) => (
+                      <ListItem 
+                        key={weakWord.challengeId}
+                        sx={{ 
+                          border: '1px solid',
+                          borderColor: 'divider',
+                          borderRadius: 2,
+                          mb: 1,
+                          bgcolor: 'warning.50'
+                        }}
+                      >
+                        <Box sx={{ display: 'flex', alignItems: 'center', mr: 2, minWidth: 30 }}>
+                          <Typography variant="h6" color="text.secondary">
+                            #{index + 1}
+                          </Typography>
+                        </Box>
+                        <ListItemText
+                          primary={
+                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
+                              <Typography variant="body1" fontWeight="medium">
+                                {weakWord.word}
+                              </Typography>
+                              <Chip 
+                                label={`${weakWord.accuracy}% accuracy`}
+                                size="small"
+                                color={weakWord.accuracy < 30 ? 'error' : 'warning'}
+                                variant="outlined"
+                              />
+                              <Chip 
+                                label={`${weakWord.attempts} attempts`}
+                                size="small"
+                                variant="outlined"
+                              />
+                            </Box>
+                          }
+                          secondary={
+                            <Box sx={{ mt: 0.5 }}>
+                              <LinearProgress 
+                                variant="determinate" 
+                                value={weakWord.accuracy} 
+                                sx={{ 
+                                  height: 6, 
+                                  borderRadius: 3,
+                                  backgroundColor: `${color}20`,
+                                  '& .MuiLinearProgress-bar': {
+                                    backgroundColor: weakWord.accuracy < 30 ? 'error.main' : 'warning.main'
+                                  }
+                                }}
+                              />
+                            </Box>
+                          }
+                        />
+                      </ListItem>
+                    ))}
+                  </List>
+                  {weaknesses.analyzedAt && (
+                    <Typography variant="caption" color="text.secondary" sx={{ mt: 2, display: 'block' }}>
+                      Last analyzed: {formatDate(weaknesses.analyzedAt)}
+                    </Typography>
+                  )}
+                </Paper>
+              </Grid>
+            )}
+
           </Grid>
         </Box>
       </Container>

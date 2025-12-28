@@ -9,6 +9,28 @@ interface ChallengeProgress {
   completedChallenges: string[];
 }
 
+interface WeakWord {
+  challengeId: string;
+  word: string;
+  accuracy: number;
+  attempts: number;
+}
+
+interface WeakCategory {
+  accuracy: number;
+  attempts: number;
+}
+
+interface Weaknesses {
+  totalAttempts: number;
+  weakWords: WeakWord[];
+  weakCategories: {
+    [key: string]: WeakCategory;
+  };
+  overallAccuracy: number;
+  analyzedAt: Date;
+}
+
 export interface IUser extends Document {
   username: string;
   email: string;
@@ -21,6 +43,8 @@ export interface IUser extends Document {
   };
   totalScore: number;
   level: number;
+  weaknesses?: Weaknesses;
+  weaknessesUpdatedAt?: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
@@ -79,6 +103,13 @@ const userSchema = new Schema<IUser>({
   level: {
     type: Number,
     default: 1
+  },
+  weaknesses: {
+    type: Schema.Types.Mixed,
+    default: null
+  },
+  weaknessesUpdatedAt: {
+    type: Date
   }
 });
 

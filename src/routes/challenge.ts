@@ -161,7 +161,9 @@ router.get('/progress', requireAuth, async (req: Request, res: Response) => {
       level: user.level || 1,
       word: calculateStats(user.progress?.word),
       idiom: calculateStats(user.progress?.idiom),
-      verb: calculateStats(user.progress?.verb)
+      verb: calculateStats(user.progress?.verb),
+      weaknesses: user.weaknesses || null,
+      weaknessesUpdatedAt: user.weaknessesUpdatedAt || null
     });
   } catch (error) {
     console.error('Get progress error:', error);
