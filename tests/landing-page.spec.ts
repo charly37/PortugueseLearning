@@ -15,7 +15,7 @@ test.describe('Landing Page', () => {
     
     // Verify all challenge buttons are visible (Practice and Challenge for each type)
     await expect(page.getByRole('button', { name: 'Practice', exact: true }).first()).toBeVisible();
-    await expect(page.getByRole('button', { name: /Challenge \(20 turns\)/ }).first()).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Challenge', exact: true }).first()).toBeVisible();
   });
 
   test('should have all challenge buttons clickable', async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe('Landing Page', () => {
     await expect(wordButton).toBeEnabled();
     
     // Test all challenge buttons
-    const challengeButtons = page.getByRole('button', { name: /Challenge \(20 turns\)/ });
+    const challengeButtons = page.getByRole('button', { name: 'Challenge', exact: true });
     await expect(challengeButtons.first()).toBeEnabled();
   });
 

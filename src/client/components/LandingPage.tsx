@@ -104,7 +104,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
                 >
-                  Challenge (20 turns)
+                  Challenge
                 </Button>
                 {user && (
                   <Button
@@ -161,7 +161,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
                 >
-                  Challenge (20 turns)
+                  Challenge
                 </Button>
                 {user && (
                   <Button
@@ -230,7 +230,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     },
                   }}
                 >
-                  Challenge (20 turns)
+                  Challenge
                 </Button>
                 {user && (
                   <Button

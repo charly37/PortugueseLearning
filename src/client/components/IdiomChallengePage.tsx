@@ -36,6 +36,8 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
   const [correctCount, setCorrectCount] = useState(0);
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [attemptHistory, setAttemptHistory] = useState<AttemptDetail[]>([]);
+  const [maxTurns, setMaxTurns] = useState<number>(10);
+  const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const inputRef = useRef<HTMLInputElement>(null);
 
   const fetchChallenge = async () => {
@@ -104,7 +106,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
         timeSpent: timeSpent
       }]);
       
-      if (newTurnCount >= 20) {
+      if (newTurnCount >= maxTurns) {
         setChallengeComplete(true);
       }
     }
@@ -149,7 +151,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
           }}
         >
           <Chip 
-            label={mode === 'challenge' ? `Idiom Challenge - Turn ${turnCount}/20` : 'Idiom Practice'} 
+            label={mode === 'challenge' ? `Idiom Challenge - Turn ${turnCount}/${maxTurns}` : 'Idiom Practice'} 
             sx={{ mb: 2, bgcolor: '#ff9800', color: 'white' }} 
           />
           
@@ -161,10 +163,65 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
             Translate idioms from French to Portuguese
           </Typography>
 
+          {!challengeStarted && mode === 'challenge' && (
+            <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                  Configure Challenge
+                </Typography>
+                <TextField
+                  type="number"
+                  label="Number of turns"
+                  value={maxTurns}
+                  onChange={(e) => setMaxTurns(Math.max(1, Math.min(100, parseInt(e.target.value) || 10)))}
+                  fullWidth
+                  sx={{ mb: 3 }}
+                  inputProps={{ min: 1, max: 100 }}
+                  helperText="Choose between 1 and 100 turns"
+                />
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    onClick={onBackHome}
+                    fullWidth
+                    sx={{
+                      color: '#ff9800',
+                      borderColor: '#ff9800',
+                      '&:hover': {
+                        borderColor: '#f57c00',
+                        bgcolor: '#ff980010',
+                      },
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    onClick={() => {
+                      setChallengeStarted(true);
+                      fetchChallenge();
+                    }}
+                    fullWidth
+                    sx={{
+                      bgcolor: '#ff9800',
+                      '&:hover': {
+                        bgcolor: '#f57c00',
+                      },
+                    }}
+                  >
+                    Start Challenge
+                  </Button>
+                </Box>
+              </CardContent>
+            </Card>
+          )}
+
           {challengeComplete && (
             <>
               <Alert severity="success" sx={{ mb: 3, maxWidth: 700 }}>
-                Challenge completed! You finished all 20 turns. 🎉
+                Challenge completed! You finished all {maxTurns} turns. 🎉
               </Alert>
               <Card sx={{ width: '100%', maxWidth: 700, mb: 3 }} elevation={3}>
                 <CardContent sx={{ p: 4 }}>
@@ -191,7 +248,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                   </Box>
                   <Box sx={{ textAlign: 'center', mb: 3, pb: 3, borderBottom: 1, borderColor: 'divider' }}>
                     <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                      Success Rate: {((correctCount / 20) * 100).toFixed(1)}%
+                      Success Rate: {((correctCount / maxTurns) * 100).toFixed(1)}%
                     </Typography>
                   </Box>
                   
@@ -264,7 +321,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
             </>
           )}
 
-          {!challenge && !loading && !challengeComplete && (
+          {!challenge && !loading && !challengeComplete && challengeStarted && (
             <Button
               variant="contained"
               size="large"

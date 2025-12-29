@@ -36,6 +36,8 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome }) => {
   const [correctCount, setCorrectCount] = useState(0);
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [attemptHistory, setAttemptHistory] = useState<AttemptDetail[]>([]);
+  const [maxTurns, setMaxTurns] = useState<number>(10);
+  const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const inputRef = useRef<HTMLInputElement>(null);
 
   const fetchChallenge = async () => {
@@ -104,7 +106,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome }) => {
         timeSpent: timeSpent
       }]);
       
-      if (newTurnCount >= 20) {
+      if (newTurnCount >= maxTurns) {
         setChallengeComplete(true);
       }
     }
@@ -149,7 +151,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome }) => {
           }}
         >
           <Chip 
-            label={mode === 'challenge' ? `Word Challenge - Turn ${turnCount}/20` : 'Word Practice'} 
+            label={mode === 'challenge' ? `Word Challenge - Turn ${turnCount}/${maxTurns}` : 'Word Practice'} 
             color="primary" 
             sx={{ mb: 2 }} 
           />
@@ -162,10 +164,53 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome }) => {
             Translate from French to Portuguese
           </Typography>
 
+          {!challengeStarted && mode === 'challenge' && (
+            <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                  Configure Challenge
+                </Typography>
+                <TextField
+                  type="number"
+                  label="Number of turns"
+                  value={maxTurns}
+                  onChange={(e) => setMaxTurns(Math.max(1, Math.min(100, parseInt(e.target.value) || 10)))}
+                  fullWidth
+                  sx={{ mb: 3 }}
+                  inputProps={{ min: 1, max: 100 }}
+                  helperText="Choose between 1 and 100 turns"
+                />
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  <Button
+                    variant="outlined"
+                    color="primary"
+                    size="large"
+                    onClick={onBackHome}
+                    fullWidth
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    onClick={() => {
+                      setChallengeStarted(true);
+                      fetchChallenge();
+                    }}
+                    fullWidth
+                  >
+                    Start Challenge
+                  </Button>
+                </Box>
+              </CardContent>
+            </Card>
+          )}
+
           {challengeComplete && (
             <>
               <Alert severity="success" sx={{ mb: 3, maxWidth: 700 }}>
-                Challenge completed! You finished all 20 turns. 🎉
+                Challenge completed! You finished all {maxTurns} turns. 🎉
               </Alert>
               <Card sx={{ width: '100%', maxWidth: 700, mb: 3 }} elevation={3}>
                 <CardContent sx={{ p: 4 }}>
@@ -192,7 +237,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome }) => {
                   </Box>
                   <Box sx={{ textAlign: 'center', mb: 3, pb: 3, borderBottom: 1, borderColor: 'divider' }}>
                     <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                      Success Rate: {((correctCount / 20) * 100).toFixed(1)}%
+                      Success Rate: {((correctCount / maxTurns) * 100).toFixed(1)}%
                     </Typography>
                   </Box>
                   
@@ -260,7 +305,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome }) => {
             </>
           )}
 
-          {!challenge && !loading && !challengeComplete && (
+          {!challenge && !loading && !challengeComplete && challengeStarted && (
             <Button
               variant="contained"
               color="primary"
