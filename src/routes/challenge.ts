@@ -1,8 +1,15 @@
 import express, { Request, Response } from 'express';
 import User from '../models/User';
 import ChallengeAttempt from '../models/ChallengeAttempt';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
+
+// Load challenge data
+const wordChallenges = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/challenges.json'), 'utf-8'));
+const idiomChallenges = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/idiom-challenges.json'), 'utf-8'));
+const verbChallenges = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/verb-challenges.json'), 'utf-8'));
 
 // Middleware to check if user is authenticated
 const requireAuth = (req: Request, res: Response, next: express.NextFunction) => {
@@ -11,6 +18,133 @@ const requireAuth = (req: Request, res: Response, next: express.NextFunction) =>
   }
   next();
 };
+
+// Helper function to shuffle array
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Generate a personalized challenge set
+router.post('/generate', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const { challengeType, totalTurns = 10, weaknessWeight = 0.5 } = req.body;
+    const userId = req.session.userId;
+
+    // Validate input
+    if (!challengeType || !['word', 'idiom', 'verb'].includes(challengeType)) {
+      return res.status(400).json({ message: 'Invalid or missing challenge type' });
+    }
+
+    if (totalTurns < 1 || totalTurns > 50) {
+      return res.status(400).json({ message: 'Total turns must be between 1 and 50' });
+    }
+
+    if (weaknessWeight < 0 || weaknessWeight > 1) {
+      return res.status(400).json({ message: 'Weakness weight must be between 0 and 1' });
+    }
+
+    // Get all challenges for the type
+    let allChallenges: any[];
+    switch (challengeType) {
+      case 'word':
+        allChallenges = wordChallenges;
+        break;
+      case 'idiom':
+        allChallenges = idiomChallenges;
+        break;
+      case 'verb':
+        allChallenges = verbChallenges;
+        break;
+      default:
+        return res.status(400).json({ message: 'Invalid challenge type' });
+    }
+
+    // Ensure we don't request more challenges than available
+    const actualTurns = Math.min(totalTurns, allChallenges.length);
+
+    // Get user's weak areas
+    const weakAreas = await ChallengeAttempt.aggregate([
+      { $match: { userId: userId, challengeType: challengeType } },
+      {
+        $group: {
+          _id: '$challengeId',
+          totalAttempts: { $sum: 1 },
+          correctAttempts: { 
+            $sum: { $cond: ['$correct', 1, 0] } 
+          },
+          lastAttempt: { $max: '$attemptedAt' }
+        }
+      },
+      {
+        $project: {
+          challengeId: '$_id',
+          totalAttempts: 1,
+          correctAttempts: 1,
+          successRate: {
+            $multiply: [
+              { $divide: ['$correctAttempts', '$totalAttempts'] },
+              100
+            ]
+          },
+          lastAttempt: 1
+        }
+      },
+      { $match: { totalAttempts: { $gte: 1 } } },
+      { $sort: { successRate: 1 } } // Lowest success rate first
+    ]);
+
+    // Create a set of weak challenge IDs for quick lookup
+    const weakChallengeIds = new Set(weakAreas.map(w => w.challengeId));
+
+    // Separate challenges into weak and non-weak
+    const weakChallengesList: any[] = [];
+    const otherChallengesList: any[] = [];
+
+    allChallenges.forEach((challenge, index) => {
+      const challengeId = `${challengeType}-${index}`;
+      if (weakChallengeIds.has(challengeId)) {
+        weakChallengesList.push({ ...challenge, id: challengeId });
+      } else {
+        otherChallengesList.push({ ...challenge, id: challengeId });
+      }
+    });
+
+    // Calculate how many from each category
+    const weakCount = Math.min(
+      Math.floor(actualTurns * weaknessWeight),
+      weakChallengesList.length
+    );
+    const otherCount = actualTurns - weakCount;
+
+    // Select challenges
+    const selectedWeak = shuffleArray(weakChallengesList).slice(0, weakCount).map(c => ({ ...c, source: 'weakness' }));
+    const selectedOther = shuffleArray(otherChallengesList).slice(0, otherCount).map(c => ({ ...c, source: 'random' }));
+
+    // Combine and shuffle
+    const finalChallenges = shuffleArray([...selectedWeak, ...selectedOther]);
+
+    res.json({
+      challengeType,
+      challenges: finalChallenges,
+      metadata: {
+        totalChallenges: finalChallenges.length,
+        weaknessChallenges: selectedWeak.length,
+        randomChallenges: selectedOther.length,
+        weaknessWeight: weaknessWeight,
+        availableWeak: weakChallengesList.length,
+        availableTotal: allChallenges.length
+      }
+    });
+  } catch (error) {
+    console.error('Generate challenge set error:', error);
+    res.status(500).json({ message: 'Server error generating challenge set' });
+  }
+});
 
 // Submit a challenge attempt
 router.post('/submit', requireAuth, async (req: Request, res: Response) => {

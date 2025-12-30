@@ -6,9 +6,11 @@ import TimerIcon from '@mui/icons-material/Timer';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
 interface VerbChallenge {
+  id?: string;
   port: string;
   francais: string;
   present: string[];
+  source?: 'weakness' | 'random';
 }
 
 interface AttemptDetail {
@@ -38,8 +40,41 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome 
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [attemptHistory, setAttemptHistory] = useState<AttemptDetail[]>([]);
   const [maxTurns, setMaxTurns] = useState<number>(10);
+  const [difficulty, setDifficulty] = useState<number>(5);
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
+  const [generatedChallenges, setGeneratedChallenges] = useState<VerbChallenge[]>([]);
+  const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const generateChallengeSet = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const weaknessWeight = difficulty / 10;
+      const response = await fetch('/api/challenge/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          challengeType: 'verb',
+          totalTurns: maxTurns,
+          weaknessWeight: weaknessWeight
+        })
+      });
+      if (!response.ok) {
+        throw new Error('Failed to generate challenge set');
+      }
+      const data = await response.json();
+      setGeneratedChallenges(data.challenges);
+      setCurrentChallengeIndex(0);
+      setChallenge(data.challenges[0]);
+      setChallengeStarted(true);
+      setStartTime(Date.now());
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const fetchChallenge = async () => {
     setLoading(true);
@@ -48,17 +83,27 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome 
     setFeedback(null);
     setShowAnswer(false);
     setStartTime(Date.now());
-    try {
-      const response = await fetch('/api/verb-challenge');
-      if (!response.ok) {
-        throw new Error('Failed to fetch verb challenge');
+    
+    if (mode === 'challenge' && generatedChallenges.length > 0) {
+      const nextIndex = currentChallengeIndex + 1;
+      if (nextIndex < generatedChallenges.length) {
+        setCurrentChallengeIndex(nextIndex);
+        setChallenge(generatedChallenges[nextIndex]);
       }
-      const data = await response.json();
-      setChallenge(data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
-    } finally {
       setLoading(false);
+    } else {
+      try {
+        const response = await fetch('/api/verb-challenge');
+        if (!response.ok) {
+          throw new Error('Failed to fetch verb challenge');
+        }
+        const data = await response.json();
+        setChallenge(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -80,7 +125,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome 
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.francais,
+      challenge.id || challenge.francais,
       'verb',
       isCorrect,
       userAnswer.trim(),
@@ -175,12 +220,25 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome 
                   type="number"
                   label="Number of turns"
                   value={maxTurns}
-                  onChange={(e) => setMaxTurns(Math.max(1, Math.min(100, parseInt(e.target.value) || 10)))}
+                  onChange={(e) => setMaxTurns(Math.max(1, Math.min(50, parseInt(e.target.value) || 10)))}
                   fullWidth
                   sx={{ mb: 3 }}
-                  inputProps={{ min: 1, max: 100 }}
-                  helperText="Choose between 1 and 100 turns"
+                  inputProps={{ min: 1, max: 50 }}
+                  helperText="Choose between 1 and 50 turns"
                 />
+                <Box sx={{ mb: 3 }}>
+                  <Typography variant="body2" gutterBottom>
+                    Difficulty: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
+                  </Typography>
+                  <TextField
+                    type="range"
+                    value={difficulty}
+                    onChange={(e) => setDifficulty(parseInt(e.target.value))}
+                    fullWidth
+                    inputProps={{ min: 0, max: 10, step: 1 }}
+                    helperText="0 = random verbs, 10 = focus on your weak areas"
+                  />
+                </Box>
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   <Button
                     variant="outlined"
@@ -195,10 +253,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome 
                     variant="contained"
                     color="secondary"
                     size="large"
-                    onClick={() => {
-                      setChallengeStarted(true);
-                      fetchChallenge();
-                    }}
+                    onClick={generateChallengeSet}
                     fullWidth
                   >
                     Start Challenge
