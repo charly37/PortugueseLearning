@@ -2,6 +2,50 @@ import { test, expect } from '@playwright/test';
 import { registerAndLogin } from './helpers/auth-helper';
 
 test.describe('Challenge Generation', () => {
+  test('should show authentication requirement for unauthenticated users', async ({ page, context }) => {
+    // Clear all cookies and storage to ensure we're not authenticated
+    await context.clearCookies();
+    
+    // Navigate to landing page without authentication
+    await page.goto('http://localhost:8080');
+    
+    // Wait for landing page to load
+    await expect(page.locator('h1')).toContainText('Welcome');
+    
+    // Click on first word challenge button (not practice)
+    const challengeButtons = page.locator('button:has-text("Challenge")');
+    await challengeButtons.first().click();
+    
+    // Wait for navigation to word challenge page
+    await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
+    
+    // Wait for and verify "Account Required" heading is shown
+    await expect(page.locator('h5:has-text("Account Required")')).toBeVisible({ timeout: 10000 });
+    
+    // Verify explanation text is present
+    await expect(page.locator('text=Challenge mode uses personalized difficulty')).toBeVisible();
+    
+    // Verify benefits list is shown
+    await expect(page.locator('text=Track your progress over time')).toBeVisible();
+    await expect(page.locator('text=Get personalized challenges based on your weak areas')).toBeVisible();
+    await expect(page.locator('text=View detailed statistics')).toBeVisible();
+    
+    // Get the card container
+    const card = page.locator('text=Account Required').locator('xpath=ancestor::div[contains(@class, "MuiCard")]').first();
+    
+    // Verify Register and Login buttons are present in the card
+    await expect(card.locator('button:has-text("Register")')).toBeVisible();
+    await expect(card.locator('button:has-text("Login")')).toBeVisible();
+    await expect(card.locator('button:has-text("Back to Home")')).toBeVisible();
+    
+    // Verify configuration UI is NOT shown
+    await expect(page.locator('text=Configure Challenge')).not.toBeVisible();
+    
+    // Test navigation to register page by clicking the Register button in the card
+    await card.locator('button:has-text("Register")').click();
+    await expect(page.locator('h1:has-text("Register")')).toBeVisible();
+  });
+
   test.beforeEach(async ({ page }) => {
     // Register and login is required for challenge generation API
     const timestamp = Date.now() + Math.floor(Math.random() * 10000);

@@ -180,22 +180,22 @@ const App: React.FC = () => {
           />
         )}
         {currentPage === 'word-practice' && (
-          <ChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} />
+          <ChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'word-challenge' && (
-          <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} />
+          <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'verb-practice' && (
-          <VerbChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} />
+          <VerbChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'verb-challenge' && (
-          <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} />
+          <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'idiom-practice' && (
-          <IdiomChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} />
+          <IdiomChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'idiom-challenge' && (
-          <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} />
+          <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'profile' && user && (
           <ProfilePage user={user} onBackHome={() => setCurrentPage('landing')} />

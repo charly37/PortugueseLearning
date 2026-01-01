@@ -20,12 +20,21 @@ interface AttemptDetail {
   timeSpent: number;
 }
 
+interface User {
+  id: string;
+  username: string;
+  email: string;
+}
+
 interface IdiomChallengePageProps {
   mode: 'practice' | 'challenge';
   onBackHome: () => void;
+  user: User | null;
+  onNavigateToLogin: () => void;
+  onNavigateToRegister: () => void;
 }
 
-const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHome }) => {
+const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister }) => {
   const [challenge, setChallenge] = useState<IdiomChallenge | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -60,6 +69,9 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
         })
       });
       if (!response.ok) {
+        if (response.status === 401) {
+          throw new Error('Please log in to use personalized challenges');
+        }
         throw new Error('Failed to generate challenge set');
       }
       const data = await response.json();
@@ -208,7 +220,71 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
             Translate idioms from French to Portuguese
           </Typography>
 
-          {!challengeStarted && mode === 'challenge' && (
+          {!challengeStarted && mode === 'challenge' && !user && (
+            <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                  Account Required
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
+                  Challenge mode uses personalized difficulty based on your performance history to help you improve faster.
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
+                  Create a free account to:
+                </Typography>
+                <Box component="ul" sx={{ mb: 3, pl: 4 }}>
+                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>Track your progress over time</Typography>
+                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>Get personalized challenges based on your weak areas</Typography>
+                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>View detailed statistics and improvement insights</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    onClick={onNavigateToRegister}
+                    fullWidth
+                    sx={{
+                      bgcolor: '#ff9800',
+                      '&:hover': {
+                        bgcolor: '#f57c00',
+                      },
+                    }}
+                  >
+                    Register
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    onClick={onNavigateToLogin}
+                    fullWidth
+                    sx={{
+                      color: '#ff9800',
+                      borderColor: '#ff9800',
+                      '&:hover': {
+                        borderColor: '#f57c00',
+                        bgcolor: '#ff980010',
+                      },
+                    }}
+                  >
+                    Login
+                  </Button>
+                </Box>
+                <Button
+                  variant="text"
+                  size="small"
+                  onClick={onBackHome}
+                  fullWidth
+                  sx={{
+                    color: '#ff9800',
+                  }}
+                >
+                  Back to Home
+                </Button>
+              </CardContent>
+            </Card>
+          )}
+
+          {!challengeStarted && mode === 'challenge' && user && (
             <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
