@@ -8,7 +8,8 @@ import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils
 interface VerbChallenge {
   id?: string;
   port: string;
-  francais: string;
+  fr: string;
+  en: string;
   present: string[];
   source?: 'weakness' | 'random';
 }
@@ -137,7 +138,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.id || challenge.francais,
+      challenge.id || challenge.fr,
       'verb',
       isCorrect,
       userAnswer.trim(),
@@ -157,7 +158,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       
       // Store attempt details
       setAttemptHistory([...attemptHistory, {
-        challengeId: challenge.francais,
+        challengeId: challenge.fr,
         userAnswer: userAnswer.trim(),
         correctAnswer: challenge.port,
         correct: isCorrect,
@@ -445,7 +446,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                     Français
                   </Typography>
                   <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'secondary.main' }}>
-                    {challenge.francais}
+                    {challenge.fr}
                   </Typography>
                 </Box>
                 

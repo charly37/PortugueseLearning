@@ -1,46 +1,57 @@
 [
   {
     "port": "quem me dera",
-    "francais": "j'en rêve - si seulement..."
+    "fr": "j'en rêve - si seulement...",
+    "en": "I wish - if only..."
   },
   {
     "port": "seguir em frente",
-    "francais": "laisser tomber - aller de l'avant"
+    "fr": "laisser tomber - aller de l'avant",
+    "en": "to move on - to go forward"
   },
   {
     "port": "dar um jeito",
-    "francais": "trouver une solution - s'arranger"
+    "fr": "trouver une solution - s'arranger",
+    "en": "to find a way - to work it out"
   },
   {
     "port": "pegando o jeito",
-    "francais": "prendre l'habitude de - maîtriser"
+    "fr": "prendre l'habitude de - maîtriser",
+    "en": "getting the hang of - mastering"
   },
   {
     "port": "ar livre",
-    "francais": "dehors - en plein air"
+    "fr": "dehors - en plein air",
+    "en": "outdoors - open air"
   },
   {
     "port": "deve ser/estar",
-    "francais": "ça doit être - sembler"
+    "fr": "ça doit être - sembler",
+    "en": "it must be - to seem"
   },
   {
     "port": "estar com saudades",
-    "francais": "avoir la nostalgie de - manquer"
+    "fr": "avoir la nostalgie de - manquer",
+    "en": "to miss (someone/something)"
   },
   {
     "port": "fazer falta",
-    "francais": "manquer à quelqu'un"
+    "fr": "manquer à quelqu'un",
+    "en": "to be missed"
   },
   {
     "port": "ficar com",
-    "francais": "garder - rester avec"
+    "fr": "garder - rester avec",
+    "en": "to keep - to stay with"
   },
   {
     "port": "ficar de olho",
-    "francais": "garder un œil sur - surveiller"
+    "fr": "garder un œil sur - surveiller",
+    "en": "to keep an eye on - to watch"
   },
   {
     "port": "obrigado pelo...",
-    "francais": "merci pour..."
+    "fr": "merci pour...",
+    "en": "thanks for..."
   }
 ]

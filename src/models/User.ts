@@ -36,6 +36,7 @@ export interface IUser extends Document {
   email: string;
   password: string;
   createdAt: Date;
+  preferredLanguage: 'fr' | 'en';
   progress: {
     word: ChallengeProgress;
     idiom: ChallengeProgress;
@@ -72,6 +73,11 @@ const userSchema = new Schema<IUser>({
   createdAt: {
     type: Date,
     default: Date.now
+  },
+  preferredLanguage: {
+    type: String,
+    enum: ['fr', 'en'],
+    default: 'fr'
   },
   progress: {
     word: {

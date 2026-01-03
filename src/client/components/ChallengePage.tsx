@@ -8,7 +8,8 @@ import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils
 interface Challenge {
   id?: string;
   port: string;
-  francais: string;
+  fr: string;
+  en: string;
   source?: 'weakness' | 'random';
 }
 
@@ -137,7 +138,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.id || challenge.francais,
+      challenge.id || challenge.fr,
       'word',
       isCorrect,
       userAnswer.trim(),
@@ -157,7 +158,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       
       // Store attempt details
       setAttemptHistory([...attemptHistory, {
-        challengeId: challenge.francais,
+        challengeId: challenge.fr,
         userAnswer: userAnswer.trim(),
         correctAnswer: challenge.port,
         correct: isCorrect,
@@ -445,7 +446,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                     Français
                   </Typography>
                   <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'primary.main' }}>
-                    {challenge.francais}
+                    {challenge.fr}
                   </Typography>
                 </Box>
                 

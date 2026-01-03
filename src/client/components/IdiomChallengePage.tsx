@@ -8,7 +8,8 @@ import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils
 interface IdiomChallenge {
   id?: string;
   port: string;
-  francais: string;
+  fr: string;
+  en: string;
   source?: 'weakness' | 'random';
 }
 
@@ -136,7 +137,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.id || challenge.francais,
+      challenge.id || challenge.fr,
       'idiom',
       isCorrect,
       userAnswer.trim(),
@@ -156,7 +157,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
       
       // Store attempt details
       setAttemptHistory([...attemptHistory, {
-        challengeId: challenge.francais,
+        challengeId: challenge.fr,
         userAnswer: userAnswer.trim(),
         correctAnswer: challenge.port,
         correct: isCorrect,
@@ -479,7 +480,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                     Français
                   </Typography>
                   <Typography variant="h5" component="div" sx={{ fontWeight: 600, color: '#ff9800' }}>
-                    {challenge.francais}
+                    {challenge.fr}
                   </Typography>
                 </Box>
                 
