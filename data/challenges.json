@@ -1,153 +1,1663 @@
 [
-    {"port":"só","fr":"seulement","en":"only"},
-    {"port":"apenas","fr":"à peine","en":"barely/just"},
-    {"port":"demais","fr":"trop","en":"too much"},
-    {"port":"ainda","fr":"encore","en":"still/yet"},
-    {"port":"o quê","fr":"quoi","en":"what"},
-    {"port":"quem","fr":"qui","en":"who"},
-    {"port":"onde","fr":"où","en":"where"},
-    {"port":"quando","fr":"quand","en":"when"},
-    {"port":"porquê","fr":"pourquoi","en":"why"},
-    {"port":"porque","fr":"parce que","en":"because"},
-    {"port":"como","fr":"comment","en":"how"},
-    {"port":"qual","fr":"lequel/laquelle","en":"which"},
-    {"port":"quantos","fr":"combien (masculin pluriel)","en":"how many (masc. plural)"},
-    {"port":"quantas","fr":"combien (féminin pluriel)","en":"how many (fem. plural)"},
-    {"port":"quanto","fr":"combien (masculin)","en":"how much (masc.)"},
-    {"port":"de quem","fr":"à qui/de qui","en":"whose/from whom"},
-    {"port":"comprida","fr":"longue femin. (la table est longue)","en":"long (fem.)"},
-    {"port":"curta","fr":"courte","en":"short (fem.)"},
-    {"port":"bom","fr":"bon (masculin)","en":"good (masc.)"},
-    {"port":"boa","fr":"bonne (féminin, qualite competence efficacite)","en":"good (fem.)"},
-    {"port":"mau","fr":"mauvais (masculin)","en":"bad (masc.)"},
-    {"port":"má","fr":"mauvaise (féminin) - mauvaise idee, mauvaise nouriture","en":"bad (fem.)"},
-    {"port":"grande","fr":"grande idee, ville, maison","en":"big/great"},
-    {"port":"alto","fr":"grand (il est grand)","en":"tall (masc.)"},
-    {"port":"alta","fr":"grande (elle est grande)","en":"tall (fem.)"},
-    {"port":"pequeno","fr":"petit (masculin)","en":"small (masc.)"},
-    {"port":"pequena","fr":"petite (féminin)","en":"small (fem.)"},
-    {"port":"velho","fr":"vieux (masculin)","en":"old (masc.)"},
-    {"port":"velha","fr":"vieille (féminin)","en":"old (fem.)"},
-    {"port":"novo","fr":"nouveau (masculin)","en":"new (masc.)"},
-    {"port":"nova","fr":"nouvelle (féminin)","en":"new (fem.)"},
-    {"port":"alto","fr":"haut (masculin)","en":"high (masc.)"},
-    {"port":"alta","fr":"haute (féminin)","en":"high (fem.)"},
-    {"port":"baixo","fr":"bas (masculin)","en":"low (masc.)"},
-    {"port":"baixa","fr":"basse (féminin)","en":"low (fem.)"},
-    {"port":"largo","fr":"large (masculin)","en":"wide (masc.)"},
-    {"port":"larga","fr":"large (féminin)","en":"wide (fem.)"},
-    {"port":"estreito","fr":"étroit (masculin)","en":"narrow (masc.)"},
-    {"port":"estreita","fr":"étroite (féminin)","en":"narrow (fem.)"},
-    {"port":"forte","fr":"fort/forte (invariant)","en":"strong"},
-    {"port":"fraco","fr":"faible (masculin)","en":"weak (masc.)"},
-    {"port":"fraca","fr":"faible (féminin)","en":"weak (fem.)"},
-    {"port":"rápido","fr":"rapide (masculin)","en":"fast (masc.)"},
-    {"port":"rápida","fr":"rapide (féminin)","en":"fast (fem.)"},
-    {"port":"devagar","fr":"lentement","en":"slowly"},
-    {"port":"cedo","fr":"tôt","en":"early"},
-    {"port":"tarde","fr":"tard","en":"late"},
-    {"port":"muito","fr":"très/beaucoup","en":"very/much"},
-    {"port":"bem","fr":"bien","en":"well"},
-    {"port":"mal","fr":"mal","en":"badly"},
-    {"port":"sempre","fr":"toujours","en":"always"},
-    {"port":"nunca","fr":"jamais","en":"never"},
-    {"port":"às vezes","fr":"parfois","en":"sometimes"},
-    {"port":"hoje","fr":"aujourd'hui","en":"today"},
-    {"port":"amanhã","fr":"demain","en":"tomorrow"},
-    {"port":"ontem","fr":"hier","en":"yesterday"},
-    {"port":"agora","fr":"maintenant","en":"now"},
-    {"port":"em","fr":"dans/sur","en":"in/on"},
-    {"port":"para","fr":"pour/vers","en":"for/to"},
-    {"port":"com","fr":"avec","en":"with"},
-    {"port":"de","fr":"de/du","en":"of/from"},
-    {"port":"a","fr":"à/au","en":"to/at"},
-    {"port":"por","fr":"par/pour","en":"by/for"},
-    {"port":"debaixo","fr":"sous (sous la table)","en":"under"},
-    {"port":"sobre","fr":"sur/à propos de/ au dessus de/environ","en":"on/about/over"},
-    {"port":"entre","fr":"entre","en":"between"},
-    {"port":"sem","fr":"sans","en":"without"},
-    {"port":"carro","fr":"voiture","en":"car"},
-    {"port":"mesa","fr":"table","en":"table"},
-    {"port":"cadeira","fr":"chaise","en":"chair"},
-    {"port":"porta","fr":"porte","en":"door"},
-    {"port":"janela","fr":"fenêtre","en":"window"},
-    {"port":"cama","fr":"lit","en":"bed"},
-    {"port":"livro","fr":"livre","en":"book"},
-    {"port":"caneta","fr":"stylo","en":"pen"},
-    {"port":"papel","fr":"papier","en":"paper"},
-    {"port":"chave","fr":"clé","en":"key"},
-    {"port":"dinheiro","fr":"argent","en":"money"},
-    {"port":"lâmpada","fr":"lampe","en":"lamp"},
-    {"port":"frigorífico","fr":"réfrigérateur","en":"refrigerator"},
-    {"port":"fogão","fr":"cuisinière (four, plaque)","en":"stove"},
-    {"port":"microondas","fr":"micro-ondes","en":"microwave"},
-    {"port":"máquina de lavar","fr":"lave-linge","en":"washing machine"},
-    {"port":"secadora","fr":"sèche-linge","en":"dryer"},
-    {"port":"aspirador","fr":"aspirateur","en":"vacuum cleaner"},
-    {"port":"ventilador","fr":"ventilateur","en":"fan"},
-    {"port":"televisão","fr":"télévision","en":"television"},
-    {"port":"computador","fr":"ordinateur","en":"computer"},
-    {"port":"telemóvel","fr":"téléphone portable","en":"mobile phone"},
-    {"port":"sofá","fr":"canapé","en":"sofa"},
-    {"port":"tapete","fr":"tapis","en":"carpet/rug"},
-    {"port":"espelho","fr":"miroir","en":"mirror"},
-    {"port":"armário","fr":"armoire","en":"closet/wardrobe"},
-    {"port":"gaveta","fr":"tiroir","en":"drawer"},
-    {"port":"toalha","fr":"serviette (salle de bain)","en":"towel"},
-    {"port":"cobertor","fr":"couverture","en":"blanket"},
-    {"port":"o","fr":"le","en":"the (masc.)"},
-    {"port":"a","fr":"la","en":"the (fem.)"},
-    {"port":"os","fr":"les (masculin)","en":"the (masc. plural)"},
-    {"port":"as","fr":"les (féminin)","en":"the (fem. plural)"},
-    {"port":"um","fr":"un","en":"a/an (masc.)"},
-    {"port":"uma","fr":"une","en":"a/an (fem.)"},
-    {"port":"dos","fr":"des (masculin)","en":"some/of the (masc.)"},
-    {"port":"das","fr":"des (féminin)","en":"some/of the (fem.)"},
-    {"port":"eu","fr":"je (sujet)","en":"I"},
-    {"port":"meu","fr":"mon (masc.)","en":"my (masc.)"},
-    {"port":"minha","fr":"mon (fém.)","en":"my (fem.)"},
-    {"port":"me","fr":"me (COD/COI)","en":"me"},
-    {"port":"tu","fr":"tu","en":"you (informal)"},
-    {"port":"você","fr":"vous","en":"you (formal)"},
-    {"port":"teu","fr":"ton (masc.)","en":"your (masc., informal)"},
-    {"port":"tua","fr":"ton (fém.)","en":"your (fem., informal)"},
-    {"port":"te","fr":"te","en":"you (object)"},
-    {"port":"o","fr":"le (masc.)","en":"him/it (masc.)"},
-    {"port":"a","fr":"la (fém.)","en":"her/it (fem.)"},
-    {"port":"lhe","fr":"lui","en":"him/her (indirect)"},
-    {"port":"nós","fr":"nous","en":"we"},
-    {"port":"nosso","fr":"notre (masc.)","en":"our (masc.)"},
-    {"port":"nossa","fr":"notre (fém.)","en":"our (fem.)"},
-    {"port":"nos","fr":"nous","en":"us"},
-    {"port":"vocês","fr":"vous (pl.)","en":"you (plural)"},
-    {"port":"vosso","fr":"votre (masc.)","en":"your (masc., plural)"},
-    {"port":"vossa","fr":"votre (fém.)","en":"your (fem., plural)"},
-    {"port":"os","fr":"les (masc.)","en":"them (masc.)"},
-    {"port":"as","fr":"les (fém.)","en":"them (fem.)"},
-    {"port":"lhes","fr":"leur","en":"them (indirect)"},
-    {"port":"este","fr":"ce","en":"this (masc.)"},
-    {"port":"esta","fr":"cette","en":"this (fem.)"},
-    {"port":"isto","fr":"celui-ci, ceci","en":"this"},
-    {"port":"aquilo","fr":"celui-là, cela","en":"that"},
-    {"port":"alguns","fr":"certains (masc. pluriel), quelques","en":"some (masc. plural)"},
-    {"port":"algumas","fr":"certaines, quelques","en":"some (fem. plural)"},
-    {"port":"algum","fr":"certain (masc. singulier)","en":"some (masc. singular)"},
-    {"port":"nenhum","fr":"aucun (masc.)","en":"none/no (masc.)"},
-    {"port":"nenhuma","fr":"aucune (fém.)","en":"none/no (fem.)"},
-    {"port":"cada","fr":"chaque (chaque jour)","en":"each/every"},
-    {"port":"todo","fr":"tout / entier","en":"all/whole"},
-    {"port":"todos","fr":"tout le monde","en":"everyone/all"},
-    {"port":"tudo","fr":"tout","en":"everything"},
-    {"port":"humano","fr":"humain","en":"human"},
-    {"port":"pessoas","fr":"personnes/gens (formel)","en":"people (formal)"},
-    {"port":"gente","fr":"gens (informel)","en":"people (informal)"},
-    {"port":"amigo","fr":"ami","en":"friend"},
-    {"port":"homem","fr":"homme","en":"man"},
-    {"port":"mulher","fr":"femme","en":"woman"},
-    {"port":"menino","fr":"garçon","en":"boy"},
-    {"port":"menina","fr":"fille","en":"girl"},
-    {"port":"criança","fr":"enfant","en":"child"},
-    {"port":"família","fr":"famille","en":"family"},
-    {"port":"marido","fr":"mari","en":"husband"},
-    {"port":"esposa","fr":"épouse","en":"wife"}
+    {
+        "port": "só",
+        "fr": {
+            "translation": "seulement",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "only",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "apenas",
+        "fr": {
+            "translation": "à peine",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "barely/just",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "demais",
+        "fr": {
+            "translation": "trop",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "too much",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "ainda",
+        "fr": {
+            "translation": "encore",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "still/yet",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "o quê",
+        "fr": {
+            "translation": "quoi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "what",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "quem",
+        "fr": {
+            "translation": "qui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "who",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "onde",
+        "fr": {
+            "translation": "où",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "where",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "quando",
+        "fr": {
+            "translation": "quand",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "when",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "porquê",
+        "fr": {
+            "translation": "pourquoi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "why",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "porque",
+        "fr": {
+            "translation": "parce que",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "because",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "como",
+        "fr": {
+            "translation": "comment",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "how",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "qual",
+        "fr": {
+            "translation": "lequel/laquelle",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "which",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "quantos",
+        "fr": {
+            "translation": "combien (masculin pluriel)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "how many (masc. plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "quantas",
+        "fr": {
+            "translation": "combien (féminin pluriel)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "how many (fem. plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "quanto",
+        "fr": {
+            "translation": "combien (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "how much (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "de quem",
+        "fr": {
+            "translation": "à qui/de qui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "whose/from whom",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "comprida",
+        "fr": {
+            "translation": "longue femin. (la table est longue)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "long (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "curta",
+        "fr": {
+            "translation": "courte",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "short (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "bom",
+        "fr": {
+            "translation": "bon (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "good (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "boa",
+        "fr": {
+            "translation": "bonne (féminin, qualite competence efficacite)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "good (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "mau",
+        "fr": {
+            "translation": "mauvais (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bad (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "má",
+        "fr": {
+            "translation": "mauvaise (féminin) - mauvaise idee, mauvaise nouriture",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bad (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "grande",
+        "fr": {
+            "translation": "grande idee, ville, maison",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "big/great",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "alto",
+        "fr": {
+            "translation": "grand (il est grand)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tall (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "alta",
+        "fr": {
+            "translation": "grande (elle est grande)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tall (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "pequeno",
+        "fr": {
+            "translation": "petit (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "small (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "pequena",
+        "fr": {
+            "translation": "petite (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "small (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "velho",
+        "fr": {
+            "translation": "vieux (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "old (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "velha",
+        "fr": {
+            "translation": "vieille (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "old (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "novo",
+        "fr": {
+            "translation": "nouveau (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "new (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nova",
+        "fr": {
+            "translation": "nouvelle (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "new (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "alto",
+        "fr": {
+            "translation": "haut (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "high (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "alta",
+        "fr": {
+            "translation": "haute (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "high (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "baixo",
+        "fr": {
+            "translation": "bas (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "low (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "baixa",
+        "fr": {
+            "translation": "basse (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "low (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "largo",
+        "fr": {
+            "translation": "large (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wide (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "larga",
+        "fr": {
+            "translation": "large (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wide (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "estreito",
+        "fr": {
+            "translation": "étroit (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "narrow (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "estreita",
+        "fr": {
+            "translation": "étroite (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "narrow (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "forte",
+        "fr": {
+            "translation": "fort/forte (invariant)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "strong",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "fraco",
+        "fr": {
+            "translation": "faible (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "weak (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "fraca",
+        "fr": {
+            "translation": "faible (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "weak (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "rápido",
+        "fr": {
+            "translation": "rapide (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fast (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "rápida",
+        "fr": {
+            "translation": "rapide (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fast (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "devagar",
+        "fr": {
+            "translation": "lentement",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "slowly",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "cedo",
+        "fr": {
+            "translation": "tôt",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "early",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "tarde",
+        "fr": {
+            "translation": "tard",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "late",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "muito",
+        "fr": {
+            "translation": "très/beaucoup",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "very/much",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "bem",
+        "fr": {
+            "translation": "bien",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "well",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "mal",
+        "fr": {
+            "translation": "mal",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "badly",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "sempre",
+        "fr": {
+            "translation": "toujours",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "always",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nunca",
+        "fr": {
+            "translation": "jamais",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "never",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "às vezes",
+        "fr": {
+            "translation": "parfois",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sometimes",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "hoje",
+        "fr": {
+            "translation": "aujourd'hui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "today",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "amanhã",
+        "fr": {
+            "translation": "demain",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tomorrow",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "ontem",
+        "fr": {
+            "translation": "hier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "yesterday",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "agora",
+        "fr": {
+            "translation": "maintenant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "now",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "em",
+        "fr": {
+            "translation": "dans/sur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "in/on",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "para",
+        "fr": {
+            "translation": "pour/vers",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "for/to",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "com",
+        "fr": {
+            "translation": "avec",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "with",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "de",
+        "fr": {
+            "translation": "de/du",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "of/from",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "a",
+        "fr": {
+            "translation": "à/au",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to/at",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "por",
+        "fr": {
+            "translation": "par/pour",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "by/for",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "debaixo",
+        "fr": {
+            "translation": "sous (sous la table)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "under",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "sobre",
+        "fr": {
+            "translation": "sur/à propos de/ au dessus de/environ",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "on/about/over",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "entre",
+        "fr": {
+            "translation": "entre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "between",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "sem",
+        "fr": {
+            "translation": "sans",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "without",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "carro",
+        "fr": {
+            "translation": "voiture",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "car",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "mesa",
+        "fr": {
+            "translation": "table",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "table",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "cadeira",
+        "fr": {
+            "translation": "chaise",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "chair",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "porta",
+        "fr": {
+            "translation": "porte",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "door",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "janela",
+        "fr": {
+            "translation": "fenêtre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "window",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "cama",
+        "fr": {
+            "translation": "lit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bed",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "livro",
+        "fr": {
+            "translation": "livre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "book",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "caneta",
+        "fr": {
+            "translation": "stylo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pen",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "papel",
+        "fr": {
+            "translation": "papier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "paper",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "chave",
+        "fr": {
+            "translation": "clé",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "key",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "dinheiro",
+        "fr": {
+            "translation": "argent",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "money",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "lâmpada",
+        "fr": {
+            "translation": "lampe",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lamp",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "frigorífico",
+        "fr": {
+            "translation": "réfrigérateur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "refrigerator",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "fogão",
+        "fr": {
+            "translation": "cuisinière (four, plaque)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "stove",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "microondas",
+        "fr": {
+            "translation": "micro-ondes",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "microwave",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "máquina de lavar",
+        "fr": {
+            "translation": "lave-linge",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "washing machine",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "secadora",
+        "fr": {
+            "translation": "sèche-linge",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dryer",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "aspirador",
+        "fr": {
+            "translation": "aspirateur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "vacuum cleaner",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "ventilador",
+        "fr": {
+            "translation": "ventilateur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fan",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "televisão",
+        "fr": {
+            "translation": "télévision",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "television",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "computador",
+        "fr": {
+            "translation": "ordinateur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "computer",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "telemóvel",
+        "fr": {
+            "translation": "téléphone portable",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mobile phone",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "sofá",
+        "fr": {
+            "translation": "canapé",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sofa",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "tapete",
+        "fr": {
+            "translation": "tapis",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "carpet/rug",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "espelho",
+        "fr": {
+            "translation": "miroir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mirror",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "armário",
+        "fr": {
+            "translation": "armoire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "closet/wardrobe",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "gaveta",
+        "fr": {
+            "translation": "tiroir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "drawer",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "toalha",
+        "fr": {
+            "translation": "serviette (salle de bain)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "towel",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "cobertor",
+        "fr": {
+            "translation": "couverture",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "blanket",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "o",
+        "fr": {
+            "translation": "le",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "the (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "a",
+        "fr": {
+            "translation": "la",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "the (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "os",
+        "fr": {
+            "translation": "les (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "the (masc. plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "as",
+        "fr": {
+            "translation": "les (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "the (fem. plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "um",
+        "fr": {
+            "translation": "un",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "a/an (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "uma",
+        "fr": {
+            "translation": "une",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "a/an (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "dos",
+        "fr": {
+            "translation": "des (masculin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "some/of the (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "das",
+        "fr": {
+            "translation": "des (féminin)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "some/of the (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "eu",
+        "fr": {
+            "translation": "je (sujet)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "I",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "meu",
+        "fr": {
+            "translation": "mon (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "my (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "minha",
+        "fr": {
+            "translation": "mon (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "my (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "me",
+        "fr": {
+            "translation": "me (COD/COI)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "me",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "tu",
+        "fr": {
+            "translation": "tu",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "you (informal)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "você",
+        "fr": {
+            "translation": "vous",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "you (formal)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "teu",
+        "fr": {
+            "translation": "ton (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "your (masc., informal)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "tua",
+        "fr": {
+            "translation": "ton (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "your (fem., informal)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "te",
+        "fr": {
+            "translation": "te",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "you (object)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "o",
+        "fr": {
+            "translation": "le (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "him/it (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "a",
+        "fr": {
+            "translation": "la (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "her/it (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "lhe",
+        "fr": {
+            "translation": "lui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "him/her (indirect)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nós",
+        "fr": {
+            "translation": "nous",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "we",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nosso",
+        "fr": {
+            "translation": "notre (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "our (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nossa",
+        "fr": {
+            "translation": "notre (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "our (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nos",
+        "fr": {
+            "translation": "nous",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "us",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "vocês",
+        "fr": {
+            "translation": "vous (pl.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "you (plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "vosso",
+        "fr": {
+            "translation": "votre (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "your (masc., plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "vossa",
+        "fr": {
+            "translation": "votre (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "your (fem., plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "os",
+        "fr": {
+            "translation": "les (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "them (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "as",
+        "fr": {
+            "translation": "les (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "them (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "lhes",
+        "fr": {
+            "translation": "leur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "them (indirect)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "este",
+        "fr": {
+            "translation": "ce",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "this (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "esta",
+        "fr": {
+            "translation": "cette",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "this (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "isto",
+        "fr": {
+            "translation": "celui-ci, ceci",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "this",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "aquilo",
+        "fr": {
+            "translation": "celui-là, cela",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "that",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "alguns",
+        "fr": {
+            "translation": "certains (masc. pluriel), quelques",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "some (masc. plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "algumas",
+        "fr": {
+            "translation": "certaines, quelques",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "some (fem. plural)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "algum",
+        "fr": {
+            "translation": "certain (masc. singulier)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "some (masc. singular)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nenhum",
+        "fr": {
+            "translation": "aucun (masc.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "none/no (masc.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "nenhuma",
+        "fr": {
+            "translation": "aucune (fém.)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "none/no (fem.)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "cada",
+        "fr": {
+            "translation": "chaque (chaque jour)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "each/every",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "todo",
+        "fr": {
+            "translation": "tout / entier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "all/whole",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "todos",
+        "fr": {
+            "translation": "tout le monde",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "everyone/all",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "tudo",
+        "fr": {
+            "translation": "tout",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "everything",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "humano",
+        "fr": {
+            "translation": "humain",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "human",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "pessoas",
+        "fr": {
+            "translation": "personnes/gens (formel)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "people (formal)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "gente",
+        "fr": {
+            "translation": "gens (informel)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "people (informal)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "amigo",
+        "fr": {
+            "translation": "ami",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "friend",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "homem",
+        "fr": {
+            "translation": "homme",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "man",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "mulher",
+        "fr": {
+            "translation": "femme",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "woman",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "menino",
+        "fr": {
+            "translation": "garçon",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "boy",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "menina",
+        "fr": {
+            "translation": "fille",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "girl",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "criança",
+        "fr": {
+            "translation": "enfant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "child",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "família",
+        "fr": {
+            "translation": "famille",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "family",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "marido",
+        "fr": {
+            "translation": "mari",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "husband",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "esposa",
+        "fr": {
+            "translation": "épouse",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wife",
+            "note": "todo"
+        }
+    }
 ]

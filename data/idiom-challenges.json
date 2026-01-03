@@ -1,57 +1,123 @@
 [
-  {
-    "port": "quem me dera",
-    "fr": "j'en rêve - si seulement...",
-    "en": "I wish - if only..."
-  },
-  {
-    "port": "seguir em frente",
-    "fr": "laisser tomber - aller de l'avant",
-    "en": "to move on - to go forward"
-  },
-  {
-    "port": "dar um jeito",
-    "fr": "trouver une solution - s'arranger",
-    "en": "to find a way - to work it out"
-  },
-  {
-    "port": "pegando o jeito",
-    "fr": "prendre l'habitude de - maîtriser",
-    "en": "getting the hang of - mastering"
-  },
-  {
-    "port": "ar livre",
-    "fr": "dehors - en plein air",
-    "en": "outdoors - open air"
-  },
-  {
-    "port": "deve ser/estar",
-    "fr": "ça doit être - sembler",
-    "en": "it must be - to seem"
-  },
-  {
-    "port": "estar com saudades",
-    "fr": "avoir la nostalgie de - manquer",
-    "en": "to miss (someone/something)"
-  },
-  {
-    "port": "fazer falta",
-    "fr": "manquer à quelqu'un",
-    "en": "to be missed"
-  },
-  {
-    "port": "ficar com",
-    "fr": "garder - rester avec",
-    "en": "to keep - to stay with"
-  },
-  {
-    "port": "ficar de olho",
-    "fr": "garder un œil sur - surveiller",
-    "en": "to keep an eye on - to watch"
-  },
-  {
-    "port": "obrigado pelo...",
-    "fr": "merci pour...",
-    "en": "thanks for..."
-  }
+    {
+        "port": "quem me dera",
+        "fr": {
+            "translation": "j'en rêve - si seulement...",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "I wish - if only...",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "seguir em frente",
+        "fr": {
+            "translation": "laisser tomber - aller de l'avant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to move on - to go forward",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "dar um jeito",
+        "fr": {
+            "translation": "trouver une solution - s'arranger",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to find a way - to work it out",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "pegando o jeito",
+        "fr": {
+            "translation": "prendre l'habitude de - maîtriser",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "getting the hang of - mastering",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "ar livre",
+        "fr": {
+            "translation": "dehors - en plein air",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "outdoors - open air",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "deve ser/estar",
+        "fr": {
+            "translation": "ça doit être - sembler",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "it must be - to seem",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "estar com saudades",
+        "fr": {
+            "translation": "avoir la nostalgie de - manquer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to miss (someone/something)",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "fazer falta",
+        "fr": {
+            "translation": "manquer à quelqu'un",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be missed",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "ficar com",
+        "fr": {
+            "translation": "garder - rester avec",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to keep - to stay with",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "ficar de olho",
+        "fr": {
+            "translation": "garder un œil sur - surveiller",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to keep an eye on - to watch",
+            "note": "todo"
+        }
+    },
+    {
+        "port": "obrigado pelo...",
+        "fr": {
+            "translation": "merci pour...",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "thanks for...",
+            "note": "todo"
+        }
+    }
 ]

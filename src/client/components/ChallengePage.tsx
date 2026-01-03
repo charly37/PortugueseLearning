@@ -3,13 +3,14 @@ import { Container, Box, Typography, Button, Card, CardContent, CircularProgress
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import TimerIcon from '@mui/icons-material/Timer';
+import InfoIcon from '@mui/icons-material/Info';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
 interface Challenge {
   id?: string;
   port: string;
-  fr: string;
-  en: string;
+  fr: { translation: string; note: string };
+  en: { translation: string; note: string };
   source?: 'weakness' | 'random';
 }
 
@@ -138,7 +139,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.id || challenge.fr,
+      challenge.id || challenge.fr.translation,
       'word',
       isCorrect,
       userAnswer.trim(),
@@ -158,7 +159,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       
       // Store attempt details
       setAttemptHistory([...attemptHistory, {
-        challengeId: challenge.fr,
+        challengeId: challenge.fr.translation,
         userAnswer: userAnswer.trim(),
         correctAnswer: challenge.port,
         correct: isCorrect,
@@ -446,7 +447,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                     Français
                   </Typography>
                   <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'primary.main' }}>
-                    {challenge.fr}
+                    {challenge.fr.translation}
                   </Typography>
                 </Box>
                 
@@ -466,6 +467,18 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                   <Alert severity={feedback.type} sx={{ mb: 2 }}>
                     {feedback.message}
                   </Alert>
+                )}
+
+                {feedback && challenge.fr.note && challenge.fr.note !== "todo" && showAnswer && (
+                  <Box sx={{ mt: 2, mb: 2, p: 2, bgcolor: 'info.lighter', borderRadius: 1, border: '1px solid', borderColor: 'info.light' }}>
+                    <Typography variant="subtitle2" color="info.dark" gutterBottom sx={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <InfoIcon fontSize="small" />
+                      Note
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {challenge.fr.note}
+                    </Typography>
+                  </Box>
                 )}
 
                 {!showAnswer ? (

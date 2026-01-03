@@ -1,518 +1,819 @@
 [
-    {"port":"ser",
-    "fr":"être (état definitif)",
-    "en":"to be (permanent state)",
-    "present":[
-        "eu sou",
-        "tu és",
-        "ele é",
-        "nós somos",
-        "vós sois",
-        "eles são"
+    {
+        "port": "ser",
+        "fr": {
+            "translation": "être (état definitif)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be (permanent state)",
+            "note": "todo"
+        },
+        "present": [
+            "eu sou",
+            "tu és",
+            "ele é",
+            "nós somos",
+            "vós sois",
+            "eles são"
         ]
     },
-    {"port":"ter",
-    "fr":"avoir",
-    "en":"to have",
-    "present":[
-        "eu tenho",
-        "tu tens",
-        "ele tem",
-        "nós temos",
-        "vós tendes",
-        "eles têm"
+    {
+        "port": "ter",
+        "fr": {
+            "translation": "avoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to have",
+            "note": "todo"
+        },
+        "present": [
+            "eu tenho",
+            "tu tens",
+            "ele tem",
+            "nós temos",
+            "vós tendes",
+            "eles têm"
         ]
     },
-    {"port":"estar",
-    "fr":"être (état temporaire)",
-    "en":"to be (temporary state)",
-    "present":[
-        "eu estou",
-        "tu estás",
-        "ele está",
-        "nós estamos",
-        "vós estais",
-        "eles estão"
+    {
+        "port": "estar",
+        "fr": {
+            "translation": "être (état temporaire)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be (temporary state)",
+            "note": "todo"
+        },
+        "present": [
+            "eu estou",
+            "tu estás",
+            "ele está",
+            "nós estamos",
+            "vós estais",
+            "eles estão"
         ]
     },
-    {"port":"fazer",
-    "fr":"faire",
-    "en":"to do/make",
-    "present":[
-        "eu faço",
-        "tu fazes",
-        "ele faz",
-        "nós fazemos",
-        "vós fazeis",
-        "eles fazem"
+    {
+        "port": "fazer",
+        "fr": {
+            "translation": "faire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to do/make",
+            "note": "todo"
+        },
+        "present": [
+            "eu faço",
+            "tu fazes",
+            "ele faz",
+            "nós fazemos",
+            "vós fazeis",
+            "eles fazem"
         ]
     },
-    {"port":"poder",
-    "fr":"pouvoir",
-    "en":"to be able/can",
-    "present":[
-        "eu posso",
-        "tu podes",
-        "ele pode",
-        "nós podemos",
-        "vós podeis",
-        "eles podem"
+    {
+        "port": "poder",
+        "fr": {
+            "translation": "pouvoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be able/can",
+            "note": "todo"
+        },
+        "present": [
+            "eu posso",
+            "tu podes",
+            "ele pode",
+            "nós podemos",
+            "vós podeis",
+            "eles podem"
         ]
     },
-    {"port":"ir",
-    "fr":"aller",
-    "en":"to go",
-    "present":[
-        "eu vou",
-        "tu vais",
-        "ele vai",
-        "nós vamos",
-        "vós ides",
-        "eles vão"
+    {
+        "port": "ir",
+        "fr": {
+            "translation": "aller",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to go",
+            "note": "todo"
+        },
+        "present": [
+            "eu vou",
+            "tu vais",
+            "ele vai",
+            "nós vamos",
+            "vós ides",
+            "eles vão"
         ]
     },
-    {"port":"dar",
-    "fr":"donner",
-    "en":"to give",
-    "present":[
-        "eu dou",
-        "tu dás",
-        "ele dá",
-        "nós damos",
-        "vós dais",
-        "eles dão"
+    {
+        "port": "dar",
+        "fr": {
+            "translation": "donner",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to give",
+            "note": "todo"
+        },
+        "present": [
+            "eu dou",
+            "tu dás",
+            "ele dá",
+            "nós damos",
+            "vós dais",
+            "eles dão"
         ]
     },
-    {"port":"ver",
-    "fr":"voir",
-    "en":"to see",
-    "present":[
-        "eu vejo",
-        "tu vês",
-        "ele vê",
-        "nós vemos",
-        "vós vedes",
-        "eles veem"
+    {
+        "port": "ver",
+        "fr": {
+            "translation": "voir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to see",
+            "note": "todo"
+        },
+        "present": [
+            "eu vejo",
+            "tu vês",
+            "ele vê",
+            "nós vemos",
+            "vós vedes",
+            "eles veem"
         ]
     },
-    {"port":"dizer",
-    "fr":"dire",
-    "en":"to say/tell",
-    "present":[
-        "eu digo",
-        "tu dizes",
-        "ele diz",
-        "nós dizemos",
-        "vós dizeis",
-        "eles dizem"
+    {
+        "port": "dizer",
+        "fr": {
+            "translation": "dire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to say/tell",
+            "note": "todo"
+        },
+        "present": [
+            "eu digo",
+            "tu dizes",
+            "ele diz",
+            "nós dizemos",
+            "vós dizeis",
+            "eles dizem"
         ]
     },
-    {"port":"saber",
-    "fr":"savoir",
-    "en":"to know",
-    "present":[
-        "eu sei",
-        "tu sabes",
-        "ele sabe",
-        "nós sabemos",
-        "vós sabeis",
-        "eles sabem"
+    {
+        "port": "saber",
+        "fr": {
+            "translation": "savoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to know",
+            "note": "todo"
+        },
+        "present": [
+            "eu sei",
+            "tu sabes",
+            "ele sabe",
+            "nós sabemos",
+            "vós sabeis",
+            "eles sabem"
         ]
     },
-    {"port":"vir",
-    "fr":"venir",
-    "en":"to come",
-    "present":[
-        "eu venho",
-        "tu vens",
-        "ele vem",
-        "nós vimos",
-        "vós vindes",
-        "eles vêm"
+    {
+        "port": "vir",
+        "fr": {
+            "translation": "venir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to come",
+            "note": "todo"
+        },
+        "present": [
+            "eu venho",
+            "tu vens",
+            "ele vem",
+            "nós vimos",
+            "vós vindes",
+            "eles vêm"
         ]
     },
-    {"port":"falar",
-    "fr":"parler",
-    "en":"to speak/talk",
-    "present":[
-        "eu falo",
-        "tu falas",
-        "ele fala",
-        "nós falamos",
-        "vós falais",
-        "eles falam"
+    {
+        "port": "falar",
+        "fr": {
+            "translation": "parler",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to speak/talk",
+            "note": "todo"
+        },
+        "present": [
+            "eu falo",
+            "tu falas",
+            "ele fala",
+            "nós falamos",
+            "vós falais",
+            "eles falam"
         ]
     },
-    {"port":"querer",
-    "fr":"vouloir",
-    "en":"to want",
-    "present":[
-        "eu quero",
-        "tu queres",
-        "ele quer",
-        "nós queremos",
-        "vós quereis",
-        "eles querem"
+    {
+        "port": "querer",
+        "fr": {
+            "translation": "vouloir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to want",
+            "note": "todo"
+        },
+        "present": [
+            "eu quero",
+            "tu queres",
+            "ele quer",
+            "nós queremos",
+            "vós quereis",
+            "eles querem"
         ]
     },
-    {"port":"chegar",
-    "fr":"arriver",
-    "en":"to arrive",
-    "present":[
-        "eu chego",
-        "tu chegas",
-        "ele chega",
-        "nós chegamos",
-        "vós chegais",
-        "eles chegam"
+    {
+        "port": "chegar",
+        "fr": {
+            "translation": "arriver",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to arrive",
+            "note": "todo"
+        },
+        "present": [
+            "eu chego",
+            "tu chegas",
+            "ele chega",
+            "nós chegamos",
+            "vós chegais",
+            "eles chegam"
         ]
     },
-    {"port":"ficar",
-    "fr":"rester",
-    "en":"to stay/remain",
-    "present":[
-        "eu fico",
-        "tu ficas",
-        "ele fica",
-        "nós ficamos",
-        "vós ficais",
-        "eles ficam"
+    {
+        "port": "ficar",
+        "fr": {
+            "translation": "rester",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to stay/remain",
+            "note": "todo"
+        },
+        "present": [
+            "eu fico",
+            "tu ficas",
+            "ele fica",
+            "nós ficamos",
+            "vós ficais",
+            "eles ficam"
         ]
     },
-    {"port":"trabalhar",
-    "fr":"travailler",
-    "en":"to work",
-    "present":[
-        "eu trabalho",
-        "tu trabalhas",
-        "ele trabalha",
-        "nós trabalhamos",
-        "vós trabalhais",
-        "eles trabalham"
+    {
+        "port": "trabalhar",
+        "fr": {
+            "translation": "travailler",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to work",
+            "note": "todo"
+        },
+        "present": [
+            "eu trabalho",
+            "tu trabalhas",
+            "ele trabalha",
+            "nós trabalhamos",
+            "vós trabalhais",
+            "eles trabalham"
         ]
     },
-    {"port":"viver",
-    "fr":"vivre",
-    "en":"to live",
-    "present":[
-        "eu vivo",
-        "tu vives",
-        "ele vive",
-        "nós vivemos",
-        "vós viveis",
-        "eles vivem"
+    {
+        "port": "viver",
+        "fr": {
+            "translation": "vivre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to live",
+            "note": "todo"
+        },
+        "present": [
+            "eu vivo",
+            "tu vives",
+            "ele vive",
+            "nós vivemos",
+            "vós viveis",
+            "eles vivem"
         ]
     },
-    {"port":"deixar",
-    "fr":"laisser",
-    "en":"to leave/let",
-    "present":[
-        "eu deixo",
-        "tu deixas",
-        "ele deixa",
-        "nós deixamos",
-        "vós deixais",
-        "eles deixam"
+    {
+        "port": "deixar",
+        "fr": {
+            "translation": "laisser",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to leave/let",
+            "note": "todo"
+        },
+        "present": [
+            "eu deixo",
+            "tu deixas",
+            "ele deixa",
+            "nós deixamos",
+            "vós deixais",
+            "eles deixam"
         ]
     },
-    {"port":"encontrar",
-    "fr":"trouver/rencontrer",
-    "en":"to find/meet",
-    "present":[
-        "eu encontro",
-        "tu encontras",
-        "ele encontra",
-        "nós encontramos",
-        "vós encontrais",
-        "eles encontram"
+    {
+        "port": "encontrar",
+        "fr": {
+            "translation": "trouver/rencontrer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to find/meet",
+            "note": "todo"
+        },
+        "present": [
+            "eu encontro",
+            "tu encontras",
+            "ele encontra",
+            "nós encontramos",
+            "vós encontrais",
+            "eles encontram"
         ]
     },
-    {"port":"pensar",
-    "fr":"penser",
-    "en":"to think",
-    "present":[
-        "eu penso",
-        "tu pensas",
-        "ele pensa",
-        "nós pensamos",
-        "vós pensais",
-        "eles pensam"
+    {
+        "port": "pensar",
+        "fr": {
+            "translation": "penser",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to think",
+            "note": "todo"
+        },
+        "present": [
+            "eu penso",
+            "tu pensas",
+            "ele pensa",
+            "nós pensamos",
+            "vós pensais",
+            "eles pensam"
         ]
     },
-    {"port":"gostar",
-    "fr":"aimer (pas amour)",
-    "en":"to like",
-    "present":[
-        "eu gosto",
-        "tu gostas",
-        "ele gosta",
-        "nós gostamos",
-        "vós gostais",
-        "eles gostam"
+    {
+        "port": "gostar",
+        "fr": {
+            "translation": "aimer (pas amour)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to like",
+            "note": "todo"
+        },
+        "present": [
+            "eu gosto",
+            "tu gostas",
+            "ele gosta",
+            "nós gostamos",
+            "vós gostais",
+            "eles gostam"
         ]
     },
-    {"port":"conhecer",
-    "fr":"connaître (quelqu un,lieu)",
-    "en":"to know (person/place)",
-    "present":[
-        "eu conheço",
-        "tu conheces",
-        "ele conhece",
-        "nós conhecemos",
-        "vós conheceis",
-        "eles conhecem"
+    {
+        "port": "conhecer",
+        "fr": {
+            "translation": "connaître (quelqu un,lieu)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to know (person/place)",
+            "note": "todo"
+        },
+        "present": [
+            "eu conheço",
+            "tu conheces",
+            "ele conhece",
+            "nós conhecemos",
+            "vós conheceis",
+            "eles conhecem"
         ]
     },
-    {"port":"levar",
-    "fr":"porter/emmener",
-    "en":"to take/carry",
-    "present":[
-        "eu levo",
-        "tu levas",
-        "ele leva",
-        "nós levamos",
-        "vós levais",
-        "eles levam"
+    {
+        "port": "levar",
+        "fr": {
+            "translation": "porter/emmener",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to take/carry",
+            "note": "todo"
+        },
+        "present": [
+            "eu levo",
+            "tu levas",
+            "ele leva",
+            "nós levamos",
+            "vós levais",
+            "eles levam"
         ]
     },
-    {"port":"passar",
-    "fr":"passer",
-    "en":"to pass/spend (time)",
-    "present":[
-        "eu passo",
-        "tu passas",
-        "ele passa",
-        "nós passamos",
-        "vós passais",
-        "eles passam"
+    {
+        "port": "passar",
+        "fr": {
+            "translation": "passer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to pass/spend (time)",
+            "note": "todo"
+        },
+        "present": [
+            "eu passo",
+            "tu passas",
+            "ele passa",
+            "nós passamos",
+            "vós passais",
+            "eles passam"
         ]
     },
-    {"port":"entrar",
-    "fr":"entrer",
-    "en":"to enter",
-    "present":[
-        "eu entro",
-        "tu entras",
-        "ele entra",
-        "nós entramos",
-        "vós entrais",
-        "eles entram"
+    {
+        "port": "entrar",
+        "fr": {
+            "translation": "entrer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to enter",
+            "note": "todo"
+        },
+        "present": [
+            "eu entro",
+            "tu entras",
+            "ele entra",
+            "nós entramos",
+            "vós entrais",
+            "eles entram"
         ]
     },
-    {"port":"sair",
-    "fr":"sortir",
-    "en":"to leave/go out",
-    "present":[
-        "eu saio",
-        "tu sais",
-        "ele sai",
-        "nós saímos",
-        "vós saís",
-        "eles saem"
+    {
+        "port": "sair",
+        "fr": {
+            "translation": "sortir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to leave/go out",
+            "note": "todo"
+        },
+        "present": [
+            "eu saio",
+            "tu sais",
+            "ele sai",
+            "nós saímos",
+            "vós saís",
+            "eles saem"
         ]
     },
-    {"port":"começar",
-    "fr":"commencer",
-    "en":"to begin/start",
-    "present":[
-        "eu começo",
-        "tu começas",
-        "ele começa",
-        "nós começamos",
-        "vós começais",
-        "eles começam"
+    {
+        "port": "começar",
+        "fr": {
+            "translation": "commencer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to begin/start",
+            "note": "todo"
+        },
+        "present": [
+            "eu começo",
+            "tu começas",
+            "ele começa",
+            "nós começamos",
+            "vós começais",
+            "eles começam"
         ]
     },
-    {"port":"acabar",
-    "fr":"finir/terminer",
-    "en":"to finish/end",
-    "present":[
-        "eu acabo",
-        "tu acabas",
-        "ele acaba",
-        "nós acabamos",
-        "vós acabais",
-        "eles acabam"
+    {
+        "port": "acabar",
+        "fr": {
+            "translation": "finir/terminer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to finish/end",
+            "note": "todo"
+        },
+        "present": [
+            "eu acabo",
+            "tu acabas",
+            "ele acaba",
+            "nós acabamos",
+            "vós acabais",
+            "eles acabam"
         ]
     },
-    {"port":"morrer",
-    "fr":"mourir",
-    "en":"to die",
-    "present":[
-        "eu morro",
-        "tu morres",
-        "ele morre",
-        "nós morremos",
-        "vós morreis",
-        "eles morrem"
+    {
+        "port": "morrer",
+        "fr": {
+            "translation": "mourir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to die",
+            "note": "todo"
+        },
+        "present": [
+            "eu morro",
+            "tu morres",
+            "ele morre",
+            "nós morremos",
+            "vós morreis",
+            "eles morrem"
         ]
     },
-    {"port":"nascer",
-    "fr":"naître",
-    "en":"to be born",
-    "present":[
-        "eu nasço",
-        "tu nasces",
-        "ele nasce",
-        "nós nascemos",
-        "vós nasceis",
-        "eles nascem"
+    {
+        "port": "nascer",
+        "fr": {
+            "translation": "naître",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be born",
+            "note": "todo"
+        },
+        "present": [
+            "eu nasço",
+            "tu nasces",
+            "ele nasce",
+            "nós nascemos",
+            "vós nasceis",
+            "eles nascem"
         ]
     },
-    {"port":"comprar",
-    "fr":"acheter",
-    "en":"to buy",
-    "present":[
-        "eu compro",
-        "tu compras",
-        "ele compra",
-        "nós compramos",
-        "vós comprais",
-        "eles compram"
+    {
+        "port": "comprar",
+        "fr": {
+            "translation": "acheter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to buy",
+            "note": "todo"
+        },
+        "present": [
+            "eu compro",
+            "tu compras",
+            "ele compra",
+            "nós compramos",
+            "vós comprais",
+            "eles compram"
         ]
     },
-    {"port":"vender",
-    "fr":"vendre",
-    "en":"to sell",
-    "present":[
-        "eu vendo",
-        "tu vendes",
-        "ele vende",
-        "nós vendemos",
-        "vós vendeis",
-        "eles vendem"
+    {
+        "port": "vender",
+        "fr": {
+            "translation": "vendre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to sell",
+            "note": "todo"
+        },
+        "present": [
+            "eu vendo",
+            "tu vendes",
+            "ele vende",
+            "nós vendemos",
+            "vós vendeis",
+            "eles vendem"
         ]
     },
-    {"port":"estudar",
-    "fr":"étudier",
-    "en":"to study",
-    "present":[
-        "eu estudo",
-        "tu estudas",
-        "ele estuda",
-        "nós estudamos",
-        "vós estudais",
-        "eles estudam"
+    {
+        "port": "estudar",
+        "fr": {
+            "translation": "étudier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to study",
+            "note": "todo"
+        },
+        "present": [
+            "eu estudo",
+            "tu estudas",
+            "ele estuda",
+            "nós estudamos",
+            "vós estudais",
+            "eles estudam"
         ]
     },
-    {"port":"aprender",
-    "fr":"apprendre",
-    "en":"to learn",
-    "present":[
-        "eu aprendo",
-        "tu aprendes",
-        "ele aprende",
-        "nós aprendemos",
-        "vós aprendeis",
-        "eles aprendem"
+    {
+        "port": "aprender",
+        "fr": {
+            "translation": "apprendre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to learn",
+            "note": "todo"
+        },
+        "present": [
+            "eu aprendo",
+            "tu aprendes",
+            "ele aprende",
+            "nós aprendemos",
+            "vós aprendeis",
+            "eles aprendem"
         ]
     },
-    {"port":"ensinar",
-    "fr":"enseigner",
-    "en":"to teach",
-    "present":[
-        "eu ensino",
-        "tu ensinas",
-        "ele ensina",
-        "nós ensinamos",
-        "vós ensinais",
-        "eles ensinam"
+    {
+        "port": "ensinar",
+        "fr": {
+            "translation": "enseigner",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to teach",
+            "note": "todo"
+        },
+        "present": [
+            "eu ensino",
+            "tu ensinas",
+            "ele ensina",
+            "nós ensinamos",
+            "vós ensinais",
+            "eles ensinam"
         ]
     },
-    {"port":"ouvir",
-    "fr":"entendre/écouter",
-    "en":"to hear/listen",
-    "present":[
-        "eu ouço",
-        "tu ouves",
-        "ele ouve",
-        "nós ouvimos",
-        "vós ouvis",
-        "eles ouvem"
+    {
+        "port": "ouvir",
+        "fr": {
+            "translation": "entendre/écouter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to hear/listen",
+            "note": "todo"
+        },
+        "present": [
+            "eu ouço",
+            "tu ouves",
+            "ele ouve",
+            "nós ouvimos",
+            "vós ouvis",
+            "eles ouvem"
         ]
     },
-    {"port":"comer",
-    "fr":"manger",
-    "en":"to eat",
-    "present":[
-        "eu como",
-        "tu comes",
-        "ele come",
-        "nós comemos",
-        "vós comeis",
-        "eles comem"
+    {
+        "port": "comer",
+        "fr": {
+            "translation": "manger",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to eat",
+            "note": "todo"
+        },
+        "present": [
+            "eu como",
+            "tu comes",
+            "ele come",
+            "nós comemos",
+            "vós comeis",
+            "eles comem"
         ]
     },
-    {"port":"beber",
-    "fr":"boire",
-    "en":"to drink",
-    "present":[
-        "eu bebo",
-        "tu bebes",
-        "ele bebe",
-        "nós bebemos",
-        "vós bebeis",
-        "eles bebem"
+    {
+        "port": "beber",
+        "fr": {
+            "translation": "boire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to drink",
+            "note": "todo"
+        },
+        "present": [
+            "eu bebo",
+            "tu bebes",
+            "ele bebe",
+            "nós bebemos",
+            "vós bebeis",
+            "eles bebem"
         ]
     },
-    {"port":"dormir",
-    "fr":"dormir",
-    "en":"to sleep",
-    "present":[
-        "eu durmo",
-        "tu dormes",
-        "ele dorme",
-        "nós dormimos",
-        "vós dormis",
-        "eles dormem"
+    {
+        "port": "dormir",
+        "fr": {
+            "translation": "dormir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to sleep",
+            "note": "todo"
+        },
+        "present": [
+            "eu durmo",
+            "tu dormes",
+            "ele dorme",
+            "nós dormimos",
+            "vós dormis",
+            "eles dormem"
         ]
     },
-    {"port":"acordar",
-    "fr":"se réveiller",
-    "en":"to wake up",
-    "present":[
-        "eu acordo",
-        "tu acordas",
-        "ele acorda",
-        "nós acordamos",
-        "vós acordais",
-        "eles acordam"
+    {
+        "port": "acordar",
+        "fr": {
+            "translation": "se réveiller",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to wake up",
+            "note": "todo"
+        },
+        "present": [
+            "eu acordo",
+            "tu acordas",
+            "ele acorda",
+            "nós acordamos",
+            "vós acordais",
+            "eles acordam"
         ]
     },
-    {"port":"chorar",
-    "fr":"pleurer",
-    "en":"to cry",
-    "present":[
-        "eu choro",
-        "tu choras",
-        "ele chora",
-        "nós choramos",
-        "vós chorais",
-        "eles choram"
+    {
+        "port": "chorar",
+        "fr": {
+            "translation": "pleurer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to cry",
+            "note": "todo"
+        },
+        "present": [
+            "eu choro",
+            "tu choras",
+            "ele chora",
+            "nós choramos",
+            "vós chorais",
+            "eles choram"
         ]
     },
-    {"port":"esperar",
-    "fr":"attendre/espérer",
-    "en":"to wait/hope",
-    "present":[
-        "eu espero",
-        "tu esperas",
-        "ele espera",
-        "nós esperamos",
-        "vós esperais",
-        "eles esperam"
+    {
+        "port": "esperar",
+        "fr": {
+            "translation": "attendre/espérer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to wait/hope",
+            "note": "todo"
+        },
+        "present": [
+            "eu espero",
+            "tu esperas",
+            "ele espera",
+            "nós esperamos",
+            "vós esperais",
+            "eles esperam"
         ]
     },
-    {"port":"brincar",
-    "fr":"jouer (enfant)",
-    "en":"to play",
-    "present":[
-        "eu brinco",
-        "tu brincas",
-        "ele brinca",
-        "nós brincamos",
-        "vós brincais",
-        "eles brincam"
-    ]
+    {
+        "port": "brincar",
+        "fr": {
+            "translation": "jouer (enfant)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to play",
+            "note": "todo"
+        },
+        "present": [
+            "eu brinco",
+            "tu brincas",
+            "ele brinca",
+            "nós brincamos",
+            "vós brincais",
+            "eles brincam"
+        ]
     }
 ]
