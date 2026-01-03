@@ -1,5 +1,6 @@
 [
     {
+        "id": "bb8c34bc-c0f5-4a09-8294-317dbcc8af89",
         "port": "ser",
         "fr": {
             "translation": "être (état definitif)",
@@ -19,6 +20,7 @@
         ]
     },
     {
+        "id": "a65afb6b-19c8-45c6-93e0-91cb60ae722c",
         "port": "ter",
         "fr": {
             "translation": "avoir",
@@ -38,6 +40,7 @@
         ]
     },
     {
+        "id": "be0f7493-b64e-4b60-ba61-05be5d582ad3",
         "port": "estar",
         "fr": {
             "translation": "être (état temporaire)",
@@ -57,6 +60,7 @@
         ]
     },
     {
+        "id": "52d30bf8-8466-4948-bab6-cb40ee804b0f",
         "port": "fazer",
         "fr": {
             "translation": "faire",
@@ -76,6 +80,7 @@
         ]
     },
     {
+        "id": "03b3a8e8-5cb4-4750-b42f-bf40d86ae49c",
         "port": "poder",
         "fr": {
             "translation": "pouvoir",
@@ -95,6 +100,7 @@
         ]
     },
     {
+        "id": "a4cbf681-674d-4d11-afde-e45b6629ddb6",
         "port": "ir",
         "fr": {
             "translation": "aller",
@@ -114,6 +120,7 @@
         ]
     },
     {
+        "id": "b9c1e384-881b-4458-9de0-dc7d55f8fc4b",
         "port": "dar",
         "fr": {
             "translation": "donner",
@@ -133,6 +140,7 @@
         ]
     },
     {
+        "id": "85da1498-ca3a-4e8f-b00b-5c12fa3e4d53",
         "port": "ver",
         "fr": {
             "translation": "voir",
@@ -152,6 +160,7 @@
         ]
     },
     {
+        "id": "41979637-35d4-470a-9de7-d59390e9118b",
         "port": "dizer",
         "fr": {
             "translation": "dire",
@@ -171,6 +180,7 @@
         ]
     },
     {
+        "id": "f2980618-970e-406f-9d50-2c28868c898f",
         "port": "saber",
         "fr": {
             "translation": "savoir",
@@ -190,6 +200,7 @@
         ]
     },
     {
+        "id": "f2f4cfbf-16df-4c45-a10b-83639887d2b6",
         "port": "vir",
         "fr": {
             "translation": "venir",
@@ -209,6 +220,7 @@
         ]
     },
     {
+        "id": "a0f31f19-8df0-4d28-a57f-d5f4a4945d3d",
         "port": "falar",
         "fr": {
             "translation": "parler",
@@ -228,6 +240,7 @@
         ]
     },
     {
+        "id": "aa84b8af-9478-4814-8ee7-9ac3c20fc256",
         "port": "querer",
         "fr": {
             "translation": "vouloir",
@@ -247,6 +260,7 @@
         ]
     },
     {
+        "id": "077e898f-3c0b-4c5f-8a1e-9cd34c14c133",
         "port": "chegar",
         "fr": {
             "translation": "arriver",
@@ -266,6 +280,7 @@
         ]
     },
     {
+        "id": "33d3ee42-e0d6-408b-bec0-d4feecbe3131",
         "port": "ficar",
         "fr": {
             "translation": "rester",
@@ -285,6 +300,7 @@
         ]
     },
     {
+        "id": "fbed0837-fff5-4ec0-9716-2bb178517613",
         "port": "trabalhar",
         "fr": {
             "translation": "travailler",
@@ -304,6 +320,7 @@
         ]
     },
     {
+        "id": "4aad1c07-683b-47c3-a50d-67689cfa4da1",
         "port": "viver",
         "fr": {
             "translation": "vivre",
@@ -323,6 +340,7 @@
         ]
     },
     {
+        "id": "80866cff-4ee1-4b12-9bc8-ac4fb24b5bf4",
         "port": "deixar",
         "fr": {
             "translation": "laisser",
@@ -342,6 +360,7 @@
         ]
     },
     {
+        "id": "8f9fbb91-2876-47a6-8954-be2db28ab027",
         "port": "encontrar",
         "fr": {
             "translation": "trouver/rencontrer",
@@ -361,6 +380,7 @@
         ]
     },
     {
+        "id": "d168b432-1501-4f72-9900-97bfc4585a4e",
         "port": "pensar",
         "fr": {
             "translation": "penser",
@@ -380,6 +400,7 @@
         ]
     },
     {
+        "id": "a942d151-71c5-4c56-8c18-715e509caa6f",
         "port": "gostar",
         "fr": {
             "translation": "aimer (pas amour)",
@@ -399,6 +420,7 @@
         ]
     },
     {
+        "id": "1f7e89aa-bf13-43bb-8708-18a9d08961e5",
         "port": "conhecer",
         "fr": {
             "translation": "connaître (quelqu un,lieu)",
@@ -418,6 +440,7 @@
         ]
     },
     {
+        "id": "eaf73ed0-f172-46be-988a-1bfa60758e04",
         "port": "levar",
         "fr": {
             "translation": "porter/emmener",
@@ -437,6 +460,7 @@
         ]
     },
     {
+        "id": "daea256a-ce31-4944-8f07-53b15f930eae",
         "port": "passar",
         "fr": {
             "translation": "passer",
@@ -456,6 +480,7 @@
         ]
     },
     {
+        "id": "d5a9ae9d-54b5-47cf-8cb5-3a3587bead1e",
         "port": "entrar",
         "fr": {
             "translation": "entrer",
@@ -475,6 +500,7 @@
         ]
     },
     {
+        "id": "26972309-ec7a-42b5-9fe8-a3ac6d9ff282",
         "port": "sair",
         "fr": {
             "translation": "sortir",
@@ -494,6 +520,7 @@
         ]
     },
     {
+        "id": "48dcc8cd-5182-47f0-9211-701f0e1ac55a",
         "port": "começar",
         "fr": {
             "translation": "commencer",
@@ -513,6 +540,7 @@
         ]
     },
     {
+        "id": "fd0414b9-e3be-4f71-a071-eefd6557651f",
         "port": "acabar",
         "fr": {
             "translation": "finir/terminer",
@@ -532,6 +560,7 @@
         ]
     },
     {
+        "id": "f5cd507c-067a-4a5f-86ce-725e9d310b64",
         "port": "morrer",
         "fr": {
             "translation": "mourir",
@@ -551,6 +580,7 @@
         ]
     },
     {
+        "id": "2f132b79-f8a1-4694-bd15-844f0e387c5a",
         "port": "nascer",
         "fr": {
             "translation": "naître",
@@ -570,6 +600,7 @@
         ]
     },
     {
+        "id": "a105bcc0-2e0f-4592-90a6-9535afd91698",
         "port": "comprar",
         "fr": {
             "translation": "acheter",
@@ -589,6 +620,7 @@
         ]
     },
     {
+        "id": "7c2240d8-6e6b-46f7-97a0-a7a74831fa9f",
         "port": "vender",
         "fr": {
             "translation": "vendre",
@@ -608,6 +640,7 @@
         ]
     },
     {
+        "id": "74102d1d-3a36-4e99-8303-f0dccf3c6726",
         "port": "estudar",
         "fr": {
             "translation": "étudier",
@@ -627,6 +660,7 @@
         ]
     },
     {
+        "id": "105f01cf-fa64-43f3-bafc-0f4706e89782",
         "port": "aprender",
         "fr": {
             "translation": "apprendre",
@@ -646,6 +680,7 @@
         ]
     },
     {
+        "id": "00be0533-f3c1-4a08-9e69-62b3253ed767",
         "port": "ensinar",
         "fr": {
             "translation": "enseigner",
@@ -665,6 +700,7 @@
         ]
     },
     {
+        "id": "28259acf-44bd-46eb-84f3-7c34caa2f8d3",
         "port": "ouvir",
         "fr": {
             "translation": "entendre/écouter",
@@ -684,6 +720,7 @@
         ]
     },
     {
+        "id": "90c38864-0929-4fe7-9164-2d28cf239e36",
         "port": "comer",
         "fr": {
             "translation": "manger",
@@ -703,6 +740,7 @@
         ]
     },
     {
+        "id": "1b430b95-5689-4f86-8793-c7d684692db6",
         "port": "beber",
         "fr": {
             "translation": "boire",
@@ -722,6 +760,7 @@
         ]
     },
     {
+        "id": "cf459416-3f60-411c-8aa3-a2a183c0219e",
         "port": "dormir",
         "fr": {
             "translation": "dormir",
@@ -741,6 +780,7 @@
         ]
     },
     {
+        "id": "d125ade0-d54d-4a3a-b6db-3a81689c24f1",
         "port": "acordar",
         "fr": {
             "translation": "se réveiller",
@@ -760,6 +800,7 @@
         ]
     },
     {
+        "id": "8db7414d-ffd3-498c-aa03-1a4e96932e93",
         "port": "chorar",
         "fr": {
             "translation": "pleurer",
@@ -779,6 +820,7 @@
         ]
     },
     {
+        "id": "d5b6a564-3416-4bfc-a51b-ea156bdbe585",
         "port": "esperar",
         "fr": {
             "translation": "attendre/espérer",
@@ -798,6 +840,7 @@
         ]
     },
     {
+        "id": "6a967e89-d44e-475d-978b-32c6a6cda56d",
         "port": "brincar",
         "fr": {
             "translation": "jouer (enfant)",

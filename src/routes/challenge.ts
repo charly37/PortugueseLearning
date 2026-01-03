@@ -105,12 +105,11 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
     const weakChallengesList: any[] = [];
     const otherChallengesList: any[] = [];
 
-    allChallenges.forEach((challenge, index) => {
-      const challengeId = `${challengeType}-${index}`;
-      if (weakChallengeIds.has(challengeId)) {
-        weakChallengesList.push({ ...challenge, id: challengeId });
+    allChallenges.forEach((challenge) => {
+      if (weakChallengeIds.has(challenge.id)) {
+        weakChallengesList.push(challenge);
       } else {
-        otherChallengesList.push({ ...challenge, id: challengeId });
+        otherChallengesList.push(challenge);
       }
     });
 

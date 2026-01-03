@@ -1,5 +1,6 @@
 [
     {
+        "id": "038f2ad2-19f6-4e0d-9aaa-04e818e1c983",
         "port": "só",
         "fr": {
             "translation": "seulement",
@@ -11,6 +12,7 @@
         }
     },
     {
+        "id": "85998f02-d626-4496-9772-bbfab6ed072b",
         "port": "apenas",
         "fr": {
             "translation": "à peine",
@@ -22,6 +24,7 @@
         }
     },
     {
+        "id": "7c22386a-4faa-4466-86a1-5baa995bf261",
         "port": "demais",
         "fr": {
             "translation": "trop",
@@ -33,6 +36,7 @@
         }
     },
     {
+        "id": "a6e9ebbd-850f-4db3-8842-50ad590d3303",
         "port": "ainda",
         "fr": {
             "translation": "encore",
@@ -44,6 +48,7 @@
         }
     },
     {
+        "id": "cc277346-1d56-4b61-bb4b-9b57d58e2767",
         "port": "o quê",
         "fr": {
             "translation": "quoi",
@@ -55,6 +60,7 @@
         }
     },
     {
+        "id": "245b05a6-1e95-481c-860b-60d4c39304c7",
         "port": "quem",
         "fr": {
             "translation": "qui",
@@ -66,6 +72,7 @@
         }
     },
     {
+        "id": "d9e92a58-b26f-45c0-bf29-7051ae25dc05",
         "port": "onde",
         "fr": {
             "translation": "où",
@@ -77,6 +84,7 @@
         }
     },
     {
+        "id": "96755536-971d-443d-8d7d-fd24980ce9f0",
         "port": "quando",
         "fr": {
             "translation": "quand",
@@ -88,6 +96,7 @@
         }
     },
     {
+        "id": "2bf22d98-55f2-4c34-8c96-5ba1938a9416",
         "port": "porquê",
         "fr": {
             "translation": "pourquoi",
@@ -99,6 +108,7 @@
         }
     },
     {
+        "id": "c6699290-86c2-425f-8126-b3f1a268392b",
         "port": "porque",
         "fr": {
             "translation": "parce que",
@@ -110,6 +120,7 @@
         }
     },
     {
+        "id": "5e38ace0-0a52-4e3a-a0ea-0743b1ca11b8",
         "port": "como",
         "fr": {
             "translation": "comment",
@@ -121,6 +132,7 @@
         }
     },
     {
+        "id": "e0e54382-f07e-4cd2-bffe-0b3000d7d82f",
         "port": "qual",
         "fr": {
             "translation": "lequel/laquelle",
@@ -132,6 +144,7 @@
         }
     },
     {
+        "id": "23680c58-e613-4bed-989a-a95c12bc025e",
         "port": "quantos",
         "fr": {
             "translation": "combien (masculin pluriel)",
@@ -143,6 +156,7 @@
         }
     },
     {
+        "id": "f36f2f8f-20ab-48b5-82c9-5d036f157d58",
         "port": "quantas",
         "fr": {
             "translation": "combien (féminin pluriel)",
@@ -154,6 +168,7 @@
         }
     },
     {
+        "id": "652d86db-d99d-4b88-bb22-0021b9a3598d",
         "port": "quanto",
         "fr": {
             "translation": "combien (masculin)",
@@ -165,6 +180,7 @@
         }
     },
     {
+        "id": "8c0f4ae7-4136-4105-8a6d-b97a0d06e699",
         "port": "de quem",
         "fr": {
             "translation": "à qui/de qui",
@@ -176,6 +192,7 @@
         }
     },
     {
+        "id": "d3ee2d4d-b3f1-4cf0-bcac-440e9553b76f",
         "port": "comprida",
         "fr": {
             "translation": "longue femin. (la table est longue)",
@@ -187,6 +204,7 @@
         }
     },
     {
+        "id": "3adc0369-3b71-4714-93ec-74f2155ce5ef",
         "port": "curta",
         "fr": {
             "translation": "courte",
@@ -198,6 +216,7 @@
         }
     },
     {
+        "id": "a7a75496-3d19-4daa-bbd5-14535bc4a0b3",
         "port": "bom",
         "fr": {
             "translation": "bon (masculin)",
@@ -209,6 +228,7 @@
         }
     },
     {
+        "id": "82423148-f9bb-4e6f-81e0-1850acb7bab3",
         "port": "boa",
         "fr": {
             "translation": "bonne (féminin, qualite competence efficacite)",
@@ -220,6 +240,7 @@
         }
     },
     {
+        "id": "4a8821a4-794b-47da-8942-c6cd3d638ddd",
         "port": "mau",
         "fr": {
             "translation": "mauvais (masculin)",
@@ -231,6 +252,7 @@
         }
     },
     {
+        "id": "54e9dafc-a1bb-4c9b-a8c7-a10e76996a7c",
         "port": "má",
         "fr": {
             "translation": "mauvaise (féminin) - mauvaise idee, mauvaise nouriture",
@@ -242,6 +264,7 @@
         }
     },
     {
+        "id": "b861a99b-9e44-430b-9f83-854fa51d6106",
         "port": "grande",
         "fr": {
             "translation": "grande idee, ville, maison",
@@ -253,6 +276,7 @@
         }
     },
     {
+        "id": "e39487a7-2796-4c8b-a0c7-b06029e28edc",
         "port": "alto",
         "fr": {
             "translation": "grand (il est grand)",
@@ -264,6 +288,7 @@
         }
     },
     {
+        "id": "376e9b6c-e7d6-4b16-99d1-69041915366a",
         "port": "alta",
         "fr": {
             "translation": "grande (elle est grande)",
@@ -275,6 +300,7 @@
         }
     },
     {
+        "id": "78d1d6d3-b034-473d-a131-45adfcdb2436",
         "port": "pequeno",
         "fr": {
             "translation": "petit (masculin)",
@@ -286,6 +312,7 @@
         }
     },
     {
+        "id": "7ecdee1e-e26e-4f5a-a833-bb05ca163d6c",
         "port": "pequena",
         "fr": {
             "translation": "petite (féminin)",
@@ -297,6 +324,7 @@
         }
     },
     {
+        "id": "b88757c3-9b31-42fd-a69d-5048f58d8b36",
         "port": "velho",
         "fr": {
             "translation": "vieux (masculin)",
@@ -308,6 +336,7 @@
         }
     },
     {
+        "id": "d65cb037-2754-4720-9303-9f7fd96b522f",
         "port": "velha",
         "fr": {
             "translation": "vieille (féminin)",
@@ -319,6 +348,7 @@
         }
     },
     {
+        "id": "e0ba55f3-6352-48bd-9ba0-eb3f35b750f2",
         "port": "novo",
         "fr": {
             "translation": "nouveau (masculin)",
@@ -330,6 +360,7 @@
         }
     },
     {
+        "id": "29b5282f-f3bb-4f79-a55c-187190df81c9",
         "port": "nova",
         "fr": {
             "translation": "nouvelle (féminin)",
@@ -341,6 +372,7 @@
         }
     },
     {
+        "id": "6480221f-b2a0-4cc9-adc5-fa31334a7042",
         "port": "alto",
         "fr": {
             "translation": "haut (masculin)",
@@ -352,6 +384,7 @@
         }
     },
     {
+        "id": "302ed4fd-4fca-4e79-b672-2e4bcd85c986",
         "port": "alta",
         "fr": {
             "translation": "haute (féminin)",
@@ -363,6 +396,7 @@
         }
     },
     {
+        "id": "b97ed065-ba6b-45c9-b9ca-34e8c0e61da2",
         "port": "baixo",
         "fr": {
             "translation": "bas (masculin)",
@@ -374,6 +408,7 @@
         }
     },
     {
+        "id": "434b135d-8d67-42c7-8a3d-7389c5695b7f",
         "port": "baixa",
         "fr": {
             "translation": "basse (féminin)",
@@ -385,6 +420,7 @@
         }
     },
     {
+        "id": "44ea57c4-3861-4b93-980b-3dc6bbc974a3",
         "port": "largo",
         "fr": {
             "translation": "large (masculin)",
@@ -396,6 +432,7 @@
         }
     },
     {
+        "id": "be6e9e50-7ee8-4513-b27b-9e492c8a6c1f",
         "port": "larga",
         "fr": {
             "translation": "large (féminin)",
@@ -407,6 +444,7 @@
         }
     },
     {
+        "id": "f48b1180-8c21-4a3f-8c21-6a1b2e9f7507",
         "port": "estreito",
         "fr": {
             "translation": "étroit (masculin)",
@@ -418,6 +456,7 @@
         }
     },
     {
+        "id": "d26a1bfe-3a7d-407c-bd55-d04879ecf729",
         "port": "estreita",
         "fr": {
             "translation": "étroite (féminin)",
@@ -429,6 +468,7 @@
         }
     },
     {
+        "id": "c758a606-7753-42e5-b869-100a86ec16c0",
         "port": "forte",
         "fr": {
             "translation": "fort/forte (invariant)",
@@ -440,6 +480,7 @@
         }
     },
     {
+        "id": "9b4ea627-8af2-4a3e-859a-ee83a3b21b0e",
         "port": "fraco",
         "fr": {
             "translation": "faible (masculin)",
@@ -451,6 +492,7 @@
         }
     },
     {
+        "id": "4c0fc99b-e5c8-4fc4-b943-b94c62c81230",
         "port": "fraca",
         "fr": {
             "translation": "faible (féminin)",
@@ -462,6 +504,7 @@
         }
     },
     {
+        "id": "954518cd-6d01-4bda-9149-53380e45e1ac",
         "port": "rápido",
         "fr": {
             "translation": "rapide (masculin)",
@@ -473,6 +516,7 @@
         }
     },
     {
+        "id": "85d63614-24ac-4da7-9e4e-376acb8752bf",
         "port": "rápida",
         "fr": {
             "translation": "rapide (féminin)",
@@ -484,6 +528,7 @@
         }
     },
     {
+        "id": "3c2b19db-fecb-4350-a52a-f703eba0865e",
         "port": "devagar",
         "fr": {
             "translation": "lentement",
@@ -495,6 +540,7 @@
         }
     },
     {
+        "id": "6e7f8b5d-6b16-4cbd-81f1-bd85039404f4",
         "port": "cedo",
         "fr": {
             "translation": "tôt",
@@ -506,6 +552,7 @@
         }
     },
     {
+        "id": "d437a7e8-0f23-4c79-884b-aa06ac4f5acc",
         "port": "tarde",
         "fr": {
             "translation": "tard",
@@ -517,6 +564,7 @@
         }
     },
     {
+        "id": "717d1a2c-75ef-481b-a78c-1a46d56735b4",
         "port": "muito",
         "fr": {
             "translation": "très/beaucoup",
@@ -528,6 +576,7 @@
         }
     },
     {
+        "id": "6b9d88fc-ed35-43c8-9729-8be93e8cd8ea",
         "port": "bem",
         "fr": {
             "translation": "bien",
@@ -539,6 +588,7 @@
         }
     },
     {
+        "id": "cacb8dbd-6172-492f-a361-27b58949dac5",
         "port": "mal",
         "fr": {
             "translation": "mal",
@@ -550,6 +600,7 @@
         }
     },
     {
+        "id": "38003a85-72d5-43e6-a382-f91efaa93af6",
         "port": "sempre",
         "fr": {
             "translation": "toujours",
@@ -561,6 +612,7 @@
         }
     },
     {
+        "id": "1175baed-40e7-4e40-8203-ae00304290a8",
         "port": "nunca",
         "fr": {
             "translation": "jamais",
@@ -572,6 +624,7 @@
         }
     },
     {
+        "id": "6797fa0a-d0e3-42b3-9b45-85b6fe555d12",
         "port": "às vezes",
         "fr": {
             "translation": "parfois",
@@ -583,6 +636,7 @@
         }
     },
     {
+        "id": "64dd9cd2-24e4-4cf5-b34a-2775a4fd54e2",
         "port": "hoje",
         "fr": {
             "translation": "aujourd'hui",
@@ -594,6 +648,7 @@
         }
     },
     {
+        "id": "7f6e8a0e-25b8-49d9-b40e-25186d2954d2",
         "port": "amanhã",
         "fr": {
             "translation": "demain",
@@ -605,6 +660,7 @@
         }
     },
     {
+        "id": "a8f426d1-eb90-47f8-bf5d-3cc6d7123611",
         "port": "ontem",
         "fr": {
             "translation": "hier",
@@ -616,6 +672,7 @@
         }
     },
     {
+        "id": "c9ec5435-fb15-4204-80b6-69a36b6afc9c",
         "port": "agora",
         "fr": {
             "translation": "maintenant",
@@ -627,6 +684,7 @@
         }
     },
     {
+        "id": "3fd368f0-882b-4a19-a441-b48b354b85b4",
         "port": "em",
         "fr": {
             "translation": "dans/sur",
@@ -638,6 +696,7 @@
         }
     },
     {
+        "id": "68f2f3ae-88c1-43aa-ad24-cd09d45a835b",
         "port": "para",
         "fr": {
             "translation": "pour/vers",
@@ -649,6 +708,7 @@
         }
     },
     {
+        "id": "a6e5f5a3-cde2-4050-b56a-05c048aef733",
         "port": "com",
         "fr": {
             "translation": "avec",
@@ -660,6 +720,7 @@
         }
     },
     {
+        "id": "2ed49c44-a845-4bc9-9d28-e8e35cfe4e93",
         "port": "de",
         "fr": {
             "translation": "de/du",
@@ -671,6 +732,7 @@
         }
     },
     {
+        "id": "37645200-0320-47e8-9afa-b8f19c2c4935",
         "port": "a",
         "fr": {
             "translation": "à/au",
@@ -682,6 +744,7 @@
         }
     },
     {
+        "id": "a8921aa2-920f-4b6e-8d3d-b3039a7b3c8e",
         "port": "por",
         "fr": {
             "translation": "par/pour",
@@ -693,6 +756,7 @@
         }
     },
     {
+        "id": "7e788a8f-da8a-40dc-a4e5-3b9d6aa738e1",
         "port": "debaixo",
         "fr": {
             "translation": "sous (sous la table)",
@@ -704,6 +768,7 @@
         }
     },
     {
+        "id": "5404b34c-8d59-480d-8870-cb9ee6c56e0f",
         "port": "sobre",
         "fr": {
             "translation": "sur/à propos de/ au dessus de/environ",
@@ -715,6 +780,7 @@
         }
     },
     {
+        "id": "1a32d9a0-1014-4465-bbe0-2d6c4fcc6041",
         "port": "entre",
         "fr": {
             "translation": "entre",
@@ -726,6 +792,7 @@
         }
     },
     {
+        "id": "2489eafc-c6ca-447d-9b40-7b377728d493",
         "port": "sem",
         "fr": {
             "translation": "sans",
@@ -737,6 +804,7 @@
         }
     },
     {
+        "id": "d6de68b2-cff6-4ef7-8f46-0ca639b5c3ce",
         "port": "carro",
         "fr": {
             "translation": "voiture",
@@ -748,6 +816,7 @@
         }
     },
     {
+        "id": "967418c3-1237-467d-b358-1f710ea3dc49",
         "port": "mesa",
         "fr": {
             "translation": "table",
@@ -759,6 +828,7 @@
         }
     },
     {
+        "id": "d39a9ed0-d22a-4bfb-aa6c-ecf891ba8fe7",
         "port": "cadeira",
         "fr": {
             "translation": "chaise",
@@ -770,6 +840,7 @@
         }
     },
     {
+        "id": "48278b84-3fa0-4793-9e47-4a3b8854094a",
         "port": "porta",
         "fr": {
             "translation": "porte",
@@ -781,6 +852,7 @@
         }
     },
     {
+        "id": "8c2c1011-ef8f-4084-8e80-94852fb6ab1d",
         "port": "janela",
         "fr": {
             "translation": "fenêtre",
@@ -792,6 +864,7 @@
         }
     },
     {
+        "id": "aed1df6c-269c-4fd5-9b4a-e2f708e63539",
         "port": "cama",
         "fr": {
             "translation": "lit",
@@ -803,6 +876,7 @@
         }
     },
     {
+        "id": "a4ca6f02-83eb-4fcf-9298-6192d370df1d",
         "port": "livro",
         "fr": {
             "translation": "livre",
@@ -814,6 +888,7 @@
         }
     },
     {
+        "id": "32073144-010b-46da-bcc9-d152f942067f",
         "port": "caneta",
         "fr": {
             "translation": "stylo",
@@ -825,6 +900,7 @@
         }
     },
     {
+        "id": "9b3574e4-412d-42ed-9d89-3f4a54a3ebdf",
         "port": "papel",
         "fr": {
             "translation": "papier",
@@ -836,6 +912,7 @@
         }
     },
     {
+        "id": "8ae934f6-4ab8-4294-ae0b-650d6cfe56be",
         "port": "chave",
         "fr": {
             "translation": "clé",
@@ -847,6 +924,7 @@
         }
     },
     {
+        "id": "f936c147-16cc-4a5c-a8b7-5a9a9d28b17b",
         "port": "dinheiro",
         "fr": {
             "translation": "argent",
@@ -858,6 +936,7 @@
         }
     },
     {
+        "id": "2771e2b9-937c-45b7-b571-bf80871c9dce",
         "port": "lâmpada",
         "fr": {
             "translation": "lampe",
@@ -869,6 +948,7 @@
         }
     },
     {
+        "id": "d968663d-98db-4ddc-8ad7-daaa94afcf11",
         "port": "frigorífico",
         "fr": {
             "translation": "réfrigérateur",
@@ -880,6 +960,7 @@
         }
     },
     {
+        "id": "4e6d7989-555a-4a0e-b78a-01e9369c7f75",
         "port": "fogão",
         "fr": {
             "translation": "cuisinière (four, plaque)",
@@ -891,6 +972,7 @@
         }
     },
     {
+        "id": "be600e65-4c89-493f-ab47-c5fe0858ecb1",
         "port": "microondas",
         "fr": {
             "translation": "micro-ondes",
@@ -902,6 +984,7 @@
         }
     },
     {
+        "id": "85a7cd1c-a0f7-407a-86ce-cd356b446502",
         "port": "máquina de lavar",
         "fr": {
             "translation": "lave-linge",
@@ -913,6 +996,7 @@
         }
     },
     {
+        "id": "c863b14c-b974-4d1f-bb47-ac2c95d5b0be",
         "port": "secadora",
         "fr": {
             "translation": "sèche-linge",
@@ -924,6 +1008,7 @@
         }
     },
     {
+        "id": "3f5236da-f883-46a9-845d-ebcc94abb20c",
         "port": "aspirador",
         "fr": {
             "translation": "aspirateur",
@@ -935,6 +1020,7 @@
         }
     },
     {
+        "id": "f7f0ac25-d9ba-4406-b14a-c6608c35f7e8",
         "port": "ventilador",
         "fr": {
             "translation": "ventilateur",
@@ -946,6 +1032,7 @@
         }
     },
     {
+        "id": "fb3d6b77-e01b-4590-b02d-3e3f9d24ac4f",
         "port": "televisão",
         "fr": {
             "translation": "télévision",
@@ -957,6 +1044,7 @@
         }
     },
     {
+        "id": "0c2df67d-18d9-44b7-873b-abe7cd5bdcab",
         "port": "computador",
         "fr": {
             "translation": "ordinateur",
@@ -968,6 +1056,7 @@
         }
     },
     {
+        "id": "9213fc72-478f-49fb-825b-75b5555dfe07",
         "port": "telemóvel",
         "fr": {
             "translation": "téléphone portable",
@@ -979,6 +1068,7 @@
         }
     },
     {
+        "id": "5808daca-816c-4b97-83d6-b0e9eb831769",
         "port": "sofá",
         "fr": {
             "translation": "canapé",
@@ -990,6 +1080,7 @@
         }
     },
     {
+        "id": "200d517f-44e5-4729-8888-fea89086ae49",
         "port": "tapete",
         "fr": {
             "translation": "tapis",
@@ -1001,6 +1092,7 @@
         }
     },
     {
+        "id": "c88b8819-daee-4efa-b4d7-8ad14ecdf5fb",
         "port": "espelho",
         "fr": {
             "translation": "miroir",
@@ -1012,6 +1104,7 @@
         }
     },
     {
+        "id": "42d205a9-2eba-4e81-84c7-92f0802cf5ea",
         "port": "armário",
         "fr": {
             "translation": "armoire",
@@ -1023,6 +1116,7 @@
         }
     },
     {
+        "id": "2f73f2ef-ed5e-4e9f-bb44-ffa6a6319f88",
         "port": "gaveta",
         "fr": {
             "translation": "tiroir",
@@ -1034,6 +1128,7 @@
         }
     },
     {
+        "id": "2d8e73c7-7184-4904-b317-e3525a5c5526",
         "port": "toalha",
         "fr": {
             "translation": "serviette (salle de bain)",
@@ -1045,6 +1140,7 @@
         }
     },
     {
+        "id": "9a53f200-95ee-46e1-b890-8637c50823a6",
         "port": "cobertor",
         "fr": {
             "translation": "couverture",
@@ -1056,6 +1152,7 @@
         }
     },
     {
+        "id": "52c71f31-e3f2-4261-8aa9-325d213e51df",
         "port": "o",
         "fr": {
             "translation": "le",
@@ -1067,6 +1164,7 @@
         }
     },
     {
+        "id": "643403d9-35e2-49a5-9b41-d9645ad0d40e",
         "port": "a",
         "fr": {
             "translation": "la",
@@ -1078,6 +1176,7 @@
         }
     },
     {
+        "id": "dc84e030-6c47-4ce4-b1a8-22b1a67ccd81",
         "port": "os",
         "fr": {
             "translation": "les (masculin)",
@@ -1089,6 +1188,7 @@
         }
     },
     {
+        "id": "1162ea3e-fa97-4cbe-9442-f5aefd128b7c",
         "port": "as",
         "fr": {
             "translation": "les (féminin)",
@@ -1100,6 +1200,7 @@
         }
     },
     {
+        "id": "b2aa983c-d0b0-4ba9-bc3c-00ae84845dfb",
         "port": "um",
         "fr": {
             "translation": "un",
@@ -1111,6 +1212,7 @@
         }
     },
     {
+        "id": "dffc6091-a663-46c7-97e8-5f667ed124e4",
         "port": "uma",
         "fr": {
             "translation": "une",
@@ -1122,6 +1224,7 @@
         }
     },
     {
+        "id": "86c1657d-0348-41ff-b524-27afbc1e5f3d",
         "port": "dos",
         "fr": {
             "translation": "des (masculin)",
@@ -1133,6 +1236,7 @@
         }
     },
     {
+        "id": "8aa3e9f5-abd3-4e6f-9ef2-30668dc39393",
         "port": "das",
         "fr": {
             "translation": "des (féminin)",
@@ -1144,6 +1248,7 @@
         }
     },
     {
+        "id": "03e8c18f-7929-467a-a755-346772144526",
         "port": "eu",
         "fr": {
             "translation": "je (sujet)",
@@ -1155,6 +1260,7 @@
         }
     },
     {
+        "id": "b2d601d3-6e52-4c08-8a07-15c2a7b9c839",
         "port": "meu",
         "fr": {
             "translation": "mon (masc.)",
@@ -1166,6 +1272,7 @@
         }
     },
     {
+        "id": "28eb0052-cb0e-46b9-8dea-bc1613968596",
         "port": "minha",
         "fr": {
             "translation": "mon (fém.)",
@@ -1177,6 +1284,7 @@
         }
     },
     {
+        "id": "e0fbad26-078b-46fb-afa8-7d9d750e5992",
         "port": "me",
         "fr": {
             "translation": "me (COD/COI)",
@@ -1188,6 +1296,7 @@
         }
     },
     {
+        "id": "c2c6fc44-6658-45cc-b028-0f148055260e",
         "port": "tu",
         "fr": {
             "translation": "tu",
@@ -1199,6 +1308,7 @@
         }
     },
     {
+        "id": "351d8b25-e5a1-459a-a950-4d71bccaeaf9",
         "port": "você",
         "fr": {
             "translation": "vous",
@@ -1210,6 +1320,7 @@
         }
     },
     {
+        "id": "87849570-cf5b-4763-bccd-f3a764b5f26b",
         "port": "teu",
         "fr": {
             "translation": "ton (masc.)",
@@ -1221,6 +1332,7 @@
         }
     },
     {
+        "id": "e6e07e42-dd60-4ace-b4e2-6748ba72a67c",
         "port": "tua",
         "fr": {
             "translation": "ton (fém.)",
@@ -1232,6 +1344,7 @@
         }
     },
     {
+        "id": "f86f3dc0-1139-4bdf-b7fe-f6600818a9bb",
         "port": "te",
         "fr": {
             "translation": "te",
@@ -1243,6 +1356,7 @@
         }
     },
     {
+        "id": "f0d158bf-d571-43ab-a752-3769867a9e70",
         "port": "o",
         "fr": {
             "translation": "le (masc.)",
@@ -1254,6 +1368,7 @@
         }
     },
     {
+        "id": "e83aad75-0e64-4a1c-a4b1-daa4d49128d0",
         "port": "a",
         "fr": {
             "translation": "la (fém.)",
@@ -1265,6 +1380,7 @@
         }
     },
     {
+        "id": "7dbaf8b9-ce4a-425f-9bcb-d731f4f999f7",
         "port": "lhe",
         "fr": {
             "translation": "lui",
@@ -1276,6 +1392,7 @@
         }
     },
     {
+        "id": "2e33f5f9-eb97-4cb3-84ab-9ba42a855c75",
         "port": "nós",
         "fr": {
             "translation": "nous",
@@ -1287,6 +1404,7 @@
         }
     },
     {
+        "id": "a400fbe2-1e02-4bb9-b327-3f08f16c7ba6",
         "port": "nosso",
         "fr": {
             "translation": "notre (masc.)",
@@ -1298,6 +1416,7 @@
         }
     },
     {
+        "id": "ab854469-2a5b-4d38-8eb6-696be6210377",
         "port": "nossa",
         "fr": {
             "translation": "notre (fém.)",
@@ -1309,6 +1428,7 @@
         }
     },
     {
+        "id": "717d834f-1bef-4cd3-bb80-e6137d422210",
         "port": "nos",
         "fr": {
             "translation": "nous",
@@ -1320,6 +1440,7 @@
         }
     },
     {
+        "id": "603175f7-66e8-41a0-a707-50261bf122ea",
         "port": "vocês",
         "fr": {
             "translation": "vous (pl.)",
@@ -1331,6 +1452,7 @@
         }
     },
     {
+        "id": "64c2384f-aaad-4569-bd54-4275c07f737d",
         "port": "vosso",
         "fr": {
             "translation": "votre (masc.)",
@@ -1342,6 +1464,7 @@
         }
     },
     {
+        "id": "5aa56442-daec-40f7-a8da-268be6bc54dd",
         "port": "vossa",
         "fr": {
             "translation": "votre (fém.)",
@@ -1353,6 +1476,7 @@
         }
     },
     {
+        "id": "a2b00147-b472-484a-b959-b6cc9244739e",
         "port": "os",
         "fr": {
             "translation": "les (masc.)",
@@ -1364,6 +1488,7 @@
         }
     },
     {
+        "id": "d6803590-c7a3-482a-ab9d-8a13865c1482",
         "port": "as",
         "fr": {
             "translation": "les (fém.)",
@@ -1375,6 +1500,7 @@
         }
     },
     {
+        "id": "614f5e38-625e-4208-8e92-83eb8750fa1d",
         "port": "lhes",
         "fr": {
             "translation": "leur",
@@ -1386,6 +1512,7 @@
         }
     },
     {
+        "id": "9641ff9f-c5e4-4c87-b5bd-247ab0e23493",
         "port": "este",
         "fr": {
             "translation": "ce",
@@ -1397,6 +1524,7 @@
         }
     },
     {
+        "id": "bf8e8723-b8b2-455e-a18b-12f444fd5ed4",
         "port": "esta",
         "fr": {
             "translation": "cette",
@@ -1408,6 +1536,7 @@
         }
     },
     {
+        "id": "01256968-fc1d-42a2-8418-45e3a0be0301",
         "port": "isto",
         "fr": {
             "translation": "celui-ci, ceci",
@@ -1419,6 +1548,7 @@
         }
     },
     {
+        "id": "f0d48166-7053-412c-8293-fc37eecb2aa0",
         "port": "aquilo",
         "fr": {
             "translation": "celui-là, cela",
@@ -1430,6 +1560,7 @@
         }
     },
     {
+        "id": "5840f37e-1653-4403-9256-0ed540134dcd",
         "port": "alguns",
         "fr": {
             "translation": "certains (masc. pluriel), quelques",
@@ -1441,6 +1572,7 @@
         }
     },
     {
+        "id": "77c42ff6-d261-438f-a2b9-94e91c7ee4e1",
         "port": "algumas",
         "fr": {
             "translation": "certaines, quelques",
@@ -1452,6 +1584,7 @@
         }
     },
     {
+        "id": "705b3b50-f269-40c3-b0f6-b0ea4ae1115c",
         "port": "algum",
         "fr": {
             "translation": "certain (masc. singulier)",
@@ -1463,6 +1596,7 @@
         }
     },
     {
+        "id": "34106a4d-b9f1-4c28-83cb-611ff5b33d40",
         "port": "nenhum",
         "fr": {
             "translation": "aucun (masc.)",
@@ -1474,6 +1608,7 @@
         }
     },
     {
+        "id": "983e2880-d960-4c3d-8276-93a16e37b515",
         "port": "nenhuma",
         "fr": {
             "translation": "aucune (fém.)",
@@ -1485,6 +1620,7 @@
         }
     },
     {
+        "id": "a40d7e7c-8fae-4082-be67-67b5bdaa6a3e",
         "port": "cada",
         "fr": {
             "translation": "chaque (chaque jour)",
@@ -1496,6 +1632,7 @@
         }
     },
     {
+        "id": "6414280d-f1c8-41c2-88a7-9525977b32b3",
         "port": "todo",
         "fr": {
             "translation": "tout / entier",
@@ -1507,6 +1644,7 @@
         }
     },
     {
+        "id": "f9ba33d8-03d4-499d-ab37-2389c101d08d",
         "port": "todos",
         "fr": {
             "translation": "tout le monde",
@@ -1518,6 +1656,7 @@
         }
     },
     {
+        "id": "865e26ee-b7f9-4088-b024-40ccada01822",
         "port": "tudo",
         "fr": {
             "translation": "tout",
@@ -1529,6 +1668,7 @@
         }
     },
     {
+        "id": "a846dd0e-7219-4868-8edc-5f76de530cff",
         "port": "humano",
         "fr": {
             "translation": "humain",
@@ -1540,6 +1680,7 @@
         }
     },
     {
+        "id": "8ea6be3c-9e63-4a68-85fb-a1bb67f82713",
         "port": "pessoas",
         "fr": {
             "translation": "personnes/gens (formel)",
@@ -1551,6 +1692,7 @@
         }
     },
     {
+        "id": "bd9db77b-09dd-403f-b308-908cd7a17c78",
         "port": "gente",
         "fr": {
             "translation": "gens (informel)",
@@ -1562,6 +1704,7 @@
         }
     },
     {
+        "id": "07c1774a-6614-4010-9bf8-6d34d5b667c7",
         "port": "amigo",
         "fr": {
             "translation": "ami",
@@ -1573,6 +1716,7 @@
         }
     },
     {
+        "id": "af50b208-c8cc-45af-a0d7-e5806ce296f3",
         "port": "homem",
         "fr": {
             "translation": "homme",
@@ -1584,6 +1728,7 @@
         }
     },
     {
+        "id": "4428b0cf-070d-46ff-b384-98e0115610e9",
         "port": "mulher",
         "fr": {
             "translation": "femme",
@@ -1595,6 +1740,7 @@
         }
     },
     {
+        "id": "1dfb6e28-2e80-4bdd-bc1f-7d3f1ee17f27",
         "port": "menino",
         "fr": {
             "translation": "garçon",
@@ -1606,6 +1752,7 @@
         }
     },
     {
+        "id": "5963668c-e3c7-42df-8d91-5ec5d0c1f649",
         "port": "menina",
         "fr": {
             "translation": "fille",
@@ -1617,6 +1764,7 @@
         }
     },
     {
+        "id": "b8ee5545-f4ea-4ffe-9d25-75a8d41609e4",
         "port": "criança",
         "fr": {
             "translation": "enfant",
@@ -1628,6 +1776,7 @@
         }
     },
     {
+        "id": "6bf73577-77be-42c5-9383-cb3c003f2a6c",
         "port": "família",
         "fr": {
             "translation": "famille",
@@ -1639,6 +1788,7 @@
         }
     },
     {
+        "id": "e7c0de4c-aee4-4ea2-af88-211fa5ac411a",
         "port": "marido",
         "fr": {
             "translation": "mari",
@@ -1650,6 +1800,7 @@
         }
     },
     {
+        "id": "fa5f444d-85b4-4c2f-9176-cac4ef6e802c",
         "port": "esposa",
         "fr": {
             "translation": "épouse",

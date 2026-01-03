@@ -7,7 +7,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
 interface IdiomChallenge {
-  id?: string;
+  id: string;
   port: string;
   fr: { translation: string; note: string };
   en: { translation: string; note: string };
@@ -138,7 +138,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.id || challenge.fr.translation,
+      challenge.id,
       'idiom',
       isCorrect,
       userAnswer.trim(),

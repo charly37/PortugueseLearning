@@ -7,7 +7,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 
 interface VerbChallenge {
-  id?: string;
+  id: string;
   port: string;
   fr: { translation: string; note: string };
   en: { translation: string; note: string };
@@ -139,7 +139,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
 
     // Submit attempt if user is logged in
     await submitChallengeAttempt(
-      challenge.id || challenge.fr.translation,
+      challenge.id,
       'verb',
       isCorrect,
       userAnswer.trim(),

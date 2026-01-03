@@ -1,5 +1,6 @@
 [
     {
+        "id": "1fca729e-ff2f-4a50-80f8-929c002d5019",
         "port": "quem me dera",
         "fr": {
             "translation": "j'en rêve - si seulement...",
@@ -11,6 +12,7 @@
         }
     },
     {
+        "id": "79d10b1b-1696-4077-9b08-fd120b721095",
         "port": "seguir em frente",
         "fr": {
             "translation": "laisser tomber - aller de l'avant",
@@ -22,6 +24,7 @@
         }
     },
     {
+        "id": "bb495013-5529-463f-8b7c-42055d8c8dcd",
         "port": "dar um jeito",
         "fr": {
             "translation": "trouver une solution - s'arranger",
@@ -33,6 +36,7 @@
         }
     },
     {
+        "id": "1247a522-6334-46e2-8a32-576aa35f02e6",
         "port": "pegando o jeito",
         "fr": {
             "translation": "prendre l'habitude de - maîtriser",
@@ -44,6 +48,7 @@
         }
     },
     {
+        "id": "309aa3f3-7a58-441d-b804-2baf4ee4c480",
         "port": "ar livre",
         "fr": {
             "translation": "dehors - en plein air",
@@ -55,6 +60,7 @@
         }
     },
     {
+        "id": "25f3242b-89c2-4ad7-a8db-1e828aa6420e",
         "port": "deve ser/estar",
         "fr": {
             "translation": "ça doit être - sembler",
@@ -66,6 +72,7 @@
         }
     },
     {
+        "id": "ccb7cd50-896c-4988-99fa-bcecaf28e85f",
         "port": "estar com saudades",
         "fr": {
             "translation": "avoir la nostalgie de - manquer",
@@ -77,6 +84,7 @@
         }
     },
     {
+        "id": "8990f02c-ad63-4dd6-9c67-2b3287dc6807",
         "port": "fazer falta",
         "fr": {
             "translation": "manquer à quelqu'un",
@@ -88,6 +96,7 @@
         }
     },
     {
+        "id": "97099832-ae5c-4a16-b843-f6efc5b21b0a",
         "port": "ficar com",
         "fr": {
             "translation": "garder - rester avec",
@@ -99,6 +108,7 @@
         }
     },
     {
+        "id": "f545a126-8fbe-4581-b497-64e0427caaa7",
         "port": "ficar de olho",
         "fr": {
             "translation": "garder un œil sur - surveiller",
@@ -110,6 +120,7 @@
         }
     },
     {
+        "id": "113845fb-35e9-49d3-b437-411a7adc0abc",
         "port": "obrigado pelo...",
         "fr": {
             "translation": "merci pour...",
