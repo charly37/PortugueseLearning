@@ -259,6 +259,26 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
   }
 });
 
+// Helper to enrich weak words with translations and notes from challenge data
+function enrichWeakWords(weakWords: any[], allChallenges: any[]) {
+  const challengeMap = new Map(allChallenges.map(c => [c.id, c]));
+  
+  return weakWords.map(weak => {
+    const challenge = challengeMap.get(weak.challengeId);
+    if (challenge) {
+      return {
+        ...weak,
+        frTranslation: challenge.fr?.translation || '',
+        enTranslation: challenge.en?.translation || '',
+        // Only include notes if they're not "todo"
+        frNote: challenge.fr?.note !== 'todo' ? challenge.fr?.note : undefined,
+        enNote: challenge.en?.note !== 'todo' ? challenge.en?.note : undefined
+      };
+    }
+    return weak;
+  });
+}
+
 // Get user progress
 router.get('/progress', requireAuth, async (req: Request, res: Response) => {
   try {
@@ -294,13 +314,23 @@ router.get('/progress', requireAuth, async (req: Request, res: Response) => {
       lastAttemptDate: progressData?.lastAttemptDate
     });
 
+    // Enrich weaknesses with translations if they exist
+    let enrichedWeaknesses = user.weaknesses;
+    if (enrichedWeaknesses?.weakWords && enrichedWeaknesses.weakWords.length > 0) {
+      const allChallenges = [...wordChallenges, ...idiomChallenges, ...verbChallenges];
+      enrichedWeaknesses = {
+        ...enrichedWeaknesses,
+        weakWords: enrichWeakWords(enrichedWeaknesses.weakWords, allChallenges)
+      };
+    }
+
     res.json({
       totalScore: user.totalScore || 0,
       level: user.level || 1,
       word: calculateStats(user.progress?.word),
       idiom: calculateStats(user.progress?.idiom),
       verb: calculateStats(user.progress?.verb),
-      weaknesses: user.weaknesses || null,
+      weaknesses: enrichedWeaknesses || null,
       weaknessesUpdatedAt: user.weaknessesUpdatedAt || null
     });
   } catch (error) {

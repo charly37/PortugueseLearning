@@ -23,6 +23,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import TimerIcon from '@mui/icons-material/Timer';
+import InfoIcon from '@mui/icons-material/Info';
 
 interface ChallengeProgress {
   totalAttempts: number;
@@ -46,6 +47,10 @@ interface AttemptHistory {
 interface WeakWord {
   challengeId: string;
   word: string;
+  frTranslation?: string;
+  enTranslation?: string;
+  frNote?: string;
+  enNote?: string;
   accuracy: number;
   attempts: number;
 }
@@ -475,6 +480,11 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                               <Typography variant="body1" fontWeight="medium">
                                 {weakWord.word}
                               </Typography>
+                              {weakWord.frTranslation && (
+                                <Typography variant="body2" color="text.secondary">
+                                  ({weakWord.frTranslation})
+                                </Typography>
+                              )}
                               <Chip 
                                 label={`${weakWord.accuracy}% accuracy`}
                                 size="small"
@@ -490,6 +500,14 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                           }
                           secondary={
                             <Box sx={{ mt: 0.5 }}>
+                              {weakWord.frNote && (
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, mb: 1 }}>
+                                  <InfoIcon sx={{ fontSize: 16, color: 'info.main' }} />
+                                  <Typography variant="body2" color="text.secondary">
+                                    {weakWord.frNote}
+                                  </Typography>
+                                </Box>
+                              )}
                               <LinearProgress 
                                 variant="determinate" 
                                 value={weakWord.accuracy} 
