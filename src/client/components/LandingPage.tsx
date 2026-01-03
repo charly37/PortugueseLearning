@@ -1,13 +1,15 @@
-import React from 'react';
-import { Container, Box, Typography, Button, Grid, Paper } from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Container, Box, Typography, Button, Grid, Paper, ToggleButton, ToggleButtonGroup, Chip } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import TranslateIcon from '@mui/icons-material/Translate';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
+import LanguageIcon from '@mui/icons-material/Language';
 
 interface User {
   id: string;
   username: string;
   email: string;
+  preferredLanguage?: 'fr' | 'en';
 }
 
 interface LandingPageProps {
@@ -37,6 +39,46 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onViewVerbStats,
   onViewIdiomStats,
 }) => {
+  // Initialize language from user preference, localStorage, or default to 'fr'
+  const [selectedLanguage, setSelectedLanguage] = useState<'fr' | 'en'>(() => {
+    if (user?.preferredLanguage) return user.preferredLanguage;
+    const stored = localStorage.getItem('preferredLanguage');
+    return (stored === 'fr' || stored === 'en') ? stored : 'fr';
+  });
+
+  // Update language when user changes
+  useEffect(() => {
+    if (user?.preferredLanguage) {
+      setSelectedLanguage(user.preferredLanguage);
+    }
+  }, [user?.preferredLanguage]);
+
+  const handleLanguageChange = async (_: React.MouseEvent<HTMLElement>, newLanguage: 'fr' | 'en' | null) => {
+    if (!newLanguage) return;
+    
+    setSelectedLanguage(newLanguage);
+    localStorage.setItem('preferredLanguage', newLanguage);
+
+    // Update user preference if logged in
+    if (user) {
+      try {
+        await fetch('/api/auth/update-language', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ preferredLanguage: newLanguage })
+        });
+      } catch (error) {
+        console.error('Failed to update language preference:', error);
+      }
+    }
+  };
+
+  const languageNames = {
+    fr: 'French',
+    en: 'English'
+  };
+
   return (
     <Box sx={{ pt: 10, pb: 6, bgcolor: 'background.default', minHeight: '100vh' }}>
       <Container maxWidth="lg">
@@ -52,6 +94,27 @@ const LandingPage: React.FC<LandingPageProps> = ({
           <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700, mb: 2 }}>
             Welcome{user ? `, ${user.username}` : ''}! 👋
           </Typography>
+          
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, justifyContent: 'center' }}>
+            <LanguageIcon color="action" />
+            <Typography variant="body1" color="text.secondary">
+              I speak:
+            </Typography>
+            <ToggleButtonGroup
+              value={selectedLanguage}
+              exclusive
+              onChange={handleLanguageChange}
+              aria-label="source language"
+              size="small"
+            >
+              <ToggleButton value="fr" aria-label="French">
+                🇫🇷 Français
+              </ToggleButton>
+              <ToggleButton value="en" aria-label="English">
+                🇬🇧 English
+              </ToggleButton>
+            </ToggleButtonGroup>
+          </Box>
           
           <Typography variant="h5" color="text.secondary" gutterBottom sx={{ maxWidth: '700px', mb: 2 }}>
             Master Portuguese with Interactive Challenges
@@ -84,7 +147,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   Word Challenge
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
-                  Build your vocabulary by translating words from French to Portuguese
+                  Build your vocabulary by translating words from {languageNames[selectedLanguage]} to Portuguese
                 </Typography>
                 <Button
                   variant="contained"

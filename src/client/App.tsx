@@ -66,6 +66,7 @@ interface User {
   id: string;
   username: string;
   email: string;
+  preferredLanguage?: 'fr' | 'en';
   createdAt?: string;
 }
 

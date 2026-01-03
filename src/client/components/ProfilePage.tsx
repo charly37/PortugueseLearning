@@ -11,7 +11,11 @@ import {
   Grid,
   LinearProgress,
   Chip,
-  CircularProgress
+  CircularProgress,
+  ToggleButtonGroup,
+  ToggleButton,
+  Alert,
+  Snackbar
 } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
@@ -20,11 +24,13 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import LanguageIcon from '@mui/icons-material/Language';
 
 interface User {
   id: string;
   username: string;
   email: string;
+  preferredLanguage?: 'fr' | 'en';
   createdAt?: string;
   totalScore?: number;
   level?: number;
@@ -55,6 +61,8 @@ interface ProfilePageProps {
 const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
   const [progress, setProgress] = useState<Progress | null>(null);
   const [loading, setLoading] = useState(true);
+  const [preferredLanguage, setPreferredLanguage] = useState<'fr' | 'en'>(user?.preferredLanguage || 'fr');
+  const [updateSuccess, setUpdateSuccess] = useState(false);
 
   useEffect(() => {
     const fetchProgress = async () => {
@@ -76,8 +84,31 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
 
     if (user) {
       fetchProgress();
+      setPreferredLanguage(user.preferredLanguage || 'fr');
     }
   }, [user]);
+
+  const handleLanguageChange = async (_: React.MouseEvent<HTMLElement>, newLanguage: 'fr' | 'en' | null) => {
+    if (!newLanguage) return;
+    
+    setPreferredLanguage(newLanguage);
+    localStorage.setItem('preferredLanguage', newLanguage);
+
+    try {
+      const response = await fetch('/api/auth/update-language', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ preferredLanguage: newLanguage })
+      });
+
+      if (response.ok) {
+        setUpdateSuccess(true);
+      }
+    } catch (error) {
+      console.error('Failed to update language preference:', error);
+    }
+  };
 
   if (!user) {
     return null;
@@ -304,6 +335,40 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
                 </Typography>
               </Box>
             </Paper>
+
+            <Paper
+              variant="outlined"
+              sx={{
+                p: 2,
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                <LanguageIcon color="primary" sx={{ fontSize: 32 }} />
+                <Box>
+                  <Typography variant="caption" color="text.secondary">
+                    I speak (source language)
+                  </Typography>
+                  <Typography variant="body1" fontWeight="medium">
+                    {preferredLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'}
+                  </Typography>
+                </Box>
+              </Box>
+              <ToggleButtonGroup
+                value={preferredLanguage}
+                exclusive
+                onChange={handleLanguageChange}
+                aria-label="preferred language"
+                fullWidth
+                size="small"
+              >
+                <ToggleButton value="fr" aria-label="French">
+                  🇫🇷 Français
+                </ToggleButton>
+                <ToggleButton value="en" aria-label="English">
+                  🇬🇧 English
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </Paper>
           </Stack>
 
           {loading ? (
@@ -336,6 +401,17 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
             </Typography>
           </Box>
         </Paper>
+
+        <Snackbar 
+          open={updateSuccess} 
+          autoHideDuration={3000} 
+          onClose={() => setUpdateSuccess(false)}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        >
+          <Alert onClose={() => setUpdateSuccess(false)} severity="success" sx={{ width: '100%' }}>
+            Language preference updated successfully!
+          </Alert>
+        </Snackbar>
       </Box>
     </Container>
   );

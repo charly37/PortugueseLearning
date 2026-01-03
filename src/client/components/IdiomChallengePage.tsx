@@ -26,6 +26,7 @@ interface User {
   id: string;
   username: string;
   email: string;
+  preferredLanguage?: 'fr' | 'en';
 }
 
 interface IdiomChallengePageProps {
@@ -55,6 +56,10 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
   const [generatedChallenges, setGeneratedChallenges] = useState<IdiomChallenge[]>([]);
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Get user's preferred language or default to 'fr'
+  const preferredLanguage = user?.preferredLanguage || 
+    (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
 
   const generateChallengeSet = async () => {
     setLoading(true);
@@ -158,7 +163,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
       
       // Store attempt details
       setAttemptHistory([...attemptHistory, {
-        challengeId: challenge.fr.translation,
+        challengeId: challenge[preferredLanguage].translation,
         userAnswer: userAnswer.trim(),
         correctAnswer: challenge.port,
         correct: isCorrect,
@@ -478,10 +483,10 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
               <CardContent sx={{ p: 4 }}>
                 <Box sx={{ textAlign: 'center', mb: 4 }}>
                   <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-                    Français
+                    {preferredLanguage === 'fr' ? 'Français' : 'English'}
                   </Typography>
-                  <Typography variant="h5" component="div" sx={{ fontWeight: 600, color: '#ff9800' }}>
-                    {challenge.fr.translation}
+                  <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: '#ff9800' }}>
+                    {challenge[preferredLanguage].translation}
                   </Typography>
                 </Box>
                 

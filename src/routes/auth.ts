@@ -13,7 +13,7 @@ declare module 'express-session' {
 // Register a new user
 router.post('/register', async (req: Request, res: Response) => {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, preferredLanguage } = req.body;
 
     // Validate input
     if (!username || !email || !password) {
@@ -22,6 +22,11 @@ router.post('/register', async (req: Request, res: Response) => {
 
     if (password.length < 6) {
       return res.status(400).json({ message: 'Password must be at least 6 characters long' });
+    }
+
+    // Validate preferredLanguage
+    if (preferredLanguage && !['fr', 'en'].includes(preferredLanguage)) {
+      return res.status(400).json({ message: 'Invalid language preference' });
     }
 
     // Check if user already exists
@@ -36,7 +41,8 @@ router.post('/register', async (req: Request, res: Response) => {
     const user = new User({
       username,
       email,
-      password
+      password,
+      preferredLanguage: preferredLanguage || 'fr'
     });
 
     await user.save();
@@ -50,6 +56,7 @@ router.post('/register', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
@@ -92,6 +99,7 @@ router.post('/login', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
@@ -132,6 +140,7 @@ router.get('/check-auth', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
@@ -140,6 +149,47 @@ router.get('/check-auth', async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Check auth error:', error);
     res.status(500).json({ message: 'Server error checking authentication' });
+  }
+});
+
+// Update user's preferred language
+router.post('/update-language', async (req: Request, res: Response) => {
+  try {
+    if (!req.session.userId) {
+      return res.status(401).json({ message: 'Not authenticated' });
+    }
+
+    const { preferredLanguage } = req.body;
+
+    if (!preferredLanguage || !['fr', 'en'].includes(preferredLanguage)) {
+      return res.status(400).json({ message: 'Invalid language preference' });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      req.session.userId,
+      { preferredLanguage },
+      { new: true }
+    ).select('-password');
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({
+      message: 'Language preference updated',
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        preferredLanguage: user.preferredLanguage,
+        createdAt: user.createdAt,
+        totalScore: user.totalScore,
+        level: user.level
+      }
+    });
+  } catch (error) {
+    console.error('Update language error:', error);
+    res.status(500).json({ message: 'Server error updating language' });
   }
 });
 

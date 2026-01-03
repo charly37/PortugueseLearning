@@ -7,8 +7,13 @@ import {
   Button,
   Alert,
   Link,
-  Paper
+  Paper,
+  ToggleButton,
+  ToggleButtonGroup,
+  FormControl,
+  FormLabel
 } from '@mui/material';
+import LanguageIcon from '@mui/icons-material/Language';
 
 interface RegisterPageProps {
   onRegisterSuccess: (user: { id: string; username: string; email: string }) => void;
@@ -21,6 +26,10 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [preferredLanguage, setPreferredLanguage] = useState<'fr' | 'en'>(() => {
+    const stored = localStorage.getItem('preferredLanguage');
+    return (stored === 'fr' || stored === 'en') ? stored : 'fr';
+  });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -54,7 +63,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify({ username, email, password, preferredLanguage }),
       });
 
       if (!response.ok) {
@@ -122,6 +131,27 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
               margin="normal"
               autoComplete="email"
             />
+
+            <FormControl fullWidth margin="normal">
+              <FormLabel sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+                <LanguageIcon fontSize="small" />
+                <Typography variant="body1">I speak:</Typography>
+              </FormLabel>
+              <ToggleButtonGroup
+                value={preferredLanguage}
+                exclusive
+                onChange={(_, newLang) => newLang && setPreferredLanguage(newLang)}
+                aria-label="preferred language"
+                fullWidth
+              >
+                <ToggleButton value="fr" aria-label="French">
+                  🇫🇷 Français (French)
+                </ToggleButton>
+                <ToggleButton value="en" aria-label="English">
+                  🇬🇧 English
+                </ToggleButton>
+              </ToggleButtonGroup>
+            </FormControl>
             
             <TextField
               fullWidth
