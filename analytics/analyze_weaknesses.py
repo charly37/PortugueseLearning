@@ -6,18 +6,23 @@ Runs as a scheduled batch job.
 
 import os
 import sys
+import json
+import re
 from datetime import datetime, timedelta
 from collections import defaultdict
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Set
 from pymongo import MongoClient
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
 
+# UUID regex pattern
+UUID_PATTERN = re.compile(r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', re.IGNORECASE)
+
 class WeaknessAnalyzer:
     def __init__(self):
-        """Initialize MongoDB connection."""
+        """Initialize MongoDB connection and load valid challenge IDs."""
         mongodb_uri = os.getenv('MONGODB_URI')
         if not mongodb_uri:
             raise ValueError('MONGODB_URI not found in environment variables')
@@ -27,7 +32,41 @@ class WeaknessAnalyzer:
         self.users_collection = self.db['users']
         self.attempts_collection = self.db['challengeattempts']
         
+        # Load valid challenge UUIDs from JSON files
+        self.valid_challenge_ids = self._load_valid_challenge_ids()
         print(f"[{datetime.now()}] Connected to MongoDB")
+        print(f"[{datetime.now()}] Loaded {len(self.valid_challenge_ids)} valid challenge UUIDs")
+    
+    def _load_valid_challenge_ids(self) -> Set[str]:
+        """Load all valid challenge IDs from JSON files."""
+        valid_ids = set()
+        data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+        
+        challenge_files = [
+            'challenges.json',
+            'idiom-challenges.json',
+            'verb-challenges.json'
+        ]
+        
+        for filename in challenge_files:
+            filepath = os.path.join(data_dir, filename)
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    challenges = json.load(f)
+                    for challenge in challenges:
+                        if 'id' in challenge and UUID_PATTERN.match(challenge['id']):
+                            valid_ids.add(challenge['id'])
+                    print(f"  Loaded {len([c for c in challenges if 'id' in c])} IDs from {filename}")
+            except FileNotFoundError:
+                print(f"  Warning: {filename} not found", file=sys.stderr)
+            except json.JSONDecodeError as e:
+                print(f"  Error parsing {filename}: {e}", file=sys.stderr)
+        
+        return valid_ids
+    
+    def _is_valid_uuid(self, challenge_id: str) -> bool:
+        """Check if a challenge ID is a valid UUID."""
+        return UUID_PATTERN.match(challenge_id) is not None
     
     def analyze_user_weaknesses(self, user_id: str, days_back: int = 30) -> Dict[str, Any]:
         """
@@ -59,11 +98,34 @@ class WeaknessAnalyzer:
                 'overallAccuracy': 0.0
             }
         
+        # Filter valid attempts (must have valid UUID challenge ID)
+        valid_attempts = []
+        invalid_count = 0
+        for attempt in attempts:
+            challenge_id = attempt.get('challengeId', '')
+            if self._is_valid_uuid(challenge_id) and challenge_id in self.valid_challenge_ids:
+                valid_attempts.append(attempt)
+            else:
+                invalid_count += 1
+        
+        if invalid_count > 0:
+            print(f"  Warning: Skipped {invalid_count} attempts with invalid/orphaned challenge IDs")
+        
+        if not valid_attempts:
+            return {
+                'totalAttempts': 0,
+                'weakWords': [],
+                'weakCategories': {},
+                'overallAccuracy': 0.0
+            }
+        
+        print(f"  Analyzing {len(valid_attempts)} valid attempts")
+        
         # Track statistics per word/phrase
         word_stats = defaultdict(lambda: {'correct': 0, 'total': 0, 'word': ''})
         category_stats = defaultdict(lambda: {'correct': 0, 'total': 0})
         
-        for attempt in attempts:
+        for attempt in valid_attempts:
             challenge_id = attempt.get('challengeId', '')
             challenge_type = attempt.get('challengeType', 'word')
             correct = attempt.get('correct', False)
@@ -106,8 +168,8 @@ class WeaknessAnalyzer:
             }
         
         # Overall accuracy
-        total_attempts = len(attempts)
-        total_correct = sum(1 for a in attempts if a.get('correct', False))
+        total_attempts = len(valid_attempts)
+        total_correct = sum(1 for a in valid_attempts if a.get('correct', False))
         overall_accuracy = (total_correct / total_attempts * 100) if total_attempts > 0 else 0
         
         return {
