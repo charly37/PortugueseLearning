@@ -100,6 +100,19 @@ app.get('/api/idiom-challenge', (req: Request, res: Response) => {
   res.json(randomChallenge);
 });
 
+// Get all challenges for learn/flashcard mode
+app.get('/api/word-challenges-all', (req: Request, res: Response) => {
+  res.json(challenges);
+});
+
+app.get('/api/verb-challenges-all', (req: Request, res: Response) => {
+  res.json(verbChallenges);
+});
+
+app.get('/api/idiom-challenges-all', (req: Request, res: Response) => {
+  res.json(idiomChallenges);
+});
+
 // Serve the React app for all other routes
 app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));

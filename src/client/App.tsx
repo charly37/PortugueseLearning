@@ -11,6 +11,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import ProfilePage from './components/ProfilePage';
 import ChallengeStatsPage from './components/ChallengeStatsPage';
+import FlashcardLearnPage from './components/FlashcardLearnPage';
 
 const theme = createTheme({
   palette: {
@@ -61,7 +62,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'word-practice' | 'word-challenge' | 'verb-practice' | 'verb-challenge' | 'idiom-practice' | 'idiom-challenge' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
+type PageType = 'landing' | 'word-practice' | 'word-challenge' | 'word-learn' | 'verb-practice' | 'verb-challenge' | 'verb-learn' | 'idiom-practice' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
 
 interface User {
   id: string;
@@ -178,16 +179,22 @@ const App: React.FC = () => {
             user={user}
             onWordPractice={() => setCurrentPage('word-practice')}
             onWordChallenge={() => setCurrentPage('word-challenge')}
+            onWordLearn={() => setCurrentPage('word-learn')}
             onVerbPractice={() => setCurrentPage('verb-practice')}
             onVerbChallenge={() => setCurrentPage('verb-challenge')}
+            onVerbLearn={() => setCurrentPage('verb-learn')}
             onIdiomPractice={() => setCurrentPage('idiom-practice')}
             onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
+            onIdiomLearn={() => setCurrentPage('idiom-learn')}
             onViewProfile={() => setCurrentPage('profile')}
             onLogout={handleLogout}
             onViewWordStats={() => setCurrentPage('word-stats')}
             onViewVerbStats={() => setCurrentPage('verb-stats')}
             onViewIdiomStats={() => setCurrentPage('idiom-stats')}
           />
+        )}
+        {currentPage === 'word-learn' && (
+          <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} />
         )}
         {currentPage === 'word-practice' && (
           <ChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
@@ -198,11 +205,17 @@ const App: React.FC = () => {
         {currentPage === 'verb-practice' && (
           <VerbChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
+        {currentPage === 'verb-learn' && (
+          <FlashcardLearnPage challengeType="verb" onBackHome={() => setCurrentPage('landing')} user={user} />
+        )}
         {currentPage === 'verb-challenge' && (
           <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
         )}
         {currentPage === 'idiom-practice' && (
           <IdiomChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
+        )}
+        {currentPage === 'idiom-learn' && (
+          <FlashcardLearnPage challengeType="idiom" onBackHome={() => setCurrentPage('landing')} user={user} />
         )}
         {currentPage === 'idiom-challenge' && (
           <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />

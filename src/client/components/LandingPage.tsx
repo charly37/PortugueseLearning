@@ -4,6 +4,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import TranslateIcon from '@mui/icons-material/Translate';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import LanguageIcon from '@mui/icons-material/Language';
+import StyleIcon from '@mui/icons-material/Style';
 import { useTranslation } from 'react-i18next';
 
 interface User {
@@ -17,10 +18,13 @@ interface LandingPageProps {
   user: User | null;
   onWordPractice: () => void;
   onWordChallenge: () => void;
+  onWordLearn: () => void;
   onVerbPractice: () => void;
   onVerbChallenge: () => void;
+  onVerbLearn: () => void;
   onIdiomPractice: () => void;
   onIdiomChallenge: () => void;
+  onIdiomLearn: () => void;
   onViewProfile: () => void;
   onLogout: () => void;
   onViewWordStats: () => void;
@@ -32,10 +36,13 @@ const LandingPage: React.FC<LandingPageProps> = ({
   user, 
   onWordPractice,
   onWordChallenge,
+  onWordLearn,
   onVerbPractice,
   onVerbChallenge,
+  onVerbLearn,
   onIdiomPractice,
   onIdiomChallenge,
+  onIdiomLearn,
   onViewWordStats,
   onViewVerbStats,
   onViewIdiomStats,
@@ -156,6 +163,17 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   variant="contained"
                   color="primary"
                   size="large"
+                  onClick={onWordLearn}
+                  fullWidth
+                  sx={{ mb: 1 }}
+                  startIcon={<StyleIcon />}
+                >
+                  Learn
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
                   onClick={onWordPractice}
                   fullWidth
                   sx={{ mb: 1 }}
@@ -213,6 +231,17 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   variant="contained"
                   color="secondary"
                   size="large"
+                  onClick={onVerbLearn}
+                  fullWidth
+                  sx={{ mb: 1 }}
+                  startIcon={<StyleIcon />}
+                >
+                  Learn
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
                   onClick={onVerbPractice}
                   fullWidth
                   sx={{ mb: 1 }}
@@ -266,6 +295,22 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
                   {t('landing.challenges.idiom.description')}
                 </Typography>
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={onIdiomLearn}
+                  fullWidth
+                  sx={{
+                    mb: 1,
+                    bgcolor: '#ff9800',
+                    '&:hover': {
+                      bgcolor: '#f57c00',
+                    },
+                  }}
+                  startIcon={<StyleIcon />}
+                >
+                  Learn
+                </Button>
                 <Button
                   variant="contained"
                   size="large"
