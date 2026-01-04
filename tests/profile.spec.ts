@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { registerAndLogin, login } from './helpers/auth-helper';
+import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Profile Page', () => {
   let testUser: { username: string; email: string; password: string };
@@ -14,11 +15,13 @@ test.describe('Profile Page', () => {
 
     // Register the user once
     const page = await browser.newPage();
+    await setLanguageToEnglish(page);
     await registerAndLogin(page, testUser.username, testUser.email, testUser.password);
     await page.close();
   });
 
   test.beforeEach(async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Login with the existing user before each test
     await login(page, testUser.email, testUser.password);
   });
@@ -47,7 +50,7 @@ test.describe('Profile Page', () => {
     await expect(emailSection).toContainText(testUser.email);
     
     // Check for member since field
-    await expect(page.getByText('Member Since')).toBeVisible();
+    await expect(page.getByText('Created On')).toBeVisible();
   });
 
   test('should display user avatar with initial', async ({ page }) => {
@@ -64,7 +67,7 @@ test.describe('Profile Page', () => {
     await page.getByRole('button', { name: testUser.username }).click();
     
     // Verify member since date is shown
-    await expect(page.getByText('Member Since')).toBeVisible();
+    await expect(page.getByText('Created On')).toBeVisible();
     // Date should be visible in some format
     const currentYear = new Date().getFullYear();
     await expect(page.getByText(currentYear.toString())).toBeVisible();

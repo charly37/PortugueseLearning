@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { registerAndLogin } from './helpers/auth-helper';
+import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Challenge Generation', () => {
   test('should show authentication requirement for unauthenticated users', async ({ page, context }) => {
+    await setLanguageToEnglish(page);
     // Clear all cookies and storage to ensure we're not authenticated
     await context.clearCookies();
     
@@ -23,12 +25,12 @@ test.describe('Challenge Generation', () => {
     await expect(page.locator('h5:has-text("Account Required")')).toBeVisible({ timeout: 10000 });
     
     // Verify explanation text is present
-    await expect(page.locator('text=Challenge mode uses personalized difficulty')).toBeVisible();
+    await expect(page.locator('text=Challenge mode uses personalized')).toBeVisible();
     
     // Verify benefits list is shown
-    await expect(page.locator('text=Track your progress over time')).toBeVisible();
+    await expect(page.locator('text=Track your progress and statistics')).toBeVisible();
     await expect(page.locator('text=Get personalized challenges based on your weak areas')).toBeVisible();
-    await expect(page.locator('text=View detailed statistics')).toBeVisible();
+    await expect(page.locator('text=Unlock advanced features')).toBeVisible();
     
     // Get the card container
     const card = page.locator('text=Account Required').locator('xpath=ancestor::div[contains(@class, "MuiCard")]').first();
@@ -36,7 +38,7 @@ test.describe('Challenge Generation', () => {
     // Verify Register and Login buttons are present in the card
     await expect(card.locator('button:has-text("Register")')).toBeVisible();
     await expect(card.locator('button:has-text("Login")')).toBeVisible();
-    await expect(card.locator('button:has-text("Back to Home")')).toBeVisible();
+    await expect(card.locator('button:has-text("Back")')).toBeVisible();
     
     // Verify configuration UI is NOT shown
     await expect(page.locator('text=Configure Challenge')).not.toBeVisible();
@@ -47,6 +49,7 @@ test.describe('Challenge Generation', () => {
   });
 
   test.beforeEach(async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Register and login is required for challenge generation API
     const timestamp = Date.now() + Math.floor(Math.random() * 10000);
     await registerAndLogin(
@@ -81,14 +84,14 @@ test.describe('Challenge Generation', () => {
     // Start the challenge
     await page.click('button:has-text("Start Challenge")');
     
-    // Wait for first challenge to load
-    await expect(page.locator('text=Français')).toBeVisible({ timeout: 10000 });
+    // Wait for first challenge to load - should show 'English' as source language
+    await expect(page.locator('h6:has-text("English")')).toBeVisible({ timeout: 10000 });
     
     // Verify turn counter shows 0/5
     await expect(page.locator('text=Turn 0/5')).toBeVisible();
     
     // Answer the first challenge
-    await page.getByLabel('Your Portuguese answer').fill('test');
+    await page.locator('input[type="text"]').fill('test');
     await page.click('text=Check Answer');
     
     // Verify feedback is shown
@@ -115,8 +118,8 @@ test.describe('Challenge Generation', () => {
     
     // Complete 3 turns
     for (let i = 0; i < 3; i++) {
-      await expect(page.locator('text=Français')).toBeVisible({ timeout: 10000 });
-      await page.fill('input', 'test');
+      await expect(page.locator('h6:has-text("English")')).toBeVisible({ timeout: 10000 });
+      await page.locator('input[type="text"]').fill('test');
       await page.click('text=Check Answer');
       await expect(page.locator('.MuiAlert-root')).toBeVisible();
       
@@ -164,8 +167,8 @@ test.describe('Challenge Generation', () => {
     // Verify on configuration screen
     await expect(page.locator('text=Configure Challenge')).toBeVisible();
     
-    // Click cancel
-    await page.click('button:has-text("Cancel")');
+    // Click back button to cancel
+    await page.click('button:has-text("Back")');
     
     // Verify back on home page
     await expect(page.locator('h1')).toContainText('Welcome');

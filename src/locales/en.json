@@ -1,0 +1,135 @@
+{
+  "common": {
+    "appTitle": "Portuguese Learning",
+    "home": "Home",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "back": "Back",
+    "practice": "Practice",
+    "challenge": "Challenge",
+    "points": "points",
+    "level": "Level",
+    "myStats": "My Stats",
+    "startChallenge": "Start Challenge",
+    "nextChallenge": "Next Challenge",
+    "checkAnswer": "Check Answer",
+    "yourAnswer": "Your Answer",
+    "viewFullStats": "View Full Statistics",
+    "difficulty": "Difficulty",
+    "numberOfTurns": "Number of turns",
+    "configureChallenge": "Configure Challenge"
+  },
+  "landing": {
+    "welcome": "Welcome",
+    "iSpeak": "I speak:",
+    "hero": {
+      "title": "Master Portuguese with Interactive Challenges",
+      "subtitle": "Practice vocabulary, verb conjugations, and idioms through engaging exercises"
+    },
+    "challenges": {
+      "word": {
+        "title": "Word Challenge",
+        "description": "Build your vocabulary by translating words from {{language}} to Portuguese"
+      },
+      "verb": {
+        "title": "Verb Challenge",
+        "description": "Master verb conjugations in the present tense"
+      },
+      "idiom": {
+        "title": "Idiom Challenge",
+        "description": "Learn common Portuguese expressions and idioms"
+      }
+    }
+  },
+  "auth": {
+    "loginTitle": "Login",
+    "registerTitle": "Register",
+    "welcomeBack": "Welcome back to Portuguese Learning",
+    "createAccount": "Create your Portuguese Learning account",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "confirmPassword": "Confirm Password",
+    "iSpeak": "I speak:",
+    "atLeastChars": "At least {{count}} characters",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "accountRequired": "Account Required",
+    "accountBenefits": {
+      "title": "Create a free account to:",
+      "trackProgress": "Track your progress and statistics",
+      "personalizedChallenges": "Get personalized challenges based on your weak areas",
+      "unlockFeatures": "Unlock advanced features"
+    }
+  },
+  "challenge": {
+    "word": {
+      "title": "Word Challenge - Turn {{current}}/{{total}}",
+      "practiceTitle": "Word Practice",
+      "header": "Portuguese Vocabulary",
+      "instruction": "Translate from {{language}} to Portuguese"
+    },
+    "verb": {
+      "title": "Verb Challenge - Turn {{current}}/{{total}}",
+      "practiceTitle": "Verb Practice",
+      "header": "Portuguese Verbs",
+      "instruction": "Translate from {{language}} to Portuguese",
+      "conjugate": "Conjugate the verb \"{{verb}}\" for \"{{pronoun}}\""
+    },
+    "idiom": {
+      "title": "Idiom Challenge - Turn {{current}}/{{total}}",
+      "practiceTitle": "Idiom Practice",
+      "header": "Portuguese Idioms",
+      "instruction": "Translate from {{language}} to Portuguese"
+    },
+    "correct": "Correct! Well done! 🎉",
+    "incorrect": "Incorrect. The correct answer is:",
+    "complete": {
+      "title": "Challenge Complete!",
+      "finalScore": "Final Score",
+      "results": "Results"
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "username": "Username",
+    "email": "Email",
+    "createdOn": "Created On",
+    "preferredLanguage": "Preferred Language",
+    "statistics": "Challenge Statistics",
+    "wordChallenges": "Word Challenges",
+    "verbChallenges": "Verb Challenges",
+    "idiomChallenges": "Idiom Challenges",
+    "accuracy": "Accuracy",
+    "attempts": "Attempts",
+    "correct": "Correct",
+    "streak": "Streak",
+    "completed": "Completed"
+  },
+  "stats": {
+    "recentAttempts": "Recent Attempts",
+    "topWeakWords": "Top Weak Words",
+    "weakCategories": "Weak Categories",
+    "accuracy": "Accuracy",
+    "time": "Time",
+    "correctAnswers": "Correct Answers",
+    "dayStreak": "Day Streak",
+    "completed": "Completed",
+    "progressOverview": "Progress Overview",
+    "overallAccuracy": "Overall Accuracy",
+    "totalAttempts": "Total Attempts",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "successRate": "Success Rate",
+    "noAttemptsYet": "No attempts yet",
+    "startFirstChallenge": "Start your first challenge to see your statistics here!",
+    "areasForImprovement": "Areas for Improvement",
+    "basedOnPerformance": "Based on your recent performance, these words need more practice:",
+    "lastAnalyzed": "Last analyzed:",
+    "yourAnswer": "Your answer:",
+    "correctAnswer": "Correct answer:"
+  }
+}

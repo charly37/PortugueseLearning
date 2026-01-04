@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Verb Challenge', () => {
   test.beforeEach(async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Navigate to the app (no login required)
     await page.goto('http://localhost:8080');
   });
@@ -14,7 +16,7 @@ test.describe('Verb Challenge', () => {
     
     // Verify we're on the verb challenge page
     await expect(page.locator('h1')).toContainText('Portuguese Verbs');
-    await expect(page.locator('text=Translate verbs from French to Portuguese')).toBeVisible();
+    await expect(page.locator('text=Translate from')).toBeVisible();
   });
 
   test('should start a verb challenge and show French verb', async ({ page }) => {
@@ -23,11 +25,11 @@ test.describe('Verb Challenge', () => {
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(1).click();
     
-    // Click Start Practice button
-    await page.click('text=Start Practice');
+    // Click Practice button to start the challenge
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Verify input field is present
     await expect(page.locator('input')).toBeVisible();
@@ -38,10 +40,10 @@ test.describe('Verb Challenge', () => {
     // Click Verb Practice button (second Practice button on page)
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(1).click();
-    await page.click('text=Start Practice');
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Type any answer and submit
     await page.fill('input', 'test');
@@ -56,10 +58,10 @@ test.describe('Verb Challenge', () => {
     // Click Verb Practice button (second Practice button on page)
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(1).click();
-    await page.click('text=Start Practice');
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Type an incorrect answer
     await page.fill('input', 'wrongverb');
@@ -74,10 +76,10 @@ test.describe('Verb Challenge', () => {
     // Click Verb Practice button (second Practice button on page)
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(1).click();
-    await page.click('text=Start Practice');
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Type answer and press Enter
     await page.fill('input', 'test');

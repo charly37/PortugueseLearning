@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Container,
   Box,
@@ -81,6 +82,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
   onBackHome,
   onStartChallenge
 }) => {
+  const { t } = useTranslation();
   const [stats, setStats] = useState<ChallengeProgress | null>(null);
   const [history, setHistory] = useState<AttemptHistory[]>([]);
   const [weaknesses, setWeaknesses] = useState<Weaknesses | null>(null);
@@ -185,7 +187,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               onClick={onBackHome}
               sx={{ mb: 3 }}
             >
-              Back to Home
+              {t('common.back')}
             </Button>
             <Alert severity="error">
               {error || 'Failed to load statistics. Please make sure you are logged in.'}
@@ -207,7 +209,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               startIcon={<ArrowBackIcon />}
               onClick={onBackHome}
             >
-              Back to Home
+              {t('common.back')}
             </Button>
             <Typography variant="h4" component="h1" sx={{ flexGrow: 1 }}>
               {getChallengeTitle()} Statistics
@@ -223,7 +225,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                 }
               }}
             >
-              Start Challenge
+              {t('common.startChallenge')}
             </Button>
           </Box>
 
@@ -237,7 +239,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                     {stats.accuracy}%
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Accuracy
+                    {t('stats.accuracy')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -251,7 +253,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                     {stats.correctAnswers}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Correct Answers
+                    {t('stats.correctAnswers')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -265,7 +267,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                     {stats.streak}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Day Streak
+                    {t('stats.dayStreak')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -278,7 +280,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                     {stats.completedChallenges}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Completed
+                    {t('stats.completed')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -288,14 +290,14 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
             <Grid item xs={12}>
               <Paper sx={{ p: 3 }}>
                 <Typography variant="h6" gutterBottom>
-                  Progress Overview
+                  {t('stats.progressOverview')}
                 </Typography>
                 <Divider sx={{ mb: 3 }} />
                 
                 <Box sx={{ mb: 3 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                     <Typography variant="body2" color="text.secondary">
-                      Overall Accuracy
+                      {t('stats.overallAccuracy')}
                     </Typography>
                     <Typography variant="body2" fontWeight="bold">
                       {stats.accuracy}%
@@ -318,7 +320,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                 <Grid container spacing={2}>
                   <Grid item xs={6} sm={3}>
                     <Typography variant="body2" color="text.secondary">
-                      Total Attempts
+                      {t('stats.totalAttempts')}
                     </Typography>
                     <Typography variant="h6">
                       {stats.totalAttempts}
@@ -326,7 +328,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                   </Grid>
                   <Grid item xs={6} sm={3}>
                     <Typography variant="body2" color="text.secondary">
-                      Correct
+                      {t('stats.correct')}
                     </Typography>
                     <Typography variant="h6" color="success.main">
                       {stats.correctAnswers}
@@ -334,7 +336,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                   </Grid>
                   <Grid item xs={6} sm={3}>
                     <Typography variant="body2" color="text.secondary">
-                      Incorrect
+                      {t('stats.incorrect')}
                     </Typography>
                     <Typography variant="h6" color="error.main">
                       {stats.totalAttempts - stats.correctAnswers}
@@ -342,7 +344,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                   </Grid>
                   <Grid item xs={6} sm={3}>
                     <Typography variant="body2" color="text.secondary">
-                      Success Rate
+                      {t('stats.successRate')}
                     </Typography>
                     <Typography variant="h6">
                       {stats.totalAttempts > 0 
@@ -359,7 +361,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               <Grid item xs={12}>
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h6" gutterBottom>
-                    Recent Attempts
+                    {t('stats.recentAttempts')}
                   </Typography>
                   <Divider sx={{ mb: 2 }} />
                   <List>
@@ -403,11 +405,11 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                           secondary={
                             <Box sx={{ mt: 0.5 }}>
                               <Typography variant="body2" color="text.secondary">
-                                Your answer: <strong>{attempt.userAnswer}</strong>
+                                {t('stats.yourAnswer')} <strong>{attempt.userAnswer}</strong>
                               </Typography>
                               {!attempt.correct && (
                                 <Typography variant="body2" color="text.secondary">
-                                  Correct answer: <strong>{attempt.correctAnswer}</strong>
+                                  {t('stats.correctAnswer')} <strong>{attempt.correctAnswer}</strong>
                                 </Typography>
                               )}
                             </Box>
@@ -424,10 +426,10 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               <Grid item xs={12}>
                 <Paper sx={{ p: 4, textAlign: 'center' }}>
                   <Typography variant="h6" color="text.secondary" gutterBottom>
-                    No attempts yet
+                    {t('stats.noAttemptsYet')}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    Start your first challenge to see your statistics here!
+                    {t('stats.startFirstChallenge')}
                   </Typography>
                   <Button
                     variant="contained"
@@ -440,7 +442,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                       }
                     }}
                   >
-                    Start Now
+                    {t('common.startChallenge')}
                   </Button>
                 </Paper>
               </Grid>
@@ -451,11 +453,11 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               <Grid item xs={12}>
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h6" gutterBottom>
-                    Areas for Improvement
+                    {t('stats.areasForImprovement')}
                   </Typography>
                   <Divider sx={{ mb: 2 }} />
                   <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    Based on your recent performance, these words need more practice:
+                    {t('stats.basedOnPerformance')}
                   </Typography>
                   <List>
                     {weaknesses.weakWords.map((weakWord, index) => (
@@ -528,7 +530,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                   </List>
                   {weaknesses.analyzedAt && (
                     <Typography variant="caption" color="text.secondary" sx={{ mt: 2, display: 'block' }}>
-                      Last analyzed: {formatDate(weaknesses.analyzedAt)}
+                      {t('stats.lastAnalyzed')} {formatDate(weaknesses.analyzedAt)}
                     </Typography>
                   )}
                 </Paper>

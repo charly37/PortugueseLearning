@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Box, Chip } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { useTranslation } from 'react-i18next';
 
 interface User {
   id: string;
@@ -31,11 +32,13 @@ const Header: React.FC<HeaderProps> = ({
   onNavigateRegister,
   showNavigation = true,
 }) => {
+  const { t } = useTranslation();
+  
   return (
     <AppBar position="fixed" elevation={2}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 0, mr: 4, fontWeight: 600 }}>
-          🇵🇹 Portuguese Learning
+          🇵🇹 {t('common.appTitle')}
         </Typography>
 
         <Box sx={{ flexGrow: 1 }} />
@@ -48,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
                 startIcon={<HomeIcon />}
                 onClick={onNavigateHome}
               >
-                Home
+                {t('common.home')}
               </Button>
             )}
             
@@ -73,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({
                   startIcon={<LogoutIcon />}
                   onClick={onLogout}
                 >
-                  Logout
+                  {t('common.logout')}
                 </Button>
               </>
             ) : (
@@ -82,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({
                   color="inherit"
                   onClick={onNavigateLogin}
                 >
-                  Login
+                  {t('common.login')}
                 </Button>
                 <Button
                   variant="outlined"
@@ -96,7 +99,7 @@ const Header: React.FC<HeaderProps> = ({
                   }}
                   onClick={onNavigateRegister}
                 >
-                  Register
+                  {t('common.register')}
                 </Button>
               </>
             )}

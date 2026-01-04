@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Idiom Challenge', () => {
   test.beforeEach(async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Navigate to the app (no login required)
     await page.goto('http://localhost:8080');
   });
@@ -14,7 +16,7 @@ test.describe('Idiom Challenge', () => {
     
     // Verify we're on the idiom challenge page
     await expect(page.locator('h1')).toContainText('Portuguese Idioms');
-    await expect(page.locator('text=Translate idioms from French to Portuguese')).toBeVisible();
+    await expect(page.locator('text=Translate from')).toBeVisible();
   });
 
 
@@ -25,11 +27,11 @@ test.describe('Idiom Challenge', () => {
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(2).click();
     
-    // Click Start Practice button
-    await page.getByRole('button', { name: 'Start Practice' }).click();
+    // Click Practice button to start the challenge
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Type any answer and submit
     await page.fill('input', 'test');
@@ -44,10 +46,10 @@ test.describe('Idiom Challenge', () => {
     // Click Idiom Practice button (third Practice button on page)
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(2).click();
-    await page.getByRole('button', { name: 'Start Practice' }).click();
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Type an incorrect answer
     await page.fill('input', 'wrongidiom');
@@ -63,10 +65,10 @@ test.describe('Idiom Challenge', () => {
     // Click Idiom Practice button (third Practice button on page)
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(2).click();
-    await page.getByRole('button', { name: 'Start Practice' }).click();
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge and answer it
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     await page.fill('input', 'test');
     await page.click('text=Check Answer');
     
@@ -79,10 +81,10 @@ test.describe('Idiom Challenge', () => {
     // Click Idiom Practice button (third Practice button on page)
     const practiceButtons = page.locator('button >> text=Practice');
     await practiceButtons.nth(2).click();
-    await page.getByRole('button', { name: 'Start Practice' }).click();
+    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
     
     // Wait for challenge and answer it
-    await expect(page.locator('text=Français')).toBeVisible();
+    await expect(page.locator('h6:has-text("English")')).toBeVisible();
     await page.fill('input', 'test');
     await page.click('text=Check Answer');
     

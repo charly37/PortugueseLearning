@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Landing Page', () => {
   test.beforeEach(async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Navigate to the app (no login required)
     await page.goto('http://localhost:8080');
   });

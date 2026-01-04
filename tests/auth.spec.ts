@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Authentication', () => {
   test('should display landing page on first visit with login option', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     
     // Verify we're on the landing page
@@ -13,6 +15,7 @@ test.describe('Authentication', () => {
   });
 
   test('should navigate to register page', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     
     // Click Register button in header
@@ -30,6 +33,7 @@ test.describe('Authentication', () => {
   });
 
   test('should register a new user successfully', async ({ page }) => {
+    await setLanguageToEnglish(page);
     const testUser = {
       username: `testuser_${Date.now()}`,
       email: `test_${Date.now()}@example.com`,
@@ -61,6 +65,7 @@ test.describe('Authentication', () => {
   });
 
   test('should not register with invalid email', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
@@ -76,6 +81,7 @@ test.describe('Authentication', () => {
   });
 
   test('should not register with password mismatch', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
@@ -92,6 +98,7 @@ test.describe('Authentication', () => {
   });
 
   test('should not register with short password', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     await page.getByRole('button', { name: 'Register' }).click();
     await page.waitForSelector('text=Register');
@@ -108,6 +115,7 @@ test.describe('Authentication', () => {
   });
 
   test('should login with valid credentials', async ({ page }) => {
+    await setLanguageToEnglish(page);
     // First register a unique user
     const uniqueUser = {
       username: `logintest_${Date.now()}`,
@@ -146,6 +154,7 @@ test.describe('Authentication', () => {
   });
 
   test('should not login with invalid credentials', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     
     // Navigate to login page
@@ -162,6 +171,7 @@ test.describe('Authentication', () => {
   });
 
   test('should logout successfully', async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Register and login first
     const uniqueUser = {
       username: `logouttest_${Date.now()}`,
@@ -193,6 +203,7 @@ test.describe('Authentication', () => {
   });
 
   test('should navigate back to login from register page', async ({ page }) => {
+    await setLanguageToEnglish(page);
     await page.goto('/');
     
     // Navigate to register page from landing page
@@ -203,7 +214,7 @@ test.describe('Authentication', () => {
     await expect(page.locator('h1')).toContainText('Register');
     
     // Navigate back to login
-    await page.getByRole('button', { name: /Login here/i }).click();
+    await page.getByRole('button', { name: /sign in|login here/i }).click();
     
     // Wait for login page
     await page.waitForSelector('h1:has-text("Login")');
@@ -213,6 +224,7 @@ test.describe('Authentication', () => {
   });
 
   test('should persist session after page reload', async ({ page }) => {
+    await setLanguageToEnglish(page);
     // Register a user
     const uniqueUser = {
       username: `sessiontest_${Date.now()}`,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, CircularProgress, Box } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import ChallengePage from './components/ChallengePage';
@@ -74,11 +75,19 @@ const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>('landing');
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const { i18n } = useTranslation();
 
   // Check authentication status on mount
   useEffect(() => {
     checkAuth();
   }, []);
+
+  // Sync i18n language with user preference
+  useEffect(() => {
+    if (user?.preferredLanguage) {
+      i18n.changeLanguage(user.preferredLanguage);
+    }
+  }, [user?.preferredLanguage, i18n]);
 
   const checkAuth = async () => {
     try {

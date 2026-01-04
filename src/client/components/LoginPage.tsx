@@ -9,6 +9,7 @@ import {
   Link,
   Paper
 } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 interface LoginPageProps {
   onLoginSuccess: (user: { id: string; username: string; email: string }) => void;
@@ -21,6 +22,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onNavigateToRegis
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,11 +68,11 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onNavigateToRegis
       >
         <Paper elevation={3} sx={{ p: 4, width: '100%' }}>
           <Typography variant="h4" component="h1" gutterBottom align="center">
-            Login
+            {t('auth.loginTitle')}
           </Typography>
           
           <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 3 }}>
-            Welcome back to Portuguese Learning
+            {t('auth.welcomeBack')}
           </Typography>
 
           {error && (
@@ -82,7 +84,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onNavigateToRegis
           <form onSubmit={handleSubmit}>
             <TextField
               fullWidth
-              label="Email"
+              label={t('auth.email')}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -93,7 +95,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onNavigateToRegis
             
             <TextField
               fullWidth
-              label="Password"
+              label={t('auth.password')}
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -111,20 +113,20 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onNavigateToRegis
               disabled={loading}
               sx={{ mt: 3, mb: 2 }}
             >
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? `${t('auth.loginTitle')}...` : t('auth.loginTitle')}
             </Button>
           </form>
 
           <Box sx={{ mt: 2, textAlign: 'center' }}>
             <Typography variant="body2">
-              Don't have an account?{' '}
+              {t('auth.noAccount')}{' '}
               <Link
                 component="button"
                 variant="body2"
                 onClick={onNavigateToRegister}
                 sx={{ cursor: 'pointer' }}
               >
-                Register here
+                {t('auth.signUp')}
               </Link>
             </Typography>
           </Box>

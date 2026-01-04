@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import TimerIcon from '@mui/icons-material/Timer';
@@ -38,6 +39,7 @@ interface IdiomChallengePageProps {
 }
 
 const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister }) => {
+  const { t } = useTranslation();
   const [challenge, setChallenge] = useState<IdiomChallenge | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -134,10 +136,10 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
     const timeSpent = Date.now() - startTime;
 
     if (isCorrect) {
-      setFeedback({ type: 'success', message: `Correct! Well done! 🎉 The answer is: ${challenge.port}` });
+      setFeedback({ type: 'success', message: `${t('challenge.correct')} ${challenge.port}` });
       setShowAnswer(true);
     } else {
-      setFeedback({ type: 'error', message: `Incorrect. The correct answer is: ${challenge.port}` });
+      setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}` });
       setShowAnswer(true);
     }
 
@@ -215,34 +217,34 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
           }}
         >
           <Chip 
-            label={mode === 'challenge' ? `Idiom Challenge - Turn ${turnCount}/${maxTurns}` : 'Idiom Practice'} 
+            label={mode === 'challenge' ? t('challenge.idiom.title', { current: turnCount, total: maxTurns }) : t('challenge.idiom.practiceTitle')} 
             sx={{ mb: 2, bgcolor: '#ff9800', color: 'white' }} 
           />
           
           <Typography variant="h3" component="h1" gutterBottom align="center">
-            Portuguese Idioms
+            {t('challenge.idiom.header')}
           </Typography>
           
           <Typography variant="body1" color="text.secondary" gutterBottom sx={{ mb: 4 }}>
-            Translate idioms from French to Portuguese
+            {t('challenge.idiom.instruction', { language: preferredLanguage === 'fr' ? 'Français' : 'English' })}
           </Typography>
 
           {!challengeStarted && mode === 'challenge' && !user && (
             <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
-                  Account Required
+                  {t('auth.accountRequired')}
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
                   Challenge mode uses personalized difficulty based on your performance history to help you improve faster.
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
-                  Create a free account to:
+                  {t('auth.accountBenefits.title')}
                 </Typography>
                 <Box component="ul" sx={{ mb: 3, pl: 4 }}>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>Track your progress over time</Typography>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>Get personalized challenges based on your weak areas</Typography>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>View detailed statistics and improvement insights</Typography>
+                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.trackProgress')}</Typography>
+                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.personalizedChallenges')}</Typography>
+                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.unlockFeatures')}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
                   <Button
@@ -257,7 +259,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                       },
                     }}
                   >
-                    Register
+                    {t('common.register')}
                   </Button>
                   <Button
                     variant="outlined"
@@ -273,7 +275,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                       },
                     }}
                   >
-                    Login
+                    {t('common.login')}
                   </Button>
                 </Box>
                 <Button
@@ -285,7 +287,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                     color: '#ff9800',
                   }}
                 >
-                  Back to Home
+                  {t('common.back')}
                 </Button>
               </CardContent>
             </Card>
@@ -295,11 +297,11 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
             <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
-                  Configure Challenge
+                  {t('common.configureChallenge')}
                 </Typography>
                 <TextField
                   type="number"
-                  label="Number of turns"
+                  label={t('common.numberOfTurns')}
                   value={maxTurns}
                   onChange={(e) => setMaxTurns(Math.max(1, Math.min(50, parseInt(e.target.value) || 10)))}
                   fullWidth
@@ -309,7 +311,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 />
                 <Box sx={{ mb: 3 }}>
                   <Typography variant="body2" gutterBottom>
-                    Difficulty: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
+                    {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
                   </Typography>
                   <TextField
                     type="range"
@@ -335,7 +337,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                       },
                     }}
                   >
-                    Cancel
+                    {t('common.back')}
                   </Button>
                   <Button
                     variant="contained"
@@ -349,7 +351,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                       },
                     }}
                   >
-                    Start Challenge
+                    {t('common.startChallenge')}
                   </Button>
                 </Box>
               </CardContent>
@@ -454,7 +456,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                   },
                 }}
               >
-                Back to Home
+                {t('common.back')}
               </Button>
             </>
           )}
@@ -472,7 +474,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 },
               }}
             >
-              Start {mode === 'challenge' ? 'Challenge' : 'Practice'}
+              {mode === 'challenge' ? t('common.startChallenge') : t('common.practice')}
             </Button>
           )}
 
@@ -492,7 +494,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 
                 <TextField
                   fullWidth
-                  label="Your Portuguese answer"
+                  label={t('common.yourAnswer')}
                   variant="outlined"
                   value={userAnswer}
                   onChange={(e) => setUserAnswer(e.target.value)}
@@ -534,7 +536,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                       },
                     }}
                   >
-                    Check Answer
+                    {t('common.checkAnswer')}
                   </Button>
                 ) : (
                   <Button
@@ -549,7 +551,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                       },
                     }}
                   >
-                    Next Challenge
+                    {t('common.nextChallenge')}
                   </Button>
                 )}
               </CardContent>

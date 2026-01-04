@@ -1,0 +1,135 @@
+{
+  "common": {
+    "appTitle": "Apprentissage du Portugais",
+    "home": "Accueil",
+    "logout": "Déconnexion",
+    "login": "Connexion",
+    "register": "Inscription",
+    "back": "Retour",
+    "practice": "Pratique",
+    "challenge": "Défi",
+    "points": "points",
+    "level": "Niveau",
+    "myStats": "Mes Statistiques",
+    "startChallenge": "Commencer le Défi",
+    "nextChallenge": "Prochain Défi",
+    "checkAnswer": "Vérifier la Réponse",
+    "yourAnswer": "Votre Réponse",
+    "viewFullStats": "Voir Toutes les Statistiques",
+    "difficulty": "Difficulté",
+    "numberOfTurns": "Nombre de tours",
+    "configureChallenge": "Configurer le Défi"
+  },
+  "landing": {
+    "welcome": "Bienvenue",
+    "iSpeak": "Je parle :",
+    "hero": {
+      "title": "Maîtrisez le Portugais avec des Défis Interactifs",
+      "subtitle": "Pratiquez le vocabulaire, les conjugaisons de verbes et les expressions idiomatiques à travers des exercices engageants"
+    },
+    "challenges": {
+      "word": {
+        "title": "Défi de Vocabulaire",
+        "description": "Construisez votre vocabulaire en traduisant des mots du {{language}} vers le portugais"
+      },
+      "verb": {
+        "title": "Défi de Verbes",
+        "description": "Maîtrisez les conjugaisons de verbes au présent"
+      },
+      "idiom": {
+        "title": "Défi d'Expressions",
+        "description": "Apprenez les expressions et idiomes portugais courants"
+      }
+    }
+  },
+  "auth": {
+    "loginTitle": "Connexion",
+    "registerTitle": "Inscription",
+    "welcomeBack": "Bienvenue sur Apprentissage du Portugais",
+    "createAccount": "Créez votre compte Apprentissage du Portugais",
+    "email": "Email",
+    "password": "Mot de passe",
+    "username": "Nom d'utilisateur",
+    "confirmPassword": "Confirmer le Mot de passe",
+    "iSpeak": "Je parle :",
+    "atLeastChars": "Au moins {{count}} caractères",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "signUp": "S'inscrire",
+    "signIn": "Se connecter",
+    "accountRequired": "Compte Requis",
+    "accountBenefits": {
+      "title": "Créez un compte gratuit pour :",
+      "trackProgress": "Suivre vos progrès et statistiques",
+      "personalizedChallenges": "Obtenir des défis personnalisés basés sur vos points faibles",
+      "unlockFeatures": "Débloquer des fonctionnalités avancées"
+    }
+  },
+  "challenge": {
+    "word": {
+      "title": "Défi de Vocabulaire - Tour {{current}}/{{total}}",
+      "practiceTitle": "Pratique de Vocabulaire",
+      "header": "Vocabulaire Portugais",
+      "instruction": "Traduire du {{language}} vers le portugais"
+    },
+    "verb": {
+      "title": "Défi de Verbes - Tour {{current}}/{{total}}",
+      "practiceTitle": "Pratique de Verbes",
+      "header": "Verbes Portugais",
+      "instruction": "Traduire du {{language}} vers le portugais",
+      "conjugate": "Conjuguez le verbe \"{{verb}}\" pour \"{{pronoun}}\""
+    },
+    "idiom": {
+      "title": "Défi d'Expressions - Tour {{current}}/{{total}}",
+      "practiceTitle": "Pratique d'Expressions",
+      "header": "Expressions Portugaises",
+      "instruction": "Traduire du {{language}} vers le portugais"
+    },
+    "correct": "Correct ! Bravo ! 🎉",
+    "incorrect": "Incorrect. La bonne réponse est :",
+    "complete": {
+      "title": "Défi Terminé !",
+      "finalScore": "Score Final",
+      "results": "Résultats"
+    }
+  },
+  "profile": {
+    "title": "Mon Profil",
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "createdOn": "Créé le",
+    "preferredLanguage": "Langue Préférée",
+    "statistics": "Statistiques des Défis",
+    "wordChallenges": "Défis de Vocabulaire",
+    "verbChallenges": "Défis de Verbes",
+    "idiomChallenges": "Défis d'Expressions",
+    "accuracy": "Précision",
+    "attempts": "Tentatives",
+    "correct": "Correct",
+    "streak": "Série",
+    "completed": "Terminé"
+  },
+  "stats": {
+    "recentAttempts": "Tentatives Récentes",
+    "topWeakWords": "Mots les Plus Faibles",
+    "weakCategories": "Catégories Faibles",
+    "accuracy": "Précision",
+    "time": "Temps",
+    "correctAnswers": "Réponses Correctes",
+    "dayStreak": "Série de Jours",
+    "completed": "Terminé",
+    "progressOverview": "Aperçu des Progrès",
+    "overallAccuracy": "Précision Globale",
+    "totalAttempts": "Total de Tentatives",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "successRate": "Taux de Réussite",
+    "noAttemptsYet": "Aucune tentative pour le moment",
+    "startFirstChallenge": "Commencez votre premier défi pour voir vos statistiques ici !",
+    "areasForImprovement": "Domaines à Améliorer",
+    "basedOnPerformance": "En fonction de vos performances récentes, ces mots nécessitent plus de pratique :",
+    "lastAnalyzed": "Dernière analyse :",
+    "yourAnswer": "Votre réponse :",
+    "correctAnswer": "Réponse correcte :"
+  }
+}

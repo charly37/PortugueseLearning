@@ -4,6 +4,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import TranslateIcon from '@mui/icons-material/Translate';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import LanguageIcon from '@mui/icons-material/Language';
+import { useTranslation } from 'react-i18next';
 
 interface User {
   id: string;
@@ -39,6 +40,8 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onViewVerbStats,
   onViewIdiomStats,
 }) => {
+  const { t, i18n } = useTranslation();
+  
   // Initialize language from user preference, localStorage, or default to 'fr'
   const [selectedLanguage, setSelectedLanguage] = useState<'fr' | 'en'>(() => {
     if (user?.preferredLanguage) return user.preferredLanguage;
@@ -58,6 +61,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
     
     setSelectedLanguage(newLanguage);
     localStorage.setItem('preferredLanguage', newLanguage);
+    i18n.changeLanguage(newLanguage);
 
     // Update user preference if logged in
     if (user) {
@@ -92,13 +96,13 @@ const LandingPage: React.FC<LandingPageProps> = ({
           }}
         >
           <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700, mb: 2 }}>
-            Welcome{user ? `, ${user.username}` : ''}! 👋
+            {t('landing.welcome')}{user ? `, ${user.username}` : ''}! 👋
           </Typography>
           
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, justifyContent: 'center' }}>
             <LanguageIcon color="action" />
             <Typography variant="body1" color="text.secondary">
-              I speak:
+              {t('landing.iSpeak')}
             </Typography>
             <ToggleButtonGroup
               value={selectedLanguage}
@@ -117,12 +121,11 @@ const LandingPage: React.FC<LandingPageProps> = ({
           </Box>
           
           <Typography variant="h5" color="text.secondary" gutterBottom sx={{ maxWidth: '700px', mb: 2 }}>
-            Master Portuguese with Interactive Challenges
+            {t('landing.hero.title')}
           </Typography>
           
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '800px', mb: 6 }}>
-            Practice vocabulary, verb conjugations, and idioms through interactive exercises. 
-            Learn Portuguese efficiently with our comprehensive learning platform.
+            {t('landing.hero.subtitle')}
           </Typography>
           
           <Grid container spacing={3} sx={{ maxWidth: '900px' }}>
@@ -144,10 +147,10 @@ const LandingPage: React.FC<LandingPageProps> = ({
               >
                 <TranslateIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-                  Word Challenge
+                  {t('landing.challenges.word.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
-                  Build your vocabulary by translating words from {languageNames[selectedLanguage]} to Portuguese
+                  {t('landing.challenges.word.description', { language: languageNames[selectedLanguage] })}
                 </Typography>
                 <Button
                   variant="contained"
@@ -157,7 +160,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   fullWidth
                   sx={{ mb: 1 }}
                 >
-                  Practice
+                  {t('common.practice')}
                 </Button>
                 <Button
                   variant="outlined"
@@ -167,7 +170,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
                 >
-                  Challenge
+                  {t('common.challenge')}
                 </Button>
                 {user && (
                   <Button
@@ -177,7 +180,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     onClick={onViewWordStats}
                     fullWidth
                   >
-                    My Stats
+                    {t('common.myStats')}
                   </Button>
                 )}
               </Paper>
@@ -201,10 +204,10 @@ const LandingPage: React.FC<LandingPageProps> = ({
               >
                 <SchoolIcon sx={{ fontSize: 48, color: 'secondary.main', mb: 2 }} />
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-                  Verb Challenge
+                  {t('landing.challenges.verb.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
-                  Master verb conjugations in the present tense
+                  {t('landing.challenges.verb.description')}
                 </Typography>
                 <Button
                   variant="contained"
@@ -214,7 +217,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   fullWidth
                   sx={{ mb: 1 }}
                 >
-                  Practice
+                  {t('common.practice')}
                 </Button>
                 <Button
                   variant="outlined"
@@ -224,7 +227,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
                 >
-                  Challenge
+                  {t('common.challenge')}
                 </Button>
                 {user && (
                   <Button
@@ -234,7 +237,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     onClick={onViewVerbStats}
                     fullWidth
                   >
-                    My Stats
+                    {t('common.myStats')}
                   </Button>
                 )}
               </Paper>
@@ -258,10 +261,10 @@ const LandingPage: React.FC<LandingPageProps> = ({
               >
                 <RecordVoiceOverIcon sx={{ fontSize: 48, color: '#ff9800', mb: 2 }} />
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
-                  Idiom Challenge
+                  {t('landing.challenges.idiom.title')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, flexGrow: 1 }}>
-                  Learn common Portuguese idioms and expressions
+                  {t('landing.challenges.idiom.description')}
                 </Typography>
                 <Button
                   variant="contained"
@@ -276,7 +279,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     },
                   }}
                 >
-                  Practice
+                  {t('common.practice')}
                 </Button>
                 <Button
                   variant="outlined"
@@ -293,7 +296,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     },
                   }}
                 >
-                  Challenge
+                  {t('common.challenge')}
                 </Button>
                 {user && (
                   <Button
@@ -310,7 +313,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                       },
                     }}
                   >
-                    My Stats
+                    {t('common.myStats')}
                   </Button>
                 )}
               </Paper>

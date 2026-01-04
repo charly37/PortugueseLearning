@@ -14,6 +14,7 @@ import {
   FormLabel
 } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
+import { useTranslation } from 'react-i18next';
 
 interface RegisterPageProps {
   onRegisterSuccess: (user: { id: string; username: string; email: string }) => void;
@@ -32,6 +33,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,11 +98,11 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
       >
         <Paper elevation={3} sx={{ p: 4, width: '100%' }}>
           <Typography variant="h4" component="h1" gutterBottom align="center">
-            Register
+            {t('auth.registerTitle')}
           </Typography>
           
           <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 3 }}>
-            Create your Portuguese Learning account
+            {t('auth.createAccount')}
           </Typography>
 
           {error && (
@@ -112,18 +114,18 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
           <form onSubmit={handleSubmit}>
             <TextField
               fullWidth
-              label="Username"
+              label={t('auth.username')}
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
               margin="normal"
               autoComplete="username"
-              helperText="At least 3 characters"
+              helperText={t('auth.atLeastChars', { count: 3 })}
             />
 
             <TextField
               fullWidth
-              label="Email"
+              label={t('auth.email')}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -135,7 +137,7 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
             <FormControl fullWidth margin="normal">
               <FormLabel sx={{ mb: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
                 <LanguageIcon fontSize="small" />
-                <Typography variant="body1">I speak:</Typography>
+                <Typography variant="body1">{t('auth.iSpeak')}</Typography>
               </FormLabel>
               <ToggleButtonGroup
                 value={preferredLanguage}
@@ -155,19 +157,19 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
             
             <TextField
               fullWidth
-              label="Password"
+              label={t('auth.password')}
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
               margin="normal"
               autoComplete="new-password"
-              helperText="At least 6 characters"
+              helperText={t('auth.atLeastChars', { count: 6 })}
             />
 
             <TextField
               fullWidth
-              label="Confirm Password"
+              label={t('auth.confirmPassword')}
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
@@ -185,20 +187,20 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
               disabled={loading}
               sx={{ mt: 3, mb: 2 }}
             >
-              {loading ? 'Creating account...' : 'Register'}
+              {loading ? `${t('auth.registerTitle')}...` : t('auth.registerTitle')}
             </Button>
           </form>
 
           <Box sx={{ mt: 2, textAlign: 'center' }}>
             <Typography variant="body2">
-              Already have an account?{' '}
+              {t('auth.hasAccount')}{' '}
               <Link
                 component="button"
                 variant="body2"
                 onClick={onNavigateToLogin}
                 sx={{ cursor: 'pointer' }}
               >
-                Login here
+                {t('auth.signIn')}
               </Link>
             </Typography>
           </Box>

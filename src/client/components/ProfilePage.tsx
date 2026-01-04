@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Container,
   Box,
@@ -59,6 +60,7 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
+  const { t } = useTranslation();
   const [progress, setProgress] = useState<Progress | null>(null);
   const [loading, setLoading] = useState(true);
   const [preferredLanguage, setPreferredLanguage] = useState<'fr' | 'en'>(user?.preferredLanguage || 'fr');
@@ -135,14 +137,14 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
       }}
     >
       <Typography variant="h6" gutterBottom sx={{ color, fontWeight: 'bold' }}>
-        {type.charAt(0).toUpperCase() + type.slice(1)} Challenges
+        {type === 'word' ? t('profile.wordChallenges') : type === 'idiom' ? t('profile.idiomChallenges') : t('profile.verbChallenges')}
       </Typography>
       
       <Stack spacing={2}>
         <Box>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
             <Typography variant="body2" color="text.secondary">
-              Accuracy
+              {t('profile.accuracy')}
             </Typography>
             <Typography variant="body2" fontWeight="bold">
               {data.accuracy}%
@@ -165,7 +167,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
         <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
           <Box sx={{ flex: 1 }}>
             <Typography variant="caption" color="text.secondary">
-              Attempts
+              {t('profile.attempts')}
             </Typography>
             <Typography variant="h6">
               {data.totalAttempts}
@@ -173,7 +175,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
           </Box>
           <Box sx={{ flex: 1 }}>
             <Typography variant="caption" color="text.secondary">
-              Correct
+              {t('profile.correct')}
             </Typography>
             <Typography variant="h6" color="success.main">
               {data.correctAnswers}
@@ -184,7 +186,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
         <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
           <Box sx={{ flex: 1 }}>
             <Typography variant="caption" color="text.secondary">
-              Streak
+              {t('profile.streak')}
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <LocalFireDepartmentIcon sx={{ color: 'orange', fontSize: 20 }} />
@@ -195,7 +197,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
           </Box>
           <Box sx={{ flex: 1 }}>
             <Typography variant="caption" color="text.secondary">
-              Completed
+              {t('profile.completed')}
             </Typography>
             <Typography variant="h6">
               {data.completedChallenges}
@@ -233,10 +235,10 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
               onClick={onBackHome}
               sx={{ mr: 2 }}
             >
-              Back
+              {t('common.back')}
             </Button>
             <Typography variant="h5" component="h1" sx={{ flexGrow: 1 }}>
-              My Profile
+              {t('profile.title')}
             </Typography>
           </Box>
 
@@ -261,13 +263,13 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
               <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
                 <Chip 
                   icon={<EmojiEventsIcon />}
-                  label={`Level ${progress.level}`} 
+                  label={`${t('common.level')} ${progress.level}`} 
                   color="primary" 
                   size="medium"
                 />
                 <Chip 
                   icon={<TrendingUpIcon />}
-                  label={`${progress.totalScore} points`} 
+                  label={`${progress.totalScore} ${t('common.points')}`} 
                   color="success" 
                   size="medium"
                 />
@@ -288,7 +290,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
               <PersonIcon color="primary" sx={{ fontSize: 32 }} />
               <Box>
                 <Typography variant="caption" color="text.secondary">
-                  Username
+                  {t('profile.username')}
                 </Typography>
                 <Typography variant="body1" fontWeight="medium">
                   {user.username}
@@ -308,7 +310,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
               <EmailIcon color="primary" sx={{ fontSize: 32 }} />
               <Box>
                 <Typography variant="caption" color="text.secondary">
-                  Email
+                  {t('profile.email')}
                 </Typography>
                 <Typography variant="body1" fontWeight="medium">
                   {user.email}
@@ -328,7 +330,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
               <CalendarTodayIcon color="primary" sx={{ fontSize: 32 }} />
               <Box>
                 <Typography variant="caption" color="text.secondary">
-                  Member Since
+                  {t('profile.createdOn')}
                 </Typography>
                 <Typography variant="body1" fontWeight="medium">
                   {formatDate(user.createdAt)}
