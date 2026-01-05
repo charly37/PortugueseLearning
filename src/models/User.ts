@@ -33,8 +33,10 @@ interface Weaknesses {
 
 export interface IUser extends Document {
   username: string;
-  email: string;
-  password: string;
+  email?: string;  // Optional for guest users
+  password?: string;  // Optional for guest users
+  isGuest: boolean;
+  guestExpiresAt?: Date;  // Auto-delete date for guest users
   createdAt: Date;
   preferredLanguage: 'fr' | 'en';
   progress: {
@@ -60,15 +62,24 @@ const userSchema = new Schema<IUser>({
   },
   email: {
     type: String,
-    required: true,
+    required: false,  // Optional for guest users
     unique: true,
+    sparse: true,  // Allow multiple null values
     trim: true,
     lowercase: true
   },
   password: {
     type: String,
-    required: true,
+    required: false,  // Optional for guest users
     minlength: 6
+  },
+  isGuest: {
+    type: Boolean,
+    default: false
+  },
+  guestExpiresAt: {
+    type: Date,
+    required: false
   },
   createdAt: {
     type: Date,
@@ -119,9 +130,18 @@ const userSchema = new Schema<IUser>({
   }
 });
 
+// TTL index to auto-delete expired guest users
+userSchema.index(
+  { guestExpiresAt: 1 },
+  { 
+    expireAfterSeconds: 0,
+    partialFilterExpression: { isGuest: true }
+  }
+);
+
 // Hash password before saving
 userSchema.pre('save', async function() {
-  if (!this.isModified('password')) {
+  if (!this.isModified('password') || !this.password) {
     return;
   }
   

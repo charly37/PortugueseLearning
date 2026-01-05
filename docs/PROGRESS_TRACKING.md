@@ -31,6 +31,37 @@ Each challenge submission is recorded with:
 - **Daily Streaks**: Tracks consecutive days of correct answers
 - **Progress Visualization**: Visual display of statistics in profile
 
+### 4. **Challenge Statistics Dashboard**
+A dedicated statistics page for each challenge type (word/verb/idiom) that displays:
+
+#### Overview Statistics
+- Total attempts, correct answers, and accuracy percentage
+- Current streak with fire icon indicator
+- Visual progress bars for performance metrics
+- Number of unique challenges completed
+- Last attempt timestamp
+
+#### Recent Attempts History
+- Last 20 attempts with full details
+- Color-coded correct/incorrect indicators (green checkmark, red X)
+- User's answer vs. correct answer comparison
+- Time spent on each challenge
+- Portuguese word/idiom/verb shown for reference
+
+#### Weak Areas Analysis
+- Identifies challenges with low success rates
+- Shows challenges attempted at least twice
+- Sorted by success rate (lowest first)
+- Displays attempts and success percentage
+- Quick link to practice button for focused improvement
+
+#### UI Components
+- Clean Material-UI design matching application style
+- Color-coded by challenge type (blue for word, purple for verb, orange for idiom)
+- Responsive layout with grid-based statistics cards
+- Loading states and error handling
+- Back button to return to landing page
+
 ## API Endpoints
 
 ### Submit Challenge Attempt
@@ -160,10 +191,22 @@ interface IChallengeAttempt {
 - Level and score badges
 - Streak indicators with fire icon
 
+### ChallengeStatsPage.tsx (NEW)
+- Comprehensive statistics dashboard per challenge type
+- Three main sections: Overview, Recent Attempts, Weak Areas
+- Color-coded indicators and progress bars
+- Responsive Material-UI layout
+- Accessible from landing page via "My Stats" buttons
+
 ### Challenge Pages (All 3 types)
 - Added time tracking
 - Automatic submission of results
 - No UI changes (seamless integration)
+
+### LandingPage.tsx
+- Added "My Stats" buttons for each challenge type (for logged-in users)
+- Links to dedicated statistics pages
+- Shows after challenge and practice buttons
 
 ## Future Enhancements
 

@@ -6,6 +6,7 @@
     "login": "Connexion",
     "register": "Inscription",
     "back": "Retour",
+    "learn": "Apprendre",
     "practice": "Pratique",
     "challenge": "Défi",
     "points": "points",
@@ -19,6 +20,14 @@
     "difficulty": "Difficulté",
     "numberOfTurns": "Nombre de tours",
     "configureChallenge": "Configurer le Défi"
+  },
+  "guest": {
+    "banner": "Vous êtes en Mode Invité. Vos progrès sont sauvegardés temporairement.",
+    "createAccount": "Créer un Compte",
+    "toSavePermanently": "pour les sauvegarder définitivement !",
+    "upgradeTitle": "Améliorez Votre Compte",
+    "upgradeMessage": "Vous utilisez actuellement un compte invité. Créez un vrai compte pour sauvegarder vos progrès de façon permanente !",
+    "keepProgress": "Tous vos progrès actuels seront préservés."
   },
   "landing": {
     "welcome": "Bienvenue",

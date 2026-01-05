@@ -12,16 +12,19 @@ Successfully implemented user authentication system with MongoDB Atlas integrati
    - Environment variable support for connection string
 
 2. **User Model** ([src/models/User.ts](src/models/User.ts))
-   - User schema with username, email, password, and createdAt fields
+   - User schema with username, email, password, preferredLanguage, and createdAt fields
    - Password hashing using bcryptjs
    - Password comparison method for authentication
    - Unique constraints on username and email
+   - Preferred language field (supports 'fr' or 'en')
+   - Progress tracking fields for gamification
 
 3. **Authentication Routes** ([src/routes/auth.ts](src/routes/auth.ts))
-   - `POST /api/auth/register` - Register new users
+   - `POST /api/auth/register` - Register new users (with optional preferredLanguage)
    - `POST /api/auth/login` - User login
    - `POST /api/auth/logout` - User logout
    - `GET /api/auth/check-auth` - Check authentication status
+   - `POST /api/auth/update-language` - Update user's preferred language
 
 4. **Server Updates** ([src/server.ts](src/server.ts))
    - Express session management with MongoDB store
@@ -39,14 +42,19 @@ Successfully implemented user authentication system with MongoDB Atlas integrati
 
 2. **Registration Page** ([src/client/components/RegisterPage.tsx](src/client/components/RegisterPage.tsx))
    - Username, email, password, and confirm password fields
+   - Language preference selector (French or English)
    - Client-side validation (password length, password match)
    - Error message display
    - Link to login page
+   - Internationalized using i18next
 
 3. **Updated Landing Page** ([src/client/components/LandingPage.tsx](src/client/components/LandingPage.tsx))
    - User information display (username chip)
+   - Language preference toggle (French/English)
    - Logout button
    - Positioned in top-right corner
+   - "My Stats" buttons for each challenge type (for logged-in users)
+   - Fully internationalized interface
 
 4. **Updated App Component** ([src/client/App.tsx](src/client/App.tsx))
    - Authentication state management
@@ -76,18 +84,22 @@ Successfully implemented user authentication system with MongoDB Atlas integrati
 - `express-session` - Session management
 - `connect-mongo` - MongoDB session store
 - `dotenv` - Environment variables
+- `i18next` - Internationalization framework
+- `react-i18next` - React bindings for i18next
+- `i18next-browser-languagedetector` - Language detection for browser
 - `@types/bcryptjs` - TypeScript types
 - `@types/express-session` - TypeScript types
 - `@mui/icons-material` - Material-UI icons
 
 ## User Flow
 
-1. **First Visit**: User is redirected to login page
-2. **Registration**: New users can create an account with username, email, and password
+1. **First Visit**: User is redirected to login page (internationalized)
+2. **Registration**: New users can create an account with username, email, password, and preferred language
 3. **Login**: Existing users can log in with email and password
-4. **Authenticated Session**: User information is stored in session and persists across page refreshes
-5. **Landing Page**: Displays username and logout button
-6. **Logout**: Clears session and redirects to login page
+4. **Language Selection**: Users can change their language preference at any time on the landing page
+5. **Authenticated Session**: User information and language preference stored in session and persists across page refreshes
+6. **Landing Page**: Displays username, language toggle, and logout button
+7. **Logout**: Clears session and redirects to login page
 
 ## Security Features
 

@@ -27,7 +27,8 @@ interface AttemptDetail {
 interface User {
   id: string;
   username: string;
-  email: string;
+  email?: string;
+  isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
 }
 

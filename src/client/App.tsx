@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { CssBaseline, CircularProgress, Box } from '@mui/material';
+import { CssBaseline, CircularProgress, Box, Alert, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
@@ -67,7 +67,8 @@ type PageType = 'landing' | 'word-practice' | 'word-challenge' | 'word-learn' | 
 interface User {
   id: string;
   username: string;
-  email: string;
+  email?: string;  // Optional for guest users
+  isGuest?: boolean;  // Guest user flag
   preferredLanguage?: 'fr' | 'en';
   createdAt?: string;
 }
@@ -76,7 +77,7 @@ const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>('landing');
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   // Check authentication status on mount
   useEffect(() => {
@@ -161,6 +162,35 @@ const App: React.FC = () => {
           onNavigateRegister={() => setCurrentPage('register')}
         />
       )}
+      {/* Guest Mode Banner */}
+      {user?.isGuest && showHeader && (
+        <Alert 
+          severity="info" 
+          sx={{ 
+            borderRadius: 0,
+            justifyContent: 'center',
+            '& .MuiAlert-message': {
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1,
+              flexWrap: 'wrap',
+              justifyContent: 'center'
+            }
+          }}
+          action={
+            <Button 
+              color="inherit" 
+              size="small" 
+              onClick={() => setCurrentPage('register')}
+              sx={{ fontWeight: 600 }}
+            >
+              {t('guest.createAccount')}
+            </Button>
+          }
+        >
+          🎯 {t('guest.banner')} {t('guest.toSavePermanently')}
+        </Alert>
+      )}
       <Box sx={{ minHeight: '100vh' }}>
         {currentPage === 'login' && (
           <LoginPage
@@ -170,6 +200,7 @@ const App: React.FC = () => {
         )}
         {currentPage === 'register' && (
           <RegisterPage
+            user={user}
             onRegisterSuccess={handleRegisterSuccess}
             onNavigateToLogin={() => setCurrentPage('login')}
           />

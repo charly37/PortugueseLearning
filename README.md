@@ -15,12 +15,16 @@ All detailed documentation is located in the [`docs/`](docs/) folder:
 
 ## Features
 
+- **Internationalization (i18n)**: Full support for French and English with real-time language switching
+- **Three Learning Modes**: Practice (endless), Challenge (timed with scoring), and Learn (flashcards)
+- **Challenge Statistics**: Detailed statistics dashboard with weak areas analysis and performance tracking
+- **Three Challenge Types**: Word, Verb, and Idiom challenges with hundreds of Portuguese learning materials
 - Express.js backend with TypeScript
 - React frontend with Material-UI components
 - User authentication with registration and login
 - MongoDB Atlas integration for user data storage
 - Session management with secure cookies
-- Three interactive challenge types: Word, Verb, and Idiom challenges
+- Progress tracking system with gamification (points, levels, streaks)
 - Development and production build configurations
 - Hot reload for development
 - Automated UI testing with Playwright
@@ -82,6 +86,44 @@ npm run dev
 - Backend server runs on: http://localhost:3000
 - Frontend dev server runs on: http://localhost:8080
 
+## Learning Modes
+
+The application offers three distinct learning modes for each challenge type (Word, Verb, Idiom):
+
+### 1. Learn Mode (Flashcards)
+- Browse all available challenges in flashcard format
+- Interactive flip animation to reveal translations and notes
+- Navigation controls (previous/next)
+- Shuffle feature for randomized learning
+- No pressure, self-paced learning
+- Perfect for first-time learners and review
+
+### 2. Practice Mode
+- Endless practice with immediate feedback
+- No time limits or scoring
+- Type your answers and get instant corrections
+- Great for reinforcing knowledge without pressure
+
+### 3. Challenge Mode
+- Timed challenges with configurable difficulty
+- Select number of turns (questions)
+- Tracks performance and scores
+- Results recorded to database for logged-in users
+- Earn points and level up
+- View detailed statistics and weak areas
+
+## Internationalization
+
+The application supports multiple languages:
+
+- **French (Français)**: Default language
+- **English**: Available via language toggle
+
+Users can switch between languages at any time using the language selector on the landing page. Language preference is:
+- Saved to user account (for logged-in users)
+- Stored in localStorage (persists across sessions)
+- Applied to all UI elements, instructions, and buttons
+
 ## Production Build
 
 Build both server and client:
@@ -101,22 +143,31 @@ npm start
 ```
 ├── src/
 │   ├── server.ts          # Express.js server
+│   ├── i18n.ts            # i18next configuration
 │   ├── config/
 │   │   └── database.ts    # MongoDB connection
+│   ├── locales/           # Translation files
+│   │   ├── en.json        # English translations
+│   │   └── fr.json        # French translations
 │   ├── models/
-│   │   └── User.ts        # User model
+│   │   ├── User.ts        # User model with preferredLanguage
+│   │   └── ChallengeAttempt.ts  # Challenge attempt tracking
 │   ├── routes/
-│   │   └── auth.ts        # Authentication routes
+│   │   ├── auth.ts        # Authentication routes
+│   │   └── challenge.ts   # Challenge and stats routes
 │   └── client/            # React frontend
 │       ├── index.tsx      # React entry point
 │       ├── App.tsx        # Main App component with auth state
 │       ├── components/
-│       │   ├── LoginPage.tsx       # Login page
-│       │   ├── RegisterPage.tsx    # Registration page
-│       │   ├── LandingPage.tsx     # Home page with user info
-│       │   ├── ChallengePage.tsx   # Word challenges
-│       │   ├── VerbChallengePage.tsx
-│       │   └── IdiomChallengePage.tsx
+│       │   ├── LoginPage.tsx           # Login page
+│       │   ├── RegisterPage.tsx        # Registration page
+│       │   ├── LandingPage.tsx         # Home page with language selector
+│       │   ├── ChallengePage.tsx       # Word challenges
+│       │   ├── VerbChallengePage.tsx   # Verb challenges
+│       │   ├── IdiomChallengePage.tsx  # Idiom challenges
+│       │   ├── FlashcardLearnPage.tsx  # Learn mode (flashcards)
+│       │   ├── ChallengeStatsPage.tsx  # Statistics dashboard
+│       │   └── ProfilePage.tsx         # User profile
 │       └── index.html     # HTML template
 ├── data/                  # Challenge data
 ├── dist/                  # Compiled server code

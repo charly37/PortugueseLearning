@@ -17,12 +17,13 @@ import LanguageIcon from '@mui/icons-material/Language';
 import { useTranslation } from 'react-i18next';
 
 interface RegisterPageProps {
-  onRegisterSuccess: (user: { id: string; username: string; email: string }) => void;
+  onRegisterSuccess: (user: { id: string; username: string; email?: string }) => void;
   onNavigateToLogin: () => void;
   onContinueAsGuest?: () => void;
+  user?: { id: string; username: string; email?: string; isGuest?: boolean } | null;
 }
 
-const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNavigateToLogin, onContinueAsGuest }) => {
+const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNavigateToLogin, onContinueAsGuest, user }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -60,7 +61,10 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
     setLoading(true);
 
     try {
-      const response = await fetch('/api/auth/register', {
+      // Use register-from-guest endpoint if user is a guest
+      const endpoint = user?.isGuest ? '/api/auth/register-from-guest' : '/api/auth/register';
+      
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -98,12 +102,23 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onNaviga
       >
         <Paper elevation={3} sx={{ p: 4, width: '100%' }}>
           <Typography variant="h4" component="h1" gutterBottom align="center">
-            {t('auth.registerTitle')}
+            {user?.isGuest ? t('guest.upgradeTitle') : t('auth.registerTitle')}
           </Typography>
           
-          <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 3 }}>
-            {t('auth.createAccount')}
-          </Typography>
+          {user?.isGuest ? (
+            <Alert severity="info" sx={{ mb: 3 }}>
+              <Typography variant="body2">
+                {t('guest.upgradeMessage')}
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 1, fontWeight: 600 }}>
+                {t('guest.keepProgress')}
+              </Typography>
+            </Alert>
+          ) : (
+            <Typography variant="body2" color="text.secondary" align="center" sx={{ mb: 3 }}>
+              {t('auth.createAccount')}
+            </Typography>
+          )}
 
           {error && (
             <Alert severity="error" sx={{ mb: 2 }}>

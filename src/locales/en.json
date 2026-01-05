@@ -6,6 +6,7 @@
     "login": "Login",
     "register": "Register",
     "back": "Back",
+    "learn": "Learn",
     "practice": "Practice",
     "challenge": "Challenge",
     "points": "points",
@@ -19,6 +20,14 @@
     "difficulty": "Difficulty",
     "numberOfTurns": "Number of turns",
     "configureChallenge": "Configure Challenge"
+  },
+  "guest": {
+    "banner": "You're in Guest Mode. Your progress is saved temporarily.",
+    "createAccount": "Create Account",
+    "toSavePermanently": "to save it permanently!",
+    "upgradeTitle": "Upgrade Your Account",
+    "upgradeMessage": "You're currently using a guest account. Create a real account to permanently save your progress!",
+    "keepProgress": "All your current progress will be preserved."
   },
   "landing": {
     "welcome": "Welcome",

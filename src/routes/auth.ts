@@ -56,6 +56,7 @@ router.post('/register', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        isGuest: false,
         preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
@@ -99,6 +100,7 @@ router.post('/login', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        isGuest: false,
         preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
@@ -181,6 +183,7 @@ router.post('/update-language', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        isGuest: user.isGuest,
         preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
@@ -190,6 +193,81 @@ router.post('/update-language', async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Update language error:', error);
     res.status(500).json({ message: 'Server error updating language' });
+  }
+});
+
+// Convert guest user to real account
+router.post('/register-from-guest', async (req: Request, res: Response) => {
+  try {
+    if (!req.session.userId) {
+      return res.status(401).json({ message: 'Not authenticated' });
+    }
+
+    const { username, email, password, preferredLanguage } = req.body;
+
+    // Validate input
+    if (!username || !email || !password) {
+      return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({ message: 'Password must be at least 6 characters long' });
+    }
+
+    // Validate preferredLanguage
+    if (preferredLanguage && !['fr', 'en'].includes(preferredLanguage)) {
+      return res.status(400).json({ message: 'Invalid language preference' });
+    }
+
+    // Get current guest user
+    const guestUser = await User.findById(req.session.userId);
+    if (!guestUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (!guestUser.isGuest) {
+      return res.status(400).json({ message: 'User is already a registered account' });
+    }
+
+    // Check if email or username already taken
+    const existingUser = await User.findOne({
+      _id: { $ne: guestUser._id },
+      $or: [{ email }, { username }]
+    });
+    if (existingUser) {
+      return res.status(400).json({ 
+        message: existingUser.email === email ? 'Email already in use' : 'Username already taken' 
+      });
+    }
+
+    // Update guest user to real user
+    guestUser.username = username;
+    guestUser.email = email;
+    guestUser.password = password;
+    guestUser.isGuest = false;
+    guestUser.guestExpiresAt = undefined;
+    if (preferredLanguage) {
+      guestUser.preferredLanguage = preferredLanguage;
+    }
+
+    await guestUser.save();
+
+    res.status(201).json({
+      message: 'Account upgraded successfully',
+      user: {
+        id: guestUser._id,
+        username: guestUser.username,
+        email: guestUser.email,
+        isGuest: false,
+        preferredLanguage: guestUser.preferredLanguage,
+        createdAt: guestUser.createdAt,
+        totalScore: guestUser.totalScore,
+        level: guestUser.level
+      }
+    });
+  } catch (error) {
+    console.error('Register from guest error:', error);
+    res.status(500).json({ message: 'Server error during registration' });
   }
 });
 

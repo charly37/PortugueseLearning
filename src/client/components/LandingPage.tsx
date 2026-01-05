@@ -10,7 +10,8 @@ import { useTranslation } from 'react-i18next';
 interface User {
   id: string;
   username: string;
-  email: string;
+  email?: string;
+  isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
 }
 
@@ -168,7 +169,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   sx={{ mb: 1 }}
                   startIcon={<StyleIcon />}
                 >
-                  Learn
+                  {t('common.learn')}
                 </Button>
                 <Button
                   variant="contained"
@@ -236,7 +237,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   sx={{ mb: 1 }}
                   startIcon={<StyleIcon />}
                 >
-                  Learn
+                  {t('common.learn')}
                 </Button>
                 <Button
                   variant="contained"
@@ -309,7 +310,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   }}
                   startIcon={<StyleIcon />}
                 >
-                  Learn
+                  {t('common.learn')}
                 </Button>
                 <Button
                   variant="contained"

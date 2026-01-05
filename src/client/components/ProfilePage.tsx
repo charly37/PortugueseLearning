@@ -30,7 +30,8 @@ import LanguageIcon from '@mui/icons-material/Language';
 interface User {
   id: string;
   username: string;
-  email: string;
+  email?: string;
+  isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
   createdAt?: string;
   totalScore?: number;

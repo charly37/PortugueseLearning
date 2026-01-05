@@ -4,6 +4,60 @@
 
 The Portuguese Learning application uses a multi-container Docker architecture with nginx as a reverse proxy in front of a Node.js/Express application.
 
+## Key Features
+
+### 1. **Internationalization (i18n)**
+- Full multi-language support using i18next
+- Supported languages: French (fr) and English (en)
+- User preference stored in database and localStorage
+- Real-time language switching without page reload
+- All UI text, buttons, and instructions are translated
+- Language preference persists across sessions
+
+### 2. **Three Learning Modes**
+
+#### Practice Mode
+- Endless practice with immediate feedback
+- No time limits or scores
+- Perfect for casual learning
+
+#### Challenge Mode
+- Timed challenges with configurable difficulty
+- Tracks performance and scoring
+- Records results to database (for logged-in users)
+
+#### Learn Mode (Flashcards)
+- Interactive flashcard interface with flip animation
+- Browse all available vocabulary/verbs/idioms
+- Navigation controls (previous/next)
+- Shuffle feature for randomized learning
+- Shows Portuguese on front, translation + notes on back
+- No pressure, self-paced learning
+
+### 3. **Challenge Statistics Dashboard**
+- Per-challenge-type statistics page
+- Visual progress bars and accuracy metrics
+- Recent attempt history (last 20 attempts)
+- Weak areas analysis with specific recommendations
+- Time spent tracking per challenge
+- Streak tracking and accuracy percentages
+
+### 4. **Three Challenge Types**
+
+#### Word Challenges
+- Vocabulary translation from French/English to Portuguese
+- Hundreds of common words categorized by topic
+
+#### Verb Challenges
+- Portuguese verb conjugation in present tense
+- All pronouns (eu, tu, você, nós, vocês, eles/elas)
+
+#### Idiom Challenges
+- Common Portuguese expressions and idioms
+- Cultural context and usage notes
+
+## Container Architecture
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        Internet                              │

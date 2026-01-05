@@ -8,7 +8,8 @@ import { useTranslation } from 'react-i18next';
 interface User {
   id: string;
   username: string;
-  email: string;
+  email?: string;
+  isGuest?: boolean;
 }
 
 interface HeaderProps {
