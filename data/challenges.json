@@ -628,7 +628,7 @@
         "port": "às vezes",
         "fr": {
             "translation": "parfois",
-            "note": "todo"
+            "note": "en plus formel on peut dire 'por vezes'"
         },
         "en": {
             "translation": "sometimes",
@@ -1297,10 +1297,10 @@
     },
     {
         "id": "c2c6fc44-6658-45cc-b028-0f148055260e",
-        "port": "tu",
+        "port": "tu (inf.)",
         "fr": {
             "translation": "tu",
-            "note": "todo"
+            "note": "en plus formel on peut dire 'você'"
         },
         "en": {
             "translation": "you (informal)",
@@ -1564,7 +1564,7 @@
         "port": "alguns",
         "fr": {
             "translation": "certains (masc. pluriel), quelques",
-            "note": "todo"
+            "note": "les mots qui finissent par m au singulier prennent ns au pluriel. on evite le 'ms'. du coup ca ne s applique pas au feminin car le singulier est 'ma' et le pluriel 'mas'"
         },
         "en": {
             "translation": "some (masc. plural)",
@@ -1576,7 +1576,7 @@
         "port": "algumas",
         "fr": {
             "translation": "certaines, quelques",
-            "note": "todo"
+            "note": "les mots qui finissent par m au singulier prennent ns au pluriel. on evite le 'ms'. du coup ca ne s applique pas au feminin car le singulier est 'ma' et le pluriel 'mas'"
         },
         "en": {
             "translation": "some (fem. plural)",
@@ -1588,7 +1588,7 @@
         "port": "algum",
         "fr": {
             "translation": "certain (masc. singulier)",
-            "note": "todo"
+            "note": "les mots qui finissent par m au singulier prennent ns au pluriel. on evite le 'ms'. du coup ca ne s applique pas au feminin car le singulier est 'ma' et le pluriel 'mas'"
         },
         "en": {
             "translation": "some (masc. singular)",
@@ -1636,7 +1636,7 @@
         "port": "todo",
         "fr": {
             "translation": "tout / entier",
-            "note": "todo"
+            "note": "todo est l adjectif. tudo est le pronom"
         },
         "en": {
             "translation": "all/whole",
@@ -1648,7 +1648,7 @@
         "port": "todos",
         "fr": {
             "translation": "tout le monde",
-            "note": "todo"
+            "note": "todo est l adjectif. tudo est le pronom"
         },
         "en": {
             "translation": "everyone/all",
@@ -1660,7 +1660,7 @@
         "port": "tudo",
         "fr": {
             "translation": "tout",
-            "note": "todo"
+            "note": "todo est l adjectif. tudo est le pronom"
         },
         "en": {
             "translation": "everything",
