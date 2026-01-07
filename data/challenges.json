@@ -1644,6 +1644,18 @@
         }
     },
     {
+"id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+"port": "assim",
+"fr": {
+"translation": "comme ça / ainsi / de cette façon / tel quel",
+"note": "Peut aussi signifier 'donc' (therefore), 'pareillement' (likewise), ou dans des expressions comme 'assim assim' pour 'bof' ou 'moyen' (so-so). Souvent utilisé pour 'comme ceci' ou 'comme cela' dans des contextes quotidiens."
+},
+"en": {
+"translation": "like that / thus / in this way / as is",
+"note": "Can also mean 'therefore', 'likewise', or in expressions like 'assim assim' for 'so-so'. Commonly used for 'like this' or 'like that' in everyday contexts."
+}
+},
+    {
         "id": "f9ba33d8-03d4-499d-ab37-2389c101d08d",
         "port": "todos",
         "fr": {
