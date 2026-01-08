@@ -136,6 +136,10 @@ print_info "Checking analytics container..."
 if docker compose ps analytics | grep -q "Up"; then
     print_success "Analytics scheduler is running (runs daily at 2 AM)"
 else
+    print_error "Analytics container failed to start"
+    docker compose logs analytics
+fi
+
 # Save deployment record
 print_info "Recording deployment..."
 DEPLOY_LOG="deployments.log"
@@ -145,11 +149,7 @@ print_success "Deployment recorded in ${DEPLOY_LOG}"
 echo ""
 echo "========================================"
 print_success "Deployment completed successfully!"
-print_version "Running version: ${IMAGE_TAG}
-
-echo ""
-echo "========================================"
-print_success "Deployment completed successfully!"
+print_version "Running version: ${IMAGE_TAG}"
 echo "========================================"
 echo ""
 echo "Application is running at: http://localhost"
