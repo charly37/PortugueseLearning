@@ -103,9 +103,39 @@ jobs:
         docker stop test-app test-mongo
         docker rm test-app test-mongo
 
-    - name: Push to Docker Hub
+    - name: Push to Docker Hub with commit SHA
       run: |
-        docker tag portuguese-learning:latest ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
+        # Tag and push with commit SHA
+        docker tag portuguese-learning:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.vars.outputs.short_sha }}
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.vars.outputs.short_sha }}
+        
+        docker tag portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }}
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }}
+        
+        # Also tag and push as latest for backward compatibility
+        docker tag portuguese-learning:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
-        docker tag portuguese-learning-analytics:latest ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
+        
+        docker tag portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
+
+    - name: Create deployment info
+      run: |
+        echo "Deployment Info" > deployment-info.txt
+        echo "===============" >> deployment-info.txt
+        echo "Commit SHA: ${{ github.sha }}" >> deployment-info.txt
+        echo "Short SHA: ${{ steps.vars.outputs.short_sha }}" >> deployment-info.txt
+        echo "Branch: ${{ github.ref_name }}" >> deployment-info.txt
+        echo "Build Date: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> deployment-info.txt
+        echo "" >> deployment-info.txt
+        echo "Docker Images:" >> deployment-info.txt
+        echo "  - ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.vars.outputs.short_sha }}" >> deployment-info.txt
+        echo "  - ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }}" >> deployment-info.txt
+        cat deployment-info.txt
+
+    - name: Upload deployment info
+      uses: actions/upload-artifact@v4
+      with:
+        name: deployment-info-${{ steps.vars.outputs.short_sha }}
+        path: deployment-info.txt
+        retention-days: 90
