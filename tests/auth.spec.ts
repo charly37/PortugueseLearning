@@ -55,7 +55,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(testUser.password);
     
     // Submit form
-    await page.getByRole('button', { name: /Register/i }).click();
+    await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
     // Should redirect to landing page with personalized greeting
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
@@ -91,7 +91,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Password').first().fill('password123');
     await page.getByLabel('Confirm Password').fill('differentpassword');
     
-    await page.getByRole('button', { name: /Register/i }).click();
+    await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
     // Should show error message
     await expect(page.getByText(/passwords do not match/i)).toBeVisible();
@@ -108,7 +108,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Password').first().fill('123');
     await page.getByLabel('Confirm Password').fill('123');
     
-    await page.getByRole('button', { name: /Register/i }).click();
+    await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
     // Should show error message
     await expect(page.getByText(/at least 6 characters/i).first()).toBeVisible();
@@ -131,7 +131,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Email').fill(uniqueUser.email);
     await page.getByLabel('Password').first().fill(uniqueUser.password);
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
-    await page.getByRole('button', { name: /Register/i }).click();
+    await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
     // Wait for landing page with personalized greeting
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
@@ -141,12 +141,13 @@ test.describe('Authentication', () => {
     
     // Now login with the same credentials - first navigate to login page
     await expect(page.locator('h1')).toContainText('Welcome');
-    await page.getByRole('button', { name: 'Login' }).click();
-    await page.waitForSelector('h1:has-text("Login")');
+    // Use the header's Login button specifically
+    await page.locator('header').getByRole('button', { name: 'Login' }).click();
+    await page.waitForSelector('h1:has-text("Login")', { timeout: 10000 });
     
     await page.getByLabel('Email').fill(uniqueUser.email);
     await page.getByLabel('Password').fill(uniqueUser.password);
-    await page.getByRole('button', { name: /Login/i }).click();
+    await page.locator('form').getByRole('button', { name: /Login/i }).click();
     
     // Should redirect to landing page with personalized greeting
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
@@ -164,7 +165,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Email').fill('nonexistent@example.com');
     await page.getByLabel('Password').fill('wrongpassword');
     
-    await page.getByRole('button', { name: /Login/i }).click();
+    await page.locator('form').getByRole('button', { name: /Login/i }).click();
     
     // Should show error message
     await expect(page.getByText(/invalid/i)).toBeVisible();
@@ -187,7 +188,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Email').fill(uniqueUser.email);
     await page.getByLabel('Password').first().fill(uniqueUser.password);
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
-    await page.getByRole('button', { name: /Register/i }).click();
+    await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
     // Wait for landing page with personalized greeting
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
@@ -240,7 +241,7 @@ test.describe('Authentication', () => {
     await page.getByLabel('Email').fill(uniqueUser.email);
     await page.getByLabel('Password').first().fill(uniqueUser.password);
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
-    await page.getByRole('button', { name: /Register/i }).click();
+    await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
     // Wait for landing page with personalized greeting
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });

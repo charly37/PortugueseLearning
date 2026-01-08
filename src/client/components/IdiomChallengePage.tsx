@@ -37,9 +37,10 @@ interface IdiomChallengePageProps {
   user: User | null;
   onNavigateToLogin: () => void;
   onNavigateToRegister: () => void;
+  onCreateGuest?: () => Promise<User | null>;
 }
 
-const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister }) => {
+const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister, onCreateGuest }) => {
   const { t } = useTranslation();
   const [challenge, setChallenge] = useState<IdiomChallenge | null>(null);
   const [loading, setLoading] = useState(false);
@@ -94,6 +95,19 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleStartAsGuest = async () => {
+    if (onCreateGuest) {
+      setLoading(true);
+      const guestUser = await onCreateGuest();
+      setLoading(false);
+      if (!guestUser) {
+        setError('Failed to create guest account');
+      }
+      // Don't start the challenge yet - let the user configure it first
+      // The component will re-render with user set, showing the configuration screen
     }
   };
 
@@ -234,29 +248,43 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
             <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
-                  {t('auth.accountRequired')}
+                  {t('auth.startChallenge')}
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
-                  Challenge mode uses personalized difficulty based on your performance history to help you improve faster.
+                  {t('auth.guestWelcome')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
-                  {t('auth.accountBenefits.title')}
+                  {t('auth.guestExplanation')}
                 </Typography>
-                <Box component="ul" sx={{ mb: 3, pl: 4 }}>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.trackProgress')}</Typography>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.personalizedChallenges')}</Typography>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.unlockFeatures')}</Typography>
-                </Box>
+                <Button
+                  variant="contained"
+                  size="large"
+                  onClick={handleStartAsGuest}
+                  fullWidth
+                  disabled={loading}
+                  sx={{
+                    mb: 2,
+                    bgcolor: '#ff9800',
+                    '&:hover': {
+                      bgcolor: '#f57c00',
+                    },
+                  }}
+                >
+                  {t('auth.startAsGuest')}
+                </Button>
+                <Divider sx={{ my: 2 }}>{t('common.or')}</Divider>
                 <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
                   <Button
-                    variant="contained"
-                    size="large"
+                    variant="outlined"
+                    size="medium"
                     onClick={onNavigateToRegister}
                     fullWidth
                     sx={{
-                      bgcolor: '#ff9800',
+                      color: '#ff9800',
+                      borderColor: '#ff9800',
                       '&:hover': {
-                        bgcolor: '#f57c00',
+                        borderColor: '#f57c00',
+                        bgcolor: '#ff980010',
                       },
                     }}
                   >
@@ -264,7 +292,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                   </Button>
                   <Button
                     variant="outlined"
-                    size="large"
+                    size="medium"
                     onClick={onNavigateToLogin}
                     fullWidth
                     sx={{

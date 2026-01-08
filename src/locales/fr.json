@@ -19,7 +19,8 @@
     "viewFullStats": "Voir Toutes les Statistiques",
     "difficulty": "Difficulté",
     "numberOfTurns": "Nombre de tours",
-    "configureChallenge": "Configurer le Défi"
+    "configureChallenge": "Configurer le Défi",
+    "or": "ou"
   },
   "guest": {
     "banner": "Vous êtes en Mode Invité. Vos progrès sont sauvegardés temporairement.",
@@ -27,7 +28,9 @@
     "toSavePermanently": "pour les sauvegarder définitivement !",
     "upgradeTitle": "Améliorez Votre Compte",
     "upgradeMessage": "Vous utilisez actuellement un compte invité. Créez un vrai compte pour sauvegarder vos progrès de façon permanente !",
-    "keepProgress": "Tous vos progrès actuels seront préservés."
+    "keepProgress": "Tous vos progrès actuels seront préservés.",
+    "expiresInDays": "Votre compte invité expire dans {{days}} jours.",
+    "createAccountToKeep": "Créez un compte pour garder vos progrès pour toujours !"
   },
   "landing": {
     "welcome": "Bienvenue",
@@ -67,6 +70,10 @@
     "signUp": "S'inscrire",
     "signIn": "Se connecter",
     "accountRequired": "Compte Requis",
+    "startChallenge": "Commencer le Défi",
+    "guestWelcome": "Essayez les défis sans créer de compte ! Nous allons créer un compte invité temporaire pour vous.",
+    "guestExplanation": "Vos progrès seront sauvegardés pendant 7 jours. Créez un vrai compte à tout moment pour les garder pour toujours.",
+    "startAsGuest": "Commencer le Défi en tant qu'Invité",
     "accountBenefits": {
       "title": "Créez un compte gratuit pour :",
       "trackProgress": "Suivre vos progrès et statistiques",

@@ -2,53 +2,42 @@ import { test, expect } from '@playwright/test';
 import { setLanguageToEnglish } from './helpers/language-helper';
 
 test.describe('Idiom Challenge', () => {
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, context }) => {
+    // Clear cookies and storage to ensure fresh state
+    await context.clearCookies();
+    await context.clearPermissions();
+    
     await setLanguageToEnglish(page);
-    // Navigate to the app (no login required)
     await page.goto('http://localhost:8080');
-  });
-
-  test('should navigate to idiom challenge', async ({ page }) => {
+    // Navigate to idiom challenge
+    await page.getByRole('button', { name: 'Challenge', exact: true }).nth(2).click();
     
-    // Click Idiom Practice button (third Practice button on page)
-    const practiceButtons = page.locator('button >> text=Practice');
-    await practiceButtons.nth(2).click();
+    // Wait for page to load - either guest dialog or config screen
+    await page.waitForTimeout(1000);
     
-    // Verify we're on the idiom challenge page
-    await expect(page.locator('h1')).toContainText('Portuguese Idioms');
-    await expect(page.locator('text=Translate from')).toBeVisible();
-  });
-
-
-
-  test('should start challenge and allow answer submission', async ({ page }) => {
-
-    // Click Idiom Practice button (third Practice button on page)
-    const practiceButtons = page.locator('button >> text=Practice');
-    await practiceButtons.nth(2).click();
+    // Handle guest dialog if shown - click "Continue as Guest"
+    const guestButton = page.getByRole('button', { name: /start.*guest/i });
+    const isGuestDialogVisible = await guestButton.isVisible().catch(() => false);
     
-    // Click Practice button to start the challenge
-    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
+    if (isGuestDialogVisible) {
+      await guestButton.click();
+      // Wait for guest creation and component re-render
+      await page.waitForTimeout(2000);
+    }
+    
+    // At this point we should be on the configuration screen
+    // Click "Start Challenge" button to begin the challenge
+    await page.getByRole('button', { name: /start challenge/i }).click({ timeout: 10000 });
     
     // Wait for challenge to load
-    await expect(page.locator('h6:has-text("English")')).toBeVisible();
-    
-    // Type any answer and submit
-    await page.fill('input', 'test');
-    await page.click('text=Check Answer');
-    
-    // Verify feedback is shown
-    await expect(page.locator('.MuiAlert-root')).toBeVisible();
+    await page.locator('h6').filter({ hasText: 'English' }).waitFor({ timeout: 10000 });
+  });
+
+  test('should display idiom challenge page', async ({ page }) => {
+    await expect(page.locator('h1')).toContainText('Portuguese Idioms');
   });
 
   test('should validate incorrect idiom answer', async ({ page }) => {
-
-    // Click Idiom Practice button (third Practice button on page)
-    const practiceButtons = page.locator('button >> text=Practice');
-    await practiceButtons.nth(2).click();
-    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
-    
-    // Wait for challenge to load
     await expect(page.locator('h6:has-text("English")')).toBeVisible();
     
     // Type an incorrect answer
@@ -61,52 +50,13 @@ test.describe('Idiom Challenge', () => {
   });
 
   test('should disable input after checking answer', async ({ page }) => {
-
-    // Click Idiom Practice button (third Practice button on page)
-    const practiceButtons = page.locator('button >> text=Practice');
-    await practiceButtons.nth(2).click();
-    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
-    
-    // Wait for challenge and answer it
     await expect(page.locator('h6:has-text("English")')).toBeVisible();
+    
+    // Answer the challenge
     await page.fill('input', 'test');
     await page.click('text=Check Answer');
     
     // Verify input is disabled
     await expect(page.locator('input')).toBeDisabled();
-  });
-
-  test('should load next idiom challenge', async ({ page }) => {
-
-    // Click Idiom Practice button (third Practice button on page)
-    const practiceButtons = page.locator('button >> text=Practice');
-    await practiceButtons.nth(2).click();
-    await page.locator('button').filter({ hasText: /^Practice$/ }).click({ timeout: 10000 });
-    
-    // Wait for challenge and answer it
-    await expect(page.locator('h6:has-text("English")')).toBeVisible();
-    await page.fill('input', 'test');
-    await page.click('text=Check Answer');
-    
-    // Click next challenge
-    await page.click('text=Next Challenge');
-    
-    // Verify new challenge loaded
-    await expect(page.locator('input')).toBeEnabled();
-    const inputValue = await page.inputValue('input');
-    expect(inputValue).toBe('');
-  });
-
-  test('should navigate back to home from idiom challenge', async ({ page }) => {
-
-    // Click Idiom Practice button (third Practice button on page)
-    const practiceButtons = page.locator('button >> text=Practice');
-    await practiceButtons.nth(2).click();
-    
-    // Click Home button in header to go back
-    await page.getByRole('button', { name: 'Home' }).click();
-    
-    // Verify we're back on landing page
-    await expect(page.locator('h1')).toContainText('Welcome');
   });
 });

@@ -14,38 +14,34 @@ test.describe('Challenge Generation', () => {
     // Wait for landing page to load
     await expect(page.locator('h1')).toContainText('Welcome');
     
-    // Click on first word challenge button (not practice)
+    // Click on first word challenge button
     const challengeButtons = page.locator('button:has-text("Challenge")');
     await challengeButtons.first().click();
     
     // Wait for navigation to word challenge page
     await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
     
-    // Wait for and verify "Account Required" heading is shown
-    await expect(page.locator('h5:has-text("Account Required")')).toBeVisible({ timeout: 10000 });
+    // Wait for and verify guest dialog is shown
+    await expect(page.getByRole('heading', { name: /start challenge/i })).toBeVisible({ timeout: 10000 });
     
-    // Verify explanation text is present
-    await expect(page.locator('text=Challenge mode uses personalized')).toBeVisible();
+    // Verify guest explanation text is present
+    await expect(page.locator('text=Try challenges without creating an account')).toBeVisible();
+    await expect(page.locator('text=Your progress will be saved for 7 days')).toBeVisible();
     
-    // Verify benefits list is shown
-    await expect(page.locator('text=Track your progress and statistics')).toBeVisible();
-    await expect(page.locator('text=Get personalized challenges based on your weak areas')).toBeVisible();
-    await expect(page.locator('text=Unlock advanced features')).toBeVisible();
+    // Verify Start as Guest, Register, Login, and Back buttons are present in the guest card
+    // Use the card container to avoid selecting header buttons
+    const guestCard = page.locator('.MuiCard-root').filter({ hasText: 'Start Challenge' });
+    await expect(guestCard.getByRole('button', { name: /start challenge as guest/i })).toBeVisible();
+    await expect(guestCard.getByRole('button', { name: 'Register', exact: true })).toBeVisible();
+    await expect(guestCard.getByRole('button', { name: 'Login', exact: true })).toBeVisible();
+    await expect(guestCard.getByRole('button', { name: 'Back', exact: true })).toBeVisible();
     
-    // Get the card container
-    const card = page.locator('text=Account Required').locator('xpath=ancestor::div[contains(@class, "MuiCard")]').first();
+    // Test that clicking guest button leads to configuration screen
+    await page.getByRole('button', { name: /start challenge as guest/i }).click();
+    await page.waitForTimeout(1000); // Wait for guest account creation
     
-    // Verify Register and Login buttons are present in the card
-    await expect(card.locator('button:has-text("Register")')).toBeVisible();
-    await expect(card.locator('button:has-text("Login")')).toBeVisible();
-    await expect(card.locator('button:has-text("Back")')).toBeVisible();
-    
-    // Verify configuration UI is NOT shown
-    await expect(page.locator('text=Configure Challenge')).not.toBeVisible();
-    
-    // Test navigation to register page by clicking the Register button in the card
-    await card.locator('button:has-text("Register")').click();
-    await expect(page.locator('h1:has-text("Register")')).toBeVisible();
+    // Now should see configuration screen
+    await expect(page.locator('text=Configure Challenge')).toBeVisible({ timeout: 5000 });
   });
 
   test.beforeEach(async ({ page }) => {

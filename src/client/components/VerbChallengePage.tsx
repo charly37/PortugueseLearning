@@ -38,9 +38,10 @@ interface VerbChallengePageProps {
   user: User | null;
   onNavigateToLogin: () => void;
   onNavigateToRegister: () => void;
+  onCreateGuest?: () => Promise<User | null>;
 }
 
-const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister }) => {
+const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister, onCreateGuest }) => {
   const { t } = useTranslation();
   const [challenge, setChallenge] = useState<VerbChallenge | null>(null);
   const [loading, setLoading] = useState(false);
@@ -95,6 +96,19 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleStartAsGuest = async () => {
+    if (onCreateGuest) {
+      setLoading(true);
+      const guestUser = await onCreateGuest();
+      setLoading(false);
+      if (!guestUser) {
+        setError('Failed to create guest account');
+      }
+      // Don't start the challenge yet - let the user configure it first
+      // The component will re-render with user set, showing the configuration screen
     }
   };
 
@@ -236,24 +250,31 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
             <Card sx={{ width: '100%', maxWidth: 500, mb: 3 }} elevation={3}>
               <CardContent sx={{ p: 4 }}>
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
-                  {t('auth.accountRequired')}
+                  {t('auth.startChallenge')}
                 </Typography>
                 <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
-                  Challenge mode uses personalized difficulty based on your performance history to help you improve faster.
+                  {t('auth.guestWelcome')}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
-                  {t('auth.accountBenefits.title')}
+                  {t('auth.guestExplanation')}
                 </Typography>
-                <Box component="ul" sx={{ mb: 3, pl: 4 }}>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.trackProgress')}</Typography>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.personalizedChallenges')}</Typography>
-                  <Typography component="li" variant="body2" sx={{ mb: 1 }}>{t('auth.accountBenefits.unlockFeatures')}</Typography>
-                </Box>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  size="large"
+                  onClick={handleStartAsGuest}
+                  fullWidth
+                  sx={{ mb: 2 }}
+                  disabled={loading}
+                >
+                  {t('auth.startAsGuest')}
+                </Button>
+                <Divider sx={{ my: 2 }}>{t('common.or')}</Divider>
                 <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
                   <Button
-                    variant="contained"
+                    variant="outlined"
                     color="secondary"
-                    size="large"
+                    size="medium"
                     onClick={onNavigateToRegister}
                     fullWidth
                   >
@@ -262,7 +283,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                   <Button
                     variant="outlined"
                     color="secondary"
-                    size="large"
+                    size="medium"
                     onClick={onNavigateToLogin}
                     fullWidth
                   >

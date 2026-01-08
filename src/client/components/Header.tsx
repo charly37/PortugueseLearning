@@ -10,6 +10,7 @@ interface User {
   username: string;
   email?: string;
   isGuest?: boolean;
+  guestExpiresAt?: string;
 }
 
 interface HeaderProps {

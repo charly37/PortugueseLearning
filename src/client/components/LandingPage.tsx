@@ -17,13 +17,10 @@ interface User {
 
 interface LandingPageProps {
   user: User | null;
-  onWordPractice: () => void;
   onWordChallenge: () => void;
   onWordLearn: () => void;
-  onVerbPractice: () => void;
   onVerbChallenge: () => void;
   onVerbLearn: () => void;
-  onIdiomPractice: () => void;
   onIdiomChallenge: () => void;
   onIdiomLearn: () => void;
   onViewProfile: () => void;
@@ -35,13 +32,10 @@ interface LandingPageProps {
 
 const LandingPage: React.FC<LandingPageProps> = ({ 
   user, 
-  onWordPractice,
   onWordChallenge,
   onWordLearn,
-  onVerbPractice,
   onVerbChallenge,
   onVerbLearn,
-  onIdiomPractice,
   onIdiomChallenge,
   onIdiomLearn,
   onViewWordStats,
@@ -175,16 +169,6 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   variant="contained"
                   color="primary"
                   size="large"
-                  onClick={onWordPractice}
-                  fullWidth
-                  sx={{ mb: 1 }}
-                >
-                  {t('common.practice')}
-                </Button>
-                <Button
-                  variant="outlined"
-                  color="primary"
-                  size="large"
                   onClick={onWordChallenge}
                   fullWidth
                   sx={{ mb: user ? 1 : 0 }}
@@ -241,16 +225,6 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 </Button>
                 <Button
                   variant="contained"
-                  color="secondary"
-                  size="large"
-                  onClick={onVerbPractice}
-                  fullWidth
-                  sx={{ mb: 1 }}
-                >
-                  {t('common.practice')}
-                </Button>
-                <Button
-                  variant="outlined"
                   color="secondary"
                   size="large"
                   onClick={onVerbChallenge}
@@ -315,30 +289,13 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 <Button
                   variant="contained"
                   size="large"
-                  onClick={onIdiomPractice}
-                  fullWidth
-                  sx={{
-                    mb: 1,
-                    bgcolor: '#ff9800',
-                    '&:hover': {
-                      bgcolor: '#f57c00',
-                    },
-                  }}
-                >
-                  {t('common.practice')}
-                </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
                   onClick={onIdiomChallenge}
                   fullWidth
                   sx={{
                     mb: user ? 1 : 0,
-                    color: '#ff9800',
-                    borderColor: '#ff9800',
+                    bgcolor: '#ff9800',
                     '&:hover': {
-                      borderColor: '#f57c00',
-                      bgcolor: '#ff980010',
+                      bgcolor: '#f57c00',
                     },
                   }}
                 >

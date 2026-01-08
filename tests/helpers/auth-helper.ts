@@ -26,8 +26,8 @@ export async function registerAndLogin(
   await page.getByLabel('Password').first().fill(password);
   await page.getByLabel('Confirm Password').fill(password);
   
-  // Submit form
-  await page.getByRole('button', { name: /Register/i }).click();
+  // Submit form - use the submit button in the form, not the header
+  await page.locator('form').getByRole('button', { name: /Register/i }).click();
   
   // Wait for landing page to load - check for Welcome message with username
   await page.waitForSelector('h1:has-text("Welcome")', { timeout: 10000 });
@@ -52,8 +52,8 @@ export async function login(
   await page.getByLabel('Email').fill(email);
   await page.getByLabel('Password').fill(password);
   
-  // Submit form
-  await page.getByRole('button', { name: /Login/i }).click();
+  // Submit form - use the submit button in the form, not the header
+  await page.locator('form').getByRole('button', { name: /Login/i }).click();
   
   // Wait for landing page to load - check for Welcome message
   await page.waitForSelector('h1:has-text("Welcome")', { timeout: 10000 });

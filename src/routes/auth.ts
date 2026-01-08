@@ -142,6 +142,8 @@ router.get('/check-auth', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
+        isGuest: user.isGuest,
+        guestExpiresAt: user.guestExpiresAt,
         preferredLanguage: user.preferredLanguage,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
@@ -193,6 +195,100 @@ router.post('/update-language', async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Update language error:', error);
     res.status(500).json({ message: 'Server error updating language' });
+  }
+});
+
+// Create guest user
+router.post('/create-guest', async (req: Request, res: Response) => {
+  try {
+    // Generate unique guest username
+    const timestamp = Date.now();
+    const randomStr = Math.random().toString(36).substring(2, 6);
+    const guestUsername = `guest_${timestamp}_${randomStr}`;
+
+    // Set expiration to 7 days from now
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 7);
+
+    // Create guest user (don't set email at all - leave it undefined)
+    const guestUser = new User({
+      username: guestUsername,
+      isGuest: true,
+      guestExpiresAt: expirationDate,
+      preferredLanguage: req.body.preferredLanguage || 'fr'
+      // email and password are intentionally not set (undefined, not null)
+    });
+
+    await guestUser.save();
+
+    // Set session
+    req.session.userId = guestUser._id.toString();
+
+    res.status(201).json({
+      message: 'Guest account created successfully',
+      user: {
+        id: guestUser._id,
+        username: guestUser.username,
+        email: guestUser.email,
+        isGuest: true,
+        guestExpiresAt: guestUser.guestExpiresAt,
+        preferredLanguage: guestUser.preferredLanguage,
+        createdAt: guestUser.createdAt,
+        totalScore: guestUser.totalScore,
+        level: guestUser.level
+      }
+    });
+  } catch (error) {
+    console.error('Create guest error:', error);
+    res.status(500).json({ message: 'Server error creating guest account' });
+  }
+});
+
+// Restore guest session from localStorage
+router.post('/restore-guest', async (req: Request, res: Response) => {
+  try {
+    const { guestUserId } = req.body;
+
+    if (!guestUserId) {
+      return res.status(400).json({ message: 'Guest user ID is required' });
+    }
+
+    // Find the guest user
+    const guestUser = await User.findById(guestUserId).select('-password');
+    
+    if (!guestUser) {
+      return res.status(404).json({ message: 'Guest user not found' });
+    }
+
+    if (!guestUser.isGuest) {
+      return res.status(400).json({ message: 'User is not a guest account' });
+    }
+
+    // Check if guest has expired
+    if (guestUser.guestExpiresAt && new Date() > guestUser.guestExpiresAt) {
+      return res.status(401).json({ message: 'Guest account has expired' });
+    }
+
+    // Restore session
+    req.session.userId = guestUser._id.toString();
+
+    res.json({
+      message: 'Guest session restored successfully',
+      user: {
+        id: guestUser._id,
+        username: guestUser.username,
+        email: guestUser.email,
+        isGuest: true,
+        guestExpiresAt: guestUser.guestExpiresAt,
+        preferredLanguage: guestUser.preferredLanguage,
+        createdAt: guestUser.createdAt,
+        totalScore: guestUser.totalScore,
+        level: guestUser.level
+      }
+    });
+  } catch (error) {
+    console.error('Restore guest error:', error);
+    res.status(500).json({ message: 'Server error restoring guest session' });
   }
 });
 

@@ -62,13 +62,14 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'word-practice' | 'word-challenge' | 'word-learn' | 'verb-practice' | 'verb-challenge' | 'verb-learn' | 'idiom-practice' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
+type PageType = 'landing' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
 
 interface User {
   id: string;
   username: string;
   email?: string;  // Optional for guest users
   isGuest?: boolean;  // Guest user flag
+  guestExpiresAt?: string;  // Expiration date for guest users
   preferredLanguage?: 'fr' | 'en';
   createdAt?: string;
 }
@@ -93,18 +94,73 @@ const App: React.FC = () => {
 
   const checkAuth = async () => {
     try {
+      // First check if there's an active session
       const response = await fetch('/api/auth/check-auth');
       const data = await response.json();
       
       if (data.authenticated && data.user) {
         setUser(data.user);
+        // If this is a guest, store their ID in localStorage
+        if (data.user.isGuest) {
+          localStorage.setItem('guestUserId', data.user.id);
+        }
+      } else {
+        // If no active session, try to restore guest from localStorage
+        const guestUserId = localStorage.getItem('guestUserId');
+        if (guestUserId) {
+          await restoreGuestSession(guestUserId);
+        }
       }
-      // Always allow access to landing page, even if not authenticated
     } catch (error) {
       console.error('Auth check failed:', error);
-      // Continue to landing page even if auth check fails
     } finally {
       setLoading(false);
+    }
+  };
+
+  const restoreGuestSession = async (guestUserId: string) => {
+    try {
+      const response = await fetch('/api/auth/restore-guest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ guestUserId }),
+      });
+      
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data.user);
+      } else {
+        // If restore failed (expired or deleted), remove from localStorage
+        localStorage.removeItem('guestUserId');
+      }
+    } catch (error) {
+      console.error('Failed to restore guest session:', error);
+      localStorage.removeItem('guestUserId');
+    }
+  };
+
+  const handleCreateGuest = async (): Promise<User | null> => {
+    try {
+      const response = await fetch('/api/auth/create-guest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ preferredLanguage: i18n.language }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        const guestUser = data.user;
+        setUser(guestUser);
+        // Store guest ID in localStorage
+        localStorage.setItem('guestUserId', guestUser.id);
+        return guestUser;
+      } else {
+        console.error('Failed to create guest account');
+        return null;
+      }
+    } catch (error) {
+      console.error('Error creating guest account:', error);
+      return null;
     }
   };
 
@@ -121,6 +177,8 @@ const App: React.FC = () => {
   const handleLogout = async () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
+      // Clear guest ID from localStorage on logout
+      localStorage.removeItem('guestUserId');
       setUser(null);
       setCurrentPage('landing');
     } catch (error) {
@@ -146,7 +204,7 @@ const App: React.FC = () => {
     );
   }
 
-  const showHeader = currentPage !== 'login' && currentPage !== 'register';
+  const showHeader = true;
 
   return (
     <ThemeProvider theme={theme}>
@@ -163,34 +221,45 @@ const App: React.FC = () => {
         />
       )}
       {/* Guest Mode Banner */}
-      {user?.isGuest && showHeader && (
-        <Alert 
-          severity="info" 
-          sx={{ 
-            borderRadius: 0,
-            justifyContent: 'center',
-            '& .MuiAlert-message': {
-              display: 'flex',
-              alignItems: 'center',
-              gap: 1,
-              flexWrap: 'wrap',
-              justifyContent: 'center'
+      {user?.isGuest && showHeader && (() => {
+        const daysRemaining = user.guestExpiresAt 
+          ? Math.ceil((new Date(user.guestExpiresAt).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+          : null;
+        const isExpiringSoon = daysRemaining !== null && daysRemaining <= 2;
+        
+        return (
+          <Alert 
+            severity={isExpiringSoon ? "warning" : "info"}
+            sx={{ 
+              borderRadius: 0,
+              justifyContent: 'center',
+              '& .MuiAlert-message': {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+                flexWrap: 'wrap',
+                justifyContent: 'center'
+              }
+            }}
+            action={
+              <Button 
+                color="inherit" 
+                size="small" 
+                onClick={() => setCurrentPage('register')}
+                sx={{ fontWeight: 600 }}
+              >
+                {t('guest.createAccount')}
+              </Button>
             }
-          }}
-          action={
-            <Button 
-              color="inherit" 
-              size="small" 
-              onClick={() => setCurrentPage('register')}
-              sx={{ fontWeight: 600 }}
-            >
-              {t('guest.createAccount')}
-            </Button>
-          }
-        >
-          🎯 {t('guest.banner')} {t('guest.toSavePermanently')}
-        </Alert>
-      )}
+          >
+            {isExpiringSoon ? (
+              <>⚠️ {t('guest.expiresInDays', { days: daysRemaining })} {t('guest.createAccountToKeep')}</>
+            ) : (
+              <>🎯 {t('guest.banner')} {t('guest.toSavePermanently')}</>
+            )}
+          </Alert>
+        );
+      })()}
       <Box sx={{ minHeight: '100vh' }}>
         {currentPage === 'login' && (
           <LoginPage
@@ -208,13 +277,10 @@ const App: React.FC = () => {
         {currentPage === 'landing' && (
           <LandingPage
             user={user}
-            onWordPractice={() => setCurrentPage('word-practice')}
             onWordChallenge={() => setCurrentPage('word-challenge')}
             onWordLearn={() => setCurrentPage('word-learn')}
-            onVerbPractice={() => setCurrentPage('verb-practice')}
             onVerbChallenge={() => setCurrentPage('verb-challenge')}
             onVerbLearn={() => setCurrentPage('verb-learn')}
-            onIdiomPractice={() => setCurrentPage('idiom-practice')}
             onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
             onIdiomLearn={() => setCurrentPage('idiom-learn')}
             onViewProfile={() => setCurrentPage('profile')}
@@ -227,29 +293,20 @@ const App: React.FC = () => {
         {currentPage === 'word-learn' && (
           <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} />
         )}
-        {currentPage === 'word-practice' && (
-          <ChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
-        )}
         {currentPage === 'word-challenge' && (
-          <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
-        )}
-        {currentPage === 'verb-practice' && (
-          <VerbChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
+          <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'verb-learn' && (
           <FlashcardLearnPage challengeType="verb" onBackHome={() => setCurrentPage('landing')} user={user} />
         )}
         {currentPage === 'verb-challenge' && (
-          <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
-        )}
-        {currentPage === 'idiom-practice' && (
-          <IdiomChallengePage mode="practice" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
+          <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'idiom-learn' && (
           <FlashcardLearnPage challengeType="idiom" onBackHome={() => setCurrentPage('landing')} user={user} />
         )}
         {currentPage === 'idiom-challenge' && (
-          <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} />
+          <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'profile' && user && (
           <ProfilePage user={user} onBackHome={() => setCurrentPage('landing')} />
