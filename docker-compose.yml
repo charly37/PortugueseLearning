@@ -1,6 +1,6 @@
 services:
   app:
-    image: charly37/portuguese-learning:latest
+    image: charly37/portuguese-learning:${IMAGE_TAG:-latest}
     restart: unless-stopped
     environment:
       - NODE_ENV=production
@@ -11,7 +11,7 @@ services:
       - app-network
 
   analytics:
-    image: charly37/portuguese-learning-analytics:latest
+    image: charly37/portuguese-learning-analytics:${IMAGE_TAG:-latest}
     restart: unless-stopped
     environment:
       - MONGODB_URI=${MONGODB_URI}

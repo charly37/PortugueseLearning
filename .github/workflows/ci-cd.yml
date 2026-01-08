@@ -71,11 +71,15 @@ jobs:
         username: ${{ vars.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name: Get short commit SHA
+      id: vars
+      run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
     - name: Build App Docker image
-      run: docker build -t portuguese-learning:latest .
+      run: docker build -t portuguese-learning:${{ steps.vars.outputs.short_sha }} .
 
     - name: Build Analytics Docker image
-      run: docker build -t portuguese-learning-analytics:latest -f analytics/Dockerfile analytics/
+      run: docker build -t portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} -f analytics/Dockerfile analytics/
 
     - name: Test Docker image with MongoDB
       run: |
@@ -87,7 +91,7 @@ jobs:
         docker run -d -p 3000:3000 --name test-app \
           -e MONGODB_URI=mongodb://172.17.0.1:27017/portuguese-test \
           -e SESSION_SECRET=test-secret-key \
-          portuguese-learning:latest
+          portuguese-learning:${{ steps.vars.outputs.short_sha }}
         
         # Wait for app to start
         sleep 10
