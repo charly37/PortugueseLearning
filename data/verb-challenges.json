@@ -858,5 +858,145 @@
             "vós brincais",
             "eles brincam"
         ]
+    },
+    {
+        "id": "b6c7d8e9-f0a1-2345-1234-567890123456",
+        "port": "poder",
+        "fr": {
+            "translation": "pouvoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "can / to be able to",
+            "note": "Ele pode dirigir, mas não muito bem. - He can drive, but not very well."
+        },
+        "present": [
+            "eu posso",
+            "tu podes",
+            "ele pode",
+            "nós podemos",
+            "vós podeis",
+            "eles podem"
+        ]
+    },
+    {
+        "id": "c7d8e9f0-a1b2-3456-2345-678901234567",
+        "port": "usar",
+        "fr": {
+            "translation": "utiliser",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to use",
+            "note": "A programadora usa o computador. - The programmer uses the computer."
+        },
+        "present": [
+            "eu uso",
+            "tu usas",
+            "ele usa",
+            "nós usamos",
+            "vós usais",
+            "eles usam"
+        ]
+    },
+    {
+        "id": "d8e9f0a1-b2c3-4567-3456-789012345678",
+        "port": "fazer",
+        "fr": {
+            "translation": "faire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to do / to make",
+            "note": "A mulher faz os serviços domésticos. - The woman does housework."
+        },
+        "present": [
+            "eu faço",
+            "tu fazes",
+            "ele faz",
+            "nós fazemos",
+            "vós fazeis",
+            "eles fazem"
+        ]
+    },
+    {
+        "id": "e9f0a1b2-c3d4-5678-4567-890123456789",
+        "port": "ir",
+        "fr": {
+            "translation": "aller",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to go",
+            "note": "ir reto - go straight ahead"
+        },
+        "present": [
+            "eu vou",
+            "tu vais",
+            "ele vai",
+            "nós vamos",
+            "vós ides",
+            "eles vão"
+        ]
+    },
+    {
+        "id": "f0a1b2c3-d4e5-6789-5678-901234567890",
+        "port": "vir",
+        "fr": {
+            "translation": "venir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to come",
+            "note": "A menina veio em direção à filmadora. - The girl came towards the video camera."
+        },
+        "present": [
+            "eu venho",
+            "tu vens",
+            "ele vem",
+            "nós vimos",
+            "vós vindes",
+            "eles vêm"
+        ]
+    },
+    {
+        "id": "a1b2c3d4-e5f6-7890-7890-123456789012",
+        "port": "rir",
+        "fr": {
+            "translation": "rire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to laugh",
+            "note": "O casal ri de uma piada. - The couple laughs at a joke."
+        },
+        "present": [
+            "eu rio",
+            "tu ris",
+            "ele ri",
+            "nós rimos",
+            "vós rides",
+            "eles riem"
+        ]
+    },
+    {
+        "id": "b2c3d4e5-f6a7-8901-8901-234567890123",
+        "port": "ver",
+        "fr": {
+            "translation": "voir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to see",
+            "note": "Os turistas viram o pôr-do-sol. - The tourists saw the sunset."
+        },
+        "present": [
+            "eu vejo",
+            "tu vês",
+            "ele vê",
+            "nós vemos",
+            "vós vedes",
+            "eles veem"
+        ]
     }
 ]

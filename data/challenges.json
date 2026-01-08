@@ -1822,5 +1822,1073 @@
             "translation": "wife",
             "note": "todo"
         }
+    },
+    {
+        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "port": "vendedor",
+        "fr": {
+            "translation": "vendeur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "salesman",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+        "port": "água",
+        "fr": {
+            "translation": "eau",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "water",
+            "note": "Posso tomar água, por favor? - Can I have some water, please?"
+        }
+    },
+    {
+        "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+        "port": "carne de boi",
+        "fr": {
+            "translation": "bœuf",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "beef",
+            "note": "carne de vaca para o prato principal - beef for the main course"
+        }
+    },
+    {
+        "id": "d4e5f6a7-b8c9-0123-def1-234567890123",
+        "port": "carne de porco",
+        "fr": {
+            "translation": "porc",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pork",
+            "note": "Carne suína é a carne de porco. - Pork is the meat from a pig."
+        }
+    },
+    {
+        "id": "e5f6a7b8-c9d0-1234-ef12-345678901234",
+        "port": "frango",
+        "fr": {
+            "translation": "poulet",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "chicken",
+            "note": "sopa de frango - chicken soup"
+        }
+    },
+    {
+        "id": "f6a7b8c9-d0e1-2345-f123-456789012345",
+        "port": "carneiro",
+        "fr": {
+            "translation": "agneau",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lamb",
+            "note": "Carneiro é muito gostoso. - Lamb is extremely delicious."
+        }
+    },
+    {
+        "id": "a7b8c9d0-e1f2-3456-1234-567890123456",
+        "port": "peixe",
+        "fr": {
+            "translation": "poisson",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fish",
+            "note": "O prato principal dessa noite é peixe grelhado. - Tonight's main course is grilled fish."
+        }
+    },
+    {
+        "id": "b8c9d0e1-f2a3-4567-2345-678901234567",
+        "port": "pé",
+        "fr": {
+            "translation": "pied",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "foot",
+            "note": "O médico está examinando o pé. - The doctor is examining the foot."
+        }
+    },
+    {
+        "id": "c9d0e1f2-a3b4-5678-3456-789012345678",
+        "port": "perna",
+        "fr": {
+            "translation": "jambe",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "leg",
+            "note": "A mulher está enxaguando a sua perna. - The woman is rinsing her leg."
+        }
+    },
+    {
+        "id": "d0e1f2a3-b4c5-6789-4567-890123456789",
+        "port": "cabeça",
+        "fr": {
+            "translation": "tête",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "head",
+            "note": "Use um capacete para proteger sua cabeça. - Wear a helmet to protect your head."
+        }
+    },
+    {
+        "id": "e1f2a3b4-c5d6-7890-5678-901234567890",
+        "port": "braço",
+        "fr": {
+            "translation": "bras",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "arm",
+            "note": "Os dois braços estão levantados. - The two arms are raised."
+        }
+    },
+    {
+        "id": "f2a3b4c5-d6e7-8901-6789-012345678901",
+        "port": "mão",
+        "fr": {
+            "translation": "main",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hand",
+            "note": "A criança está levantando a mão dela. - The child is raising his hand."
+        }
+    },
+    {
+        "id": "a3b4c5d6-e7f8-9012-7890-123456789012",
+        "port": "dedo",
+        "fr": {
+            "translation": "doigt",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "finger",
+            "note": "Meu dedo está sangrando. - My finger's bleeding."
+        }
+    },
+    {
+        "id": "b4c5d6e7-f8a9-0123-8901-234567890123",
+        "port": "corpo",
+        "fr": {
+            "translation": "corps",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "body",
+            "note": "A comida é combustível para o corpo. - Food is fuel for the body."
+        }
+    },
+    {
+        "id": "c5d6e7f8-a9b0-1234-9012-345678901234",
+        "port": "estômago",
+        "fr": {
+            "translation": "estomac",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "stomach",
+            "note": "Eu tenho dor de estômago. - I have a stomach ache."
+        }
+    },
+    {
+        "id": "d6e7f8a9-b0c1-2345-0123-456789012345",
+        "port": "costas",
+        "fr": {
+            "translation": "dos",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "back",
+            "note": "Minhas costas doem. - My back hurts."
+        }
+    },
+    {
+        "id": "e7f8a9b0-c1d2-3456-1234-567890123456",
+        "port": "peito",
+        "fr": {
+            "translation": "poitrine",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "chest",
+            "note": "Eu tenho dor no peito. - I have chest pain."
+        }
+    },
+    {
+        "id": "f8a9b0c1-d2e3-4567-2345-678901234567",
+        "port": "enfermeira",
+        "fr": {
+            "translation": "infirmière",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "nurse",
+            "note": "A enfermeira da enfermaria da escola está examinando o aluno. - The nurse at the school infirmary is examining the student."
+        }
+    },
+    {
+        "id": "a9b0c1d2-e3f4-5678-3456-789012345678",
+        "port": "funcionário",
+        "fr": {
+            "translation": "employé",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "employee",
+            "note": "funcionária - female employee"
+        }
+    },
+    {
+        "id": "b0c1d2e3-f4a5-6789-4567-890123456789",
+        "port": "policial",
+        "fr": {
+            "translation": "policier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "police officer",
+            "note": "policial de uniforme - police officer in uniform"
+        }
+    },
+    {
+        "id": "c1d2e3f4-a5b6-7890-5678-901234567890",
+        "port": "cozinheiro",
+        "fr": {
+            "translation": "cuisinier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cook",
+            "note": "Ela é cozinheira em um restaurante quatro estrelas. - She is a cook at a four-star restaurant."
+        }
+    },
+    {
+        "id": "d2e3f4a5-b6c7-8901-6789-012345678901",
+        "port": "engenheiro",
+        "fr": {
+            "translation": "ingénieur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "engineer",
+            "note": "Eu sou engenheiro. - I am an engineer."
+        }
+    },
+    {
+        "id": "e3f4a5b6-c7d8-9012-7890-123456789012",
+        "port": "médico",
+        "fr": {
+            "translation": "médecin",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "doctor",
+            "note": "O médico está examinando o pé. - The doctor is examining the foot."
+        }
+    },
+    {
+        "id": "f4a5b6c7-d8e9-0123-8901-234567890123",
+        "port": "gerente",
+        "fr": {
+            "translation": "gérant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "manager",
+            "note": "O gerente do departamento está encarregado da produção. - The department manager is in charge of production."
+        }
+    },
+    {
+        "id": "a5b6c7d8-e9f0-1234-9012-345678901234",
+        "port": "professora",
+        "fr": {
+            "translation": "professeur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "teacher",
+            "note": "professora numa sala de aula - teacher in a classroom"
+        }
+    },
+    {
+        "id": "b6c7d8e9-f0a1-2345-0123-456789012345",
+        "port": "programador",
+        "fr": {
+            "translation": "programmeur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "programmer",
+            "note": "Eu sou programador. - I am a programmer."
+        }
+    },
+    {
+        "id": "c7d8e9f0-a1b2-3456-1234-567890123456",
+        "port": "janeiro",
+        "fr": {
+            "translation": "janvier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "January",
+            "note": "terça-feira, primeiro de janeiro - Tuesday, January 1st"
+        }
+    },
+    {
+        "id": "d8e9f0a1-b2c3-4567-2345-678901234567",
+        "port": "fevereiro",
+        "fr": {
+            "translation": "février",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "February",
+            "note": "O dia a mais do ano bissexto é dia vinte e nove de fevereiro. - Leap year day is February 29th."
+        }
+    },
+    {
+        "id": "e9f0a1b2-c3d4-5678-3456-789012345678",
+        "port": "março",
+        "fr": {
+            "translation": "mars",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "March",
+            "note": "Março marca o início da primavera no hemisfério norte e do outono no hemisfério sul."
+        }
+    },
+    {
+        "id": "f0a1b2c3-d4e5-6789-4567-890123456789",
+        "port": "abril",
+        "fr": {
+            "translation": "avril",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "April",
+            "note": "Agora é abril então mês que vem será maio. - It is now April so next month will be May."
+        }
+    },
+    {
+        "id": "a1b2c3d4-e5f6-7890-5678-901234567890",
+        "port": "maio",
+        "fr": {
+            "translation": "mai",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "May",
+            "note": "flores de maio - May flowers"
+        }
+    },
+    {
+        "id": "b2c3d4e5-f6a7-8901-6789-012345678901",
+        "port": "junho",
+        "fr": {
+            "translation": "juin",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "June",
+            "note": "Nós vamos casar em junho. - We are getting married in June."
+        }
+    },
+    {
+        "id": "c3d4e5f6-a7b8-9012-7890-123456789012",
+        "port": "julho",
+        "fr": {
+            "translation": "juillet",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "July",
+            "note": "Julho foi nomeado por Júlio César, que nasceu em Julho. - July is named for Julius Caesar, who was born in July."
+        }
+    },
+    {
+        "id": "d4e5f6a7-b8c9-0123-8901-234567890123",
+        "port": "agosto",
+        "fr": {
+            "translation": "août",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "August",
+            "note": "A escola está fechada em agosto. - The school is closed in August."
+        }
+    },
+    {
+        "id": "e5f6a7b8-c9d0-1234-9012-345678901234",
+        "port": "setembro",
+        "fr": {
+            "translation": "septembre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "September",
+            "note": "Hoje é sábado, dia dez de setembro. - Today is Saturday, September 10th."
+        }
+    },
+    {
+        "id": "f6a7b8c9-d0e1-2345-0123-456789012345",
+        "port": "outubro",
+        "fr": {
+            "translation": "octobre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "October",
+            "note": "O dia das bruxas cai dia trinta e um de outubro. - Halloween falls on October 31st."
+        }
+    },
+    {
+        "id": "a7b8c9d0-e1f2-3456-1234-567890123456",
+        "port": "novembro",
+        "fr": {
+            "translation": "novembre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "November",
+            "note": "Ação de Graças, quinta-feira, vinte e quatro de novembro - Thanksgiving, Thursday November 24th"
+        }
+    },
+    {
+        "id": "b8c9d0e1-f2a3-4567-2345-678901234567",
+        "port": "dezembro",
+        "fr": {
+            "translation": "décembre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "December",
+            "note": "sexta-feira, oito de dezembro - Friday, December 8th"
+        }
+    },
+    {
+        "id": "c9d0e1f2-a3b4-5678-3456-789012345678",
+        "port": "zero",
+        "fr": {
+            "translation": "zéro",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "zero",
+            "note": "número zero - number zero"
+        }
+    },
+    {
+        "id": "d0e1f2a3-b4c5-6789-4567-890123456789",
+        "port": "um",
+        "fr": {
+            "translation": "un",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "one",
+            "note": "Há vinte e quatro horas em um dia. - There are twenty-four hours in one day."
+        }
+    },
+    {
+        "id": "e1f2a3b4-c5d6-7890-5678-901234567890",
+        "port": "dois",
+        "fr": {
+            "translation": "deux",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "two",
+            "note": "O número dois é meu número favorito. - The number two is my favorite number."
+        }
+    },
+    {
+        "id": "f2a3b4c5-d6e7-8901-6789-012345678901",
+        "port": "três",
+        "fr": {
+            "translation": "trois",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "three",
+            "note": "São três horas agora. - It is three o'clock now."
+        }
+    },
+    {
+        "id": "a3b4c5d6-e7f8-9012-7890-123456789012",
+        "port": "quatro",
+        "fr": {
+            "translation": "quatre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "four",
+            "note": "Novembro é um dos quatro meses com trinta dias. - November is one of four months with thirty days."
+        }
+    },
+    {
+        "id": "b4c5d6e7-f8a9-0123-8901-234567890123",
+        "port": "cinco",
+        "fr": {
+            "translation": "cinq",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "five",
+            "note": "A estrela-do-mar tem cinco braços. - The starfish has five legs."
+        }
+    },
+    {
+        "id": "c5d6e7f8-a9b0-1234-9012-345678901234",
+        "port": "seis",
+        "fr": {
+            "translation": "six",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "six",
+            "note": "seis polegadas - six inches"
+        }
+    },
+    {
+        "id": "d6e7f8a9-b0c1-2345-0123-456789012345",
+        "port": "sete",
+        "fr": {
+            "translation": "sept",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "seven",
+            "note": "sete dias por semana - seven days a week"
+        }
+    },
+    {
+        "id": "e7f8a9b0-c1d2-3456-1234-567890123456",
+        "port": "oito",
+        "fr": {
+            "translation": "huit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "eight",
+            "note": "oito coisas - eight things"
+        }
+    },
+    {
+        "id": "f8a9b0c1-d2e3-4567-2345-678901234567",
+        "port": "nove",
+        "fr": {
+            "translation": "neuf",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "nine",
+            "note": "noventa e nove porcento - ninety-nine percent"
+        }
+    },
+    {
+        "id": "a9b0c1d2-e3f4-5678-3456-789012345678",
+        "port": "dez",
+        "fr": {
+            "translation": "dix",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ten",
+            "note": "Eu posso contar de um a dez em chinês. - I can count from one to ten in Chinese."
+        }
+    },
+    {
+        "id": "b0c1d2e3-f4a5-6789-4567-890123456789",
+        "port": "café",
+        "fr": {
+            "translation": "café",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "coffee",
+            "note": "fazer café - make coffee"
+        }
+    },
+    {
+        "id": "c1d2e3f4-a5b6-7890-5678-901234567890",
+        "port": "cerveja",
+        "fr": {
+            "translation": "bière",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "beer",
+            "note": "lata de cerveja - can of beer"
+        }
+    },
+    {
+        "id": "d2e3f4a5-b6c7-8901-6789-012345678901",
+        "port": "chá",
+        "fr": {
+            "translation": "thé",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tea",
+            "note": "A mulher está bebendo chá. - The woman is drinking tea."
+        }
+    },
+    {
+        "id": "e3f4a5b6-c7d8-9012-7890-123456789012",
+        "port": "vinho",
+        "fr": {
+            "translation": "vin",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wine",
+            "note": "taça de vinho - glass of wine"
+        }
+    },
+    {
+        "id": "f4a5b6c7-d8e9-0123-8901-234567890123",
+        "port": "fácil",
+        "fr": {
+            "translation": "facile",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "easy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a5b6c7d8-e9f0-1234-9012-345678901234",
+        "port": "mau",
+        "fr": {
+            "translation": "mauvais",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bad",
+            "note": "O homem é mau. - The man is bad."
+        }
+    },
+    {
+        "id": "b6c7d8e9-f0a1-2345-0123-456789012345",
+        "port": "perto",
+        "fr": {
+            "translation": "près",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "near",
+            "note": "Eu moro perto da universidade. - I live near the university."
+        }
+    },
+    {
+        "id": "d8e9f0a1-b2c3-4567-2345-678901234567",
+        "port": "Olá",
+        "fr": {
+            "translation": "Bonjour",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Hello",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e9f0a1b2-c3d4-5678-3456-789012345678",
+        "port": "Bom dia",
+        "fr": {
+            "translation": "Bonjour",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Good morning",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f0a1b2c3-d4e5-6789-4567-890123456789",
+        "port": "Boa tarde",
+        "fr": {
+            "translation": "Bon après-midi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Good afternoon",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a1b2c3d4-e5f6-7890-6789-012345678901",
+        "port": "Boa noite",
+        "fr": {
+            "translation": "Bonne nuit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Good evening / Good night",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b2c3d4e5-f6a7-8901-7890-123456789012",
+        "port": "Tudo bem",
+        "fr": {
+            "translation": "Comment allez-vous",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "How are you",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c3d4e5f6-a7b8-9012-8901-234567890123",
+        "port": "Obrigado",
+        "fr": {
+            "translation": "Merci",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Thank you",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d4e5f6a7-b8c9-0123-9012-345678901234",
+        "port": "Não",
+        "fr": {
+            "translation": "Non",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "No",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e5f6a7b8-c9d0-1234-0123-456789012345",
+        "port": "Delicioso",
+        "fr": {
+            "translation": "Délicieux",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Delicious",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a7b8c9d0-e1f2-3456-2345-678901234567",
+        "port": "Adeus",
+        "fr": {
+            "translation": "Au revoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Goodbye",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b8c9d0e1-f2a3-4567-3456-789012345678",
+        "port": "Sim",
+        "fr": {
+            "translation": "Oui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Yes",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c9d0e1f2-a3b4-5678-4567-890123456789",
+        "port": "segunda-feira",
+        "fr": {
+            "translation": "lundi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Monday",
+            "note": "A semana de trabalho começa na segunda-feira. - The workweek starts on Monday."
+        }
+    },
+    {
+        "id": "d0e1f2a3-b4c5-6789-5678-901234567890",
+        "port": "terça-feira",
+        "fr": {
+            "translation": "mardi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Tuesday",
+            "note": "Segunda-feira, terça-feira, quarta-feira, quinta-feira e sexta-feira são dias da semana."
+        }
+    },
+    {
+        "id": "e1f2a3b4-c5d6-7890-6789-012345678901",
+        "port": "quarta-feira",
+        "fr": {
+            "translation": "mercredi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Wednesday",
+            "note": "Amanhã é quarta-feira, e depois de amanhã é quinta-feira. - Tomorrow is Wednesday, and the day after tomorrow is Thursday."
+        }
+    },
+    {
+        "id": "f2a3b4c5-d6e7-8901-7890-123456789012",
+        "port": "quinta-feira",
+        "fr": {
+            "translation": "jeudi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Thursday",
+            "note": "Amanhã é quarta-feira, e depois de amanhã é quinta-feira. - Tomorrow is Wednesday, and the day after tomorrow is Thursday."
+        }
+    },
+    {
+        "id": "a3b4c5d6-e7f8-9012-8901-234567890123",
+        "port": "sexta-feira",
+        "fr": {
+            "translation": "vendredi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Friday",
+            "note": "Segunda-feira, terça-feira, quarta-feira, quinta-feira e sexta-feira são dias da semana."
+        }
+    },
+    {
+        "id": "b4c5d6e7-f8a9-0123-9012-345678901234",
+        "port": "sábado",
+        "fr": {
+            "translation": "samedi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Saturday",
+            "note": "sem planos para o sábado - no plans for Saturday"
+        }
+    },
+    {
+        "id": "c5d6e7f8-a9b0-1234-0123-456789012345",
+        "port": "domingo",
+        "fr": {
+            "translation": "dimanche",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Sunday",
+            "note": "Domingo, dia dezessete - Sunday the 17th"
+        }
+    },
+    {
+        "id": "d6e7f8a9-b0c1-2345-1234-567890123456",
+        "port": "semana",
+        "fr": {
+            "translation": "semaine",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "week",
+            "note": "Há sete dias em uma semana. - There are seven days in a week."
+        }
+    },
+    {
+        "id": "e7f8a9b0-c1d2-3456-2345-678901234567",
+        "port": "ano",
+        "fr": {
+            "translation": "année",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "year",
+            "note": "um ano - one year"
+        }
+    },
+    {
+        "id": "f8a9b0c1-d2e3-4567-3456-789012345678",
+        "port": "hoje",
+        "fr": {
+            "translation": "aujourd'hui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "today",
+            "note": "hoje às seis e quinze - today at 6:15"
+        }
+    },
+    {
+        "id": "a9b0c1d2-e3f4-5678-4567-890123456789",
+        "port": "amanhã",
+        "fr": {
+            "translation": "demain",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tomorrow",
+            "note": "amanhã às dez e dez - tomorrow at 10:10"
+        }
+    },
+    {
+        "id": "b0c1d2e3-f4a5-6789-5678-901234567890",
+        "port": "ontem",
+        "fr": {
+            "translation": "hier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "yesterday",
+            "note": "Eu tirei folga ontem. - I took a day off yesterday."
+        }
+    },
+    {
+        "id": "c1d2e3f4-a5b6-7890-6789-012345678901",
+        "port": "calendário",
+        "fr": {
+            "translation": "calendrier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "calendar",
+            "note": "Eu marquei nosso aniversário no calendário. - I marked our anniversary on the calendar."
+        }
+    },
+    {
+        "id": "d2e3f4a5-b6c7-8901-7890-123456789012",
+        "port": "segundo",
+        "fr": {
+            "translation": "seconde",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "second",
+            "note": "Há cinquenta e oito segundos restantes no cronômetro. - There are fifty eight seconds left on the stopwatch."
+        }
+    },
+    {
+        "id": "e3f4a5b6-c7d8-9012-8901-234567890123",
+        "port": "hora",
+        "fr": {
+            "translation": "heure",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hour / o'clock",
+            "note": "Há sessenta minutos em uma hora. - There are 60 minutes in an hour."
+        }
+    },
+    {
+        "id": "f4a5b6c7-d8e9-0123-9012-345678901234",
+        "port": "minuto",
+        "fr": {
+            "translation": "minute",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "minute",
+            "note": "Há sessenta segundos em um minuto. - There are sixty seconds in a minute."
+        }
+    },
+    {
+        "id": "a5b6c7d8-e9f0-1234-0123-456789012345",
+        "port": "relógio",
+        "fr": {
+            "translation": "horloge",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "clock",
+            "note": "O relógio marca oito minutos para as doze. - The clock reads eight minutes to twelve."
+        }
+    },
+    {
+        "id": "c3d4e5f6-a7b8-9012-9012-345678901234",
+        "port": "longe",
+        "fr": {
+            "translation": "loin",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "far",
+            "note": "A mulher está olhando para alguma coisa lá longe. - The woman is looking at something far away."
+        }
+    },
+    {
+        "id": "d4e5f6a7-b8c9-0123-0123-456789012345",
+        "port": "pequeno",
+        "fr": {
+            "translation": "petit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "small",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e5f6a7b8-c9d0-1234-1234-567890123456",
+        "port": "bom",
+        "fr": {
+            "translation": "bon",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "good",
+            "note": "Verduras são boas para você. - Vegetables are good for you."
+        }
+    },
+    {
+        "id": "f6a7b8c9-d0e1-2345-2345-678901234567",
+        "port": "bonito",
+        "fr": {
+            "translation": "beau",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "beautiful",
+            "note": "atriz bonita - beautiful actress"
+        }
+    },
+    {
+        "id": "a7b8c9d0-e1f2-3456-3456-789012345678",
+        "port": "feio",
+        "fr": {
+            "translation": "laid",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ugly",
+            "note": "cara feia - ugly face"
+        }
+    },
+    {
+        "id": "b8c9d0e1-f2a3-4567-4567-890123456789",
+        "port": "difícil",
+        "fr": {
+            "translation": "difficile",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "difficult",
+            "note": "Inglês é difícil. - English is difficult."
+        }
     }
 ]

@@ -96,6 +96,18 @@
         }
     },
     {
+        "id": "c7d8e9f0-a1b2-3456-1234-567890123456",
+        "port": "Prazer em conhecê-lo",
+        "fr": {
+            "translation": "Enchanté de vous rencontrer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "Nice to meet you",
+            "note": "todo"
+        }
+    },
+    {
         "id": "97099832-ae5c-4a16-b843-f6efc5b21b0a",
         "port": "ficar com",
         "fr": {
