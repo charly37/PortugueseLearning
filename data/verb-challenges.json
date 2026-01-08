@@ -998,5 +998,25 @@
             "vós vedes",
             "eles veem"
         ]
+    },
+    {
+        "id": "c3d4e5f6-a7b8-9012-9012-345678901234",
+        "port": "trazer",
+        "fr": {
+            "translation": "apporter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to bring",
+            "note": "todo"
+        },
+        "present": [
+            "eu trago",
+            "tu trazes",
+            "ele traz",
+            "nós trazemos",
+            "vós trazeis",
+            "eles trazem"
+        ]
     }
 ]

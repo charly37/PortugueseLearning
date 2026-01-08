@@ -2890,5 +2890,209 @@
             "translation": "difficult",
             "note": "Inglês é difícil. - English is difficult."
         }
+    },
+    {
+        "id": "c9d0e1f2-a3b4-5678-5678-901234567890",
+        "port": "curto",
+        "fr": {
+            "translation": "court",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "short",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d0e1f2a3-b4c5-6789-6789-012345678901",
+        "port": "magro",
+        "fr": {
+            "translation": "maigre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "thin",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e1f2a3b4-c5d6-7890-7890-123456789012",
+        "port": "frio",
+        "fr": {
+            "translation": "froid",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cold",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f2a3b4c5-d6e7-8901-8901-234567890123",
+        "port": "quente",
+        "fr": {
+            "translation": "chaud",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hot",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a3b4c5d6-e7f8-9012-0123-456789012345",
+        "port": "aeroporto",
+        "fr": {
+            "translation": "aéroport",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "airport",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b4c5d6e7-f8a9-0123-1234-567890123456",
+        "port": "táxi",
+        "fr": {
+            "translation": "taxi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "taxi",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c5d6e7f8-a9b0-1234-2345-678901234567",
+        "port": "ponte",
+        "fr": {
+            "translation": "pont",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bridge",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d6e7f8a9-b0c1-2345-3456-789012345678",
+        "port": "estacionamento",
+        "fr": {
+            "translation": "parking",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "car park / parking lot",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e7f8a9b0-c1d2-3456-4567-890123456789",
+        "port": "trem",
+        "fr": {
+            "translation": "train",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "train",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f8a9b0c1-d2e3-4567-5678-901234567890",
+        "port": "ônibus",
+        "fr": {
+            "translation": "bus",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bus",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a9b0c1d2-e3f4-5678-6789-012345678901",
+        "port": "praia",
+        "fr": {
+            "translation": "plage",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "beach",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b0c1d2e3-f4a5-6789-7890-123456789012",
+        "port": "rua",
+        "fr": {
+            "translation": "rue",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "street",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c1d2e3f4-a5b6-7890-8901-234567890123",
+        "port": "leite",
+        "fr": {
+            "translation": "lait",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "milk",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d2e3f4a5-b6c7-8901-9012-345678901234",
+        "port": "suco",
+        "fr": {
+            "translation": "jus",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "juice",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e3f4a5b6-c7d8-9012-0123-456789012345",
+        "port": "café da manhã",
+        "fr": {
+            "translation": "petit-déjeuner",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "breakfast",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f4a5b6c7-d8e9-0123-1234-567890123456",
+        "port": "bolo",
+        "fr": {
+            "translation": "gâteau",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cake",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a5b6c7d8-e9f0-1234-2345-678901234567",
+        "port": "pão",
+        "fr": {
+            "translation": "pain",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bread",
+            "note": "todo"
+        }
     }
 ]
