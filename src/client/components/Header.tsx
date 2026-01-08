@@ -38,22 +38,38 @@ const Header: React.FC<HeaderProps> = ({
   
   return (
     <AppBar position="fixed" elevation={2}>
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 0, mr: 4, fontWeight: 600 }}>
+      <Toolbar sx={{ minHeight: { xs: 56, sm: 64 } }}>
+        <Typography 
+          variant="h6" 
+          component="div" 
+          sx={{ 
+            flexGrow: 0, 
+            mr: { xs: 1, sm: 4 }, 
+            fontWeight: 600,
+            fontSize: { xs: '1rem', sm: '1.25rem' },
+            whiteSpace: 'nowrap',
+          }}
+        >
           🇵🇹 {t('common.appTitle')}
         </Typography>
 
         <Box sx={{ flexGrow: 1 }} />
 
         {showNavigation && (
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+          <Box sx={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: { xs: 0.5, sm: 2 },
+            flexShrink: 0,
+          }}>
             {currentPage !== 'landing' && (
               <Button
                 color="inherit"
                 startIcon={<HomeIcon />}
                 onClick={onNavigateHome}
+                sx={{ minWidth: { xs: 'auto', sm: '64px' } }}
               >
-                {t('common.home')}
+                <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>{t('common.home')}</Box>
               </Button>
             )}
             
@@ -67,6 +83,11 @@ const Header: React.FC<HeaderProps> = ({
                     bgcolor: 'rgba(255, 255, 255, 0.15)',
                     color: 'white',
                     cursor: 'pointer',
+                    maxWidth: { xs: '120px', sm: 'none' },
+                    '& .MuiChip-label': {
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    },
                     '&:hover': {
                       bgcolor: 'rgba(255, 255, 255, 0.25)',
                     },
@@ -77,8 +98,9 @@ const Header: React.FC<HeaderProps> = ({
                   color="inherit"
                   startIcon={<LogoutIcon />}
                   onClick={onLogout}
+                  sx={{ minWidth: { xs: 'auto', sm: '64px' } }}
                 >
-                  {t('common.logout')}
+                  <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>{t('common.logout')}</Box>
                 </Button>
               </>
             ) : (
@@ -86,14 +108,19 @@ const Header: React.FC<HeaderProps> = ({
                 <Button
                   color="inherit"
                   onClick={onNavigateLogin}
+                  size="small"
+                  sx={{ minWidth: { xs: 'auto', sm: '64px' }, px: { xs: 1, sm: 2 } }}
                 >
                   {t('common.login')}
                 </Button>
                 <Button
                   variant="outlined"
+                  size="small"
                   sx={{ 
                     color: 'white', 
                     borderColor: 'white',
+                    minWidth: { xs: 'auto', sm: '64px' },
+                    px: { xs: 1, sm: 2 },
                     '&:hover': {
                       borderColor: 'white',
                       bgcolor: 'rgba(255, 255, 255, 0.1)',

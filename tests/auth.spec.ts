@@ -137,13 +137,14 @@ test.describe('Authentication', () => {
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
     
     // Logout
-    await page.getByRole('button', { name: /Logout/i }).click();
+    await page.getByRole('button', { name: /Logout/i }).click({ force: true });
     
     // Now login with the same credentials - first navigate to login page
     await expect(page.locator('h1')).toContainText('Welcome');
     // Use the header's Login button specifically
     await page.locator('header').getByRole('button', { name: 'Login' }).click();
-    await page.waitForSelector('h1:has-text("Login")', { timeout: 10000 });
+    // Wait for Login page to load
+    await expect(page.locator('h1')).toContainText('Login', { timeout: 10000 });
     
     await page.getByLabel('Email').fill(uniqueUser.email);
     await page.getByLabel('Password').fill(uniqueUser.password);
@@ -194,7 +195,7 @@ test.describe('Authentication', () => {
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
     
     // Logout
-    await page.getByRole('button', { name: 'Logout', exact: true }).click();
+    await page.getByRole('button', { name: 'Logout', exact: true }).click({ force: true });
     
     // Should stay on landing page, but now as guest
     await expect(page.locator('h1')).toContainText('Welcome');

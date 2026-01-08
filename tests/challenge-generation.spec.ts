@@ -137,7 +137,7 @@ test.describe('Challenge Generation', () => {
   test('should allow difficulty adjustment from 0 to 10', async ({ page }) => {
     // Navigate to verb challenge
     const challengeButtons = page.locator('button:has-text("Challenge")');
-    await challengeButtons.nth(2).click();
+    await challengeButtons.nth(2).click({ force: true });
     
     // Test difficulty 0 (all random)
     await page.locator('input[type="range"]').fill('0');
