@@ -7,7 +7,7 @@ test.describe('Learn Mode (Flashcards)', () => {
     await page.goto('/');
   });
 
-  test('should navigate to word learn page and display flashcard', async ({ page }) => {
+  test('should navigate to word learn page and display flashcard @smoke', async ({ page }) => {
     // Find and click the first Learn button (for words)
     const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
     await learnButtons.first().click();

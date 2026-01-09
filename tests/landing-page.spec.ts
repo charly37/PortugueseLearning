@@ -7,7 +7,7 @@ test.describe('Landing Page', () => {
     await page.goto('http://localhost:8080');
   });
 
-  test('should display landing page with all buttons', async ({ page }) => {
+  test('should display landing page with all buttons @smoke', async ({ page }) => {
     await expect(page.locator('h1')).toContainText('Welcome');
     await expect(page.locator('text=Master Portuguese')).toBeVisible();
     

@@ -32,7 +32,7 @@ test.describe('Authentication', () => {
     await expect(page.getByLabel('Confirm Password')).toBeVisible();
   });
 
-  test('should register a new user successfully', async ({ page }) => {
+  test('should register a new user successfully @smoke', async ({ page }) => {
     await setLanguageToEnglish(page);
     const testUser = {
       username: `testuser_${Date.now()}`,
@@ -114,7 +114,7 @@ test.describe('Authentication', () => {
     await expect(page.getByText(/at least 6 characters/i).first()).toBeVisible();
   });
 
-  test('should login with valid credentials', async ({ page }) => {
+  test('should login with valid credentials @smoke', async ({ page }) => {
     await setLanguageToEnglish(page);
     // First register a unique user
     const uniqueUser = {
@@ -172,7 +172,7 @@ test.describe('Authentication', () => {
     await expect(page.getByText(/invalid/i)).toBeVisible();
   });
 
-  test('should logout successfully', async ({ page }) => {
+  test('should logout successfully @smoke', async ({ page }) => {
     await setLanguageToEnglish(page);
     // Register and login first
     const uniqueUser = {

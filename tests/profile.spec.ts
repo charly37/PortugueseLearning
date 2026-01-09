@@ -26,7 +26,7 @@ test.describe('Profile Page', () => {
     await login(page, testUser.email, testUser.password);
   });
 
-  test('should navigate to profile page by clicking username', async ({ page }) => {
+  test('should navigate to profile page by clicking username @smoke', async ({ page }) => {
     // Click on username chip
     await page.getByRole('button', { name: testUser.username }).click();
     

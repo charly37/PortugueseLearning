@@ -56,7 +56,7 @@ test.describe('Challenge Generation', () => {
     );
   });
 
-  test('should configure and start a word challenge with pre-generated set', async ({ page }) => {
+  test('should configure and start a word challenge with pre-generated set @smoke', async ({ page }) => {
     // Navigate to word challenge
     const challengeButtons = page.locator('button:has-text("Challenge")');
     await challengeButtons.first().click();

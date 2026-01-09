@@ -6,7 +6,7 @@ test.describe('Mobile UI - Pixel 7', () => {
     await setLanguageToEnglish(page);
   });
 
-  test('header should display correctly on mobile', async ({ page }) => {
+  test('header should display correctly on mobile @smoke', async ({ page }) => {
     await page.goto('/');
     
     // Verify header is visible and doesn't overflow
@@ -32,7 +32,7 @@ test.describe('Mobile UI - Pixel 7', () => {
     }
   });
 
-  test('landing page should be responsive', async ({ page }) => {
+  test('landing page should be responsive @smoke', async ({ page }) => {
     await page.goto('/');
     
     // Wait for landing page to load

@@ -11,6 +11,8 @@ export default defineConfig({
   expect: {
     timeout: 5 * 1000,
   },
+  // In CI, only run tests tagged with @smoke
+  grep: process.env.CI ? /@smoke/ : undefined,
   
   use: {
     baseURL: 'http://localhost:8080',

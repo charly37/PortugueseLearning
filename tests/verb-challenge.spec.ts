@@ -37,7 +37,7 @@ test.describe('Verb Challenge', () => {
     await expect(page.locator('h1')).toContainText('Portuguese Verbs');
   });
 
-  test('should start verb challenge and validate answer', async ({ page }) => {
+  test('should start verb challenge and validate answer @smoke', async ({ page }) => {
     await expect(page.locator('h6:has-text("English")')).toBeVisible();
     await expect(page.locator('input')).toBeVisible();
     

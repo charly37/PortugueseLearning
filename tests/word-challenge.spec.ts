@@ -33,7 +33,7 @@ test.describe('Word Challenge', () => {
     await page.locator('h6').filter({ hasText: 'English' }).waitFor({ timeout: 10000 });
   });
 
-  test('should display word challenge page with input field', async ({ page }) => {
+  test('should display word challenge page with input field @smoke', async ({ page }) => {
     // Verify challenge UI
     await expect(page.locator('h6:has-text("English")')).toBeVisible();
     await expect(page.locator('input[type="text"]')).toBeVisible();

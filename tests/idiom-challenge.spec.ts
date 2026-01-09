@@ -33,7 +33,7 @@ test.describe('Idiom Challenge', () => {
     await page.locator('h6').filter({ hasText: 'English' }).waitFor({ timeout: 10000 });
   });
 
-  test('should display idiom challenge page', async ({ page }) => {
+  test('should display idiom challenge page @smoke', async ({ page }) => {
     await expect(page.locator('h1')).toContainText('Portuguese Idioms');
   });
 
