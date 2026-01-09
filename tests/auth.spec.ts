@@ -137,12 +137,13 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page with personalized greeting
+    // Wait for landing page with personalized greeting and username to appear
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible({ timeout: 10000 });
     
-    // Logout
-    const logoutBtn = page.getByRole('button', { name: /Logout/i });
-    await logoutBtn.waitFor({ state: 'visible' });
+    // Logout - use LogoutIcon since text might be hidden on mobile
+    const logoutBtn = page.locator('button').filter({ has: page.locator('[data-testid="LogoutIcon"]') });
+    await logoutBtn.waitFor({ state: 'visible', timeout: 10000 });
     await page.waitForTimeout(100);
     await logoutBtn.click({ force: true });
     
@@ -208,12 +209,13 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page with personalized greeting
+    // Wait for landing page with personalized greeting and username to appear
     await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible({ timeout: 10000 });
     
-    // Logout
-    const logoutBtn = page.getByRole('button', { name: 'Logout', exact: true });
-    await logoutBtn.waitFor({ state: 'visible' });
+    // Logout - use LogoutIcon since text might be hidden on mobile
+    const logoutBtn = page.locator('button').filter({ has: page.locator('[data-testid="LogoutIcon"]') });
+    await logoutBtn.waitFor({ state: 'visible', timeout: 10000 });
     await page.waitForTimeout(100);
     await logoutBtn.click({ force: true });
     
