@@ -24,11 +24,17 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { 
+        ...devices['Desktop Chrome'],
+        locale: 'en-US',
+      },
     },
     {
       name: 'pixel-7',
-      use: { ...devices['Pixel 7'] },
+      use: { 
+        ...devices['Pixel 7'],
+        locale: 'en-US',
+      },
     },
   ],
 

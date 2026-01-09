@@ -44,11 +44,13 @@ const LandingPage: React.FC<LandingPageProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   
-  // Initialize language from user preference, localStorage, or default to 'fr'
+  // Initialize language from user preference, localStorage, or detected language
   const [selectedLanguage, setSelectedLanguage] = useState<'fr' | 'en'>(() => {
     if (user?.preferredLanguage) return user.preferredLanguage;
     const stored = localStorage.getItem('preferredLanguage');
-    return (stored === 'fr' || stored === 'en') ? stored : 'fr';
+    if (stored === 'fr' || stored === 'en') return stored;
+    // Use the language detected by i18n (from browser)
+    return i18n.language === 'en' ? 'en' : 'fr';
   });
 
   // Update language when user changes

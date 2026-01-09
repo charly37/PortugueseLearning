@@ -17,14 +17,15 @@ i18n
         translation: frTranslations
       }
     },
-    fallbackLng: 'fr',
-    lng: localStorage.getItem('preferredLanguage') || 'fr',
+    fallbackLng: 'en',
+    supportedLngs: ['en', 'fr'],
     interpolation: {
       escapeValue: false
     },
     detection: {
       order: ['localStorage', 'navigator'],
-      caches: ['localStorage']
+      caches: ['localStorage'],
+      lookupLocalStorage: 'preferredLanguage',
     }
   });
 
