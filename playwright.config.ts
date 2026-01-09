@@ -7,10 +7,16 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 4,
   reporter: process.env.CI ? 'html' : 'list',
+  timeout: 5 * 1000,
+  expect: {
+    timeout: 5 * 1000,
+  },
   
   use: {
     baseURL: 'http://localhost:8080',
     trace: 'on-first-retry',
+    actionTimeout: 5 * 1000,
+    navigationTimeout: 5 * 1000,
   },
 
   projects: [
