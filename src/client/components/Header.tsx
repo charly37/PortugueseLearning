@@ -67,6 +67,7 @@ const Header: React.FC<HeaderProps> = ({
                 color="inherit"
                 startIcon={<HomeIcon />}
                 onClick={onNavigateHome}
+                aria-label={t('common.home')}
                 sx={{ minWidth: { xs: 'auto', sm: '64px' } }}
               >
                 <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>{t('common.home')}</Box>
@@ -98,6 +99,7 @@ const Header: React.FC<HeaderProps> = ({
                   color="inherit"
                   startIcon={<LogoutIcon />}
                   onClick={onLogout}
+                  aria-label={t('common.logout')}
                   sx={{ minWidth: { xs: 'auto', sm: '64px' } }}
                 >
                   <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>{t('common.logout')}</Box>
