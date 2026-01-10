@@ -135,8 +135,8 @@
         "id": "e0e54382-f07e-4cd2-bffe-0b3000d7d82f",
         "port": "qual",
         "fr": {
-            "translation": "lequel/laquelle",
-            "note": "todo"
+            "translation": "lequel/laquelle (inv.)",
+            "note": "Le mot 'qual' est invariable en genre, mais pluriel 'quais'."
         },
         "en": {
             "translation": "which",
@@ -179,18 +179,7 @@
             "note": "todo"
         }
     },
-    {
-        "id": "8c0f4ae7-4136-4105-8a6d-b97a0d06e699",
-        "port": "de quem",
-        "fr": {
-            "translation": "à qui/de qui",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "whose/from whom",
-            "note": "todo"
-        }
-    },
+
     {
         "id": "d3ee2d4d-b3f1-4cf0-bcac-440e9553b76f",
         "port": "comprida",
@@ -484,7 +473,7 @@
         "port": "fraco",
         "fr": {
             "translation": "faible (masculin)",
-            "note": "todo"
+            "note": "'fraco' est un adjectif masculin singulier signifiant 'faible' ; sa forme féminine est 'fraca', pluriel masculin 'fracos' et féminin 'fracas'"
         },
         "en": {
             "translation": "weak (masc.)",
@@ -496,7 +485,7 @@
         "port": "fraca",
         "fr": {
             "translation": "faible (féminin)",
-            "note": "todo"
+            "note": "'fraco' est un adjectif masculin singulier signifiant 'faible' ; sa forme féminine est 'fraca', pluriel masculin 'fracos' et féminin 'fracas'"
         },
         "en": {
             "translation": "weak (fem.)",
@@ -1311,8 +1300,8 @@
         "id": "351d8b25-e5a1-459a-a950-4d71bccaeaf9",
         "port": "você",
         "fr": {
-            "translation": "vous",
-            "note": "todo"
+            "translation": "vous (sing. form.)",
+            "note": "tu pour la version informelle"
         },
         "en": {
             "translation": "you (formal)",
@@ -1516,7 +1505,7 @@
         "port": "este",
         "fr": {
             "translation": "ce",
-            "note": "todo"
+            "note": "'este' est le démonstratif masculin singulier pour quelque chose de proche ('este livro'), 'esta' est sa forme féminine singulière ('esta casa'), tandis que 'isto' est neutre et s'utilise pour des choses indéfinies ou sans genre spécifique ('isto é bom')."
         },
         "en": {
             "translation": "this (masc.)",
@@ -1528,7 +1517,7 @@
         "port": "esta",
         "fr": {
             "translation": "cette",
-            "note": "todo"
+            "note": "'este' est le démonstratif masculin singulier pour quelque chose de proche ('este livro'), 'esta' est sa forme féminine singulière ('esta casa'), tandis que 'isto' est neutre et s'utilise pour des choses indéfinies ou sans genre spécifique ('isto é bom')."
         },
         "en": {
             "translation": "this (fem.)",
@@ -1540,7 +1529,7 @@
         "port": "isto",
         "fr": {
             "translation": "celui-ci, ceci",
-            "note": "todo"
+            "note": "'este' est le démonstratif masculin singulier pour quelque chose de proche ('este livro'), 'esta' est sa forme féminine singulière ('esta casa'), tandis que 'isto' est neutre et s'utilise pour des choses indéfinies ou sans genre spécifique ('isto é bom')."
         },
         "en": {
             "translation": "this",
@@ -1551,8 +1540,8 @@
         "id": "f0d48166-7053-412c-8293-fc37eecb2aa0",
         "port": "aquilo",
         "fr": {
-            "translation": "celui-là, cela",
-            "note": "todo"
+            "translation": "celui-là, cela (inv.)",
+            "note": "'aquilo' est un pronom démonstratif neutre signifiant 'cela' (lointain), et il est invariable en genre et en nombre, car il s'utilise pour des choses indéfinies ou abstraites sans variation."
         },
         "en": {
             "translation": "that",

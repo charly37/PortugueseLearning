@@ -96,6 +96,18 @@
         }
     },
     {
+        "id": "8c0f4ae7-4136-4105-8a6d-b97a0d06e699",
+        "port": "de quem",
+        "fr": {
+            "translation": "à qui/de qui",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "whose/from whom",
+            "note": "todo"
+        }
+    },
+    {
         "id": "c7d8e9f0-a1b2-3456-1234-567890123456",
         "port": "Prazer em conhecê-lo",
         "fr": {
