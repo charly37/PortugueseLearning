@@ -589,14 +589,14 @@
     },
     {
         "id": "cacb8dbd-6172-492f-a361-27b58949dac5",
-        "port": "mal",
+        "port": "mal (adverbe/nom)",
         "fr": {
             "translation": "mal",
-            "note": "todo"
+            "note": "Mau : mauvais (adjectif) ; Mal : mal (adverbe) ou mal (nom). test simple : remplacez par l'opposé. Si « bom » (bon) convient, utilisez « mau ». Si « bem » (bien) convient, utilisez « mal »."
         },
         "en": {
             "translation": "badly",
-            "note": "todo"
+            "note": "Mau: bad (adjective); Mal: badly (adverb) or evil (noun)."
         }
     },
     {
