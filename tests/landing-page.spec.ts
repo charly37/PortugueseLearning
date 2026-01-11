@@ -8,8 +8,9 @@ test.describe('Landing Page', () => {
   });
 
   test('should display landing page with all buttons @smoke', async ({ page }) => {
-    await expect(page.locator('h1')).toContainText('Welcome');
-    await expect(page.locator('text=Master Portuguese')).toBeVisible();
+    // Check for challenge cards on landing page
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
+    await expect(page.locator('text=Verb Challenge')).toBeVisible();
     
     // Verify challenge buttons are visible and enabled
     const challengeButtons = page.getByRole('button', { name: 'Challenge', exact: true });
@@ -22,18 +23,18 @@ test.describe('Landing Page', () => {
     await page.getByRole('button', { name: 'Challenge', exact: true }).first().click();
     await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
     await page.getByRole('button', { name: 'Home' }).click();
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Test Verb Challenge
     await page.getByRole('button', { name: 'Challenge', exact: true }).nth(1).click();
     await expect(page.locator('h1')).toContainText('Portuguese Verbs');
     await page.getByRole('button', { name: 'Home' }).click();
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Test Idiom Challenge
     await page.getByRole('button', { name: 'Challenge', exact: true }).nth(2).click();
     await expect(page.locator('h1')).toContainText('Portuguese Idioms');
     await page.getByRole('button', { name: 'Home' }).click();
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 });

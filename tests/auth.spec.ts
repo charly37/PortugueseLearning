@@ -6,8 +6,8 @@ test.describe('Authentication', () => {
     await setLanguageToEnglish(page);
     await page.goto('/');
     
-    // Verify we're on the landing page
-    await expect(page.locator('h1')).toContainText('Welcome');
+    // Verify we're on the landing page (check for challenge cards)
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Verify login button is visible in header
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
@@ -57,8 +57,8 @@ test.describe('Authentication', () => {
     // Submit form
     await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
-    // Should redirect to landing page with personalized greeting
-    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    // Should redirect to landing page with challenge cards visible
+    await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
     
     // Should see username in header chip (button)
     await expect(page.getByRole('button', { name: testUser.username })).toBeVisible();
@@ -137,8 +137,8 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page with personalized greeting and username to appear
-    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    // Wait for landing page with challenge cards and username to appear
+    await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
     await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible({ timeout: 10000 });
     
     // Logout - use LogoutIcon since text might be hidden on mobile
@@ -150,8 +150,8 @@ test.describe('Authentication', () => {
     // Wait for logout to complete - verify Login button appears
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible({ timeout: 10000 });
     
-    // Now login with the same credentials - first navigate to login page
-    await expect(page.locator('h1')).toContainText('Welcome');
+    // Now login with the same credentials - verify on landing page
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     // Use the header's Login button specifically
     const loginBtn = page.locator('header').getByRole('button', { name: 'Login' });
     await loginBtn.waitFor({ state: 'visible' });
@@ -164,8 +164,8 @@ test.describe('Authentication', () => {
     await page.getByLabel('Password').fill(uniqueUser.password);
     await page.locator('form').getByRole('button', { name: /Login/i }).click();
     
-    // Should redirect to landing page with personalized greeting
-    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    // Should redirect to landing page with challenge cards visible
+    await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
     await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible();
   });
 
@@ -209,8 +209,8 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page with personalized greeting and username to appear
-    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    // Wait for landing page with challenge cards and username to appear
+    await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
     await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible({ timeout: 10000 });
     
     // Logout - use LogoutIcon since text might be hidden on mobile
@@ -219,8 +219,8 @@ test.describe('Authentication', () => {
     await page.waitForTimeout(100);
     await logoutBtn.click({ force: true });
     
-    // Should stay on landing page, but now as guest
-    await expect(page.locator('h1')).toContainText('Welcome');
+    // Should stay on landing page, but now as guest (challenge cards still visible)
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Verify logout was successful - Login button should be visible
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
@@ -266,14 +266,14 @@ test.describe('Authentication', () => {
     await page.getByLabel('Confirm Password').fill(uniqueUser.password);
     await page.locator('form').getByRole('button', { name: /Register/i }).click();
     
-    // Wait for landing page with personalized greeting
-    await expect(page.locator('h1')).toContainText('Welcome', { timeout: 10000 });
+    // Wait for landing page with challenge cards
+    await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
     
     // Reload page
     await page.reload();
     
-    // Should still be on landing page with personalized greeting
-    await expect(page.locator('h1')).toContainText('Welcome');
+    // Should still be on landing page with challenge cards visible
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible();
   });
 });

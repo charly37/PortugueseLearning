@@ -11,8 +11,8 @@ export async function registerAndLogin(
 ): Promise<void> {
   await page.goto('/');
   
-  // Wait for landing page to load
-  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 5000 });
+  // Wait for landing page to load (check for challenge cards)
+  await page.waitForSelector('text=Word Challenge', { timeout: 5000 });
   
   // Navigate to register page from landing page
   await page.getByRole('button', { name: 'Register' }).click();
@@ -29,8 +29,8 @@ export async function registerAndLogin(
   // Submit form - use the submit button in the form, not the header
   await page.locator('form').getByRole('button', { name: /Register/i }).click();
   
-  // Wait for landing page to load - check for Welcome message with username
-  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 10000 });
+  // Wait for landing page to load - check for challenge cards
+  await page.waitForSelector('text=Word Challenge', { timeout: 10000 });
 }
 
 /**
@@ -44,7 +44,7 @@ export async function login(
   await page.goto('/');
   
   // Wait for landing page and navigate to login page
-  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 5000 });
+  await page.waitForSelector('text=Word Challenge', { timeout: 5000 });
   await page.getByRole('button', { name: 'Login' }).click();
   await page.waitForSelector('h1:has-text("Login")', { timeout: 5000 });
   
@@ -55,8 +55,8 @@ export async function login(
   // Submit form - use the submit button in the form, not the header
   await page.locator('form').getByRole('button', { name: /Login/i }).click();
   
-  // Wait for landing page to load - check for Welcome message
-  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 10000 });
+  // Wait for landing page to load - check for challenge cards
+  await page.waitForSelector('text=Word Challenge', { timeout: 10000 });
 }
 
 /**
@@ -66,5 +66,5 @@ export async function logout(page: Page): Promise<void> {
   await page.getByRole('button', { name: /Logout/i }).click();
   
   // Wait for landing page to load (logout now redirects to landing page)
-  await page.waitForSelector('h1:has-text("Welcome")', { timeout: 5000 });
+  await page.waitForSelector('text=Word Challenge', { timeout: 5000 });
 }

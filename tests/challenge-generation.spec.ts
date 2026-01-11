@@ -12,7 +12,7 @@ test.describe('Challenge Generation', () => {
     await page.goto('http://localhost:8080');
     
     // Wait for landing page to load
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Click on first word challenge button
     const challengeButtons = page.locator('button:has-text("Challenge")');
@@ -167,6 +167,6 @@ test.describe('Challenge Generation', () => {
     await page.click('button:has-text("Back")');
     
     // Verify back on home page
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 });

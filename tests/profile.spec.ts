@@ -92,7 +92,7 @@ test.describe('Profile Page', () => {
     await page.getByRole('button', { name: 'Home' }).click({ force: true });
     
     // Should be back on landing page
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 
   test('should show profile icon on profile page', async ({ page }) => {
@@ -137,7 +137,7 @@ test.describe('Profile Page', () => {
     
     // Use Home button from header (mobile compatibility)
     await page.getByRole('button', { name: 'Home' }).click({ force: true });
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Go to profile again
     await clickUsername(page, testUser.username);
@@ -153,7 +153,7 @@ test.describe('Profile Page', () => {
     await page.getByRole('button', { name: 'Logout', exact: true }).click({ force: true });
     
     // Should be on landing page after logout
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Verify user is logged out - Login button should be visible
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
@@ -163,6 +163,6 @@ test.describe('Profile Page', () => {
     
     // Manually try to access profile (simulate clicking if profile button was available)
     // Since there's no profile button for logged out users, we just verify landing page is shown
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 });

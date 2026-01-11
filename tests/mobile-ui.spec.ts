@@ -35,8 +35,8 @@ test.describe('Mobile UI - Pixel 7', () => {
   test('landing page should be responsive @smoke', async ({ page }) => {
     await page.goto('/');
     
-    // Wait for landing page to load
-    await expect(page.locator('h1')).toContainText('Welcome');
+    // Wait for landing page to load (check for challenge cards)
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Verify challenge cards are visible
     const wordChallengeCard = page.locator('text=Word Challenge').first();
@@ -137,7 +137,7 @@ test.describe('Mobile UI - Pixel 7', () => {
     
     // Go back home using header
     await page.getByRole('button', { name: 'Home' }).click();
-    await expect(page.locator('h1')).toContainText('Welcome');
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 
   test('vertical scrolling should work on mobile', async ({ page }) => {

@@ -1624,7 +1624,7 @@
         "id": "6414280d-f1c8-41c2-88a7-9525977b32b3",
         "port": "todo",
         "fr": {
-            "translation": "tout / entier",
+            "translation": "tout / entier (adj)",
             "note": "todo est l adjectif. tudo est le pronom"
         },
         "en": {
@@ -1648,8 +1648,8 @@
         "id": "f9ba33d8-03d4-499d-ab37-2389c101d08d",
         "port": "todos",
         "fr": {
-            "translation": "tout le monde",
-            "note": "todo est l adjectif. tudo est le pronom"
+            "translation": "tout le monde (adjectif pluriel)",
+            "note": "todo est l adjectif.A ne pas confondre avec tudo est le pronom indéfini souvent utilisé pour exprimer la totalité"
         },
         "en": {
             "translation": "everyone/all",
@@ -1660,8 +1660,8 @@
         "id": "865e26ee-b7f9-4088-b024-40ccada01822",
         "port": "tudo",
         "fr": {
-            "translation": "tout",
-            "note": "todo est l adjectif. tudo est le pronom"
+            "translation": "tout (pronom indéfini)",
+            "note": "todo est l adjectif. tudo est un pronom indéfini souvent utilisé pour exprimer la totalité. Je sais tout sur ça=Eu sei tudo sobre isso"
         },
         "en": {
             "translation": "everything",

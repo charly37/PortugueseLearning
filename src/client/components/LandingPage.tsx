@@ -99,11 +99,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
             py: 6,
           }}
         >
-          <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700, mb: 2 }}>
-            {t('landing.welcome')}{user ? `, ${user.username}` : ''}! 👋
-          </Typography>
-          
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, justifyContent: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 6, justifyContent: 'center' }}>
             <LanguageIcon color="action" />
             <Typography variant="body1" color="text.secondary">
               {t('landing.iSpeak')}
@@ -123,14 +119,6 @@ const LandingPage: React.FC<LandingPageProps> = ({
               </ToggleButton>
             </ToggleButtonGroup>
           </Box>
-          
-          <Typography variant="h5" color="text.secondary" gutterBottom sx={{ maxWidth: '700px', mb: 2 }}>
-            {t('landing.hero.title')}
-          </Typography>
-          
-          <Typography variant="body1" color="text.secondary" sx={{ maxWidth: '800px', mb: 6 }}>
-            {t('landing.hero.subtitle')}
-          </Typography>
           
           <Grid container spacing={3} sx={{ maxWidth: '900px' }}>
             <Grid item xs={12} md={4}>

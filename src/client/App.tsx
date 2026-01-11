@@ -4,6 +4,7 @@ import { CssBaseline, CircularProgress, Box, Alert, Button } from '@mui/material
 import { useTranslation } from 'react-i18next';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
+import AboutPage from './components/AboutPage';
 import ChallengePage from './components/ChallengePage';
 import VerbChallengePage from './components/VerbChallengePage';
 import IdiomChallengePage from './components/IdiomChallengePage';
@@ -62,7 +63,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
+type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
 
 interface User {
   id: string;
@@ -214,6 +215,7 @@ const App: React.FC = () => {
           user={user}
           currentPage={currentPage}
           onNavigateHome={() => setCurrentPage('landing')}
+          onNavigateAbout={() => setCurrentPage('about')}
           onNavigateProfile={() => setCurrentPage('profile')}
           onLogout={handleLogout}
           onNavigateLogin={() => setCurrentPage('login')}
@@ -289,6 +291,9 @@ const App: React.FC = () => {
             onViewVerbStats={() => setCurrentPage('verb-stats')}
             onViewIdiomStats={() => setCurrentPage('idiom-stats')}
           />
+        )}
+        {currentPage === 'about' && (
+          <AboutPage />
         )}
         {currentPage === 'word-learn' && (
           <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />

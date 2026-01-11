@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box, Chip } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
 import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useTranslation } from 'react-i18next';
@@ -17,6 +18,7 @@ interface HeaderProps {
   user: User | null;
   currentPage: string;
   onNavigateHome?: () => void;
+  onNavigateAbout?: () => void;
   onNavigateProfile?: () => void;
   onLogout?: () => void;
   onNavigateLogin?: () => void;
@@ -28,6 +30,7 @@ const Header: React.FC<HeaderProps> = ({
   user,
   currentPage,
   onNavigateHome,
+  onNavigateAbout,
   onNavigateProfile,
   onLogout,
   onNavigateLogin,
@@ -71,6 +74,18 @@ const Header: React.FC<HeaderProps> = ({
                 sx={{ minWidth: { xs: 'auto', sm: '64px' } }}
               >
                 <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>{t('common.home')}</Box>
+              </Button>
+            )}
+            
+            {currentPage !== 'about' && (
+              <Button
+                color="inherit"
+                startIcon={<InfoIcon />}
+                onClick={onNavigateAbout}
+                aria-label={t('common.about')}
+                sx={{ minWidth: { xs: 'auto', sm: '64px' } }}
+              >
+                <Box sx={{ display: { xs: 'none', sm: 'inline' } }}>{t('common.about')}</Box>
               </Button>
             )}
             

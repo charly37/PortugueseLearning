@@ -137,7 +137,7 @@ test.describe('Learn Mode (Flashcards)', () => {
     // Click Back button
     await page.locator('button:has-text("Back")').first().click();
 
-    // Verify we're back on the landing page
-    await expect(page.locator('text=/Welcome/i')).toBeVisible();
+    // Verify we're back on the landing page (check for challenge cards)
+    await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 });
