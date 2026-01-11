@@ -1,6 +1,26 @@
 import { test, expect } from '@playwright/test';
 import { setLanguageToEnglish } from './helpers/language-helper';
 
+// Helper function to start a learning session with guest account
+async function startLearnSession(page: any, learnButtonIndex: number = 0) {
+  // Find and click the Learn button
+  const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
+  await learnButtons.nth(learnButtonIndex).click();
+
+  // Create a guest account
+  await page.waitForSelector('text=Start Challenge as Guest', { timeout: 5000 });
+  await page.getByRole('button', { name: 'Start Challenge as Guest' }).click();
+
+  // Wait for configuration screen
+  await page.waitForSelector('text=Configure Challenge', { timeout: 5000 });
+
+  // Click Start Learning button
+  await page.getByRole('button', { name: /Start Learning/i }).click();
+
+  // Wait for flashcards to load
+  await page.waitForSelector('text=Card 1 of', { timeout: 10000 });
+}
+
 test.describe('Learn Mode (Flashcards)', () => {
   test.beforeEach(async ({ page }) => {
     await setLanguageToEnglish(page);
@@ -8,12 +28,7 @@ test.describe('Learn Mode (Flashcards)', () => {
   });
 
   test('should navigate to word learn page and display flashcard @smoke', async ({ page }) => {
-    // Find and click the first Learn button (for words)
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.first().click();
-
-    // Wait for flashcard to load
-    await page.waitForSelector('text=Card 1 of', { timeout: 10000 });
+    await startLearnSession(page, 0);
 
     // Verify we see the click instruction
     await expect(page.locator('text=Click to reveal Portuguese')).toBeVisible();
@@ -28,11 +43,7 @@ test.describe('Learn Mode (Flashcards)', () => {
   });
 
   test('should flip card to reveal Portuguese translation', async ({ page }) => {
-    // Navigate to word learn page
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.first().click();
-
-    await page.waitForSelector('text=Click to reveal Portuguese');
+    await startLearnSession(page, 0);
 
     // Get the source text before flipping
     const sourceText = await page.locator('.MuiTypography-h3').first().textContent();
@@ -55,11 +66,7 @@ test.describe('Learn Mode (Flashcards)', () => {
   });
 
   test('should navigate between flashcards', async ({ page }) => {
-    // Navigate to word learn page
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.first().click();
-
-    await page.waitForSelector('text=Card 1 of');
+    await startLearnSession(page, 0);
 
     // Verify we're on card 1
     await expect(page.locator('text=/Card 1 of/')).toBeVisible();
@@ -89,66 +96,15 @@ test.describe('Learn Mode (Flashcards)', () => {
   });
 
   test('should disable Previous button on first card', async ({ page }) => {
-    // Navigate to word learn page
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.first().click();
-
-    await page.waitForSelector('text=Card 1 of');
+    await startLearnSession(page, 0);
 
     // Verify Previous button is disabled
     const previousButton = page.locator('button:has-text("Previous")');
     await expect(previousButton).toBeDisabled();
   });
 
-  test('should shuffle flashcards', async ({ page }) => {
-    // Navigate to word learn page
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.first().click();
-
-    await page.waitForSelector('text=Card 1 of');
-
-    // Get the first 3 card texts
-    const originalCards: string[] = [];
-    for (let i = 0; i < 3; i++) {
-      const text = await page.locator('.MuiTypography-h3').first().textContent();
-      originalCards.push(text || '');
-      if (i < 2) {
-        await page.locator('button:has-text("Next")').click();
-        await page.waitForTimeout(200);
-      }
-    }
-
-    // Click Shuffle button
-    await page.locator('button:has-text("Shuffle")').click();
-
-    // Wait for shuffle to complete
-    await page.waitForTimeout(300);
-
-    // Verify we're back on card 1
-    await expect(page.locator('text=/Card 1 of/')).toBeVisible();
-
-    // Get the new first 3 card texts
-    const shuffledCards: string[] = [];
-    for (let i = 0; i < 3; i++) {
-      const text = await page.locator('.MuiTypography-h3').first().textContent();
-      shuffledCards.push(text || '');
-      if (i < 2) {
-        await page.locator('button:has-text("Next")').click();
-        await page.waitForTimeout(200);
-      }
-    }
-
-    // Verify the order changed (at least one card should be different)
-    const orderChanged = shuffledCards.some((card, index) => card !== originalCards[index]);
-    expect(orderChanged).toBe(true);
-  });
-
   test('should work for verb challenges', async ({ page }) => {
-    // Navigate to verb learn page (second Learn button)
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.nth(1).click();
-
-    await page.waitForSelector('text=Card 1 of');
+    await startLearnSession(page, 1);
 
     // Click card to flip
     await page.locator('.MuiCard-root').click();
@@ -162,11 +118,7 @@ test.describe('Learn Mode (Flashcards)', () => {
   });
 
   test('should work for idiom challenges', async ({ page }) => {
-    // Navigate to idiom learn page (third Learn button)
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.nth(2).click();
-
-    await page.waitForSelector('text=Card 1 of');
+    await startLearnSession(page, 2);
 
     // Verify flashcard is displayed
     await expect(page.locator('text=Click to reveal Portuguese')).toBeVisible();
@@ -180,11 +132,7 @@ test.describe('Learn Mode (Flashcards)', () => {
   });
 
   test('should return to home page when clicking Back button', async ({ page }) => {
-    // Navigate to word learn page
-    const learnButtons = page.getByRole('button').filter({ hasText: /^Learn$/ });
-    await learnButtons.first().click();
-
-    await page.waitForSelector('text=Card 1 of');
+    await startLearnSession(page, 0);
 
     // Click Back button
     await page.locator('button:has-text("Back")').first().click();

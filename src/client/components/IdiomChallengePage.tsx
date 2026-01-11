@@ -73,6 +73,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
       const response = await fetch('/api/challenge/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({
           challengeType: 'idiom',
           totalTurns: maxTurns,

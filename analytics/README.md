@@ -45,7 +45,7 @@ python scheduler.py
 ### Build and Push
 ```bash
 # Build analytics container
-docker build -t charly37/portuguese-learning-analytics:latest -f analytics/Dockerfile analytics/
+docker build -t charly37/portuguese-learning-analytics:latest -f analytics/Dockerfile .
 
 # Push to Docker Hub
 docker push charly37/portuguese-learning-analytics:latest

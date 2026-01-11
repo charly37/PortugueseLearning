@@ -29,6 +29,124 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
+// TODO: Future enhancement - track flashcard views to distinguish "studied but not tested" from "never seen" content
+
+// Generate a personalized challenge set for learning mode (flashcards)
+router.post('/generate-learn', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const { challengeType, totalCards = 50, weaknessWeight = 0.5 } = req.body;
+    const userId = req.session.userId;
+
+    // Validate input
+    if (!challengeType || !['word', 'idiom', 'verb'].includes(challengeType)) {
+      return res.status(400).json({ message: 'Invalid or missing challenge type' });
+    }
+
+    if (totalCards < 1 || totalCards > 100) {
+      return res.status(400).json({ message: 'Total cards must be between 1 and 100' });
+    }
+
+    if (weaknessWeight < 0 || weaknessWeight > 1) {
+      return res.status(400).json({ message: 'Weakness weight must be between 0 and 1' });
+    }
+
+    // Get all challenges for the type
+    let allChallenges: any[];
+    switch (challengeType) {
+      case 'word':
+        allChallenges = wordChallenges;
+        break;
+      case 'idiom':
+        allChallenges = idiomChallenges;
+        break;
+      case 'verb':
+        allChallenges = verbChallenges;
+        break;
+      default:
+        return res.status(400).json({ message: 'Invalid challenge type' });
+    }
+
+    // Ensure we don't request more challenges than available
+    const actualCards = Math.min(totalCards, allChallenges.length);
+
+    // Get user's weak areas
+    const weakAreas = await ChallengeAttempt.aggregate([
+      { $match: { userId: userId, challengeType: challengeType } },
+      {
+        $group: {
+          _id: '$challengeId',
+          totalAttempts: { $sum: 1 },
+          correctAttempts: { 
+            $sum: { $cond: ['$correct', 1, 0] } 
+          },
+          lastAttempt: { $max: '$attemptedAt' }
+        }
+      },
+      {
+        $project: {
+          challengeId: '$_id',
+          totalAttempts: 1,
+          correctAttempts: 1,
+          successRate: {
+            $multiply: [
+              { $divide: ['$correctAttempts', '$totalAttempts'] },
+              100
+            ]
+          },
+          lastAttempt: 1
+        }
+      },
+      { $match: { totalAttempts: { $gte: 1 } } },
+      { $sort: { successRate: 1 } } // Lowest success rate first
+    ]);
+
+    // Create a set of weak challenge IDs for quick lookup
+    const weakChallengeIds = new Set(weakAreas.map(w => w.challengeId));
+
+    // Separate challenges into weak and non-weak
+    const weakChallengesList: any[] = [];
+    const otherChallengesList: any[] = [];
+
+    allChallenges.forEach((challenge) => {
+      if (weakChallengeIds.has(challenge.id)) {
+        weakChallengesList.push(challenge);
+      } else {
+        otherChallengesList.push(challenge);
+      }
+    });
+
+    // Calculate how many from each category
+    const weakCount = Math.min(
+      Math.floor(actualCards * weaknessWeight),
+      weakChallengesList.length
+    );
+    const otherCount = actualCards - weakCount;
+
+    // Select challenges
+    const selectedWeak = shuffleArray(weakChallengesList).slice(0, weakCount).map(c => ({ ...c, source: 'weakness' }));
+    const selectedOther = shuffleArray(otherChallengesList).slice(0, otherCount).map(c => ({ ...c, source: 'random' }));
+
+    // Combine (keep weakness-based cards first, then others)
+    const finalChallenges = [...selectedWeak, ...selectedOther];
+
+    res.json({
+      challengeType,
+      challenges: finalChallenges,
+      metadata: {
+        totalChallenges: finalChallenges.length,
+        weaknessChallenges: selectedWeak.length,
+        randomChallenges: selectedOther.length,
+        weaknessWeight: weaknessWeight,
+        availableWeak: weakChallengesList.length,
+        availableTotal: allChallenges.length
+      }
+    });
+  } catch (error) {
+    console.error('Generate learn set error:', error);
+    res.status(500).json({ message: 'Server error generating learn set' });
+  }
+});
+
 // Generate a personalized challenge set
 router.post('/generate', requireAuth, async (req: Request, res: Response) => {
   try {

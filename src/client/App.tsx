@@ -291,19 +291,19 @@ const App: React.FC = () => {
           />
         )}
         {currentPage === 'word-learn' && (
-          <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} />
+          <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'word-challenge' && (
           <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'verb-learn' && (
-          <FlashcardLearnPage challengeType="verb" onBackHome={() => setCurrentPage('landing')} user={user} />
+          <FlashcardLearnPage challengeType="verb" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'verb-challenge' && (
           <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'idiom-learn' && (
-          <FlashcardLearnPage challengeType="idiom" onBackHome={() => setCurrentPage('landing')} user={user} />
+          <FlashcardLearnPage challengeType="idiom" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'idiom-challenge' && (
           <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />

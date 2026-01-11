@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress, Divider } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import ShuffleIcon from '@mui/icons-material/Shuffle';
 import './FlashcardLearnPage.css';
 
 interface Challenge {
@@ -27,39 +26,65 @@ interface FlashcardLearnPageProps {
   challengeType: 'word' | 'verb' | 'idiom';
   onBackHome: () => void;
   user: User | null;
+  onNavigateToLogin: () => void;
+  onNavigateToRegister: () => void;
+  onCreateGuest?: () => Promise<User | null>;
 }
 
 const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({ 
   challengeType, 
   onBackHome,
-  user 
+  user,
+  onNavigateToLogin,
+  onNavigateToRegister,
+  onCreateGuest
 }) => {
   const { t } = useTranslation();
   const [challenges, setChallenges] = useState<Challenge[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [weaknessCount, setWeaknessCount] = useState(0);
+  const [randomCount, setRandomCount] = useState(0);
+  const [learningStarted, setLearningStarted] = useState(false);
+  const [totalCards, setTotalCards] = useState<number>(50);
+  const [difficulty, setDifficulty] = useState<number>(5);
   
   const preferredLanguage = user?.preferredLanguage || 
     (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
 
-  // Load all challenges of the specified type
-  useEffect(() => {
-    const loadChallenges = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(`/api/${challengeType}-challenges-all`);
-        const data = await response.json();
-        setChallenges(data);
-      } catch (error) {
-        console.error('Error loading challenges:', error);
-      } finally {
-        setLoading(false);
+  const loadChallenges = async () => {
+    setLoading(true);
+    try {
+      const weaknessWeight = difficulty / 10;
+      const response = await fetch('/api/challenge/generate-learn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({
+          challengeType,
+          totalCards,
+          weaknessWeight
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to load challenges');
       }
-    };
-
-    loadChallenges();
-  }, [challengeType]);
+      
+      const data = await response.json();
+      setChallenges(data.challenges);
+      setWeaknessCount(data.metadata.weaknessChallenges);
+      setRandomCount(data.metadata.randomChallenges);
+      setLearningStarted(true);
+    } catch (error) {
+      console.error('Error loading challenges:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -79,11 +104,16 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
     }
   };
 
-  const handleShuffle = () => {
-    const shuffled = [...challenges].sort(() => Math.random() - 0.5);
-    setChallenges(shuffled);
-    setCurrentIndex(0);
-    setIsFlipped(false);
+  const handleStartAsGuest = async () => {
+    if (onCreateGuest) {
+      setLoading(true);
+      const guestUser = await onCreateGuest();
+      setLoading(false);
+      if (!guestUser) {
+        console.error('Failed to create guest account');
+      }
+      // The component will re-render with user set, showing configuration screen
+    }
   };
 
   const getTitle = () => {
@@ -120,6 +150,155 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
     );
   }
 
+  if (!user) {
+    return (
+      <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', pt: 10, pb: 4 }}>
+        <Container maxWidth="md">
+          <Box sx={{ mb: 4, textAlign: 'center' }}>
+            <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 2 }}>
+              {getTitle()}
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {t('challenge.word.instruction', { language: preferredLanguage === 'fr' ? 'Français' : 'English' })}
+            </Typography>
+          </Box>
+
+          <Card sx={{ maxWidth: 500, mx: 'auto', mb: 3 }} elevation={3}>
+            <CardContent sx={{ p: 4 }}>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                {t('auth.startChallenge')}
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
+                {t('auth.guestWelcome')}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
+                {t('auth.guestExplanation')}
+              </Typography>
+              <Button
+                variant="contained"
+                color="primary"
+                size="large"
+                onClick={handleStartAsGuest}
+                fullWidth
+                sx={{ mb: 2 }}
+                disabled={loading}
+              >
+                {t('auth.startAsGuest')}
+              </Button>
+              <Divider sx={{ my: 2 }}>{t('common.or')}</Divider>
+              <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="medium"
+                  onClick={onNavigateToRegister}
+                  fullWidth
+                >
+                  {t('auth.signUp')}
+                </Button>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="medium"
+                  onClick={onNavigateToLogin}
+                  fullWidth
+                >
+                  {t('common.login')}
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+
+          <Box sx={{ textAlign: 'center' }}>
+            <Button variant="text" onClick={onBackHome}>
+              {t('common.back')}
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+    );
+  }
+
+  if (!learningStarted && user) {
+    return (
+      <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', pt: 10, pb: 4 }}>
+        <Container maxWidth="md">
+          <Box sx={{ mb: 4, textAlign: 'center' }}>
+            <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 2 }}>
+              {getTitle()}
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {t('challenge.word.instruction', { language: preferredLanguage === 'fr' ? 'Français' : 'English' })}
+            </Typography>
+          </Box>
+
+          <Card sx={{ maxWidth: 500, mx: 'auto', mb: 3 }} elevation={3}>
+            <CardContent sx={{ p: 4 }}>
+              <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                {t('common.configureChallenge')}
+              </Typography>
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="body2" gutterBottom>
+                  Number of flashcards: {totalCards}
+                </Typography>
+                <input
+                  type="range"
+                  value={totalCards}
+                  onChange={(e) => setTotalCards(parseInt(e.target.value))}
+                  min={10}
+                  max={100}
+                  step={10}
+                  style={{ width: '100%' }}
+                />
+                <Typography variant="caption" color="text.secondary">
+                  Choose between 10 and 100 cards
+                </Typography>
+              </Box>
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="body2" gutterBottom>
+                  {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
+                </Typography>
+                <input
+                  type="range"
+                  value={difficulty}
+                  onChange={(e) => setDifficulty(parseInt(e.target.value))}
+                  min={0}
+                  max={10}
+                  step={1}
+                  style={{ width: '100%' }}
+                />
+                <Typography variant="caption" color="text.secondary">
+                  0 = random cards, 10 = focus on your weak areas
+                </Typography>
+              </Box>
+              <Box sx={{ display: 'flex', gap: 2 }}>
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  onClick={onBackHome}
+                  fullWidth
+                >
+                  {t('common.back')}
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  onClick={loadChallenges}
+                  fullWidth
+                  disabled={loading}
+                >
+                  Start Learning
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        </Container>
+      </Box>
+    );
+  }
+
   if (challenges.length === 0) {
     return (
       <Container maxWidth="md" sx={{ py: 8 }}>
@@ -145,19 +324,18 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
           <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
             {getTitle()}
           </Typography>
-          <Button
-            variant="outlined"
-            startIcon={<ShuffleIcon />}
-            onClick={handleShuffle}
-          >
-            Shuffle
-          </Button>
+          <Box sx={{ width: '120px' }} />
         </Box>
 
         <Box sx={{ mb: 2, textAlign: 'center' }}>
           <Typography variant="body2" color="text.secondary">
             Card {currentIndex + 1} of {challenges.length}
           </Typography>
+          {weaknessCount > 0 && (
+            <Typography variant="caption" color="primary" sx={{ display: 'block', mt: 0.5 }}>
+              📚 Studying {weaknessCount} weak area{weaknessCount !== 1 ? 's' : ''} + {randomCount} new card{randomCount !== 1 ? 's' : ''}
+            </Typography>
+          )}
         </Box>
 
         <Box

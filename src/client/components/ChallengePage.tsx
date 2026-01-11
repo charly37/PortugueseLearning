@@ -73,6 +73,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       const response = await fetch('/api/challenge/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({
           challengeType: 'word',
           totalTurns: maxTurns,

@@ -74,6 +74,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       const response = await fetch('/api/challenge/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
         body: JSON.stringify({
           challengeType: 'verb',
           totalTurns: maxTurns,
