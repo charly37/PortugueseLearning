@@ -40,7 +40,10 @@ class WeaknessAnalyzer:
     def _load_valid_challenge_ids(self) -> Set[str]:
         """Load all valid challenge IDs from JSON files."""
         valid_ids = set()
-        data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+        # In Docker container, data is in /app/data
+        # In local dev, it's relative to the script location  
+        script_dir = os.path.dirname(__file__)
+        data_dir = os.path.join(script_dir, 'data') if os.path.exists(os.path.join(script_dir, 'data')) else os.path.join(script_dir, '..', 'data')
         
         challenge_files = [
             'challenges.json',

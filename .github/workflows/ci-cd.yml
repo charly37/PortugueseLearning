@@ -79,7 +79,7 @@ jobs:
       run: docker build -t portuguese-learning:${{ steps.vars.outputs.short_sha }} .
 
     - name: Build Analytics Docker image
-      run: docker build -t portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} -f analytics/Dockerfile analytics/
+      run: docker build -t portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} -f analytics/Dockerfile .
 
     - name: Test Docker image with MongoDB
       run: |

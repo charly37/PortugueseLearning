@@ -8,11 +8,14 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1
 
 # Copy requirements and install dependencies
-COPY requirements.txt .
+COPY analytics/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy analytics scripts
-COPY *.py .
+COPY analytics/*.py .
+
+# Copy challenge data files
+COPY data/ /app/data/
 
 # Run the scheduler
 CMD ["python", "-u", "scheduler.py"]
