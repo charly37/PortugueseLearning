@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import InfoIcon from '@mui/icons-material/Info';
 import './FlashcardLearnPage.css';
 
 interface Challenge {
@@ -413,6 +414,19 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                 >
                   {targetText}
                 </Typography>
+                
+                {currentChallenge.fr.note && currentChallenge.fr.note !== "todo" && (
+                  <Box sx={{ mt: 2, mb: 2, p: 2, bgcolor: 'info.lighter', borderRadius: 1, border: '1px solid', borderColor: 'info.light', width: '100%', maxWidth: '500px' }}>
+                    <Typography variant="subtitle2" color="info.dark" gutterBottom sx={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: 1 }}>
+                      <InfoIcon fontSize="small" />
+                      Note
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {currentChallenge.fr.note}
+                    </Typography>
+                  </Box>
+                )}
+
                 {currentChallenge.present && (
                   <Box sx={{ mt: 3, textAlign: 'center' }}>
                     <Typography variant="subtitle2" color="text.secondary" gutterBottom>
