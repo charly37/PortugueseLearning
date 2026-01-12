@@ -69,39 +69,64 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
     // Ensure we don't request more challenges than available
     const actualCards = Math.min(totalCards, allChallenges.length);
 
-    // Get user's weak areas
-    const weakAreas = await ChallengeAttempt.aggregate([
-      { $match: { userId: userId, challengeType: challengeType } },
-      {
-        $group: {
-          _id: '$challengeId',
-          totalAttempts: { $sum: 1 },
-          correctAttempts: { 
-            $sum: { $cond: ['$correct', 1, 0] } 
-          },
-          lastAttempt: { $max: '$attemptedAt' }
-        }
-      },
-      {
-        $project: {
-          challengeId: '$_id',
-          totalAttempts: 1,
-          correctAttempts: 1,
-          successRate: {
-            $multiply: [
-              { $divide: ['$correctAttempts', '$totalAttempts'] },
-              100
-            ]
-          },
-          lastAttempt: 1
-        }
-      },
-      { $match: { totalAttempts: { $gte: 1 } } },
-      { $sort: { successRate: 1 } } // Lowest success rate first
-    ]);
+    // Get user's pre-computed weaknesses from User model
+    const user = await User.findById(userId);
+    let weakChallengeIds = new Set<string>();
 
-    // Create a set of weak challenge IDs for quick lookup
-    const weakChallengeIds = new Set(weakAreas.map(w => w.challengeId));
+    // Use pre-computed weaknesses if available (these are statistically significant: >=3 attempts, <50% accuracy)
+    if (user?.weaknesses?.weakWords && user.weaknesses.weakWords.length > 0) {
+      // Filter weakWords by challenge type if needed
+      // Note: weakWords in User model don't store challengeType, so we need to check against our challenge data
+      const challengeTypeMap = new Map(allChallenges.map(c => [c.id, challengeType]));
+      
+      user.weaknesses.weakWords.forEach((weak: any) => {
+        if (weak.challengeId) {
+          weakChallengeIds.add(weak.challengeId);
+        }
+      });
+      
+      console.log(`Using ${weakChallengeIds.size} pre-computed weaknesses for user ${userId}, challenge type ${challengeType}`);
+    } else {
+      // Fallback: Calculate weaknesses on-the-fly if not yet computed by analytics service
+      // This uses stricter criteria to match analytics: >=3 attempts, <50% accuracy
+      console.log(`No pre-computed weaknesses found for user ${userId}, calculating on-the-fly...`);
+      
+      const weakAreas = await ChallengeAttempt.aggregate([
+        { $match: { userId: userId, challengeType: challengeType } },
+        {
+          $group: {
+            _id: '$challengeId',
+            totalAttempts: { $sum: 1 },
+            correctAttempts: { 
+              $sum: { $cond: ['$correct', 1, 0] } 
+            },
+            lastAttempt: { $max: '$attemptedAt' }
+          }
+        },
+        {
+          $project: {
+            challengeId: '$_id',
+            totalAttempts: 1,
+            correctAttempts: 1,
+            successRate: {
+              $multiply: [
+                { $divide: ['$correctAttempts', '$totalAttempts'] },
+                100
+              ]
+            },
+            lastAttempt: 1
+          }
+        },
+        { $match: { 
+          totalAttempts: { $gte: 3 },  // At least 3 attempts (statistically meaningful)
+          successRate: { $lt: 50 }      // Less than 50% accuracy
+        } },
+        { $sort: { successRate: 1 } } // Lowest success rate first
+      ]);
+
+      // Create a set of weak challenge IDs for quick lookup
+      weakChallengeIds = new Set(weakAreas.map((w: any) => w.challengeId));
+    }
 
     // Separate challenges into weak and non-weak
     const weakChallengesList: any[] = [];
@@ -185,39 +210,64 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
     // Ensure we don't request more challenges than available
     const actualTurns = Math.min(totalTurns, allChallenges.length);
 
-    // Get user's weak areas
-    const weakAreas = await ChallengeAttempt.aggregate([
-      { $match: { userId: userId, challengeType: challengeType } },
-      {
-        $group: {
-          _id: '$challengeId',
-          totalAttempts: { $sum: 1 },
-          correctAttempts: { 
-            $sum: { $cond: ['$correct', 1, 0] } 
-          },
-          lastAttempt: { $max: '$attemptedAt' }
-        }
-      },
-      {
-        $project: {
-          challengeId: '$_id',
-          totalAttempts: 1,
-          correctAttempts: 1,
-          successRate: {
-            $multiply: [
-              { $divide: ['$correctAttempts', '$totalAttempts'] },
-              100
-            ]
-          },
-          lastAttempt: 1
-        }
-      },
-      { $match: { totalAttempts: { $gte: 1 } } },
-      { $sort: { successRate: 1 } } // Lowest success rate first
-    ]);
+    // Get user's pre-computed weaknesses from User model
+    const user = await User.findById(userId);
+    let weakChallengeIds = new Set<string>();
 
-    // Create a set of weak challenge IDs for quick lookup
-    const weakChallengeIds = new Set(weakAreas.map(w => w.challengeId));
+    // Use pre-computed weaknesses if available (these are statistically significant: >=3 attempts, <50% accuracy)
+    if (user?.weaknesses?.weakWords && user.weaknesses.weakWords.length > 0) {
+      // Filter weakWords by challenge type if needed
+      // Note: weakWords in User model don't store challengeType, so we need to check against our challenge data
+      const challengeTypeMap = new Map(allChallenges.map(c => [c.id, challengeType]));
+      
+      user.weaknesses.weakWords.forEach((weak: any) => {
+        if (weak.challengeId) {
+          weakChallengeIds.add(weak.challengeId);
+        }
+      });
+      
+      console.log(`Using ${weakChallengeIds.size} pre-computed weaknesses for user ${userId}, challenge type ${challengeType}`);
+    } else {
+      // Fallback: Calculate weaknesses on-the-fly if not yet computed by analytics service
+      // This uses stricter criteria to match analytics: >=3 attempts, <50% accuracy
+      console.log(`No pre-computed weaknesses found for user ${userId}, calculating on-the-fly...`);
+      
+      const weakAreas = await ChallengeAttempt.aggregate([
+        { $match: { userId: userId, challengeType: challengeType } },
+        {
+          $group: {
+            _id: '$challengeId',
+            totalAttempts: { $sum: 1 },
+            correctAttempts: { 
+              $sum: { $cond: ['$correct', 1, 0] } 
+            },
+            lastAttempt: { $max: '$attemptedAt' }
+          }
+        },
+        {
+          $project: {
+            challengeId: '$_id',
+            totalAttempts: 1,
+            correctAttempts: 1,
+            successRate: {
+              $multiply: [
+                { $divide: ['$correctAttempts', '$totalAttempts'] },
+                100
+              ]
+            },
+            lastAttempt: 1
+          }
+        },
+        { $match: { 
+          totalAttempts: { $gte: 3 },  // At least 3 attempts (statistically meaningful)
+          successRate: { $lt: 50 }      // Less than 50% accuracy
+        } },
+        { $sort: { successRate: 1 } } // Lowest success rate first
+      ]);
+
+      // Create a set of weak challenge IDs for quick lookup
+      weakChallengeIds = new Set(weakAreas.map((w: any) => w.challengeId));
+    }
 
     // Separate challenges into weak and non-weak
     const weakChallengesList: any[] = [];
