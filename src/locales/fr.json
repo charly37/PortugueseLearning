@@ -20,6 +20,10 @@
     "viewFullStats": "Voir Toutes les Statistiques",
     "difficulty": "Difficulté",
     "numberOfTurns": "Nombre de tours",
+    "numberOfRounds": "Nombre de tours",
+    "numberOfRoundsHelper": "Choisissez entre 10 et 50 tours",
+    "numberOfCards": "Nombre de cartes",
+    "numberOfCardsHelper": "Choisissez entre 10 et 50 cartes",
     "configureChallenge": "Configurer le Défi",
     "or": "ou"
   },

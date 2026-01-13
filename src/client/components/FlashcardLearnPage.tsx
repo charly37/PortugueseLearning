@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress, Divider } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress, Divider, Slider } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -48,7 +48,7 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
   const [weaknessCount, setWeaknessCount] = useState(0);
   const [randomCount, setRandomCount] = useState(0);
   const [learningStarted, setLearningStarted] = useState(false);
-  const [totalCards, setTotalCards] = useState<number>(50);
+  const [totalCards, setTotalCards] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
   
   const preferredLanguage = user?.preferredLanguage || 
@@ -240,33 +240,33 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
               </Typography>
               <Box sx={{ mb: 3 }}>
                 <Typography variant="body2" gutterBottom>
-                  Number of flashcards: {totalCards}
+                  {t('common.numberOfCards')}: {totalCards}
                 </Typography>
-                <input
-                  type="range"
+                <Slider
                   value={totalCards}
-                  onChange={(e) => setTotalCards(parseInt(e.target.value))}
+                  onChange={(_, value) => setTotalCards(value as number)}
                   min={10}
-                  max={100}
-                  step={10}
-                  style={{ width: '100%' }}
+                  max={50}
+                  step={5}
+                  valueLabelDisplay="auto"
+                  sx={{ width: '100%' }}
                 />
                 <Typography variant="caption" color="text.secondary">
-                  Choose between 10 and 100 cards
+                  {t('common.numberOfCardsHelper')}
                 </Typography>
               </Box>
               <Box sx={{ mb: 3 }}>
                 <Typography variant="body2" gutterBottom>
                   {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
                 </Typography>
-                <input
-                  type="range"
+                <Slider
                   value={difficulty}
-                  onChange={(e) => setDifficulty(parseInt(e.target.value))}
+                  onChange={(_, value) => setDifficulty(value as number)}
                   min={0}
                   max={10}
                   step={1}
-                  style={{ width: '100%' }}
+                  valueLabelDisplay="auto"
+                  sx={{ width: '100%' }}
                 />
                 <Typography variant="caption" color="text.secondary">
                   0 = random cards, 10 = focus on your weak areas

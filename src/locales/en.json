@@ -20,6 +20,10 @@
     "viewFullStats": "View Full Statistics",
     "difficulty": "Difficulty",
     "numberOfTurns": "Number of turns",
+    "numberOfRounds": "Number of rounds",
+    "numberOfRoundsHelper": "Choose between 10 and 50 rounds",
+    "numberOfCards": "Number of flashcards",
+    "numberOfCardsHelper": "Choose between 10 and 50 cards",
     "configureChallenge": "Configure Challenge",
     "or": "or"
   },

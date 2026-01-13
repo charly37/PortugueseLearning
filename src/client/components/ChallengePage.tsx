@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider, Slider } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -54,7 +54,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const [correctCount, setCorrectCount] = useState(0);
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [attemptHistory, setAttemptHistory] = useState<AttemptDetail[]>([]);
-  const [maxTurns, setMaxTurns] = useState<number>(10);
+  const [maxTurns, setMaxTurns] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const [generatedChallenges, setGeneratedChallenges] = useState<Challenge[]>([]);
@@ -310,28 +310,39 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
                   {t('common.configureChallenge')}
                 </Typography>
-                <TextField
-                  type="number"
-                  label={t('common.numberOfTurns')}
-                  value={maxTurns}
-                  onChange={(e) => setMaxTurns(Math.max(1, Math.min(50, parseInt(e.target.value) || 10)))}
-                  fullWidth
-                  sx={{ mb: 3 }}
-                  inputProps={{ min: 1, max: 50 }}
-                  helperText="Choose between 1 and 50 turns"
-                />
+                <Box sx={{ mb: 3 }}>
+                  <Typography variant="body2" gutterBottom>
+                    {t('common.numberOfRounds')}: {maxTurns}
+                  </Typography>
+                  <Slider
+                    value={maxTurns}
+                    onChange={(_, value) => setMaxTurns(value as number)}
+                    min={10}
+                    max={50}
+                    step={5}
+                    valueLabelDisplay="auto"
+                    sx={{ width: '100%' }}
+                  />
+                  <Typography variant="caption" color="text.secondary">
+                    {t('common.numberOfRoundsHelper')}
+                  </Typography>
+                </Box>
                 <Box sx={{ mb: 3 }}>
                   <Typography variant="body2" gutterBottom>
                     {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
                   </Typography>
-                  <TextField
-                    type="range"
+                  <Slider
                     value={difficulty}
-                    onChange={(e) => setDifficulty(parseInt(e.target.value))}
-                    fullWidth
-                    inputProps={{ min: 0, max: 10, step: 1 }}
-                    helperText="0 = random words, 10 = focus on your weak areas"
+                    onChange={(_, value) => setDifficulty(value as number)}
+                    min={0}
+                    max={10}
+                    step={1}
+                    valueLabelDisplay="auto"
+                    sx={{ width: '100%' }}
                   />
+                  <Typography variant="caption" color="text.secondary">
+                    0 = random words, 10 = focus on your weak areas
+                  </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   <Button

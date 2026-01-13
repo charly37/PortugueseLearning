@@ -85,8 +85,10 @@ test.describe('Mobile UI - Pixel 7', () => {
     await page.getByRole('button', { name: 'Challenge', exact: true }).first().click();
     await page.getByRole('button', { name: /start challenge as guest/i }).click();
     
-    // Configure challenge
-    await page.getByLabel(/number of turns/i).fill('1');
+    // Verify configuration screen is shown
+    await expect(page.locator('text=Configure Challenge')).toBeVisible();
+    
+    // Start challenge with default settings (slider is present but we use defaults)
     await page.getByRole('button', { name: /start challenge/i }).click();
     
     // Wait for challenge to load
