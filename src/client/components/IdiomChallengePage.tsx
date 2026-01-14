@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider, Slider } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -54,7 +54,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
   const [correctCount, setCorrectCount] = useState(0);
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [attemptHistory, setAttemptHistory] = useState<AttemptDetail[]>([]);
-  const [maxTurns, setMaxTurns] = useState<number>(10);
+  const [maxTurns, setMaxTurns] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const [generatedChallenges, setGeneratedChallenges] = useState<IdiomChallenge[]>([]);
@@ -234,7 +234,8 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
         >
           <Chip 
             label={mode === 'challenge' ? t('challenge.idiom.title', { current: turnCount, total: maxTurns }) : t('challenge.idiom.practiceTitle')} 
-            sx={{ mb: 2, bgcolor: '#ff9800', color: 'white' }} 
+            color="warning"
+            sx={{ mb: 2, color: 'white' }} 
           />
           
           <Typography variant="h3" component="h1" gutterBottom align="center">
@@ -259,17 +260,12 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 </Typography>
                 <Button
                   variant="contained"
+                  color="warning"
                   size="large"
                   onClick={handleStartAsGuest}
                   fullWidth
                   disabled={loading}
-                  sx={{
-                    mb: 2,
-                    bgcolor: '#ff9800',
-                    '&:hover': {
-                      bgcolor: '#f57c00',
-                    },
-                  }}
+                  sx={{ mb: 2 }}
                 >
                   {t('auth.startAsGuest')}
                 </Button>
@@ -277,45 +273,29 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
                   <Button
                     variant="outlined"
+                    color="warning"
                     size="medium"
                     onClick={onNavigateToRegister}
                     fullWidth
-                    sx={{
-                      color: '#ff9800',
-                      borderColor: '#ff9800',
-                      '&:hover': {
-                        borderColor: '#f57c00',
-                        bgcolor: '#ff980010',
-                      },
-                    }}
                   >
                     {t('common.register')}
                   </Button>
                   <Button
                     variant="outlined"
+                    color="warning"
                     size="medium"
                     onClick={onNavigateToLogin}
                     fullWidth
-                    sx={{
-                      color: '#ff9800',
-                      borderColor: '#ff9800',
-                      '&:hover': {
-                        borderColor: '#f57c00',
-                        bgcolor: '#ff980010',
-                      },
-                    }}
                   >
                     {t('common.login')}
                   </Button>
                 </Box>
                 <Button
                   variant="text"
+                  color="warning"
                   size="small"
                   onClick={onBackHome}
                   fullWidth
-                  sx={{
-                    color: '#ff9800',
-                  }}
                 >
                   {t('common.back')}
                 </Button>
@@ -329,57 +309,56 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
                   {t('common.configureChallenge')}
                 </Typography>
-                <TextField
-                  type="number"
-                  label={t('common.numberOfTurns')}
-                  value={maxTurns}
-                  onChange={(e) => setMaxTurns(Math.max(1, Math.min(50, parseInt(e.target.value) || 10)))}
-                  fullWidth
-                  sx={{ mb: 3 }}
-                  inputProps={{ min: 1, max: 50 }}
-                  helperText="Choose between 1 and 50 turns"
-                />
+                <Box sx={{ mb: 3 }}>
+                  <Typography variant="body2" gutterBottom>
+                    {t('common.numberOfRounds')}: {maxTurns}
+                  </Typography>
+                  <Slider
+                    value={maxTurns}
+                    onChange={(_, value) => setMaxTurns(value as number)}
+                    min={10}
+                    max={50}
+                    step={5}
+                    valueLabelDisplay="auto"
+                    sx={{ width: '100%' }}
+                  />
+                  <Typography variant="caption" color="text.secondary">
+                    {t('common.numberOfRoundsHelper')}
+                  </Typography>
+                </Box>
                 <Box sx={{ mb: 3 }}>
                   <Typography variant="body2" gutterBottom>
                     {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
                   </Typography>
-                  <TextField
-                    type="range"
+                  <Slider
                     value={difficulty}
-                    onChange={(e) => setDifficulty(parseInt(e.target.value))}
-                    fullWidth
-                    inputProps={{ min: 0, max: 10, step: 1 }}
-                    helperText="0 = random idioms, 10 = focus on your weak areas"
+                    onChange={(_, value) => setDifficulty(value as number)}
+                    min={0}
+                    max={10}
+                    step={1}
+                    valueLabelDisplay="auto"
+                    sx={{ width: '100%' }}
                   />
+                  <Typography variant="caption" color="text.secondary">
+                    0 = random idioms, 10 = focus on your weak areas
+                  </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   <Button
                     variant="outlined"
+                    color="warning"
                     size="large"
                     onClick={onBackHome}
                     fullWidth
-                    sx={{
-                      color: '#ff9800',
-                      borderColor: '#ff9800',
-                      '&:hover': {
-                        borderColor: '#f57c00',
-                        bgcolor: '#ff980010',
-                      },
-                    }}
                   >
                     {t('common.back')}
                   </Button>
                   <Button
                     variant="contained"
+                    color="warning"
                     size="large"
                     onClick={generateChallengeSet}
                     fullWidth
-                    sx={{
-                      bgcolor: '#ff9800',
-                      '&:hover': {
-                        bgcolor: '#f57c00',
-                      },
-                    }}
                   >
                     {t('common.startChallenge')}
                   </Button>
@@ -476,15 +455,10 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
               </Card>
               <Button
                 variant="contained"
+                color="warning"
                 size="large"
                 onClick={onBackHome}
-                sx={{
-                  mb: 4,
-                  bgcolor: '#ff9800',
-                  '&:hover': {
-                    bgcolor: '#f57c00',
-                  },
-                }}
+                sx={{ mb: 4 }}
               >
                 {t('common.back')}
               </Button>
@@ -494,15 +468,10 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
           {!challenge && !loading && !challengeComplete && challengeStarted && (
             <Button
               variant="contained"
+              color="warning"
               size="large"
               onClick={fetchChallenge}
-              sx={{
-                mb: 4,
-                bgcolor: '#ff9800',
-                '&:hover': {
-                  bgcolor: '#f57c00',
-                },
-              }}
+              sx={{ mb: 4 }}
             >
               {mode === 'challenge' ? t('common.startChallenge') : t('common.practice')}
             </Button>
@@ -517,7 +486,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                   <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                     {preferredLanguage === 'fr' ? 'Français' : 'English'}
                   </Typography>
-                  <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: '#ff9800' }}>
+                  <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'warning.main' }}>
                     {challenge[preferredLanguage].translation}
                   </Typography>
                 </Box>
@@ -555,31 +524,21 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 {!showAnswer ? (
                   <Button
                     variant="contained"
+                    color="warning"
                     fullWidth
                     size="large"
                     onClick={checkAnswer}
                     disabled={!userAnswer.trim()}
-                    sx={{
-                      bgcolor: '#ff9800',
-                      '&:hover': {
-                        bgcolor: '#f57c00',
-                      },
-                    }}
                   >
                     {t('common.checkAnswer')}
                   </Button>
                 ) : (
                   <Button
                     variant="contained"
+                    color="warning"
                     fullWidth
                     size="large"
                     onClick={fetchChallenge}
-                    sx={{
-                      bgcolor: '#ff9800',
-                      '&:hover': {
-                        bgcolor: '#f57c00',
-                      },
-                    }}
                   >
                     {t('common.nextChallenge')}
                   </Button>
