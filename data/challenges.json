@@ -3072,5 +3072,365 @@
             "translation": "bread",
             "note": "todo"
         }
-    }
+    },
+    {
+"id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+"port": "vermelho",
+"fr": {
+"translation": "rouge",
+"note": "todo"
+},
+"en": {
+"translation": "red",
+"note": "todo"
+}
+},
+{
+"id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+"port": "azul",
+"fr": {
+"translation": "bleu",
+"note": "todo"
+},
+"en": {
+"translation": "blue",
+"note": "todo"
+}
+},
+{
+"id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+"port": "verde",
+"fr": {
+"translation": "vert",
+"note": "todo"
+},
+"en": {
+"translation": "green",
+"note": "todo"
+}
+},
+{
+"id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+"port": "amarelo",
+"fr": {
+"translation": "jaune",
+"note": "todo"
+},
+"en": {
+"translation": "yellow",
+"note": "todo"
+}
+},
+{
+"id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+"port": "preto",
+"fr": {
+"translation": "noir",
+"note": "todo"
+},
+"en": {
+"translation": "black",
+"note": "todo"
+}
+},
+{
+"id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+"port": "branco",
+"fr": {
+"translation": "blanc",
+"note": "todo"
+},
+"en": {
+"translation": "white",
+"note": "todo"
+}
+},
+{
+"id": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+"port": "casa",
+"fr": {
+"translation": "maison",
+"note": "todo"
+},
+"en": {
+"translation": "house",
+"note": "todo"
+}
+},
+{
+"id": "8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+"port": "cidade",
+"fr": {
+"translation": "ville",
+"note": "todo"
+},
+"en": {
+"translation": "city",
+"note": "todo"
+}
+},
+{
+"id": "9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+"port": "país",
+"fr": {
+"translation": "pays",
+"note": "todo"
+},
+"en": {
+"translation": "country",
+"note": "todo"
+}
+},
+{
+"id": "0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+"port": "escola",
+"fr": {
+"translation": "école",
+"note": "todo"
+},
+"en": {
+"translation": "school",
+"note": "todo"
+}
+},
+{
+"id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+"port": "trabalho",
+"fr": {
+"translation": "travail",
+"note": "todo"
+},
+"en": {
+"translation": "work",
+"note": "todo"
+}
+},
+{
+"id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+"port": "tempo",
+"fr": {
+"translation": "temps (temps/météo)",
+"note": "todo"
+},
+"en": {
+"translation": "time/weather",
+"note": "todo"
+}
+},
+{
+"id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+"port": "dia",
+"fr": {
+"translation": "jour",
+"note": "todo"
+},
+"en": {
+"translation": "day",
+"note": "todo"
+}
+},
+{
+"id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+"port": "noite",
+"fr": {
+"translation": "nuit",
+"note": "todo"
+},
+"en": {
+"translation": "night",
+"note": "todo"
+}
+},
+{
+"id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+"port": "sol",
+"fr": {
+"translation": "soleil",
+"note": "todo"
+},
+"en": {
+"translation": "sun",
+"note": "todo"
+}
+},
+{
+"id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+"port": "lua",
+"fr": {
+"translation": "lune",
+"note": "todo"
+},
+"en": {
+"translation": "moon",
+"note": "todo"
+}
+},
+{
+"id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+"port": "feliz",
+"fr": {
+"translation": "heureux",
+"note": "todo"
+},
+"en": {
+"translation": "happy",
+"note": "todo"
+}
+},
+{
+"id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+"port": "triste",
+"fr": {
+"translation": "triste",
+"note": "todo"
+},
+"en": {
+"translation": "sad",
+"note": "todo"
+}
+},
+{
+"id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+"port": "cansado",
+"fr": {
+"translation": "fatigué",
+"note": "todo"
+},
+"en": {
+"translation": "tired",
+"note": "todo"
+}
+},
+{
+"id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+"port": "doente",
+"fr": {
+"translation": "malade",
+"note": "todo"
+},
+"en": {
+"translation": "sick",
+"note": "todo"
+}
+},
+{
+"id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+"port": "saudável",
+"fr": {
+"translation": "sain",
+"note": "todo"
+},
+"en": {
+"translation": "healthy",
+"note": "todo"
+}
+},
+{
+"id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+"port": "fruta",
+"fr": {
+"translation": "fruit",
+"note": "todo"
+},
+"en": {
+"translation": "fruit",
+"note": "todo"
+}
+},
+{
+"id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+"port": "legume",
+"fr": {
+"translation": "légume",
+"note": "todo"
+},
+"en": {
+"translation": "vegetable",
+"note": "todo"
+}
+},
+{
+"id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+"port": "arroz",
+"fr": {
+"translation": "riz",
+"note": "todo"
+},
+"en": {
+"translation": "rice",
+"note": "todo"
+}
+},
+{
+"id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+"port": "feijão",
+"fr": {
+"translation": "haricots",
+"note": "todo"
+},
+"en": {
+"translation": "beans",
+"note": "todo"
+}
+},
+{
+"id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+"port": "ovo",
+"fr": {
+"translation": "œuf",
+"note": "todo"
+},
+"en": {
+"translation": "egg",
+"note": "todo"
+}
+},
+{
+"id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+"port": "queijo",
+"fr": {
+"translation": "fromage",
+"note": "todo"
+},
+"en": {
+"translation": "cheese",
+"note": "todo"
+}
+},
+{
+"id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+"port": "manteiga",
+"fr": {
+"translation": "beurre",
+"note": "todo"
+},
+"en": {
+"translation": "butter",
+"note": "todo"
+}
+},
+{
+"id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+"port": "sal",
+"fr": {
+"translation": "sel",
+"note": "todo"
+},
+"en": {
+"translation": "salt",
+"note": "todo"
+}
+},
+{
+"id": "0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+"port": "açúcar",
+"fr": {
+"translation": "sucre",
+"note": "todo"
+},
+"en": {
+"translation": "sugar",
+"note": "todo"
+}
+}
 ]

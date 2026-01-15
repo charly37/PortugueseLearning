@@ -96,6 +96,18 @@
         }
     },
     {
+        "id": "b2c3d4e5-f6a7-8901-7890-123456789012",
+        "port": "Tudo bem",
+        "fr": {
+            "translation": "Comment allez-vous",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "How are you",
+            "note": "todo"
+        }
+    },
+    {
         "id": "8c0f4ae7-4136-4105-8a6d-b97a0d06e699",
         "port": "de quem",
         "fr": {
