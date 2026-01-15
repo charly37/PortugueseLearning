@@ -135,8 +135,8 @@
         "id": "e0e54382-f07e-4cd2-bffe-0b3000d7d82f",
         "port": "qual",
         "fr": {
-            "translation": "lequel/laquelle (inv.)",
-            "note": "Le mot 'qual' est invariable en genre, mais pluriel 'quais'."
+            "translation": "quel/lequel/laquelle (inv.)",
+            "note": "en portugais, 'qual' peut effectivement être utilisé pour traduire à la fois 'quel/le' (comme adjectif interrogatif) et 'lequel/laquelle' (comme pronom interrogatif ou relatif), selon le contexte. Il s'adapte au genre et au nombre, mais en portugais, la forme de base 'qual' reste souvent inchangée, contrairement au français où on a des variantes (quel, quelle, quels, quelles pour l'adjectif ; lequel, laquelle, lesquels, lesquelles pour le pronom).Le pluriel est 'quais'."
         },
         "en": {
             "translation": "which",
@@ -1769,7 +1769,7 @@
         "port": "criança",
         "fr": {
             "translation": "enfant",
-            "note": "todo"
+            "note": "le mot portugais 'criança' (qui signifie 'enfant' en français, et qui est féminin quel que soit le sexe de l'enfant) a un pluriel régulier : 'crianças'."
         },
         "en": {
             "translation": "child",
@@ -1850,10 +1850,10 @@
     },
     {
         "id": "d4e5f6a7-b8c9-0123-def1-234567890123",
-        "port": "carne de porco",
+        "port": "porco",
         "fr": {
             "translation": "porc",
-            "note": "todo"
+            "note": "viande de porc: carne de porco"
         },
         "en": {
             "translation": "pork",
@@ -2532,18 +2532,7 @@
             "note": "todo"
         }
     },
-    {
-        "id": "b2c3d4e5-f6a7-8901-7890-123456789012",
-        "port": "Tudo bem",
-        "fr": {
-            "translation": "Comment allez-vous",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "How are you",
-            "note": "todo"
-        }
-    },
+    
     {
         "id": "c3d4e5f6-a7b8-9012-8901-234567890123",
         "port": "Obrigado",
