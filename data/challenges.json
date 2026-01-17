@@ -179,7 +179,6 @@
             "note": "todo"
         }
     },
-
     {
         "id": "d3ee2d4d-b3f1-4cf0-bcac-440e9553b76f",
         "port": "comprida",
@@ -357,30 +356,6 @@
         },
         "en": {
             "translation": "new (fem.)",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "6480221f-b2a0-4cc9-adc5-fa31334a7042",
-        "port": "alto",
-        "fr": {
-            "translation": "haut (masculin)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "high (masc.)",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "302ed4fd-4fca-4e79-b672-2e4bcd85c986",
-        "port": "alta",
-        "fr": {
-            "translation": "haute (féminin)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "high (fem.)",
             "note": "todo"
         }
     },
@@ -621,42 +596,6 @@
         },
         "en": {
             "translation": "sometimes",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "64dd9cd2-24e4-4cf5-b34a-2775a4fd54e2",
-        "port": "hoje",
-        "fr": {
-            "translation": "aujourd'hui",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "today",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "7f6e8a0e-25b8-49d9-b40e-25186d2954d2",
-        "port": "amanhã",
-        "fr": {
-            "translation": "demain",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "tomorrow",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "a8f426d1-eb90-47f8-bf5d-3cc6d7123611",
-        "port": "ontem",
-        "fr": {
-            "translation": "hier",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "yesterday",
             "note": "todo"
         }
     },
@@ -1196,7 +1135,7 @@
             "note": "todo"
         },
         "en": {
-            "translation": "a/an (masc.)",
+            "translation": "a/an (masc.), one",
             "note": "todo"
         }
     },
@@ -1345,30 +1284,6 @@
         }
     },
     {
-        "id": "f0d158bf-d571-43ab-a752-3769867a9e70",
-        "port": "o",
-        "fr": {
-            "translation": "le (masc.)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "him/it (masc.)",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "e83aad75-0e64-4a1c-a4b1-daa4d49128d0",
-        "port": "a",
-        "fr": {
-            "translation": "la (fém.)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "her/it (fem.)",
-            "note": "todo"
-        }
-    },
-    {
         "id": "7dbaf8b9-ce4a-425f-9bcb-d731f4f999f7",
         "port": "lhe",
         "fr": {
@@ -1461,30 +1376,6 @@
         },
         "en": {
             "translation": "your (fem., plural)",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "a2b00147-b472-484a-b959-b6cc9244739e",
-        "port": "os",
-        "fr": {
-            "translation": "les (masc.)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "them (masc.)",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "d6803590-c7a3-482a-ab9d-8a13865c1482",
-        "port": "as",
-        "fr": {
-            "translation": "les (fém.)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "them (fem.)",
             "note": "todo"
         }
     },
@@ -1633,17 +1524,17 @@
         }
     },
     {
-"id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-"port": "assim",
-"fr": {
-"translation": "comme ça / ainsi / de cette façon / tel quel",
-"note": "Peut aussi signifier 'donc' (therefore), 'pareillement' (likewise), ou dans des expressions comme 'assim assim' pour 'bof' ou 'moyen' (so-so). Souvent utilisé pour 'comme ceci' ou 'comme cela' dans des contextes quotidiens."
-},
-"en": {
-"translation": "like that / thus / in this way / as is",
-"note": "Can also mean 'therefore', 'likewise', or in expressions like 'assim assim' for 'so-so'. Commonly used for 'like this' or 'like that' in everyday contexts."
-}
-},
+        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "port": "assim",
+        "fr": {
+            "translation": "comme ça / ainsi / de cette façon / tel quel",
+            "note": "Peut aussi signifier 'donc' (therefore), 'pareillement' (likewise), ou dans des expressions comme 'assim assim' pour 'bof' ou 'moyen' (so-so). Souvent utilisé pour 'comme ceci' ou 'comme cela' dans des contextes quotidiens."
+        },
+        "en": {
+            "translation": "like that / thus / in this way / as is",
+            "note": "Can also mean 'therefore', 'likewise', or in expressions like 'assim assim' for 'so-so'. Commonly used for 'like this' or 'like that' in everyday contexts."
+        }
+    },
     {
         "id": "f9ba33d8-03d4-499d-ab37-2389c101d08d",
         "port": "todos",
@@ -1813,7 +1704,7 @@
         }
     },
     {
-        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "id": "1fbda16c-e8f6-4c71-a443-469bbca551f8",
         "port": "vendedor",
         "fr": {
             "translation": "vendeur",
@@ -2245,7 +2136,7 @@
         }
     },
     {
-        "id": "a7b8c9d0-e1f2-3456-1234-567890123456",
+        "id": "3199baf1-501c-4c1f-a601-99a08ac06f60",
         "port": "novembro",
         "fr": {
             "translation": "novembre",
@@ -2257,7 +2148,7 @@
         }
     },
     {
-        "id": "b8c9d0e1-f2a3-4567-2345-678901234567",
+        "id": "ebb334fa-662f-40c1-8a44-c6b3cd64771d",
         "port": "dezembro",
         "fr": {
             "translation": "décembre",
@@ -2269,7 +2160,7 @@
         }
     },
     {
-        "id": "c9d0e1f2-a3b4-5678-3456-789012345678",
+        "id": "3735a647-dbef-4532-b137-746e14f2bc43",
         "port": "zero",
         "fr": {
             "translation": "zéro",
@@ -2281,19 +2172,7 @@
         }
     },
     {
-        "id": "d0e1f2a3-b4c5-6789-4567-890123456789",
-        "port": "um",
-        "fr": {
-            "translation": "un",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "one",
-            "note": "Há vinte e quatro horas em um dia. - There are twenty-four hours in one day."
-        }
-    },
-    {
-        "id": "e1f2a3b4-c5d6-7890-5678-901234567890",
+        "id": "22192ae6-85c3-4269-8634-813cf7293c75",
         "port": "dois",
         "fr": {
             "translation": "deux",
@@ -2305,7 +2184,7 @@
         }
     },
     {
-        "id": "f2a3b4c5-d6e7-8901-6789-012345678901",
+        "id": "d573b932-dbfd-4a0b-a2ff-ba07e69e6bbb",
         "port": "três",
         "fr": {
             "translation": "trois",
@@ -2317,7 +2196,7 @@
         }
     },
     {
-        "id": "a3b4c5d6-e7f8-9012-7890-123456789012",
+        "id": "80d118f1-85ca-4fed-a7e3-3f7d1ad36771",
         "port": "quatro",
         "fr": {
             "translation": "quatre",
@@ -2329,7 +2208,7 @@
         }
     },
     {
-        "id": "b4c5d6e7-f8a9-0123-8901-234567890123",
+        "id": "a65b288b-4c66-4558-8f3b-d47db055c28a",
         "port": "cinco",
         "fr": {
             "translation": "cinq",
@@ -2341,7 +2220,7 @@
         }
     },
     {
-        "id": "c5d6e7f8-a9b0-1234-9012-345678901234",
+        "id": "0a70f9bd-db49-4fcd-82ad-a552335b9054",
         "port": "seis",
         "fr": {
             "translation": "six",
@@ -2353,7 +2232,7 @@
         }
     },
     {
-        "id": "d6e7f8a9-b0c1-2345-0123-456789012345",
+        "id": "ece8ce90-7bd8-4be1-8157-ea7a37a06938",
         "port": "sete",
         "fr": {
             "translation": "sept",
@@ -2365,7 +2244,7 @@
         }
     },
     {
-        "id": "e7f8a9b0-c1d2-3456-1234-567890123456",
+        "id": "219ba380-e672-479e-970b-3ee42d99e109",
         "port": "oito",
         "fr": {
             "translation": "huit",
@@ -2377,7 +2256,7 @@
         }
     },
     {
-        "id": "f8a9b0c1-d2e3-4567-2345-678901234567",
+        "id": "c1f3f6ca-6d45-4065-9e0c-a4203b4a8150",
         "port": "nove",
         "fr": {
             "translation": "neuf",
@@ -2389,7 +2268,7 @@
         }
     },
     {
-        "id": "a9b0c1d2-e3f4-5678-3456-789012345678",
+        "id": "2b49de2c-359a-4a5c-92f9-e851a4298e75",
         "port": "dez",
         "fr": {
             "translation": "dix",
@@ -2401,7 +2280,7 @@
         }
     },
     {
-        "id": "b0c1d2e3-f4a5-6789-4567-890123456789",
+        "id": "65b9d2cd-6354-4df2-b747-896166d04ba9",
         "port": "café",
         "fr": {
             "translation": "café",
@@ -2413,7 +2292,7 @@
         }
     },
     {
-        "id": "c1d2e3f4-a5b6-7890-5678-901234567890",
+        "id": "02267a3e-99f6-446c-a586-c1e7765e0593",
         "port": "cerveja",
         "fr": {
             "translation": "bière",
@@ -2425,7 +2304,7 @@
         }
     },
     {
-        "id": "d2e3f4a5-b6c7-8901-6789-012345678901",
+        "id": "bc33fd15-88bf-45e8-8f7a-90a465713233",
         "port": "chá",
         "fr": {
             "translation": "thé",
@@ -2437,7 +2316,7 @@
         }
     },
     {
-        "id": "e3f4a5b6-c7d8-9012-7890-123456789012",
+        "id": "c84cff7d-dee0-4d57-bfee-99f3dee87e7d",
         "port": "vinho",
         "fr": {
             "translation": "vin",
@@ -2449,7 +2328,7 @@
         }
     },
     {
-        "id": "f4a5b6c7-d8e9-0123-8901-234567890123",
+        "id": "1db2abca-a028-427a-b996-73922df54346",
         "port": "fácil",
         "fr": {
             "translation": "facile",
@@ -2461,19 +2340,7 @@
         }
     },
     {
-        "id": "a5b6c7d8-e9f0-1234-9012-345678901234",
-        "port": "mau",
-        "fr": {
-            "translation": "mauvais",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "bad",
-            "note": "O homem é mau. - The man is bad."
-        }
-    },
-    {
-        "id": "b6c7d8e9-f0a1-2345-0123-456789012345",
+        "id": "1ecffbe2-f757-4fb6-a91d-2d8854cde419",
         "port": "perto",
         "fr": {
             "translation": "près",
@@ -2485,7 +2352,7 @@
         }
     },
     {
-        "id": "d8e9f0a1-b2c3-4567-2345-678901234567",
+        "id": "798b6a06-34a1-4194-b428-8804b0b9f32b",
         "port": "Olá",
         "fr": {
             "translation": "Bonjour (informel)",
@@ -2497,7 +2364,7 @@
         }
     },
     {
-        "id": "e9f0a1b2-c3d4-5678-3456-789012345678",
+        "id": "c06f8ef6-37f5-45e4-ad6d-b79bee195aec",
         "port": "Bom dia",
         "fr": {
             "translation": "Bonjour (formel)",
@@ -2509,7 +2376,7 @@
         }
     },
     {
-        "id": "f0a1b2c3-d4e5-6789-4567-890123456789",
+        "id": "2a38c60a-d9a8-4f60-840b-6e0e3dfddae1",
         "port": "Boa tarde",
         "fr": {
             "translation": "Bon après-midi",
@@ -2532,7 +2399,6 @@
             "note": "todo"
         }
     },
-    
     {
         "id": "c3d4e5f6-a7b8-9012-8901-234567890123",
         "port": "Obrigado",
@@ -2810,30 +2676,6 @@
         }
     },
     {
-        "id": "d4e5f6a7-b8c9-0123-0123-456789012345",
-        "port": "pequeno",
-        "fr": {
-            "translation": "petit",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "small",
-            "note": "todo"
-        }
-    },
-    {
-        "id": "e5f6a7b8-c9d0-1234-1234-567890123456",
-        "port": "bom",
-        "fr": {
-            "translation": "bon",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "good",
-            "note": "Verduras são boas para você. - Vegetables are good for you."
-        }
-    },
-    {
         "id": "f6a7b8c9-d0e1-2345-2345-678901234567",
         "port": "bonito",
         "fr": {
@@ -3074,363 +2916,795 @@
         }
     },
     {
-"id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-"port": "vermelho",
-"fr": {
-"translation": "rouge",
-"note": "todo"
-},
-"en": {
-"translation": "red",
-"note": "todo"
-}
-},
-{
-"id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-"port": "azul",
-"fr": {
-"translation": "bleu",
-"note": "todo"
-},
-"en": {
-"translation": "blue",
-"note": "todo"
-}
-},
-{
-"id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-"port": "verde",
-"fr": {
-"translation": "vert",
-"note": "todo"
-},
-"en": {
-"translation": "green",
-"note": "todo"
-}
-},
-{
-"id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-"port": "amarelo",
-"fr": {
-"translation": "jaune",
-"note": "todo"
-},
-"en": {
-"translation": "yellow",
-"note": "todo"
-}
-},
-{
-"id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-"port": "preto",
-"fr": {
-"translation": "noir",
-"note": "todo"
-},
-"en": {
-"translation": "black",
-"note": "todo"
-}
-},
-{
-"id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
-"port": "branco",
-"fr": {
-"translation": "blanc",
-"note": "todo"
-},
-"en": {
-"translation": "white",
-"note": "todo"
-}
-},
-{
-"id": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-"port": "casa",
-"fr": {
-"translation": "maison",
-"note": "todo"
-},
-"en": {
-"translation": "house",
-"note": "todo"
-}
-},
-{
-"id": "8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
-"port": "cidade",
-"fr": {
-"translation": "ville",
-"note": "todo"
-},
-"en": {
-"translation": "city",
-"note": "todo"
-}
-},
-{
-"id": "9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
-"port": "país",
-"fr": {
-"translation": "pays",
-"note": "todo"
-},
-"en": {
-"translation": "country",
-"note": "todo"
-}
-},
-{
-"id": "0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
-"port": "escola",
-"fr": {
-"translation": "école",
-"note": "todo"
-},
-"en": {
-"translation": "school",
-"note": "todo"
-}
-},
-{
-"id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-"port": "trabalho",
-"fr": {
-"translation": "travail",
-"note": "todo"
-},
-"en": {
-"translation": "work",
-"note": "todo"
-}
-},
-{
-"id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-"port": "tempo",
-"fr": {
-"translation": "temps (temps/météo)",
-"note": "todo"
-},
-"en": {
-"translation": "time/weather",
-"note": "todo"
-}
-},
-{
-"id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-"port": "dia",
-"fr": {
-"translation": "jour",
-"note": "todo"
-},
-"en": {
-"translation": "day",
-"note": "todo"
-}
-},
-{
-"id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-"port": "noite",
-"fr": {
-"translation": "nuit",
-"note": "todo"
-},
-"en": {
-"translation": "night",
-"note": "todo"
-}
-},
-{
-"id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-"port": "sol",
-"fr": {
-"translation": "soleil",
-"note": "todo"
-},
-"en": {
-"translation": "sun",
-"note": "todo"
-}
-},
-{
-"id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
-"port": "lua",
-"fr": {
-"translation": "lune",
-"note": "todo"
-},
-"en": {
-"translation": "moon",
-"note": "todo"
-}
-},
-{
-"id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
-"port": "feliz",
-"fr": {
-"translation": "heureux",
-"note": "todo"
-},
-"en": {
-"translation": "happy",
-"note": "todo"
-}
-},
-{
-"id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
-"port": "triste",
-"fr": {
-"translation": "triste",
-"note": "todo"
-},
-"en": {
-"translation": "sad",
-"note": "todo"
-}
-},
-{
-"id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
-"port": "cansado",
-"fr": {
-"translation": "fatigué",
-"note": "todo"
-},
-"en": {
-"translation": "tired",
-"note": "todo"
-}
-},
-{
-"id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
-"port": "doente",
-"fr": {
-"translation": "malade",
-"note": "todo"
-},
-"en": {
-"translation": "sick",
-"note": "todo"
-}
-},
-{
-"id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
-"port": "saudável",
-"fr": {
-"translation": "sain",
-"note": "todo"
-},
-"en": {
-"translation": "healthy",
-"note": "todo"
-}
-},
-{
-"id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-"port": "fruta",
-"fr": {
-"translation": "fruit",
-"note": "todo"
-},
-"en": {
-"translation": "fruit",
-"note": "todo"
-}
-},
-{
-"id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-"port": "legume",
-"fr": {
-"translation": "légume",
-"note": "todo"
-},
-"en": {
-"translation": "vegetable",
-"note": "todo"
-}
-},
-{
-"id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
-"port": "arroz",
-"fr": {
-"translation": "riz",
-"note": "todo"
-},
-"en": {
-"translation": "rice",
-"note": "todo"
-}
-},
-{
-"id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
-"port": "feijão",
-"fr": {
-"translation": "haricots",
-"note": "todo"
-},
-"en": {
-"translation": "beans",
-"note": "todo"
-}
-},
-{
-"id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-"port": "ovo",
-"fr": {
-"translation": "œuf",
-"note": "todo"
-},
-"en": {
-"translation": "egg",
-"note": "todo"
-}
-},
-{
-"id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
-"port": "queijo",
-"fr": {
-"translation": "fromage",
-"note": "todo"
-},
-"en": {
-"translation": "cheese",
-"note": "todo"
-}
-},
-{
-"id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
-"port": "manteiga",
-"fr": {
-"translation": "beurre",
-"note": "todo"
-},
-"en": {
-"translation": "butter",
-"note": "todo"
-}
-},
-{
-"id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
-"port": "sal",
-"fr": {
-"translation": "sel",
-"note": "todo"
-},
-"en": {
-"translation": "salt",
-"note": "todo"
-}
-},
-{
-"id": "0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
-"port": "açúcar",
-"fr": {
-"translation": "sucre",
-"note": "todo"
-},
-"en": {
-"translation": "sugar",
-"note": "todo"
-}
-}
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+        "port": "vermelho",
+        "fr": {
+            "translation": "rouge",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "red",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+        "port": "azul",
+        "fr": {
+            "translation": "bleu",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "blue",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+        "port": "verde",
+        "fr": {
+            "translation": "vert",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "green",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+        "port": "amarelo",
+        "fr": {
+            "translation": "jaune",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "yellow",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+        "port": "preto",
+        "fr": {
+            "translation": "noir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "black",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+        "port": "branco",
+        "fr": {
+            "translation": "blanc",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "white",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+        "port": "casa",
+        "fr": {
+            "translation": "maison",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "house",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+        "port": "cidade",
+        "fr": {
+            "translation": "ville",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "city",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9e0f1a2b-3c4d-5e6f-7a8b-9c0d1e2f3a4b",
+        "port": "país",
+        "fr": {
+            "translation": "pays",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "country",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0f1a2b3c-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+        "port": "escola",
+        "fr": {
+            "translation": "école",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "school",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b2786564-1698-4ed8-a6ab-1cf346d88c3a",
+        "port": "trabalho",
+        "fr": {
+            "translation": "travail",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "work",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "744a1311-c123-4fa3-b674-6def14e79ba9",
+        "port": "tempo",
+        "fr": {
+            "translation": "temps (temps/météo)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "time/weather",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "27884f57-009c-43d1-98de-dee029e17e54",
+        "port": "dia",
+        "fr": {
+            "translation": "jour",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "day",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "20df0d63-a326-401e-99af-6fec6253f029",
+        "port": "noite",
+        "fr": {
+            "translation": "nuit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "night",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6d3fc0e7-0d3a-49d4-bb4b-0ec4adabe8fd",
+        "port": "sol",
+        "fr": {
+            "translation": "soleil",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sun",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9f45353e-c858-4dc5-ac90-e04b5aa8074b",
+        "port": "lua",
+        "fr": {
+            "translation": "lune",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "moon",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+        "port": "feliz",
+        "fr": {
+            "translation": "heureux",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "happy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+        "port": "triste",
+        "fr": {
+            "translation": "triste",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sad",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+        "port": "cansado",
+        "fr": {
+            "translation": "fatigué",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tired",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "port": "doente",
+        "fr": {
+            "translation": "malade",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sick",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+        "port": "saudável",
+        "fr": {
+            "translation": "sain",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "healthy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+        "port": "fruta",
+        "fr": {
+            "translation": "fruit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fruit",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+        "port": "legume",
+        "fr": {
+            "translation": "légume",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "vegetable",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+        "port": "arroz",
+        "fr": {
+            "translation": "riz",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "rice",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+        "port": "feijão",
+        "fr": {
+            "translation": "haricots",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "beans",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+        "port": "ovo",
+        "fr": {
+            "translation": "œuf",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "egg",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+        "port": "queijo",
+        "fr": {
+            "translation": "fromage",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cheese",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+        "port": "manteiga",
+        "fr": {
+            "translation": "beurre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "butter",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9a0b1c2d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+        "port": "sal",
+        "fr": {
+            "translation": "sel",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "salt",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d5e",
+        "port": "açúcar",
+        "fr": {
+            "translation": "sucre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sugar",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a10e0387-56c1-471c-aea8-d62888a01db6",
+        "port": "também",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "also, too",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f693926f-10db-45be-9a31-c526abb6cf5c",
+        "port": "fim",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "end",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7f3484a2-755f-48c9-9f64-459987c1721a",
+        "port": "port",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "port",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "06704a17-767f-48fb-bb86-4703c9995e9b",
+        "port": "aqui",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "here",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5eb85e8d-f88c-4d9f-8dd0-ff9bc7eddd8f",
+        "port": "tais",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "such",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6e961a6f-2e8a-4ab6-a226-05db35898473",
+        "port": "luz",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "light",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2606af77-f523-45c4-bf25-ff18c0d53eba",
+        "port": "imagem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "picture",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2135619c-3143-4d98-89b9-0656e482163e",
+        "port": "novamente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "again",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d1741e54-ef8d-4cf4-8793-6b20404a2dbb",
+        "port": "ponto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "point",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "70076629-00d5-4abc-8294-042dd1c87443",
+        "port": "mãe",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mother",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "49afa2cb-bf37-43d6-a64e-23f31b1bb1bc",
+        "port": "mundo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "world",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5472de74-1fc7-402a-b6fd-bc6eb4434f5a",
+        "port": "qualquer",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "any",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a9e5c5d5-ead1-49e6-bc5e-d6e5d31c30f0",
+        "port": "lugar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "place",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "dcafc036-5170-4fab-bc60-966b454b9f00",
+        "port": "depois",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "after, then",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c5311b19-2562-4b94-bd55-ed6b5bda788f",
+        "port": "de volta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "back",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ab760b9b-5061-49b3-b3c4-cfcb3f6b782e",
+        "port": "pouco",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "little",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "95dff1bc-d26b-4c7e-983f-f87f2c5ba000",
+        "port": "através",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "through",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a8879cd7-264a-4984-82ff-54e966f48ad9",
+        "port": "justo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "just",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fef2ce4b-f088-4624-8012-d1a053e377d9",
+        "port": "linha",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "line",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0e90b385-65b5-4ea4-9f6c-430cef46e947",
+        "port": "causa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cause",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2ccb880c-613e-4a7d-9f45-06510b2c79c4",
+        "port": "antes",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "before",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a3428070-f6a0-4fe4-880b-f7da43c95dde",
+        "port": "direito",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "right",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b1a3d6f9-bde9-4a9f-93a5-ce885bfbfdcd",
+        "port": "mesmo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "same, even",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "49e96474-eaa6-4c42-83bd-4460ad66564a",
+        "port": "lá",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "there",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "09af23f1-4741-40cf-bc51-2b654a79503e",
+        "port": "muitos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "many",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a01e6eb4-2842-467e-9a0d-bd51952c9aa1",
+        "port": "eles",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "them",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "866fc6e0-f903-4940-a4dc-d174f485283d",
+        "port": "como",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "like",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a28883cf-b515-493e-a987-35c17222cc0a",
+        "port": "estes",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "these",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5a0290c8-32bb-411b-a259-1d048ffc5995",
+        "port": "longo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "long",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f17ea783-f219-4527-a819-27f43912b695",
+        "port": "coisa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "thing",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "593ededb-06a9-4acb-8e70-a88e1b53c953",
+        "port": "mais",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "more",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8604801b-1378-4710-b62a-06b353dc5c08",
+        "port": "número",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "number",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1512629b-244c-40fc-bf55-f4919a81d1a1",
+        "port": "som",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sound",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5ad869de-ffdd-4f9c-9c46-8f2cb5861eec",
+        "port": "chamada",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "call",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1d8946a1-790d-4d89-85cd-e706a1aaf5e1",
+        "port": "primeiro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "first",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7d6a0c6f-4d30-4241-9c29-8f777d11e2ce",
+        "port": "lado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "side",
+            "note": "todo"
+        }
+    }
 ]
