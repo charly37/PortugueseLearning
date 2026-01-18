@@ -2,6 +2,7 @@
 import json
 import uuid
 import sys
+import os
 from collections import defaultdict
 
 def check_duplicate_ids(filepath):
@@ -83,7 +84,10 @@ def fix_duplicate_ids(filepath, duplicates, challenges):
     return True
 
 if __name__ == '__main__':
-    filepath = 'challenges.json'
+    # Determine the correct path to challenges.json
+    # If script is in data/ directory, look there; otherwise look in data/ subdirectory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(script_dir, 'challenges.json')
     
     # Check if fix mode is requested
     fix_mode = len(sys.argv) > 1 and sys.argv[1] == 'fix'
