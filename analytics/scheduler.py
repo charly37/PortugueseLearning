@@ -54,7 +54,7 @@ def run_usefulness_aggregation():
     try:
         # Run the aggregation script
         result = subprocess.run(
-            ['python3', '/app/analytics/aggregate_usefulness.py'],
+            ['python3', '/app/aggregate_usefulness.py'],
             capture_output=True,
             text=True,
             timeout=300  # 5 minute timeout
