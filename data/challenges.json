@@ -4384,7 +4384,7 @@
         "id": "22715de7-eec3-41c7-a161-8c20e016c5a9",
         "port": "madeira",
         "fr": {
-            "translation": "todo",
+            "translation": "bois",
             "note": "todo"
         },
         "en": {
@@ -4397,7 +4397,7 @@
         "id": "88c1fa07-788e-4133-9824-223bd1f5c89a",
         "port": "principal",
         "fr": {
-            "translation": "todo",
+            "translation": "principal",
             "note": "todo"
         },
         "en": {
@@ -4410,7 +4410,7 @@
         "id": "22b0220c-9273-4a58-9cd1-60379f6da479",
         "port": "aberto",
         "fr": {
-            "translation": "todo",
+            "translation": "ouvert",
             "note": "todo"
         },
         "en": {
@@ -4423,7 +4423,7 @@
         "id": "dbba559f-86db-43e8-9eaa-21d14091a4b5",
         "port": "juntos",
         "fr": {
-            "translation": "todo",
+            "translation": "ensemble",
             "note": "todo"
         },
         "en": {
@@ -4436,7 +4436,7 @@
         "id": "66fcfa35-190c-419f-b7a3-08a6150e482f",
         "port": "próximo",
         "fr": {
-            "translation": "todo",
+            "translation": "prochain",
             "note": "todo"
         },
         "en": {
@@ -4449,7 +4449,7 @@
         "id": "aed937a0-78d6-480f-971c-0b86a4367554",
         "port": "crianças",
         "fr": {
-            "translation": "todo",
+            "translation": "enfants",
             "note": "todo"
         },
         "en": {
@@ -4462,7 +4462,7 @@
         "id": "2fd0373d-4886-4d2f-82d7-2d86380ced65",
         "port": "início",
         "fr": {
-            "translation": "todo",
+            "translation": "début",
             "note": "todo"
         },
         "en": {
@@ -4475,7 +4475,7 @@
         "id": "8983c1f4-1d56-4a4f-8e81-9730b226581f",
         "port": "exemplo",
         "fr": {
-            "translation": "todo",
+            "translation": "exemple",
             "note": "todo"
         },
         "en": {
@@ -4488,7 +4488,7 @@
         "id": "097471ac-bb3f-4d97-9b35-5ac0d7016eaa",
         "port": "facilidade",
         "fr": {
-            "translation": "todo",
+            "translation": "facilité",
             "note": "todo"
         },
         "en": {
@@ -4501,7 +4501,7 @@
         "id": "c1cd3b76-9dee-48b2-8022-0a249c545f95",
         "port": "grupo",
         "fr": {
-            "translation": "todo",
+            "translation": "groupe",
             "note": "todo"
         },
         "en": {
@@ -4514,7 +4514,7 @@
         "id": "ea1727fd-a10e-4632-a9cb-3a36a0c47bab",
         "port": "música",
         "fr": {
-            "translation": "todo",
+            "translation": "musique",
             "note": "todo"
         },
         "en": {
@@ -4527,7 +4527,7 @@
         "id": "b2b2a20f-ddee-406d-a1fd-11ada8eb3dae",
         "port": "tanto",
         "fr": {
-            "translation": "todo",
+            "translation": "les deux",
             "note": "todo"
         },
         "en": {
@@ -4540,7 +4540,7 @@
         "id": "1a9a4d09-9726-4f54-9300-9ec9bb00800c",
         "port": "marca",
         "fr": {
-            "translation": "todo",
+            "translation": "marque",
             "note": "todo"
         },
         "en": {
@@ -4553,7 +4553,7 @@
         "id": "2af8602b-2dee-481a-a08c-520e84b8a6f3",
         "port": "muitas vezes",
         "fr": {
-            "translation": "todo",
+            "translation": "souvent",
             "note": "todo"
         },
         "en": {
@@ -4566,7 +4566,7 @@
         "id": "650d4c05-e4d3-4b8c-a624-ceda614531b0",
         "port": "carta",
         "fr": {
-            "translation": "todo",
+            "translation": "lettre",
             "note": "todo"
         },
         "en": {
@@ -4579,7 +4579,7 @@
         "id": "72ac4207-6a8f-4388-bb8b-5c332795a9b8",
         "port": "até",
         "fr": {
-            "translation": "todo",
+            "translation": "jusqu'à",
             "note": "todo"
         },
         "en": {
@@ -4605,7 +4605,7 @@
         "id": "1e0f3800-df46-47bd-acb1-ef8fc2f1a7a6",
         "port": "rio",
         "fr": {
-            "translation": "todo",
+            "translation": "rivière",
             "note": "todo"
         },
         "en": {
@@ -4618,7 +4618,7 @@
         "id": "36b5b1b4-e49c-456e-b1e6-70fdb0b0a960",
         "port": "pés",
         "fr": {
-            "translation": "todo",
+            "translation": "pieds",
             "note": "todo"
         },
         "en": {
@@ -4631,7 +4631,7 @@
         "id": "8757aa7e-ec6f-42d4-836d-9e70cbf535f8",
         "port": "cuidados",
         "fr": {
-            "translation": "todo",
+            "translation": "soins",
             "note": "todo"
         },
         "en": {
@@ -4644,7 +4644,7 @@
         "id": "6a914327-7bca-4316-b174-575716a204b6",
         "port": "segunda",
         "fr": {
-            "translation": "todo",
+            "translation": "seconde",
             "note": "todo"
         },
         "en": {
@@ -4657,7 +4657,7 @@
         "id": "607e3a65-f3b8-471f-b3f4-7dcdcde2dfcc",
         "port": "suficiente",
         "fr": {
-            "translation": "todo",
+            "translation": "suffisant, assez",
             "note": "todo"
         },
         "en": {
@@ -4670,7 +4670,7 @@
         "id": "0dacca28-5540-4fc2-a854-201c6a8c57c0",
         "port": "simples",
         "fr": {
-            "translation": "todo",
+            "translation": "simple",
             "note": "todo"
         },
         "en": {
@@ -4683,7 +4683,7 @@
         "id": "7128a47d-4658-4728-a403-1ff517bc7e7c",
         "port": "habitual",
         "fr": {
-            "translation": "todo",
+            "translation": "habituel",
             "note": "todo"
         },
         "en": {
@@ -4696,7 +4696,7 @@
         "id": "c829b29b-ea1d-49f8-9549-8a31af6240e7",
         "port": "jovem",
         "fr": {
-            "translation": "todo",
+            "translation": "jeune",
             "note": "todo"
         },
         "en": {
