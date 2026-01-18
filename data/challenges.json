@@ -267,12 +267,12 @@
         "id": "e39487a7-2796-4c8b-a0c7-b06029e28edc",
         "port": "alto",
         "fr": {
-            "translation": "grand (il est grand)",
-            "note": "todo"
+            "translation": "grand (il est grand), fort (parler fort)",
+            "note": "Haut (taille 'monte alto' = 'montagne haute'; 'homem alto' = 'homme grand'; 'som alto' = 'son haut').Fort (pour un son, 'falar alto' = 'parler fort')."
         },
         "en": {
-            "translation": "tall (masc.)",
-            "note": "todo"
+            "translation": "tall, loud (masc.)",
+            "note": "High (as in elevation or position, e.g., 'monte alto' = 'high mountain'). Tall (as in stature, e.g., 'homem alto' = 'tall man'). Loud (as in volume, e.g., 'som alto' = 'loud sound'). Loudly (as adverb, e.g., 'falar alto' = 'speak loudly')."
         }
     },
     {
@@ -3495,12 +3495,12 @@
         "id": "fef2ce4b-f088-4624-8012-d1a053e377d9",
         "port": "linha",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "ligne, fil(couture)",
+            "note": "Ligne (covers line, row, and various senses, e.g., 'desenhar uma linha' = 'dessiner une ligne'; 'linha de produção' = 'ligne de production'; 'linha de ônibus' = 'ligne de bus').Fil (as in thread for sewing, e.g., 'linha de costura' = 'fil à coudre')."
         },
         "en": {
-            "translation": "line",
-            "note": "todo"
+            "translation": "line, thread, row",
+            "note": "Line (as in a straight mark, boundary, or sequence, e.g., 'desenhar uma linha' = 'draw a line'; 'linha de produção' = 'production line'; 'linha de ônibus' = 'bus line').Thread (as in sewing or string, e.g., 'linha de costura' = 'sewing thread').Row (as in text or data, e.g., 'primeira linha' = 'first row')."
         }
     },
     {
@@ -3531,12 +3531,12 @@
         "id": "a3428070-f6a0-4fe4-880b-f7da43c95dde",
         "port": "direito",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "droit, droite, loi",
+            "note": "Droit (covers right as direction/side, straight, entitlement, and law, e.g., 'à direita' = 'à droite'; 'caminho direito' = 'chemin droit'; 'direito humano' = 'droit humain'; 'faculdade de direito' = 'faculté de droit')."
         },
         "en": {
-            "translation": "right",
-            "note": "todo"
+            "translation": "right (direction/side, straight, entitlement/law)",
+            "note": "Right (as in direction or side, opposite of left, e.g., 'à direita' = 'to the right'; 'mão direita' = 'right hand').Straight (as in alignment or direction, e.g., 'caminho direito' = 'straight path'; 'ir direito' = 'go straight').Right (as in entitlement or justice, e.g., 'direito humano' = 'human right').Law (as in the field or study, e.g., 'faculdade de direito' = 'law school')."
         }
     },
     {
@@ -3639,12 +3639,12 @@
         "id": "593ededb-06a9-4acb-8e70-a88e1b53c953",
         "port": "mais",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "plus (quantité),plus (addition/maths)",
+            "note": "Plus (covers more and plus, e.g., 'mais importante' = 'plus important'; 'dois mais dois' = 'deux plus deux')."
         },
         "en": {
-            "translation": "more",
-            "note": "todo"
+            "translation": "more, plus",
+            "note": "More (as in comparative or additional, e.g., 'mais importante' = 'more important'; 'mais um' = 'one more').Plus (as in mathematics or addition, e.g., 'dois mais dois' = 'two plus two')."
         }
     },
     {
@@ -5163,12 +5163,12 @@
         "id": "87c78d88-a2b0-4e31-8924-a3af5be9e6eb",
         "port": "grito",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "cri (un cri de douleur)",
+            "note": "Cri (le nom, e.g., 'um grito de dor' = 'un cri de douleur').le verbe est gritar"
         },
         "en": {
             "translation": "cry",
-            "note": "todo"
+            "note": "Shout, cry, or scream (as a noun, e.g., 'um grito de dor' = 'a cry of pain'; 'dar um grito' = 'to let out a shout').I shout (as verb conjugation, e.g., 'eu grito' = 'I shout')."
         }
     },
     {
@@ -5571,12 +5571,12 @@
         "id": "35e845c5-fcf0-454c-be3f-ce19f7b4986c",
         "port": "solo",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "sol(terre), solo(music)",
+            "note": "Sol (le sol lie a la terre, 'solo fértil' = 'sol fertile'; 'no solo' = 'au sol').Solo pour de la music ou une performance, 'solo de guitarra' = 'solo de guitare')."
         },
         "en": {
-            "translation": "ground",
-            "note": "todo"
+            "translation": "ground, soil, solo(music)",
+            "note": "Soil (as in earth or terrain, e.g., 'solo fértil' = 'fertile soil').Ground or floor (as in surface, e.g., 'no solo' = 'on the ground').Solo (as in music or performance, e.g., 'solo de guitarra' = 'guitar solo')."
         }
     },
     {
@@ -5619,12 +5619,12 @@
         "id": "0fa7a98b-494b-4aaf-aaa3-60d93ab8a114",
         "port": "menos",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "moins, sauf",
+            "note": "Moins (as in comparative or subtraction, e.g., 'menos importante' = 'moins important'; 'cinco menos dois' = 'cinq moins deux'). Sauf (as in exclusion, e.g., 'todos menos eu' = 'tout le monde sauf moi')."
         },
         "en": {
-            "translation": "less",
-            "note": "todo"
+            "translation": "less, minus, except",
+            "note": "Less (as in comparative degree, e.g., 'menos importante' = 'less important').Minus (as in mathematics or subtraction, e.g., 'cinco menos dois' = 'five minus two').Except (as in exclusion, e.g., 'todos menos eu' = 'everyone except me')."
         }
     },
     {
@@ -6056,6 +6056,1854 @@
         },
         "en": {
             "translation": "include",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c925772b-d55f-4504-8b6c-40fa1ed5af4e",
+        "port": "sílaba",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "syllable",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a600b1c5-26d9-4684-b4fb-a2e6590f268b",
+        "port": "sentido",
+        "fr": {
+            "translation": "Sens, Ressenti",
+            "note": "Sens (covers sense, meaning, and direction, e.g., 'os cinco sentidos' = 'les cinq sens'; 'no sentido literal' = 'au sens littéral'; 'sentido único' = 'sens unique').Ressenti (as past participle for 'felt,' e.g., 'sentido' = 'ressenti' in emotional contexts)."
+        },
+        "en": {
+            "translation": "sense, direction, felt",
+            "note": "Sense (as in sensory perception or the five senses, e.g., 'os cinco sentidos' = 'the five senses').Meaning or sense (as in significance or interpretation, e.g., 'no sentido literal' = 'in the literal sense').Direction (as in way or orientation, e.g., 'sentido único' = 'one-way' or 'one direction').Felt (as past participle, e.g., 'sentido' = 'felt' in certain constructions)."
+        }
+    },
+    {
+        "id": "4a41f1a5-b27f-4c77-b9f2-e191f88d9521",
+        "port": "bola",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ball",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "dd1069cc-fee9-4f09-9d45-0591c292e719",
+        "port": "onda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wave",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cba3ad98-6583-4820-8b18-1e87f029878b",
+        "port": "coração",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "heart",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ccb3b492-8560-4393-b9ec-6c41a56900ca",
+        "port": "presente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "present",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "052f3955-ebbe-4538-9803-e57f76512377",
+        "port": "pesado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "heavy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "547730d3-3081-4b30-82c0-3923a32394fa",
+        "port": "motor",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "engine",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c00fbdd9-3d6b-47d0-99f5-4fb0e4baca3c",
+        "port": "posição",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "position",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ca96e0f1-ea13-41bb-88b8-46fa70664bf1",
+        "port": "ampla",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wide",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a56b0bd7-0a98-40d7-8865-bf1b07396746",
+        "port": "vela",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sail",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ddeb8451-c7c5-4fed-be5c-fb65392a4194",
+        "port": "floresta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "forest",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c3f19fa9-9e97-4c40-84dc-d6c1e3aa636c",
+        "port": "corrida",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "race",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "50fba84c-f64f-4715-88fe-353c951a6ced",
+        "port": "loja",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "store",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "829838d3-0ecb-43cc-9ac2-6da09e283482",
+        "port": "verão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "summer",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3d913e15-a505-42a0-85b3-3f16bbf6e3f6",
+        "port": "sono",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sleep",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2dbfc54d-b054-4941-96b1-b162fbb38bff",
+        "port": "solitário",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lone",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7f44a9af-06f0-43ca-9928-71ae550e80bb",
+        "port": "exercício",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "exercise",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "146e3638-9898-40e3-ae82-a7449a198c1a",
+        "port": "parede",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wall",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "270c4bd8-d348-4374-af92-5d16235c96e3",
+        "port": "mount",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mount",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "21b23bf5-4247-48fc-8051-63cad8bd270f",
+        "port": "desejo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wish",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "910b2c3f-3767-48ff-a4bb-456f9a2c79f9",
+        "port": "céu",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sky",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5c029838-11d9-40fe-bfdd-523ec284a566",
+        "port": "conselho",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "board",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c02b9369-5295-4c50-bf40-b82d4c40a059",
+        "port": "alegria",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "joy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fdc81346-699f-474b-8029-a2fb6ca1f826",
+        "port": "inverno",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "winter",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f1644f92-a94b-4e99-8abf-c3e77e9c1b05",
+        "port": "selvagem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wild",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ef26cd6a-2d7a-4f56-b3ee-8e4c2f125681",
+        "port": "instrumento",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "instrument",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "480c4eee-b123-478a-b4df-4c8b293aab19",
+        "port": "vidro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "glass",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "90407421-3c94-48fa-9b08-5b8926da8b87",
+        "port": "grama",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "grass",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "24141f3d-c166-4f7b-9484-3c6fafb18adb",
+        "port": "vaca",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cow",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c24f746d-246b-4540-9a2c-f971eb75810e",
+        "port": "borda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "edge",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b60e59d0-7c33-4ffe-afb5-cd7cf93e0bbc",
+        "port": "sinal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sign",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "96e631d6-0340-4bb0-ab3c-a5923d4afe1d",
+        "port": "passado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "past",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2a8f6b26-67b6-4d13-8abb-ff0a0a9c9dd7",
+        "port": "suave",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "soft",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c2bc1eb4-1383-4687-ab8e-ba44ca3ab140",
+        "port": "diversão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fun",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1e01b300-936e-4845-a769-810ae3f6d873",
+        "port": "brilhante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bright",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6c4eb28e-b564-4e13-a589-ac0e004cc4ef",
+        "port": "gás",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "gas",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0173b8a1-0523-46d4-99bc-970d1977e49d",
+        "port": "mês",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "month",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "09216aca-b61d-46d7-8982-8bf561f55869",
+        "port": "milhão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "million",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b3a510a6-1fc9-4545-a246-5c80e42170bb",
+        "port": "flor",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "flower",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2d06bc3b-52cb-43e9-8893-a9cce6e13dda",
+        "port": "vestir",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "clothe",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8c96a561-4e31-4b8d-bb97-2502f15920a1",
+        "port": "estranho",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "strange",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5755c4eb-6169-493c-9eec-a637e65f1c59",
+        "port": "gone",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "gone",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "65ceaae3-a51b-4aa8-a277-ad7b94e867ef",
+        "port": "comércio",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "trade",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3afbeec4-10ac-4978-b8a1-01d469155437",
+        "port": "melodia",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "melody",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "09a67acf-cbb7-48b0-b19f-5f424db01d21",
+        "port": "viagem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "trip",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8899eee1-e539-4f22-92eb-3bdee504ab1a",
+        "port": "escritório",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "office",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5026f5ac-f42b-450b-8549-0807606420c1",
+        "port": "boca",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mouth",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "266a6ef3-628c-4701-9bc1-d77a2ec329e3",
+        "port": "exata",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "exact",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e9f788d4-e9ed-473b-a3a9-d81f1400ca10",
+        "port": "símbolo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "symbol",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "72e61879-1cc1-4823-b0a3-982eb2605a11",
+        "port": "dificuldade",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "trouble",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c936971d-4703-4a2c-8fab-7c8bf3285b94",
+        "port": "exceto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "except",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "572aca5b-8efb-4fd7-896e-0b62cdaf2cbf",
+        "port": "escreveu",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wrote",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9268735e-d6fe-406b-b12a-f62972d2dde3",
+        "port": "semente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "seed",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "39d02caf-c34d-4a36-9c77-fdb6b05fd7c9",
+        "port": "tom",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tone",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e001425d-417e-4b57-8da4-cacf47af015f",
+        "port": "limpo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "clean",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "555e6e45-8d93-4250-b12a-677a4925d37a",
+        "port": "pausa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "break",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "dc382344-cbe5-405f-be55-692fc47cfe2a",
+        "port": "senhora",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lady",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f9ec0496-fa11-407b-bd5d-25f0dcc84683",
+        "port": "quintal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "yard",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "492b614c-2a09-40eb-8a89-8f8d937878a2",
+        "port": "ruim",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bad",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c2930030-73d1-46cf-a1f2-fa91923f850b",
+        "port": "golpe",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "blow",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f8a7e61c-7e2a-4b6c-9da3-877ffc521c83",
+        "port": "óleo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "oil",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4570d6be-18e9-4390-b967-8a244254079a",
+        "port": "sangue",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "blood",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a95b5b69-ae9b-401d-8929-25bb962079c5",
+        "port": "cresceu",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "grew",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2cab67ee-dc58-4483-854f-bd9db70c64e7",
+        "port": "cento",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cent",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "14b229bf-e30f-48f3-b010-af55b0b170bf",
+        "port": "misturar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mix",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ea400714-6eda-4c67-a9ce-16c4be5f3b17",
+        "port": "equipe",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "team",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "57b72001-edd7-448c-879e-c7e492101c05",
+        "port": "fio",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wire",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "db2ca049-a45c-4e44-baa1-466f02e82553",
+        "port": "custo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cost",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0194f5f9-a75d-49d8-8a10-459861b8ec23",
+        "port": "marrom",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "brown",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1c964299-9280-4eb3-8e36-9eceffc7f2fa",
+        "port": "jardim",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "garden",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0faa5ce0-64e2-4da3-b087-588664a2329f",
+        "port": "igual",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "equal",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cf347f80-5003-40a0-bb79-22479af04115",
+        "port": "caiu",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fell",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fbe6ee7a-3daa-40f1-84c9-cb093eef1d6a",
+        "port": "caber",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fit",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "dc888ba3-9cf8-4d35-9b94-3a6f2ccc1644",
+        "port": "fluir",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "flow",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "52120223-064d-44fc-9230-c7ea42f0bb0e",
+        "port": "feira",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fair",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9ab11df5-4a10-408d-a26d-554dd86534a9",
+        "port": "banco",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bank",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9fae1e1f-0008-4d5b-a68e-d410c6149fdb",
+        "port": "controle",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "control",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "75d91498-f666-499b-8087-417e5aef3394",
+        "port": "decimal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "decimal",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ca6a41cf-96b1-4b68-b1fb-a0dbd31d427a",
+        "port": "bastante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "quite",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "45e6620c-f4aa-4cdc-b9ba-61e74569aa81",
+        "port": "quebrado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "broke",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0ff6fd14-6bb3-459d-aee9-5444f1ce6cad",
+        "port": "caso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "case",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d0f9f395-c4f0-4c98-9212-5eb3e4c30ff2",
+        "port": "meio",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "middle",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b1510cae-96be-4ba5-a2c5-2da904696ddd",
+        "port": "matar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "kill",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6e58af3b-e68a-434f-a46b-64dd7f275196",
+        "port": "filho",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "son",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "34c3cc9e-e9a2-4820-988f-657d67314f34",
+        "port": "lago",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lake",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3f852caf-90e5-4df4-9084-858a178d61e5",
+        "port": "momento",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "moment",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c8873d27-e6a5-4b99-9ed6-41da7c2e1497",
+        "port": "escala",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "scale",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "513e488a-072a-4b56-8a73-9ca2f83bbaba",
+        "port": "primavera",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "spring",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cec0ca6c-676b-457a-8db7-78c619fd9e94",
+        "port": "reta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "straight",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fb158726-a013-4cba-8a97-c0eb94277590",
+        "port": "consoante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "consonant",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1c174238-8759-46f1-a9b8-ff62ffd7c896",
+        "port": "nação",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "nation",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b005233c-af45-4542-a414-807c7290608b",
+        "port": "dicionário",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dictionary",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "20c40dda-2fd7-4c87-b6ac-2f8bea7db337",
+        "port": "velocidade",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "speed",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1d76e18e-a574-44a6-9110-992e4490082c",
+        "port": "método",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "method",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "96e9020f-ea76-4980-8eda-1a044e589523",
+        "port": "órgão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "organ",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "12871971-29fa-453e-9d67-3d4f3f3cb3c8",
+        "port": "idade",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "age",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c8158e36-bad1-49d4-bb02-e97eb2c2b21c",
+        "port": "seção",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "section",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "47a028da-842f-47b4-b946-d539ee66066e",
+        "port": "vestido",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dress",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "48bd1f54-682b-4a94-8834-b7a1aff2b08a",
+        "port": "nuvem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cloud",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "34b07a57-bf8e-46f9-9e35-e4d1506b6ff4",
+        "port": "surpresa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "surprise",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a259aba5-96ff-4614-a214-b899ceb7b064",
+        "port": "calma",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "quiet",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3e92bf0d-a02d-43f9-a99e-fb664568622a",
+        "port": "pedra",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "stone",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e6ad0f85-bf18-4fe3-8ccf-a7af080271d1",
+        "port": "minúsculo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tiny",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "572ccfd1-0b34-4f45-b139-88098a8ab6a0",
+        "port": "subida",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "climb",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cf19eb40-8cb9-46bb-a798-378744e58b7f",
+        "port": "legal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cool",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d06b642a-ca3a-43b1-8bf8-71dd96e9dd70",
+        "port": "projeto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "design",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f4b022a9-5146-4f7f-9e49-bc55c8b33689",
+        "port": "pobre",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "poor",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "469928aa-34c4-4903-85fa-7e7386b8146b",
+        "port": "experiência",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "experiment",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "aaa936a9-91cb-4fe4-9cdc-3ed1413ba4cb",
+        "port": "inferior",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bottom",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fe0d67ae-62a8-49a9-9154-c59978d88eee",
+        "port": "ferro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "iron",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a628c1c8-8b74-4953-a427-08871efa499b",
+        "port": "único",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "single",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7d6d2383-1e71-4dfe-93a5-f0415a0f2674",
+        "port": "vara",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "stick",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "189c4014-3639-464a-a29d-847be20a0e7f",
+        "port": "plana",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "flat",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b0363512-f567-4979-8dbd-3836c5930134",
+        "port": "vinte",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "twenty",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "84567e9c-8c49-4803-b5ad-02e06597ca64",
+        "port": "pele",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "skin",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "988eecbc-d1a9-4a32-bc4d-0471de2a4a82",
+        "port": "sorriso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "smile",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7093c113-7287-46e0-a5fb-067066b909f8",
+        "port": "vinco",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "crease",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3ed0ca6d-d68f-4a9f-9d86-9b7789d31ce8",
+        "port": "buraco",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hole",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "478bb8c7-7142-4c9f-be89-34f4a264ada7",
+        "port": "saltar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "jump",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "20ab7c77-21f3-4e95-8247-5f49ba2bc414",
+        "port": "bebê",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "baby",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "939e2887-87c9-43ff-83fb-1fdfef06b7f0",
+        "port": "aldeia",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "village",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c19723e6-e005-4e4f-aca3-80b96c79997b",
+        "port": "raiz",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "root",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "11b19b45-74e9-4575-9238-14e6ea404d55",
+        "port": "se",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "whether",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ccf478c4-10c1-4619-9888-8208a138caf4",
+        "port": "empurre",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "push",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1e0f212a-65a0-4462-ad86-56e9b008dede",
+        "port": "parágrafo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "paragraph",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a2a6deab-4730-461c-81f4-1f96dd9a8293",
+        "port": "terceiro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "third",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4cc08894-16dd-4c2c-a250-bc327fae4701",
+        "port": "held",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "held",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5b9ecdfc-4fdc-4e0f-9bfe-1cb72836a2bc",
+        "port": "cabelo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hair",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2d86d2bd-3087-4cc4-80cb-2f6fb7e8842b",
+        "port": "piso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "floor",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e74c4c6b-2f6f-4515-a8fb-ca59174d80af",
+        "port": "ou",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "either",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "90a8b547-8f08-45ef-a327-5df673cb2527",
+        "port": "resultado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "result",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3b2f61a3-ab94-4690-9b4b-f3e1068412b0",
+        "port": "queimar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "burn",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0a8e4403-c71b-4a2c-9d3e-88a32144178e",
+        "port": "hill",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hill",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9c293366-750d-4896-8aea-0e5fccc5ca1d",
+        "port": "seguro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "safe",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "40e9d90e-79e7-4b7f-9a30-0daee555b4aa",
+        "port": "século",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "century",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "95dcb74b-737b-4b59-a9d3-792416fc703e",
+        "port": "considerar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "consider",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0c2e5727-d62a-48b4-ba84-61ea4f45c443",
+        "port": "tipo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "type",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d046b671-9238-4ee0-b9f7-93a7d8b5683f",
+        "port": "bit",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bit",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5bc87e56-8deb-4d70-a464-18d96626d959",
+        "port": "costa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "coast",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "44c5761f-ce5b-4546-bc54-b13602fed6dc",
+        "port": "cópia",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "copy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0ce8b952-4b4f-4ee4-ae8d-d9c62c7db539",
+        "port": "frase",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "phrase",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b59febb2-7839-4145-b50e-563339b67d9e",
+        "port": "silenciosa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "silent",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d9226b8f-f000-457b-bf71-beac7a066060",
+        "port": "areia",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sand",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "570aed47-c3e7-49ab-b7b2-459d527ff559",
+        "port": "rolo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "roll",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "260abb88-f1c3-47cf-b099-7d2d20861b79",
+        "port": "temperatura",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "temperature",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f172ea15-43eb-436a-a80b-0929d86de03a",
+        "port": "indústria",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "industry",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3d4d3bd8-8003-41d0-ae53-7ffc7a60c02f",
+        "port": "valor",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "value",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "566886cc-6116-4277-9975-fc421bc8d7c4",
+        "port": "luta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fight",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e21d44c0-c435-4144-b05d-65be5e841c1e",
+        "port": "mentira",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lie",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "eed75b32-e924-4e26-8cf4-86faa9b1d8d0",
+        "port": "excitar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "excite",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b8d55020-c410-473b-838d-c93fb07f1950",
+        "port": "naturais",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "natural",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3c267a2f-c808-46a0-a7e5-12acbbf28abc",
+        "port": "vista",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "view",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "27256943-9a94-4e90-ad3c-d2753b433f96",
+        "port": "Capital",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "capital",
             "note": "todo"
         }
     }
