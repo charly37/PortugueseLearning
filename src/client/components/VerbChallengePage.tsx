@@ -6,6 +6,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import TimerIcon from '@mui/icons-material/Timer';
 import InfoIcon from '@mui/icons-material/Info';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
+import WordUsefulnessVote from './WordUsefulnessVote';
 
 interface VerbChallenge {
   id: string;
@@ -14,6 +15,7 @@ interface VerbChallenge {
   en: { translation: string; note: string };
   present: string[];
   source?: 'weakness' | 'random';
+  user_usefulness?: number;
 }
 
 interface AttemptDetail {
@@ -539,6 +541,14 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                       {challenge.fr.note}
                     </Typography>
                   </Box>
+                )}
+
+                {showAnswer && (
+                  <WordUsefulnessVote
+                    challengeId={challenge.id}
+                    currentUsefulness={challenge.user_usefulness}
+                    isGuest={user?.isGuest}
+                  />
                 )}
 
                 {!showAnswer ? (

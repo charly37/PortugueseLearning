@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import User from '../models/User';
 import ChallengeAttempt from '../models/ChallengeAttempt';
+import UserWordVote from '../models/UserWordVote';
 import fs from 'fs';
 import path from 'path';
 
@@ -570,6 +571,78 @@ router.get('/weak-areas', requireAuth, async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Get weak areas error:', error);
     res.status(500).json({ message: 'Server error retrieving weak areas' });
+  }
+});
+
+// Vote on word usefulness (authenticated users only)
+router.post('/vote-usefulness', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const { challengeId, usefulness } = req.body;
+    const userId = req.session.userId;
+
+    // Validate input
+    if (!challengeId || typeof challengeId !== 'string') {
+      return res.status(400).json({ message: 'Invalid challenge ID' });
+    }
+
+    if (!usefulness || ![1, 2, 3].includes(usefulness)) {
+      return res.status(400).json({ message: 'Usefulness must be 1, 2, or 3' });
+    }
+
+    // Upsert the vote (update if exists, create if not)
+    const vote = await UserWordVote.findOneAndUpdate(
+      { userId, challengeId },
+      { 
+        userId, 
+        challengeId, 
+        usefulness,
+        updatedAt: new Date()
+      },
+      { 
+        upsert: true, 
+        new: true,
+        setDefaultsOnInsert: true
+      }
+    );
+
+    res.json({ 
+      message: 'Vote recorded successfully',
+      vote: {
+        challengeId: vote.challengeId,
+        usefulness: vote.usefulness
+      }
+    });
+  } catch (error) {
+    console.error('Vote usefulness error:', error);
+    res.status(500).json({ message: 'Server error recording vote' });
+  }
+});
+
+// Get user's votes for specific challenges
+router.post('/get-votes', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const { challengeIds } = req.body;
+    const userId = req.session.userId;
+
+    if (!Array.isArray(challengeIds)) {
+      return res.status(400).json({ message: 'Challenge IDs must be an array' });
+    }
+
+    const votes = await UserWordVote.find({
+      userId,
+      challengeId: { $in: challengeIds }
+    }).select('challengeId usefulness');
+
+    // Create a map for easy lookup
+    const voteMap: { [key: string]: number } = {};
+    votes.forEach(vote => {
+      voteMap[vote.challengeId] = vote.usefulness;
+    });
+
+    res.json({ votes: voteMap });
+  } catch (error) {
+    console.error('Get votes error:', error);
+    res.status(500).json({ message: 'Server error retrieving votes' });
   }
 });
 

@@ -9,7 +9,8 @@
         "en": {
             "translation": "I wish - if only...",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "79d10b1b-1696-4077-9b08-fd120b721095",
@@ -21,7 +22,8 @@
         "en": {
             "translation": "to move on - to go forward",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "bb495013-5529-463f-8b7c-42055d8c8dcd",
@@ -33,7 +35,8 @@
         "en": {
             "translation": "to find a way - to work it out",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "1247a522-6334-46e2-8a32-576aa35f02e6",
@@ -45,7 +48,8 @@
         "en": {
             "translation": "getting the hang of - mastering",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "309aa3f3-7a58-441d-b804-2baf4ee4c480",
@@ -57,7 +61,8 @@
         "en": {
             "translation": "outdoors - open air",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "25f3242b-89c2-4ad7-a8db-1e828aa6420e",
@@ -69,7 +74,8 @@
         "en": {
             "translation": "it must be - to seem",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "ccb7cd50-896c-4988-99fa-bcecaf28e85f",
@@ -81,7 +87,8 @@
         "en": {
             "translation": "to miss (someone/something)",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "8990f02c-ad63-4dd6-9c67-2b3287dc6807",
@@ -93,7 +100,8 @@
         "en": {
             "translation": "to be missed",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "b2c3d4e5-f6a7-8901-7890-123456789012",
@@ -105,7 +113,8 @@
         "en": {
             "translation": "How are you",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "8c0f4ae7-4136-4105-8a6d-b97a0d06e699",
@@ -117,7 +126,8 @@
         "en": {
             "translation": "whose/from whom",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "c7d8e9f0-a1b2-3456-1234-567890123456",
@@ -129,7 +139,8 @@
         "en": {
             "translation": "Nice to meet you",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "97099832-ae5c-4a16-b843-f6efc5b21b0a",
@@ -141,7 +152,8 @@
         "en": {
             "translation": "to keep - to stay with",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "f545a126-8fbe-4581-b497-64e0427caaa7",
@@ -153,7 +165,8 @@
         "en": {
             "translation": "to keep an eye on - to watch",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "113845fb-35e9-49d3-b437-411a7adc0abc",
@@ -165,6 +178,7 @@
         "en": {
             "translation": "thanks for...",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     }
 ]

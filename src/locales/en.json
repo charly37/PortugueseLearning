@@ -137,6 +137,12 @@
       "title": "Challenge Complete!",
       "finalScore": "Final Score",
       "results": "Results"
+    },
+    "voteUsefulness": {
+      "description": "Optional: Help improve the learning experience by rating this word's usefulness (completely optional, you can skip this)",
+      "notUseful": "Not very useful",
+      "neutral": "Moderately useful",
+      "useful": "Very useful"
     }
   },
   "profile": {

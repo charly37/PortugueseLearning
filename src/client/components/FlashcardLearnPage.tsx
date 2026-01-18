@@ -5,6 +5,7 @@ import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import InfoIcon from '@mui/icons-material/Info';
+import WordUsefulnessVote from './WordUsefulnessVote';
 import './FlashcardLearnPage.css';
 
 interface Challenge {
@@ -13,6 +14,7 @@ interface Challenge {
   fr: { translation: string; note: string };
   en: { translation: string; note: string };
   present?: string[]; // For verbs
+  user_usefulness?: number;
 }
 
 interface User {
@@ -437,6 +439,15 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                     </Typography>
                   </Box>
                 )}
+
+                <Box sx={{ width: '100%', maxWidth: '500px', mt: 2 }}>
+                  <WordUsefulnessVote
+                    challengeId={currentChallenge.id}
+                    currentUsefulness={currentChallenge.user_usefulness}
+                    isGuest={user?.isGuest}
+                  />
+                </Box>
+
                 <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary', mt: 4 }}>
                   <FlipCameraAndroidIcon sx={{ mr: 1 }} />
                   <Typography variant="body2">

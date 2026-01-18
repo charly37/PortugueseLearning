@@ -137,6 +137,12 @@
       "title": "Défi Terminé !",
       "finalScore": "Score Final",
       "results": "Résultats"
+    },
+    "voteUsefulness": {
+      "description": "Optionnel : Aidez à améliorer l'expérience d'apprentissage en notant l'utilité de ce mot (totalement optionnel, vous pouvez ignorer)",
+      "notUseful": "Peu utile",
+      "neutral": "Modérément utile",
+      "useful": "Très utile"
     }
   },
   "profile": {
