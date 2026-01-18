@@ -715,7 +715,7 @@
             "note": "todo"
         },
         "en": {
-            "translation": "between",
+            "translation": "between, among",
             "note": "todo"
         }
     },
@@ -3704,6 +3704,2358 @@
         },
         "en": {
             "translation": "side",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b7bae3b9-df96-4930-9a2e-4c69a3842d4d",
+        "port": "página",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "page",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "86147c89-734e-4026-85ed-802376f7e89b",
+        "port": "planta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "plant",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "eef92ed4-8041-40fb-b6d2-fd0a53adf442",
+        "port": "cobertura",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cover",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f893ee4b-6df3-4147-926f-0786df6df712",
+        "port": "alimentos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "food",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2e5ad7e9-e0f2-43dc-871b-f5510a8523b6",
+        "port": "olho",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "eye",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f27959c3-0f04-441e-bcae-2d14b30d1783",
+        "port": "último",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "last",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "276be18b-6833-40bc-ba05-a3a8f21fdffb",
+        "port": "árvore",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tree",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ee54c4ee-3e98-402d-be53-a27afc184751",
+        "port": "atravessar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cross",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "57724c98-acd5-4d03-a272-d8e8614c8456",
+        "port": "fazenda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "farm",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "02c4d100-e938-42c8-9065-fbd6e0a17502",
+        "port": "história",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "story",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b19bdaef-6574-4798-8b73-e772ea4f28ab",
+        "port": "mar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sea",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1d4ecff9-0009-47d4-81f9-90c4be1bf80b",
+        "port": "esquerda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "left",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2f6ab6db-93f9-4d4b-aa74-f107ab669cb7",
+        "port": "enquanto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "while",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6701cffe-4117-47ae-a4b4-2ba1831ed768",
+        "port": "imprensa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "press",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "65ca7231-b18d-4e40-827b-7ccb8a2a334e",
+        "port": "reais",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "real",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f097f12c-1c30-493d-a6dc-6bda868a40ed",
+        "port": "vida",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "life",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a647a749-9471-4924-87b8-6a66e7cf310c",
+        "port": "poucos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "few",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "05fe7924-2f00-48e7-b73d-952507d3a07c",
+        "port": "norte",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "north",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "612811db-5cea-4cc0-a4fe-9e41f1a29172",
+        "port": "ciência",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "science",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "23d1e879-3833-4016-b8a0-92d95c4679be",
+        "port": "quarto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "room",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "204ef962-a2d7-4121-86f8-998d36687ba1",
+        "port": "idéia",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "idea",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "64834203-b133-401a-b2dc-332ad9b9b113",
+        "port": "montanha",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mountain",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a8934291-2c30-4c95-881c-b375d252994e",
+        "port": "Pare",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "stop",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ec33f402-5daf-49ac-b31a-b06e31985ab5",
+        "port": "uma vez",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "once",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8d51fbb0-4941-4f5d-8b64-243e2b00b0f3",
+        "port": "cavalo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "horse",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "038f06c9-3d30-4066-8c30-ca0e77b15efa",
+        "port": "certo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sure",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c531106c-3af9-489f-9734-380bc6647b31",
+        "port": "cor",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "color",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4462bc16-d9bd-41ae-a2ea-393a3a32f574",
+        "port": "rosto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "face",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "22715de7-eec3-41c7-a161-8c20e016c5a9",
+        "port": "madeira",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wood",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "88c1fa07-788e-4133-9824-223bd1f5c89a",
+        "port": "principal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "main",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "22b0220c-9273-4a58-9cd1-60379f6da479",
+        "port": "aberto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "open",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "dbba559f-86db-43e8-9eaa-21d14091a4b5",
+        "port": "juntos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "together",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "66fcfa35-190c-419f-b7a3-08a6150e482f",
+        "port": "próximo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "next",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "aed937a0-78d6-480f-971c-0b86a4367554",
+        "port": "crianças",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "children",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2fd0373d-4886-4d2f-82d7-2d86380ced65",
+        "port": "início",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "begin",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8983c1f4-1d56-4a4f-8e81-9730b226581f",
+        "port": "exemplo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "example",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "097471ac-bb3f-4d97-9b35-5ac0d7016eaa",
+        "port": "facilidade",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ease",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c1cd3b76-9dee-48b2-8022-0a249c545f95",
+        "port": "grupo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "group",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ea1727fd-a10e-4632-a9cb-3a36a0c47bab",
+        "port": "música",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "music",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b2b2a20f-ddee-406d-a1fd-11ada8eb3dae",
+        "port": "tanto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "both",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1a9a4d09-9726-4f54-9300-9ec9bb00800c",
+        "port": "marca",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mark",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2af8602b-2dee-481a-a08c-520e84b8a6f3",
+        "port": "muitas vezes",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "often",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "650d4c05-e4d3-4b8c-a624-ceda614531b0",
+        "port": "carta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "letter",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "72ac4207-6a8f-4388-bb8b-5c332795a9b8",
+        "port": "até",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "until",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b7dcab91-80f2-4e87-90de-7e05adc86e65",
+        "port": "milha",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mile",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1e0f3800-df46-47bd-acb1-ef8fc2f1a7a6",
+        "port": "rio",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "river",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "36b5b1b4-e49c-456e-b1e6-70fdb0b0a960",
+        "port": "pés",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "feet",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8757aa7e-ec6f-42d4-836d-9e70cbf535f8",
+        "port": "cuidados",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "care",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6a914327-7bca-4316-b174-575716a204b6",
+        "port": "segunda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "second",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "607e3a65-f3b8-471f-b3f4-7dcdcde2dfcc",
+        "port": "suficiente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "enough",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0dacca28-5540-4fc2-a854-201c6a8c57c0",
+        "port": "simples",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "plain, simple",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7128a47d-4658-4728-a403-1ff517bc7e7c",
+        "port": "habitual",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "usual",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c829b29b-ea1d-49f8-9549-8a31af6240e7",
+        "port": "jovem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "young",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "082ea8e9-03d1-4d79-b88e-7e39b028f335",
+        "port": "pronto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ready",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "469dee09-eea8-4e52-af01-3ae76d6edb94",
+        "port": "acima",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "above",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "518f6f25-d3dc-4fc7-805f-77d9681b9743",
+        "port": "lista",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "list",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "103ba396-1cbf-4b54-9447-4089d31c07a1",
+        "port": "embora",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "though",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a09822fa-6e82-4122-b820-9030d54813dc",
+        "port": "Discussão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "talk",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0958351b-af57-4db8-b62f-bebbd4de931f",
+        "port": "pássaro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bird",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f22395aa-a838-4d01-adf9-2c7dc8c7e257",
+        "port": "em breve",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "soon",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c676f08c-bf76-498d-9dd0-85310b5e4bc2",
+        "port": "cão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dog",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d5bc7f07-394f-4e14-97c5-f25752d90fc4",
+        "port": "direto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "direct",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "52ff27b3-7480-4c85-8d89-cad6b7e23677",
+        "port": "canção",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "song",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1c880283-806a-4644-ba15-ac51c3a0028a",
+        "port": "medir",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "measure",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a834ea6d-ea5b-4331-8884-d0480ae1da19",
+        "port": "produto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "product",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1276bf50-f3d3-42ef-bf3d-5d30173b864b",
+        "port": "numeral",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "numeral",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fbdcc6c4-871e-4e75-a5a3-c09dfa2f0879",
+        "port": "classe",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "class",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8992f877-6beb-4687-9a40-94ba573408f0",
+        "port": "vento",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wind",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e4288ab2-3aa4-4c9c-8c6d-6a63082d0a91",
+        "port": "pergunta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "question",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "157f322b-4d59-43a6-a460-a7dad3c21377",
+        "port": "completo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "complete, full",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2a892ea4-f277-4380-9b60-0b222c90f195",
+        "port": "navio",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ship",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0db093ee-898e-4c4d-af59-3ef94bd6e276",
+        "port": "área",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "area",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cbdd6aef-0195-4a42-a59a-0ddd1f06ebab",
+        "port": "metade",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "half",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6869f21f-8641-4457-a6cf-cd2621e7e45a",
+        "port": "rocha",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "rock",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "db358b5b-9819-4c9c-b38c-86b3c23cbc83",
+        "port": "ordem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "order",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5169a254-0891-4e66-b57b-c1da74674709",
+        "port": "fogo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fire",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8382c9cf-f586-4307-acbb-64f8c38569cc",
+        "port": "sul",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "south",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2fa75668-3ea3-4b6c-a806-c68b42d9ce89",
+        "port": "problema",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "problem",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "19073141-9426-4ccb-bd08-e76a5562d2d1",
+        "port": "peça",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "piece",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "50321126-f837-419d-b3e4-2ae11e5db007",
+        "port": "desde",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "since",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ca5029a3-2529-453b-af28-8133707890ac",
+        "port": "topo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "top",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7989a011-0a16-4a92-9cea-9f3419662ad0",
+        "port": "inteiro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "whole",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d53ab3c0-465e-4da8-bdcd-6c97f7712faf",
+        "port": "rei",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "king",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "67cc3711-f8f2-461c-96a5-6c04f6adb84f",
+        "port": "multiplicar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "multiply",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6b993584-04d4-484a-9296-e4db0bae4f05",
+        "port": "nada",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "nothing",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a95e6de0-56b9-413c-887d-cfa86a6bb178",
+        "port": "curso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "course",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b5eb27eb-36e3-48b2-91ec-98cc670b2402",
+        "port": "roda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wheel",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1482595c-edc7-424e-90cc-b771ccf336c1",
+        "port": "força",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "force",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "72945694-f26d-454e-9584-e142d0c8cf03",
+        "port": "objeto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "object",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d5a7597e-d5a6-4d07-9a17-41264c893f2a",
+        "port": "superfície",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "surface",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4f516bbf-d1b2-4d81-9fb8-eda45d1f9803",
+        "port": "profunda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "deep",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b001aa15-7691-48ff-87f6-81b8b84384fe",
+        "port": "ilha",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "island",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a4680c2b-cd4d-44b5-87e4-c9dee1721252",
+        "port": "sistema",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "system",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cbb726f7-7055-4f37-929a-c4f0b33ddd6c",
+        "port": "ocupado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "busy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a79c9c62-18d0-418c-86a4-58af5f821f91",
+        "port": "teste",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "test",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "cf8f7ec6-a9fc-4d36-89fe-7f67dcf8c689",
+        "port": "registro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "record",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fcb3794a-03f3-4f36-bbd5-aa0ea6fce6a5",
+        "port": "barco",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "boat",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4bf8f2d3-def1-480a-b293-900bc62247d1",
+        "port": "comum",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "common",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4d8f4179-860e-4d38-b219-5adfb3ea6dbf",
+        "port": "ouro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "gold",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a4243e7d-1145-422d-b448-7dd35a0ee1cd",
+        "port": "possível",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "possible",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "61e5658a-2326-4eeb-98b3-b01274c03806",
+        "port": "avião",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "plane",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f83ee9ed-09ab-44f1-a2a1-42fb2dbbd045",
+        "port": "seca",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dry",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0fb136e2-f87f-46e9-9cce-1d55ca02e667",
+        "port": "risada",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "laugh",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0ca0e976-509c-4bbd-85ad-d10abd62bab0",
+        "port": "mil",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "thousand",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c93c030e-23a2-4e55-9a27-7e091aae0928",
+        "port": "atrás",
+        "fr": {
+            "translation": "derrière, en arrière, il y a",
+            "note": "Derrière (as in position or location, e.g., 'atrás da casa' = 'derrière la maison'). En arrière (as in direction or returning, e.g., 'olhar para trás' = 'regarder en arrière'). Il y a (in time expressions, e.g., 'dois dias atrás' = 'il y a deux jours')."
+        },
+        "en": {
+            "translation": "behind, back, ago",
+            "note": "Behind (as in position or location, e.g., 'atrás da casa' = 'behind the house'). Back (as in direction or returning, e.g., 'olhar para trás' = 'look back'). Ago (in time expressions, e.g., 'dois dias atrás' = 'two days ago')."
+        }
+    },
+    {
+        "id": "2bafc55c-a38b-4d1e-aa36-130c880fb7ca",
+        "port": "ran",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ran",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "05bed6d3-b90a-4286-bffe-01f46c59ff1a",
+        "port": "verifique",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "check",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d244372f-8a58-41ff-8c6b-196b2efd7ddd",
+        "port": "jogo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "game",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c6f6f58a-fb6a-4b1a-ae52-d8c3293a6bf6",
+        "port": "forma",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "shape",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "228da5a3-b1b2-4006-b5a9-871fd39ae3c6",
+        "port": "senhorita",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "miss",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "bc5e8ec1-528e-4eb1-b212-9cf6242bebd2",
+        "port": "trouxe",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "brought",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3322decd-65f9-4020-aa37-cedf279e62cd",
+        "port": "calor",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "heat",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b680d453-29ae-4f59-940c-05a360a2235e",
+        "port": "neve",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "snow",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "130acce2-7f11-4cea-b301-5494f9571003",
+        "port": "pneu",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tire",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "51f9c1fe-29db-47bc-8bc2-ce9b5f3f8243",
+        "port": "distante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "distant",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c5b8e13e-69ac-4575-ac79-0caed379b956",
+        "port": "preencher",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fill",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4954ee81-ba1b-4c8a-9db1-245bb42df247",
+        "port": "leste",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "east",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "945d8344-d28e-4154-b1bf-eed41bab493f",
+        "port": "pintar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "paint",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ca875c81-f5a4-41af-9072-db5be6817f96",
+        "port": "linguagem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "language",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e22c5b48-7252-4dd4-aa38-adbc1fea9b23",
+        "port": "unidade",
+        "fr": {
+            "translation": "Unité",
+            "note": "Unité (a la fois la notion d unite de mesure et d union, 'unidade de medida' = 'unité de mesure'; 'unidade nacional' = 'unité nationale')."
+        },
+        "en": {
+            "translation": "unit, Unity",
+            "note": "Unit (as in a measurement, organizational division, or single item, e.g., 'unidade de medida' = 'unit of measurement').Unity (as in harmony or togetherness, e.g., 'unidade nacional' = 'national unity')."
+        }
+    },
+    {
+        "id": "cbfa8a12-cbee-42cc-8c88-9045771b534f",
+        "port": "multa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fine",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "87c78d88-a2b0-4e31-8924-a3af5be9e6eb",
+        "port": "grito",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cry",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "26605fcb-d83f-4ea5-a174-8319aa839e46",
+        "port": "escuro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dark",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ff141672-013b-4a59-b343-efc0ef47e7e8",
+        "port": "máquina",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "machine",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6cc949d1-c14b-4164-b9ec-2e02509fbf20",
+        "port": "nota",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "note",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "51545517-f6c9-4d6e-996f-de769b122269",
+        "port": "plano",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "plan",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "9b352171-44cf-4db6-ad58-3d91f2130a60",
+        "port": "figura",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "figure",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "52247c97-f74e-414d-aab7-f5aeee3a9d9f",
+        "port": "estrela",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "star",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f8275a89-d864-4979-bd32-8bf91d60ec0b",
+        "port": "caixa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "box",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3996cc4d-6a47-44e3-8fb0-940a218c3767",
+        "port": "substantivo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "noun",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "25cc7f9b-ad7d-47a4-a9eb-de434c98c0ed",
+        "port": "campo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "field",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fbc69b32-93ba-4c5f-b002-853fe7c425aa",
+        "port": "correto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "correct",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1e3fb6c4-d272-45ba-a243-38bf294ab196",
+        "port": "capaz",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "able",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4ee0edcc-ad53-4558-8586-749ea2a09100",
+        "port": "libra",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pound",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c85dd7cf-97a1-4b80-ab7c-15a67d20d01b",
+        "port": "beleza",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "beauty",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "188dae62-9bee-4f55-b766-63b4c71924c0",
+        "port": "contêm",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "contain",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a28ba803-aeed-44a1-9ab4-9135b9203c6b",
+        "port": "frente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "front",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a326081f-36a2-4b26-9538-4e5b7db5733a",
+        "port": "finais",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "final",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3532a34b-3879-4a17-8270-b9b864fa4f3c",
+        "port": "deu",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "gave",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d7940a67-7856-47d8-bfb7-f59adf8f32ef",
+        "port": "oceano",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ocean",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "eebbf5ea-5e04-4e46-a318-09442f55afec",
+        "port": "livre",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "free",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f747e8de-d943-488b-b2a2-e5be6249454e",
+        "port": "especial",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "special",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c3113625-c937-4a7e-b1fe-1874306d7b1e",
+        "port": "mente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "mind",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f2bebb22-5594-498b-849e-7e3c4030a99c",
+        "port": "claro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "clear",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c9f72993-eac0-4096-9f28-1a46ed66e089",
+        "port": "cauda",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tail",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "420be7a2-c7b6-43c5-b9e9-26f1fde67644",
+        "port": "fato",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fact",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7c606fd1-9d25-4a2f-b154-479fab55a663",
+        "port": "espaço",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "space",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0189cd3f-edf7-46cc-a1b3-15f91e762883",
+        "port": "ouvido",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "heard",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fac920b6-5a98-4bc0-af16-fa881c23a2ad",
+        "port": "melhor",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "best",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f5f4eefa-e8ec-41b3-b6a3-ff4bf239c256",
+        "port": "horas",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hour",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b8c5e53b-1ee5-4ea1-906f-c8d526dd569c",
+        "port": "verdade",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "true",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "81a2fa74-efe3-4056-af49-e4d675079983",
+        "port": "durante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "during",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f83cbd0a-e6a4-4f77-aa0f-e0d48f30dc09",
+        "port": "cem",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hundred",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3c579bc4-8b3a-48cc-9e69-9bed8f4ff0be",
+        "port": "passo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "step",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f7d26e09-24a2-4302-ab02-040292e9a1b8",
+        "port": "oeste",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "west",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "35e845c5-fcf0-454c-be3f-ce19f7b4986c",
+        "port": "solo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ground",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "947a4065-8eb2-4a96-8233-7845fa9444aa",
+        "port": "juros",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "interest",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f2b33fd3-5567-40be-8f38-193b105c95ca",
+        "port": "verbo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "verb",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f59a56d3-27cf-4400-9f2c-4b10c292b2eb",
+        "port": "viagens",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "travel",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0fa7a98b-494b-4aaf-aaa3-60d93ab8a114",
+        "port": "menos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "less",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d814c4bb-d088-46a0-910b-e681ba97f52a",
+        "port": "manhã",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "morning",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "85459bbd-e82a-4856-9a22-3d20b2eddca4",
+        "port": "vários",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "several",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "74b7b1e0-68e9-457f-b51c-a2c518959bff",
+        "port": "vogal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "vowel",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b115d0ef-6dcc-47a9-9be6-f29224bcbf35",
+        "port": "direção",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "toward",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "826c96a2-a886-41c5-aaff-ec6cd1630b8b",
+        "port": "guerra",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "war",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c56ef26b-062a-40cb-8a3a-66ad4e627924",
+        "port": "contra",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "against",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "169407c0-d915-4422-8732-0b65a14f8368",
+        "port": "padrão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pattern",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "57ebafee-bcbc-4313-9204-ac90a3b5a215",
+        "port": "lento",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "slow",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "589f4985-15c8-4c21-80d0-47214f6f1234",
+        "port": "centro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "center",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8f2c8755-4cd2-491d-9171-db2d8216cd30",
+        "port": "amo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "love",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b76e1b36-b552-4c68-bc9a-6af2da545388",
+        "port": "estrada",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "road",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fc908790-6466-4bdc-b344-74d1ddf9476e",
+        "port": "mapa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "map",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "82153ed9-25fe-4808-bb30-5964e82d0deb",
+        "port": "chuva",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "rain",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "75bd8beb-d7d6-402a-9b4a-db18327b3990",
+        "port": "regra",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "rule",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3ac0a0cf-6e80-4599-a647-c75f55551deb",
+        "port": "governar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "govern",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a609f290-5d70-4321-ad7b-5d520b213af8",
+        "port": "aviso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "notice",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "dbeee625-a382-46b3-9a18-458bacb7b30f",
+        "port": "voz",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "voice",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0f44127f-d40f-4acc-9108-fb14254c7de8",
+        "port": "energia",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "energy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e4e12119-8eae-4e47-bcff-c8311fb8960d",
+        "port": "provável",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "probable",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "09a9479d-bc9e-49c8-83ae-f15787829db2",
+        "port": "passeio",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ride",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3638b9db-5837-4412-a5aa-b1650f84ad54",
+        "port": "celular",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cell",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ebaa6b01-9134-44b3-b5d9-8cfa59a297fa",
+        "port": "talvez",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "perhaps",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3c4dae8d-a83c-4018-aba2-0ba2537feac4",
+        "port": "súbita",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sudden",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3597ad94-647b-4ce6-8e19-1198588d26bc",
+        "port": "quadrado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "square",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ad3f77de-e253-45b0-b232-1388edba46c5",
+        "port": "razão",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "reason",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a7e3163b-e7fe-48ce-b917-bbd392c94121",
+        "port": "comprimento",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "length",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "39917f66-aec2-4a4c-a09c-f1ea77c8d59a",
+        "port": "arte",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "art",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8e549460-5d77-4036-a338-de00e131c745",
+        "port": "assunto",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "subject",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6ecdf38d-1531-47f7-831a-0129aeb38e31",
+        "port": "região",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "region",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "0bff2da7-d6cb-48d2-a788-9668c051e7b9",
+        "port": "tamanho",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "size",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7eb703dd-db33-4a88-86ae-a3b48b805a81",
+        "port": "peso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "weight",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c86ce1e8-7094-4c95-afaa-e37b77527b5a",
+        "port": "geral",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "general",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "06564140-94a9-47e4-ba92-9672738ea402",
+        "port": "gelo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ice",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "58c392da-c9b5-42ef-884b-ede8b998faf0",
+        "port": "círculo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "circle",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b6ab8a9c-5854-4756-a968-14c75c74f834",
+        "port": "par",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pair",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "4cef3eb7-9f0b-4cea-b529-0c47708697fb",
+        "port": "incluir",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "include",
             "note": "todo"
         }
     }
