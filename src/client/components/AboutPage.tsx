@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Box, Typography, Paper, Grid, Divider } from '@mui/material';
+import { Container, Box, Typography, Paper, Grid, Divider, Link } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import TranslateIcon from '@mui/icons-material/Translate';
 import SchoolIcon from '@mui/icons-material/School';
@@ -7,6 +7,10 @@ import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CodeIcon from '@mui/icons-material/Code';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import { useTranslation } from 'react-i18next';
 
 const AboutPage: React.FC = () => {
@@ -35,6 +39,72 @@ const AboutPage: React.FC = () => {
             <Typography variant="body1" color="text.secondary" paragraph>
               {t('about.purposeText')}
             </Typography>
+            
+            {/* Personal Project Notice - Integrated */}
+            <Box sx={{ mt: 3, p: 2, bgcolor: 'warning.lighter', borderRadius: 2, border: '1px solid', borderColor: 'warning.light' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                <WarningAmberIcon sx={{ fontSize: 20, color: 'warning.main', mr: 1 }} />
+                <Typography variant="subtitle2" sx={{ fontWeight: 600, color: 'warning.dark' }}>
+                  {t('about.personalProjectTitle')}
+                </Typography>
+              </Box>
+              <Typography variant="body2" color="text.secondary" paragraph sx={{ mb: 1 }}>
+                {t('about.personalProjectText')}
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
+                {t('about.personalProjectNote')}
+              </Typography>
+            </Box>
+          </Paper>
+
+          {/* Open Source Section */}
+          <Paper elevation={2} sx={{ p: 4, mb: 4, bgcolor: 'primary.lighter' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <CodeIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 600 }}>
+                {t('about.openSourceTitle')}
+              </Typography>
+            </Box>
+            <Typography variant="body1" color="text.secondary" paragraph>
+              {t('about.openSourceText')}
+            </Typography>
+            
+            <Box sx={{ mt: 3, p: 2, bgcolor: 'background.paper', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                <GitHubIcon sx={{ fontSize: 24 }} />
+                <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                  GitHub Repository:
+                </Typography>
+              </Box>
+              <Link 
+                href="https://github.com/charly37/PortugueseLearning" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                sx={{ 
+                  fontSize: '1.1rem',
+                  display: 'block',
+                  mb: 2,
+                  wordBreak: 'break-all'
+                }}
+              >
+                https://github.com/charly37/PortugueseLearning
+              </Link>
+              
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, mt: 2 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <FavoriteIcon sx={{ fontSize: 18, color: 'error.main', mr: 1 }} />
+                  <Typography variant="body2" color="text.secondary">
+                    {t('about.githubStar')}
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <InfoIcon sx={{ fontSize: 18, color: 'info.main', mr: 1 }} />
+                  <Typography variant="body2" color="text.secondary">
+                    {t('about.githubIssues')}
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
           </Paper>
 
           {/* Language Options */}

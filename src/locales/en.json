@@ -60,7 +60,14 @@
     "registeredAccountFeatures": "Permanent progress tracking, personalized challenges based on weak areas, detailed statistics and analytics, progress saved forever.",
     "upgradeAnytime": "You can upgrade from a guest account to a registered account at any time, and all your progress will be preserved!",
     "getStartedTitle": "Ready to Start Learning?",
-    "getStartedText": "Choose your learning mode and start mastering Portuguese today!"
+    "getStartedText": "Choose your learning mode and start mastering Portuguese today!",
+    "personalProjectTitle": "Personal Project Notice",
+    "personalProjectText": "This website was built by me as a personal project to help me learn Portuguese from French. It is not a professional service, and I'm continuously improving it. As I add new features and make upgrades, there may occasionally be brief outages or disruptions.",
+    "personalProjectNote": "Thank you for your understanding and patience as I work to make this learning tool better!",
+    "openSourceTitle": "Open Source & Built with AI",
+    "openSourceText": "This project is open source and serves as both a learning tool for Portuguese and an opportunity for me to explore coding with AI assistance. The entire source code is available on GitHub.",
+    "githubStar": "⭐ Star the repository to show your support and appreciation!",
+    "githubIssues": "🐛 Found a bug or have an improvement idea? Open an issue on GitHub - your feedback is valuable!"
   },
   "landing": {
     "welcome": "Welcome",

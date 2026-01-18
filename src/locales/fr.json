@@ -60,7 +60,14 @@
     "registeredAccountFeatures": "Suivi permanent des progrès, défis personnalisés basés sur vos points faibles, statistiques et analyses détaillées, progrès sauvegardés pour toujours.",
     "upgradeAnytime": "Vous pouvez passer d'un compte invité à un compte enregistré à tout moment, et tous vos progrès seront préservés !",
     "getStartedTitle": "Prêt à Commencer l'Apprentissage ?",
-    "getStartedText": "Choisissez votre mode d'apprentissage et commencez à maîtriser le portugais aujourd'hui !"
+    "getStartedText": "Choisissez votre mode d'apprentissage et commencez à maîtriser le portugais aujourd'hui !",
+    "personalProjectTitle": "Projet Personnel",
+    "personalProjectText": "Ce site web a été construit par moi comme un projet personnel pour m'aider à apprendre le portugais depuis le français. Ce n'est pas un service professionnel, et je l'améliore continuellement. Pendant que j'ajoute de nouvelles fonctionnalités et effectue des mises à jour, il peut parfois y avoir de brèves interruptions de service.",
+    "personalProjectNote": "Merci de votre compréhension et de votre patience pendant que je travaille à améliorer cet outil d'apprentissage !",
+    "openSourceTitle": "Open Source & Développé avec l'IA",
+    "openSourceText": "Ce projet est open source et sert à la fois d'outil d'apprentissage du portugais et d'opportunité pour moi d'explorer la programmation avec l'assistance de l'IA. Le code source complet est disponible sur GitHub.",
+    "githubStar": "⭐ Ajoutez une étoile au dépôt pour montrer votre soutien et votre appréciation !",
+    "githubIssues": "🐛 Vous avez trouvé un bug ou avez une idée d'amélioration ? Ouvrez un ticket sur GitHub - vos retours sont précieux !"
   },
   "landing": {
     "welcome": "Bienvenue",
