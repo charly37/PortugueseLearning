@@ -1,5 +1,22 @@
 # Portuguese Learning App - AI Agent Guide
 
+## Documentation Structure
+
+This project follows a **lean README + detailed docs** pattern:
+
+- **[README.md](../README.md)**: Short overview (~30 lines) with Quick Start + features + links to docs
+- **[docs/](../docs/)**: All detailed documentation organized by topic:
+  - `SETUP.md` - Installation, environment setup, MongoDB Atlas, scripts
+  - `design.md` - Architecture, features, project structure
+  - `TESTING.md` - Playwright setup, test patterns
+  - `DEPLOYMENT.md` - Docker, CI/CD, deployment scripts
+  - `AUTHENTICATION_SETUP.md` - User auth implementation
+  - `HTTPS_SETUP.md` - SSL certificate setup
+  - `PROGRESS_TRACKING.md` - Development milestones
+  - `TODO.md` - Planned improvements and known issues
+
+**When documenting**: Keep README minimal. Add detailed content to appropriate topic-specific doc file in `docs/`. Never duplicate content between README and docs.
+
 ## Architecture Overview
 
 Full-stack Portuguese language learning application with **separated build systems**:

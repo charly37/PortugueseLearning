@@ -1,329 +1,39 @@
 # Portuguese Learning Website
 
-A full-stack web application built with Express.js, TypeScript, and Material-UI.
+A full-stack Portuguese language learning application with Express.js, TypeScript, React, and Material-UI.
 
-## Documentation
-
-All detailed documentation is located in the [`docs/`](docs/) folder:
-
-- **[Design Documentation](docs/design.md)** - Architecture and design decisions
-- **[Authentication Setup](docs/AUTHENTICATION_SETUP.md)** - User authentication implementation
-- **[Testing Guide](docs/TESTING.md)** - Playwright testing setup and usage
-- **[Deployment Guide](docs/DEPLOYMENT.md)** - Docker and CI/CD deployment
-- **[HTTPS Setup](docs/HTTPS_SETUP.md)** - SSL certificate configuration with Let's Encrypt
-- **[Progress Tracking](docs/PROGRESS_TRACKING.md)** - Development progress and milestones
-
-## Features
-
-- **Internationalization (i18n)**: Full support for French and English with real-time language switching
-- **Three Learning Modes**: Practice (endless), Challenge (timed with scoring), and Learn (flashcards)
-- **Challenge Statistics**: Detailed statistics dashboard with weak areas analysis and performance tracking
-- **Three Challenge Types**: Word, Verb, and Idiom challenges with hundreds of Portuguese learning materials
-- Express.js backend with TypeScript
-- React frontend with Material-UI components
-- User authentication with registration and login
-- MongoDB Atlas integration for user data storage
-- Session management with secure cookies
-- Progress tracking system with gamification (points, levels, streaks)
-- Development and production build configurations
-- Hot reload for development
-- Automated UI testing with Playwright
-- Docker containerization with CI/CD pipeline
-
-## Prerequisites
-
-- Node.js (v18 or higher)
-- npm or yarn
-- MongoDB Atlas account (free tier available at [mongodb.com](https://www.mongodb.com/cloud/atlas))
-
-## Installation
+## Quick Start
 
 ```bash
-# Install project dependencies
 npm install
-
-# Install Playwright browsers and system dependencies (required for testing)
-npx playwright install --with-deps chromium
-```
-
-## Environment Setup
-
-1. Copy the `.env.example` file to create a `.env` file:
-
-```bash
-cp .env.example .env
-```
-
-2. Update the `.env` file with your MongoDB Atlas credentials:
-
-```env
-MONGODB_URI=mongodb+srv://<db_username>:<db_password>@cluster0.kn6sc.mongodb.net/?appName=Cluster0
-SESSION_SECRET=your-secret-key-change-in-production
-NODE_ENV=development
-PORT=3000
-```
-
-Replace `<db_username>` and `<db_password>` with your actual MongoDB Atlas credentials.
-
-### MongoDB Atlas Setup
-
-1. Go to [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-2. Create a free account or sign in
-3. Create a new cluster (free tier is sufficient)
-4. Create a database user with username and password
-5. Add your IP address to the IP whitelist (or allow access from anywhere for development: 0.0.0.0/0)
-6. Get your connection string from the "Connect" button
-7. Replace `<db_username>` and `<db_password>` in your `.env` file
-
-## Development
-
-Run both the server and client in development mode:
-
-```bash
 npm run dev
 ```
 
-- Backend server runs on: http://localhost:3000
-- Frontend dev server runs on: http://localhost:8080
+Visit http://localhost:8080 to start learning Portuguese!
 
-## Learning Modes
+## Features
 
-The application offers three distinct learning modes for each challenge type (Word, Verb, Idiom):
+- **Three Learning Modes**: Practice, Challenge, and Learn (flashcards)
+- **Three Challenge Types**: Word translations, Verb conjugations, and Idiom expressions
+- **Internationalization**: Full support for French and English
+- **Progress Tracking**: Points, levels, streaks, and personalized statistics
+- **Weakness Analysis**: AI-powered recommendations for areas to improve
+- User authentication and session management
+- Mobile-responsive Material-UI interface
 
-### 1. Learn Mode (Flashcards)
-- Browse all available challenges in flashcard format
-- Interactive flip animation to reveal translations and notes
-- Navigation controls (previous/next)
-- Shuffle feature for randomized learning
-- No pressure, self-paced learning
-- Perfect for first-time learners and review
+## Documentation
 
-### 2. Practice Mode
-- Endless practice with immediate feedback
-- No time limits or scoring
-- Type your answers and get instant corrections
-- Great for reinforcing knowledge without pressure
+Comprehensive documentation is available in the [`docs/`](docs/) folder:
 
-### 3. Challenge Mode
-- Timed challenges with configurable difficulty
-- Select number of turns (questions)
-- Tracks performance and scores
-- Results recorded to database for logged-in users
-- Earn points and level up
-- View detailed statistics and weak areas
+- **[Setup Guide](docs/SETUP.md)** - Installation, environment setup, and getting started
+- **[Design Documentation](docs/design.md)** - Architecture, features, and project structure
+- **[Testing Guide](docs/TESTING.md)** - Playwright testing setup and usage
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Docker and CI/CD deployment
+- **[Authentication Setup](docs/AUTHENTICATION_SETUP.md)** - User authentication implementation
+- **[HTTPS Setup](docs/HTTPS_SETUP.md)** - SSL certificate configuration
+- **[Progress Tracking](docs/PROGRESS_TRACKING.md)** - Development progress and milestones
+- **[TODO List](docs/TODO.md)** - Planned improvements and known issues
 
-## Internationalization
+## Contributing
 
-The application supports multiple languages:
-
-- **French (Français)**: Default language
-- **English**: Available via language toggle
-
-Users can switch between languages at any time using the language selector on the landing page. Language preference is:
-- Saved to user account (for logged-in users)
-- Stored in localStorage (persists across sessions)
-- Applied to all UI elements, instructions, and buttons
-
-## Production Build
-
-Build both server and client:
-
-```bash
-npm run build
-```
-
-Start the production server:
-
-```bash
-npm start
-```
-
-## Project Structure
-
-```
-├── src/
-│   ├── server.ts          # Express.js server
-│   ├── i18n.ts            # i18next configuration
-│   ├── config/
-│   │   └── database.ts    # MongoDB connection
-│   ├── locales/           # Translation files
-│   │   ├── en.json        # English translations
-│   │   └── fr.json        # French translations
-│   ├── models/
-│   │   ├── User.ts        # User model with preferredLanguage
-│   │   └── ChallengeAttempt.ts  # Challenge attempt tracking
-│   ├── routes/
-│   │   ├── auth.ts        # Authentication routes
-│   │   └── challenge.ts   # Challenge and stats routes
-│   └── client/            # React frontend
-│       ├── index.tsx      # React entry point
-│       ├── App.tsx        # Main App component with auth state
-│       ├── components/
-│       │   ├── LoginPage.tsx           # Login page
-│       │   ├── RegisterPage.tsx        # Registration page
-│       │   ├── LandingPage.tsx         # Home page with language selector
-│       │   ├── ChallengePage.tsx       # Word challenges
-│       │   ├── VerbChallengePage.tsx   # Verb challenges
-│       │   ├── IdiomChallengePage.tsx  # Idiom challenges
-│       │   ├── FlashcardLearnPage.tsx  # Learn mode (flashcards)
-│       │   ├── ChallengeStatsPage.tsx  # Statistics dashboard
-│       │   └── ProfilePage.tsx         # User profile
-│       └── index.html     # HTML template
-├── data/                  # Challenge data
-├── dist/                  # Compiled server code
-├── public/                # Built client assets
-├── .env                   # Environment variables (not in git)
-├── .env.example           # Environment template
-├── package.json
-├── tsconfig.json          # TypeScript config for client
-├── tsconfig.server.json   # TypeScript config for server
-└── webpack.config.js      # Webpack configuration
-```
-
-## Testing
-
-The project includes comprehensive UI testing with Playwright covering all challenge types.
-
-### Running Tests
-
-```bash
-# Run tests in headless mode
-npm test
-
-# Run tests with visible browser
-npm run test:headed
-
-# Open Playwright UI for interactive testing
-npm run test:ui
-
-# View test report
-npm run test:report
-```
-
-### Test Coverage
-
-- Landing page navigation (3 tests)
-- Word challenge functionality (6 tests)
-- Verb challenge functionality (6 tests)
-- Idiom challenge functionality (6 tests)
-
-All tests run automatically in the CI/CD pipeline before building and deploying the Docker container.
-
-## Docker Deployment
-
-### Building and Running with Docker
-
-```bash
-# Build the Docker image
-docker build -t portuguese-learning .
-
-# Run the container (requires environment variables)
-docker run -d \
-  --name portuguese-learning-app \
-  -p 3000:3000 \
-  -e MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.mongodb.net/portuguese-learning" \
-  -e SESSION_SECRET="your-secure-random-secret" \
-  portuguese-learning:latest
-```
-
-### Automated Deployment Script
-
-The project includes a deployment script that pulls the latest Docker image and starts the application:
-
-```bash
-# Set required environment variables first
-export MONGODB_URI="mongodb+srv://<username>:<password>@cluster0.mongodb.net/portuguese-learning"
-export SESSION_SECRET="your-secure-random-secret"
-
-# Run the deployment script
-./deploy.sh
-```
-
-**Important:** The deployment script requires `MONGODB_URI` and `SESSION_SECRET` environment variables to be set before running. The script will check for these variables and fail with a helpful error message if they're missing.
-
-### Docker Compose (with MongoDB)
-
-Alternatively, use Docker Compose to run both the application and MongoDB locally:
-
-```bash
-# Start both services
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop services
-docker-compose down
-```
-
-## Available Scripts
-
-- `npm run dev` - Run both server and client in development mode
-- `npm run dev:server` - Run only the server in development mode
-- `npm run dev:client` - Run only the client in development mode
-- `npm run build` - Build both server and client for production
-- `npm run build:server` - Build only the server
-- `npm run build:client` - Build only the client
-- `npm start` - Start the production server
-- `npm test` - Run Playwright tests in headless mode
-- `npm run test:headed` - Run tests with visible browser
-- `npm run test:ui` - Open Playwright UI for interactive testing
-- `npm run test:report` - View the latest test report
-
-## TODO
-
-### Implement TTL Index for Challenge Attempts Cleanup
-
-To prevent unbounded growth of the `challengeattempts` collection, implement MongoDB TTL (Time To Live) indexing:
-
-**Why:** Without cleanup, the `challengeattempts` collection will grow indefinitely as users practice challenges.
-
-**Solution:** Create a TTL index to automatically delete attempts older than 90 days:
-
-```javascript
-// Run once in MongoDB shell or via Node.js startup script
-db.challengeattempts.createIndex(
-  { "attemptedAt": 1 },
-  { expireAfterSeconds: 7776000 }  // 90 days = 7,776,000 seconds
-)
-```
-
-**Implementation options:**
-1. Add to a database initialization script
-2. Run manually via MongoDB shell
-3. Add to Node.js server startup (check if index exists, create if not)
-
-**Benefits:**
-- Automatic cleanup (no maintenance needed)
-- Keeps 90 days of data (sufficient for weakness analysis in [`analytics/`](analytics/))
-- Bounded storage growth
-- No impact on user documents (they stay small)
-
-## TODO
-
-### Implement TTL Index for Challenge Attempts Cleanup
-
-To prevent unbounded growth of the `challengeattempts` collection, implement MongoDB TTL (Time To Live) indexing:
-
-**Why:** Without cleanup, the `challengeattempts` collection will grow indefinitely as users practice challenges.
-
-**Solution:** Create a TTL index to automatically delete attempts older than 90 days:
-
-```javascript
-// Run once in MongoDB shell or via Node.js startup script
-db.challengeattempts.createIndex(
-  { "attemptedAt": 1 },
-  { expireAfterSeconds: 7776000 }  // 90 days = 7,776,000 seconds
-)
-```
-
-**Implementation options:**
-1. Add to a database initialization script
-2. Run manually via MongoDB shell
-3. Add to Node.js server startup (check if index exists, create if not)
-
-**Benefits:**
-- Automatic cleanup (no maintenance needed)
-- Keeps 90 days of data (sufficient for weakness analysis in [`analytics/`](analytics/))
-- Bounded storage growth
-- No impact on user documents (they stay small)
+See individual documentation files for development guidelines. Bug reports and pull requests are welcome!

@@ -56,6 +56,54 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 - Common Portuguese expressions and idioms
 - Cultural context and usage notes
 
+## Project Structure
+
+```
+├── src/
+│   ├── server.ts          # Express.js server
+│   ├── i18n.ts            # i18next configuration
+│   ├── config/
+│   │   └── database.ts    # MongoDB connection
+│   ├── locales/           # Translation files
+│   │   ├── en.json        # English translations
+│   │   └── fr.json        # French translations
+│   ├── models/
+│   │   ├── User.ts        # User model with preferredLanguage
+│   │   ├── ChallengeAttempt.ts  # Challenge attempt tracking
+│   │   └── UserWordVote.ts      # User word usefulness votes
+│   ├── routes/
+│   │   ├── auth.ts        # Authentication routes
+│   │   └── challenge.ts   # Challenge and stats routes
+│   └── client/            # React frontend
+│       ├── index.tsx      # React entry point
+│       ├── App.tsx        # Main App component with auth state
+│       ├── components/
+│       │   ├── LoginPage.tsx           # Login page
+│       │   ├── RegisterPage.tsx        # Registration page
+│       │   ├── LandingPage.tsx         # Home page with language selector
+│       │   ├── ChallengePage.tsx       # Word challenges
+│       │   ├── VerbChallengePage.tsx   # Verb challenges
+│       │   ├── IdiomChallengePage.tsx  # Idiom challenges
+│       │   ├── FlashcardLearnPage.tsx  # Learn mode (flashcards)
+│       │   ├── ChallengeStatsPage.tsx  # Statistics dashboard
+│       │   ├── ProfilePage.tsx         # User profile
+│       │   └── WordUsefulnessVote.tsx  # Word usefulness voting
+│       └── index.html     # HTML template
+├── analytics/             # Python analytics service
+├── data/                  # Challenge data (JSON files)
+├── docs/                  # Documentation
+├── nginx/                 # Nginx configuration
+├── tests/                 # Playwright E2E tests
+├── dist/                  # Compiled server code
+├── public/                # Built client assets
+├── .env                   # Environment variables (not in git)
+├── .env.example           # Environment template
+├── package.json
+├── tsconfig.json          # TypeScript config for client
+├── tsconfig.server.json   # TypeScript config for server
+└── webpack.config.js      # Webpack configuration
+```
+
 ## Container Architecture
 
 ```
