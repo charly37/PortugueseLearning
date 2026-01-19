@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider, Slider } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider, Slider, Switch, FormControlLabel } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -15,6 +15,8 @@ interface Challenge {
   en: { translation: string; note: string };
   source?: 'weakness' | 'random';
   user_usefulness?: number;
+  options?: string[];  // For multiple-choice mode
+  distractors?: string[];  // Wrong answers
 }
 
 interface AttemptDetail {
@@ -31,6 +33,7 @@ interface User {
   email?: string;
   isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
+  mobileFriendly?: boolean;
 }
 
 interface ChallengePageProps {
@@ -58,6 +61,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const [attemptHistory, setAttemptHistory] = useState<AttemptDetail[]>([]);
   const [maxTurns, setMaxTurns] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
+  const [mobileFriendly, setMobileFriendly] = useState<boolean>(user?.mobileFriendly || false);
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const [generatedChallenges, setGeneratedChallenges] = useState<Challenge[]>([]);
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
@@ -66,6 +70,13 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   // Get user's preferred language or default to 'fr'
   const preferredLanguage = user?.preferredLanguage || 
     (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
+
+  // Update mobileFriendly when user changes (e.g., after guest creation)
+  useEffect(() => {
+    if (user?.mobileFriendly !== undefined) {
+      setMobileFriendly(user.mobileFriendly);
+    }
+  }, [user?.mobileFriendly]);
 
   const generateChallengeSet = async () => {
     setLoading(true);
@@ -79,7 +90,8 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         body: JSON.stringify({
           challengeType: 'word',
           totalTurns: maxTurns,
-          weaknessWeight: weaknessWeight
+          weaknessWeight: weaknessWeight,
+          mobileFriendly: mobileFriendly
         })
       });
       if (!response.ok) {
@@ -346,6 +358,27 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                     0 = random words, 10 = focus on your weak areas
                   </Typography>
                 </Box>
+                <Box sx={{ mb: 3 }}>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        checked={mobileFriendly}
+                        onChange={(e) => setMobileFriendly(e.target.checked)}
+                        color="primary"
+                      />
+                    }
+                    label={
+                      <Box>
+                        <Typography variant="body2">
+                          {t('common.mobileFriendly')}
+                        </Typography>
+                        <Typography variant="caption" color="text.secondary">
+                          {t('common.mobileFriendlyHelper')}
+                        </Typography>
+                      </Box>
+                    }
+                  />
+                </Box>
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   <Button
                     variant="outlined"
@@ -494,17 +527,90 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                   </Typography>
                 </Box>
                 
-                <TextField
-                  fullWidth
-                  label={t('common.yourAnswer')}
-                  variant="outlined"
-                  value={userAnswer}
-                  onChange={(e) => setUserAnswer(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  disabled={showAnswer}
-                  inputRef={inputRef}
-                  sx={{ mb: 2 }}
-                />
+                {mobileFriendly && challenge.options ? (
+                  <Box sx={{ mb: 2 }}>
+                    {challenge.options.map((option, index) => (
+                      <Button
+                        key={index}
+                        fullWidth
+                        variant={userAnswer === option ? "contained" : "outlined"}
+                        color={userAnswer === option ? "primary" : "inherit"}
+                        size="large"
+                        onClick={() => {
+                          if (!showAnswer) {
+                            setUserAnswer(option);
+                            // Use setTimeout with 0ms to ensure state update, then validate with option value
+                            setTimeout(() => {
+                              if (!showAnswer && challenge) {
+                                // Manually validate using the option value directly
+                                const normalizedAnswer = normalizeString(option);
+                                const normalizedCorrect = normalizeString(challenge.port);
+                                const isCorrect = normalizedAnswer === normalizedCorrect;
+                                const timeSpent = Date.now() - startTime;
+
+                                if (isCorrect) {
+                                  setFeedback({ type: 'success', message: `${t('challenge.correct')} ${challenge.port}` });
+                                  setShowAnswer(true);
+                                } else {
+                                  setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}` });
+                                  setShowAnswer(true);
+                                }
+
+                                // Submit attempt
+                                submitChallengeAttempt(
+                                  challenge.id,
+                                  'word',
+                                  isCorrect,
+                                  option,
+                                  challenge.port,
+                                  timeSpent
+                                );
+
+                                if (isCorrect) {
+                                  setCorrectCount(prev => prev + 1);
+                                } else {
+                                  setIncorrectCount(prev => prev + 1);
+                                }
+
+                                setTurnCount(prev => prev + 1);
+                                setAttemptHistory(prev => [{
+                                  challengeId: challenge.port,
+                                  userAnswer: option,
+                                  correctAnswer: challenge.port,
+                                  correct: isCorrect,
+                                  timeSpent
+                                }, ...prev]);
+                              }
+                            }, 300);
+                          }
+                        }}
+                        disabled={showAnswer}
+                        sx={{ 
+                          mb: 1.5, 
+                          justifyContent: 'flex-start',
+                          textAlign: 'left',
+                          py: 2,
+                          textTransform: 'none',
+                          fontSize: '1rem'
+                        }}
+                      >
+                        {option}
+                      </Button>
+                    ))}
+                  </Box>
+                ) : (
+                  <TextField
+                    fullWidth
+                    label={t('common.yourAnswer')}
+                    variant="outlined"
+                    value={userAnswer}
+                    onChange={(e) => setUserAnswer(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    disabled={showAnswer}
+                    inputRef={inputRef}
+                    sx={{ mb: 2 }}
+                  />
+                )}
 
                 {feedback && (
                   <Alert severity={feedback.type} sx={{ mb: 2 }}>
@@ -533,16 +639,18 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                 )}
 
                 {!showAnswer ? (
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    fullWidth
-                    size="large"
-                    onClick={checkAnswer}
-                    disabled={!userAnswer.trim()}
-                  >
-                    {t('common.checkAnswer')}
-                  </Button>
+                  !mobileFriendly && (
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      fullWidth
+                      size="large"
+                      onClick={checkAnswer}
+                      disabled={!userAnswer.trim()}
+                    >
+                      {t('common.checkAnswer')}
+                    </Button>
+                  )
                 ) : (
                   <Button
                     variant="contained"

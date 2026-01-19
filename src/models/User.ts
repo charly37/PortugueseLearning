@@ -39,6 +39,7 @@ export interface IUser extends Document {
   guestExpiresAt?: Date;  // Auto-delete date for guest users
   createdAt: Date;
   preferredLanguage: 'fr' | 'en';
+  mobileFriendly: boolean;
   progress: {
     word: ChallengeProgress;
     idiom: ChallengeProgress;
@@ -89,6 +90,10 @@ const userSchema = new Schema<IUser>({
     type: String,
     enum: ['fr', 'en'],
     default: 'fr'
+  },
+  mobileFriendly: {
+    type: Boolean,
+    default: false
   },
   progress: {
     word: {

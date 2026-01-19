@@ -72,6 +72,7 @@ interface User {
   isGuest?: boolean;  // Guest user flag
   guestExpiresAt?: string;  // Expiration date for guest users
   preferredLanguage?: 'fr' | 'en';
+  mobileFriendly?: boolean;
   createdAt?: string;
 }
 
@@ -314,7 +315,11 @@ const App: React.FC = () => {
           <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'profile' && user && (
-          <ProfilePage user={user} onBackHome={() => setCurrentPage('landing')} />
+          <ProfilePage 
+            user={user} 
+            onBackHome={() => setCurrentPage('landing')} 
+            onUserUpdate={(updatedUser) => setUser(updatedUser)}
+          />
         )}
         {currentPage === 'profile' && !user && (
           <LoginPage

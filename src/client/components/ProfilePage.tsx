@@ -16,7 +16,9 @@ import {
   ToggleButtonGroup,
   ToggleButton,
   Alert,
-  Snackbar
+  Snackbar,
+  Switch,
+  FormControlLabel
 } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
@@ -33,6 +35,7 @@ interface User {
   email?: string;
   isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
+  mobileFriendly?: boolean;
   createdAt?: string;
   totalScore?: number;
   level?: number;
@@ -58,13 +61,15 @@ interface Progress {
 interface ProfilePageProps {
   user: User | null;
   onBackHome: () => void;
+  onUserUpdate?: (user: User) => void;
 }
 
-const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
+const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdate }) => {
   const { t } = useTranslation();
   const [progress, setProgress] = useState<Progress | null>(null);
   const [loading, setLoading] = useState(true);
   const [preferredLanguage, setPreferredLanguage] = useState<'fr' | 'en'>(user?.preferredLanguage || 'fr');
+  const [mobileFriendly, setMobileFriendly] = useState<boolean>(user?.mobileFriendly || false);
   const [updateSuccess, setUpdateSuccess] = useState(false);
 
   useEffect(() => {
@@ -88,6 +93,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
     if (user) {
       fetchProgress();
       setPreferredLanguage(user.preferredLanguage || 'fr');
+      setMobileFriendly(user.mobileFriendly || false);
     }
   }, [user]);
 
@@ -106,10 +112,40 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
       });
 
       if (response.ok) {
+        const data = await response.json();
         setUpdateSuccess(true);
+        // Update the user in parent component
+        if (onUserUpdate && data.user) {
+          onUserUpdate(data.user);
+        }
       }
     } catch (error) {
       console.error('Failed to update language preference:', error);
+    }
+  };
+
+  const handleMobileFriendlyChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.checked;
+    setMobileFriendly(newValue);
+
+    try {
+      const response = await fetch('/api/auth/update-mobile-friendly', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ mobileFriendly: newValue })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setUpdateSuccess(true);
+        // Update the user in parent component
+        if (onUserUpdate && data.user) {
+          onUserUpdate(data.user);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to update mobile-friendly preference:', error);
     }
   };
 
@@ -371,6 +407,33 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome }) => {
                   🇬🇧 English
                 </ToggleButton>
               </ToggleButtonGroup>
+            </Paper>
+
+            <Paper
+              variant="outlined"
+              sx={{
+                p: 2,
+              }}
+            >
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={mobileFriendly}
+                    onChange={handleMobileFriendlyChange}
+                    color="primary"
+                  />
+                }
+                label={
+                  <Box>
+                    <Typography variant="body1" fontWeight="medium">
+                      {t('profile.mobileFriendly')}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {t('profile.mobileFriendlyDescription')}
+                    </Typography>
+                  </Box>
+                }
+              />
             </Paper>
           </Stack>
 

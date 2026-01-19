@@ -25,7 +25,9 @@
     "numberOfCards": "Nombre de cartes",
     "numberOfCardsHelper": "Choisissez entre 10 et 50 cartes",
     "configureChallenge": "Configurer le Défi",
-    "or": "ou"
+    "or": "ou",
+    "mobileFriendly": "Mode Mobile",
+    "mobileFriendlyHelper": "Afficher des choix multiples au lieu de taper (plus facile sur mobile). Peut aussi être configuré dans votre profil."
   },
   "guest": {
     "banner": "Vous êtes en Mode Invité. Vos progrès sont sauvegardés temporairement.",
@@ -158,6 +160,8 @@
     "email": "Email",
     "createdOn": "Créé le",
     "preferredLanguage": "Langue Préférée",
+    "mobileFriendly": "Mode Mobile",
+    "mobileFriendlyDescription": "Utiliser le choix multiple au lieu de taper",
     "statistics": "Statistiques des Défis",
     "wordChallenges": "Défis de Vocabulaire",
     "verbChallenges": "Défis de Verbes",

@@ -30,6 +30,18 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
+// Helper function to generate distractors (wrong answers) for multiple-choice mode
+function generateDistractors(correctChallenge: any, allChallenges: any[], count: number = 3): string[] {
+  // Filter out the correct challenge and get potential distractors
+  const potentialDistractors = allChallenges.filter(c => c.id !== correctChallenge.id);
+  
+  // Randomly select distractors
+  const selectedDistractors = shuffleArray(potentialDistractors).slice(0, count);
+  
+  // Return Portuguese words as distractors
+  return selectedDistractors.map(d => d.port);
+}
+
 // TODO: Future enhancement - track flashcard views to distinguish "studied but not tested" from "never seen" content
 
 // Generate a personalized challenge set for learning mode (flashcards)
@@ -176,7 +188,7 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
 // Generate a personalized challenge set
 router.post('/generate', requireAuth, async (req: Request, res: Response) => {
   try {
-    const { challengeType, totalTurns = 10, weaknessWeight = 0.5 } = req.body;
+    const { challengeType, totalTurns = 10, weaknessWeight = 0.5, mobileFriendly = false } = req.body;
     const userId = req.session.userId;
 
     // Validate input
@@ -190,6 +202,10 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
 
     if (weaknessWeight < 0 || weaknessWeight > 1) {
       return res.status(400).json({ message: 'Weakness weight must be between 0 and 1' });
+    }
+    
+    if (typeof mobileFriendly !== 'boolean') {
+      return res.status(400).json({ message: 'Mobile-friendly must be a boolean' });
     }
 
     // Get all challenges for the type
@@ -214,6 +230,9 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
     // Get user's pre-computed weaknesses from User model
     const user = await User.findById(userId);
     let weakChallengeIds = new Set<string>();
+    
+    // Get user's preferred language for distractors
+    const preferredLanguage = user?.preferredLanguage || 'fr';
 
     // Use pre-computed weaknesses if available (these are statistically significant: >=3 attempts, <50% accuracy)
     if (user?.weaknesses?.weakWords && user.weaknesses.weakWords.length > 0) {
@@ -294,7 +313,24 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
     const selectedOther = shuffleArray(otherChallengesList).slice(0, otherCount).map(c => ({ ...c, source: 'random' }));
 
     // Combine and shuffle
-    const finalChallenges = shuffleArray([...selectedWeak, ...selectedOther]);
+    let finalChallenges = shuffleArray([...selectedWeak, ...selectedOther]);
+    
+    // Add distractors for mobile-friendly mode
+    if (mobileFriendly) {
+      finalChallenges = finalChallenges.map(challenge => {
+        const distractors = generateDistractors(challenge, allChallenges, 3);
+        const correctAnswer = challenge.port; // Portuguese word is the correct answer
+        
+        // Combine correct answer with distractors and shuffle
+        const options = shuffleArray([correctAnswer, ...distractors]);
+        
+        return {
+          ...challenge,
+          distractors,
+          options
+        };
+      });
+    }
 
     res.json({
       challengeType,
@@ -305,7 +341,8 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
         randomChallenges: selectedOther.length,
         weaknessWeight: weaknessWeight,
         availableWeak: weakChallengesList.length,
-        availableTotal: allChallenges.length
+        availableTotal: allChallenges.length,
+        mobileFriendly
       }
     });
   } catch (error) {

@@ -25,7 +25,9 @@
     "numberOfCards": "Number of flashcards",
     "numberOfCardsHelper": "Choose between 10 and 50 cards",
     "configureChallenge": "Configure Challenge",
-    "or": "or"
+    "or": "or",
+    "mobileFriendly": "Mobile Friendly",
+    "mobileFriendlyHelper": "Show multiple-choice options instead of typing (easier on mobile devices). Can also be set in your profile."
   },
   "guest": {
     "banner": "You're in Guest Mode. Your progress is saved temporarily.",
@@ -158,6 +160,8 @@
     "email": "Email",
     "createdOn": "Created On",
     "preferredLanguage": "Preferred Language",
+    "mobileFriendly": "Mobile Friendly Mode",
+    "mobileFriendlyDescription": "Use multiple-choice instead of typing",
     "statistics": "Challenge Statistics",
     "wordChallenges": "Word Challenges",
     "verbChallenges": "Verb Challenges",
