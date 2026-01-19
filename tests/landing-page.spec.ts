@@ -19,22 +19,35 @@ test.describe('Landing Page', () => {
   });
 
   test('should navigate to challenges and back home', async ({ page }) => {
+    // Helper to navigate home using drawer on mobile or header button on desktop
+    const navigateHome = async () => {
+      const mobileMenuButton = page.getByRole('button', { name: 'open menu' });
+      const isMobile = await mobileMenuButton.isVisible().catch(() => false);
+      
+      if (isMobile) {
+        await mobileMenuButton.click();
+        await page.locator('[role="presentation"]').getByRole('button', { name: 'Home' }).click();
+      } else {
+        await page.getByRole('button', { name: 'Home' }).click();
+      }
+    };
+    
     // Test Word Challenge
     await page.getByRole('button', { name: 'Challenge', exact: true }).first().click();
     await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
-    await page.getByRole('button', { name: 'Home' }).click();
+    await navigateHome();
     await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Test Verb Challenge
     await page.getByRole('button', { name: 'Challenge', exact: true }).nth(1).click();
     await expect(page.locator('h1')).toContainText('Portuguese Verbs');
-    await page.getByRole('button', { name: 'Home' }).click();
+    await navigateHome();
     await expect(page.locator('text=Word Challenge')).toBeVisible();
     
     // Test Idiom Challenge
     await page.getByRole('button', { name: 'Challenge', exact: true }).nth(2).click();
     await expect(page.locator('h1')).toContainText('Portuguese Idioms');
-    await page.getByRole('button', { name: 'Home' }).click();
+    await navigateHome();
     await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 });

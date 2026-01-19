@@ -27,7 +27,9 @@
     "configureChallenge": "Configure Challenge",
     "or": "or",
     "mobileFriendly": "Mobile Friendly",
-    "mobileFriendlyHelper": "Show multiple-choice options instead of typing (easier on mobile devices). Can also be set in your profile."
+    "mobileFriendlyHelper": "Show multiple-choice options instead of typing (easier on mobile devices). Can also be set in your profile.",
+    "language": "Language",
+    "guestAccount": "Guest Account"
   },
   "guest": {
     "banner": "You're in Guest Mode. Your progress is saved temporarily.",

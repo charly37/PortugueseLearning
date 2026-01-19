@@ -1,8 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { setLanguageToEnglish } from './helpers/language-helper';
 
+// Only run mobile UI tests on pixel-7 project
+test.use({ storageState: undefined }); // Ensure no auth state interference
+
 test.describe('Mobile UI - Pixel 7', () => {
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page }, testInfo) => {
+    // Skip if not running on pixel-7 project
+    if (testInfo.project.name !== 'pixel-7') {
+      test.skip();
+    }
     await setLanguageToEnglish(page);
   });
 
@@ -13,23 +20,33 @@ test.describe('Mobile UI - Pixel 7', () => {
     const header = page.locator('header');
     await expect(header).toBeVisible();
     
-    // Check that app title is visible
-    await expect(page.locator('text=🇵🇹')).toBeVisible();
+    // Check that app title is visible in header (should be only one in header, not drawer)
+    await expect(header.locator('text=🇵🇹')).toBeVisible();
     
-    // Verify navigation buttons are visible
-    const loginButton = page.getByRole('button', { name: 'Login' });
-    const registerButton = page.getByRole('button', { name: 'Register' });
+    // Verify hamburger menu button is visible on mobile
+    const menuButton = page.getByRole('button', { name: 'open menu' });
+    await expect(menuButton).toBeVisible();
     
-    await expect(loginButton).toBeVisible();
-    await expect(registerButton).toBeVisible();
+    // Open drawer to verify navigation items are accessible
+    await menuButton.click();
     
-    // Verify buttons don't overflow viewport
+    // Verify drawer is open and contains login/register buttons
+    const drawer = page.locator('[role="presentation"]').first();
+    await expect(drawer).toBeVisible();
+    
+    await expect(drawer.getByRole('button', { name: 'Login' })).toBeVisible();
+    await expect(drawer.getByRole('button', { name: 'Register' })).toBeVisible();
+    
+    // Verify header doesn't overflow viewport
     const viewport = page.viewportSize();
     const headerBox = await header.boundingBox();
     
     if (headerBox && viewport) {
       expect(headerBox.width).toBeLessThanOrEqual(viewport.width);
     }
+    
+    // Close drawer by clicking backdrop
+    await page.locator('.MuiBackdrop-root').click();
   });
 
   test('landing page should be responsive @smoke', async ({ page }) => {
@@ -137,8 +154,9 @@ test.describe('Mobile UI - Pixel 7', () => {
     await page.getByRole('button', { name: 'Challenge', exact: true }).first().click();
     await expect(page.locator('h1')).toContainText('Portuguese Vocabulary');
     
-    // Go back home using header
-    await page.getByRole('button', { name: 'Home' }).click();
+    // Go back home using drawer menu
+    await page.getByRole('button', { name: 'open menu' }).click();
+    await page.locator('[role="presentation"]').getByRole('button', { name: 'Home' }).click();
     await expect(page.locator('text=Word Challenge')).toBeVisible();
   });
 

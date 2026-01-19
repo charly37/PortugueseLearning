@@ -27,7 +27,9 @@
     "configureChallenge": "Configurer le Défi",
     "or": "ou",
     "mobileFriendly": "Mode Mobile",
-    "mobileFriendlyHelper": "Afficher des choix multiples au lieu de taper (plus facile sur mobile). Peut aussi être configuré dans votre profil."
+    "mobileFriendlyHelper": "Afficher des choix multiples au lieu de taper (plus facile sur mobile). Peut aussi être configuré dans votre profil.",
+    "language": "Langue",
+    "guestAccount": "Compte Invité"
   },
   "guest": {
     "banner": "Vous êtes en Mode Invité. Vos progrès sont sauvegardés temporairement.",

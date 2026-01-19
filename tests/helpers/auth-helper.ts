@@ -1,4 +1,54 @@
-import { Page } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
+
+/**
+ * Check if button is visible in header or drawer (for mobile)
+ * Returns a function that when called will click the button appropriately
+ */
+export async function findAuthButton(page: Page, buttonName: string): Promise<Locator> {
+  // First check if it's visible directly (desktop mode)
+  const directButton = page.getByRole('button', { name: buttonName }).first();
+  const isDirectlyVisible = await directButton.isVisible().catch(() => false);
+  
+  if (isDirectlyVisible) {
+    return directButton;
+  }
+  
+  // Check if mobile menu exists
+  const mobileMenuButton = page.getByRole('button', { name: 'open menu' });
+  const hasMobileMenu = await mobileMenuButton.isVisible().catch(() => false);
+  
+  if (hasMobileMenu) {
+    // On mobile, open drawer first if not already open
+    const isDrawerOpen = await page.locator('[role="presentation"]').isVisible().catch(() => false);
+    if (!isDrawerOpen) {
+      await mobileMenuButton.click();
+      await page.waitForTimeout(300); // Wait for drawer animation
+    }
+    return page.locator('[role="presentation"]').getByRole('button', { name: buttonName }).first();
+  }
+  
+  // Fallback to just finding the button anywhere
+  return directButton;
+}
+
+/**
+ * Verify that user is logged in by checking for username button (desktop) or profile icon (mobile)
+ */
+export async function verifyUserLoggedIn(page: Page, username: string): Promise<boolean> {
+  // Check if mobile menu button exists (viewport < md breakpoint)
+  const mobileMenuButton = page.getByRole('button', { name: 'open menu' });
+  const isMobile = await mobileMenuButton.isVisible().catch(() => false);
+  
+  if (isMobile) {
+    // On mobile: look for profile icon button in header
+    const profileIcon = page.locator('header').getByRole('button', { name: 'profile' });
+    return await profileIcon.isVisible().catch(() => false);
+  } else {
+    // On desktop: look for username button
+    const usernameButton = page.getByRole('button', { name: username });
+    return await usernameButton.isVisible().catch(() => false);
+  }
+}
 
 /**
  * Helper function to register and login a new user
@@ -14,8 +64,18 @@ export async function registerAndLogin(
   // Wait for landing page to load (check for challenge cards)
   await page.waitForSelector('text=Word Challenge', { timeout: 5000 });
   
-  // Navigate to register page from landing page
-  await page.getByRole('button', { name: 'Register' }).click();
+  // Check if mobile menu button exists (viewport < md breakpoint)
+  const mobileMenuButton = page.getByRole('button', { name: 'open menu' });
+  const isMobile = await mobileMenuButton.isVisible().catch(() => false);
+  
+  if (isMobile) {
+    // On mobile: open drawer and click register from there
+    await mobileMenuButton.click();
+    await page.locator('[role="presentation"]').getByRole('button', { name: 'Register' }).click();
+  } else {
+    // On desktop: click register button directly in header
+    await page.getByRole('button', { name: 'Register' }).click();
+  }
   
   // Wait for register page to load
   await page.waitForSelector('h1:has-text("Register")', { timeout: 5000 });
@@ -45,7 +105,9 @@ export async function login(
   
   // Wait for landing page and navigate to login page
   await page.waitForSelector('text=Word Challenge', { timeout: 5000 });
-  await page.getByRole('button', { name: 'Login' }).click();
+  
+  const loginButton = await findAuthButton(page, 'Login');
+  await loginButton.click();
   await page.waitForSelector('h1:has-text("Login")', { timeout: 5000 });
   
   // Fill in login form

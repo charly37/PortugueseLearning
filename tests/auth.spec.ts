@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { setLanguageToEnglish } from './helpers/language-helper';
+import { findAuthButton, verifyUserLoggedIn } from './helpers/auth-helper';
 
 test.describe('Authentication', () => {
   test('should display landing page on first visit with login option', async ({ page }) => {
@@ -9,17 +10,21 @@ test.describe('Authentication', () => {
     // Verify we're on the landing page (check for challenge cards)
     await expect(page.locator('text=Word Challenge')).toBeVisible();
     
-    // Verify login button is visible in header
-    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Register' })).toBeVisible();
+    // Verify login button is accessible (either in header or drawer)
+    const loginButton = await findAuthButton(page, 'Login');
+    await expect(loginButton).toBeVisible();
+    
+    const registerButton = await findAuthButton(page, 'Register');
+    await expect(registerButton).toBeVisible();
   });
 
   test('should navigate to register page', async ({ page }) => {
     await setLanguageToEnglish(page);
     await page.goto('/');
     
-    // Click Register button in header
-    await page.getByRole('button', { name: 'Register' }).click();
+    // Click Register button
+    const registerButton = await findAuthButton(page, 'Register');
+    await registerButton.click();
     
     // Wait for register page
     await page.waitForSelector('h1:has-text("Register")');
@@ -43,7 +48,8 @@ test.describe('Authentication', () => {
     await page.goto('/');
     
     // Navigate to register page from landing page
-    await page.getByRole('button', { name: 'Register' }).click();
+    const registerButton = await findAuthButton(page, 'Register');
+    await registerButton.click();
     
     // Wait for register page
     await page.waitForSelector('h1:has-text("Register")');
@@ -60,15 +66,17 @@ test.describe('Authentication', () => {
     // Should redirect to landing page with challenge cards visible
     await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
     
-    // Should see username in header chip (button)
-    await expect(page.getByRole('button', { name: testUser.username })).toBeVisible();
+    // Should see username in header (button on desktop, profile icon on mobile)
+    await expect(await verifyUserLoggedIn(page, testUser.username)).toBeTruthy();
   });
 
   test('should not register with invalid email', async ({ page }) => {
     await setLanguageToEnglish(page);
     await page.goto('/');
-    await page.getByRole('button', { name: 'Register' }).click();
-    await page.waitForSelector('text=Register');
+    const registerButton = await findAuthButton(page, 'Register');
+    await registerButton.click();
+    await page.waitForTimeout(400); // Wait for drawer close animation
+    await page.waitForSelector('h1:has-text("Register")');
     
     await page.getByLabel('Username').fill('testuser');
     await page.getByLabel('Email').fill('invalid-email');
@@ -83,8 +91,10 @@ test.describe('Authentication', () => {
   test('should not register with password mismatch', async ({ page }) => {
     await setLanguageToEnglish(page);
     await page.goto('/');
-    await page.getByRole('button', { name: 'Register' }).click();
-    await page.waitForSelector('text=Register');
+    const registerButton = await findAuthButton(page, 'Register');
+    await registerButton.click();
+    await page.waitForTimeout(400); // Wait for drawer close animation
+    await page.waitForSelector('h1:has-text("Register")');
     
     await page.getByLabel('Username').fill('testuser');
     await page.getByLabel('Email').fill('test@example.com');
@@ -100,8 +110,10 @@ test.describe('Authentication', () => {
   test('should not register with short password', async ({ page }) => {
     await setLanguageToEnglish(page);
     await page.goto('/');
-    await page.getByRole('button', { name: 'Register' }).click();
-    await page.waitForSelector('text=Register');
+    const registerButton = await findAuthButton(page, 'Register');
+    await registerButton.click();
+    await page.waitForTimeout(400); // Wait for drawer close animation
+    await page.waitForSelector('h1:has-text("Register")');
     
     await page.getByLabel('Username').fill('testuser');
     await page.getByLabel('Email').fill('test@example.com');
@@ -126,10 +138,10 @@ test.describe('Authentication', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
     
-    const registerBtn = page.getByRole('button', { name: 'Register' });
-    await registerBtn.waitFor({ state: 'visible' });
-    await registerBtn.click({ force: true });
-    await page.waitForSelector('text=Register');
+    const registerBtn = await findAuthButton(page, 'Register');
+    await registerBtn.click();
+    await page.waitForTimeout(400); // Wait for drawer close animation
+    await page.waitForSelector('h1:has-text("Register")');
     
     await page.getByLabel('Username').fill(uniqueUser.username);
     await page.getByLabel('Email').fill(uniqueUser.email);
@@ -139,24 +151,24 @@ test.describe('Authentication', () => {
     
     // Wait for landing page with challenge cards and username to appear
     await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
-    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible({ timeout: 10000 });
+    await expect(await verifyUserLoggedIn(page, uniqueUser.username)).toBeTruthy();
     
-    // Logout - use LogoutIcon since text might be hidden on mobile
-    const logoutBtn = page.locator('button').filter({ has: page.locator('[data-testid="LogoutIcon"]') });
-    await logoutBtn.waitFor({ state: 'visible', timeout: 10000 });
-    await page.waitForTimeout(100);
+    // Logout using findAuthButton helper (handles drawer on mobile)
+    const logoutBtn = await findAuthButton(page, 'Logout');
     await logoutBtn.click({ force: true });
     
-    // Wait for logout to complete - verify Login button appears
-    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible({ timeout: 10000 });
+    // Wait for drawer to close and logout to complete
+    await page.waitForTimeout(500);
+    
+    // Wait for logout to complete - verify Login button appears (might be in drawer on mobile)
+    const loginButton = await findAuthButton(page, 'Login');
+    await expect(loginButton).toBeVisible({ timeout: 10000 });
     
     // Now login with the same credentials - verify on landing page
     await expect(page.locator('text=Word Challenge')).toBeVisible();
-    // Use the header's Login button specifically
-    const loginBtn = page.locator('header').getByRole('button', { name: 'Login' });
-    await loginBtn.waitFor({ state: 'visible' });
-    await page.waitForTimeout(100);
-    await loginBtn.click({ force: true });
+    // Click the Login button (handles drawer on mobile)
+    await loginButton.click({ force: true });
+    await page.waitForTimeout(400); // Wait for drawer close animation if on mobile
     // Wait for Login page to load
     await expect(page.locator('h1')).toContainText('Login', { timeout: 10000 });
     
@@ -166,7 +178,7 @@ test.describe('Authentication', () => {
     
     // Should redirect to landing page with challenge cards visible
     await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
-    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible();
+    await expect(await verifyUserLoggedIn(page, uniqueUser.username)).toBeTruthy();
   });
 
   test('should not login with invalid credentials', async ({ page }) => {
@@ -174,7 +186,8 @@ test.describe('Authentication', () => {
     await page.goto('/');
     
     // Navigate to login page
-    await page.getByRole('button', { name: 'Login' }).click();
+    const loginButton = await findAuthButton(page, 'Login');
+    await loginButton.click();
     await page.waitForSelector('h1:has-text("Login")');
     
     await page.getByLabel('Email').fill('nonexistent@example.com');
@@ -198,10 +211,10 @@ test.describe('Authentication', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
     
-    const registerBtn = page.getByRole('button', { name: 'Register' });
-    await registerBtn.waitFor({ state: 'visible' });
-    await registerBtn.click({ force: true });
-    await page.waitForSelector('text=Register');
+    const registerBtn = await findAuthButton(page, 'Register');
+    await registerBtn.click();
+    await page.waitForTimeout(400); // Wait for drawer close animation
+    await page.waitForSelector('h1:has-text("Register")');
     
     await page.getByLabel('Username').fill(uniqueUser.username);
     await page.getByLabel('Email').fill(uniqueUser.email);
@@ -211,19 +224,40 @@ test.describe('Authentication', () => {
     
     // Wait for landing page with challenge cards and username to appear
     await expect(page.locator('text=Word Challenge')).toBeVisible({ timeout: 10000 });
-    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible({ timeout: 10000 });
+    await expect(await verifyUserLoggedIn(page, uniqueUser.username)).toBeTruthy();
     
-    // Logout - use LogoutIcon since text might be hidden on mobile
-    const logoutBtn = page.locator('button').filter({ has: page.locator('[data-testid="LogoutIcon"]') });
-    await logoutBtn.waitFor({ state: 'visible', timeout: 10000 });
-    await page.waitForTimeout(100);
-    await logoutBtn.click({ force: true });
+    // Logout - use the onLogout handler which should make the API call
+    // On mobile, need to open drawer first
+    const isMobile = await page.getByRole('button', { name: 'open menu' }).isVisible().catch(() => false);
+    
+    if (isMobile) {
+      await page.getByRole('button', { name: 'open menu' }).click();
+      await page.waitForTimeout(400);
+      // Click the logout list item button in the drawer
+      await page.locator('[role="presentation"]').getByRole('button', { name: 'Logout', exact: true }).click();
+    } else {
+      // On desktop, click the logout button in header
+      await page.locator('header').getByRole('button', { name: 'Logout', exact: true }).click();
+    }
+    
+    // Wait for logout API call to complete
+    await page.waitForResponse(response => response.url().includes('/api/auth/logout'), { timeout: 3000 });
+    
+    // Wait for network request to complete and page to stabilize
+    await page.waitForLoadState('networkidle');
     
     // Should stay on landing page, but now as guest (challenge cards still visible)
     await expect(page.locator('text=Word Challenge')).toBeVisible();
     
-    // Verify logout was successful - Login button should be visible
-    await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
+    // Give time for React to re-render after state change
+    await page.waitForTimeout(1000);
+    
+    // Debug: Take screenshot to see what's on the page
+    await page.screenshot({ path: 'test-results/logout-debug.png', fullPage: true });
+    
+    // Verify logout was successful - Login button should be accessible (might be in drawer on mobile)
+    const loginButton = await findAuthButton(page, 'Login');
+    await expect(loginButton).toBeVisible({ timeout: 5000 });
   });
 
   test('should navigate back to login from register page', async ({ page }) => {
@@ -231,7 +265,8 @@ test.describe('Authentication', () => {
     await page.goto('/');
     
     // Navigate to register page from landing page
-    await page.getByRole('button', { name: 'Register' }).click();
+    const registerButton = await findAuthButton(page, 'Register');
+    await registerButton.click();
     
     // Wait for and verify register page
     await page.waitForSelector('h1:has-text("Register")');
@@ -257,8 +292,10 @@ test.describe('Authentication', () => {
     };
     
     await page.goto('/');
-    await page.getByRole('button', { name: 'Register' }).click();
-    await page.waitForSelector('text=Register');
+    const registerBtn = await findAuthButton(page, 'Register');
+    await registerBtn.click();
+    await page.waitForTimeout(400); // Wait for drawer close animation
+    await page.waitForSelector('h1:has-text("Register")');
     
     await page.getByLabel('Username').fill(uniqueUser.username);
     await page.getByLabel('Email').fill(uniqueUser.email);
@@ -274,6 +311,6 @@ test.describe('Authentication', () => {
     
     // Should still be on landing page with challenge cards visible
     await expect(page.locator('text=Word Challenge')).toBeVisible();
-    await expect(page.getByRole('button', { name: uniqueUser.username })).toBeVisible();
+    await expect(await verifyUserLoggedIn(page, uniqueUser.username)).toBeTruthy();
   });
 });
