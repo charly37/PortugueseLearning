@@ -140,8 +140,12 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       if (nextIndex < generatedChallenges.length) {
         setCurrentChallengeIndex(nextIndex);
         setChallenge(generatedChallenges[nextIndex]);
+        setLoading(false);
+      } else {
+        // All challenges completed
+        setChallengeComplete(true);
+        setLoading(false);
       }
-      setLoading(false);
     } else {
       try {
         const response = await fetch('/api/verb-challenge');

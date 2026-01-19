@@ -140,8 +140,12 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       if (nextIndex < generatedChallenges.length) {
         setCurrentChallengeIndex(nextIndex);
         setChallenge(generatedChallenges[nextIndex]);
+        setLoading(false);
+      } else {
+        // All challenges completed
+        setChallengeComplete(true);
+        setLoading(false);
       }
-      setLoading(false);
     } else {
       try {
         const response = await fetch('/api/challenge');

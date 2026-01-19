@@ -139,8 +139,12 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
       if (nextIndex < generatedChallenges.length) {
         setCurrentChallengeIndex(nextIndex);
         setChallenge(generatedChallenges[nextIndex]);
+        setLoading(false);
+      } else {
+        // All challenges completed
+        setChallengeComplete(true);
+        setLoading(false);
       }
-      setLoading(false);
     } else {
       try {
         const response = await fetch('/api/idiom-challenge');
