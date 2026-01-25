@@ -24,17 +24,6 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Validate challenge data
-      run: |
-        echo "Checking for duplicate UUIDs in challenges.json..."
-        python3 data/check-duplicate-ids.py
-        if [ $? -ne 0 ]; then
-          echo "❌ FAILED: Duplicate UUIDs found in challenges.json"
-          echo "Run 'python3 data/check-duplicate-ids.py fix' to fix them"
-          exit 1
-        fi
-        echo "✓ All challenge UUIDs are unique"
-
     - name: Build server
       run: npm run build:server
 

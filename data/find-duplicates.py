@@ -7,7 +7,9 @@ EXCLUDED_IDS = [
     '37645200-0320-47e8-9afa-b8f19c2c4935',  # a - to/at
     '643403d9-35e2-49a5-9b41-d9645ad0d40e',  # a - the (fem.)
     '5e38ace0-0a52-4e3a-a0ea-0743b1ca11b8', #como - how
-    '866fc6e0-f903-4940-a4dc-d174f485283d' #como - like
+    '866fc6e0-f903-4940-a4dc-d174f485283d', #como - like
+    '63d6e4f7-15bd-437b-be6e-5b3193edbe32', #entrada - entrance
+    '2e10b04a-30ea-4d26-862f-0c9b9be0d60e'  #wntrada - entree food
 ]
 
 def find_duplicate_challenges(filepath):
