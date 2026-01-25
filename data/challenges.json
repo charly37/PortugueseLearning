@@ -4813,7 +4813,7 @@
         "id": "d5bc7f07-394f-4e14-97c5-f25752d90fc4",
         "port": "direto",
         "fr": {
-            "translation": "todo",
+            "translation": "direct",
             "note": "todo"
         },
         "en": {
@@ -4904,7 +4904,7 @@
         "id": "e4288ab2-3aa4-4c9c-8c6d-6a63082d0a91",
         "port": "pergunta",
         "fr": {
-            "translation": "todo",
+            "translation": "question",
             "note": "todo"
         },
         "en": {
@@ -8557,7 +8557,7 @@
         "id": "33051e0c-db7e-42aa-8a84-b29a4846239d",
         "port": "(à) tarde",
         "fr": {
-            "translation": "todo",
+            "translation": "(l')après-midi",
             "note": "todo"
         },
         "en": {
@@ -8570,7 +8570,7 @@
         "id": "1f1f80f7-4a10-422c-97c1-afd4027c872f",
         "port": "(à) tarde, à tardinha",
         "fr": {
-            "translation": "todo",
+            "translation": "(l')après-midi, en fin d'après-midi",
             "note": "todo"
         },
         "en": {
@@ -8583,7 +8583,7 @@
         "id": "dd6d369f-4d66-42b2-97ef-6727f5acadf3",
         "port": "(comboio//trem) expresso",
         "fr": {
-            "translation": "todo",
+            "translation": "(train) express",
             "note": "todo"
         },
         "en": {
@@ -8596,7 +8596,7 @@
         "id": "e438cb8a-33c4-4622-b7a3-454dbdf5103f",
         "port": "(cor de) laranja",
         "fr": {
-            "translation": "todo",
+            "translation": "(couleur) orange",
             "note": "todo"
         },
         "en": {
@@ -8609,7 +8609,7 @@
         "id": "55178d2c-fe11-4565-9dc5-42a0f9f7b522",
         "port": "(cor de) rosa",
         "fr": {
-            "translation": "todo",
+            "translation": "(couleur) rose",
             "note": "todo"
         },
         "en": {
@@ -8622,7 +8622,7 @@
         "id": "a2ab54eb-46ed-434a-adde-d8b6a7b3446d",
         "port": "(de) manhã",
         "fr": {
-            "translation": "todo",
+            "translation": "(du) matin",
             "note": "todo"
         },
         "en": {
@@ -8635,7 +8635,7 @@
         "id": "486e995d-9447-4c6a-8acc-9b1e6c93f2ce",
         "port": "(tele)novela",
         "fr": {
-            "translation": "todo",
+            "translation": "(télé)novela",
             "note": "todo"
         },
         "en": {
@@ -8648,7 +8648,7 @@
         "id": "50be7e68-55f8-43dc-ac98-4eeba7c67b44",
         "port": "abaixo de",
         "fr": {
-            "translation": "todo",
+            "translation": "en dessous de",
             "note": "todo"
         },
         "en": {
@@ -8661,7 +8661,7 @@
         "id": "d8f28b94-3f63-43b6-a8fc-6c388aac6c1e",
         "port": "abelha",
         "fr": {
-            "translation": "todo",
+            "translation": "abeille",
             "note": "todo"
         },
         "en": {
@@ -8674,7 +8674,7 @@
         "id": "438d77d4-d1c0-469f-9942-f6164ec15f1a",
         "port": "aberto (adj.)",
         "fr": {
-            "translation": "todo",
+            "translation": "ouvert (adj.)",
             "note": "todo"
         },
         "en": {
@@ -8687,7 +8687,7 @@
         "id": "0a48e93a-300b-49da-b45d-02ffc19d7e23",
         "port": "abrir",
         "fr": {
-            "translation": "todo",
+            "translation": "ouvrir",
             "note": "todo"
         },
         "en": {
@@ -8700,7 +8700,7 @@
         "id": "55a356da-8c1e-4710-9d50-aff9e673315d",
         "port": "absolutamente",
         "fr": {
-            "translation": "todo",
+            "translation": "absolument",
             "note": "todo"
         },
         "en": {
@@ -8713,7 +8713,7 @@
         "id": "e68442e1-4472-4d08-b4fd-342d0e6b7da9",
         "port": "acampar",
         "fr": {
-            "translation": "todo",
+            "translation": "camper",
             "note": "todo"
         },
         "en": {
@@ -8726,7 +8726,7 @@
         "id": "450ebf38-329e-4899-a4e6-a82855b8c53f",
         "port": "aceitar",
         "fr": {
-            "translation": "todo",
+            "translation": "accepter",
             "note": "todo"
         },
         "en": {
@@ -8739,7 +8739,7 @@
         "id": "db54eedc-4be2-47a4-8bb1-6a32449154cc",
         "port": "achar",
         "fr": {
-            "translation": "todo",
+            "translation": "trouver",
             "note": "todo"
         },
         "en": {
@@ -8752,7 +8752,7 @@
         "id": "31daef55-2a57-4286-b3c9-5915a385eba2",
         "port": "aço",
         "fr": {
-            "translation": "todo",
+            "translation": "acier",
             "note": "todo"
         },
         "en": {
@@ -8765,7 +8765,7 @@
         "id": "28e55d10-d77d-4bc6-898f-825789855dfa",
         "port": "acordar",
         "fr": {
-            "translation": "todo",
+            "translation": "se réveiller",
             "note": "todo"
         },
         "en": {
@@ -8778,7 +8778,7 @@
         "id": "4ea144b1-5f7b-4439-9225-69bd24245785",
         "port": "acordar alguém",
         "fr": {
-            "translation": "todo",
+            "translation": "réveiller quelqu'un",
             "note": "todo"
         },
         "en": {
@@ -8791,7 +8791,7 @@
         "id": "1cefc796-49e8-46a3-b891-e114c6832541",
         "port": "ator / atriz",
         "fr": {
-            "translation": "todo",
+            "translation": "acteur / actrice",
             "note": "todo"
         },
         "en": {
@@ -8804,7 +8804,7 @@
         "id": "363e5326-052e-4873-8ea2-bbc8ca45701f",
         "port": "advogado",
         "fr": {
-            "translation": "todo",
+            "translation": "avocat",
             "note": "todo"
         },
         "en": {
@@ -8817,7 +8817,7 @@
         "id": "09d0aeb4-093c-40ff-9e66-3159142f668d",
         "port": "afiado",
         "fr": {
-            "translation": "todo",
+            "translation": "aiguisé",
             "note": "todo"
         },
         "en": {
@@ -8830,7 +8830,7 @@
         "id": "24ac7405-6632-4f21-ad6c-7b04999f43a5",
         "port": "agenda, diário",
         "fr": {
-            "translation": "todo",
+            "translation": "agenda, journal",
             "note": "todo"
         },
         "en": {
@@ -8843,7 +8843,7 @@
         "id": "1d75a661-c3cc-4c9c-9a86-48f2f8d5e415",
         "port": "agradável",
         "fr": {
-            "translation": "todo",
+            "translation": "agréable",
             "note": "todo"
         },
         "en": {
@@ -8856,7 +8856,7 @@
         "id": "36f470f9-9aff-4187-99d1-c4b5e875defa",
         "port": "agradável, bom, simpático",
         "fr": {
-            "translation": "todo",
+            "translation": "agréable, bon, sympathique",
             "note": "todo"
         },
         "en": {
@@ -8869,7 +8869,7 @@
         "id": "c65c95a2-0c83-4687-ade4-5e262f1fc2a7",
         "port": "agradecer",
         "fr": {
-            "translation": "todo",
+            "translation": "remercier",
             "note": "todo"
         },
         "en": {
@@ -8882,7 +8882,7 @@
         "id": "646e8292-31c1-4786-a559-104584bbd6df",
         "port": "agricultor /",
         "fr": {
-            "translation": "todo",
+            "translation": "agriculteur /",
             "note": "todo"
         },
         "en": {
@@ -8895,7 +8895,7 @@
         "id": "1db7bb46-96eb-4fbc-9d22-d1ca264f68e5",
         "port": "aguaceiro, chuvada /chuvarada",
         "fr": {
-            "translation": "todo",
+            "translation": "averse, pluie torrentielle",
             "note": "todo"
         },
         "en": {
@@ -8908,7 +8908,7 @@
         "id": "b95126f2-775a-4f9a-b222-e989ccf09f83",
         "port": "aguardar",
         "fr": {
-            "translation": "todo",
+            "translation": "attendre",
             "note": "todo"
         },
         "en": {
@@ -8921,7 +8921,7 @@
         "id": "7012a219-62b8-43f7-bd3a-69afd36e90e6",
         "port": "aí ali",
         "fr": {
-            "translation": "todo",
+            "translation": "là, ici",
             "note": "todo"
         },
         "en": {
@@ -8934,7 +8934,7 @@
         "id": "d04c355c-059b-4927-a99c-8c21dc92ec1e",
         "port": "ainda still",
         "fr": {
-            "translation": "todo",
+            "translation": "encore",
             "note": "todo"
         },
         "en": {
@@ -8947,7 +8947,7 @@
         "id": "e014aa09-a4fb-4975-be7d-0f2268fe0b5a",
         "port": "ainda não",
         "fr": {
-            "translation": "todo",
+            "translation": "pas encore",
             "note": "todo"
         },
         "en": {
@@ -8960,7 +8960,7 @@
         "id": "2f1fa4bf-0502-474d-a37e-d6db6d5b35b9",
         "port": "ajudar",
         "fr": {
-            "translation": "todo",
+            "translation": "aider",
             "note": "todo"
         },
         "en": {
@@ -8973,7 +8973,7 @@
         "id": "1aa564ec-ada1-41da-b05f-17a773710718",
         "port": "alcatifa; tapete",
         "fr": {
-            "translation": "todo",
+            "translation": "moquette; tapis",
             "note": "todo"
         },
         "en": {
@@ -8999,7 +8999,7 @@
         "id": "906d5536-e8c0-4725-9e32-88f0e9515b09",
         "port": "algodão",
         "fr": {
-            "translation": "todo",
+            "translation": "coton",
             "note": "todo"
         },
         "en": {
@@ -9012,7 +9012,7 @@
         "id": "0e404c15-21b3-4438-ab75-4a27b587e9e0",
         "port": "alguém",
         "fr": {
-            "translation": "todo",
+            "translation": "quelqu'un",
             "note": "todo"
         },
         "en": {
@@ -9025,7 +9025,7 @@
         "id": "a9d7bf36-40a0-4ff4-91e7-99b566c7df47",
         "port": "alho",
         "fr": {
-            "translation": "todo",
+            "translation": "ail",
             "note": "todo"
         },
         "en": {
@@ -9038,7 +9038,7 @@
         "id": "e5cc1d6f-db4d-4c3b-a6d0-2580b5e76881",
         "port": "ali",
         "fr": {
-            "translation": "todo",
+            "translation": "là",
             "note": "todo"
         },
         "en": {
@@ -9051,7 +9051,7 @@
         "id": "2546111f-6639-487e-bfbe-a461ec7e1f3f",
         "port": "alimentos, comida",
         "fr": {
-            "translation": "todo",
+            "translation": "aliments, nourriture",
             "note": "todo"
         },
         "en": {
@@ -9064,7 +9064,7 @@
         "id": "ae8b195e-8983-4712-9f91-2a661328ffbb",
         "port": "almoço",
         "fr": {
-            "translation": "todo",
+            "translation": "déjeuner",
             "note": "todo"
         },
         "en": {
@@ -9077,7 +9077,7 @@
         "id": "1cd893aa-cc39-4c2f-83e9-8f3fe50527fa",
         "port": "almofada",
         "fr": {
-            "translation": "todo",
+            "translation": "oreiller",
             "note": "todo"
         },
         "en": {
@@ -9090,7 +9090,7 @@
         "id": "ba69d4bd-0403-4a59-8867-5b90399baa5d",
         "port": "alojamento / acomodação",
         "fr": {
-            "translation": "todo",
+            "translation": "hébergement / accommodation",
             "note": "todo"
         },
         "en": {
@@ -9103,7 +9103,7 @@
         "id": "12af8621-db69-4888-b915-1b69948e34bb",
         "port": "altura height",
         "fr": {
-            "translation": "todo",
+            "translation": "hauteur",
             "note": "todo"
         },
         "en": {
@@ -9116,7 +9116,7 @@
         "id": "c8b10fca-4bcf-4725-bb45-aba9657993e0",
         "port": "alugar",
         "fr": {
-            "translation": "todo",
+            "translation": "louer",
             "note": "todo"
         },
         "en": {
@@ -9129,7 +9129,7 @@
         "id": "919bb7cc-599b-4dd8-b456-c37a00c57fe8",
         "port": "amar",
         "fr": {
-            "translation": "todo",
+            "translation": "aimer",
             "note": "todo"
         },
         "en": {
@@ -9142,7 +9142,7 @@
         "id": "a7d3f33c-03de-4b6c-8191-8643eb92089a",
         "port": "ambos",
         "fr": {
-            "translation": "todo",
+            "translation": "les deux",
             "note": "todo"
         },
         "en": {
@@ -9155,7 +9155,7 @@
         "id": "28ef90ae-f0f4-4047-980e-5c2ca41eb448",
         "port": "ambulância",
         "fr": {
-            "translation": "todo",
+            "translation": "ambulance",
             "note": "todo"
         },
         "en": {
@@ -9168,7 +9168,7 @@
         "id": "c0ef6726-32d6-44ec-8217-46d89222092c",
         "port": "animal (de estimação)",
         "fr": {
-            "translation": "todo",
+            "translation": "animal (de compagnie)",
             "note": "todo"
         },
         "en": {
@@ -9181,7 +9181,7 @@
         "id": "d59b4181-f1db-4747-b5e9-29f8696599f3",
         "port": "aniversário",
         "fr": {
-            "translation": "todo",
+            "translation": "anniversaire",
             "note": "todo"
         },
         "en": {
@@ -9194,7 +9194,7 @@
         "id": "0cdddf58-902b-42f2-b8b0-c8a08db3dd61",
         "port": "anteontem day",
         "fr": {
-            "translation": "todo",
+            "translation": "avant-hier",
             "note": "todo"
         },
         "en": {
@@ -9207,7 +9207,7 @@
         "id": "c48f7560-5ae1-4754-b61c-9b9109f05fca",
         "port": "antigamente",
         "fr": {
-            "translation": "todo",
+            "translation": "autrefois",
             "note": "todo"
         },
         "en": {
@@ -9220,7 +9220,7 @@
         "id": "fd521cec-950f-4e74-a91b-db72db6f41d9",
         "port": "anualmente",
         "fr": {
-            "translation": "todo",
+            "translation": "annuellement",
             "note": "todo"
         },
         "en": {
@@ -9233,7 +9233,7 @@
         "id": "8dee8576-17df-49c6-ad00-a5051210d36a",
         "port": "anúncio",
         "fr": {
-            "translation": "todo",
+            "translation": "annonce",
             "note": "todo"
         },
         "en": {
@@ -9246,7 +9246,7 @@
         "id": "5e889844-3d3b-4d77-97c5-b6b1c3335935",
         "port": "ao longo",
         "fr": {
-            "translation": "todo",
+            "translation": "le long de",
             "note": "todo"
         },
         "en": {
@@ -9259,7 +9259,7 @@
         "id": "ec8d4e72-b5e0-4ea1-95c1-cc7f750e6245",
         "port": "apanhar sol / tomar sol",
         "fr": {
-            "translation": "todo",
+            "translation": "prendre le soleil",
             "note": "todo"
         },
         "en": {
@@ -9272,7 +9272,7 @@
         "id": "ce5f0222-8899-4b48-b1a7-31e2d159328f",
         "port": "apanhar / pegar",
         "fr": {
-            "translation": "todo",
+            "translation": "attraper / prendre",
             "note": "todo"
         },
         "en": {
@@ -9285,7 +9285,7 @@
         "id": "d291949e-a0e9-41e9-a41a-4e548f011764",
         "port": "apartamento",
         "fr": {
-            "translation": "todo",
+            "translation": "appartement",
             "note": "todo"
         },
         "en": {
@@ -9298,7 +9298,7 @@
         "id": "a4a82569-98d6-47e0-87e0-316b92d68fbf",
         "port": "apertado tight apetecer, ter vontade de (fazer algo)",
         "fr": {
-            "translation": "todo",
+            "translation": "serré avoir envie de (faire quelque chose)",
             "note": "todo"
         },
         "en": {
@@ -9311,7 +9311,7 @@
         "id": "31a02d21-8c76-4178-87eb-751278842a45",
         "port": "aprender",
         "fr": {
-            "translation": "todo",
+            "translation": "apprendre",
             "note": "todo"
         },
         "en": {
@@ -9324,7 +9324,7 @@
         "id": "00e48176-53a1-4381-b6a5-ac904a59063b",
         "port": "aprendiz / estagiário",
         "fr": {
-            "translation": "todo",
+            "translation": "apprenti / stagiaire",
             "note": "todo"
         },
         "en": {
@@ -9337,7 +9337,7 @@
         "id": "586d1398-0f65-4420-8227-8346d0bdea13",
         "port": "aproximadamente about",
         "fr": {
-            "translation": "todo",
+            "translation": "environ",
             "note": "todo"
         },
         "en": {
@@ -9350,7 +9350,7 @@
         "id": "8271c013-4c56-47c7-8785-76acabb669a9",
         "port": "aquecer / esquentar",
         "fr": {
-            "translation": "todo",
+            "translation": "chauffer / réchauffer",
             "note": "todo"
         },
         "en": {
@@ -9363,7 +9363,7 @@
         "id": "6ce12881-c948-427a-a6c4-728b97ddc3e7",
         "port": "aquecimento / calefação",
         "fr": {
-            "translation": "todo",
+            "translation": "chauffage / chauffage",
             "note": "todo"
         },
         "en": {
@@ -9376,7 +9376,7 @@
         "id": "b41aed65-96f9-407d-9179-a1484bfaacd5",
         "port": "ar livre (ao)",
         "fr": {
-            "translation": "todo",
+            "translation": "air libre (en)",
             "note": "todo"
         },
         "en": {
@@ -9389,7 +9389,7 @@
         "id": "f0d7a91f-2ee6-41a3-a6c3-1b307bded02b",
         "port": "área de serviço",
         "fr": {
-            "translation": "todo",
+            "translation": "aire de service",
             "note": "todo"
         },
         "en": {
@@ -9402,7 +9402,7 @@
         "id": "0b74873f-fd01-4f30-89f3-4f7f598e38ac",
         "port": "areia (castelo",
         "fr": {
-            "translation": "todo",
+            "translation": "sable (château",
             "note": "todo"
         },
         "en": {
@@ -9415,7 +9415,7 @@
         "id": "bc1d9093-1527-4fdd-a3c4-8c66929a5f94",
         "port": "arrumado",
         "fr": {
-            "translation": "todo",
+            "translation": "rangé",
             "note": "todo"
         },
         "en": {
@@ -9428,7 +9428,7 @@
         "id": "4722caef-c027-42b8-9fa3-5d3d19b36716",
         "port": "arrumar",
         "fr": {
-            "translation": "todo",
+            "translation": "ranger",
             "note": "todo"
         },
         "en": {
@@ -9441,7 +9441,7 @@
         "id": "3333d19d-79ee-4d6f-a0b0-aed376c679da",
         "port": "arrumar, estacionar",
         "fr": {
-            "translation": "todo",
+            "translation": "ranger, stationner",
             "note": "todo"
         },
         "en": {
@@ -9454,7 +9454,7 @@
         "id": "dfe93ff8-6f4e-405c-945e-3fc66c451a5b",
         "port": "arte (galeria)",
         "fr": {
-            "translation": "todo",
+            "translation": "art (galerie)",
             "note": "todo"
         },
         "en": {
@@ -9467,7 +9467,7 @@
         "id": "d4a2158d-35d2-4059-801a-1476bc50f9b2",
         "port": "árvore de fruta",
         "fr": {
-            "translation": "todo",
+            "translation": "arbre fruitier",
             "note": "todo"
         },
         "en": {
@@ -9480,7 +9480,7 @@
         "id": "9ac54677-fa3d-4be9-a8c3-20c2b35f5778",
         "port": "aspirar",
         "fr": {
-            "translation": "todo",
+            "translation": "aspirer",
             "note": "todo"
         },
         "en": {
@@ -9493,7 +9493,7 @@
         "id": "3b8ddaa5-1563-45d0-a35f-78984631d660",
         "port": "assar",
         "fr": {
-            "translation": "todo",
+            "translation": "rôtir",
             "note": "todo"
         },
         "en": {
@@ -9506,7 +9506,7 @@
         "id": "f6fd7107-07a1-43e2-ae39-e6dce49a95cc",
         "port": "assento",
         "fr": {
-            "translation": "todo",
+            "translation": "siège",
             "note": "todo"
         },
         "en": {
@@ -9519,7 +9519,7 @@
         "id": "0ee82896-43dd-47b9-a8cf-ed2906f13e42",
         "port": "assinar",
         "fr": {
-            "translation": "todo",
+            "translation": "signer",
             "note": "todo"
         },
         "en": {
@@ -9532,7 +9532,7 @@
         "id": "75898cfb-250b-4c20-b453-84cbd65bc265",
         "port": "atencioso",
         "fr": {
-            "translation": "todo",
+            "translation": "attentionné",
             "note": "todo"
         },
         "en": {
@@ -9545,7 +9545,7 @@
         "id": "28eddd2e-5f70-444c-8fbb-f4279bee703b",
         "port": "aterrar / aterrissar",
         "fr": {
-            "translation": "todo",
+            "translation": "atterrir",
             "note": "todo"
         },
         "en": {
@@ -9558,7 +9558,7 @@
         "id": "8dca2bf8-0b4a-46e9-bf2f-0b0b53e75d23",
         "port": "atrasado",
         "fr": {
-            "translation": "todo",
+            "translation": "en retard",
             "note": "todo"
         },
         "en": {
@@ -9571,7 +9571,7 @@
         "id": "cb247594-278e-4922-a1e2-a3a03c7364ec",
         "port": "através, por",
         "fr": {
-            "translation": "todo",
+            "translation": "à travers, par",
             "note": "todo"
         },
         "en": {
@@ -9584,7 +9584,7 @@
         "id": "e7bf4a5f-4161-4137-8944-237bf7cba947",
         "port": "aula, lição",
         "fr": {
-            "translation": "todo",
+            "translation": "cours, leçon",
             "note": "todo"
         },
         "en": {
@@ -9597,7 +9597,7 @@
         "id": "8b5aeb2a-6c9c-4968-9862-2d504e71e8b3",
         "port": "autocarro / ônibus",
         "fr": {
-            "translation": "todo",
+            "translation": "autobus / bus",
             "note": "todo"
         },
         "en": {
@@ -9610,7 +9610,7 @@
         "id": "684688fa-b628-4318-be1a-6d77278171d8",
         "port": "auto-estrada /rodovia",
         "fr": {
-            "translation": "todo",
+            "translation": "autoroute / autoroute",
             "note": "todo"
         },
         "en": {
@@ -9623,7 +9623,7 @@
         "id": "56cd3e12-3d10-48e8-823c-7f07de31c964",
         "port": "auto-serviço",
         "fr": {
-            "translation": "todo",
+            "translation": "self-service",
             "note": "todo"
         },
         "en": {
@@ -9636,7 +9636,7 @@
         "id": "8b40b77c-d91f-4faa-90bc-502b0735ef37",
         "port": "avaria",
         "fr": {
-            "translation": "todo",
+            "translation": "panne",
             "note": "todo"
         },
         "en": {
@@ -9649,7 +9649,7 @@
         "id": "4f8c81be-8307-41d0-990c-27fb737e7bfc",
         "port": "ave, pássaro",
         "fr": {
-            "translation": "todo",
+            "translation": "oiseau, oiseau",
             "note": "todo"
         },
         "en": {
@@ -9662,7 +9662,7 @@
         "id": "97b80979-635f-4fd0-909f-a2d09bf1143f",
         "port": "avenida avenue avião",
         "fr": {
-            "translation": "todo",
+            "translation": "avenue avion",
             "note": "todo"
         },
         "en": {
@@ -9675,7 +9675,7 @@
         "id": "a0f5a2c0-2d65-4863-902f-7e8f0153e163",
         "port": "avô / avó / avós",
         "fr": {
-            "translation": "todo",
+            "translation": "grand-père / grand-mère / grands-parents",
             "note": "todo"
         },
         "en": {
@@ -9688,7 +9688,7 @@
         "id": "034164c3-6c24-4717-a3b7-a751b7dbddc7",
         "port": "azeite (de oliveira / de oliva)",
         "fr": {
-            "translation": "todo",
+            "translation": "huile (d'olive)",
             "note": "todo"
         },
         "en": {
@@ -9701,7 +9701,7 @@
         "id": "c99fc8b7-46ad-44f1-93fe-c3926761283a",
         "port": "bacalhau",
         "fr": {
-            "translation": "todo",
+            "translation": "morue",
             "note": "todo"
         },
         "en": {
@@ -9714,7 +9714,7 @@
         "id": "d51f123b-ebb1-42fc-aca6-2daf87a043ee",
         "port": "bagagem",
         "fr": {
-            "translation": "todo",
+            "translation": "bagages",
             "note": "todo"
         },
         "en": {
@@ -9727,7 +9727,7 @@
         "id": "dc2c75ba-7192-4dfb-85ad-be245fd34f73",
         "port": "balcão",
         "fr": {
-            "translation": "todo",
+            "translation": "comptoir",
             "note": "todo"
         },
         "en": {
@@ -9740,7 +9740,7 @@
         "id": "4611f7e1-824b-4a03-8743-74e32662a5c8",
         "port": "banana",
         "fr": {
-            "translation": "todo",
+            "translation": "banane",
             "note": "todo"
         },
         "en": {
@@ -9753,7 +9753,7 @@
         "id": "5a0833cc-0a53-4a14-a6f3-fdc82b80224d",
         "port": "banhar",
         "fr": {
-            "translation": "todo",
+            "translation": "baigner",
             "note": "todo"
         },
         "en": {
@@ -9766,7 +9766,7 @@
         "id": "756bb0c2-7116-4eb5-9fce-261aa103030b",
         "port": "banheira",
         "fr": {
-            "translation": "todo",
+            "translation": "baignoire",
             "note": "todo"
         },
         "en": {
@@ -9779,7 +9779,7 @@
         "id": "818fe881-dade-4a08-ba3b-2957c4751707",
         "port": "barato",
         "fr": {
-            "translation": "todo",
+            "translation": "bon marché",
             "note": "todo"
         },
         "en": {
@@ -9792,7 +9792,7 @@
         "id": "dc2c8f48-83d2-47fe-b7f9-4715bfa1b359",
         "port": "barba",
         "fr": {
-            "translation": "todo",
+            "translation": "barbe",
             "note": "todo"
         },
         "en": {
@@ -9805,7 +9805,7 @@
         "id": "7d7a06da-e13c-4ccf-bc79-4aa756a3c6e9",
         "port": "barriga",
         "fr": {
-            "translation": "todo",
+            "translation": "ventre",
             "note": "todo"
         },
         "en": {
@@ -9818,7 +9818,7 @@
         "id": "e95f899e-1497-4392-a766-2665e7d0965d",
         "port": "barulhento",
         "fr": {
-            "translation": "todo",
+            "translation": "bruyant",
             "note": "todo"
         },
         "en": {
@@ -9831,7 +9831,7 @@
         "id": "28a2df69-ed74-4836-8f4f-7b0f319b9c00",
         "port": "barulho, ruído",
         "fr": {
-            "translation": "todo",
+            "translation": "bruit, bruit",
             "note": "todo"
         },
         "en": {
@@ -9844,7 +9844,7 @@
         "id": "0435489a-d66b-4ee7-b2b2-eab43881ab54",
         "port": "batata",
         "fr": {
-            "translation": "todo",
+            "translation": "pomme de terre",
             "note": "todo"
         },
         "en": {
@@ -9857,7 +9857,7 @@
         "id": "793e8120-42be-43cd-98a3-381db0b62a44",
         "port": "batatas cozidas",
         "fr": {
-            "translation": "todo",
+            "translation": "pommes de terre bouillies",
             "note": "todo"
         },
         "en": {
@@ -9870,7 +9870,7 @@
         "id": "c34e1cb2-46ff-4c9e-bdb7-3126df34d72e",
         "port": "batatas fritas",
         "fr": {
-            "translation": "todo",
+            "translation": "frites",
             "note": "todo"
         },
         "en": {
@@ -9883,7 +9883,7 @@
         "id": "db3ef3e0-c66f-46f2-8855-4a35fd271829",
         "port": "bater em, bater contra",
         "fr": {
-            "translation": "todo",
+            "translation": "frapper, heurter",
             "note": "todo"
         },
         "en": {
@@ -9896,7 +9896,7 @@
         "id": "ef8b239f-ce6c-4844-b710-239e00b03cad",
         "port": "bateria",
         "fr": {
-            "translation": "todo",
+            "translation": "batterie",
             "note": "todo"
         },
         "en": {
@@ -9909,7 +9909,7 @@
         "id": "9c06e64a-23c8-4a6f-869d-78101854f12a",
         "port": "batom",
         "fr": {
-            "translation": "todo",
+            "translation": "rouge à lèvres",
             "note": "todo"
         },
         "en": {
@@ -9922,7 +9922,7 @@
         "id": "99bb4737-1359-49e0-8c43-6aa890749c5f",
         "port": "bebé / bebê",
         "fr": {
-            "translation": "todo",
+            "translation": "bébé",
             "note": "todo"
         },
         "en": {
@@ -9935,7 +9935,7 @@
         "id": "990fbfb6-320d-478c-b2b7-185fdb8c8bf5",
         "port": "beber",
         "fr": {
-            "translation": "todo",
+            "translation": "boire",
             "note": "todo"
         },
         "en": {
@@ -9948,7 +9948,7 @@
         "id": "b0348a5a-1d13-4c56-874f-039d267311fd",
         "port": "bebida gasosa pop",
         "fr": {
-            "translation": "todo",
+            "translation": "boisson gazeuse soda",
             "note": "todo"
         },
         "en": {
@@ -9961,7 +9961,7 @@
         "id": "e33ee1bb-8796-4a9c-b799-133dbdd926cd",
         "port": "beijo",
         "fr": {
-            "translation": "todo",
+            "translation": "baiser",
             "note": "todo"
         },
         "en": {
@@ -9974,7 +9974,7 @@
         "id": "0d0de574-50ce-4171-9751-1156fedef94f",
         "port": "belo bonito",
         "fr": {
-            "translation": "todo",
+            "translation": "beau beau",
             "note": "todo"
         },
         "en": {
@@ -9987,7 +9987,7 @@
         "id": "19d2e2ee-7706-46c1-be88-304731c5fd45",
         "port": "bem como / tanto…como",
         "fr": {
-            "translation": "todo",
+            "translation": "ainsi que / autant…que",
             "note": "todo"
         },
         "en": {
@@ -10000,7 +10000,7 @@
         "id": "5ca4dd70-a40a-4548-a8b2-a66e88c94699",
         "port": "bem-vindo",
         "fr": {
-            "translation": "todo",
+            "translation": "bienvenue",
             "note": "todo"
         },
         "en": {
@@ -10013,7 +10013,7 @@
         "id": "26d0b632-070e-4fcf-83f5-5e5106578f3c",
         "port": "biblioteca",
         "fr": {
-            "translation": "todo",
+            "translation": "bibliothèque",
             "note": "todo"
         },
         "en": {
@@ -10026,7 +10026,7 @@
         "id": "bb40170b-e303-49db-a714-043aab2ce923",
         "port": "bicicleta",
         "fr": {
-            "translation": "todo",
+            "translation": "vélo",
             "note": "todo"
         },
         "en": {
@@ -10039,7 +10039,7 @@
         "id": "611cf854-b66e-4e80-bde4-89639453ea39",
         "port": "bicicleta de montanha",
         "fr": {
-            "translation": "todo",
+            "translation": "vélo de montagne",
             "note": "todo"
         },
         "en": {
@@ -10052,7 +10052,7 @@
         "id": "52ca314b-43d2-4075-b948-1574044d9350",
         "port": "bife",
         "fr": {
-            "translation": "todo",
+            "translation": "bifteck",
             "note": "todo"
         },
         "en": {
@@ -10065,7 +10065,7 @@
         "id": "faa94d67-ec0f-43bd-8cdf-734bdab07db8",
         "port": "bilhete",
         "fr": {
-            "translation": "todo",
+            "translation": "billet",
             "note": "todo"
         },
         "en": {
@@ -10078,7 +10078,7 @@
         "id": "c9d9ef21-6d14-40ff-94f2-73530d6ae13b",
         "port": "bilhete de ida (e volta)",
         "fr": {
-            "translation": "todo",
+            "translation": "billet aller (et retour)",
             "note": "todo"
         },
         "en": {
@@ -10091,7 +10091,7 @@
         "id": "8c596f18-5639-4439-a4c0-ea97553e076e",
         "port": "bilhete de identidade/carteira de identidade",
         "fr": {
-            "translation": "todo",
+            "translation": "carte d'identité",
             "note": "todo"
         },
         "en": {
@@ -10104,7 +10104,7 @@
         "id": "164318ae-6203-4999-acbd-42007d371324",
         "port": "bilhete, passagem",
         "fr": {
-            "translation": "todo",
+            "translation": "billet, ticket",
             "note": "todo"
         },
         "en": {
@@ -10117,7 +10117,7 @@
         "id": "fa99fd6c-7dc1-4582-8822-dcda01cd9a12",
         "port": "bilheteira / bilheteria",
         "fr": {
-            "translation": "todo",
+            "translation": "billetterie",
             "note": "todo"
         },
         "en": {
@@ -10130,7 +10130,7 @@
         "id": "16f3a52a-4bf7-4d03-95cd-b6c1811ee1d9",
         "port": "biologia",
         "fr": {
-            "translation": "todo",
+            "translation": "biologie",
             "note": "todo"
         },
         "en": {
@@ -10143,7 +10143,7 @@
         "id": "d9052189-0d53-4751-81cc-b5274700b6f3",
         "port": "bloco de apartamentos block",
         "fr": {
-            "translation": "todo",
+            "translation": "immeuble d'appartements bloc",
             "note": "todo"
         },
         "en": {
@@ -10156,7 +10156,7 @@
         "id": "03b5bb7e-89d7-468d-8e03-bcb72414717a",
         "port": "blusa",
         "fr": {
-            "translation": "todo",
+            "translation": "blouse",
             "note": "todo"
         },
         "en": {
@@ -10169,7 +10169,7 @@
         "id": "25bb3e57-1358-4b64-b41d-0d3b6917b3b2",
         "port": "bolacha",
         "fr": {
-            "translation": "todo",
+            "translation": "biscuit",
             "note": "todo"
         },
         "en": {
@@ -10182,7 +10182,7 @@
         "id": "f199e092-bb6d-456a-b840-1908a5c62ce5",
         "port": "bolo, bolinho",
         "fr": {
-            "translation": "todo",
+            "translation": "gâteau, petit gâteau",
             "note": "todo"
         },
         "en": {
@@ -10195,7 +10195,7 @@
         "id": "deb16a06-7556-498d-b130-399a43b11620",
         "port": "bombeiro",
         "fr": {
-            "translation": "todo",
+            "translation": "pompier",
             "note": "todo"
         },
         "en": {
@@ -10208,7 +10208,7 @@
         "id": "61b80d15-6727-4e60-8060-b085c94c58b4",
         "port": "boné",
         "fr": {
-            "translation": "todo",
+            "translation": "casquette",
             "note": "todo"
         },
         "en": {
@@ -10221,7 +10221,7 @@
         "id": "6dc4e343-7675-4442-a997-75077e61dceb",
         "port": "borracha rubber (=material",
         "fr": {
-            "translation": "todo",
+            "translation": "caoutchouc caoutchouc (=matière",
             "note": "todo"
         },
         "en": {
@@ -10234,7 +10234,7 @@
         "id": "a4240854-cd91-462c-8da7-b5606c490747",
         "port": "borrego, cordeiro lamb",
         "fr": {
-            "translation": "todo",
+            "translation": "agneau, agneau agneau",
             "note": "todo"
         },
         "en": {
@@ -10247,7 +10247,7 @@
         "id": "ee47bb08-b0ca-4208-b65d-74eb141834c2",
         "port": "bosque/floresta",
         "fr": {
-            "translation": "todo",
+            "translation": "bois/forêt",
             "note": "todo"
         },
         "en": {
@@ -10260,7 +10260,7 @@
         "id": "1cc9e0e1-9889-445b-a52a-f2734deede45",
         "port": "bota",
         "fr": {
-            "translation": "todo",
+            "translation": "botte",
             "note": "todo"
         },
         "en": {
@@ -10273,7 +10273,7 @@
         "id": "86c90f75-ee46-416b-a29e-692e57e1c3c5",
         "port": "botão",
         "fr": {
-            "translation": "todo",
+            "translation": "bouton",
             "note": "todo"
         },
         "en": {
@@ -10286,7 +10286,7 @@
         "id": "c7f7fe26-f01a-4e4c-a0c3-4b25884e99a4",
         "port": "brilhar",
         "fr": {
-            "translation": "todo",
+            "translation": "briller",
             "note": "todo"
         },
         "en": {
@@ -10299,7 +10299,7 @@
         "id": "25c6fc98-444f-43f4-92f3-30ddf7ad56ed",
         "port": "brinquedo(s)",
         "fr": {
-            "translation": "todo",
+            "translation": "jouet(s)",
             "note": "todo"
         },
         "en": {
@@ -10312,7 +10312,7 @@
         "id": "e59bae90-67eb-4692-bf8e-1af147549888",
         "port": "brochure / folheto",
         "fr": {
-            "translation": "todo",
+            "translation": "brochure / dépliant",
             "note": "todo"
         },
         "en": {
@@ -10325,7 +10325,7 @@
         "id": "ec533d48-2741-4078-bf48-e47a523c48fb",
         "port": "buscar",
         "fr": {
-            "translation": "todo",
+            "translation": "chercher",
             "note": "todo"
         },
         "en": {
@@ -10338,7 +10338,7 @@
         "id": "69e1bf48-9654-4078-8a46-f15d6510fa14",
         "port": "cabeleireiro",
         "fr": {
-            "translation": "todo",
+            "translation": "coiffeur",
             "note": "todo"
         },
         "en": {
@@ -10351,7 +10351,7 @@
         "id": "8cbce7bc-3dfe-415b-a0fb-b0d9896b72f8",
         "port": "cabina",
         "fr": {
-            "translation": "todo",
+            "translation": "cabine",
             "note": "todo"
         },
         "en": {
@@ -10364,7 +10364,7 @@
         "id": "d0959524-5909-4e21-8c3c-e836760ec750",
         "port": "caçarola / panela com um cabo",
         "fr": {
-            "translation": "todo",
+            "translation": "casserole / poêle avec une poignée",
             "note": "todo"
         },
         "en": {
@@ -10377,7 +10377,7 @@
         "id": "b6a3f0cc-d1a5-4077-9fc0-74809194d919",
         "port": "cachecol",
         "fr": {
-            "translation": "todo",
+            "translation": "écharpe",
             "note": "todo"
         },
         "en": {
@@ -10390,7 +10390,7 @@
         "id": "5381abd5-afe7-474f-a8ae-28f8089be4ec",
         "port": "caderno",
         "fr": {
-            "translation": "todo",
+            "translation": "cahier",
             "note": "todo"
         },
         "en": {
@@ -10403,7 +10403,7 @@
         "id": "b8191c5c-41ab-4a7f-8bb7-0906a232baa9",
         "port": "cafeteira",
         "fr": {
-            "translation": "todo",
+            "translation": "cafetière",
             "note": "todo"
         },
         "en": {
@@ -10416,7 +10416,7 @@
         "id": "2d701e31-4f16-4fb7-8c2c-9a5341dbc669",
         "port": "cair",
         "fr": {
-            "translation": "todo",
+            "translation": "tomber",
             "note": "todo"
         },
         "en": {
@@ -10429,7 +10429,7 @@
         "id": "fb7ffbdf-341b-4b57-b3c8-1b25040af13f",
         "port": "cais / plataforma",
         "fr": {
-            "translation": "todo",
+            "translation": "quai / plateforme",
             "note": "todo"
         },
         "en": {
@@ -10442,7 +10442,7 @@
         "id": "2e159e30-199a-4a4f-9c73-ae7336d414d2",
         "port": "caixa (de chocolates)",
         "fr": {
-            "translation": "todo",
+            "translation": "boîte (de chocolats)",
             "note": "todo"
         },
         "en": {
@@ -10455,7 +10455,7 @@
         "id": "d9331b0a-2be7-4448-a15f-7cb9b783a739",
         "port": "caixa de correio",
         "fr": {
-            "translation": "todo",
+            "translation": "boîte aux lettres",
             "note": "todo"
         },
         "en": {
@@ -10468,7 +10468,7 @@
         "id": "fce35f8d-0ac4-452a-8f2f-dc8f986476bd",
         "port": "calções / shorts",
         "fr": {
-            "translation": "todo",
+            "translation": "short / short",
             "note": "todo"
         },
         "en": {
@@ -10481,7 +10481,7 @@
         "id": "cddc3f08-baa5-4456-9957-283497707d97",
         "port": "calculadora",
         "fr": {
-            "translation": "todo",
+            "translation": "calculatrice",
             "note": "todo"
         },
         "en": {
@@ -10494,7 +10494,7 @@
         "id": "78ebdf62-884b-4f5d-8181-c2152bb67b82",
         "port": "calmo tranquilo",
         "fr": {
-            "translation": "todo",
+            "translation": "calme tranquille",
             "note": "todo"
         },
         "en": {
@@ -10507,7 +10507,7 @@
         "id": "7680a353-258a-41f0-9f13-d658366111e6",
         "port": "cama (de solteiro / de casal)",
         "fr": {
-            "translation": "todo",
+            "translation": "lit (simple / double)",
             "note": "todo"
         },
         "en": {
@@ -10520,7 +10520,7 @@
         "id": "bddf3588-62e4-4f3d-b106-f19afd624907",
         "port": "câmara municipal / prefeitura",
         "fr": {
-            "translation": "todo",
+            "translation": "mairie / mairie",
             "note": "todo"
         },
         "en": {
@@ -10533,7 +10533,7 @@
         "id": "89ba8a8a-6f15-40a8-83b7-e3616fd981ac",
         "port": "câmara / câmera",
         "fr": {
-            "translation": "todo",
+            "translation": "chambre / caméra",
             "note": "todo"
         },
         "en": {
@@ -10546,7 +10546,7 @@
         "id": "be49f20a-0ecb-4792-9c7b-a19ee162cb15",
         "port": "camião / caminhão",
         "fr": {
-            "translation": "todo",
+            "translation": "camion",
             "note": "todo"
         },
         "en": {
@@ -10559,7 +10559,7 @@
         "id": "5a03a8cb-914e-4ee1-9e3d-745d88ff34c7",
         "port": "caminho para casa",
         "fr": {
-            "translation": "todo",
+            "translation": "chemin de la maison",
             "note": "todo"
         },
         "en": {
@@ -10572,7 +10572,7 @@
         "id": "db4ccd13-c70c-4f6c-952c-c485a81abb8d",
         "port": "caminho / trilha",
         "fr": {
-            "translation": "todo",
+            "translation": "chemin / sentier",
             "note": "todo"
         },
         "en": {
@@ -10585,7 +10585,7 @@
         "id": "13c3b441-ded1-4d5a-be38-ef98981714e3",
         "port": "caminho-de-ferro / estrada de ferro",
         "fr": {
-            "translation": "todo",
+            "translation": "chemin de fer / voie ferrée",
             "note": "todo"
         },
         "en": {
@@ -10598,7 +10598,7 @@
         "id": "481bef8e-ee7f-411b-8219-47f733cdbd1c",
         "port": "camioneta, autocarro / ônibus",
         "fr": {
-            "translation": "todo",
+            "translation": "camionnette, autobus / bus",
             "note": "todo"
         },
         "en": {
@@ -10611,7 +10611,7 @@
         "id": "f0516838-a393-4930-a198-0cc34124898e",
         "port": "camisa",
         "fr": {
-            "translation": "todo",
+            "translation": "chemise",
             "note": "todo"
         },
         "en": {
@@ -10624,7 +10624,7 @@
         "id": "829aa620-cf1e-4241-9f5e-db860854a7f7",
         "port": "campo, court / quadra",
         "fr": {
-            "translation": "todo",
+            "translation": "terrain, court / court",
             "note": "todo"
         },
         "en": {
@@ -10637,7 +10637,7 @@
         "id": "d2a3e0de-8c45-47a2-b15e-b1d40c5a4fb7",
         "port": "campo, paisagem",
         "fr": {
-            "translation": "todo",
+            "translation": "champ, paysage",
             "note": "todo"
         },
         "en": {
@@ -10650,7 +10650,7 @@
         "id": "544d4083-e4a2-4963-8e58-eefd4c3c29b1",
         "port": "cana de pesca",
         "fr": {
-            "translation": "todo",
+            "translation": "canne à pêche",
             "note": "todo"
         },
         "en": {
@@ -10663,7 +10663,7 @@
         "id": "3a30171c-6aed-4ca7-bdd5-c4d3368be463",
         "port": "canal",
         "fr": {
-            "translation": "todo",
+            "translation": "canal",
             "note": "todo"
         },
         "en": {
@@ -10676,7 +10676,7 @@
         "id": "f3c8bfaa-38c9-477a-acf6-d900372180f7",
         "port": "canalizador /encanador",
         "fr": {
-            "translation": "todo",
+            "translation": "plombier / plombier",
             "note": "todo"
         },
         "en": {
@@ -10689,7 +10689,7 @@
         "id": "052b66bb-b0c6-4c82-a349-5ea9deacdc0c",
         "port": "canção / canção",
         "fr": {
-            "translation": "todo",
+            "translation": "chanson / chanson",
             "note": "todo"
         },
         "en": {
@@ -10715,7 +10715,7 @@
         "id": "43ef3776-7bb3-474f-bc53-55f38ff7e42e",
         "port": "canoagem",
         "fr": {
-            "translation": "todo",
+            "translation": "canoë-kayak",
             "note": "todo"
         },
         "en": {
@@ -10728,7 +10728,7 @@
         "id": "ff5c67a4-8a03-4664-b3c9-c401650d68f6",
         "port": "cantar",
         "fr": {
-            "translation": "todo",
+            "translation": "chanter",
             "note": "todo"
         },
         "en": {
@@ -10741,7 +10741,7 @@
         "id": "bff3ebd1-30a4-452b-b0e7-5481c29026a8",
         "port": "cantina",
         "fr": {
-            "translation": "todo",
+            "translation": "cantine",
             "note": "todo"
         },
         "en": {
@@ -10754,7 +10754,7 @@
         "id": "644dabde-0637-4b72-b792-799df07fbe2c",
         "port": "cantor",
         "fr": {
-            "translation": "todo",
+            "translation": "chanteur",
             "note": "todo"
         },
         "en": {
@@ -10767,7 +10767,7 @@
         "id": "b5463300-05cd-41c0-8522-13ffc4ef14be",
         "port": "cão / cachorro",
         "fr": {
-            "translation": "todo",
+            "translation": "chien / chien",
             "note": "todo"
         },
         "en": {
@@ -10780,7 +10780,7 @@
         "id": "24f75c57-1f0b-42df-bf76-3bc1590b060c",
         "port": "carcaça, pão",
         "fr": {
-            "translation": "todo",
+            "translation": "carcasse, pain",
             "note": "todo"
         },
         "en": {
@@ -10793,7 +10793,7 @@
         "id": "debc737b-ea84-4695-af9e-81faa042bac5",
         "port": "carne / carne assada",
         "fr": {
-            "translation": "todo",
+            "translation": "viande / rôti de viande",
             "note": "todo"
         },
         "en": {
@@ -10806,7 +10806,7 @@
         "id": "74a1f1e4-9c97-4670-be2b-d517027d0c1e",
         "port": "carne de porco",
         "fr": {
-            "translation": "todo",
+            "translation": "viande de porc",
             "note": "todo"
         },
         "en": {
@@ -10819,7 +10819,7 @@
         "id": "a37f8633-2773-4248-b9b8-7fac2b77df01",
         "port": "caro",
         "fr": {
-            "translation": "todo",
+            "translation": "cher",
             "note": "todo"
         },
         "en": {
@@ -10832,7 +10832,7 @@
         "id": "23bcd739-89aa-4d71-a42d-7344c8dd1b52",
         "port": "carrinha de entregas /",
         "fr": {
-            "translation": "todo",
+            "translation": "fourgonnette de livraison /",
             "note": "todo"
         },
         "en": {
@@ -10845,7 +10845,7 @@
         "id": "957e2fee-d815-417f-af3c-4ddc9bfc25fd",
         "port": "entrega",
         "fr": {
-            "translation": "todo",
+            "translation": "livraison",
             "note": "todo"
         },
         "en": {
@@ -10858,7 +10858,7 @@
         "id": "65e0509a-b4a0-467e-9c4a-e26ce9f642bd",
         "port": "carro, automóvel",
         "fr": {
-            "translation": "todo",
+            "translation": "voiture, automobile",
             "note": "todo"
         },
         "en": {
@@ -10871,7 +10871,7 @@
         "id": "9d12aaa1-e49d-4ea8-b179-0c962fcfecdb",
         "port": "carta de condução / carteira de motorista",
         "fr": {
-            "translation": "todo",
+            "translation": "permis de conduire",
             "note": "todo"
         },
         "en": {
@@ -10884,7 +10884,7 @@
         "id": "4a4ad208-59d9-414c-acbb-a8de54209051",
         "port": "cartão / cartão (caixa)",
         "fr": {
-            "translation": "todo",
+            "translation": "carte / carte (ATM)",
             "note": "todo"
         },
         "en": {
@@ -10897,7 +10897,7 @@
         "id": "b3edfa46-c720-4057-8525-98410ff3700b",
         "port": "cartão de crédito",
         "fr": {
-            "translation": "todo",
+            "translation": "carte de crédit",
             "note": "todo"
         },
         "en": {
@@ -10910,7 +10910,7 @@
         "id": "592673da-3323-4984-86e2-946248a6b36e",
         "port": "cartas",
         "fr": {
-            "translation": "todo",
+            "translation": "lettres",
             "note": "todo"
         },
         "en": {
@@ -10923,7 +10923,7 @@
         "id": "5a02d7a1-cc3a-4528-9928-067004e23bc4",
         "port": "carteira",
         "fr": {
-            "translation": "todo",
+            "translation": "portefeuille",
             "note": "todo"
         },
         "en": {
@@ -10936,7 +10936,7 @@
         "id": "ad0b010c-d7ad-4559-8151-7bd6d54c9470",
         "port": "carteiro",
         "fr": {
-            "translation": "todo",
+            "translation": "facteur",
             "note": "todo"
         },
         "en": {
@@ -10949,7 +10949,7 @@
         "id": "a0fe6256-3968-47df-a967-13ced3816061",
         "port": "casa (em)",
         "fr": {
-            "translation": "todo",
+            "translation": "maison (à)",
             "note": "todo"
         },
         "en": {
@@ -10962,7 +10962,7 @@
         "id": "9431a6bc-bbb6-4aa9-a723-f42185e1b2b2",
         "port": "casa de banho / banheiro",
         "fr": {
-            "translation": "todo",
+            "translation": "salle de bains / salle de bain",
             "note": "todo"
         },
         "en": {
@@ -10975,7 +10975,7 @@
         "id": "c7b6cc3a-0b5b-413f-8c04-f3efb14ba4ef",
         "port": "casaco",
         "fr": {
-            "translation": "todo",
+            "translation": "manteau",
             "note": "todo"
         },
         "en": {
@@ -10988,7 +10988,7 @@
         "id": "df6cb076-b02a-42b7-9b75-20f399d078b0",
         "port": "catedral, sé",
         "fr": {
-            "translation": "todo",
+            "translation": "cathédrale, cathédrale",
             "note": "todo"
         },
         "en": {
@@ -11001,7 +11001,7 @@
         "id": "6ac316ef-a798-4241-a0bf-c1f924c055f4",
         "port": "cebola",
         "fr": {
-            "translation": "todo",
+            "translation": "oignon",
             "note": "todo"
         },
         "en": {
@@ -11014,7 +11014,7 @@
         "id": "f3f23402-3d59-4120-ae4e-d89857db2983",
         "port": "cego",
         "fr": {
-            "translation": "todo",
+            "translation": "aveugle",
             "note": "todo"
         },
         "en": {
@@ -11027,7 +11027,7 @@
         "id": "572cf485-b31e-478c-b811-1bbe2dc0b9e6",
         "port": "cenoura",
         "fr": {
-            "translation": "todo",
+            "translation": "carotte",
             "note": "todo"
         },
         "en": {
@@ -11040,7 +11040,7 @@
         "id": "6cdcaf89-4da7-4e90-af91-8edad2d71d88",
         "port": "centro de informação turística",
         "fr": {
-            "translation": "todo",
+            "translation": "office de tourisme",
             "note": "todo"
         },
         "en": {
@@ -11053,7 +11053,7 @@
         "id": "d217e27c-38ce-4c4f-a426-f2a26b065f87",
         "port": "cereais",
         "fr": {
-            "translation": "todo",
+            "translation": "céréales",
             "note": "todo"
         },
         "en": {
@@ -11066,7 +11066,7 @@
         "id": "2963dc96-a7b5-46f0-b54a-aee0fe8d69cf",
         "port": "cereja",
         "fr": {
-            "translation": "todo",
+            "translation": "cerise",
             "note": "todo"
         },
         "en": {
@@ -11079,7 +11079,7 @@
         "id": "2eaaef9d-c512-4f33-96c0-fcabcc6a576b",
         "port": "cesto cesta",
         "fr": {
-            "translation": "todo",
+            "translation": "panier panier",
             "note": "todo"
         },
         "en": {
@@ -11092,7 +11092,7 @@
         "id": "421fa47c-76a2-457d-affe-3f1c8a8f32b0",
         "port": "chama",
         "fr": {
-            "translation": "todo",
+            "translation": "flamme",
             "note": "todo"
         },
         "en": {
@@ -11105,7 +11105,7 @@
         "id": "e9e3173e-0c4e-44c9-9819-8f252d119281",
         "port": "chamar-se",
         "fr": {
-            "translation": "todo",
+            "translation": "s'appeler",
             "note": "todo"
         },
         "en": {
@@ -11118,7 +11118,7 @@
         "id": "2e88a52f-a674-4923-abca-36797f2bc24a",
         "port": "champô / xampu",
         "fr": {
-            "translation": "todo",
+            "translation": "shampoing / shampooing",
             "note": "todo"
         },
         "en": {
@@ -11131,7 +11131,7 @@
         "id": "a8e22b03-ef2f-49fe-b131-49f96942b5cd",
         "port": "chapéu",
         "fr": {
-            "translation": "todo",
+            "translation": "chapeau",
             "note": "todo"
         },
         "en": {
@@ -11144,7 +11144,7 @@
         "id": "456d7fb1-2fb1-4d12-be0c-2c31fdd2dc47",
         "port": "aborrecido",
         "fr": {
-            "translation": "todo",
+            "translation": "ennuyeux",
             "note": "todo"
         },
         "en": {
@@ -11157,7 +11157,7 @@
         "id": "6c7a9d94-39fc-4e9a-b310-a8ec2f2390a4",
         "port": "chávena / xícara",
         "fr": {
-            "translation": "todo",
+            "translation": "tasse / tasse",
             "note": "todo"
         },
         "en": {
@@ -11170,7 +11170,7 @@
         "id": "0079bfd9-8f51-4b86-a149-af0e9a5d2c41",
         "port": "chefe de cozinha / cozinheiro-chefe",
         "fr": {
-            "translation": "todo",
+            "translation": "chef de cuisine / chef cuisinier",
             "note": "todo"
         },
         "en": {
@@ -11183,7 +11183,7 @@
         "id": "0036254b-6b61-410a-8c5b-b2f88c426c70",
         "port": "chegada",
         "fr": {
-            "translation": "todo",
+            "translation": "arrivée",
             "note": "todo"
         },
         "en": {
@@ -11196,7 +11196,7 @@
         "id": "43d98f6d-bec9-453a-a16a-ae3d85639e83",
         "port": "chegar",
         "fr": {
-            "translation": "todo",
+            "translation": "arriver",
             "note": "todo"
         },
         "en": {
@@ -11209,7 +11209,7 @@
         "id": "e6440f9f-eb48-4b2d-8415-b887ae1f8dda",
         "port": "cheio",
         "fr": {
-            "translation": "todo",
+            "translation": "plein",
             "note": "todo"
         },
         "en": {
@@ -11222,7 +11222,7 @@
         "id": "ffb18f67-fab8-4c62-ac28-df1274bd7382",
         "port": "cheque de",
         "fr": {
-            "translation": "todo",
+            "translation": "chèque de",
             "note": "todo"
         },
         "en": {
@@ -11235,7 +11235,7 @@
         "id": "08295429-738b-42b7-99dc-ce8f17e5ff79",
         "port": "chouriço",
         "fr": {
-            "translation": "todo",
+            "translation": "chorizo",
             "note": "todo"
         },
         "en": {
@@ -11248,7 +11248,7 @@
         "id": "13ee696c-008c-4b4b-9ed0-294bab4089a3",
         "port": "chover",
         "fr": {
-            "translation": "todo",
+            "translation": "pleuvoir",
             "note": "todo"
         },
         "en": {
@@ -11261,7 +11261,7 @@
         "id": "24e102e2-2ebe-4f1e-a195-5624fb4e5470",
         "port": "chuveiro",
         "fr": {
-            "translation": "todo",
+            "translation": "douche",
             "note": "todo"
         },
         "en": {
@@ -11274,7 +11274,7 @@
         "id": "ce49d102-6ba1-4feb-954a-152ea587c7c1",
         "port": "chuvoso",
         "fr": {
-            "translation": "todo",
+            "translation": "pluvieux",
             "note": "todo"
         },
         "en": {
@@ -11287,7 +11287,7 @@
         "id": "7348e590-5995-4ffc-992f-6f6268eb059e",
         "port": "ciclismo / ciclista",
         "fr": {
-            "translation": "todo",
+            "translation": "cyclisme / cycliste",
             "note": "todo"
         },
         "en": {
@@ -11300,7 +11300,7 @@
         "id": "a375e8f5-5be3-4daa-8092-4832d7f807cf",
         "port": "cidade (centro)",
         "fr": {
-            "translation": "todo",
+            "translation": "ville (centre)",
             "note": "todo"
         },
         "en": {
@@ -11313,7 +11313,7 @@
         "id": "64290117-da10-4690-8639-dc6d9a9b97a3",
         "port": "ciência(s)",
         "fr": {
-            "translation": "todo",
+            "translation": "science(s)",
             "note": "todo"
         },
         "en": {
@@ -11326,7 +11326,7 @@
         "id": "b7f8d291-7a15-44b0-964d-2e768524069b",
         "port": "cinema",
         "fr": {
-            "translation": "todo",
+            "translation": "cinéma",
             "note": "todo"
         },
         "en": {
@@ -11339,7 +11339,7 @@
         "id": "6cca3984-f5be-4f18-b5a4-03009f3932e6",
         "port": "cinto",
         "fr": {
-            "translation": "todo",
+            "translation": "ceinture",
             "note": "todo"
         },
         "en": {
@@ -11352,7 +11352,7 @@
         "id": "79a84ff2-5781-41e8-90a1-77a6b96e1ab3",
         "port": "clarinete",
         "fr": {
-            "translation": "todo",
+            "translation": "clarinette",
             "note": "todo"
         },
         "en": {
@@ -11365,7 +11365,7 @@
         "id": "8e3fd6ee-aa77-4c8f-8ca0-867f03ee3405",
         "port": "cliente",
         "fr": {
-            "translation": "todo",
+            "translation": "client",
             "note": "todo"
         },
         "en": {
@@ -11378,7 +11378,7 @@
         "id": "90de5ff0-55e5-45f7-8078-4c6af2dfbbdb",
         "port": "clima",
         "fr": {
-            "translation": "todo",
+            "translation": "climat",
             "note": "todo"
         },
         "en": {
@@ -11391,7 +11391,7 @@
         "id": "45e42f5c-91b9-4283-9d03-404faae328b0",
         "port": "clube",
         "fr": {
-            "translation": "todo",
+            "translation": "club",
             "note": "todo"
         },
         "en": {
@@ -11404,7 +11404,7 @@
         "id": "3575e8c3-defb-4893-ac58-ea3c8c4c966f",
         "port": "cobra",
         "fr": {
-            "translation": "todo",
+            "translation": "serpent",
             "note": "todo"
         },
         "en": {
@@ -11417,7 +11417,7 @@
         "id": "90d19e36-6b5b-42d0-92e6-3431d7272f85",
         "port": "cobrir",
         "fr": {
-            "translation": "todo",
+            "translation": "couvrir",
             "note": "todo"
         },
         "en": {
@@ -11430,7 +11430,7 @@
         "id": "c355d233-95cf-462f-a48f-169bad69ba27",
         "port": "código postal",
         "fr": {
-            "translation": "todo",
+            "translation": "code postal",
             "note": "todo"
         },
         "en": {
@@ -11443,7 +11443,7 @@
         "id": "f904ca37-d7c4-4844-beb3-c413d92b6bb5",
         "port": "coelho",
         "fr": {
-            "translation": "todo",
+            "translation": "lapin",
             "note": "todo"
         },
         "en": {
@@ -11456,7 +11456,7 @@
         "id": "0190d900-7c5b-4157-b2e0-e73ce1ea0b8d",
         "port": "cogumelo",
         "fr": {
-            "translation": "todo",
+            "translation": "champignon",
             "note": "todo"
         },
         "en": {
@@ -11469,7 +11469,7 @@
         "id": "c6227faf-213c-480e-8984-10e51551e740",
         "port": "colar",
         "fr": {
-            "translation": "todo",
+            "translation": "collier",
             "note": "todo"
         },
         "en": {
@@ -11482,7 +11482,7 @@
         "id": "fcbb03b1-2fbc-4f92-a4a0-6785e9c67e87",
         "port": "colher",
         "fr": {
-            "translation": "todo",
+            "translation": "cuillère",
             "note": "todo"
         },
         "en": {
@@ -11495,7 +11495,7 @@
         "id": "c03f5dee-a200-4359-a2ea-b001cca1842b",
         "port": "colina",
         "fr": {
-            "translation": "todo",
+            "translation": "colline",
             "note": "todo"
         },
         "en": {
@@ -11508,7 +11508,7 @@
         "id": "a4f6556d-e62d-4969-ad9b-2d4f380b6575",
         "port": "com certeza",
         "fr": {
-            "translation": "todo",
+            "translation": "avec certitude",
             "note": "todo"
         },
         "en": {
@@ -11521,7 +11521,7 @@
         "id": "5e431383-23a0-4c63-9ead-9b6d9e4b9d6a",
         "port": "com licença!",
         "fr": {
-            "translation": "todo",
+            "translation": "avec permission !",
             "note": "todo"
         },
         "en": {
@@ -11534,7 +11534,7 @@
         "id": "bf9c08ed-3068-4bea-bf6c-60b5fdf62261",
         "port": "começar",
         "fr": {
-            "translation": "todo",
+            "translation": "commencer",
             "note": "todo"
         },
         "en": {
@@ -11547,7 +11547,7 @@
         "id": "94b3f55b-2e31-4c1a-8091-3c69d820bd4d",
         "port": "comédia",
         "fr": {
-            "translation": "todo",
+            "translation": "comédie",
             "note": "todo"
         },
         "en": {
@@ -11560,7 +11560,7 @@
         "id": "a620e1ee-a83f-449b-a02f-3a0380247361",
         "port": "comer",
         "fr": {
-            "translation": "todo",
+            "translation": "manger",
             "note": "todo"
         },
         "en": {
@@ -11573,7 +11573,7 @@
         "id": "314abeac-6e36-4c72-ac08-7f88f470662b",
         "port": "cómico / cômico",
         "fr": {
-            "translation": "todo",
+            "translation": "comique / comique",
             "note": "todo"
         },
         "en": {
@@ -11586,7 +11586,7 @@
         "id": "a141f84f-bb25-4f89-8bce-f97997da73d5",
         "port": "comida",
         "fr": {
-            "translation": "todo",
+            "translation": "nourriture",
             "note": "todo"
         },
         "en": {
@@ -11599,7 +11599,7 @@
         "id": "bc81490d-856d-4504-a1cc-54ec740f43d7",
         "port": "comida para fora /comida para levar",
         "fr": {
-            "translation": "todo",
+            "translation": "nourriture à emporter",
             "note": "todo"
         },
         "en": {
@@ -11612,7 +11612,7 @@
         "id": "1c63e4e1-8495-4e44-bcfe-7d04baa1558b",
         "port": "cómodo / cômodo",
         "fr": {
-            "translation": "todo",
+            "translation": "commode / commode",
             "note": "todo"
         },
         "en": {
@@ -11625,7 +11625,7 @@
         "id": "5d82dcb1-26d3-418e-8d61-f68a197c4d1d",
         "port": "complicado",
         "fr": {
-            "translation": "todo",
+            "translation": "compliqué",
             "note": "todo"
         },
         "en": {
@@ -11638,7 +11638,7 @@
         "id": "06971791-ccea-41ab-a264-ae7c544a6272",
         "port": "comportamento",
         "fr": {
-            "translation": "todo",
+            "translation": "comportement",
             "note": "todo"
         },
         "en": {
@@ -11651,7 +11651,7 @@
         "id": "e4dd0669-f85f-4076-8ca1-16ef01dfd185",
         "port": "comportar-se",
         "fr": {
-            "translation": "todo",
+            "translation": "se comporter",
             "note": "todo"
         },
         "en": {
@@ -11664,7 +11664,7 @@
         "id": "8fbfd682-8c59-43dc-9396-a6776145e233",
         "port": "comprar",
         "fr": {
-            "translation": "todo",
+            "translation": "acheter",
             "note": "todo"
         },
         "en": {
@@ -11677,7 +11677,7 @@
         "id": "3ae509d1-2d37-4013-b6a9-b791a532592a",
         "port": "compras",
         "fr": {
-            "translation": "todo",
+            "translation": "achats",
             "note": "todo"
         },
         "en": {
@@ -11690,7 +11690,7 @@
         "id": "97e5c01a-d7dc-4cdb-8eed-c30e7689dc94",
         "port": "concerto",
         "fr": {
-            "translation": "todo",
+            "translation": "concert",
             "note": "todo"
         },
         "en": {
@@ -11703,7 +11703,7 @@
         "id": "3a512dff-9b89-48c4-90ea-09f166d66a0d",
         "port": "concordado",
         "fr": {
-            "translation": "todo",
+            "translation": "d'accord",
             "note": "todo"
         },
         "en": {
@@ -11716,7 +11716,7 @@
         "id": "66e947a8-55db-4a19-b2cc-34be874c0195",
         "port": "concurso",
         "fr": {
-            "translation": "todo",
+            "translation": "concours",
             "note": "todo"
         },
         "en": {
@@ -11729,7 +11729,7 @@
         "id": "98728a4e-52f4-4e9d-b71f-f58358eb9d59",
         "port": "congelador; arca /freezer; frízer",
         "fr": {
-            "translation": "todo",
+            "translation": "congélateur ; coffre / congélateur ; freezer",
             "note": "todo"
         },
         "en": {
@@ -11742,7 +11742,7 @@
         "id": "8d5335f8-0912-4ad5-b4b7-b04de54dc357",
         "port": "congelar",
         "fr": {
-            "translation": "todo",
+            "translation": "congeler",
             "note": "todo"
         },
         "en": {
@@ -11755,7 +11755,7 @@
         "id": "788d7db5-8723-4b3d-bc0b-6e968dcee27a",
         "port": "conhecer",
         "fr": {
-            "translation": "todo",
+            "translation": "connaître",
             "note": "todo"
         },
         "en": {
@@ -11768,7 +11768,7 @@
         "id": "21c80f0e-9075-4918-8443-461bdc957d50",
         "port": "consertar",
         "fr": {
-            "translation": "todo",
+            "translation": "réparer",
             "note": "todo"
         },
         "en": {
@@ -11781,7 +11781,7 @@
         "id": "f734ef9b-fec1-469b-bc92-b39c4f843644",
         "port": "conserto, reparação / reparo",
         "fr": {
-            "translation": "todo",
+            "translation": "réparation, réparation",
             "note": "todo"
         },
         "en": {
@@ -11794,7 +11794,7 @@
         "id": "403e7a65-8cc0-4d6f-b70e-32539fd11059",
         "port": "constipação / resfriado",
         "fr": {
-            "translation": "todo",
+            "translation": "constipation / rhume",
             "note": "todo"
         },
         "en": {
@@ -11807,7 +11807,7 @@
         "id": "afab2259-4856-4305-b939-f1b40bc42f02",
         "port": "construtor, empreiteiro, pedreiro",
         "fr": {
-            "translation": "todo",
+            "translation": "constructeur, entrepreneur, maçon",
             "note": "todo"
         },
         "en": {
@@ -11820,7 +11820,7 @@
         "id": "2032cca5-7968-44d1-8028-f61a9ac03c74",
         "port": "conta",
         "fr": {
-            "translation": "todo",
+            "translation": "compte",
             "note": "todo"
         },
         "en": {
@@ -11833,7 +11833,7 @@
         "id": "a326e23a-2ef2-4b30-be6f-b4991ea0a536",
         "port": "contente",
         "fr": {
-            "translation": "todo",
+            "translation": "content",
             "note": "todo"
         },
         "en": {
@@ -11846,7 +11846,7 @@
         "id": "bc0b8e55-d2fb-4c4d-a4ca-6812c9c38254",
         "port": "continuar",
         "fr": {
-            "translation": "todo",
+            "translation": "continuer",
             "note": "todo"
         },
         "en": {
@@ -11859,7 +11859,7 @@
         "id": "db4c8524-f8f6-4abc-ba08-8b0ad8ab5ce5",
         "port": "conversar",
         "fr": {
-            "translation": "todo",
+            "translation": "converser",
             "note": "todo"
         },
         "en": {
@@ -11872,7 +11872,7 @@
         "id": "120b8d78-b714-401f-bd83-7af5ab03896f",
         "port": "convidado, hóspede",
         "fr": {
-            "translation": "todo",
+            "translation": "invité, hôte",
             "note": "todo"
         },
         "en": {
@@ -11885,7 +11885,7 @@
         "id": "5631cf54-1edf-46ac-aa3e-0e158c13b0f4",
         "port": "convite",
         "fr": {
-            "translation": "todo",
+            "translation": "invitation",
             "note": "todo"
         },
         "en": {
@@ -11898,7 +11898,7 @@
         "id": "13ac3a0b-f3b7-4798-81d8-d961a5a402bd",
         "port": "copo",
         "fr": {
-            "translation": "todo",
+            "translation": "verre",
             "note": "todo"
         },
         "en": {
@@ -11911,7 +11911,7 @@
         "id": "f2eb8b01-f4eb-46aa-8e31-ee4a6ad0769b",
         "port": "coro",
         "fr": {
-            "translation": "todo",
+            "translation": "chœur",
             "note": "todo"
         },
         "en": {
@@ -11924,7 +11924,7 @@
         "id": "f8b45636-90b8-417f-b3c8-7545c2122624",
         "port": "bombeiros",
         "fr": {
-            "translation": "todo",
+            "translation": "pompiers",
             "note": "todo"
         },
         "en": {
@@ -11937,7 +11937,7 @@
         "id": "06dd322e-7c51-458f-8e72-0ff9e77137c1",
         "port": "corredor",
         "fr": {
-            "translation": "todo",
+            "translation": "couloir",
             "note": "todo"
         },
         "en": {
@@ -11950,7 +11950,7 @@
         "id": "82d1c133-2df6-46a2-aa0b-0b845006daaf",
         "port": "correios",
         "fr": {
-            "translation": "todo",
+            "translation": "poste",
             "note": "todo"
         },
         "en": {
@@ -11963,7 +11963,7 @@
         "id": "853e5ae8-bf44-4baf-bd34-9cda6d6eb84b",
         "port": "correr",
         "fr": {
-            "translation": "todo",
+            "translation": "courir",
             "note": "todo"
         },
         "en": {
@@ -11976,7 +11976,7 @@
         "id": "e6f0e0fd-412b-4849-b80b-39663cd7ecdf",
         "port": "cortar",
         "fr": {
-            "translation": "todo",
+            "translation": "couper",
             "note": "todo"
         },
         "en": {
@@ -11989,7 +11989,7 @@
         "id": "f52ce54e-92cb-4c6e-9a67-eef1bfe3b888",
         "port": "cortina",
         "fr": {
-            "translation": "todo",
+            "translation": "rideau",
             "note": "todo"
         },
         "en": {
@@ -12002,7 +12002,7 @@
         "id": "6b540e4e-aac1-4ab9-9a70-5e6a556f18dd",
         "port": "costeleta",
         "fr": {
-            "translation": "todo",
+            "translation": "côtelette",
             "note": "todo"
         },
         "en": {
@@ -12015,7 +12015,7 @@
         "id": "b868227e-2c4e-49e5-a14e-d2b64dc7499f",
         "port": "couro",
         "fr": {
-            "translation": "todo",
+            "translation": "cuir",
             "note": "todo"
         },
         "en": {
@@ -12028,7 +12028,7 @@
         "id": "73b73636-927e-4f53-a762-bb8fff262b9f",
         "port": "couve",
         "fr": {
-            "translation": "todo",
+            "translation": "chou",
             "note": "todo"
         },
         "en": {
@@ -12041,7 +12041,7 @@
         "id": "87faaf92-38c1-41fd-b8ad-9cdc83f111f6",
         "port": "couve-flor",
         "fr": {
-            "translation": "todo",
+            "translation": "chou-fleur",
             "note": "todo"
         },
         "en": {
@@ -12054,7 +12054,7 @@
         "id": "b389022e-fe89-4536-8164-37e78311c693",
         "port": "cozer no forno",
         "fr": {
-            "translation": "todo",
+            "translation": "cuire au four",
             "note": "todo"
         },
         "en": {
@@ -12067,7 +12067,7 @@
         "id": "4f2c620c-1ce4-4de3-8a34-c337641b14e0",
         "port": "cozinha",
         "fr": {
-            "translation": "todo",
+            "translation": "cuisine",
             "note": "todo"
         },
         "en": {
@@ -12080,7 +12080,7 @@
         "id": "269d66e8-0863-487a-a01a-0d6c0bc28ac5",
         "port": "cozinhar, cozer",
         "fr": {
-            "translation": "todo",
+            "translation": "cuisiner, cuire",
             "note": "todo"
         },
         "en": {
@@ -12093,7 +12093,7 @@
         "id": "c620009c-6f52-4d98-900d-8f0f7830b3af",
         "port": "creme / loção",
         "fr": {
-            "translation": "todo",
+            "translation": "crème / lotion",
             "note": "todo"
         },
         "en": {
@@ -12106,7 +12106,7 @@
         "id": "b2ec9c63-a5bc-4766-9629-fca9004018cd",
         "port": "crescer",
         "fr": {
-            "translation": "todo",
+            "translation": "grandir",
             "note": "todo"
         },
         "en": {
@@ -12119,7 +12119,7 @@
         "id": "a96d4fa8-70ef-4a66-8030-2f7af3487609",
         "port": "cruzamento",
         "fr": {
-            "translation": "todo",
+            "translation": "croisement",
             "note": "todo"
         },
         "en": {
@@ -12132,7 +12132,7 @@
         "id": "0e056785-ec02-42cc-8c54-5e1cf46f86f1",
         "port": "cumprimentar, saudar",
         "fr": {
-            "translation": "todo",
+            "translation": "saluer, saluer",
             "note": "todo"
         },
         "en": {
@@ -12145,7 +12145,7 @@
         "id": "12798c1f-965b-4a1c-8902-e9ac0fb53f6a",
         "port": "curva",
         "fr": {
-            "translation": "todo",
+            "translation": "courbe",
             "note": "todo"
         },
         "en": {
@@ -12158,7 +12158,7 @@
         "id": "794c3f07-28ec-4415-aa18-7bed20e941ff",
         "port": "damasco",
         "fr": {
-            "translation": "todo",
+            "translation": "abricot",
             "note": "todo"
         },
         "en": {
@@ -12171,7 +12171,7 @@
         "id": "87198d15-4ad3-47a0-bbee-d1ea572ebe3b",
         "port": "dança",
         "fr": {
-            "translation": "todo",
+            "translation": "danse",
             "note": "todo"
         },
         "en": {
@@ -12184,7 +12184,7 @@
         "id": "8d544470-1746-41f3-8d5e-788500e8c063",
         "port": "dançar",
         "fr": {
-            "translation": "todo",
+            "translation": "danser",
             "note": "todo"
         },
         "en": {
@@ -12197,7 +12197,7 @@
         "id": "51c85604-02f2-45ba-88a9-1430fb927ddf",
         "port": "dar",
         "fr": {
-            "translation": "todo",
+            "translation": "donner",
             "note": "todo"
         },
         "en": {
@@ -12210,7 +12210,7 @@
         "id": "249f95a6-0982-413e-80a7-77769c3df012",
         "port": "dar de comer",
         "fr": {
-            "translation": "todo",
+            "translation": "donner à manger",
             "note": "todo"
         },
         "en": {
@@ -12223,7 +12223,7 @@
         "id": "9488bcc9-6185-48b0-a733-cfde245ee7ef",
         "port": "dar um passeio",
         "fr": {
-            "translation": "todo",
+            "translation": "faire une promenade",
             "note": "todo"
         },
         "en": {
@@ -12236,7 +12236,7 @@
         "id": "ebcf2639-4e62-4584-87ee-4eaf55b52249",
         "port": "dar uma caminhada, caminhar",
         "fr": {
-            "translation": "todo",
+            "translation": "faire une promenade, marcher",
             "note": "todo"
         },
         "en": {
@@ -12249,7 +12249,7 @@
         "id": "6b680fe1-15d3-4d49-945a-796f21f62961",
         "port": "dar-se bem com",
         "fr": {
-            "translation": "todo",
+            "translation": "s'entendre bien avec",
             "note": "todo"
         },
         "en": {
@@ -12262,7 +12262,7 @@
         "id": "47c645b1-6ebd-4b97-b6e7-ea7a62d0812c",
         "port": "data",
         "fr": {
-            "translation": "todo",
+            "translation": "date",
             "note": "todo"
         },
         "en": {
@@ -12275,7 +12275,7 @@
         "id": "7c67776a-4cab-4fcf-a30b-20cec455eac6",
         "port": "de boa vontade",
         "fr": {
-            "translation": "todo",
+            "translation": "de bon gré",
             "note": "todo"
         },
         "en": {
@@ -12288,7 +12288,7 @@
         "id": "990898f4-2107-48fb-b201-4f7eb6e92822",
         "port": "de bom / mau humor",
         "fr": {
-            "translation": "todo",
+            "translation": "de bonne / mauvaise humeur",
             "note": "todo"
         },
         "en": {
@@ -12301,7 +12301,7 @@
         "id": "f7812ea3-8086-4e68-8c52-619068c1b832",
         "port": "de maneira nenhuma",
         "fr": {
-            "translation": "todo",
+            "translation": "en aucune façon",
             "note": "todo"
         },
         "en": {
@@ -12314,7 +12314,7 @@
         "id": "1f292ab1-a520-4da4-960c-5e7e7bc4cf51",
         "port": "de outro",
         "fr": {
-            "translation": "todo",
+            "translation": "d'autre",
             "note": "todo"
         },
         "en": {
@@ -12327,7 +12327,7 @@
         "id": "a96a21cc-cd23-4e99-b24a-53e9d23d31a0",
         "port": "de vez em quando",
         "fr": {
-            "translation": "todo",
+            "translation": "de temps en temps",
             "note": "todo"
         },
         "en": {
@@ -12340,7 +12340,7 @@
         "id": "96cb5b6f-782c-4280-8b57-45bac1c1c5a3",
         "port": "de, desde",
         "fr": {
-            "translation": "todo",
+            "translation": "de, depuis",
             "note": "todo"
         },
         "en": {
@@ -12353,7 +12353,7 @@
         "id": "34690d03-0f50-4e3c-a821-69160a388eaf",
         "port": "degrau",
         "fr": {
-            "translation": "todo",
+            "translation": "marche",
             "note": "todo"
         },
         "en": {
@@ -12366,7 +12366,7 @@
         "id": "e305fb32-8359-48ee-87e4-3042b2258123",
         "port": "deitar-se",
         "fr": {
-            "translation": "todo",
+            "translation": "se coucher",
             "note": "todo"
         },
         "en": {
@@ -12379,7 +12379,7 @@
         "id": "c1638c24-d801-4329-bf96-d05506fe144d",
         "port": "deitar-se (estar deitado)",
         "fr": {
-            "translation": "todo",
+            "translation": "s'allonger (être allongé)",
             "note": "todo"
         },
         "en": {
@@ -12392,7 +12392,7 @@
         "id": "4866de60-3e50-4a61-8387-b165b7735f10",
         "port": "deixar",
         "fr": {
-            "translation": "todo",
+            "translation": "laisser",
             "note": "todo"
         },
         "en": {
@@ -12405,7 +12405,7 @@
         "id": "97aec695-171e-435d-89fe-08009ae96d7a",
         "port": "deixar de / parar de fazer algo",
         "fr": {
-            "translation": "todo",
+            "translation": "arrêter de / cesser de faire quelque chose",
             "note": "todo"
         },
         "en": {
@@ -12418,7 +12418,7 @@
         "id": "e7abc576-709b-4903-9b75-ac6076cb73b9",
         "port": "deixar, abandonar",
         "fr": {
-            "translation": "todo",
+            "translation": "laisser, abandonner",
             "note": "todo"
         },
         "en": {
@@ -12431,7 +12431,7 @@
         "id": "be022279-4330-44d0-a397-5efbed108e1c",
         "port": "demasiado, muito",
         "fr": {
-            "translation": "todo",
+            "translation": "trop, très",
             "note": "todo"
         },
         "en": {
@@ -12444,7 +12444,7 @@
         "id": "d2d8f482-4d93-4ea5-94d0-26f39b156978",
         "port": "dente (dor de)",
         "fr": {
-            "translation": "todo",
+            "translation": "dent (mal de)",
             "note": "todo"
         },
         "en": {
@@ -12457,7 +12457,7 @@
         "id": "078572b6-14ab-40be-adf3-5c4e834c0911",
         "port": "dentista",
         "fr": {
-            "translation": "todo",
+            "translation": "dentiste",
             "note": "todo"
         },
         "en": {
@@ -12470,7 +12470,7 @@
         "id": "f1a66cbb-6aac-4794-8882-d1376afc342c",
         "port": "dentro",
         "fr": {
-            "translation": "todo",
+            "translation": "dedans",
             "note": "todo"
         },
         "en": {
@@ -12483,7 +12483,7 @@
         "id": "167087af-c57d-4589-9654-ec4d0223a884",
         "port": "depois de amanhã day",
         "fr": {
-            "translation": "todo",
+            "translation": "après-demain",
             "note": "todo"
         },
         "en": {
@@ -12496,7 +12496,7 @@
         "id": "a8ca161a-ab4b-4845-90d8-9d0143c6f9a3",
         "port": "depois, após",
         "fr": {
-            "translation": "todo",
+            "translation": "après",
             "note": "todo"
         },
         "en": {
@@ -12509,7 +12509,7 @@
         "id": "ef6fba3f-c905-439f-9d07-53dd6067af27",
         "port": "desarrumado",
         "fr": {
-            "translation": "todo",
+            "translation": "en désordre",
             "note": "todo"
         },
         "en": {
@@ -12522,7 +12522,7 @@
         "id": "64c0ea3a-40aa-4b8d-bcd3-99d16db0e00c",
         "port": "descansar",
         "fr": {
-            "translation": "todo",
+            "translation": "se reposer",
             "note": "todo"
         },
         "en": {
@@ -12535,7 +12535,7 @@
         "id": "bd8fb522-4259-4f71-ae5e-7b351d664d22",
         "port": "descobrir",
         "fr": {
-            "translation": "todo",
+            "translation": "découvrir",
             "note": "todo"
         },
         "en": {
@@ -12548,7 +12548,7 @@
         "id": "7d8eaf5e-ac1e-4562-8ce0-c7ff7461d261",
         "port": "descrever",
         "fr": {
-            "translation": "todo",
+            "translation": "décrire",
             "note": "todo"
         },
         "en": {
@@ -12561,7 +12561,7 @@
         "id": "edf815bf-7927-4dcd-9f70-cd5c25b5e9c8",
         "port": "desejar",
         "fr": {
-            "translation": "todo",
+            "translation": "désirer",
             "note": "todo"
         },
         "en": {
@@ -12574,7 +12574,7 @@
         "id": "a7c4e370-1bc2-42a3-b1f6-b7f0bd0e7541",
         "port": "desempregado",
         "fr": {
-            "translation": "todo",
+            "translation": "au chômage",
             "note": "todo"
         },
         "en": {
@@ -12587,7 +12587,7 @@
         "id": "f2069ac8-ad81-40a8-a3b5-329021d212c9",
         "port": "desenhar",
         "fr": {
-            "translation": "todo",
+            "translation": "dessiner",
             "note": "todo"
         },
         "en": {
@@ -12600,7 +12600,7 @@
         "id": "a040b876-1242-4dc7-93ee-7d4f700ba9e8",
         "port": "desenho animado",
         "fr": {
-            "translation": "todo",
+            "translation": "dessin animé",
             "note": "todo"
         },
         "en": {
@@ -12613,7 +12613,7 @@
         "id": "44f07334-5ec4-43ce-b479-684a58a137bb",
         "port": "despertador",
         "fr": {
-            "translation": "todo",
+            "translation": "réveil",
             "note": "todo"
         },
         "en": {
@@ -12626,7 +12626,7 @@
         "id": "f1116c61-eae5-4e94-a871-99aaf4141a19",
         "port": "destino",
         "fr": {
-            "translation": "todo",
+            "translation": "destination",
             "note": "todo"
         },
         "en": {
@@ -12639,7 +12639,7 @@
         "id": "aeb4bfd5-7b45-4f90-a761-82e7d4cf0c42",
         "port": "detestar, odiar",
         "fr": {
-            "translation": "todo",
+            "translation": "détester, haïr",
             "note": "todo"
         },
         "en": {
@@ -12652,7 +12652,7 @@
         "id": "537fd1e8-26c1-47fd-8eb8-2cba3532e60c",
         "port": "dever ought",
         "fr": {
-            "translation": "todo",
+            "translation": "devoir",
             "note": "todo"
         },
         "en": {
@@ -12665,7 +12665,7 @@
         "id": "9873df14-5fdb-484f-ba82-7c214d992223",
         "port": "diferente",
         "fr": {
-            "translation": "todo",
+            "translation": "différent",
             "note": "todo"
         },
         "en": {
@@ -12678,7 +12678,7 @@
         "id": "6c9fef0a-fe68-4a67-b496-18e588517073",
         "port": "director / directora de escola / diretor / diretora de escola",
         "fr": {
-            "translation": "todo",
+            "translation": "directeur / directrice d'école",
             "note": "todo"
         },
         "en": {
@@ -12691,7 +12691,7 @@
         "id": "bcfabca8-81d7-4210-b554-3e99fc5d2cf6",
         "port": "direita (à)",
         "fr": {
-            "translation": "todo",
+            "translation": "droite (à)",
             "note": "todo"
         },
         "en": {
@@ -12704,7 +12704,7 @@
         "id": "c9ad663f-8a49-48b1-bd43-080a2ce73ddc",
         "port": "divertido",
         "fr": {
-            "translation": "todo",
+            "translation": "amusant",
             "note": "todo"
         },
         "en": {
@@ -12717,7 +12717,7 @@
         "id": "8415fe67-cc10-4670-ba0f-f150f4b8bc94",
         "port": "divertimento, diversão",
         "fr": {
-            "translation": "todo",
+            "translation": "divertissement, amusement",
             "note": "todo"
         },
         "en": {
@@ -12730,7 +12730,7 @@
         "id": "dfc6b042-b200-46fe-9f2f-26adc10b751f",
         "port": "doce",
         "fr": {
-            "translation": "todo",
+            "translation": "sucré",
             "note": "todo"
         },
         "en": {
@@ -12743,7 +12743,7 @@
         "id": "749dd1af-b2ec-419e-96e7-1085b8bfa046",
         "port": "documentário",
         "fr": {
-            "translation": "todo",
+            "translation": "documentaire",
             "note": "todo"
         },
         "en": {
@@ -12756,7 +12756,7 @@
         "id": "43d2b5e1-21af-4e30-addd-5d9044ca6478",
         "port": "doentio",
         "fr": {
-            "translation": "todo",
+            "translation": "maladif",
             "note": "todo"
         },
         "en": {
@@ -12769,7 +12769,7 @@
         "id": "7f3a9b2c-4d8e-4f5a-9c1b-2e6d8f4a7b3c",
         "port": "doer (dói-me o braço)",
         "fr": {
-            "translation": "todo",
+            "translation": "faire mal (j'ai mal au bras)",
             "note": "todo"
         },
         "en": {
@@ -12782,7 +12782,7 @@
         "id": "90517fec-9dd0-4113-9eaf-3787cbbc1522",
         "port": "dono, proprietário",
         "fr": {
-            "translation": "todo",
+            "translation": "propriétaire",
             "note": "todo"
         },
         "en": {
@@ -12795,7 +12795,7 @@
         "id": "72ae92c5-6f24-443c-953b-3568dacf3b08",
         "port": "dor",
         "fr": {
-            "translation": "todo",
+            "translation": "douleur",
             "note": "todo"
         },
         "en": {
@@ -12808,7 +12808,7 @@
         "id": "42394b38-4f7c-4f03-b28e-c1fdaf54b37b",
         "port": "dor de cabeça",
         "fr": {
-            "translation": "todo",
+            "translation": "mal de tête",
             "note": "todo"
         },
         "en": {
@@ -12821,7 +12821,7 @@
         "id": "b2fc13fd-64d2-44bf-bbc8-cb0adb794d68",
         "port": "dor de garganta",
         "fr": {
-            "translation": "todo",
+            "translation": "mal de gorge",
             "note": "todo"
         },
         "en": {
@@ -12834,7 +12834,7 @@
         "id": "6387d5e4-df83-416b-830a-b832c29a89a6",
         "port": "dormir",
         "fr": {
-            "translation": "todo",
+            "translation": "dormir",
             "note": "todo"
         },
         "en": {
@@ -12847,7 +12847,7 @@
         "id": "a38caff4-fd30-455d-91f0-eaacba3541c8",
         "port": "dose",
         "fr": {
-            "translation": "todo",
+            "translation": "dose",
             "note": "todo"
         },
         "en": {
@@ -12860,7 +12860,7 @@
         "id": "c10a37ce-c592-4b33-bd1c-e74eb145256b",
         "port": "drama",
         "fr": {
-            "translation": "todo",
+            "translation": "drame",
             "note": "todo"
         },
         "en": {
@@ -12873,7 +12873,7 @@
         "id": "8d2d5ea5-d04e-4378-97e0-e69bba14a924",
         "port": "e",
         "fr": {
-            "translation": "todo",
+            "translation": "et",
             "note": "todo"
         },
         "en": {
@@ -12886,7 +12886,7 @@
         "id": "5400d1c8-3c63-4e60-9d93-af4637057f18",
         "port": "edredão / edredom",
         "fr": {
-            "translation": "todo",
+            "translation": "édredon",
             "note": "todo"
         },
         "en": {
@@ -12899,7 +12899,7 @@
         "id": "2baaf1ef-d01d-414d-b291-be98a2f2736b",
         "port": "electricista / eletricista",
         "fr": {
-            "translation": "todo",
+            "translation": "électricien",
             "note": "todo"
         },
         "en": {
@@ -12912,7 +12912,7 @@
         "id": "06cd249e-a6f0-4ebe-a5e7-1481fa1cdacb",
         "port": "elefante",
         "fr": {
-            "translation": "todo",
+            "translation": "éléphant",
             "note": "todo"
         },
         "en": {
@@ -12925,7 +12925,7 @@
         "id": "850255ea-d801-4aa1-a510-92e498927eea",
         "port": "elevador",
         "fr": {
-            "translation": "todo",
+            "translation": "ascenseur",
             "note": "todo"
         },
         "en": {
@@ -12938,7 +12938,7 @@
         "id": "cb6b7b7f-750c-460e-8e0e-c1b5aa8f611b",
         "port": "em breve, brevemente (até breve)",
         "fr": {
-            "translation": "todo",
+            "translation": "bientôt (à bientôt)",
             "note": "todo"
         },
         "en": {
@@ -12951,7 +12951,7 @@
         "id": "8f805c6f-b2e1-499b-b016-9114a26aa50d",
         "port": "em casa de (com)",
         "fr": {
-            "translation": "todo",
+            "translation": "chez (avec)",
             "note": "todo"
         },
         "en": {
@@ -12964,7 +12964,7 @@
         "id": "55882442-7875-48b2-a5be-952ed6485081",
         "port": "em frente de",
         "fr": {
-            "translation": "todo",
+            "translation": "en face de",
             "note": "todo"
         },
         "en": {
@@ -12977,7 +12977,7 @@
         "id": "4ebffe1a-60d5-44d2-89d3-6290a4039be8",
         "port": "em qualquer lugar, em algum lugar",
         "fr": {
-            "translation": "todo",
+            "translation": "n'importe où, quelque part",
             "note": "todo"
         },
         "en": {
@@ -12990,7 +12990,7 @@
         "id": "211ea34c-fd06-4a85-85d7-ec658187f829",
         "port": "em, em cima de",
         "fr": {
-            "translation": "todo",
+            "translation": "sur",
             "note": "todo"
         },
         "en": {
@@ -13003,7 +13003,7 @@
         "id": "11066de2-1b03-4c79-a263-4decca9bf4af",
         "port": "garçom / garçonete",
         "fr": {
-            "translation": "todo",
+            "translation": "serveur / serveuse",
             "note": "todo"
         },
         "en": {
@@ -13016,7 +13016,7 @@
         "id": "ba2a1570-c2a8-4a3c-bb15-b1166623bd29",
         "port": "emprego (a tempo parcial/a tempo inteiro)/(de meio período/de tempo integral)",
         "fr": {
-            "translation": "todo",
+            "translation": "emploi (à temps partiel/à temps plein)",
             "note": "todo"
         },
         "en": {
@@ -13029,7 +13029,7 @@
         "id": "779eeaf2-488c-4c6d-a74c-4c4b8d1124fe",
         "port": "emprestar",
         "fr": {
-            "translation": "todo",
+            "translation": "prêter",
             "note": "todo"
         },
         "en": {
@@ -13042,7 +13042,7 @@
         "id": "9738fb22-99a8-4427-9436-09513f0faa76",
         "port": "empurrar",
         "fr": {
-            "translation": "todo",
+            "translation": "pousser",
             "note": "todo"
         },
         "en": {
@@ -13055,7 +13055,7 @@
         "id": "903bfe9a-8e27-4944-b627-0184f5c09095",
         "port": "encaracolado",
         "fr": {
-            "translation": "todo",
+            "translation": "bouclé",
             "note": "todo"
         },
         "en": {
@@ -13068,7 +13068,7 @@
         "id": "51bcf384-2f0f-4d2e-94ca-56896a097f86",
         "port": "encher",
         "fr": {
-            "translation": "todo",
+            "translation": "remplir",
             "note": "todo"
         },
         "en": {
@@ -13081,7 +13081,7 @@
         "id": "4c8c8b98-e5b8-4318-aad2-a25ed1ce3cc7",
         "port": "encontrar-se com",
         "fr": {
-            "translation": "todo",
+            "translation": "rencontrer",
             "note": "todo"
         },
         "en": {
@@ -13094,7 +13094,7 @@
         "id": "25ba7708-1f54-42ae-bc4b-fb7696edb0af",
         "port": "encontro, partida",
         "fr": {
-            "translation": "todo",
+            "translation": "rencontre, match",
             "note": "todo"
         },
         "en": {
@@ -13107,7 +13107,7 @@
         "id": "d3e9eeae-22dd-457b-b7f9-a8b073544d8c",
         "port": "encontro, reunião",
         "fr": {
-            "translation": "todo",
+            "translation": "rencontre, réunion",
             "note": "todo"
         },
         "en": {
@@ -13120,7 +13120,7 @@
         "id": "189d9a7c-80e1-48d4-a806-030465f7d6a9",
         "port": "enfermeiro/enfermeira",
         "fr": {
-            "translation": "todo",
+            "translation": "infirmier/infirmière",
             "note": "todo"
         },
         "en": {
@@ -13133,7 +13133,7 @@
         "id": "c0d0c545-55f6-4917-b6e6-755b14564e18",
         "port": "enjoo / enjoo do mar",
         "fr": {
-            "translation": "todo",
+            "translation": "nausée / mal de mer",
             "note": "todo"
         },
         "en": {
@@ -13146,7 +13146,7 @@
         "id": "a092935a-94e5-48a6-84a5-a591befed8fc",
         "port": "ensinar",
         "fr": {
-            "translation": "todo",
+            "translation": "enseigner",
             "note": "todo"
         },
         "en": {
@@ -13159,7 +13159,7 @@
         "id": "6c035be5-bc9e-42f9-aed3-3ecc01c49bb1",
         "port": "então",
         "fr": {
-            "translation": "todo",
+            "translation": "alors",
             "note": "todo"
         },
         "en": {
@@ -13172,7 +13172,7 @@
         "id": "63d6e4f7-15bd-437b-be6e-5b3193edbe32",
         "port": "entrada",
         "fr": {
-            "translation": "todo",
+            "translation": "entrée",
             "note": "todo"
         },
         "en": {
@@ -13185,7 +13185,7 @@
         "id": "2e10b04a-30ea-4d26-862f-0c9b9be0d60e",
         "port": "entrada",
         "fr": {
-            "translation": "todo",
+            "translation": "entrée",
             "note": "todo"
         },
         "en": {
@@ -13211,7 +13211,7 @@
         "id": "0d10f745-9891-453f-ace4-b334bfad1a47",
         "port": "entrar",
         "fr": {
-            "translation": "todo",
+            "translation": "entrer",
             "note": "todo"
         },
         "en": {
@@ -13224,7 +13224,7 @@
         "id": "c0532a00-d6f8-4752-ae96-e05ff6a3b992",
         "port": "entrevista",
         "fr": {
-            "translation": "todo",
+            "translation": "interview",
             "note": "todo"
         },
         "en": {
@@ -13237,7 +13237,7 @@
         "id": "e96f48e9-70c2-42c7-851f-6aa563e61258",
         "port": "envelope",
         "fr": {
-            "translation": "todo",
+            "translation": "enveloppe",
             "note": "todo"
         },
         "en": {
@@ -13250,7 +13250,7 @@
         "id": "48084062-c47a-47a6-b759-3a31091b6b5b",
         "port": "enviar um sms, enviar um texto",
         "fr": {
-            "translation": "todo",
+            "translation": "envoyer un sms, envoyer un texte",
             "note": "todo"
         },
         "en": {
@@ -13263,7 +13263,7 @@
         "id": "6454a00b-e6c1-40e8-a259-e77dff5cc21a",
         "port": "equitação",
         "fr": {
-            "translation": "todo",
+            "translation": "équitation",
             "note": "todo"
         },
         "en": {
@@ -13276,7 +13276,7 @@
         "id": "3e639379-dad8-420f-bf01-0f4668dd374b",
         "port": "errado",
         "fr": {
-            "translation": "todo",
+            "translation": "faux",
             "note": "todo"
         },
         "en": {
@@ -13289,7 +13289,7 @@
         "id": "061693a1-7b8e-44db-93de-5a6af0f9b3f3",
         "port": "erro",
         "fr": {
-            "translation": "todo",
+            "translation": "erreur",
             "note": "todo"
         },
         "en": {
@@ -13302,7 +13302,7 @@
         "id": "14a8418c-465b-4134-9882-f95cef27cc0c",
         "port": "ervilhas",
         "fr": {
-            "translation": "todo",
+            "translation": "pois",
             "note": "todo"
         },
         "en": {
@@ -13315,7 +13315,7 @@
         "id": "77aae026-6a49-4bcb-9c68-aa28e7904b79",
         "port": "escadas",
         "fr": {
-            "translation": "todo",
+            "translation": "escaliers",
             "note": "todo"
         },
         "en": {
@@ -13328,7 +13328,7 @@
         "id": "e9fbf78b-5d55-4763-b64e-298ce6c30be5",
         "port": "escalope",
         "fr": {
-            "translation": "todo",
+            "translation": "escalope",
             "note": "todo"
         },
         "en": {
@@ -13341,7 +13341,7 @@
         "id": "c01e4459-64f1-475e-b094-49f14cfa4570",
         "port": "escola particular",
         "fr": {
-            "translation": "todo",
+            "translation": "école privée",
             "note": "todo"
         },
         "en": {
@@ -13354,7 +13354,7 @@
         "id": "0c4f1639-dc90-4938-9bb8-6d6c33e56f64",
         "port": "escola primária",
         "fr": {
-            "translation": "todo",
+            "translation": "école primaire",
             "note": "todo"
         },
         "en": {
@@ -13367,7 +13367,7 @@
         "id": "6c94b94b-a940-4789-8b4d-c1bd941b66cb",
         "port": "escola secundária",
         "fr": {
-            "translation": "todo",
+            "translation": "école secondaire",
             "note": "todo"
         },
         "en": {
@@ -13380,7 +13380,7 @@
         "id": "c6687427-7c3c-40b7-9127-513d12bcf3bd",
         "port": "escola técnica",
         "fr": {
-            "translation": "todo",
+            "translation": "école technique",
             "note": "todo"
         },
         "en": {
@@ -13393,7 +13393,7 @@
         "id": "8c660d65-f84e-4c0f-989f-057a28e3ef32",
         "port": "choice",
         "fr": {
-            "translation": "todo",
+            "translation": "choix",
             "note": "todo"
         },
         "en": {
@@ -13406,7 +13406,7 @@
         "id": "5bf25391-923f-4dd3-b2f0-b43a76f4f6bd",
         "port": "escova de cabelo",
         "fr": {
-            "translation": "todo",
+            "translation": "brosse à cheveux",
             "note": "todo"
         },
         "en": {
@@ -13419,7 +13419,7 @@
         "id": "da671a6f-e46f-4ea7-998d-c58d19d3a893",
         "port": "escovar",
         "fr": {
-            "translation": "todo",
+            "translation": "brosser",
             "note": "todo"
         },
         "en": {
@@ -13432,7 +13432,7 @@
         "id": "0f6e76cb-4d55-4cdc-959a-5ce1542a0b42",
         "port": "escrever",
         "fr": {
-            "translation": "todo",
+            "translation": "écrire",
             "note": "todo"
         },
         "en": {
@@ -13445,7 +13445,7 @@
         "id": "82fdb85b-8174-435d-996c-08ec1a137112",
         "port": "escritório, gabinete",
         "fr": {
-            "translation": "todo",
+            "translation": "bureau",
             "note": "todo"
         },
         "en": {
@@ -13458,7 +13458,7 @@
         "id": "efd14c09-533f-4d02-84e6-8587d1b0d02c",
         "port": "esgotar",
         "fr": {
-            "translation": "todo",
+            "translation": "épuiser",
             "note": "todo"
         },
         "en": {
@@ -13471,7 +13471,7 @@
         "id": "e26e0569-0d2c-4ec3-83a1-a1e5887813d7",
         "port": "esperar por",
         "fr": {
-            "translation": "todo",
+            "translation": "attendre",
             "note": "todo"
         },
         "en": {
@@ -13484,7 +13484,7 @@
         "id": "9ae902ab-29c8-4822-a854-dcbfde728873",
         "port": "esplêndido",
         "fr": {
-            "translation": "todo",
+            "translation": "splendide",
             "note": "todo"
         },
         "en": {
@@ -13497,7 +13497,7 @@
         "id": "a6d6c87c-46d8-4e64-8f8c-706178d6e5e3",
         "port": "esquadra / delegacia de polícia",
         "fr": {
-            "translation": "todo",
+            "translation": "commissariat de police",
             "note": "todo"
         },
         "en": {
@@ -13510,7 +13510,7 @@
         "id": "cf2154d9-2c98-4e74-9d34-37a89bd6e9d9",
         "port": "esquecer",
         "fr": {
-            "translation": "todo",
+            "translation": "oublier",
             "note": "todo"
         },
         "en": {
@@ -13523,7 +13523,7 @@
         "id": "ccb2408b-f5af-466c-bc8e-a2a4bcfb948b",
         "port": "esqui (instrutor de)",
         "fr": {
-            "translation": "todo",
+            "translation": "ski (instructeur de)",
             "note": "todo"
         },
         "en": {
@@ -13536,7 +13536,7 @@
         "id": "a353bab3-2707-48fc-a251-a741df446c57",
         "port": "esquiar",
         "fr": {
-            "translation": "todo",
+            "translation": "skier",
             "note": "todo"
         },
         "en": {
@@ -13549,7 +13549,7 @@
         "id": "61149c16-f091-4eff-ad1f-7a1a0e1fd971",
         "port": "esquina",
         "fr": {
-            "translation": "todo",
+            "translation": "coin",
             "note": "todo"
         },
         "en": {
@@ -13562,7 +13562,7 @@
         "id": "abf6be44-e2e3-49d4-933a-33c63aa0d35f",
         "port": "esquisito",
         "fr": {
-            "translation": "todo",
+            "translation": "bizarre",
             "note": "todo"
         },
         "en": {
@@ -13575,7 +13575,7 @@
         "id": "c32d1ac3-b92c-4f3c-86be-7ce5ac9e1bd0",
         "port": "esse, aquele",
         "fr": {
-            "translation": "todo",
+            "translation": "ce, celui-là",
             "note": "todo"
         },
         "en": {
@@ -13588,7 +13588,7 @@
         "id": "200991c9-3090-40e2-b8a1-b133bb9ec753",
         "port": "estação",
         "fr": {
-            "translation": "todo",
+            "translation": "station",
             "note": "todo"
         },
         "en": {
@@ -13601,7 +13601,7 @@
         "id": "16f165ee-80d9-464c-94cf-3064da8b0595",
         "port": "estágio",
         "fr": {
-            "translation": "todo",
+            "translation": "stage",
             "note": "todo"
         },
         "en": {
@@ -13614,7 +13614,7 @@
         "id": "a80a67eb-71ec-429f-a06c-ea27cf3d08a7",
         "port": "estância",
         "fr": {
-            "translation": "todo",
+            "translation": "station",
             "note": "todo"
         },
         "en": {
@@ -13627,7 +13627,7 @@
         "id": "9755a9b9-6399-4ccc-9ea1-9558d97b52c0",
         "port": "veraneio",
         "fr": {
-            "translation": "todo",
+            "translation": "villégiature",
             "note": "todo"
         },
         "en": {
@@ -13640,7 +13640,7 @@
         "id": "52677d6f-02b4-49f2-8b81-e4719047cd92",
         "port": "estante",
         "fr": {
-            "translation": "todo",
+            "translation": "étagère",
             "note": "todo"
         },
         "en": {
@@ -13653,7 +13653,7 @@
         "id": "f1bfe685-325d-4a84-8089-0d18832edbbc",
         "port": "estar interessado em",
         "fr": {
-            "translation": "todo",
+            "translation": "être intéressé par",
             "note": "todo"
         },
         "en": {
@@ -13666,7 +13666,7 @@
         "id": "3c79f6dc-989c-4983-b2b9-c8dcdc4d583d",
         "port": "estar na frente / dirigir",
         "fr": {
-            "translation": "todo",
+            "translation": "être en tête / diriger",
             "note": "todo"
         },
         "en": {
@@ -13679,7 +13679,7 @@
         "id": "3f5374f2-8ffd-44ed-b30a-2ddad7de767f",
         "port": "estar noivo",
         "fr": {
-            "translation": "todo",
+            "translation": "être fiancé",
             "note": "todo"
         },
         "en": {
@@ -13692,7 +13692,7 @@
         "id": "9c8a296b-bee8-4efc-b115-d59f561e51c0",
         "port": "estar, ser",
         "fr": {
-            "translation": "todo",
+            "translation": "être",
             "note": "todo"
         },
         "en": {
@@ -13705,7 +13705,7 @@
         "id": "e49f636d-e815-4bf2-8ede-27946443fef3",
         "port": "este (adj)",
         "fr": {
-            "translation": "todo",
+            "translation": "ce (adj)",
             "note": "todo"
         },
         "en": {
@@ -13718,7 +13718,7 @@
         "id": "7455ad21-7e35-41ce-a330-81b06086db24",
         "port": "estojo para lápis / estojo de canetas",
         "fr": {
-            "translation": "todo",
+            "translation": "trousse à crayons / trousse à stylos",
             "note": "todo"
         },
         "en": {
@@ -13744,7 +13744,7 @@
         "id": "4a290ffa-e270-4809-927d-ad1e0200b66a",
         "port": "estou! está lá?",
         "fr": {
-            "translation": "todo",
+            "translation": "j'y suis ! y est-il ?",
             "note": "todo"
         },
         "en": {
@@ -13757,7 +13757,7 @@
         "id": "4f54cbcc-9b63-4ea1-b196-60b3d1bcc7e9",
         "port": "estrangeiro",
         "fr": {
-            "translation": "todo",
+            "translation": "étranger",
             "note": "todo"
         },
         "en": {
@@ -13770,7 +13770,7 @@
         "id": "81dd751b-20f3-40e1-b35a-1616503edc23",
         "port": "estudante",
         "fr": {
-            "translation": "todo",
+            "translation": "étudiant",
             "note": "todo"
         },
         "en": {
@@ -13783,7 +13783,7 @@
         "id": "afb2daec-f593-4d59-8d90-750c5125998d",
         "port": "level",
         "fr": {
-            "translation": "todo",
+            "translation": "niveau",
             "note": "todo"
         },
         "en": {
@@ -13796,7 +13796,7 @@
         "id": "29bdf0ac-f269-4ce9-8c37-f43f629db8ea",
         "port": "estudar",
         "fr": {
-            "translation": "todo",
+            "translation": "étudier",
             "note": "todo"
         },
         "en": {
@@ -13809,7 +13809,7 @@
         "id": "6c0dfa3a-85bb-4d3a-acc1-06dd97bf5543",
         "port": "estúpido",
         "fr": {
-            "translation": "todo",
+            "translation": "stupide",
             "note": "todo"
         },
         "en": {
@@ -13822,7 +13822,7 @@
         "id": "0ad52f84-abe9-445e-9ba7-73feb5ef0755",
         "port": "esvaziar",
         "fr": {
-            "translation": "todo",
+            "translation": "vider",
             "note": "todo"
         },
         "en": {
@@ -13835,7 +13835,7 @@
         "id": "f65ca6a1-63b7-4146-af44-5fe683f3eb02",
         "port": "evitar",
         "fr": {
-            "translation": "todo",
+            "translation": "éviter",
             "note": "todo"
         },
         "en": {
@@ -13848,7 +13848,7 @@
         "id": "e1dc96e4-3b7c-4ac7-8ba2-3dd2aad92f03",
         "port": "examinar",
         "fr": {
-            "translation": "todo",
+            "translation": "examiner",
             "note": "todo"
         },
         "en": {
@@ -13861,7 +13861,7 @@
         "id": "e3e8a01b-a29f-450e-9f71-b4d43169131a",
         "port": "excelente, ótimo",
         "fr": {
-            "translation": "todo",
+            "translation": "excellent, génial",
             "note": "todo"
         },
         "en": {
@@ -13874,7 +13874,7 @@
         "id": "8de41c86-de43-4631-8b7f-02d5dda4a00f",
         "port": "excursão",
         "fr": {
-            "translation": "todo",
+            "translation": "excursion",
             "note": "todo"
         },
         "en": {
@@ -13887,7 +13887,7 @@
         "id": "74c9194a-3e27-43d6-b42f-5ae9141408c6",
         "port": "exército",
         "fr": {
-            "translation": "todo",
+            "translation": "armée",
             "note": "todo"
         },
         "en": {
@@ -13900,7 +13900,7 @@
         "id": "027029d2-e50e-497f-8bb4-aadba4b881c5",
         "port": "fábrica",
         "fr": {
-            "translation": "todo",
+            "translation": "usine",
             "note": "todo"
         },
         "en": {
@@ -13913,7 +13913,7 @@
         "id": "6cff0875-529d-48c6-b01e-a59d03ae3e92",
         "port": "faca",
         "fr": {
-            "translation": "todo",
+            "translation": "couteau",
             "note": "todo"
         },
         "en": {
@@ -13926,7 +13926,7 @@
         "id": "6fb4c576-0af0-423f-ba3c-de8444cb1b94",
         "port": "faculdade, universidade",
         "fr": {
-            "translation": "todo",
+            "translation": "faculté, université",
             "note": "todo"
         },
         "en": {
@@ -13939,7 +13939,7 @@
         "id": "b5e495e4-17ed-453e-9c15-71c253ffce57",
         "port": "falar",
         "fr": {
-            "translation": "todo",
+            "translation": "parler",
             "note": "todo"
         },
         "en": {
@@ -13952,7 +13952,7 @@
         "id": "29702075-74ce-4f80-810d-0290e06b2463",
         "port": "faltar",
         "fr": {
-            "translation": "todo",
+            "translation": "manquer",
             "note": "todo"
         },
         "en": {
@@ -13965,7 +13965,7 @@
         "id": "32aa299b-7bad-47e3-bac9-42254dffb621",
         "port": "fantástico",
         "fr": {
-            "translation": "todo",
+            "translation": "fantastique",
             "note": "todo"
         },
         "en": {
@@ -13978,7 +13978,7 @@
         "id": "5212ce45-b7d4-4def-b7ae-bd0e1545ccdc",
         "port": "farmácia",
         "fr": {
-            "translation": "todo",
+            "translation": "pharmacie",
             "note": "todo"
         },
         "en": {
@@ -13991,7 +13991,7 @@
         "id": "8833bdd4-ef52-47b9-b0c0-7e62c0f88f5b",
         "port": "farol",
         "fr": {
-            "translation": "todo",
+            "translation": "phare",
             "note": "todo"
         },
         "en": {
@@ -14004,7 +14004,7 @@
         "id": "f0d10cf2-45d6-4a57-88fa-ba5682e42dcc",
         "port": "favorável",
         "fr": {
-            "translation": "todo",
+            "translation": "favorable",
             "note": "todo"
         },
         "en": {
@@ -14017,7 +14017,7 @@
         "id": "56bbe509-07f6-45b6-a45d-bd760f7bfedb",
         "port": "favorito",
         "fr": {
-            "translation": "todo",
+            "translation": "favori",
             "note": "todo"
         },
         "en": {
@@ -14030,7 +14030,7 @@
         "id": "cb9d6c59-6f36-419e-9819-7c7075b1e9cf",
         "port": "fazer",
         "fr": {
-            "translation": "todo",
+            "translation": "faire",
             "note": "todo"
         },
         "en": {
@@ -14043,7 +14043,7 @@
         "id": "0d5a7417-c6b5-46f0-ac6a-157da5612f46",
         "port": "fazer coleção",
         "fr": {
-            "translation": "todo",
+            "translation": "collectionner",
             "note": "todo"
         },
         "en": {
@@ -14056,7 +14056,7 @@
         "id": "fa3fb19f-5578-4b41-a9bd-18c19924946f",
         "port": "fazer compras",
         "fr": {
-            "translation": "todo",
+            "translation": "faire des achats",
             "note": "todo"
         },
         "en": {
@@ -14069,7 +14069,7 @@
         "id": "5f1b3a58-cfb5-4d52-98b3-5be5be6a3af9",
         "port": "fazer desporto / fazer esporte",
         "fr": {
-            "translation": "todo",
+            "translation": "faire du sport",
             "note": "todo"
         },
         "en": {
@@ -14082,7 +14082,7 @@
         "id": "42887625-240b-45c2-abb9-c3addcbfd81a",
         "port": "fazer fila",
         "fr": {
-            "translation": "todo",
+            "translation": "faire la queue",
             "note": "todo"
         },
         "en": {
@@ -14095,7 +14095,7 @@
         "id": "b82a1c78-c877-4a46-bb59-9cdccc8cf2ad",
         "port": "fazer jogging",
         "fr": {
-            "translation": "todo",
+            "translation": "faire du jogging",
             "note": "todo"
         },
         "en": {
@@ -14108,7 +14108,7 @@
         "id": "551ff93a-d03d-40e3-806c-ab896604f002",
         "port": "fazer surf / surfar",
         "fr": {
-            "translation": "todo",
+            "translation": "faire du surf / surfer",
             "note": "todo"
         },
         "en": {
@@ -14121,7 +14121,7 @@
         "id": "8109b0e3-7d1c-49d0-ae52-aefc13594923",
         "port": "fazer transbordo",
         "fr": {
-            "translation": "todo",
+            "translation": "changer",
             "note": "todo"
         },
         "en": {
@@ -14134,7 +14134,7 @@
         "id": "7121f5ef-508d-4988-a5a9-a7f519e3336e",
         "port": "fazer turismo",
         "fr": {
-            "translation": "todo",
+            "translation": "faire du tourisme",
             "note": "todo"
         },
         "en": {
@@ -14147,7 +14147,7 @@
         "id": "4747070e-99f3-4fdb-9ebc-dfb7d5296001",
         "port": "fazer um intervalo, fazer uma pausa",
         "fr": {
-            "translation": "todo",
+            "translation": "faire une pause",
             "note": "todo"
         },
         "en": {
@@ -14160,7 +14160,7 @@
         "id": "7b196e05-b7f5-47e7-bae3-340b1fb6572d",
         "port": "fazer / desfazer as malas",
         "fr": {
-            "translation": "todo",
+            "translation": "faire / défaire les valises",
             "note": "todo"
         },
         "en": {
@@ -14173,7 +14173,7 @@
         "id": "aaa76b97-c00b-4369-8093-44cc5854e2ca",
         "port": "febre",
         "fr": {
-            "translation": "todo",
+            "translation": "fièvre",
             "note": "todo"
         },
         "en": {
@@ -14186,7 +14186,7 @@
         "id": "4c56ef2b-f9ca-44e9-afbd-945bf5421aa2",
         "port": "fechado, encerrado",
         "fr": {
-            "translation": "todo",
+            "translation": "fermé",
             "note": "todo"
         },
         "en": {
@@ -14199,7 +14199,7 @@
         "id": "3c9908b1-2161-418c-84b2-2405cfc14d9b",
         "port": "fechar (à chave)",
         "fr": {
-            "translation": "todo",
+            "translation": "fermer (à clé)",
             "note": "todo"
         },
         "en": {
@@ -14212,7 +14212,7 @@
         "id": "3c1e5305-bca4-44e1-9955-cb200d95fa22",
         "port": "feriado",
         "fr": {
-            "translation": "todo",
+            "translation": "jour férié",
             "note": "todo"
         },
         "en": {
@@ -14225,7 +14225,7 @@
         "id": "0c2464b8-d97e-4855-98a2-d94e07854d75",
         "port": "férias",
         "fr": {
-            "translation": "todo",
+            "translation": "vacances",
             "note": "todo"
         },
         "en": {
@@ -14238,7 +14238,7 @@
         "id": "e233ef93-5b86-408e-a34f-ff6d12afff8e",
         "port": "ferramenta",
         "fr": {
-            "translation": "todo",
+            "translation": "outil",
             "note": "todo"
         },
         "en": {
@@ -14251,7 +14251,7 @@
         "id": "121c1168-9c5c-4784-a252-0fc2bd458c0f",
         "port": "festa",
         "fr": {
-            "translation": "todo",
+            "translation": "fête",
             "note": "todo"
         },
         "en": {
@@ -14264,7 +14264,7 @@
         "id": "c75a7332-8066-4f53-8f81-151442abf7b6",
         "port": "festival",
         "fr": {
-            "translation": "todo",
+            "translation": "festival",
             "note": "todo"
         },
         "en": {
@@ -14277,7 +14277,7 @@
         "id": "d642b33c-eb49-4272-884d-7c4477c7b1c8",
         "port": "presunto",
         "fr": {
-            "translation": "todo",
+            "translation": "jambon",
             "note": "todo"
         },
         "en": {
@@ -14290,7 +14290,7 @@
         "id": "602ae67f-6826-44bf-9045-a67d052d8e8c",
         "port": "ficar",
         "fr": {
-            "translation": "todo",
+            "translation": "rester",
             "note": "todo"
         },
         "en": {
@@ -14303,7 +14303,7 @@
         "id": "6ec34285-c74f-4073-8ca9-7dd5fb492e87",
         "port": "ficar, permanecer",
         "fr": {
-            "translation": "todo",
+            "translation": "rester, demeurer",
             "note": "todo"
         },
         "en": {
@@ -14316,7 +14316,7 @@
         "id": "3c42588c-2f9f-4edb-aee7-79512b2dab02",
         "port": "fígado",
         "fr": {
-            "translation": "todo",
+            "translation": "foie",
             "note": "todo"
         },
         "en": {
@@ -14329,7 +14329,7 @@
         "id": "c61bbde0-e848-4a6e-8aa4-a86e68176e52",
         "port": "fila (de lugares, etc)",
         "fr": {
-            "translation": "todo",
+            "translation": "rangée (de sièges, etc)",
             "note": "todo"
         },
         "en": {
@@ -14342,7 +14342,7 @@
         "id": "cca65888-35df-4a2c-9c0a-b30b43f59f6f",
         "port": "filme (terror/romântico/ficção científica )",
         "fr": {
-            "translation": "todo",
+            "translation": "film (d'horreur/romantique/science-fiction)",
             "note": "todo"
         },
         "en": {
@@ -14355,7 +14355,7 @@
         "id": "2e53ab6f-af42-4d64-aa0c-a36ec066d8f1",
         "port": "filme policial",
         "fr": {
-            "translation": "todo",
+            "translation": "film policier",
             "note": "todo"
         },
         "en": {
@@ -14368,7 +14368,7 @@
         "id": "464b7940-8216-4b56-ad28-cb49ce01531d",
         "port": "finalmente",
         "fr": {
-            "translation": "todo",
+            "translation": "enfin",
             "note": "todo"
         },
         "en": {
@@ -14381,7 +14381,7 @@
         "id": "6b947ba1-e08e-4dab-9254-61484affc0eb",
         "port": "física",
         "fr": {
-            "translation": "todo",
+            "translation": "physique",
             "note": "todo"
         },
         "en": {
@@ -14394,7 +14394,7 @@
         "id": "da124be9-027e-4c9d-a061-fa85b640101b",
         "port": "fogão a gás",
         "fr": {
-            "translation": "todo",
+            "translation": "cuisinière à gaz",
             "note": "todo"
         },
         "en": {
@@ -14407,7 +14407,7 @@
         "id": "bcaea14c-58b6-48f0-a31f-eee5f9858bab",
         "port": "fogão elétrico",
         "fr": {
-            "translation": "todo",
+            "translation": "cuisinière électrique",
             "note": "todo"
         },
         "en": {
@@ -14420,7 +14420,7 @@
         "id": "a2efe539-7968-4f00-8c75-87b1ff88d779",
         "port": "fogo de artifício",
         "fr": {
-            "translation": "todo",
+            "translation": "feu d'artifice",
             "note": "todo"
         },
         "en": {
@@ -14433,7 +14433,7 @@
         "id": "c1944d2f-4296-4e1d-a344-dcd37866bcaa",
         "port": "fogueira",
         "fr": {
-            "translation": "todo",
+            "translation": "feu de camp",
             "note": "todo"
         },
         "en": {
@@ -14446,7 +14446,7 @@
         "id": "d11a2081-8ba8-4dd6-8026-c82a4831c2c6",
         "port": "folha de papel",
         "fr": {
-            "translation": "todo",
+            "translation": "feuille de papier",
             "note": "todo"
         },
         "en": {
@@ -14459,7 +14459,7 @@
         "id": "e863f9f6-9f80-46fe-8940-cbbfc7d4e0c2",
         "port": "fora",
         "fr": {
-            "translation": "todo",
+            "translation": "dehors",
             "note": "todo"
         },
         "en": {
@@ -14472,7 +14472,7 @@
         "id": "febcf880-4b69-47a1-aa70-7ef8ee009e25",
         "port": "forno",
         "fr": {
-            "translation": "todo",
+            "translation": "four",
             "note": "todo"
         },
         "en": {
@@ -14485,7 +14485,7 @@
         "id": "5b22de0c-fe34-4875-8878-857bfc0f5c7f",
         "port": "foto(grafia)",
         "fr": {
-            "translation": "todo",
+            "translation": "photo(graphie)",
             "note": "todo"
         },
         "en": {
@@ -14498,7 +14498,7 @@
         "id": "bdd5934a-d3e5-4253-b29e-6144b0b0ab2f",
         "port": "fotografia",
         "fr": {
-            "translation": "todo",
+            "translation": "photographie",
             "note": "todo"
         },
         "en": {
@@ -14511,7 +14511,7 @@
         "id": "56c1991f-2c6c-4bb1-8320-0cd67f88b9cf",
         "port": "framboesa",
         "fr": {
-            "translation": "todo",
+            "translation": "framboise",
             "note": "todo"
         },
         "en": {
@@ -14524,7 +14524,7 @@
         "id": "852a29ee-c17a-44b9-aaff-74c01aec59ff",
         "port": "frango, galinha",
         "fr": {
-            "translation": "todo",
+            "translation": "poulet, poule",
             "note": "todo"
         },
         "en": {
@@ -14537,7 +14537,7 @@
         "id": "76eec71a-fce8-43ff-8f1e-9b590361cd55",
         "port": "fresco, frio",
         "fr": {
-            "translation": "todo",
+            "translation": "frais, froid",
             "note": "todo"
         },
         "en": {
@@ -14550,7 +14550,7 @@
         "id": "9582c926-6a34-45ef-a094-312c2cd413fe",
         "port": "funcionar",
         "fr": {
-            "translation": "todo",
+            "translation": "fonctionner",
             "note": "todo"
         },
         "en": {
@@ -14563,7 +14563,7 @@
         "id": "f3b98e87-d311-4e67-8544-ab1197bc8d1a",
         "port": "funcionário público",
         "fr": {
-            "translation": "todo",
+            "translation": "fonctionnaire",
             "note": "todo"
         },
         "en": {
@@ -14576,7 +14576,7 @@
         "id": "ae6db9d9-eb7f-4dea-aa00-e4600a3098d6",
         "port": "furo",
         "fr": {
-            "translation": "todo",
+            "translation": "crevaison",
             "note": "todo"
         },
         "en": {
@@ -14589,7 +14589,7 @@
         "id": "d3456d9b-d34f-40be-9546-1c1ac78c6fd1",
         "port": "futebol",
         "fr": {
-            "translation": "todo",
+            "translation": "football",
             "note": "todo"
         },
         "en": {
@@ -14602,7 +14602,7 @@
         "id": "5f60421f-7779-46b3-ae4b-f89a2a8cc010",
         "port": "gabardine / capa de chuva",
         "fr": {
-            "translation": "todo",
+            "translation": "gabardine / imperméable",
             "note": "todo"
         },
         "en": {
@@ -14615,7 +14615,7 @@
         "id": "d4aec215-2434-48ec-9f4b-abd7768095ef",
         "port": "ganhar",
         "fr": {
-            "translation": "todo",
+            "translation": "gagner",
             "note": "todo"
         },
         "en": {
@@ -14628,7 +14628,7 @@
         "id": "991c6012-debb-423f-9841-79ed0f1839f2",
         "port": "ganso",
         "fr": {
-            "translation": "todo",
+            "translation": "oie",
             "note": "todo"
         },
         "en": {
@@ -14641,7 +14641,7 @@
         "id": "1aa83192-b092-4a2d-aba8-38b81742e0a0",
         "port": "garrafa",
         "fr": {
-            "translation": "todo",
+            "translation": "bouteille",
             "note": "todo"
         },
         "en": {
@@ -14654,7 +14654,7 @@
         "id": "b70fb9ac-3e66-4136-85e9-c8ccc32fce83",
         "port": "gasolina",
         "fr": {
-            "translation": "todo",
+            "translation": "essence",
             "note": "todo"
         },
         "en": {
@@ -14667,7 +14667,7 @@
         "id": "6211003e-a231-4b16-8eec-426829338c0c",
         "port": "gastar",
         "fr": {
-            "translation": "todo",
+            "translation": "dépenser",
             "note": "todo"
         },
         "en": {
@@ -14680,7 +14680,7 @@
         "id": "c5945152-6492-40d2-b9fa-62b71f2508d5",
         "port": "gato",
         "fr": {
-            "translation": "todo",
+            "translation": "chat",
             "note": "todo"
         },
         "en": {
@@ -14693,7 +14693,7 @@
         "id": "b6102093-b724-4494-984a-80645b3ea888",
         "port": "geada",
         "fr": {
-            "translation": "todo",
+            "translation": "gelée",
             "note": "todo"
         },
         "en": {
@@ -14706,7 +14706,7 @@
         "id": "da647d5c-dab3-445b-baef-4feaba09c6c9",
         "port": "gelado / sorvete",
         "fr": {
-            "translation": "todo",
+            "translation": "glace / sorbet",
             "note": "todo"
         },
         "en": {
@@ -14719,7 +14719,7 @@
         "id": "a39aac5c-6cc8-419b-811b-fdaae4c5d1cd",
         "port": "gémeos / gêmeos",
         "fr": {
-            "translation": "todo",
+            "translation": "jumeaux",
             "note": "todo"
         },
         "en": {
@@ -14732,7 +14732,7 @@
         "id": "8b7518e3-0a19-4487-979f-e293a1691cca",
         "port": "geografia",
         "fr": {
-            "translation": "todo",
+            "translation": "géographie",
             "note": "todo"
         },
         "en": {
@@ -14745,7 +14745,7 @@
         "id": "f06e8e7c-1239-4994-b9d6-73fabf130413",
         "port": "gordo",
         "fr": {
-            "translation": "todo",
+            "translation": "gros",
             "note": "todo"
         },
         "en": {
@@ -14758,7 +14758,7 @@
         "id": "108db822-c4ed-47c0-b91f-d80d93d9aca8",
         "port": "gorjeta",
         "fr": {
-            "translation": "todo",
+            "translation": "pourboire",
             "note": "todo"
         },
         "en": {
@@ -14771,7 +14771,7 @@
         "id": "f0a717f4-6c68-46aa-92b5-03612524d79f",
         "port": "gostar de",
         "fr": {
-            "translation": "todo",
+            "translation": "aimer",
             "note": "todo"
         },
         "en": {
@@ -14784,7 +14784,7 @@
         "id": "a55b5f87-5ec2-4e5d-9a79-7dac96b60c1a",
         "port": "grátis, gratuito",
         "fr": {
-            "translation": "todo",
+            "translation": "gratuit",
             "note": "todo"
         },
         "en": {
@@ -14797,7 +14797,7 @@
         "id": "e4329328-a83b-4148-9d6c-534d5f1cc407",
         "port": "grau",
         "fr": {
-            "translation": "todo",
+            "translation": "degré",
             "note": "todo"
         },
         "en": {
@@ -14810,7 +14810,7 @@
         "id": "d287a9cb-01d1-4ed6-8f0e-45a07d60e976",
         "port": "gravata",
         "fr": {
-            "translation": "todo",
+            "translation": "cravate",
             "note": "todo"
         },
         "en": {
@@ -14823,7 +14823,7 @@
         "id": "d99aed95-7569-4d25-bfe7-5ca60f59f9e1",
         "port": "grave",
         "fr": {
-            "translation": "todo",
+            "translation": "grave",
             "note": "todo"
         },
         "en": {
@@ -14836,7 +14836,7 @@
         "id": "dbb2707e-1936-42f5-bc01-4ab265ef6b22",
         "port": "grelhar, assar no churrasco / assar na churrasqueira",
         "fr": {
-            "translation": "todo",
+            "translation": "griller, faire un barbecue",
             "note": "todo"
         },
         "en": {
@@ -14849,7 +14849,7 @@
         "id": "1abd18b1-0fd6-4784-b610-92c6a71fda72",
         "port": "gripe",
         "fr": {
-            "translation": "todo",
+            "translation": "grippe",
             "note": "todo"
         },
         "en": {
@@ -14862,7 +14862,7 @@
         "id": "cf226f96-ff76-4d5f-bceb-9048d00d0f73",
         "port": "gritar",
         "fr": {
-            "translation": "todo",
+            "translation": "crier",
             "note": "todo"
         },
         "en": {
@@ -14875,7 +14875,7 @@
         "id": "7eb7d63f-c152-4621-a8de-0d5e070cb769",
         "port": "guarda, porteiro//zelador",
         "fr": {
-            "translation": "todo",
+            "translation": "garde, portier // concierge",
             "note": "todo"
         },
         "en": {
@@ -14888,7 +14888,7 @@
         "id": "65c5cecc-a4f4-4242-af5b-a14e0678e9e7",
         "port": "guarda-chuva",
         "fr": {
-            "translation": "todo",
+            "translation": "parapluie",
             "note": "todo"
         },
         "en": {
@@ -14901,7 +14901,7 @@
         "id": "b5207f91-cd39-4859-95a3-4f362280b64b",
         "port": "guarda-roupa",
         "fr": {
-            "translation": "todo",
+            "translation": "armoire",
             "note": "todo"
         },
         "en": {
@@ -14914,7 +14914,7 @@
         "id": "b36ddec2-f823-4dec-ae24-d3ea3b7139da",
         "port": "há",
         "fr": {
-            "translation": "todo",
+            "translation": "il y a",
             "note": "todo"
         },
         "en": {
@@ -14927,7 +14927,7 @@
         "id": "415d8e17-1833-4060-a8f2-cd03030d033d",
         "port": "habitante",
         "fr": {
-            "translation": "todo",
+            "translation": "habitant",
             "note": "todo"
         },
         "en": {
@@ -14940,7 +14940,7 @@
         "id": "61819e6a-f7ef-4315-ba1a-d0574b5a295f",
         "port": "helicóptero",
         "fr": {
-            "translation": "todo",
+            "translation": "hélicoptère",
             "note": "todo"
         },
         "en": {
@@ -14953,7 +14953,7 @@
         "id": "c95b9a09-5337-4046-b8e3-cd4eab5bb2a2",
         "port": "honesto",
         "fr": {
-            "translation": "todo",
+            "translation": "honnête",
             "note": "todo"
         },
         "en": {
@@ -14966,7 +14966,7 @@
         "id": "2b6051ef-4a8e-444c-802f-866a17511ddb",
         "port": "horário",
         "fr": {
-            "translation": "todo",
+            "translation": "horaire",
             "note": "todo"
         },
         "en": {
@@ -14979,7 +14979,7 @@
         "id": "d9ef0ec6-35f2-4e11-954a-6e1b8c5885b0",
         "port": "hospedeira / aeromoça",
         "fr": {
-            "translation": "todo",
+            "translation": "hôtesse de l'air / stewardess",
             "note": "todo"
         },
         "en": {
@@ -14992,7 +14992,7 @@
         "id": "b3ca5aa7-5e81-410d-b218-9a62e66852c2",
         "port": "hospital",
         "fr": {
-            "translation": "todo",
+            "translation": "hôpital",
             "note": "todo"
         },
         "en": {
@@ -15005,7 +15005,7 @@
         "id": "95efbbb4-4d2f-4b34-84d5-773b1431c81b",
         "port": "hotel",
         "fr": {
-            "translation": "todo",
+            "translation": "hôtel",
             "note": "todo"
         },
         "en": {
@@ -15018,7 +15018,7 @@
         "id": "025ab399-1d10-47ee-ac1a-613bc60b1627",
         "port": "húmido / úmido",
         "fr": {
-            "translation": "todo",
+            "translation": "humide",
             "note": "todo"
         },
         "en": {
@@ -15031,7 +15031,7 @@
         "id": "cf1c5328-7d00-4bf2-ae6a-f6bc7cef0c6a",
         "port": "ideia",
         "fr": {
-            "translation": "todo",
+            "translation": "idée",
             "note": "todo"
         },
         "en": {
@@ -15044,7 +15044,7 @@
         "id": "6ca39705-5914-41e6-b428-9816f99061fb",
         "port": "igreja",
         "fr": {
-            "translation": "todo",
+            "translation": "église",
             "note": "todo"
         },
         "en": {
@@ -15057,7 +15057,7 @@
         "id": "47cb184d-dff1-41bf-87c7-af76cd1381a9",
         "port": "imediatamente",
         "fr": {
-            "translation": "todo",
+            "translation": "immédiatement",
             "note": "todo"
         },
         "en": {
@@ -15070,7 +15070,7 @@
         "id": "d140312a-42d4-4971-bffc-dda823f572bb",
         "port": "impossível",
         "fr": {
-            "translation": "todo",
+            "translation": "impossible",
             "note": "todo"
         },
         "en": {
@@ -15083,7 +15083,7 @@
         "id": "86583123-02ea-4b97-a1ba-37e66b325bde",
         "port": "incluído",
         "fr": {
-            "translation": "todo",
+            "translation": "inclus",
             "note": "todo"
         },
         "en": {
@@ -15096,7 +15096,7 @@
         "id": "2254d35c-ac7a-4901-abe2-b5d75f6fe7c8",
         "port": "infância",
         "fr": {
-            "translation": "todo",
+            "translation": "enfance",
             "note": "todo"
         },
         "en": {
@@ -15109,7 +15109,7 @@
         "id": "ab52fef1-32eb-4acc-a7e0-fafbd185396c",
         "port": "infantário",
         "fr": {
-            "translation": "todo",
+            "translation": "garderie",
             "note": "todo"
         },
         "en": {
@@ -15122,7 +15122,7 @@
         "id": "5c4abffa-9970-4fee-8883-56681a1cfa9d",
         "port": "infelizmente",
         "fr": {
-            "translation": "todo",
+            "translation": "malheureusement",
             "note": "todo"
         },
         "en": {
@@ -15135,7 +15135,7 @@
         "id": "6bf0aff4-7019-4042-b738-d6220e9b835a",
         "port": "informação",
         "fr": {
-            "translation": "todo",
+            "translation": "information",
             "note": "todo"
         },
         "en": {
@@ -15148,7 +15148,7 @@
         "id": "f486e541-645b-4f7a-8aa5-7cfb39ce87f8",
         "port": "inglês",
         "fr": {
-            "translation": "todo",
+            "translation": "anglais",
             "note": "todo"
         },
         "en": {
@@ -15161,7 +15161,7 @@
         "id": "bcfb8ea2-7a12-4eb6-8ec6-8af655e90679",
         "port": "inseto",
         "fr": {
-            "translation": "todo",
+            "translation": "insecte",
             "note": "todo"
         },
         "en": {
@@ -15174,7 +15174,7 @@
         "id": "e86f78c2-acb2-4ee4-9cbd-7bf79733c5d9",
         "port": "inteligente",
         "fr": {
-            "translation": "todo",
+            "translation": "intelligent",
             "note": "todo"
         },
         "en": {
@@ -15187,7 +15187,7 @@
         "id": "ce9e2306-942e-457d-bf7c-83a4eb9c0e0b",
         "port": "intercâmbio",
         "fr": {
-            "translation": "todo",
+            "translation": "échange",
             "note": "todo"
         },
         "en": {
@@ -15200,7 +15200,7 @@
         "id": "11dcc2a0-8851-4cf9-9daf-5e27a3f689a2",
         "port": "interessante",
         "fr": {
-            "translation": "todo",
+            "translation": "intéressant",
             "note": "todo"
         },
         "en": {
@@ -15213,7 +15213,7 @@
         "id": "2673e16b-a42c-4ce6-8613-09c805075bf7",
         "port": "internet",
         "fr": {
-            "translation": "todo",
+            "translation": "internet",
             "note": "todo"
         },
         "en": {
@@ -15226,7 +15226,7 @@
         "id": "2f0bfee5-d238-4075-a3e7-5110a43f07d7",
         "port": "intervalo (almoço)",
         "fr": {
-            "translation": "todo",
+            "translation": "pause (déjeuner)",
             "note": "todo"
         },
         "en": {
@@ -15239,7 +15239,7 @@
         "id": "00f95327-aca4-4f8c-aecf-15259defad51",
         "port": "inútil",
         "fr": {
-            "translation": "todo",
+            "translation": "inutile",
             "note": "todo"
         },
         "en": {
@@ -15252,7 +15252,7 @@
         "id": "7e840a62-e1ca-44a9-8f9e-6111482b223a",
         "port": "iogurte",
         "fr": {
-            "translation": "todo",
+            "translation": "yaourt",
             "note": "todo"
         },
         "en": {
@@ -15265,7 +15265,7 @@
         "id": "e567f9e7-9fbb-4f51-9f6d-1595b50c51cb",
         "port": "ipod",
         "fr": {
-            "translation": "todo",
+            "translation": "iPod",
             "note": "todo"
         },
         "en": {
@@ -15278,7 +15278,7 @@
         "id": "e91421a2-8098-4a29-b6f9-d2d884a48729",
         "port": "ir",
         "fr": {
-            "translation": "todo",
+            "translation": "aller",
             "note": "todo"
         },
         "en": {
@@ -15291,7 +15291,7 @@
         "id": "e4a8a1be-ded3-4d67-b338-35bff8a443e9",
         "port": "ir às compras",
         "fr": {
-            "translation": "todo",
+            "translation": "aller faire des achats",
             "note": "todo"
         },
         "en": {
@@ -15304,7 +15304,7 @@
         "id": "f360cb4f-b762-496d-9cc5-b3fac55560ad",
         "port": "ir buscar",
         "fr": {
-            "translation": "todo",
+            "translation": "aller chercher",
             "note": "todo"
         },
         "en": {
@@ -15317,7 +15317,7 @@
         "id": "3c97464b-5698-4ed9-8f62-6d74075d726b",
         "port": "ir dormir",
         "fr": {
-            "translation": "todo",
+            "translation": "aller dormir",
             "note": "todo"
         },
         "en": {
@@ -15330,7 +15330,7 @@
         "id": "2b5ee935-8257-4fde-b533-e15786348856",
         "port": "ir para a cama",
         "fr": {
-            "translation": "todo",
+            "translation": "aller au lit",
             "note": "todo"
         },
         "en": {
@@ -15343,7 +15343,7 @@
         "id": "bd41ff6f-2bec-42e6-9794-a83b17e76d31",
         "port": "ir patinar",
         "fr": {
-            "translation": "todo",
+            "translation": "aller patiner",
             "note": "todo"
         },
         "en": {
@@ -15356,7 +15356,7 @@
         "id": "2574d7f7-a4a7-4cae-bd14-eabf88319688",
         "port": "irmã",
         "fr": {
-            "translation": "todo",
+            "translation": "sœur",
             "note": "todo"
         },
         "en": {
@@ -15369,7 +15369,7 @@
         "id": "e6073058-651b-4a5a-9d97-49e2999a9d86",
         "port": "irmãos",
         "fr": {
-            "translation": "todo",
+            "translation": "frères et sœurs",
             "note": "todo"
         },
         "en": {
@@ -15382,7 +15382,7 @@
         "id": "4fd2fb10-87c1-48fb-b8b7-3e6671737a86",
         "port": "ir-se embora",
         "fr": {
-            "translation": "todo",
+            "translation": "s'en aller",
             "note": "todo"
         },
         "en": {
@@ -15395,7 +15395,7 @@
         "id": "e52b7d0b-552f-48fd-a58c-f274bdcc56bd",
         "port": "itália (italiano)",
         "fr": {
-            "translation": "todo",
+            "translation": "Italie (italien)",
             "note": "todo"
         },
         "en": {
@@ -15408,7 +15408,7 @@
         "id": "8168ec64-be3e-4cce-9650-e8e5d0001235",
         "port": "já",
         "fr": {
-            "translation": "todo",
+            "translation": "déjà",
             "note": "todo"
         },
         "en": {
@@ -15421,7 +15421,7 @@
         "id": "36df2725-9048-4c7e-84e1-538eaea193f4",
         "port": "já não",
         "fr": {
-            "translation": "todo",
+            "translation": "plus",
             "note": "todo"
         },
         "en": {
@@ -15434,7 +15434,7 @@
         "id": "c9aa4964-7449-4ddf-995e-df2a62cd08d8",
         "port": "jantar dinner",
         "fr": {
-            "translation": "todo",
+            "translation": "dîner",
             "note": "todo"
         },
         "en": {
@@ -15447,7 +15447,7 @@
         "id": "6a802e3d-a597-400d-a9b9-63f22adad0f3",
         "port": "joelho",
         "fr": {
-            "translation": "todo",
+            "translation": "genou",
             "note": "todo"
         },
         "en": {
@@ -15460,7 +15460,7 @@
         "id": "506db5a1-bd19-4b95-889a-0344ff8ef55f",
         "port": "jogador",
         "fr": {
-            "translation": "todo",
+            "translation": "joueur",
             "note": "todo"
         },
         "en": {
@@ -15473,7 +15473,7 @@
         "id": "9d4a945b-3739-496c-98a3-59def003cb05",
         "port": "jogar",
         "fr": {
-            "translation": "todo",
+            "translation": "jouer",
             "note": "todo"
         },
         "en": {
@@ -15486,7 +15486,7 @@
         "id": "930f13c9-8ab7-4f32-9e24-95174bdde2d8",
         "port": "jogo de",
         "fr": {
-            "translation": "todo",
+            "translation": "jeu de",
             "note": "todo"
         },
         "en": {
@@ -15499,7 +15499,7 @@
         "id": "417b5ab1-fb1c-44fe-9519-ef93f03e4ba4",
         "port": "jornal",
         "fr": {
-            "translation": "todo",
+            "translation": "journal",
             "note": "todo"
         },
         "en": {
@@ -15512,7 +15512,7 @@
         "id": "4087a495-f8c2-4efe-a1de-4481f924a550",
         "port": "jornalista",
         "fr": {
-            "translation": "todo",
+            "translation": "journaliste",
             "note": "todo"
         },
         "en": {
@@ -15525,7 +15525,7 @@
         "id": "3006f3c5-1639-48f9-990a-710bcf2c7963",
         "port": "jovem, adolescente",
         "fr": {
-            "translation": "todo",
+            "translation": "jeune, adolescent",
             "note": "todo"
         },
         "en": {
@@ -15538,7 +15538,7 @@
         "id": "a1d46331-fb1d-4c74-8025-67783c036ed8",
         "port": "jovem, novo",
         "fr": {
-            "translation": "todo",
+            "translation": "jeune, nouveau",
             "note": "todo"
         },
         "en": {
@@ -15551,7 +15551,7 @@
         "id": "0887c2e0-91cd-4783-a826-1ea3fb1ee0d4",
         "port": "lã",
         "fr": {
-            "translation": "todo",
+            "translation": "laine",
             "note": "todo"
         },
         "en": {
@@ -15564,7 +15564,7 @@
         "id": "fb62ed76-8ade-4054-a823-1c937955cd91",
         "port": "lábio",
         "fr": {
-            "translation": "todo",
+            "translation": "lèvre",
             "note": "todo"
         },
         "en": {
@@ -15577,7 +15577,7 @@
         "id": "ca95dccf-3201-4bbb-98c0-5a7441a5e8e4",
         "port": "laboratório",
         "fr": {
-            "translation": "todo",
+            "translation": "laboratoire",
             "note": "todo"
         },
         "en": {
@@ -15590,7 +15590,7 @@
         "id": "30c3a41c-7b9b-4ade-9a7d-93189fdcd853",
         "port": "lanchar",
         "fr": {
-            "translation": "todo",
+            "translation": "goûter",
             "note": "todo"
         },
         "en": {
@@ -15603,7 +15603,7 @@
         "id": "7b3b39d7-c784-4733-8b89-82b34176515e",
         "port": "lanterna",
         "fr": {
-            "translation": "todo",
+            "translation": "lampe de poche",
             "note": "todo"
         },
         "en": {
@@ -15616,7 +15616,7 @@
         "id": "d35e0233-4180-4517-9549-405ac37e1eee",
         "port": "lápis",
         "fr": {
-            "translation": "todo",
+            "translation": "crayon",
             "note": "todo"
         },
         "en": {
@@ -15629,7 +15629,7 @@
         "id": "790ca565-4bd9-4e87-b804-c384dbe4d2d7",
         "port": "laranja",
         "fr": {
-            "translation": "todo",
+            "translation": "orange",
             "note": "todo"
         },
         "en": {
@@ -15642,7 +15642,7 @@
         "id": "cff21304-8721-4c46-b7f5-39fd2bb62c31",
         "port": "lata, abre-latas / abridor de lata",
         "fr": {
-            "translation": "todo",
+            "translation": "boîte, ouvre-boîte",
             "note": "todo"
         },
         "en": {
@@ -15655,7 +15655,7 @@
         "id": "61348936-5658-4f4a-8b3c-8502cac1d250",
         "port": "lavar(-se)",
         "fr": {
-            "translation": "todo",
+            "translation": "laver (se)",
             "note": "todo"
         },
         "en": {
@@ -15668,7 +15668,7 @@
         "id": "b277ffb9-4e1d-4f94-9d88-dfeb02ee5266",
         "port": "lavar, limpar",
         "fr": {
-            "translation": "todo",
+            "translation": "laver, nettoyer",
             "note": "todo"
         },
         "en": {
@@ -15681,7 +15681,7 @@
         "id": "9c0d785f-0846-4d8b-bfd9-f2a7d389b0b2",
         "port": "lavatório",
         "fr": {
-            "translation": "todo",
+            "translation": "lavabo",
             "note": "todo"
         },
         "en": {
@@ -15694,7 +15694,7 @@
         "id": "e8ac6089-6d3b-4283-a038-bb5680844dd6",
         "port": "leão",
         "fr": {
-            "translation": "todo",
+            "translation": "lion",
             "note": "todo"
         },
         "en": {
@@ -15707,7 +15707,7 @@
         "id": "001eee4a-164f-4bad-bf38-d96ce3adc911",
         "port": "lembrar",
         "fr": {
-            "translation": "todo",
+            "translation": "se souvenir",
             "note": "todo"
         },
         "en": {
@@ -15720,7 +15720,7 @@
         "id": "0fea3f46-15cd-4f3e-a1f8-afc445af2bc1",
         "port": "lenço",
         "fr": {
-            "translation": "todo",
+            "translation": "mouchoir",
             "note": "todo"
         },
         "en": {
@@ -15733,7 +15733,7 @@
         "id": "2358c1ce-f6e4-4d3d-9bb8-03cd4ed84f3a",
         "port": "lençol",
         "fr": {
-            "translation": "todo",
+            "translation": "drap",
             "note": "todo"
         },
         "en": {
@@ -15746,7 +15746,7 @@
         "id": "df03d5e9-5f9e-4e39-a092-7cd04fd055b8",
         "port": "lento, devagar",
         "fr": {
-            "translation": "todo",
+            "translation": "lent, lentement",
             "note": "todo"
         },
         "en": {
@@ -15759,7 +15759,7 @@
         "id": "34d6e5df-d202-4772-ade1-db14b8330a5b",
         "port": "ler",
         "fr": {
-            "translation": "todo",
+            "translation": "lire",
             "note": "todo"
         },
         "en": {
@@ -15772,7 +15772,7 @@
         "id": "ae55f0e6-905e-4fc1-83d0-8dc1a5114d42",
         "port": "letra",
         "fr": {
-            "translation": "todo",
+            "translation": "lettre",
             "note": "todo"
         },
         "en": {
@@ -15785,7 +15785,7 @@
         "id": "876b6a3b-da79-4385-8248-74d66ea678ea",
         "port": "levantar-se",
         "fr": {
-            "translation": "todo",
+            "translation": "se lever",
             "note": "todo"
         },
         "en": {
@@ -15798,7 +15798,7 @@
         "id": "e03225aa-af51-4d41-8634-1cbea605d0d5",
         "port": "levar",
         "fr": {
-            "translation": "todo",
+            "translation": "porter",
             "note": "todo"
         },
         "en": {
@@ -15811,7 +15811,7 @@
         "id": "18e4e3f9-4db3-4772-8b2f-8ab496c51023",
         "port": "líder",
         "fr": {
-            "translation": "todo",
+            "translation": "leader",
             "note": "todo"
         },
         "en": {
@@ -15824,7 +15824,7 @@
         "id": "af0947f5-89f5-4ac5-943a-cfba1f8187c6",
         "port": "liga",
         "fr": {
-            "translation": "todo",
+            "translation": "ligue",
             "note": "todo"
         },
         "en": {
@@ -15837,7 +15837,7 @@
         "id": "8f2e865f-629c-4592-afd3-bb081bfdd246",
         "port": "ligação (comboios / trens)",
         "fr": {
-            "translation": "todo",
+            "translation": "correspondance (trains)",
             "note": "todo"
         },
         "en": {
@@ -15850,7 +15850,7 @@
         "id": "8ced3df1-26b7-4056-985d-37cd0dcc4008",
         "port": "ligar",
         "fr": {
-            "translation": "todo",
+            "translation": "allumer",
             "note": "todo"
         },
         "en": {
@@ -15863,7 +15863,7 @@
         "id": "ecaf826f-3216-41e6-bce4-cf0fc35557f3",
         "port": "limão",
         "fr": {
-            "translation": "todo",
+            "translation": "citron",
             "note": "todo"
         },
         "en": {
@@ -15876,7 +15876,7 @@
         "id": "9beb5549-b638-47a6-8d5e-6d7cb2c323c7",
         "port": "limonada",
         "fr": {
-            "translation": "todo",
+            "translation": "limonade",
             "note": "todo"
         },
         "en": {
@@ -15889,7 +15889,7 @@
         "id": "d0aac41d-92fc-4d13-86dc-a05666c0b72f",
         "port": "limpar",
         "fr": {
-            "translation": "todo",
+            "translation": "nettoyer",
             "note": "todo"
         },
         "en": {
@@ -15902,7 +15902,7 @@
         "id": "962d5120-bea0-4f8a-a295-22d6fdcc5a43",
         "port": "lindo",
         "fr": {
-            "translation": "todo",
+            "translation": "beau",
             "note": "todo"
         },
         "en": {
@@ -15915,7 +15915,7 @@
         "id": "4f411875-5500-4ba0-b329-24347bc82c82",
         "port": "língua",
         "fr": {
-            "translation": "todo",
+            "translation": "langue",
             "note": "todo"
         },
         "en": {
@@ -15928,7 +15928,7 @@
         "id": "9b1d190d-0b61-4af9-bd99-fb089031d2c0",
         "port": "liso",
         "fr": {
-            "translation": "todo",
+            "translation": "lisse",
             "note": "todo"
         },
         "en": {
@@ -15941,7 +15941,7 @@
         "id": "38e29a11-d7ca-417b-ac1b-d6a1e7e2df1b",
         "port": "livraria",
         "fr": {
-            "translation": "todo",
+            "translation": "librairie",
             "note": "todo"
         },
         "en": {
@@ -15954,7 +15954,7 @@
         "id": "76d906f0-ec7e-490f-b331-84d009687fbf",
         "port": "lixo",
         "fr": {
-            "translation": "todo",
+            "translation": "ordures",
             "note": "todo"
         },
         "en": {
@@ -15967,7 +15967,7 @@
         "id": "3f730dc4-4166-4e8e-a7bf-253016496b72",
         "port": "logo que, assim que",
         "fr": {
-            "translation": "todo",
+            "translation": "dès que",
             "note": "todo"
         },
         "en": {
@@ -15980,7 +15980,7 @@
         "id": "9e7d116a-52a4-48be-8c88-1bd5bf839276",
         "port": "loja de roupa",
         "fr": {
-            "translation": "todo",
+            "translation": "magasin de vêtements",
             "note": "todo"
         },
         "en": {
@@ -15993,7 +15993,7 @@
         "id": "e6c534dc-2815-4275-b54f-0fe1f649a4df",
         "port": "luminoso, ensolarado",
         "fr": {
-            "translation": "todo",
+            "translation": "lumineux, ensoleillé",
             "note": "todo"
         },
         "en": {
@@ -16006,7 +16006,7 @@
         "id": "857c901f-caa1-430c-995a-95d0b52dc959",
         "port": "luxo",
         "fr": {
-            "translation": "todo",
+            "translation": "luxe",
             "note": "todo"
         },
         "en": {
@@ -16019,7 +16019,7 @@
         "id": "abc149a0-5a75-4f92-bf63-cf13164f9d86",
         "port": "maçã",
         "fr": {
-            "translation": "todo",
+            "translation": "pomme",
             "note": "todo"
         },
         "en": {
@@ -16032,7 +16032,7 @@
         "id": "53732bf3-a685-4c11-9af3-da1fbd1c3630",
         "port": "macaco",
         "fr": {
-            "translation": "todo",
+            "translation": "singe",
             "note": "todo"
         },
         "en": {
@@ -16045,7 +16045,7 @@
         "id": "58ebfe1b-e16c-4197-9133-c086785560e2",
         "port": "maçaneta",
         "fr": {
-            "translation": "todo",
+            "translation": "poignée",
             "note": "todo"
         },
         "en": {
@@ -16058,7 +16058,7 @@
         "id": "8e381e4e-63fb-4f3d-8ef4-3a45adc51b25",
         "port": "macio",
         "fr": {
-            "translation": "todo",
+            "translation": "doux",
             "note": "todo"
         },
         "en": {
@@ -16071,7 +16071,7 @@
         "id": "3572b4b4-0e9b-42bc-afca-cb1acb6ec177",
         "port": "magro esbelto",
         "fr": {
-            "translation": "todo",
+            "translation": "maigre svelte",
             "note": "todo"
         },
         "en": {
@@ -16084,7 +16084,7 @@
         "id": "a72363b6-ca03-4694-9c9f-6c7f30d744e6",
         "port": "mala",
         "fr": {
-            "translation": "todo",
+            "translation": "valise",
             "note": "todo"
         },
         "en": {
@@ -16097,7 +16097,7 @@
         "id": "7e864b7b-66a3-4e68-82b8-5821687a9d35",
         "port": "encomendar",
         "fr": {
-            "translation": "todo",
+            "translation": "commander",
             "note": "todo"
         },
         "en": {
@@ -16110,7 +16110,7 @@
         "id": "c00e2650-55eb-45b7-a3e6-5c581b5c4de4",
         "port": "mandar, enviar",
         "fr": {
-            "translation": "todo",
+            "translation": "envoyer",
             "note": "todo"
         },
         "en": {
@@ -16123,7 +16123,7 @@
         "id": "f47d3944-1ec6-41ce-8259-ff19c947ac44",
         "port": "maquinista",
         "fr": {
-            "translation": "todo",
+            "translation": "machiniste",
             "note": "todo"
         },
         "en": {
@@ -16136,7 +16136,7 @@
         "id": "92be05ed-1b78-46e4-85f4-33e991dc10ca",
         "port": "maravilhoso",
         "fr": {
-            "translation": "todo",
+            "translation": "merveilleux",
             "note": "todo"
         },
         "en": {
@@ -16149,7 +16149,7 @@
         "id": "8d0fa2af-fa84-4dd0-9b13-0cb4deb4d544",
         "port": "mas",
         "fr": {
-            "translation": "todo",
+            "translation": "mais",
             "note": "todo"
         },
         "en": {
@@ -16162,7 +16162,7 @@
         "id": "fec8d0f3-34a6-468d-a359-77ad69098a7c",
         "port": "massa, talharim",
         "fr": {
-            "translation": "todo",
+            "translation": "pâtes, tagliatelles",
             "note": "todo"
         },
         "en": {
@@ -16175,7 +16175,7 @@
         "id": "9bbbfd1f-6cd5-43c3-a897-0b917c86416d",
         "port": "matemática",
         "fr": {
-            "translation": "todo",
+            "translation": "mathématiques",
             "note": "todo"
         },
         "en": {
@@ -16188,7 +16188,7 @@
         "id": "79207908-7ef8-47ad-999b-08744a193071",
         "port": "material",
         "fr": {
-            "translation": "todo",
+            "translation": "matériel",
             "note": "todo"
         },
         "en": {
@@ -16201,7 +16201,7 @@
         "id": "a408876c-2ffc-48e4-8e54-623367944584",
         "port": "mecânico",
         "fr": {
-            "translation": "todo",
+            "translation": "mécanicien",
             "note": "todo"
         },
         "en": {
@@ -16214,7 +16214,7 @@
         "id": "efed547e-497f-4e82-91cb-4706864f97f8",
         "port": "médio",
         "fr": {
-            "translation": "todo",
+            "translation": "moyen",
             "note": "todo"
         },
         "en": {
@@ -16227,7 +16227,7 @@
         "id": "a95f35e8-7a63-43ec-a2e0-3258dd05ca1d",
         "port": "meia-noite",
         "fr": {
-            "translation": "todo",
+            "translation": "minuit",
             "note": "todo"
         },
         "en": {
@@ -16240,7 +16240,7 @@
         "id": "dd7e2811-fcac-46a5-9e68-bb5f7282850a",
         "port": "meio (no meio de)",
         "fr": {
-            "translation": "todo",
+            "translation": "milieu (au milieu de)",
             "note": "todo"
         },
         "en": {
@@ -16253,7 +16253,7 @@
         "id": "1ad10041-c6f2-4cec-aaaf-addf2210938e",
         "port": "meio, metade",
         "fr": {
-            "translation": "todo",
+            "translation": "moitié",
             "note": "todo"
         },
         "en": {
@@ -16266,7 +16266,7 @@
         "id": "1339dadf-769e-43bf-98e7-cad9ccf86d5b",
         "port": "meio-dia",
         "fr": {
-            "translation": "todo",
+            "translation": "midi",
             "note": "todo"
         },
         "en": {
@@ -16279,7 +16279,7 @@
         "id": "5b7bf6ee-1e94-4f27-bec8-3358c4ea86f7",
         "port": "mel",
         "fr": {
-            "translation": "todo",
+            "translation": "miel",
             "note": "todo"
         },
         "en": {
@@ -16292,7 +16292,7 @@
         "id": "4b38bcb8-bc6d-4217-906c-79e62a42e28f",
         "port": "membro, sócio",
         "fr": {
-            "translation": "todo",
+            "translation": "membre, sociétaire",
             "note": "todo"
         },
         "en": {
@@ -16305,7 +16305,7 @@
         "id": "47ff3de8-b33e-43e2-b597-3908576ec11f",
         "port": "mercado, praça",
         "fr": {
-            "translation": "todo",
+            "translation": "marché, place",
             "note": "todo"
         },
         "en": {
@@ -16331,7 +16331,7 @@
         "id": "5f87da6b-41e3-40d5-826f-c034ff1922f7",
         "port": "moda (na)",
         "fr": {
-            "translation": "todo",
+            "translation": "mode (à la)",
             "note": "todo"
         },
         "en": {
@@ -16344,7 +16344,7 @@
         "id": "8787c9a6-92cb-4767-9c96-f6fe6f1ec9fb",
         "port": "moderado",
         "fr": {
-            "translation": "todo",
+            "translation": "modéré",
             "note": "todo"
         },
         "en": {
@@ -16357,7 +16357,7 @@
         "id": "4c2f23d8-50ef-491b-98db-bee8809d130f",
         "port": "modo",
         "fr": {
-            "translation": "todo",
+            "translation": "mode",
             "note": "todo"
         },
         "en": {
@@ -16370,7 +16370,7 @@
         "id": "c80c5d26-8761-49e1-8bdd-44c581a83ef7",
         "port": "moeda",
         "fr": {
-            "translation": "todo",
+            "translation": "monnaie",
             "note": "todo"
         },
         "en": {
@@ -16383,7 +16383,7 @@
         "id": "3bf984be-9649-48e5-8d2c-59602fd5926a",
         "port": "molhado",
         "fr": {
-            "translation": "todo",
+            "translation": "mouillé",
             "note": "todo"
         },
         "en": {
@@ -16396,7 +16396,7 @@
         "id": "6e082364-0b20-40b7-9411-8bafba1c2294",
         "port": "molho",
         "fr": {
-            "translation": "todo",
+            "translation": "sauce",
             "note": "todo"
         },
         "en": {
@@ -16409,7 +16409,7 @@
         "id": "47d3a700-c3d9-4181-ab91-745641c90cda",
         "port": "morango",
         "fr": {
-            "translation": "todo",
+            "translation": "fraise",
             "note": "todo"
         },
         "en": {
@@ -16422,7 +16422,7 @@
         "id": "8674d758-84b3-41a0-9be4-cb99d4d6e963",
         "port": "morar",
         "fr": {
-            "translation": "todo",
+            "translation": "habiter",
             "note": "todo"
         },
         "en": {
@@ -16435,7 +16435,7 @@
         "id": "d66b174e-0ad4-4b1a-bc2c-d4bf00815bb8",
         "port": "mostarda",
         "fr": {
-            "translation": "todo",
+            "translation": "moutarde",
             "note": "todo"
         },
         "en": {
@@ -16448,7 +16448,7 @@
         "id": "73644049-9aa0-4120-ac00-7db3dd06b650",
         "port": "mostrar",
         "fr": {
-            "translation": "todo",
+            "translation": "montrer",
             "note": "todo"
         },
         "en": {
@@ -16461,7 +16461,7 @@
         "id": "869e60ca-e238-4f11-ab67-d368b3025750",
         "port": "mudar",
         "fr": {
-            "translation": "todo",
+            "translation": "changer",
             "note": "todo"
         },
         "en": {
@@ -16474,7 +16474,7 @@
         "id": "2212d95d-0772-4464-bdec-b7e46f569354",
         "port": "muito prazer em conhecê-lo/-la",
         "fr": {
-            "translation": "todo",
+            "translation": "enchanté de vous connaître",
             "note": "todo"
         },
         "en": {
@@ -16487,7 +16487,7 @@
         "id": "40001af3-b7cb-4d17-ad3f-d3a396e06cf1",
         "port": "muito, muitos",
         "fr": {
-            "translation": "todo",
+            "translation": "beaucoup",
             "note": "todo"
         },
         "en": {
@@ -16500,7 +16500,7 @@
         "id": "3bd04dde-1adb-4bd8-9e31-b4c121fee943",
         "port": "muro",
         "fr": {
-            "translation": "todo",
+            "translation": "mur",
             "note": "todo"
         },
         "en": {
@@ -16513,7 +16513,7 @@
         "id": "88f1e748-dc36-4359-b876-2293cc46f0d3",
         "port": "museu",
         "fr": {
-            "translation": "todo",
+            "translation": "musée",
             "note": "todo"
         },
         "en": {
@@ -16526,7 +16526,7 @@
         "id": "c048c65d-2daa-4762-a6f8-0543dc6a432c",
         "port": "música (pop/clássica/folclórica)",
         "fr": {
-            "translation": "todo",
+            "translation": "musique (pop/classique/folklorique)",
             "note": "todo"
         },
         "en": {
@@ -16539,7 +16539,7 @@
         "id": "f5f6fb32-1f80-473e-89b4-df31fee9c627",
         "port": "músico",
         "fr": {
-            "translation": "todo",
+            "translation": "musicien",
             "note": "todo"
         },
         "en": {
@@ -16552,7 +16552,7 @@
         "id": "97be7eca-f0c0-4389-80ba-fad57f352afe",
         "port": "na frente",
         "fr": {
-            "translation": "todo",
+            "translation": "devant",
             "note": "todo"
         },
         "en": {
@@ -16565,7 +16565,7 @@
         "id": "8978ea84-de5f-41d1-b849-7ce374924041",
         "port": "nadar",
         "fr": {
-            "translation": "todo",
+            "translation": "nager",
             "note": "todo"
         },
         "en": {
@@ -16578,7 +16578,7 @@
         "id": "715e76c6-5cb2-453e-9437-a6e18f740b27",
         "port": "não antes de not",
         "fr": {
-            "translation": "todo",
+            "translation": "pas avant",
             "note": "todo"
         },
         "en": {
@@ -16591,7 +16591,7 @@
         "id": "49d1ce48-5c6c-4f46-9792-9d67fce798fd",
         "port": "não é?",
         "fr": {
-            "translation": "todo",
+            "translation": "n'est-ce pas ?",
             "note": "todo"
         },
         "en": {
@@ -16604,7 +16604,7 @@
         "id": "8874566d-5fa8-4432-a5bc-48b62603aac0",
         "port": "não ter razão, estar errado",
         "fr": {
-            "translation": "todo",
+            "translation": "ne pas avoir raison, avoir tort",
             "note": "todo"
         },
         "en": {
@@ -16617,7 +16617,7 @@
         "id": "e2258155-6735-495c-8af0-1f0a0ee3f448",
         "port": "nascimento",
         "fr": {
-            "translation": "todo",
+            "translation": "naissance",
             "note": "todo"
         },
         "en": {
@@ -16630,7 +16630,7 @@
         "id": "c5548dd5-b613-459b-b940-3313efa2f19c",
         "port": "nata, creme (creme batido)",
         "fr": {
-            "translation": "todo",
+            "translation": "crème (crème fouettée)",
             "note": "todo"
         },
         "en": {
@@ -16643,7 +16643,7 @@
         "id": "0934e735-c9c9-44c6-b7fd-0ff8bf7785ad",
         "port": "natação",
         "fr": {
-            "translation": "todo",
+            "translation": "natation",
             "note": "todo"
         },
         "en": {
@@ -16656,7 +16656,7 @@
         "id": "c0877451-0911-4962-b35b-62500b6de30e",
         "port": "navegar, velejar",
         "fr": {
-            "translation": "todo",
+            "translation": "naviguer, faire de la voile",
             "note": "todo"
         },
         "en": {
@@ -16669,7 +16669,7 @@
         "id": "4f80e1db-c4ff-4f8b-81ef-bf3bcc26db6f",
         "port": "necessário",
         "fr": {
-            "translation": "todo",
+            "translation": "nécessaire",
             "note": "todo"
         },
         "en": {
@@ -16682,7 +16682,7 @@
         "id": "4878cb3a-144b-4309-a889-7a4c1864f045",
         "port": "negativo",
         "fr": {
-            "translation": "todo",
+            "translation": "négatif",
             "note": "todo"
         },
         "en": {
@@ -16695,7 +16695,7 @@
         "id": "5535e5d0-d034-4ef4-af98-798bc21ac8db",
         "port": "nervoso",
         "fr": {
-            "translation": "todo",
+            "translation": "nerveux",
             "note": "todo"
         },
         "en": {
@@ -16708,7 +16708,7 @@
         "id": "989f4fd3-4bfb-4ee0-b629-fde4cdc05b2e",
         "port": "nevar",
         "fr": {
-            "translation": "todo",
+            "translation": "neiger",
             "note": "todo"
         },
         "en": {
@@ -16721,7 +16721,7 @@
         "id": "fd74ae17-f9e6-487c-9e38-729ed045445b",
         "port": "nevoeiro",
         "fr": {
-            "translation": "todo",
+            "translation": "brouillard",
             "note": "todo"
         },
         "en": {
@@ -16734,7 +16734,7 @@
         "id": "2ddb74be-020b-4fc2-a6f5-b0a909d6e629",
         "port": "ninguém",
         "fr": {
-            "translation": "todo",
+            "translation": "personne",
             "note": "todo"
         },
         "en": {
@@ -16747,7 +16747,7 @@
         "id": "d34e2f6a-fa5b-4ba7-a230-73ca40566800",
         "port": "no futuro",
         "fr": {
-            "translation": "todo",
+            "translation": "dans le futur",
             "note": "todo"
         },
         "en": {
@@ -16760,7 +16760,7 @@
         "id": "2e028ad0-c156-4b0a-9902-3285743b6f23",
         "port": "no princípio",
         "fr": {
-            "translation": "todo",
+            "translation": "au début",
             "note": "todo"
         },
         "en": {
@@ -16773,7 +16773,7 @@
         "id": "646d31dc-b50b-463f-9431-6acbe90a336b",
         "port": "no topo de, no cimo",
         "fr": {
-            "translation": "todo",
+            "translation": "au sommet de",
             "note": "todo"
         },
         "en": {
@@ -16786,7 +16786,7 @@
         "id": "53fa7a10-8546-4fda-9dcd-5dcc0f67b5de",
         "port": "nome",
         "fr": {
-            "translation": "todo",
+            "translation": "nom",
             "note": "todo"
         },
         "en": {
@@ -16799,7 +16799,7 @@
         "id": "a138fa49-9056-4b81-abee-6635e87ff855",
         "port": "normalmente",
         "fr": {
-            "translation": "todo",
+            "translation": "normalement",
             "note": "todo"
         },
         "en": {
@@ -16812,7 +16812,7 @@
         "id": "c2714582-5799-4e79-b40e-5e0f818deaa1",
         "port": "noz",
         "fr": {
-            "translation": "todo",
+            "translation": "noix",
             "note": "todo"
         },
         "en": {
@@ -16825,7 +16825,7 @@
         "id": "9e6e8585-ec8c-4cd4-8b8d-8269d1408f2a",
         "port": "o que? o quê?",
         "fr": {
-            "translation": "todo",
+            "translation": "quoi ?",
             "note": "todo"
         },
         "en": {
@@ -16838,7 +16838,7 @@
         "id": "b6c022bd-5f45-4f37-a737-fa1b11c6d4e9",
         "port": "ocidental",
         "fr": {
-            "translation": "todo",
+            "translation": "occidental",
             "note": "todo"
         },
         "en": {
@@ -16851,7 +16851,7 @@
         "id": "b1bc9108-45fc-48e1-bb78-ee5e3943059f",
         "port": "oferecer",
         "fr": {
-            "translation": "todo",
+            "translation": "offrir",
             "note": "todo"
         },
         "en": {
@@ -16864,7 +16864,7 @@
         "id": "085ba114-a7ff-471e-a58e-ac5e99295a4f",
         "port": "oferta especial",
         "fr": {
-            "translation": "todo",
+            "translation": "offre spéciale",
             "note": "todo"
         },
         "en": {
@@ -16877,7 +16877,7 @@
         "id": "bafe049d-38e6-418d-b223-7ea110c1b1d7",
         "port": "reparos repair",
         "fr": {
-            "translation": "todo",
+            "translation": "réparations",
             "note": "todo"
         },
         "en": {
@@ -16890,7 +16890,7 @@
         "id": "ab2e45fb-b337-49c0-8a04-2aa29fce7115",
         "port": "ok",
         "fr": {
-            "translation": "todo",
+            "translation": "ok",
             "note": "todo"
         },
         "en": {
@@ -16903,7 +16903,7 @@
         "id": "e44a2dc2-7051-4184-8710-f200a293f0fd",
         "port": "olhar para",
         "fr": {
-            "translation": "todo",
+            "translation": "regarder",
             "note": "todo"
         },
         "en": {
@@ -16916,7 +16916,7 @@
         "id": "29f78c07-7bcb-441f-be9d-16b2757bf3ee",
         "port": "onde? / aonde? / donde?",
         "fr": {
-            "translation": "todo",
+            "translation": "où ? / où ? / d'où ?",
             "note": "todo"
         },
         "en": {
@@ -16929,7 +16929,7 @@
         "id": "723d5fbf-c022-456e-a0f0-afd3aa5b991f",
         "port": "ordenado, salário",
         "fr": {
-            "translation": "todo",
+            "translation": "salaire",
             "note": "todo"
         },
         "en": {
@@ -16942,7 +16942,7 @@
         "id": "45c01ec2-db59-41b7-aa53-7d6be4cd72f2",
         "port": "organizar",
         "fr": {
-            "translation": "todo",
+            "translation": "organiser",
             "note": "todo"
         },
         "en": {
@@ -16955,7 +16955,7 @@
         "id": "d96062eb-01a1-4616-8c73-6d747065de6d",
         "port": "ou or ou",
         "fr": {
-            "translation": "todo",
+            "translation": "ou",
             "note": "todo"
         },
         "en": {
@@ -16968,7 +16968,7 @@
         "id": "07f39933-ab70-4a69-801e-c765a03f9730",
         "port": "outro",
         "fr": {
-            "translation": "todo",
+            "translation": "autre",
             "note": "todo"
         },
         "en": {
@@ -16981,7 +16981,7 @@
         "id": "6470bf43-1f48-4617-8716-31a28b3c5506",
         "port": "ouvir",
         "fr": {
-            "translation": "todo",
+            "translation": "entendre",
             "note": "todo"
         },
         "en": {
@@ -16994,7 +16994,7 @@
         "id": "58a43982-2362-452c-aa76-787716f254b8",
         "port": "ouvir, escutar",
         "fr": {
-            "translation": "todo",
+            "translation": "entendre, écouter",
             "note": "todo"
         },
         "en": {
@@ -17007,7 +17007,7 @@
         "id": "239c7e21-be78-45e0-b5e7-37084e299274",
         "port": "ovelha",
         "fr": {
-            "translation": "todo",
+            "translation": "mouton",
             "note": "todo"
         },
         "en": {
@@ -17020,7 +17020,7 @@
         "id": "0cca567e-ed56-4727-bc72-f66f38d7e3a8",
         "port": "ovo cozido",
         "fr": {
-            "translation": "todo",
+            "translation": "œuf dur",
             "note": "todo"
         },
         "en": {
@@ -17033,7 +17033,7 @@
         "id": "65aa69b8-76bf-46a4-9106-f1412fbaaa23",
         "port": "paciente",
         "fr": {
-            "translation": "todo",
+            "translation": "patient",
             "note": "todo"
         },
         "en": {
@@ -17046,7 +17046,7 @@
         "id": "37a7ede0-a2d6-436a-9497-918387ef9739",
         "port": "pacote",
         "fr": {
-            "translation": "todo",
+            "translation": "paquet",
             "note": "todo"
         },
         "en": {
@@ -17059,7 +17059,7 @@
         "id": "e74504b6-69ba-41cf-902e-f479d47290cc",
         "port": "padeiro (padaria)",
         "fr": {
-            "translation": "todo",
+            "translation": "boulanger (boulangerie)",
             "note": "todo"
         },
         "en": {
@@ -17072,7 +17072,7 @@
         "id": "f134bf5f-a6b0-4a2c-93c4-fa9bcb77422f",
         "port": "pagar",
         "fr": {
-            "translation": "todo",
+            "translation": "payer",
             "note": "todo"
         },
         "en": {
@@ -17085,7 +17085,7 @@
         "id": "03adb1a8-d455-437b-b32c-6325fc29ab66",
         "port": "palavra",
         "fr": {
-            "translation": "todo",
+            "translation": "mot",
             "note": "todo"
         },
         "en": {
@@ -17098,7 +17098,7 @@
         "id": "1da0264f-d877-4957-bbbf-8c17802734dc",
         "port": "pálido",
         "fr": {
-            "translation": "todo",
+            "translation": "pâle",
             "note": "todo"
         },
         "en": {
@@ -17111,7 +17111,7 @@
         "id": "4175ed04-d0aa-45f7-8e45-ebd6523cfc31",
         "port": "pãozinho",
         "fr": {
-            "translation": "todo",
+            "translation": "petit pain",
             "note": "todo"
         },
         "en": {
@@ -17124,7 +17124,7 @@
         "id": "496a2bc9-eb41-44a3-b60e-f3f409fcb654",
         "port": "parar",
         "fr": {
-            "translation": "todo",
+            "translation": "arrêter",
             "note": "todo"
         },
         "en": {
@@ -17137,7 +17137,7 @@
         "id": "2c5d7812-351d-4d14-86dd-283e3466f1d5",
         "port": "parque",
         "fr": {
-            "translation": "todo",
+            "translation": "parc",
             "note": "todo"
         },
         "en": {
@@ -17150,7 +17150,7 @@
         "id": "d102eef4-f507-48a9-8d10-5c115e21e2fa",
         "port": "parte",
         "fr": {
-            "translation": "todo",
+            "translation": "partie",
             "note": "todo"
         },
         "en": {
@@ -17163,7 +17163,7 @@
         "id": "3ff9a29a-fb72-42fa-b62f-1f261c78b332",
         "port": "particular(mente)",
         "fr": {
-            "translation": "todo",
+            "translation": "particulier(ement)",
             "note": "todo"
         },
         "en": {
@@ -17176,7 +17176,7 @@
         "id": "fbf717ab-0985-4039-b545-ad7dc299e33e",
         "port": "partida",
         "fr": {
-            "translation": "todo",
+            "translation": "départ",
             "note": "todo"
         },
         "en": {
@@ -17189,7 +17189,7 @@
         "id": "d9ad7b73-6b92-4102-8eac-e6e7651734ef",
         "port": "partido (político)",
         "fr": {
-            "translation": "todo",
+            "translation": "parti (politique)",
             "note": "todo"
         },
         "en": {
@@ -17202,7 +17202,7 @@
         "id": "65c81f97-6cc8-4ec9-afd9-ddf81f30c44c",
         "port": "partido",
         "fr": {
-            "translation": "todo",
+            "translation": "match",
             "note": "todo"
         },
         "en": {
@@ -17215,7 +17215,7 @@
         "id": "36cb57db-5699-4d5e-a36e-03eaa2f76d8c",
         "port": "partilhar",
         "fr": {
-            "translation": "todo",
+            "translation": "partager",
             "note": "todo"
         },
         "en": {
@@ -17228,7 +17228,7 @@
         "id": "18e539d7-1868-4a45-b1c7-cac506193fb3",
         "port": "partir",
         "fr": {
-            "translation": "todo",
+            "translation": "partir",
             "note": "todo"
         },
         "en": {
@@ -17241,7 +17241,7 @@
         "id": "2512474c-5d91-4db6-9481-661ead3246b9",
         "port": "partir, quebrar",
         "fr": {
-            "translation": "todo",
+            "translation": "casser",
             "note": "todo"
         },
         "en": {
@@ -17254,7 +17254,7 @@
         "id": "db91c1df-9075-42f4-94e8-dd8d01eff47c",
         "port": "passageiro",
         "fr": {
-            "translation": "todo",
+            "translation": "passager",
             "note": "todo"
         },
         "en": {
@@ -17267,7 +17267,7 @@
         "id": "fc7fde98-42fd-48cb-9afb-b67aad09e3f9",
         "port": "passaporte",
         "fr": {
-            "translation": "todo",
+            "translation": "passeport",
             "note": "todo"
         },
         "en": {
@@ -17280,7 +17280,7 @@
         "id": "ba9cedbf-c45b-45de-803d-9df955cf5987",
         "port": "passar",
         "fr": {
-            "translation": "todo",
+            "translation": "passer",
             "note": "todo"
         },
         "en": {
@@ -17293,7 +17293,7 @@
         "id": "67f53452-2545-49ec-a1f8-bb646abcacec",
         "port": "passar por",
         "fr": {
-            "translation": "todo",
+            "translation": "passer par",
             "note": "todo"
         },
         "en": {
@@ -17306,7 +17306,7 @@
         "id": "42d11a8f-91b4-42c5-b5f3-d9495f82d482",
         "port": "passatempo",
         "fr": {
-            "translation": "todo",
+            "translation": "passe-temps",
             "note": "todo"
         },
         "en": {
@@ -17319,7 +17319,7 @@
         "id": "25c2872f-c516-4d7c-b5c9-d9dfb8f06dc4",
         "port": "passeio / calçada",
         "fr": {
-            "translation": "todo",
+            "translation": "promenade / trottoir",
             "note": "todo"
         },
         "en": {
@@ -17332,7 +17332,7 @@
         "id": "806ad669-dd20-47a9-89aa-53d14d79ef8b",
         "port": "pátio",
         "fr": {
-            "translation": "todo",
+            "translation": "patio",
             "note": "todo"
         },
         "en": {
@@ -17345,7 +17345,7 @@
         "id": "5948c391-cf9d-4d92-8438-8ac07391637e",
         "port": "pato",
         "fr": {
-            "translation": "todo",
+            "translation": "canard",
             "note": "todo"
         },
         "en": {
@@ -17358,7 +17358,7 @@
         "id": "6e8b2950-fbcf-48e7-bb8a-f9adfe403ffa",
         "port": "pedaço",
         "fr": {
-            "translation": "todo",
+            "translation": "morceau",
             "note": "todo"
         },
         "en": {
@@ -17371,7 +17371,7 @@
         "id": "2326b57e-4465-41be-a74e-d36223889c13",
         "port": "pedir",
         "fr": {
-            "translation": "todo",
+            "translation": "demander",
             "note": "todo"
         },
         "en": {
@@ -17384,7 +17384,7 @@
         "id": "a0251d6f-10fd-45b5-9350-6069a411b939",
         "port": "pensão",
         "fr": {
-            "translation": "todo",
+            "translation": "pension",
             "note": "todo"
         },
         "en": {
@@ -17397,7 +17397,7 @@
         "id": "5c1760de-8759-4e71-9bec-9b5d47091189",
         "port": "pente",
         "fr": {
-            "translation": "todo",
+            "translation": "peigne",
             "note": "todo"
         },
         "en": {
@@ -17410,7 +17410,7 @@
         "id": "69868db0-6ed3-42f7-99fe-53888a08945f",
         "port": "pentear-se",
         "fr": {
-            "translation": "todo",
+            "translation": "se peigner",
             "note": "todo"
         },
         "en": {
@@ -17423,7 +17423,7 @@
         "id": "591576ea-6015-41cf-9e6e-298978031de3",
         "port": "pepino",
         "fr": {
-            "translation": "todo",
+            "translation": "concombre",
             "note": "todo"
         },
         "en": {
@@ -17436,7 +17436,7 @@
         "id": "f1aaf071-a4d4-4084-b627-972495ddf7b2",
         "port": "pequeno; baixo",
         "fr": {
-            "translation": "todo",
+            "translation": "petit; bas",
             "note": "todo"
         },
         "en": {
@@ -17449,7 +17449,7 @@
         "id": "140acd60-5379-43a2-8f0d-67e20c1a3858",
         "port": "pêra",
         "fr": {
-            "translation": "todo",
+            "translation": "poire",
             "note": "todo"
         },
         "en": {
@@ -17462,7 +17462,7 @@
         "id": "9be059fc-cb3a-432d-af50-8cc2691550d0",
         "port": "perceber, compreender, entender",
         "fr": {
-            "translation": "todo",
+            "translation": "percevoir, comprendre",
             "note": "todo"
         },
         "en": {
@@ -17475,7 +17475,7 @@
         "id": "c1a91c2c-0671-4a94-81ee-3b196f9286b1",
         "port": "perder",
         "fr": {
-            "translation": "todo",
+            "translation": "perdre",
             "note": "todo"
         },
         "en": {
@@ -17488,7 +17488,7 @@
         "id": "2c405990-fb7e-4849-bd20-ee6accba29be",
         "port": "perfeito",
         "fr": {
-            "translation": "todo",
+            "translation": "parfait",
             "note": "todo"
         },
         "en": {
