@@ -104,6 +104,32 @@
         "user_usefulness": 2
     },
     {
+        "id": "f7812ea3-8086-4e68-8c52-619068c1b832",
+        "port": "de maneira nenhuma",
+        "fr": {
+            "translation": "en aucune façon",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "at all (not)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "e2d9ef21-f47e-4c89-af8c-707ec6491d30",
+        "port": "panela com um cabo",
+        "fr": {
+            "translation": "poêle avec une poignée",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "saucepan with handle",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "4a290ffa-e270-4809-927d-ad1e0200b66a",
         "port": "estou! está lá?",
         "fr": {

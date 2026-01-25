@@ -1707,7 +1707,7 @@
         "port": "pessoas",
         "fr": {
             "translation": "personnes/gens (formel)",
-            "note": "todo"
+            "note": "gente est plus informel"
         },
         "en": {
             "translation": "people (formal)",
@@ -1720,11 +1720,11 @@
         "port": "gente",
         "fr": {
             "translation": "gens (informel)",
-            "note": "todo"
+            "note": "pessoas est plus formel"
         },
         "en": {
             "translation": "people (informal)",
-            "note": "todo"
+            "note": "people (formal) is 'pessoas'"
         },
         "user_usefulness": 2
     },
@@ -6503,8 +6503,8 @@
         "id": "06564140-94a9-47e4-ba92-9672738ea402",
         "port": "gelo",
         "fr": {
-            "translation": "glace",
-            "note": "todo"
+            "translation": "glace (nom masculin) (sens literal commme etate physique de l'eau)",
+            "note": "La différence principale est que \"gelo\" est un substantif pour la glace elle-même, tandis que \"gelado\" est un adjectif descriptif (ou parfois un substantif pour la glace comestible selon la variante régionale). Les deux proviennent du verbe \"gelar\" (geler), mais \"gelado\" est la forme du participe passé."
         },
         "en": {
             "translation": "ice",
@@ -8594,13 +8594,13 @@
     },
     {
         "id": "55178d2c-fe11-4565-9dc5-42a0f9f7b522",
-        "port": "(cor de) rosa",
+        "port": "rosa",
         "fr": {
-            "translation": "(couleur) rose",
+            "translation": "rose (couleur)",
             "note": "todo"
         },
         "en": {
-            "translation": "pink",
+            "translation": "pink (colour)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -10362,9 +10362,9 @@
     },
     {
         "id": "d0959524-5909-4e21-8c3c-e836760ec750",
-        "port": "caçarola / panela com um cabo",
+        "port": "caçarola",
         "fr": {
-            "translation": "casserole / poêle avec une poignée",
+            "translation": "casserole",
             "note": "todo"
         },
         "en": {
@@ -12280,19 +12280,6 @@
         },
         "en": {
             "translation": "in a good / bad mood",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "f7812ea3-8086-4e68-8c52-619068c1b832",
-        "port": "de maneira nenhuma",
-        "fr": {
-            "translation": "en aucune façon",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "at all (not)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -14665,10 +14652,10 @@
     },
     {
         "id": "da647d5c-dab3-445b-baef-4feaba09c6c9",
-        "port": "gelado / sorvete",
+        "port": "gelado",
         "fr": {
-            "translation": "glace / sorbet",
-            "note": "todo"
+            "translation": "glace (desert sorbet)",
+            "note": "La différence principale est que \"gelo\" est un substantif pour la glace elle-même, tandis que \"gelado\" est un adjectif descriptif (ou parfois un substantif pour la glace comestible selon la variante régionale). Les deux proviennent du verbe \"gelar\" (geler), mais \"gelado\" est la forme du participe passé."
         },
         "en": {
             "translation": "ice cream",
@@ -15952,13 +15939,26 @@
     },
     {
         "id": "e6c534dc-2815-4275-b54f-0fe1f649a4df",
-        "port": "luminoso, ensolarado",
+        "port": "luminoso",
         "fr": {
-            "translation": "lumineux, ensoleillé",
+            "translation": "lumineux",
             "note": "todo"
         },
         "en": {
-            "translation": "bright (=weather)",
+            "translation": "bright",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "547edf5b-6456-4d9f-ab28-9c57e1be36be",
+        "port": "ensolarado",
+        "fr": {
+            "translation": "ensoleillé",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sunny",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -16276,28 +16276,15 @@
         "user_usefulness": 2
     },
     {
-        "id": "16a6df9b-df8e-4d9a-944d-6f4ce2fff259",
-        "port": "metropolitano, metro/ metrô ",
-        "fr": {
-            "translation": "todo",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "underground/tube/métro",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "5f87da6b-41e3-40d5-826f-c034ff1922f7",
-        "port": "moda (na)",
+        "port": "moda",
         "fr": {
             "translation": "mode (à la)",
-            "note": "todo"
+            "note": "a la mode: na moda"
         },
         "en": {
-            "translation": "fashion(able)",
-            "note": "todo"
+            "translation": "fashion (able)",
+            "note": "fashion(able): na moda"
         },
         "user_usefulness": 2
     },
