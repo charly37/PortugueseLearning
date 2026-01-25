@@ -104,6 +104,45 @@
         "user_usefulness": 2
     },
     {
+        "id": "3c79f6dc-989c-4983-b2b9-c8dcdc4d583d",
+        "port": "estar na frente",
+        "fr": {
+            "translation": "être en tête",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to lead (be in front position)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "49d1ce48-5c6c-4f46-9792-9d67fce798fd",
+        "port": "não é?",
+        "fr": {
+            "translation": "n'est-ce pas ?",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "isn't it?",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2212d95d-0772-4464-bdec-b7e46f569354",
+        "port": "muito prazer em conhecê-lo/-la",
+        "fr": {
+            "translation": "enchanté de vous connaître",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pleased to meet you",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "b2c3d4e5-f6a7-8901-7890-123456789012",
         "port": "Tudo bem",
         "fr": {

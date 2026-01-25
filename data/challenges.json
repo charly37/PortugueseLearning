@@ -2213,7 +2213,7 @@
         "id": "e9f0a1b2-c3d4-5678-3456-789012345678",
         "port": "março",
         "fr": {
-            "translation": "mars",
+            "translation": "mars (le mois)",
             "note": "todo"
         },
         "en": {
@@ -2447,12 +2447,12 @@
         "id": "c1f3f6ca-6d45-4065-9e0c-a4203b4a8150",
         "port": "nove",
         "fr": {
-            "translation": "neuf",
+            "translation": "neuf (contraire de use)",
             "note": "todo"
         },
         "en": {
-            "translation": "nine",
-            "note": "noventa e nove porcento - ninety-nine percent"
+            "translation": "new",
+            "note": "todo"
         },
         "user_usefulness": 2
     },
@@ -5294,7 +5294,7 @@
         "id": "4d8f4179-860e-4d38-b219-5adfb3ea6dbf",
         "port": "ouro",
         "fr": {
-            "translation": "or",
+            "translation": "or (metal)",
             "note": "todo"
         },
         "en": {
@@ -6906,11 +6906,11 @@
         "id": "480c4eee-b123-478a-b4df-4c8b293aab19",
         "port": "vidro",
         "fr": {
-            "translation": "verre",
+            "translation": "verre (le matériau)",
             "note": "todo"
         },
         "en": {
-            "translation": "glass",
+            "translation": "glass (material)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -8203,19 +8203,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "4cc08894-16dd-4c2c-a250-bc327fae4701",
-        "port": "held",
-        "fr": {
-            "translation": "tenu",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "held",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "5b9ecdfc-4fdc-4e0f-9bfe-1cb72836a2bc",
         "port": "cabelo",
         "fr": {
@@ -9322,13 +9309,26 @@
     },
     {
         "id": "00e48176-53a1-4381-b6a5-ac904a59063b",
-        "port": "aprendiz / estagiário",
+        "port": "aprendiz",
         "fr": {
-            "translation": "apprenti / stagiaire",
+            "translation": "apprenti",
             "note": "todo"
         },
         "en": {
             "translation": "apprentice",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a7f3c8d2-4b91-4e6a-9c5f-8d2e1b4a7c93",
+        "port": "estagiário",
+        "fr": {
+            "translation": "stagiaire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "intern",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -10101,19 +10101,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "164318ae-6203-4999-acbd-42007d371324",
-        "port": "bilhete, passagem",
-        "fr": {
-            "translation": "billet, ticket",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "ingresso ticket",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "fa99fd6c-7dc1-4582-8822-dcda01cd9a12",
         "port": "bilheteira / bilheteria",
         "fr": {
@@ -10297,14 +10284,14 @@
     },
     {
         "id": "25c6fc98-444f-43f4-92f3-30ddf7ad56ed",
-        "port": "brinquedo(s)",
+        "port": "brinquedo",
         "fr": {
-            "translation": "jouet(s)",
-            "note": "todo"
+            "translation": "jouet",
+            "note": "brinquedos au pluriel"
         },
         "en": {
-            "translation": "toy(s)",
-            "note": "todo"
+            "translation": "toy",
+            "note": "brinquedos in plural"
         },
         "user_usefulness": 2
     },
@@ -11168,13 +11155,13 @@
     },
     {
         "id": "0079bfd9-8f51-4b86-a149-af0e9a5d2c41",
-        "port": "chefe de cozinha / cozinheiro-chefe",
+        "port": "cozinheiro-chefe",
         "fr": {
-            "translation": "chef de cuisine / chef cuisinier",
+            "translation": "chef cuisinier (professionnel)",
             "note": "todo"
         },
         "en": {
-            "translation": "chef",
+            "translation": "chef (cook, professional)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -11305,19 +11292,6 @@
         },
         "en": {
             "translation": "town (centre)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "64290117-da10-4690-8639-dc6d9a9b97a3",
-        "port": "ciência(s)",
-        "fr": {
-            "translation": "science(s)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "science",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -11898,7 +11872,7 @@
         "id": "13ac3a0b-f3b7-4798-81d8-d961a5a402bd",
         "port": "copo",
         "fr": {
-            "translation": "verre",
+            "translation": "verre (pour boire)",
             "note": "todo"
         },
         "en": {
@@ -12780,9 +12754,22 @@
     },
     {
         "id": "90517fec-9dd0-4113-9eaf-3787cbbc1522",
-        "port": "dono, proprietário",
+        "port": "dono",
         "fr": {
-            "translation": "propriétaire",
+            "translation": "propriétaire (informel, plus pratique)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "owner",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3e8f5b19-7d2c-4a91-b6e4-2f9d8c3a1e57",
+        "port": " proprietário",
+        "fr": {
+            "translation": "propriétaire (formel, legal)",
             "note": "todo"
         },
         "en": {
@@ -13248,14 +13235,14 @@
     },
     {
         "id": "48084062-c47a-47a6-b759-3a31091b6b5b",
-        "port": "enviar um sms, enviar um texto",
+        "port": "enviar",
         "fr": {
-            "translation": "envoyer un sms, envoyer un texte",
-            "note": "todo"
+            "translation": "envoyer (formel) (un sms, un texte)",
+            "note": "Mandar est plus informel"
         },
         "en": {
-            "translation": "to text",
-            "note": "todo"
+            "translation": "to send (formal) (letter, text)",
+            "note": "Mandar is more informal"
         },
         "user_usefulness": 2
     },
@@ -13664,9 +13651,9 @@
     },
     {
         "id": "3c79f6dc-989c-4983-b2b9-c8dcdc4d583d",
-        "port": "estar na frente / dirigir",
+        "port": "dirigir",
         "fr": {
-            "translation": "être en tête / diriger",
+            "translation": "diriger",
             "note": "todo"
         },
         "en": {
@@ -14483,13 +14470,13 @@
     },
     {
         "id": "5b22de0c-fe34-4875-8878-857bfc0f5c7f",
-        "port": "foto(grafia)",
+        "port": "foto",
         "fr": {
-            "translation": "photo(graphie)",
+            "translation": "photo (photographie)",
             "note": "todo"
         },
         "en": {
-            "translation": "photo(graph)",
+            "translation": "photo (camera picture)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -15603,7 +15590,7 @@
         "id": "7b3b39d7-c784-4733-8b89-82b34176515e",
         "port": "lanterna",
         "fr": {
-            "translation": "lampe de poche",
+            "translation": "lampe de poche (lanterne)",
             "note": "todo"
         },
         "en": {
@@ -16108,14 +16095,14 @@
     },
     {
         "id": "c00e2650-55eb-45b7-a3e6-5c581b5c4de4",
-        "port": "mandar, enviar",
+        "port": "mandar",
         "fr": {
-            "translation": "envoyer",
-            "note": "todo"
+            "translation": "envoyer (informel)",
+            "note": "Enviar est plus formel"
         },
         "en": {
-            "translation": "to send",
-            "note": "todo"
+            "translation": "to send (informal) (e.g. text message)",
+            "note": "Enviar is more formal for 'send'"
         },
         "user_usefulness": 2
     },
@@ -16471,19 +16458,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "2212d95d-0772-4464-bdec-b7e46f569354",
-        "port": "muito prazer em conhecê-lo/-la",
-        "fr": {
-            "translation": "enchanté de vous connaître",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "pleased to meet you",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "40001af3-b7cb-4d17-ad3f-d3a396e06cf1",
         "port": "muito, muitos",
         "fr": {
@@ -16583,19 +16557,6 @@
         },
         "en": {
             "translation": "until",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "49d1ce48-5c6c-4f46-9792-9d67fce798fd",
-        "port": "não é?",
-        "fr": {
-            "translation": "n'est-ce pas ?",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "isn't it?",
             "note": "todo"
         },
         "user_usefulness": 2
