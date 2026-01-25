@@ -926,7 +926,7 @@
         "id": "f936c147-16cc-4a5c-a8b7-5a9a9d28b17b",
         "port": "dinheiro",
         "fr": {
-            "translation": "argent",
+            "translation": "l argent (le concept, la monnaie)",
             "note": "todo"
         },
         "en": {
@@ -8776,13 +8776,26 @@
     },
     {
         "id": "1cefc796-49e8-46a3-b891-e114c6832541",
-        "port": "ator / atriz",
+        "port": "ator",
         "fr": {
-            "translation": "acteur / actrice",
+            "translation": "acteur",
             "note": "todo"
         },
         "en": {
-            "translation": "actor / actress",
+            "translation": "actor",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "b4c9d6e2-5a73-4f8b-9d1e-6c8a2f4b9e71",
+        "port": "atriz",
+        "fr": {
+            "translation": "actrice",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "actress",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -13676,19 +13689,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "9c8a296b-bee8-4efc-b115-d59f561e51c0",
-        "port": "estar, ser",
-        "fr": {
-            "translation": "être",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to be",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "e49f636d-e815-4bf2-8ede-27946443fef3",
         "port": "este (adj)",
         "fr": {
@@ -13723,19 +13723,6 @@
         },
         "en": {
             "translation": "stomach (ache)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "4a290ffa-e270-4809-927d-ad1e0200b66a",
-        "port": "estou! está lá?",
-        "fr": {
-            "translation": "j'y suis ! y est-il ?",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "sim! / alô! speaking! (=on telephone)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -14581,19 +14568,6 @@
         },
         "en": {
             "translation": "football",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "5f60421f-7779-46b3-ae4b-f89a2a8cc010",
-        "port": "gabardine / capa de chuva",
-        "fr": {
-            "translation": "gabardine / imperméable",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "raincoat",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -16357,7 +16331,7 @@
         "id": "c80c5d26-8761-49e1-8bdd-44c581a83ef7",
         "port": "moeda",
         "fr": {
-            "translation": "monnaie",
+            "translation": "monnaie (en pratique, la pièce, la devise)",
             "note": "todo"
         },
         "en": {
@@ -16953,14 +16927,14 @@
     },
     {
         "id": "58a43982-2362-452c-aa76-787716f254b8",
-        "port": "ouvir, escutar",
+        "port": "escutar",
         "fr": {
-            "translation": "entendre, écouter",
-            "note": "todo"
+            "translation": "écouter",
+            "note": "ouvir est plus l action passive de percevoir un son. escuter est l action active de prêter attention à un son."
         },
         "en": {
-            "translation": "to listen to",
-            "note": "todo"
+            "translation": "to listen to (actively paying attention)",
+            "note": "ouvir is more to hear (passive). escutar is to listen (actively paying attention)."
         },
         "user_usefulness": 2
     },
@@ -17389,19 +17363,6 @@
         },
         "en": {
             "translation": "cucumber",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "f1aaf071-a4d4-4084-b627-972495ddf7b2",
-        "port": "pequeno; baixo",
-        "fr": {
-            "translation": "petit; bas",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "small; short (= height)",
             "note": "todo"
         },
         "user_usefulness": 2

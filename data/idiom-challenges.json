@@ -104,6 +104,19 @@
         "user_usefulness": 2
     },
     {
+        "id": "4a290ffa-e270-4809-927d-ad1e0200b66a",
+        "port": "estou! está lá?",
+        "fr": {
+            "translation": "j'y suis ! y est-il ?",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sim! / alô! speaking! (=on telephone)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "3c79f6dc-989c-4983-b2b9-c8dcdc4d583d",
         "port": "estar na frente",
         "fr": {
