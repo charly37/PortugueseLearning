@@ -18991,5 +18991,1526 @@
             "note": "todo"
         },
         "user_usefulness": 2
+    },
+    {
+        "id": "b41d4ce6-d59c-4e47-8959-57ca88f4c186",
+        "port": "scooter",
+        "fr": {
+            "translation": "scooter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "scooter",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3b3e39bf-c605-4496-ae20-91a53e5065bb",
+        "port": "secar",
+        "fr": {
+            "translation": "sécher",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to dry up",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "29681c39-360b-4143-ac35-0344c4649506",
+        "port": "seco",
+        "fr": {
+            "translation": "sec",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dry",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3d70d7b9-af51-4792-be5a-24cba4e638b0",
+        "port": "secretária",
+        "fr": {
+            "translation": "secrétaire (femme)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "desk",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "1d2ec669-8830-467f-a32d-b80059f8ea34",
+        "port": "secretário",
+        "fr": {
+            "translation": "secrétaire (homme)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "secretary",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ebb77e91-998d-4302-b905-15ae48461049",
+        "port": "seda",
+        "fr": {
+            "translation": "soie",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "silk",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c",
+        "port": "sede",
+        "fr": {
+            "translation": "soif",
+            "note": "todo"
+        },
+        "en": {
+            "translation": " thirst",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7",
+        "port": "seguinte",
+        "fr": {
+            "translation": "suivant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "following/next(e.g.day/week)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf",
+        "port": "selo",
+        "fr": {
+            "translation": "timbre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "stamp (=postage)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a",
+        "port": "sem chumbo (gasolina)",
+        "fr": {
+            "translation": "sans plomb (essence)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "unleaded (petrol)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3aa7196d-5f50-48dc-8681-48e094f35dad",
+        "port": "semáforos",
+        "fr": {
+            "translation": "feux de circulation",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "traffic lights",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "932ed499-73cc-49ef-a8e4-e38fe2f36e48",
+        "port": "semanada, mesada",
+        "fr": {
+            "translation": "argent de poche hebdomadaire, mensuel",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pocket money",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e",
+        "port": "sentar-se",
+        "fr": {
+            "translation": "s'asseoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to sit down",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "50d7e965-e5aa-415d-9fa0-0eae532973e3",
+        "port": "sentar-se (estar sentado)",
+        "fr": {
+            "translation": "s'asseoir (être assis)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to sit (+ be sitting)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618",
+        "port": "sentir(-se)",
+        "fr": {
+            "translation": "sentir (se)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to feel",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "b650903c-8c0e-406d-bb76-b3d36722cf29",
+        "port": "separado",
+        "fr": {
+            "translation": "séparé",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "separate (e.g paying bill)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "510f600e-fbb1-4c4a-99d7-460978196752",
+        "port": "serviço",
+        "fr": {
+            "translation": "service",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "service (=in restaurant)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5",
+        "port": "servir",
+        "fr": {
+            "translation": "servir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to serve",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "19d3abb6-3e40-45c2-911a-d2173647f529",
+        "port": "simpático",
+        "fr": {
+            "translation": "sympathique",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "friendly (person)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c",
+        "port": "só, somente",
+        "fr": {
+            "translation": "seulement",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "only",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f",
+        "port": "só, sozinho",
+        "fr": {
+            "translation": "seul",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "only, alone; not until",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55",
+        "port": "sobremesa",
+        "fr": {
+            "translation": "dessert",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dessert",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "af14e3c2-59cd-4f2d-a9ab-77a067022a45",
+        "port": "sobrinha",
+        "fr": {
+            "translation": "nièce",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "niece",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "728d947a-eba9-4b8b-a34a-83c6ce7dc260",
+        "port": "sobrinho",
+        "fr": {
+            "translation": "neveu",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "nephew",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "fa4f7273-773a-41fe-a87a-b042bff222cd",
+        "port": "socorro(!)",
+        "fr": {
+            "translation": "au secours !",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "help(!)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "fccba0eb-d966-42e1-918f-4d81893b080e",
+        "port": "soldado",
+        "fr": {
+            "translation": "soldat",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "soldier",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2",
+        "port": "soletrar",
+        "fr": {
+            "translation": "épeler",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to spell",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "de67ca37-e6b1-4515-b93f-1649181a768d",
+        "port": "solteiro",
+        "fr": {
+            "translation": "célibataire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "single, unmarried",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "825488fc-71eb-4825-bde3-9962e429ffec",
+        "port": "sopa",
+        "fr": {
+            "translation": "soupe",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "soup",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "bfcde689-027d-4291-bb9b-b9be02761ffa",
+        "port": "sorrir",
+        "fr": {
+            "translation": "sourire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to smile",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "213434a9-285c-4754-bd93-e2956a3b2738",
+        "port": "subir, escalar",
+        "fr": {
+            "translation": "monter, escalader",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to climb",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "18ef2567-9359-4d78-86e8-6322ad0c7eaa",
+        "port": "suburbia",
+        "fr": {
+            "translation": "banlieue",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "suburb",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf",
+        "port": "sujo",
+        "fr": {
+            "translation": "sale",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "dirty",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0",
+        "port": "supermercado",
+        "fr": {
+            "translation": "supermarché",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "supermarket",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "47e9fadb-3333-4821-9d72-54fd0cb52444",
+        "port": "surpreendente",
+        "fr": {
+            "translation": "surprenant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "surprising",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ab36b0fb-5f95-4e1f-ade4-0174dddef403",
+        "port": "calhar",
+        "fr": {
+            "translation": "convenir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "perhaps",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "0e47ca9e-be23-469e-a0f1-31a2b844adb9",
+        "port": "tanto… como, tanto…",
+        "fr": {
+            "translation": "autant… que, autant…",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "quanto both… and",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "70269ddb-fa0b-45be-8d8b-b9041896dec2",
+        "port": "tão...como, tão...quanto",
+        "fr": {
+            "translation": "aussi… que, autant… que",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "just as (comparative)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2f511c4e-c52d-4653-9c49-28f17a9259c1",
+        "port": "tarifa",
+        "fr": {
+            "translation": "tarif",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fare",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "1b4b1939-b0f9-451e-ba7e-c11810e6c550",
+        "port": "tartaruga",
+        "fr": {
+            "translation": "tortue",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tortoise",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "751aa4fb-86e2-49be-a75b-1e4b135d3947",
+        "port": "tarte",
+        "fr": {
+            "translation": "tarte",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "pie",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "b12f6caf-835d-479a-9227-15c2f3011e1f",
+        "port": "teatro",
+        "fr": {
+            "translation": "théâtre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "theatre",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307",
+        "port": "tecnologia da informação",
+        "fr": {
+            "translation": "technologie de l'information",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "i.t.",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a002591a-4fb2-421f-81d1-428a19284409",
+        "port": "teto",
+        "fr": {
+            "translation": "plafond",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ceiling",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "66250e4a-906b-4498-9c71-b0b72dd38e5e",
+        "port": "telefonar",
+        "fr": {
+            "translation": "téléphoner",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "call (=telephone)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "95d729af-d772-4e79-982a-6b5bea77a259",
+        "port": "telhado",
+        "fr": {
+            "translation": "toit",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "roof",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a9598c73-e328-4d66-95b8-0bdde356f9c9",
+        "port": "tempestade",
+        "fr": {
+            "translation": "tempête",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "storm",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "e15b0625-d2c8-421f-93e8-c6be8448cbe4",
+        "port": "tenda",
+        "fr": {
+            "translation": "tente",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tent",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "1cfb3549-d19e-4118-93c1-13fef6263c99",
+        "port": "ténis / tênis",
+        "fr": {
+            "translation": "tennis",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tennis",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "327259f2-81a4-4957-9193-1a50753a7107",
+        "port": "tentar",
+        "fr": {
+            "translation": "essayer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to try",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2f459f45-106f-4e71-8cc5-7fce15557891",
+        "port": "ter",
+        "fr": {
+            "translation": "avoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to have",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1",
+        "port": "ter de, ter que",
+        "fr": {
+            "translation": "devoir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to have to, \"must\"",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33",
+        "port": "ter medo, estar com medo",
+        "fr": {
+            "translation": "avoir peur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be frightened",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "cc64b982-5ac7-4362-9674-b40a45b3e1fe",
+        "port": "ter razão, estar certo",
+        "fr": {
+            "translation": "avoir raison, avoir raison",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to be right",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3",
+        "port": "terrível",
+        "fr": {
+            "translation": "terrible",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "awful, terrible",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904",
+        "port": "tesoura",
+        "fr": {
+            "translation": "ciseaux",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "scissors",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd",
+        "port": "tia",
+        "fr": {
+            "translation": "tante",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "aunt",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "34288847-a727-45f1-9f7d-9d7d53405966",
+        "port": "tigela (de fruta)",
+        "fr": {
+            "translation": "bol (de fruits)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bowl(e.g of fruit)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "871d1046-ca15-450e-ac9c-0421e2ebf5eb",
+        "port": "tigre",
+        "fr": {
+            "translation": "tigre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tiger",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "60de36a4-b067-4c3e-9e20-fcea2a890a18",
+        "port": "tijolo",
+        "fr": {
+            "translation": "brique",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "brick",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "6aff8232-2ec8-41c4-ba10-9725a6ef278c",
+        "port": "tio",
+        "fr": {
+            "translation": "oncle",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "uncle",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "55a80da8-6bba-472c-8261-99f2c943f37f",
+        "port": "tocar",
+        "fr": {
+            "translation": "toucher / jouer (instrument)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to play (e.g.music)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2470adce-b2d1-4f83-ac37-90b548f95793",
+        "port": "tomate",
+        "fr": {
+            "translation": "tomate",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tomato",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5187a9bf-aace-4c61-b753-13ec24c14d8c",
+        "port": "toranja",
+        "fr": {
+            "translation": "pamplemousse",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "grapefruit",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "f1560ff4-1ea9-40e2-90bb-41ccd8823376",
+        "port": "tornar-se",
+        "fr": {
+            "translation": "devenir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to become, get",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2b8d8bef-9f68-4c84-ba76-ecee32885021",
+        "port": "torre",
+        "fr": {
+            "translation": "tour",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tower",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d0b06660-8845-4afa-b068-d307fca631c6",
+        "port": "tossir",
+        "fr": {
+            "translation": "tousser",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to cough",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1",
+        "port": "trabalhador",
+        "fr": {
+            "translation": "travailleur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "hard working",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "43d37957-9a08-41fe-88c9-972748a058be",
+        "port": "trabalhar",
+        "fr": {
+            "translation": "travailler",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to work",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "299eda75-9011-420a-bc65-52b21bf83fa0",
+        "port": "trajeto",
+        "fr": {
+            "translation": "trajet",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "journey (short)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2a13f793-4906-468f-9a7d-55918f04f975",
+        "port": "trancar",
+        "fr": {
+            "translation": "verrouiller",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to lock (up)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ad362943-009b-48d0-ade8-dca75d5858ce",
+        "port": "trânsito",
+        "fr": {
+            "translation": "trafic",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "traffic",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "6d1ea634-7ced-410f-8263-ee0265a9964e",
+        "port": "tratar",
+        "fr": {
+            "translation": "traiter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to treat",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "b5d748b2-875c-4c18-99ea-7aa02b32770f",
+        "port": "travessia",
+        "fr": {
+            "translation": "traversée",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "crossing (e.g.of channel)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "22ff9a00-779b-4712-a18b-742f4d3fc8ab",
+        "port": "trazer",
+        "fr": {
+            "translation": "apporter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to bring",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3996cbdc-d2f6-4cf9-b721-d0ce9fbc3381",
+        "port": "treinar, ensinar",
+        "fr": {
+            "translation": "entraîner, enseigner",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to train",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3e18f8ba-308e-432e-9525-00c1ec5d8b33",
+        "port": "trocar",
+        "fr": {
+            "translation": "échanger",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to change; exchange",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486",
+        "port": "troco change",
+        "fr": {
+            "translation": "monnaie (rendu)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "(small)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "145a8398-5610-41f8-880f-502b4ac6a430",
+        "port": "turista",
+        "fr": {
+            "translation": "touriste",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "tourist",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d6ec1248-f2c8-4597-8c61-3f3e95f68050",
+        "port": "um par",
+        "fr": {
+            "translation": "une paire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "a pair/ couple",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "0cce52ee-c4ac-4d3b-914d-1eca2ddb4a79",
+        "port": "um pouco",
+        "fr": {
+            "translation": "un peu",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "a little",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "209c9722-d706-401c-a943-875ce29b966d",
+        "port": "uma dúzia",
+        "fr": {
+            "translation": "une douzaine",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "a dozen",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a5389b3a-0ce5-4c81-ab30-c7bd311e1792",
+        "port": "usar",
+        "fr": {
+            "translation": "utiliser",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to carry/ wear",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ccec1d1c-e9b6-4e25-ba51-979225bfe3d8",
+        "port": "útil",
+        "fr": {
+            "translation": "utile",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "useful",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "c90a9fb1-e1d2-42b8-8316-6d4fd7d1de50",
+        "port": "uva",
+        "fr": {
+            "translation": "raisin",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "grape",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "1dea757d-ce70-4093-97ee-a2a245f52c3c",
+        "port": "vagão",
+        "fr": {
+            "translation": "wagon",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "(-restaurante, -cama) car (= railway coach)-dining/sleeping",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "abf9a53d-f7a5-444f-a19d-f59d684bd280",
+        "port": "válido",
+        "fr": {
+            "translation": "valide",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "valid",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "63f33fb7-a7fa-4dcd-a2b1-97e488016895",
+        "port": "varrer",
+        "fr": {
+            "translation": "balayer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to sweep",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d23228fd-79d5-45e8-b828-46aec241480a",
+        "port": "vaso",
+        "fr": {
+            "translation": "vase",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "vase",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2e9f0415-0728-4f15-a405-ac2fdeb64371",
+        "port": "vazio",
+        "fr": {
+            "translation": "vide",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "empty",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "f89cf9a1-53a9-44f8-8e0d-5334027c1414",
+        "port": "vento(so)",
+        "fr": {
+            "translation": "vent(eux)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wind(y)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5766a309-f9e6-402b-821a-ed010c4ad613",
+        "port": "ver",
+        "fr": {
+            "translation": "voir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to see",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "365c3628-6515-4093-abfe-0b2be8690038",
+        "port": "ver, assistir",
+        "fr": {
+            "translation": "voir, assister",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to watch",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "116f74c9-f32b-4a1c-9796-96f63004eefe",
+        "port": "verdadeiramente",
+        "fr": {
+            "translation": "véritablement",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "really",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "96f125ca-9ce9-4f69-8bb9-0cd183067c33",
+        "port": "vespa",
+        "fr": {
+            "translation": "guêpe",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "wasp",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7520408e-0e3e-4201-ba02-dbff52dff45f",
+        "port": "vestiário",
+        "fr": {
+            "translation": "vestiaire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "changing room",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "f57809ed-3894-45a2-864e-d3f3a5d9f7ba",
+        "port": "vestir(-se)",
+        "fr": {
+            "translation": "habiller (s')",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to get dressed",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ecf395a5-2ba9-4be8-8106-e2ccf3d28990",
+        "port": "veterinário",
+        "fr": {
+            "translation": "vétérinaire",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "vet",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "472e0c9a-8db3-42dc-8545-e04cd8d3fb7d",
+        "port": "viagem de",
+        "fr": {
+            "translation": "voyage de",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "volta home journey",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "af7aaa04-fa72-4c7a-92de-e0a6ba5988ab",
+        "port": "viajante",
+        "fr": {
+            "translation": "voyageur",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "traveller",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7cceed53-64e3-48ea-9dfc-034f0b256ebc",
+        "port": "viajar",
+        "fr": {
+            "translation": "voyager",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to travel",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "71f3a901-95ba-4845-8a99-79bd70798daf",
+        "port": "videojogo",
+        "fr": {
+            "translation": "jeu vidéo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "videogame",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "bb1283b0-16a4-4a27-8d19-a1c77fcbce29",
+        "port": "vinagre",
+        "fr": {
+            "translation": "vinaigre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "vinegar",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "e816c5a2-70bd-4ac6-bcc5-0326bfc46fe1",
+        "port": "violino",
+        "fr": {
+            "translation": "violon",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "violin",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7d829f51-e892-4b1a-b729-ffd1fa53a32a",
+        "port": "vir",
+        "fr": {
+            "translation": "venir",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to come",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "eef5c42a-515d-41f7-87a2-864be2fc0123",
+        "port": "visita",
+        "fr": {
+            "translation": "visite",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "visit",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a48cc0cd-5b9c-4b85-be00-caa533321424",
+        "port": "visitar",
+        "fr": {
+            "translation": "visiter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to visit",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "b00dd362-a43d-4531-82ec-1fe6b4f52f79",
+        "port": "vitela",
+        "fr": {
+            "translation": "veau",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "veal",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "015b26b2-5e5f-4f5e-adee-64b0e215025c",
+        "port": "vivenda",
+        "fr": {
+            "translation": "maison",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "house (detached)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7939b369-0434-4e38-8253-1b61dc0c1fc1",
+        "port": "viver",
+        "fr": {
+            "translation": "vivre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to live (= be alive)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "16421ab6-3011-4073-afea-6f3040a28976",
+        "port": "vizinho",
+        "fr": {
+            "translation": "voisin",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "neighbour",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "deee10fb-a518-42bc-a5ed-ee08bdc6744b",
+        "port": "voar",
+        "fr": {
+            "translation": "voler",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to fly",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ff17e20f-8ded-4ec7-a10b-512d879c9dcf",
+        "port": "voltar, regressar",
+        "fr": {
+            "translation": "revenir, retourner",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to return, come/go back",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "98458e26-b16c-4aa5-abc5-3e1051f2202f",
+        "port": "voo",
+        "fr": {
+            "translation": "vol",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "flight (=by plane etc)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "56d6e433-8616-4418-912d-98f228bae2ca",
+        "port": "vovô / vovó",
+        "fr": {
+            "translation": "grand-père / grand-mère",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "grandad/granny",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3dc55213-0cbe-402e-a19b-1b145c1970cf",
+        "port": "xadrez",
+        "fr": {
+            "translation": "échecs",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "chess",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "b7e2fc73-627c-4e1c-8ab4-b1df28fb706e",
+        "port": "zangado",
+        "fr": {
+            "translation": "en colère",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "angry",
+            "note": "todo"
+        },
+        "user_usefulness": 2
     }
 ]

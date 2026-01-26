@@ -185,7 +185,7 @@ def validate_challenges(filepath):
         for word, entries in sorted(duplicate_words.items())[:10]:  # Show first 10
             print(f"\n  Portuguese: '{word}' ({len(entries)} entries)")
             for entry in entries[:3]:  # Show first 3 entries per word
-                print(f"    - Index {entry['index']}: EN='{entry['en']}', FR='{entry['fr']}'")
+                print(f"    - Index {entry['index']} (ID: {entry['id']}): EN='{entry['en']}', FR='{entry['fr']}'")
             if len(entries) > 3:
                 print(f"    ... and {len(entries) - 3} more")
         if len(duplicate_words) > 10:
