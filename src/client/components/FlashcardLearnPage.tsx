@@ -6,6 +6,7 @@ import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import InfoIcon from '@mui/icons-material/Info';
 import WordUsefulnessVote from './WordUsefulnessVote';
+import ChallengeQualityFlag from './ChallengeQualityFlag';
 import './FlashcardLearnPage.css';
 
 interface Challenge {
@@ -444,6 +445,13 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                   <WordUsefulnessVote
                     challengeId={currentChallenge.id}
                     currentUsefulness={currentChallenge.user_usefulness}
+                    isGuest={user?.isGuest}
+                  />
+                </Box>
+
+                <Box sx={{ width: '100%', maxWidth: '500px', mt: 2 }}>
+                  <ChallengeQualityFlag
+                    challengeId={currentChallenge.id}
                     isGuest={user?.isGuest}
                   />
                 </Box>

@@ -154,6 +154,13 @@
       "notUseful": "Peu utile",
       "neutral": "Modérément utile",
       "useful": "Très utile"
+    },
+    "qualityFlag": {
+      "description": "Signaler des problèmes de qualité (traductions manquantes, erreurs, etc.)",
+      "flag": "Signaler ce défi pour révision",
+      "flagButton": "Signaler pour Révision",
+      "flagged": "Déjà signalé pour révision",
+      "flaggedButton": "Signalé pour Révision"
     }
   },
   "profile": {

@@ -7,6 +7,7 @@ import TimerIcon from '@mui/icons-material/Timer';
 import InfoIcon from '@mui/icons-material/Info';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 import WordUsefulnessVote from './WordUsefulnessVote';
+import ChallengeQualityFlag from './ChallengeQualityFlag';
 
 interface IdiomChallenge {
   id: string;
@@ -637,6 +638,13 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                   <WordUsefulnessVote
                     challengeId={challenge.id}
                     currentUsefulness={challenge.user_usefulness}
+                    isGuest={user?.isGuest}
+                  />
+                )}
+
+                {showAnswer && (
+                  <ChallengeQualityFlag
+                    challengeId={challenge.id}
                     isGuest={user?.isGuest}
                   />
                 )}

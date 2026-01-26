@@ -56,6 +56,22 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 - Common Portuguese expressions and idioms
 - Cultural context and usage notes
 
+### 5. **User Feedback & Quality Monitoring**
+
+#### Usefulness Voting
+- Optional voting system for challenge usefulness (1-3 scale: not useful, moderately useful, very useful)
+- Visible after answering each challenge
+- Aggregated nightly to show community consensus
+- Helps prioritize which vocabulary/verbs/idioms to focus on
+
+#### Quality Flagging
+- "Flag for Review" button on all challenges
+- Users can report issues like missing translations, errors, typos
+- No detailed reason required - simple one-click flagging
+- Flagged challenges aggregated nightly
+- Challenges with 2+ flags appear in analytics reports for manual review
+- Helps crowdsource data quality improvements
+
 ## Project Structure
 
 ```
@@ -68,9 +84,10 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 │   │   ├── en.json        # English translations
 │   │   └── fr.json        # French translations
 │   ├── models/
-│   │   ├── User.ts        # User model with preferredLanguage
-│   │   ├── ChallengeAttempt.ts  # Challenge attempt tracking
-│   │   └── UserWordVote.ts      # User word usefulness votes
+│   │   ├── User.ts                  # User model with preferredLanguage
+│   │   ├── ChallengeAttempt.ts      # Challenge attempt tracking
+│   │   ├── UserWordVote.ts          # User word usefulness votes
+│   │   └── ChallengeQualityFlag.ts  # User quality issue flags
 │   ├── routes/
 │   │   ├── auth.ts        # Authentication routes
 │   │   └── challenge.ts   # Challenge and stats routes
@@ -84,10 +101,11 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 │       │   ├── ChallengePage.tsx       # Word challenges
 │       │   ├── VerbChallengePage.tsx   # Verb challenges
 │       │   ├── IdiomChallengePage.tsx  # Idiom challenges
-│       │   ├── FlashcardLearnPage.tsx  # Learn mode (flashcards)
-│       │   ├── ChallengeStatsPage.tsx  # Statistics dashboard
-│       │   ├── ProfilePage.tsx         # User profile
-│       │   └── WordUsefulnessVote.tsx  # Word usefulness voting
+│       │   ├── FlashcardLearnPage.tsx   # Learn mode (flashcards)
+│       │   ├── ChallengeStatsPage.tsx   # Statistics dashboard
+│       │   ├── ProfilePage.tsx          # User profile
+│       │   ├── WordUsefulnessVote.tsx   # Word usefulness voting
+│       │   └── ChallengeQualityFlag.tsx # Quality issue flagging
 │       └── index.html     # HTML template
 ├── analytics/             # Python analytics service
 ├── data/                  # Challenge data (JSON files)

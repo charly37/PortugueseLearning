@@ -7,6 +7,7 @@ import TimerIcon from '@mui/icons-material/Timer';
 import InfoIcon from '@mui/icons-material/Info';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 import WordUsefulnessVote from './WordUsefulnessVote';
+import ChallengeQualityFlag from './ChallengeQualityFlag';
 
 interface VerbChallenge {
   id: string;
@@ -657,6 +658,13 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                   <WordUsefulnessVote
                     challengeId={challenge.id}
                     currentUsefulness={challenge.user_usefulness}
+                    isGuest={user?.isGuest}
+                  />
+                )}
+
+                {showAnswer && (
+                  <ChallengeQualityFlag
+                    challengeId={challenge.id}
                     isGuest={user?.isGuest}
                   />
                 )}

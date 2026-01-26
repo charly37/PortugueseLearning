@@ -154,6 +154,13 @@
       "notUseful": "Not very useful",
       "neutral": "Moderately useful",
       "useful": "Very useful"
+    },
+    "qualityFlag": {
+      "description": "Report quality issues (missing translations, errors, etc.)",
+      "flag": "Flag this challenge for review",
+      "flagButton": "Flag for Review",
+      "flagged": "Already flagged for review",
+      "flaggedButton": "Flagged for Review"
     }
   },
   "profile": {

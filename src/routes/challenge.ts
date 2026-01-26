@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import User from '../models/User';
 import ChallengeAttempt from '../models/ChallengeAttempt';
 import UserWordVote from '../models/UserWordVote';
+import ChallengeQualityFlag from '../models/ChallengeQualityFlag';
 import fs from 'fs';
 import path from 'path';
 
@@ -680,6 +681,74 @@ router.post('/get-votes', requireAuth, async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Get votes error:', error);
     res.status(500).json({ message: 'Server error retrieving votes' });
+  }
+});
+
+// Flag a challenge for quality review
+router.post('/flag-quality', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const { challengeId } = req.body;
+    const userId = req.session.userId;
+
+    // Validate input
+    if (!challengeId || typeof challengeId !== 'string') {
+      return res.status(400).json({ message: 'Invalid challenge ID' });
+    }
+
+    // Upsert the flag (update if exists, create if not)
+    const flag = await ChallengeQualityFlag.findOneAndUpdate(
+      { userId, challengeId },
+      { 
+        userId, 
+        challengeId,
+        flaggedAt: new Date(),
+        updatedAt: new Date()
+      },
+      { 
+        upsert: true, 
+        new: true,
+        setDefaultsOnInsert: true
+      }
+    );
+
+    res.json({ 
+      message: 'Challenge flagged successfully',
+      flag: {
+        challengeId: flag.challengeId,
+        flaggedAt: flag.flaggedAt
+      }
+    });
+  } catch (error) {
+    console.error('Flag quality error:', error);
+    res.status(500).json({ message: 'Server error recording flag' });
+  }
+});
+
+// Get user's quality flags for specific challenges
+router.post('/get-quality-flags', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const { challengeIds } = req.body;
+    const userId = req.session.userId;
+
+    if (!Array.isArray(challengeIds)) {
+      return res.status(400).json({ message: 'Challenge IDs must be an array' });
+    }
+
+    const flags = await ChallengeQualityFlag.find({
+      userId,
+      challengeId: { $in: challengeIds }
+    }).select('challengeId flaggedAt');
+
+    // Create a map for easy lookup
+    const flagMap: { [key: string]: boolean } = {};
+    flags.forEach(flag => {
+      flagMap[flag.challengeId] = true;
+    });
+
+    res.json({ flags: flagMap });
+  } catch (error) {
+    console.error('Get quality flags error:', error);
+    res.status(500).json({ message: 'Server error retrieving flags' });
   }
 });
 

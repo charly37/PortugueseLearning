@@ -50,3 +50,5 @@ db.challengeattempts.createIndex(
 - Backend already supports batch queries via `challengeIds` array
 
 **Priority:** Medium (performance optimization, not critical but noticeable at scale)
+
+**Note:** The same optimization should be applied to `ChallengeQualityFlag` component once implemented, using the existing `/api/challenge/get-quality-flags` batch endpoint.
