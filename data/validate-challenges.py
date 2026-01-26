@@ -21,6 +21,18 @@ import sys
 import os
 from collections import defaultdict
 
+# IDs to exclude from duplicate reporting (legitimate duplicates with different meanings)
+EXCLUDED_IDS = [
+    '37645200-0320-47e8-9afa-b8f19c2c4935',  # a - to/at
+    '643403d9-35e2-49a5-9b41-d9645ad0d40e',  # a - the (fem.)
+    '5e38ace0-0a52-4e3a-a0ea-0743b1ca11b8', #como - how
+    '866fc6e0-f903-4940-a4dc-d174f485283d', #como - like
+    '63d6e4f7-15bd-437b-be6e-5b3193edbe32', #entrada - entrance
+    '2e10b04a-30ea-4d26-862f-0c9b9be0d60e',  #wntrada - entree food
+    '66fcfa35-190c-419f-b7a3-08a6150e482f', #próximo - prochain
+    '0e6811a7-a40f-42ea-abea-213febc6c4af'  #próximo - proche
+]
+
 
 def is_valid_uuid(uuid_string):
     """Check if a string is a valid UUID."""
@@ -158,8 +170,15 @@ def validate_challenges(filepath):
         print("\n  ⚠️  Each ID must be unique! These duplicates must be fixed.")
         issues.append(f"Found {len(duplicate_ids)} duplicate IDs - each ID must be unique!")
     
-    # Check for duplicate Portuguese words with different translations
-    duplicate_words = {word: entries for word, entries in port_word_map.items() if len(entries) > 1}
+    # Check for duplicate Portuguese words with different translations, excluding those with IDs in EXCLUDED_IDS
+    duplicate_words = {}
+    for word, entries in port_word_map.items():
+        if len(entries) > 1:
+            # Check if any entry has an ID in EXCLUDED_IDS
+            has_excluded_id = any(entry['id'] in EXCLUDED_IDS for entry in entries)
+            if not has_excluded_id:
+                duplicate_words[word] = entries
+    
     if duplicate_words:
         print(f"\nℹ️  INFO: Found {len(duplicate_words)} Portuguese words with multiple entries:")
         print("-" * 80)
