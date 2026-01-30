@@ -7,6 +7,7 @@ This script runs nightly to find challenges flagged by multiple users.
 import os
 import json
 import sys
+import argparse
 from datetime import datetime
 from pymongo import MongoClient
 from collections import defaultdict
@@ -153,9 +154,66 @@ def report_flagged_challenges(flag_aggregates, challenges_map, min_flags=2):
     
     print("\n" + "="*80 + "\n")
 
+def reset_quality_flags(db):
+    """Reset (remove) all quality flags from the database"""
+    print("\n" + "="*80)
+    print("RESETTING ALL QUALITY FLAGS")
+    print(f"Time: {datetime.now()}")
+    print("="*80 + "\n")
+    
+    try:
+        # Delete all quality flags
+        result = db.challengequalityflags.delete_many({})
+        deleted_count = result.deleted_count
+        
+        if deleted_count > 0:
+            print(f"✓ Successfully removed {deleted_count} quality flag(s)")
+        else:
+            print(f"⚠ No quality flags found in database")
+        
+    except Exception as e:
+        print(f"✗ Error resetting quality flags: {e}", file=sys.stderr)
+    
+    print("\n" + "="*80 + "\n")
+
 def main():
     """Main execution"""
-    print("Starting quality flag aggregation...")
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description='Aggregate quality flags and identify challenges needing review',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='''
+Examples:
+  # Generate quality flag report
+  python3 aggregate_quality_flags.py
+  
+  # Reset all quality flags after fixing challenges
+  python3 aggregate_quality_flags.py --reset
+  
+  # Reset all flags and generate report
+  python3 aggregate_quality_flags.py --reset --report
+        '''
+    )
+    
+    parser.add_argument(
+        '--reset',
+        action='store_true',
+        help='Reset (remove) all quality flags from the database'
+    )
+    
+    parser.add_argument(
+        '--report',
+        action='store_true',
+        help='Generate quality flag report (default if no --reset provided)'
+    )
+    
+    args = parser.parse_args()
+    
+    # Determine what actions to take
+    should_reset = args.reset
+    should_report = args.report or not should_reset  # Default to report if no reset
+    
+    print("Starting quality flag management...")
     
     # Load configuration
     mongodb_uri = load_config()
@@ -164,18 +222,24 @@ def main():
     client = connect_to_mongodb(mongodb_uri)
     db = client.get_database()  # Uses default database from URI
     
-    # Aggregate quality flags
-    flag_aggregates = aggregate_quality_flags(db)
+    # Reset flags if requested
+    if should_reset:
+        reset_quality_flags(db)
     
-    # Load all challenges data
-    challenges_map = load_all_challenges()
-    
-    # Generate report
-    report_flagged_challenges(flag_aggregates, challenges_map, min_flags=2)
+    # Generate report if requested
+    if should_report:
+        # Aggregate quality flags
+        flag_aggregates = aggregate_quality_flags(db)
+        
+        # Load all challenges data
+        challenges_map = load_all_challenges()
+        
+        # Generate report
+        report_flagged_challenges(flag_aggregates, challenges_map, min_flags=1)
     
     # Close connection
     client.close()
-    print("Quality flag aggregation complete")
+    print("Quality flag management complete")
 
 if __name__ == '__main__':
     main()

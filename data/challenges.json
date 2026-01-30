@@ -9894,7 +9894,7 @@
     },
     {
         "id": "db3ef3e0-c66f-46f2-8855-4a35fd271829",
-        "port": "bater em, bater contra",
+        "port": "bater",
         "fr": {
             "translation": "frapper, heurter",
             "note": "todo"
@@ -12351,9 +12351,9 @@
     },
     {
         "id": "c1638c24-d801-4329-bf96-d05506fe144d",
-        "port": "deitar-se (estar deitado)",
+        "port": "deitar-se",
         "fr": {
-            "translation": "s'allonger (être allongé)",
+            "translation": "s'allonger ",
             "note": "todo"
         },
         "en": {
@@ -16238,9 +16238,9 @@
     },
     {
         "id": "47ff3de8-b33e-43e2-b597-3908576ec11f",
-        "port": "mercado, praça",
+        "port": "mercado",
         "fr": {
-            "translation": "marché, place",
+            "translation": "marché (place)",
             "note": "todo"
         },
         "en": {
