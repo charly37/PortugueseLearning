@@ -104,6 +104,32 @@
         "user_usefulness": 2
     },
     {
+        "id": "70269ddb-fa0b-45be-8d8b-b9041896dec2",
+        "port": "tão...como, tão...quanto",
+        "fr": {
+            "translation": "aussi… que, autant… que",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "just as (comparative)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2c81066e-1cfa-46b7-a7d5-b74fa2255fd6",
+        "port": "pouco me importa!",
+        "fr": {
+            "translation": "peu m’importe ! / je m’en fiche !",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "i don’t care!",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "f7812ea3-8086-4e68-8c52-619068c1b832",
         "port": "de maneira nenhuma",
         "fr": {

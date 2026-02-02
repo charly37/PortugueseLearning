@@ -5346,7 +5346,7 @@
         "id": "0fb136e2-f87f-46e9-9cce-1d55ca02e667",
         "port": "risada",
         "fr": {
-            "translation": "rire",
+            "translation": "rire (un rire)",
             "note": "todo"
         },
         "en": {
@@ -10674,14 +10674,14 @@
     },
     {
         "id": "f3c8bfaa-38c9-477a-acf6-d900372180f7",
-        "port": "canalizador /encanador",
+        "port": "canalizador",
         "fr": {
             "translation": "plombier / plombier",
-            "note": "todo"
+            "note": "encanador est bon aussi"
         },
         "en": {
             "translation": "plumber",
-            "note": "todo"
+            "note": "encanador is also good"
         },
         "user_usefulness": 2
     },
@@ -10947,14 +10947,14 @@
     },
     {
         "id": "a0fe6256-3968-47df-a967-13ced3816061",
-        "port": "casa (em)",
+        "port": "casa",
         "fr": {
-            "translation": "maison (à)",
-            "note": "todo"
+            "translation": "maison (à la)",
+            "note": "em casa: à la maison"
         },
         "en": {
             "translation": "home (at)",
-            "note": "todo"
+            "note": "em casa: at home"
         },
         "user_usefulness": 2
     },
@@ -12468,13 +12468,26 @@
     },
     {
         "id": "a8ca161a-ab4b-4845-90d8-9d0143c6f9a3",
-        "port": "depois, após",
+        "port": "depois",
         "fr": {
-            "translation": "après",
-            "note": "todo"
+            "translation": "après (prep)",
+            "note": "la conjugaison est após"
         },
         "en": {
-            "translation": "after (prep/conj)",
+            "translation": "after (prep)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "36cebbfc-59a9-4c13-ae9a-e76c26d85ada",
+        "port": "após",
+        "fr": {
+            "translation": "après (conj)",
+            "note": "la preposition est depois de"
+        },
+        "en": {
+            "translation": "after (conj)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12871,14 +12884,14 @@
     },
     {
         "id": "5400d1c8-3c63-4e60-9d93-af4637057f18",
-        "port": "edredão / edredom",
+        "port": "edredão",
         "fr": {
             "translation": "édredon",
-            "note": "todo"
+            "note": "edredom aussi acceptable"
         },
         "en": {
             "translation": "duvet",
-            "note": "todo"
+            "note": "edredom is ok too"
         },
         "user_usefulness": 2
     },
@@ -14639,7 +14652,7 @@
     },
     {
         "id": "a39aac5c-6cc8-419b-811b-fdaae4c5d1cd",
-        "port": "gémeos / gêmeos",
+        "port": "gémeos",
         "fr": {
             "translation": "jumeaux",
             "note": "todo"
@@ -14719,7 +14732,7 @@
         "id": "e4329328-a83b-4148-9d6c-534d5f1cc407",
         "port": "grau",
         "fr": {
-            "translation": "degré",
+            "translation": "degré (temperature)",
             "note": "todo"
         },
         "en": {
@@ -17810,19 +17823,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "2c81066e-1cfa-46b7-a7d5-b74fa2255fd6",
-        "port": "pouco me importa!",
-        "fr": {
-            "translation": "peu m’importe ! / je m’en fiche !",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "i don’t care!",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "98117c0c-f764-4623-afa8-93c9af405867",
         "port": "poupar",
         "fr": {
@@ -17941,9 +17941,22 @@
     },
     {
         "id": "8c6b7f12-8da3-4daf-ae2f-34eddbe79c4e",
-        "port": "premir / pressionar",
+        "port": "premir",
         "fr": {
-            "translation": "appuyer / presser",
+            "translation": "appuyer",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to press",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "fdfc2730-d9ec-4a10-a236-8e312649f803",
+        "port": "pressionar",
+        "fr": {
+            "translation": "presser",
             "note": "todo"
         },
         "en": {
@@ -19469,19 +19482,6 @@
         },
         "en": {
             "translation": "quanto both… and",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "70269ddb-fa0b-45be-8d8b-b9041896dec2",
-        "port": "tão...como, tão...quanto",
-        "fr": {
-            "translation": "aussi… que, autant… que",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "just as (comparative)",
             "note": "todo"
         },
         "user_usefulness": 2
