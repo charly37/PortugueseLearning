@@ -251,7 +251,7 @@
         "port": "mau",
         "fr": {
             "translation": "mauvais (masculin)",
-            "note": "todo"
+            "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant"
         },
         "en": {
             "translation": "bad (masc.)",
@@ -7322,8 +7322,8 @@
         "id": "492b614c-2a09-40eb-8a89-8f8d937878a2",
         "port": "ruim",
         "fr": {
-            "translation": "mauvais",
-            "note": "todo"
+            "translation": "mauvais (gout, film, qualité...)",
+            "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant"
         },
         "en": {
             "translation": "bad",
@@ -9686,13 +9686,13 @@
     },
     {
         "id": "a0f5a2c0-2d65-4863-902f-7e8f0153e163",
-        "port": "avô / avó / avós",
+        "port": "avô",
         "fr": {
-            "translation": "grand-père / grand-mère / grands-parents",
+            "translation": "grand-père",
             "note": "todo"
         },
         "en": {
-            "translation": "grandfather / mother / parents",
+            "translation": "grandfather",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12819,14 +12819,14 @@
     },
     {
         "id": "b2fc13fd-64d2-44bf-bbc8-cb0adb794d68",
-        "port": "dor de garganta",
+        "port": "dor",
         "fr": {
-            "translation": "mal de gorge",
-            "note": "todo"
+            "translation": "mal (de gorge)",
+            "note": "mal de gorge: dor de garganta"
         },
         "en": {
-            "translation": " sore throat",
-            "note": "todo"
+            "translation": "sore (throat)",
+            "note": "sore throat: dor de garganta"
         },
         "user_usefulness": 2
     },
@@ -13105,9 +13105,22 @@
     },
     {
         "id": "d3e9eeae-22dd-457b-b7f9-a8b073544d8c",
-        "port": "encontro, reunião",
+        "port": "encontro",
         "fr": {
-            "translation": "rencontre, réunion",
+            "translation": "rencontre",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "meeting",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "86349393-2969-44d8-a49c-74479619b833",
+        "port": "reunião",
+        "fr": {
+            "translation": "réunion",
             "note": "todo"
         },
         "en": {
@@ -13339,13 +13352,13 @@
     },
     {
         "id": "0c4f1639-dc90-4938-9bb8-6d6c33e56f64",
-        "port": "escola primária",
+        "port": "escola",
         "fr": {
-            "translation": "école primaire",
+            "translation": "école",
             "note": "todo"
         },
         "en": {
-            "translation": "primary school",
+            "translation": "school",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -15309,19 +15322,6 @@
         },
         "en": {
             "translation": "brothers & sisters",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "4fd2fb10-87c1-48fb-b8b7-3e6671737a86",
-        "port": "ir-se embora",
-        "fr": {
-            "translation": "s'en aller",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to go away",
             "note": "todo"
         },
         "user_usefulness": 2

@@ -104,6 +104,19 @@
         "user_usefulness": 2
     },
     {
+        "id": "4fd2fb10-87c1-48fb-b8b7-3e6671737a86",
+        "port": "ir-se embora",
+        "fr": {
+            "translation": "s'en aller",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to go away",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "70269ddb-fa0b-45be-8d8b-b9041896dec2",
         "port": "tão...como, tão...quanto",
         "fr": {
