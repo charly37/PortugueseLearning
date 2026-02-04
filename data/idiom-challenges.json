@@ -104,6 +104,71 @@
         "user_usefulness": 2
     },
     {
+        "id": "ba2a1570-c2a8-4a3c-bb15-b1166623bd29",
+        "port": "emprego (a tempo parcial/de meio período)",
+        "fr": {
+            "translation": "emploi (à temps partiel)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "job (part-time)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "331df85e-fb22-43d8-a2f0-e0c91332c4ed",
+        "port": "sala de reuniões",
+        "fr": {
+            "translation": "salle de réunion",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "school hall",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "167087af-c57d-4589-9654-ec4d0223a884",
+        "port": "depois de amanhã",
+        "fr": {
+            "translation": "après-demain",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "day after tomorrow",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "05513754-9702-40ab-a858-2d5ef501d880",
+        "port": "emprego (a tempo inteiro/de tempo integral)",
+        "fr": {
+            "translation": "emploi à temps plein",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "job full-time)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "bc81490d-856d-4504-a1cc-54ec740f43d7",
+        "port": "comida para fora /comida para levar",
+        "fr": {
+            "translation": "nourriture à emporter",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "take away meal",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "4fd2fb10-87c1-48fb-b8b7-3e6671737a86",
         "port": "ir-se embora",
         "fr": {

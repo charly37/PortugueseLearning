@@ -3237,19 +3237,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "7c8d9e0f-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-        "port": "casa",
-        "fr": {
-            "translation": "maison",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "house",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "8d9e0f1a-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
         "port": "cidade",
         "fr": {
@@ -3721,11 +3708,11 @@
         "id": "dcafc036-5170-4fab-bc60-966b454b9f00",
         "port": "depois",
         "fr": {
-            "translation": "après",
+            "translation": "après (prep)",
             "note": "todo"
         },
         "en": {
-            "translation": "after, then, afterwards",
+            "translation": "after, then, afterwards (prep)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -4189,11 +4176,11 @@
         "id": "6701cffe-4117-47ae-a4b4-2ba1831ed768",
         "port": "imprensa",
         "fr": {
-            "translation": "presse",
+            "translation": "la presse (journalisme, médias)",
             "note": "todo"
         },
         "en": {
-            "translation": "press",
+            "translation": "the press (journalism, media)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -4779,19 +4766,6 @@
         },
         "en": {
             "translation": "bird",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "f22395aa-a838-4d01-adf9-2c7dc8c7e257",
-        "port": "em breve",
-        "fr": {
-            "translation": "bientôt",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "soon",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -5684,7 +5658,7 @@
         "id": "3996cc4d-6a47-44e3-8fb0-940a218c3767",
         "port": "substantivo",
         "fr": {
-            "translation": "nom",
+            "translation": "nom (nom commun, nom propre, nom de lieu, etc.)",
             "note": "todo"
         },
         "en": {
@@ -6080,19 +6054,6 @@
         "en": {
             "translation": "less, minus, except",
             "note": "Less (as in comparative degree, e.g., 'menos importante' = 'less important').Minus (as in mathematics or subtraction, e.g., 'cinco menos dois' = 'five minus two').Except (as in exclusion, e.g., 'todos menos eu' = 'everyone except me')."
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "d814c4bb-d088-46a0-910b-e681ba97f52a",
-        "port": "manhã",
-        "fr": {
-            "translation": "matin",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "morning",
-            "note": "todo"
         },
         "user_usefulness": 2
     },
@@ -7371,19 +7332,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "a95b5b69-ae9b-401d-8929-25bb962079c5",
-        "port": "cresceu",
-        "fr": {
-            "translation": "a grandi",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "grew",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "2cab67ee-dc58-4483-854f-bd9db70c64e7",
         "port": "cento",
         "fr": {
@@ -8284,11 +8232,11 @@
         "id": "9c293366-750d-4896-8aea-0e5fccc5ca1d",
         "port": "seguro",
         "fr": {
-            "translation": "sûr",
+            "translation": "sûr / sécurisé / certain (adj)",
             "note": "todo"
         },
         "en": {
-            "translation": "safe",
+            "translation": "safe / secure (adj)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -8607,22 +8555,22 @@
     },
     {
         "id": "a2ab54eb-46ed-434a-adde-d8b6a7b3446d",
-        "port": "(de) manhã",
+        "port": "manhã",
         "fr": {
-            "translation": "(du) matin",
-            "note": "todo"
+            "translation": "matin (du matin)",
+            "note": "(de) manhã"
         },
         "en": {
-            "translation": "(in the) morning",
-            "note": "todo"
+            "translation": "morning (in the morning)",
+            "note": "(de) manhã"
         },
         "user_usefulness": 2
     },
     {
         "id": "486e995d-9447-4c6a-8acc-9b1e6c93f2ce",
-        "port": "(tele)novela",
+        "port": "telenovela",
         "fr": {
-            "translation": "(télé)novela",
+            "translation": "feuilleton televisé",
             "note": "todo"
         },
         "en": {
@@ -10101,19 +10049,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "8c596f18-5639-4439-a4c0-ea97553e076e",
-        "port": "bilhete de identidade/carteira de identidade",
-        "fr": {
-            "translation": "carte d'identité",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "identity card",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "fa99fd6c-7dc1-4582-8822-dcda01cd9a12",
         "port": "bilheteira / bilheteria",
         "fr": {
@@ -10986,9 +10921,9 @@
     },
     {
         "id": "df6cb076-b02a-42b7-9b75-20f399d078b0",
-        "port": "catedral, sé",
+        "port": "catedral",
         "fr": {
-            "translation": "cathédrale, cathédrale",
+            "translation": "cathédrale",
             "note": "todo"
         },
         "en": {
@@ -11578,19 +11513,6 @@
         },
         "en": {
             "translation": "food (=eating)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "bc81490d-856d-4504-a1cc-54ec740f43d7",
-        "port": "comida para fora /comida para levar",
-        "fr": {
-            "translation": "nourriture à emporter",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "take away meal",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12337,23 +12259,10 @@
         "user_usefulness": 2
     },
     {
-        "id": "e305fb32-8359-48ee-87e4-3042b2258123",
-        "port": "deitar-se",
-        "fr": {
-            "translation": "se coucher",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to lie down",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "c1638c24-d801-4329-bf96-d05506fe144d",
         "port": "deitar-se",
         "fr": {
-            "translation": "s'allonger ",
+            "translation": "s'allonger, se coucher",
             "note": "todo"
         },
         "en": {
@@ -12449,32 +12358,6 @@
         },
         "en": {
             "translation": "inside",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "167087af-c57d-4589-9654-ec4d0223a884",
-        "port": "depois de amanhã day",
-        "fr": {
-            "translation": "après-demain",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "after tomorrow",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "a8ca161a-ab4b-4845-90d8-9d0143c6f9a3",
-        "port": "depois",
-        "fr": {
-            "translation": "après (prep)",
-            "note": "la conjugaison est após"
-        },
-        "en": {
-            "translation": "after (prep)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12663,13 +12546,13 @@
     },
     {
         "id": "6c9fef0a-fe68-4a67-b496-18e588517073",
-        "port": "director / directora de escola / diretor / diretora de escola",
+        "port": "director",
         "fr": {
-            "translation": "directeur / directrice d'école",
+            "translation": "directeur",
             "note": "todo"
         },
         "en": {
-            "translation": "head teacher",
+            "translation": "director (boss)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12691,7 +12574,7 @@
         "id": "c9ad663f-8a49-48b1-bd43-080a2ce73ddc",
         "port": "divertido",
         "fr": {
-            "translation": "amusant",
+            "translation": "amusant (divertissant)",
             "note": "todo"
         },
         "en": {
@@ -12743,11 +12626,11 @@
         "id": "43d2b5e1-21af-4e30-addd-5d9044ca6478",
         "port": "doentio",
         "fr": {
-            "translation": "maladif",
+            "translation": "maladif (adjectif)",
             "note": "todo"
         },
         "en": {
-            "translation": "unhealthy",
+            "translation": "unhealthy (adjective)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12792,19 +12675,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "72ae92c5-6f24-443c-953b-3568dacf3b08",
-        "port": "dor",
-        "fr": {
-            "translation": "douleur",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "pain",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "42394b38-4f7c-4f03-b28e-c1fdaf54b37b",
         "port": "dor de cabeça",
         "fr": {
@@ -12821,11 +12691,11 @@
         "id": "b2fc13fd-64d2-44bf-bbc8-cb0adb794d68",
         "port": "dor",
         "fr": {
-            "translation": "mal (de gorge)",
+            "translation": "douleur, mal (de gorge)",
             "note": "mal de gorge: dor de garganta"
         },
         "en": {
-            "translation": "sore (throat)",
+            "translation": "pain, sore (throat)",
             "note": "sore throat: dor de garganta"
         },
         "user_usefulness": 2
@@ -12936,13 +12806,39 @@
     },
     {
         "id": "cb6b7b7f-750c-460e-8e0e-c1b5aa8f611b",
-        "port": "em breve, brevemente (até breve)",
+        "port": "em breve",
         "fr": {
-            "translation": "bientôt (à bientôt)",
+            "translation": "Bientôt / Prochainement / Dans peu de temps",
             "note": "todo"
         },
         "en": {
-            "translation": "soon (see you…soon!)",
+            "translation": "soon (informal)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "359f7448-70ed-474a-8978-24db5ef95a27",
+        "port": "brevemente",
+        "fr": {
+            "translation": "Bientôt / Sous peu / Dans les plus brefs délais (formel)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "soon (formal)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "43e20869-71f3-4a2f-a1b8-663f52d89d68",
+        "port": "até breve",
+        "fr": {
+            "translation": "À bientôt",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "see you soon",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -13013,14 +12909,14 @@
         "user_usefulness": 2
     },
     {
-        "id": "ba2a1570-c2a8-4a3c-bb15-b1166623bd29",
-        "port": "emprego (a tempo parcial/a tempo inteiro)/(de meio período/de tempo integral)",
+        "id": "33f4d593-57a5-4213-b846-3dd4008b78bc",
+        "port": "emprego",
         "fr": {
-            "translation": "emploi (à temps partiel/à temps plein)",
+            "translation": "emploi",
             "note": "todo"
         },
         "en": {
-            "translation": "job (part-time/full-time)",
+            "translation": "job",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -13108,19 +13004,6 @@
         "port": "encontro",
         "fr": {
             "translation": "rencontre",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "meeting",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "86349393-2969-44d8-a49c-74479619b833",
-        "port": "reunião",
-        "fr": {
-            "translation": "réunion",
             "note": "todo"
         },
         "en": {
@@ -13346,19 +13229,6 @@
         },
         "en": {
             "translation": "private school",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "0c4f1639-dc90-4938-9bb8-6d6c33e56f64",
-        "port": "escola",
-        "fr": {
-            "translation": "école",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "school",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -13689,19 +13559,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "e49f636d-e815-4bf2-8ede-27946443fef3",
-        "port": "este (adj)",
-        "fr": {
-            "translation": "ce (adj)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "this (adj)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "7455ad21-7e35-41ce-a330-81b06086db24",
         "port": "estojo para lápis / estojo de canetas",
         "fr": {
@@ -13820,13 +13677,26 @@
     },
     {
         "id": "e3e8a01b-a29f-450e-9f71-b4d43169131a",
-        "port": "excelente, ótimo",
+        "port": "excelente",
         "fr": {
-            "translation": "excellent, génial",
+            "translation": "excellent",
             "note": "todo"
         },
         "en": {
             "translation": "excellent",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "388610df-df06-424f-84b4-073426cbdf34",
+        "port": "ótimo",
+        "fr": {
+            "translation": "génial",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "great",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -14158,13 +14028,13 @@
     },
     {
         "id": "3c9908b1-2161-418c-84b2-2405cfc14d9b",
-        "port": "fechar (à chave)",
+        "port": "fechar",
         "fr": {
-            "translation": "fermer (à clé)",
-            "note": "todo"
+            "translation": "fermer (la porte, à clé)",
+            "note": "fechar (à chave)"
         },
         "en": {
-            "translation": "to close (lock)",
+            "translation": "to close (door, lock)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -16537,13 +16407,26 @@
     },
     {
         "id": "c5548dd5-b613-459b-b940-3313efa2f19c",
-        "port": "nata, creme (creme batido)",
+        "port": "nata",
         "fr": {
-            "translation": "crème (crème fouettée)",
-            "note": "todo"
+            "translation": "crème (crème cuisine)",
+            "note": "pour la creme cosmetique on uilise creme"
         },
         "en": {
-            "translation": "cream",
+            "translation": "cream (cooking cream)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "f378dd0a-802c-4fcf-a1c1-b010af8727c3",
+        "port": "creme",
+        "fr": {
+            "translation": "crème (cosmétique)",
+            "note": "pour la creme cuisiniere on utilise nata"
+        },
+        "en": {
+            "translation": "cream (cosmetic)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -16966,13 +16849,13 @@
     },
     {
         "id": "e74504b6-69ba-41cf-902e-f479d47290cc",
-        "port": "padeiro (padaria)",
+        "port": "padaria",
         "fr": {
-            "translation": "boulanger (boulangerie)",
+            "translation": "boulangerie",
             "note": "todo"
         },
         "en": {
-            "translation": "baker(‘s shop)",
+            "translation": "bakery",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -18213,19 +18096,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "162331de-e5de-422a-b9ea-2464dffa7533",
-        "port": "qual?",
-        "fr": {
-            "translation": "lequel ? / laquelle ?",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "which?",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "1b8c92d1-211e-4d0d-9dad-bbcd1be987cf",
         "port": "qualidade",
         "fr": {
@@ -18370,7 +18240,7 @@
     },
     {
         "id": "ceee9d5c-fb35-4aeb-a114-a38b62ec5724",
-        "port": "quinta / fazenda",
+        "port": "quinta",
         "fr": {
             "translation": "ferme / exploitation agricole",
             "note": "todo"
@@ -18889,19 +18759,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "331df85e-fb22-43d8-a2f0-e0c91332c4ed",
-        "port": "sala de reuniões",
-        "fr": {
-            "translation": "salle de réunion",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "school hall",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "a5daf2c1-cb86-42e6-a97a-2731f0dd9ffa",
         "port": "salada",
         "fr": {
@@ -19319,13 +19176,13 @@
     },
     {
         "id": "fa4f7273-773a-41fe-a87a-b042bff222cd",
-        "port": "socorro(!)",
+        "port": "socorro",
         "fr": {
-            "translation": "au secours !",
+            "translation": "au secours, à l'aide",
             "note": "todo"
         },
         "en": {
-            "translation": "help(!)",
+            "translation": "help",
             "note": "todo"
         },
         "user_usefulness": 2
