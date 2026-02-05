@@ -20374,8 +20374,8 @@
         "id": "d98828cf-1195-4715-b744-8bff712fbbd7",
         "port": "satisfeito",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "satisfait",
+            "note": "content, rassasié"
         },
         "en": {
             "translation": "satisfied",
@@ -20387,8 +20387,8 @@
         "id": "77413d75-5b21-46df-8724-086c4265b51d",
         "port": "demasiado",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "trop",
+            "note": "excessif, trop (de)"
         },
         "en": {
             "translation": "too much, in excess",
@@ -20400,8 +20400,8 @@
         "id": "48bf66a4-ae09-43ae-85f5-063e6ace9c72",
         "port": "tchau",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "ciao / salut / au revoir",
+            "note": "informel, très courant au Brésil"
         },
         "en": {
             "translation": "bye",
@@ -20413,8 +20413,8 @@
         "id": "5776471e-8fd1-4f5a-8807-60d2ab1b65e5",
         "port": "licença",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "excusez-moi / permission",
+            "note": "pour passer devant quelqu’un, ou « com licença »"
         },
         "en": {
             "translation": "licence, permission",
@@ -20426,8 +20426,8 @@
         "id": "949401af-2f7c-4b48-a51e-7bf116e6fbbf",
         "port": "desculpa",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "excuse-moi / pardon / désolé",
+            "note": "forme informelle"
         },
         "en": {
             "translation": "sorry",
@@ -20439,8 +20439,8 @@
         "id": "62b14eb5-ea6c-40a8-9738-de17dfc0c923",
         "port": "perdoa",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "pardonne-moi / excuse-moi",
+            "note": "impératif informel de « pardonner »"
         },
         "en": {
             "translation": "to forgive (he/she forgives, you (formal) forgive)",
@@ -20452,8 +20452,8 @@
         "id": "ed6927ea-cf12-4760-848a-7a0f7f712969",
         "port": "francês",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "français",
+            "note": "la langue ou la nationalité"
         },
         "en": {
             "translation": "French",
@@ -20465,8 +20465,8 @@
         "id": "419db1bb-5d5a-4fe3-8279-c4cc04c26c93",
         "port": "repetir-se",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "se répéter",
+            "note": "« repetir » = répéter"
         },
         "en": {
             "translation": "to repeat",
@@ -20478,8 +20478,8 @@
         "id": "d295e4b5-30ae-4522-ab75-83b8e4c38943",
         "port": "bem vindo",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "bienvenue / bienvenu",
+            "note": "souvent écrit « bem-vindo » (masculin) ou « bem-vinda » (féminin)"
         },
         "en": {
             "translation": "welcome",
@@ -20491,8 +20491,8 @@
         "id": "5ba7c0f0-850b-40c2-9621-b0f59d5bf1ed",
         "port": "reserva",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "réservation",
+            "note": "aussi « réserve » (naturelle) selon le contexte"
         },
         "en": {
             "translation": "reservation",
@@ -20504,8 +20504,8 @@
         "id": "e1d600a5-32c2-4b36-b3b8-586cd5e5c135",
         "port": "fumantes",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "fumeurs",
+            "note": "zone fumeurs (« área de fumantes »)"
         },
         "en": {
             "translation": "smokers",
@@ -20517,8 +20517,8 @@
         "id": "03245615-9e4f-47c6-a155-e1204118246b",
         "port": "fumar",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "fumer",
+            "note": "verbe"
         },
         "en": {
             "translation": "to smoke",
@@ -20530,8 +20530,8 @@
         "id": "61ef7b88-d97e-453e-b515-16ec154d4e57",
         "port": "permitido",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "permis / autorisé",
+            "note": "« é permitido » = c’est permis"
         },
         "en": {
             "translation": "permitted",
@@ -20556,8 +20556,8 @@
         "id": "88f1b021-f1e1-4cc8-8d96-c28982e197cf",
         "port": "o que",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "que / quoi",
+            "note": "« o que é isso ? » = qu’est-ce que c’est ?"
         },
         "en": {
             "translation": "what",
@@ -20569,8 +20569,8 @@
         "id": "db7478f6-8214-4c73-856b-4d56cce7da3b",
         "port": "cinquenta",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "cinquante",
+            "note": "50"
         },
         "en": {
             "translation": "fifty",
@@ -20582,8 +20582,8 @@
         "id": "ee8c1ab8-1c9e-4c87-95f9-b964e24b2440",
         "port": "anos",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "ans",
+            "note": "années"
         },
         "en": {
             "translation": "years",
@@ -20595,8 +20595,8 @@
         "id": "01a981a6-0fd1-4761-b7f5-5a6d1528c7dc",
         "port": "vinte e um",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "vingt-et-un",
+            "note": "21"
         },
         "en": {
             "translation": "twenty-one",
@@ -20608,8 +20608,8 @@
         "id": "18abab08-ebbe-40d6-8991-f948b8b84eab",
         "port": "quilo",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "kilo",
+            "note": "kilogramme (familièrement « quilo »)"
         },
         "en": {
             "translation": "kilo",
@@ -20621,8 +20621,8 @@
         "id": "5acb2d14-37d9-4307-8348-24984c168596",
         "port": "cinco mil",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "cinq mille",
+            "note": "5 000"
         },
         "en": {
             "translation": "five thousand",
@@ -20634,8 +20634,8 @@
         "id": "5437ecc0-c344-4e0c-9a32-2a1c3a523537",
         "port": "quatrocentos",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "quatre cents",
+            "note": "400"
         },
         "en": {
             "translation": "four hundred",
@@ -20647,8 +20647,8 @@
         "id": "5ad03d4d-1ed9-4904-acc8-e83a4ac511ac",
         "port": "cêntimo",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "centime",
+            "note": "1/100 d’euro ou de real"
         },
         "en": {
             "translation": "cent",
@@ -20660,8 +20660,8 @@
         "id": "a267faf8-28fa-4d31-9abe-ef3483d30a8c",
         "port": "quinze",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "quinze",
+            "note": "15"
         },
         "en": {
             "translation": "fifteen",
@@ -20673,8 +20673,8 @@
         "id": "5f12e285-08b3-43d0-8cab-7df3d2c75355",
         "port": "duzentos",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "deux cents",
+            "note": "200"
         },
         "en": {
             "translation": "two hundred",
@@ -20686,8 +20686,8 @@
         "id": "e3eedb1a-3b19-4b41-b1ac-487baf390bbf",
         "port": "trinta",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "trente",
+            "note": "30"
         },
         "en": {
             "translation": "thirty",
