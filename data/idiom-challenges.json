@@ -117,6 +117,19 @@
         "user_usefulness": 2
     },
     {
+        "id": "55882442-7875-48b2-a5be-952ed6485081",
+        "port": "em frente de",
+        "fr": {
+            "translation": "en face de",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "in front of/ outside",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "331df85e-fb22-43d8-a2f0-e0c91332c4ed",
         "port": "sala de reuniões",
         "fr": {

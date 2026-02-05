@@ -250,8 +250,8 @@
         "id": "4a8821a4-794b-47da-8942-c6cd3d638ddd",
         "port": "mau",
         "fr": {
-            "translation": "mauvais (masculin)",
-            "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant"
+            "translation": "mauvais (moralement / méchant)(masculin)",
+            "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant (má est le féminin de mau)"
         },
         "en": {
             "translation": "bad (masc.)",
@@ -263,8 +263,8 @@
         "id": "54e9dafc-a1bb-4c9b-a8c7-a10e76996a7c",
         "port": "má",
         "fr": {
-            "translation": "mauvaise (féminin) - mauvaise idee, mauvaise nouriture",
-            "note": "todo"
+            "translation": "mauvaise (féminin) - moralement / méchant",
+            "note": "mau est le masculin. "
         },
         "en": {
             "translation": "bad (fem.)",
@@ -7284,7 +7284,7 @@
         "port": "ruim",
         "fr": {
             "translation": "mauvais (gout, film, qualité...)",
-            "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant"
+            "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant. peu utilise dans la langue courante. au portugal on utilise plutot mau / má"
         },
         "en": {
             "translation": "bad",
@@ -9504,7 +9504,7 @@
     },
     {
         "id": "28eddd2e-5f70-444c-8fbb-f4279bee703b",
-        "port": "aterrar / aterrissar",
+        "port": "aterrar",
         "fr": {
             "translation": "atterrir",
             "note": "todo"
@@ -12852,19 +12852,6 @@
         },
         "en": {
             "translation": "at the house of (with)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "55882442-7875-48b2-a5be-952ed6485081",
-        "port": "em frente de",
-        "fr": {
-            "translation": "en face de",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "in front of/ outside",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -20366,6 +20353,344 @@
         },
         "en": {
             "translation": "angry",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "63d3e7d7-158e-4b2e-9a72-f42d06b3f58c",
+        "port": "por favor",
+        "fr": {
+            "translation": "s'il vous plaît",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "please",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d98828cf-1195-4715-b744-8bff712fbbd7",
+        "port": "satisfeito",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "satisfied",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "77413d75-5b21-46df-8724-086c4265b51d",
+        "port": "demasiado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "too much, in excess",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "48bf66a4-ae09-43ae-85f5-063e6ace9c72",
+        "port": "tchau",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "bye",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5776471e-8fd1-4f5a-8807-60d2ab1b65e5",
+        "port": "licença",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "licence, permission",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "949401af-2f7c-4b48-a51e-7bf116e6fbbf",
+        "port": "desculpa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "sorry",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "62b14eb5-ea6c-40a8-9738-de17dfc0c923",
+        "port": "perdoa",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to forgive (he/she forgives, you (formal) forgive)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ed6927ea-cf12-4760-848a-7a0f7f712969",
+        "port": "francês",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "French",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "419db1bb-5d5a-4fe3-8279-c4cc04c26c93",
+        "port": "repetir-se",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to repeat",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d295e4b5-30ae-4522-ab75-83b8e4c38943",
+        "port": "bem vindo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "welcome",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5ba7c0f0-850b-40c2-9621-b0f59d5bf1ed",
+        "port": "reserva",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "reservation",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "e1d600a5-32c2-4b36-b3b8-586cd5e5c135",
+        "port": "fumantes",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "smokers",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "03245615-9e4f-47c6-a155-e1204118246b",
+        "port": "fumar",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to smoke",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "61ef7b88-d97e-453e-b515-16ec154d4e57",
+        "port": "permitido",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "permitted",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "99590f98-9712-46be-884d-569bd00cfeb6",
+        "port": "com licença",
+        "fr": {
+            "translation": "excusez-moi",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "excuse me",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "88f1b021-f1e1-4cc8-8d96-c28982e197cf",
+        "port": "o que",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "what",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "db7478f6-8214-4c73-856b-4d56cce7da3b",
+        "port": "cinquenta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fifty",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "ee8c1ab8-1c9e-4c87-95f9-b964e24b2440",
+        "port": "anos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "years",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "01a981a6-0fd1-4761-b7f5-5a6d1528c7dc",
+        "port": "vinte e um",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "twenty-one",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "18abab08-ebbe-40d6-8991-f948b8b84eab",
+        "port": "quilo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "kilo",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5acb2d14-37d9-4307-8348-24984c168596",
+        "port": "cinco mil",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "five thousand",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5437ecc0-c344-4e0c-9a32-2a1c3a523537",
+        "port": "quatrocentos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "four hundred",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5ad03d4d-1ed9-4904-acc8-e83a4ac511ac",
+        "port": "cêntimo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "cent",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "a267faf8-28fa-4d31-9abe-ef3483d30a8c",
+        "port": "quinze",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "fifteen",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "5f12e285-08b3-43d0-8cab-7df3d2c75355",
+        "port": "duzentos",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "two hundred",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "e3eedb1a-3b19-4b41-b1ac-487baf390bbf",
+        "port": "trinta",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "thirty",
             "note": "todo"
         },
         "user_usefulness": 2
