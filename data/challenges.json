@@ -205,7 +205,7 @@
             "translation": "long (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "3adc0369-3b71-4714-93ec-74f2155ce5ef",
@@ -2129,7 +2129,7 @@
             "translation": "engineer",
             "note": "Eu sou engenheiro. - I am an engineer."
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "e3f4a5b6-c7d8-9012-7890-123456789012",
@@ -2454,7 +2454,7 @@
             "translation": "new",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "2b49de2c-359a-4a5c-92f9-e851a4298e75",
@@ -10657,7 +10657,7 @@
             "translation": "canoeing",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "ff5c67a4-8a03-4664-b3c9-c401650d68f6",
@@ -13140,7 +13140,7 @@
             "translation": "horse riding",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "3e639379-dad8-420f-bf01-0f4668dd374b",
@@ -13491,7 +13491,7 @@
             "translation": "seaside resort",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "52677d6f-02b4-49f2-8b81-e4719047cd92",
@@ -14531,7 +14531,7 @@
             "translation": "twins",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "8b7518e3-0a19-4487-979f-e293a1691cca",
@@ -14622,7 +14622,7 @@
             "translation": "tie",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "d99aed95-7569-4d25-bfe7-5ca60f59f9e1",
@@ -14791,7 +14791,7 @@
             "translation": "air hostess",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "b3ca5aa7-5e81-410d-b218-9a62e66852c2",
@@ -15935,7 +15935,7 @@
             "translation": "train driver",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "92be05ed-1b78-46e4-85f4-33e991dc10ca",
