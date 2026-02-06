@@ -117,6 +117,19 @@
         "user_usefulness": 2
     },
     {
+        "id": "a4a82569-98d6-47e0-87e0-316b92d68fbf",
+        "port": "ter vontade de (fazer algo)",
+        "fr": {
+            "translation": "avoir envie de (faire quelque chose)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to feel like (doing s.th)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "55882442-7875-48b2-a5be-952ed6485081",
         "port": "em frente de",
         "fr": {

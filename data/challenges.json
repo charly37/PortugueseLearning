@@ -8867,10 +8867,23 @@
     },
     {
         "id": "7012a219-62b8-43f7-bd3a-69afd36e90e6",
-        "port": "aí ali",
+        "port": "aí",
         "fr": {
-            "translation": "là, ici",
+            "translation": "Là (près de la personne à qui tu parles). près de toi / dans ta zone",
+            "note": "Aí = là (zone de l’autre personne)\nAli = là-bas (plus distant)"
+        },
+        "en": {
+            "translation": "there",
             "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "c089fb77-50c6-4e29-ad6c-bd811b101322",
+        "port": "Ali",
+        "fr": {
+            "translation": "Là-bas (plus loin, éloigné des deux personnes)",
+            "note": "Aí = là (zone de l’autre personne)\nAli = là-bas (plus distant)"
         },
         "en": {
             "translation": "there",
@@ -8919,13 +8932,13 @@
     },
     {
         "id": "1aa564ec-ada1-41da-b05f-17a773710718",
-        "port": "alcatifa; tapete",
+        "port": "alcatifa",
         "fr": {
-            "translation": "moquette; tapis",
+            "translation": "moquette",
             "note": "todo"
         },
         "en": {
-            "translation": "carpete carpet",
+            "translation": "carpete",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -8978,19 +8991,6 @@
         },
         "en": {
             "translation": "garlic",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "e5cc1d6f-db4d-4c3b-a6d0-2580b5e76881",
-        "port": "ali",
-        "fr": {
-            "translation": "là",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "over there",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -9238,19 +9238,6 @@
         },
         "en": {
             "translation": "flat (=accommodation)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "a4a82569-98d6-47e0-87e0-316b92d68fbf",
-        "port": "apertado tight apetecer, ter vontade de (fazer algo)",
-        "fr": {
-            "translation": "serré avoir envie de (faire quelque chose)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to feel like (doing s.th)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -9621,13 +9608,13 @@
     },
     {
         "id": "97b80979-635f-4fd0-909f-a2d09bf1143f",
-        "port": "avenida avenue avião",
+        "port": "avenida",
         "fr": {
-            "translation": "avenue avion",
+            "translation": "avenue",
             "note": "todo"
         },
         "en": {
-            "translation": "plane",
+            "translation": "avenue",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -9907,10 +9894,10 @@
     },
     {
         "id": "b0348a5a-1d13-4c56-874f-039d267311fd",
-        "port": "bebida gasosa pop",
+        "port": "gasosa",
         "fr": {
-            "translation": "boisson gazeuse soda",
-            "note": "todo"
+            "translation": "gazeuse (boisson)",
+            "note": "boisson gazeuse: bebida gasosa"
         },
         "en": {
             "translation": "(=fizzy drink)",
@@ -10885,11 +10872,11 @@
         "port": "casa",
         "fr": {
             "translation": "maison (à la)",
-            "note": "em casa: à la maison"
+            "note": "em casa: à la maison. Vivenda est plus specifique pour une maison individuelle détachée"
         },
         "en": {
             "translation": "home (at)",
-            "note": "em casa: at home"
+            "note": "em casa: at home. Vivenda is more specific for a detached individual house"
         },
         "user_usefulness": 2
     },
@@ -12039,10 +12026,10 @@
     },
     {
         "id": "0e056785-ec02-42cc-8c54-5e1cf46f86f1",
-        "port": "cumprimentar, saudar",
+        "port": "cumprimentar",
         "fr": {
-            "translation": "saluer, saluer",
-            "note": "todo"
+            "translation": "saluer",
+            "note": "Cumprimentar = saluer normalement → 95 % des situations quotidiennes. Saudar = saluer solennellement / militairement / de loin / officiel"
         },
         "en": {
             "translation": "to greet",
@@ -12637,10 +12624,10 @@
     },
     {
         "id": "7f3a9b2c-4d8e-4f5a-9c1b-2e6d8f4a7b3c",
-        "port": "doer (dói-me o braço)",
+        "port": "doer",
         "fr": {
             "translation": "faire mal (j'ai mal au bras)",
-            "note": "todo"
+            "note": "(dói-me o braço) = j'ai mal au bras"
         },
         "en": {
             "translation": "to hurt (e.g. my arm hurts)",
@@ -16706,10 +16693,10 @@
     },
     {
         "id": "723d5fbf-c022-456e-a0f0-afd3aa5b991f",
-        "port": "ordenado, salário",
+        "port": "ordenado",
         "fr": {
-            "translation": "salaire",
-            "note": "todo"
+            "translation": "salaire (net)",
+            "note": "on utilise raremement Salário en terme général / formel (souvent pour parler du salaire brut)"
         },
         "en": {
             "translation": "wages",
@@ -18643,10 +18630,23 @@
     },
     {
         "id": "c2ccb81d-f84e-4063-8d34-8368bf6627a3",
-        "port": "sabonete, sabão",
+        "port": "sabonete",
         "fr": {
-            "translation": "savon",
+            "translation": "Savon pour le corps / les mains",
+            "note": "Sabonete = savon personnel (corps/mains) → salle de bain. Sabão = savon de nettoyage (lessive, vaisselle, ménage)"
+        },
+        "en": {
+            "translation": "soap",
             "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "7bc8e9fd-0caf-4d90-ac14-9c4663b24ade",
+        "port": "sabão",
+        "fr": {
+            "translation": "Savon pour le ménage / la lessive",
+            "note": "Sabonete = savon personnel (corps/mains) → salle de bain. Sabão = savon de nettoyage (lessive, vaisselle, ménage)"
         },
         "en": {
             "translation": "soap",
@@ -20244,8 +20244,8 @@
         "id": "015b26b2-5e5f-4f5e-adee-64b0e215025c",
         "port": "vivenda",
         "fr": {
-            "translation": "maison",
-            "note": "todo"
+            "translation": "maison individuelle détachée",
+            "note": "pour maison ou domicile en general on peut utiliser casa, mais vivenda est plus specifique pour une maison individuelle détachée"
         },
         "en": {
             "translation": "house (detached)",
