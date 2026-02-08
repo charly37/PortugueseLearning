@@ -30,7 +30,9 @@ EXCLUDED_IDS = [
     '63d6e4f7-15bd-437b-be6e-5b3193edbe32', #entrada - entrance
     '2e10b04a-30ea-4d26-862f-0c9b9be0d60e',  #wntrada - entree food
     '66fcfa35-190c-419f-b7a3-08a6150e482f', #próximo - prochain
-    '0e6811a7-a40f-42ea-abea-213febc6c4af'  #próximo - proche
+    '0e6811a7-a40f-42ea-abea-213febc6c4af',  #próximo - proche
+    'e26e0569-0d2c-4ec3-83a1-a1e5887813d7', #esperar - attendre
+    'f17c26dc-7b8f-4b3f-a19e-e2812d08a596'  #esperar - esperer
 ]
 
 

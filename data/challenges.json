@@ -556,7 +556,7 @@
             "translation": "early",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "d437a7e8-0f23-4c79-884b-aa06ac4f5acc",
@@ -790,7 +790,7 @@
             "translation": "without",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "d6de68b2-cff6-4ef7-8f46-0ca639b5c3ce",
@@ -1466,7 +1466,7 @@
             "translation": "you (plural)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "64c2384f-aaad-4569-bd54-4275c07f737d",
@@ -1895,20 +1895,7 @@
             "translation": "pork",
             "note": "Carne suína é a carne de porco. - Pork is the meat from a pig."
         },
-        "user_usefulness": 2
-    },
-    {
-        "id": "e5f6a7b8-c9d0-1234-ef12-345678901234",
-        "port": "frango",
-        "fr": {
-            "translation": "poulet",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "chicken",
-            "note": "sopa de frango - chicken soup"
-        },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "f6a7b8c9-d0e1-2345-f123-456789012345",
@@ -2080,19 +2067,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "a9b0c1d2-e3f4-5678-3456-789012345678",
-        "port": "funcionário",
-        "fr": {
-            "translation": "employé",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "employee",
-            "note": "funcionária - female employee"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "b0c1d2e3-f4a5-6789-4567-890123456789",
         "port": "policial",
         "fr": {
@@ -2207,7 +2181,7 @@
             "translation": "February",
             "note": "O dia a mais do ano bissexto é dia vinte e nove de fevereiro. - Leap year day is February 29th."
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "e9f0a1b2-c3d4-5678-3456-789012345678",
@@ -2285,7 +2259,7 @@
             "translation": "August",
             "note": "A escola está fechada em agosto. - The school is closed in August."
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "e5f6a7b8-c9d0-1234-9012-345678901234",
@@ -2636,7 +2610,7 @@
             "translation": "Delicious",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a7b8c9d0-e1f2-3456-2345-678901234567",
@@ -2987,7 +2961,7 @@
             "translation": "hot",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a3b4c5d6-e7f8-9012-0123-456789012345",
@@ -3468,7 +3442,7 @@
             "translation": "green beans",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
@@ -3994,14 +3968,14 @@
         "id": "7d6a0c6f-4d30-4241-9c29-8f777d11e2ce",
         "port": "lado",
         "fr": {
-            "translation": "côté",
+            "translation": "côté (position, direction)",
             "note": "todo"
         },
         "en": {
-            "translation": "side",
+            "translation": "side (position, direction)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "b7bae3b9-df96-4930-9a2e-4c69a3842d4d",
@@ -4287,7 +4261,7 @@
             "translation": "mountain",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a8934291-2c30-4c95-881c-b375d252994e",
@@ -4710,13 +4684,13 @@
         "port": "acima",
         "fr": {
             "translation": "au-dessus",
-            "note": "todo"
+            "note": "l'opposé de \"abaixo\" (formel - en dessous, ci-dessous) ou debaixo qui est plus informel"
         },
         "en": {
             "translation": "above",
-            "note": "todo"
+            "note": "opposite is abaixo (below, under) or debaixo which is more informal"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "518f6f25-d3dc-4fc7-805f-77d9681b9743",
@@ -4766,19 +4740,6 @@
         },
         "en": {
             "translation": "bird",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "c676f08c-bf76-498d-9dd0-85310b5e4bc2",
-        "port": "cão",
-        "fr": {
-            "translation": "chien",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "dog",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -5340,7 +5301,7 @@
             "translation": "thousand",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "c93c030e-23a2-4e55-9a27-7e091aae0928",
@@ -5489,11 +5450,11 @@
         "id": "4954ee81-ba1b-4c8a-9db1-245bb42df247",
         "port": "leste",
         "fr": {
-            "translation": "est",
+            "translation": "est (direction - le soleil se lève à l'est)",
             "note": "todo"
         },
         "en": {
-            "translation": "east",
+            "translation": "east (direction - the sun rises in the east)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -5663,19 +5624,6 @@
         },
         "en": {
             "translation": "noun",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "25cc7f9b-ad7d-47a4-a9eb-de434c98c0ed",
-        "port": "campo",
-        "fr": {
-            "translation": "champ",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "field (=arable)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -6562,7 +6510,7 @@
             "translation": "wave",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "cba3ad98-6583-4820-8b18-1e87f029878b",
@@ -6651,19 +6599,6 @@
         },
         "en": {
             "translation": "sail",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "ddeb8451-c7c5-4fed-be5c-fb65392a4194",
-        "port": "floresta",
-        "fr": {
-            "translation": "forêt",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "forest",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -7433,17 +7368,17 @@
             "translation": "equal",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "cf347f80-5003-40a0-bb79-22479af04115",
-        "port": "caiu",
+        "port": "cair",
         "fr": {
-            "translation": "est tombé",
+            "translation": "tomber",
             "note": "todo"
         },
         "en": {
-            "translation": "fell",
+            "translation": "to fall",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -7537,7 +7472,7 @@
             "translation": "enough, quite/fairly",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "45e6620c-f4aa-4cdc-b9ba-61e74569aa81",
@@ -7979,7 +7914,7 @@
             "translation": "flat",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "b0363512-f567-4979-8dbd-3836c5930134",
@@ -8828,16 +8763,16 @@
     },
     {
         "id": "646e8292-31c1-4786-a559-104584bbd6df",
-        "port": "agricultor /",
+        "port": "agricultor",
         "fr": {
-            "translation": "agriculteur /",
+            "translation": "agriculteur",
             "note": "todo"
         },
         "en": {
-            "translation": "fazendeiro farmer",
+            "translation": "farmer",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "1db7bb46-96eb-4fbc-9d22-d1ca264f68e5",
@@ -9266,7 +9201,7 @@
             "translation": "apprentice",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "a7f3c8d2-4b91-4e6a-9c5f-8d2e1b4a7c93",
@@ -9283,7 +9218,7 @@
     },
     {
         "id": "586d1398-0f65-4420-8227-8346d0bdea13",
-        "port": "aproximadamente about",
+        "port": "aproximadamente",
         "fr": {
             "translation": "environ",
             "note": "todo"
@@ -9292,7 +9227,7 @@
             "translation": "roughly, approximately",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "8271c013-4c56-47c7-8785-76acabb669a9",
@@ -9438,19 +9373,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "3b8ddaa5-1563-45d0-a35f-78984631d660",
-        "port": "assar",
-        "fr": {
-            "translation": "rôtir",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to roast",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "f6fd7107-07a1-43e2-ae39-e6dce49a95cc",
         "port": "assento",
         "fr": {
@@ -9513,7 +9435,7 @@
             "translation": "late (e.g. train late)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "cb247594-278e-4922-a1e2-a3a03c7364ec",
@@ -9864,7 +9786,7 @@
             "translation": "lipstick",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "99bb4737-1359-49e0-8c43-6aa890749c5f",
@@ -10010,28 +9932,15 @@
         "user_usefulness": 2
     },
     {
-        "id": "faa94d67-ec0f-43bd-8cdf-734bdab07db8",
+        "id": "c9d9ef21-6d14-40ff-94f2-73530d6ae13b",
         "port": "bilhete",
         "fr": {
-            "translation": "billet",
-            "note": "todo"
+            "translation": "billet (pour trajet)",
+            "note": "bilhete de ida (e volta): billet aller (et retour)"
         },
         "en": {
-            "translation": "note (=message)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "c9d9ef21-6d14-40ff-94f2-73530d6ae13b",
-        "port": "bilhete de ida (e volta)",
-        "fr": {
-            "translation": "billet aller (et retour)",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "ticket (and return ticket)",
-            "note": "todo"
+            "translation": "ticket (public transport)",
+            "note": "bilhete de ida (e volta): ticket (and return ticket)"
         },
         "user_usefulness": 2
     },
@@ -10176,7 +10085,7 @@
             "translation": "wood/ forest",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "24b7edea-cfb9-49cc-9dc1-616aa97c32f3",
@@ -10348,19 +10257,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "2d701e31-4f16-4fb7-8c2c-9a5341dbc669",
-        "port": "cair",
-        "fr": {
-            "translation": "tomber",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to fall",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "fb7ffbdf-341b-4b57-b3c8-1b25040af13f",
         "port": "cais / plataforma",
         "fr": {
@@ -10505,14 +10401,27 @@
     },
     {
         "id": "db4ccd13-c70c-4f6c-952c-c485a81abb8d",
-        "port": "caminho / trilha",
+        "port": "caminho",
         "fr": {
-            "translation": "chemin / sentier",
-            "note": "todo"
+            "translation": "chemin",
+            "note": "\"caminho\" pour la plupart des situations, car il est plus neutre et universel. \"Trilha\" est idéal pour des contextes naturels ou aventuriers"
         },
         "en": {
             "translation": " footpath",
-            "note": "todo"
+            "note": "\"caminho\" for most situations, as it is more neutral and universal. \"Trilha\" is ideal for natural or adventurous contexts"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "3c2549d6-fe48-4add-9a58-ec27889abed5",
+        "port": "trilha",
+        "fr": {
+            "translation": "sentier",
+            "note": "\"caminho\" pour la plupart des situations, car il est plus neutre et universel. \"Trilha\" est idéal pour des contextes naturels ou aventuriers"
+        },
+        "en": {
+            "translation": " footpath",
+            "note": "\"caminho\" for most situations, as it is more neutral and universal. \"Trilha\" is ideal for natural or adventurous contexts"
         },
         "user_usefulness": 2
     },
@@ -10570,13 +10479,26 @@
     },
     {
         "id": "d2a3e0de-8c45-47a2-b15e-b1d40c5a4fb7",
-        "port": "campo, paisagem",
+        "port": "campo",
         "fr": {
-            "translation": "champ, paysage",
+            "translation": "champ",
             "note": "todo"
         },
         "en": {
-            "translation": "countryside /scenery",
+            "translation": "countryside field",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "1598846a-11f6-4d69-8267-0c056ffc04dd",
+        "port": "paisagem",
+        "fr": {
+            "translation": "paysage",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "countryside scenery",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -10956,7 +10878,7 @@
             "translation": "blind (adj)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "572cf485-b31e-478c-b811-1bbe2dc0b9e6",
@@ -11203,7 +11125,7 @@
             "translation": "shower (=in bathroom)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "ce49d102-6ba1-4feb-954a-152ea587c7c1",
@@ -11385,7 +11307,7 @@
             "translation": "mushroom",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "c6227faf-213c-480e-8984-10e51551e740",
@@ -11493,9 +11415,9 @@
     },
     {
         "id": "314abeac-6e36-4c72-ac08-7f88f470662b",
-        "port": "cómico / cômico",
+        "port": "cómico",
         "fr": {
-            "translation": "comique / comique",
+            "translation": "comique",
             "note": "todo"
         },
         "en": {
@@ -11879,7 +11801,7 @@
             "translation": "to run",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "e6f0e0fd-412b-4849-b80b-39663cd7ecdf",
@@ -12815,7 +12737,7 @@
             "translation": "soon (informal)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "359f7448-70ed-474a-8978-24db5ef95a27",
@@ -12852,19 +12774,6 @@
         },
         "en": {
             "translation": "at the house of (with)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "4ebffe1a-60d5-44d2-89d3-6290a4039be8",
-        "port": "em qualquer lugar, em algum lugar",
-        "fr": {
-            "translation": "n'importe où, quelque part",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "somewhere",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -12958,7 +12867,7 @@
             "translation": "to fill up (=petrol)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "4c8c8b98-e5b8-4318-aad2-a25ed1ce3cc7",
@@ -13049,7 +12958,7 @@
             "translation": "then (adv)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "63d6e4f7-15bd-437b-be6e-5b3193edbe32",
@@ -13326,16 +13235,29 @@
     },
     {
         "id": "e26e0569-0d2c-4ec3-83a1-a1e5887813d7",
-        "port": "esperar por",
+        "port": "esperar",
         "fr": {
             "translation": "attendre",
-            "note": "todo"
+            "note": "attendre (pour): esperar por, esperer (que): Espero que"
         },
         "en": {
             "translation": "to wait for",
-            "note": "todo"
+            "note": "wait (for): esperar por, hope (that): Espero que"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
+    },
+    {
+        "id": "f17c26dc-7b8f-4b3f-a19e-e2812d08a596",
+        "port": "esperar",
+        "fr": {
+            "translation": "esperer",
+            "note": "attendre: esperar por, espere que: Espero que"
+        },
+        "en": {
+            "translation": "to hope that",
+            "note": "wait (for): esperar por, hope (that): Espero que"
+        },
+        "user_usefulness": 3
     },
     {
         "id": "9ae902ab-29c8-4822-a854-dcbfde728873",
@@ -13426,7 +13348,7 @@
             "translation": "funny (=strange)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "c32d1ac3-b92c-4f3c-86be-7ce5ac9e1bd0",
@@ -13608,7 +13530,7 @@
             "translation": "to study",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "6c0dfa3a-85bb-4d3a-acc1-06dd97bf5543",
@@ -14105,30 +14027,17 @@
         "user_usefulness": 2
     },
     {
-        "id": "602ae67f-6826-44bf-9045-a67d052d8e8c",
+        "id": "6ec34285-c74f-4073-8ca9-7dd5fb492e87",
         "port": "ficar",
         "fr": {
-            "translation": "rester",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "stay (e.g at hotel/ resort)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "6ec34285-c74f-4073-8ca9-7dd5fb492e87",
-        "port": "ficar, permanecer",
-        "fr": {
             "translation": "rester, demeurer",
-            "note": "todo"
+            "note": "on peut aussi utiliser permanecer en plus formel et literaire "
         },
         "en": {
             "translation": "to stay, remain",
-            "note": "todo"
+            "note": "permanecer is used in more formal and literary contexts"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "3c42588c-2f9f-4edb-aee7-79512b2dab02",
@@ -14340,14 +14249,14 @@
     },
     {
         "id": "852a29ee-c17a-44b9-aaff-74c01aec59ff",
-        "port": "frango, galinha",
+        "port": "frango",
         "fr": {
-            "translation": "poulet, poule",
-            "note": "todo"
+            "translation": "poulet",
+            "note": "galinha est la poule vivant (l annimal)"
         },
         "en": {
-            "translation": "chicken (=animal/food)",
-            "note": "todo"
+            "translation": "chicken (food)",
+            "note": "galinha is the live animal (hen)"
         },
         "user_usefulness": 2
     },
@@ -14388,7 +14297,7 @@
             "translation": "civil servant",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "ae6db9d9-eb7f-4dea-aa00-e4600a3098d6",
@@ -16481,7 +16390,7 @@
             "translation": "minus (e.g temperature)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "5535e5d0-d034-4ef4-af98-798bc21ac8db",
@@ -16767,7 +16676,7 @@
             "translation": "other",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "6470bf43-1f48-4617-8716-31a28b3c5506",
@@ -18734,7 +18643,7 @@
     },
     {
         "id": "06906e2e-fd91-45c2-9b9f-77a465ac545b",
-        "port": "saco-cama /",
+        "port": "saco-cama",
         "fr": {
             "translation": "sac de couchage",
             "note": "todo"
@@ -19003,7 +18912,7 @@
             "translation": "following/next(e.g.day/week)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf",
@@ -19198,7 +19107,7 @@
             "translation": "niece",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "728d947a-eba9-4b8b-a34a-83c6ce7dc260",
@@ -19237,7 +19146,7 @@
             "translation": "soldier",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2",
@@ -19737,11 +19646,11 @@
         "id": "2b8d8bef-9f68-4c84-ba76-ecee32885021",
         "port": "torre",
         "fr": {
-            "translation": "tour",
+            "translation": "tour (batiment, echeque)",
             "note": "todo"
         },
         "en": {
-            "translation": "tower",
+            "translation": "tower (or turn in game board)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -19906,11 +19815,11 @@
         "id": "145a8398-5610-41f8-880f-502b4ac6a430",
         "port": "turista",
         "fr": {
-            "translation": "touriste",
+            "translation": "touriste (inv en genre)",
             "note": "todo"
         },
         "en": {
-            "translation": "tourist",
+            "translation": "tourist (inv in gender)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -19926,7 +19835,7 @@
             "translation": "a pair/ couple",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "0cce52ee-c4ac-4d3b-914d-1eca2ddb4a79",
@@ -20489,16 +20398,16 @@
     },
     {
         "id": "62b14eb5-ea6c-40a8-9738-de17dfc0c923",
-        "port": "perdoa",
+        "port": "perdoar",
         "fr": {
-            "translation": "pardonne-moi / excuse-moi",
-            "note": "impératif informel de « pardonner »"
+            "translation": "pardonner / excuser",
+            "note": "souvent suivi de \"a\" pour le complément (perdoar a alguém = pardonner à quelqu'un)"
         },
         "en": {
             "translation": "to forgive (he/she forgives, you (formal) forgive)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "ed6927ea-cf12-4760-848a-7a0f7f712969",
@@ -20524,7 +20433,7 @@
             "translation": "to repeat",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "d295e4b5-30ae-4522-ab75-83b8e4c38943",
