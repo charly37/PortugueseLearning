@@ -10167,10 +10167,23 @@
     },
     {
         "id": "ee47bb08-b0ca-4208-b65d-74eb141834c2",
-        "port": "bosque/floresta",
+        "port": "bosque",
         "fr": {
-            "translation": "bois/forêt",
+            "translation": "bois (petite foret)",
+            "note": "floresta pour les grandes forêts sauvages, bosque pour les bois plus petits et calmes. floresta est beaucoup plus utilisé que bosque"
+        },
+        "en": {
+            "translation": "wood/ forest",
             "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "24b7edea-cfb9-49cc-9dc1-616aa97c32f3",
+        "port": "floresta",
+        "fr": {
+            "translation": "forêt",
+            "note": "floresta pour les grandes forêts sauvages, bosque pour les bois plus petits et calmes. floresta est beaucoup plus utilisé que bosque"
         },
         "en": {
             "translation": "wood/ forest",
@@ -10687,14 +10700,14 @@
     },
     {
         "id": "b5463300-05cd-41c0-8522-13ffc4ef14be",
-        "port": "cão / cachorro",
+        "port": "cão",
         "fr": {
-            "translation": "chien / chien",
-            "note": "todo"
+            "translation": "chien",
+            "note": "cachorro: jeune chien"
         },
         "en": {
             "translation": "dog",
-            "note": "todo"
+            "note": "cachorro: young dog. puppy"
         },
         "user_usefulness": 2
     },
@@ -14366,10 +14379,10 @@
     },
     {
         "id": "f3b98e87-d311-4e67-8544-ab1197bc8d1a",
-        "port": "funcionário público",
+        "port": "funcionário",
         "fr": {
             "translation": "fonctionnaire",
-            "note": "todo"
+            "note": "funcionário público"
         },
         "en": {
             "translation": "civil servant",
@@ -14626,10 +14639,23 @@
     },
     {
         "id": "dbb2707e-1936-42f5-bc01-4ab265ef6b22",
-        "port": "grelhar, assar no churrasco / assar na churrasqueira",
+        "port": "grelhar",
         "fr": {
-            "translation": "griller, faire un barbecue",
+            "translation": "griller (rapide, direct, proche du feu)",
+            "note": "la grande différence est entre grelhar (rapide, direct, proche du feu) et assar (lent, indirect, éloigné)"
+        },
+        "en": {
+            "translation": "to grill (flame, stove)",
             "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "2106cf07-0ab9-46af-8722-853ab9b4cb04",
+        "port": "assar",
+        "fr": {
+            "translation": "griller (lent, indirect, éloigné)",
+            "note": "la grande différence est entre grelhar (rapide, direct, proche du feu) et assar (lent, indirect, éloigné). Assar no churrasco, assar na churrasqueira: faire griller au barbecue"
         },
         "en": {
             "translation": "to grill, barbecue",
@@ -17213,10 +17239,36 @@
     },
     {
         "id": "9be059fc-cb3a-432d-af50-8cc2691550d0",
-        "port": "perceber, compreender, entender",
+        "port": "perceber",
         "fr": {
-            "translation": "percevoir, comprendre",
+            "translation": "percevoir",
+            "note": "entender est le plus courant dans le langage quotidien, compreender est plus formel (souvent dans des textes écrits ou académiques), et perceber est plus sensoriel ou nuancé. Ils sont souvent interchangeables, mais le choix dépend du contexte : entender pour des conversations simples, compreender pour des idées complexes, et perceber pour des perceptions"
+        },
+        "en": {
+            "translation": "to understand",
             "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "fcc36c64-88f7-4bc2-b61b-19a990567154",
+        "port": "compreender",
+        "fr": {
+            "translation": "comprendre (formel)",
+            "note": "entender est le plus courant dans le langage quotidien, compreender est plus formel (souvent dans des textes écrits ou académiques), et perceber est plus sensoriel ou nuancé. Ils sont souvent interchangeables, mais le choix dépend du contexte : entender pour des conversations simples, compreender pour des idées complexes, et perceber pour des perceptions"
+        },
+        "en": {
+            "translation": "to understand",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "50a7eca1-59ac-4779-a0a9-6ae046082b2e",
+        "port": "entender",
+        "fr": {
+            "translation": "comprendre (courant, langage quotidien)",
+            "note": "entender est le plus courant dans le langage quotidien, compreender est plus formel (souvent dans des textes écrits ou académiques), et perceber est plus sensoriel ou nuancé. Ils sont souvent interchangeables, mais le choix dépend du contexte : entender pour des conversations simples, compreender pour des idées complexes, et perceber pour des perceptions"
         },
         "en": {
             "translation": "to understand",
