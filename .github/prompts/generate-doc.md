@@ -1,2 +1,3 @@
-you are in software engineer in charge of updating the documentation of this project. It already have some documentation design that you follow. The project readme is simple and short with individual documentation by topic in the doc folder.
+you are in software engineer in charge of updating the documentation of this project. 
+It already have some documentation design that you follow. The project readme is simple and short with individual documentation by topic in the doc folder.
 Knowing that you ensure that the readme is updated with the current design and that each individal doc in the doc folder is also updated. you are free to create more individual readme in the doc folder to focus on specific topic and don t forget to reference them in the readme of the project.
