@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import re
+import argparse
 from datetime import datetime, timedelta
 from collections import defaultdict
 from typing import Dict, List, Any, Set
@@ -272,13 +273,37 @@ class WeaknessAnalyzer:
 
 def main():
     """Main entry point for the script."""
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(
+        description='Analyze user challenge attempts to identify weaknesses and update user profiles.',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='Example: python analyze_weaknesses.py --days-back 30 --min-attempts 10'
+    )
+    
+    parser.add_argument(
+        '--days-back',
+        type=int,
+        default=30,
+        help='Number of days to look back for analysis (default: 30)'
+    )
+    
+    parser.add_argument(
+        '--min-attempts',
+        type=int,
+        default=10,
+        help='Minimum number of attempts required for user analysis (default: 10)'
+    )
+    
+    args = parser.parse_args()
+    
     print(f"[{datetime.now()}] Starting weakness analysis job")
+    print(f"Parameters: days_back={args.days_back}, min_attempts={args.min_attempts}")
     
     try:
         analyzer = WeaknessAnalyzer()
         
-        # Run analysis for last 30 days, minimum 10 attempts
-        analyzer.analyze_all_users(days_back=30, min_attempts=10)
+        # Run analysis with provided parameters
+        analyzer.analyze_all_users(days_back=args.days_back, min_attempts=args.min_attempts)
         
         analyzer.close()
         print(f"[{datetime.now()}] Job completed successfully")

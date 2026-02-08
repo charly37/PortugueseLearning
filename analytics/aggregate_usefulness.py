@@ -7,6 +7,7 @@ This script runs nightly to calculate average usefulness scores.
 import os
 import json
 import sys
+import argparse
 from datetime import datetime
 from pymongo import MongoClient
 from collections import defaultdict
@@ -95,7 +96,31 @@ def update_challenge_file(file_path, vote_aggregates, min_votes=1):
 
 def main():
     """Main execution function"""
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(
+        description='Aggregate user word usefulness votes and update challenge JSON files.',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='Example: python aggregate_usefulness.py --min-votes 3'
+    )
+    
+    parser.add_argument(
+        '--min-votes',
+        type=int,
+        default=1,
+        help='Minimum number of votes required to update a challenge (default: 1)'
+    )
+    
+    parser.add_argument(
+        '--data-dir',
+        type=str,
+        default='../data',
+        help='Directory containing challenge JSON files (default: ../data)'
+    )
+    
+    args = parser.parse_args()
+    
     print(f"\n=== Starting Usefulness Aggregation at {datetime.now()} ===")
+    print(f"Parameters: min_votes={args.min_votes}, data_dir={args.data_dir}")
     
     # Load configuration
     mongodb_uri = load_config()
@@ -113,7 +138,7 @@ def main():
         return
     
     # Update challenge files
-    data_dir = os.path.join(os.path.dirname(__file__), '../data')
+    data_dir = os.path.join(os.path.dirname(__file__), args.data_dir)
     challenge_files = [
         os.path.join(data_dir, 'challenges.json'),
         os.path.join(data_dir, 'verb-challenges.json'),
@@ -123,7 +148,7 @@ def main():
     total_updates = 0
     for file_path in challenge_files:
         if os.path.exists(file_path):
-            updates = update_challenge_file(file_path, vote_aggregates, min_votes=1)
+            updates = update_challenge_file(file_path, vote_aggregates, min_votes=args.min_votes)
             total_updates += updates
         else:
             print(f"Warning: File not found: {file_path}")
