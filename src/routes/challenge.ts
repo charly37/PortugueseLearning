@@ -43,12 +43,22 @@ function generateDistractors(correctChallenge: any, allChallenges: any[], count:
   return selectedDistractors.map(d => d.port);
 }
 
+// Helper function to filter challenges by minimum usefulness level
+function filterByUsefulness(challenges: any[], minUsefulness?: number): any[] {
+  if (!minUsefulness || minUsefulness < 1) {
+    return challenges;
+  }
+  return challenges.filter(c => 
+    c.user_usefulness !== undefined && c.user_usefulness >= minUsefulness
+  );
+}
+
 // TODO: Future enhancement - track flashcard views to distinguish "studied but not tested" from "never seen" content
 
 // Generate a personalized challenge set for learning mode (flashcards)
 router.post('/generate-learn', requireAuth, async (req: Request, res: Response) => {
   try {
-    const { challengeType, totalCards = 50, weaknessWeight = 0.5 } = req.body;
+    const { challengeType, totalCards = 50, weaknessWeight = 0.5, minUsefulness } = req.body;
     const userId = req.session.userId;
 
     // Validate input
@@ -62,6 +72,10 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
 
     if (weaknessWeight < 0 || weaknessWeight > 1) {
       return res.status(400).json({ message: 'Weakness weight must be between 0 and 1' });
+    }
+
+    if (minUsefulness !== undefined && (minUsefulness < 1 || minUsefulness > 3)) {
+      return res.status(400).json({ message: 'Minimum usefulness must be between 1 and 3' });
     }
 
     // Get all challenges for the type
@@ -80,8 +94,12 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
         return res.status(400).json({ message: 'Invalid challenge type' });
     }
 
+    // Apply usefulness filter before other filtering
+    const filteredByUsefulness = filterByUsefulness(allChallenges, minUsefulness);
+    const usefulnessFiltered = minUsefulness !== undefined;
+
     // Ensure we don't request more challenges than available
-    const actualCards = Math.min(totalCards, allChallenges.length);
+    const actualCards = Math.min(totalCards, filteredByUsefulness.length);
 
     // Get user's pre-computed weaknesses from User model
     const user = await User.findById(userId);
@@ -142,11 +160,11 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
       weakChallengeIds = new Set(weakAreas.map((w: any) => w.challengeId));
     }
 
-    // Separate challenges into weak and non-weak
+    // Separate challenges into weak and non-weak (using filtered set)
     const weakChallengesList: any[] = [];
     const otherChallengesList: any[] = [];
 
-    allChallenges.forEach((challenge) => {
+    filteredByUsefulness.forEach((challenge) => {
       if (weakChallengeIds.has(challenge.id)) {
         weakChallengesList.push(challenge);
       } else {
@@ -177,7 +195,10 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
         randomChallenges: selectedOther.length,
         weaknessWeight: weaknessWeight,
         availableWeak: weakChallengesList.length,
-        availableTotal: allChallenges.length
+        availableTotal: allChallenges.length,
+        usefulnessFiltered: usefulnessFiltered,
+        minUsefulness: minUsefulness,
+        availableAfterUsefulnessFilter: filteredByUsefulness.length
       }
     });
   } catch (error) {
@@ -189,7 +210,7 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
 // Generate a personalized challenge set
 router.post('/generate', requireAuth, async (req: Request, res: Response) => {
   try {
-    const { challengeType, totalTurns = 10, weaknessWeight = 0.5, mobileFriendly = false } = req.body;
+    const { challengeType, totalTurns = 10, weaknessWeight = 0.5, mobileFriendly = false, minUsefulness } = req.body;
     const userId = req.session.userId;
 
     // Validate input
@@ -209,6 +230,10 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'Mobile-friendly must be a boolean' });
     }
 
+    if (minUsefulness !== undefined && (minUsefulness < 1 || minUsefulness > 3)) {
+      return res.status(400).json({ message: 'Minimum usefulness must be between 1 and 3' });
+    }
+
     // Get all challenges for the type
     let allChallenges: any[];
     switch (challengeType) {
@@ -225,8 +250,12 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
         return res.status(400).json({ message: 'Invalid challenge type' });
     }
 
+    // Apply usefulness filter before other filtering
+    const filteredByUsefulness = filterByUsefulness(allChallenges, minUsefulness);
+    const usefulnessFiltered = minUsefulness !== undefined;
+
     // Ensure we don't request more challenges than available
-    const actualTurns = Math.min(totalTurns, allChallenges.length);
+    const actualTurns = Math.min(totalTurns, filteredByUsefulness.length);
 
     // Get user's pre-computed weaknesses from User model
     const user = await User.findById(userId);
@@ -290,11 +319,11 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
       weakChallengeIds = new Set(weakAreas.map((w: any) => w.challengeId));
     }
 
-    // Separate challenges into weak and non-weak
+    // Separate challenges into weak and non-weak (using filtered set)
     const weakChallengesList: any[] = [];
     const otherChallengesList: any[] = [];
 
-    allChallenges.forEach((challenge) => {
+    filteredByUsefulness.forEach((challenge) => {
       if (weakChallengeIds.has(challenge.id)) {
         weakChallengesList.push(challenge);
       } else {
@@ -343,7 +372,10 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
         weaknessWeight: weaknessWeight,
         availableWeak: weakChallengesList.length,
         availableTotal: allChallenges.length,
-        mobileFriendly
+        mobileFriendly,
+        usefulnessFiltered: usefulnessFiltered,
+        minUsefulness: minUsefulness,
+        availableAfterUsefulnessFilter: filteredByUsefulness.length
       }
     });
   } catch (error) {

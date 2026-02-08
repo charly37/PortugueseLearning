@@ -29,7 +29,12 @@
     "mobileFriendly": "Mobile Friendly",
     "mobileFriendlyHelper": "Show multiple-choice options instead of typing (easier on mobile devices). Can also be set in your profile.",
     "language": "Language",
-    "guestAccount": "Guest Account"
+    "guestAccount": "Guest Account",
+    "usefulnessFilter": "Word Usefulness Filter",
+    "usefulness1Plus": "All words (1+)",
+    "usefulness2Plus": "Useful+ (2+)",
+    "usefulness3": "Very Useful Only (3)",
+    "usefulnessHelp": "Filter challenges by how useful the vocabulary is to learn"
   },
   "guest": {
     "banner": "You're in Guest Mode. Your progress is saved temporarily.",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, List, ListItem, ListItemText, Chip, Divider, Slider, Switch, FormControlLabel } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, List, ListItem, ListItemText, Chip, Divider, Slider, Switch, FormControlLabel, FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -64,6 +64,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
   const [maxTurns, setMaxTurns] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
   const [mobileFriendly, setMobileFriendly] = useState<boolean>(user?.mobileFriendly || false);
+  const [minUsefulness, setMinUsefulness] = useState<number>(1);
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const [generatedChallenges, setGeneratedChallenges] = useState<VerbChallenge[]>([]);
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
@@ -93,7 +94,8 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
           challengeType: 'verb',
           totalTurns: maxTurns,
           weaknessWeight: weaknessWeight,
-          mobileFriendly: mobileFriendly
+          mobileFriendly: mobileFriendly,
+          minUsefulness: minUsefulness
         })
       });
       if (!response.ok) {
@@ -362,6 +364,21 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                   <Typography variant="caption" color="text.secondary">
                     0 = random verbs, 10 = focus on your weak areas
                   </Typography>
+                </Box>
+                <Box sx={{ mb: 3 }}>
+                  <FormControl fullWidth>
+                    <InputLabel>{t('common.usefulnessFilter')}</InputLabel>
+                    <Select
+                      value={minUsefulness}
+                      onChange={(e) => setMinUsefulness(Number(e.target.value))}
+                      label={t('common.usefulnessFilter')}
+                    >
+                      <MenuItem value={1}>{t('common.usefulness1Plus')}</MenuItem>
+                      <MenuItem value={2}>{t('common.usefulness2Plus')}</MenuItem>
+                      <MenuItem value={3}>{t('common.usefulness3')}</MenuItem>
+                    </Select>
+                    <FormHelperText>{t('common.usefulnessHelp')}</FormHelperText>
+                  </FormControl>
                 </Box>
                 <Box sx={{ mb: 3 }}>
                   <FormControlLabel

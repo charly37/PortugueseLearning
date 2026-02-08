@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress, Divider, Slider } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress, Divider, Slider, FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
@@ -53,6 +53,7 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
   const [learningStarted, setLearningStarted] = useState(false);
   const [totalCards, setTotalCards] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
+  const [minUsefulness, setMinUsefulness] = useState<number>(1);
   
   const preferredLanguage = user?.preferredLanguage || 
     (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
@@ -70,7 +71,8 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
         body: JSON.stringify({
           challengeType,
           totalCards,
-          weaknessWeight
+          weaknessWeight,
+          minUsefulness
         })
       });
       
@@ -274,6 +276,21 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                 <Typography variant="caption" color="text.secondary">
                   0 = random cards, 10 = focus on your weak areas
                 </Typography>
+              </Box>
+              <Box sx={{ mb: 3 }}>
+                <FormControl fullWidth>
+                  <InputLabel>{t('common.usefulnessFilter')}</InputLabel>
+                  <Select
+                    value={minUsefulness}
+                    onChange={(e) => setMinUsefulness(Number(e.target.value))}
+                    label={t('common.usefulnessFilter')}
+                  >
+                    <MenuItem value={1}>{t('common.usefulness1Plus')}</MenuItem>
+                    <MenuItem value={2}>{t('common.usefulness2Plus')}</MenuItem>
+                    <MenuItem value={3}>{t('common.usefulness3')}</MenuItem>
+                  </Select>
+                  <FormHelperText>{t('common.usefulnessHelp')}</FormHelperText>
+                </FormControl>
               </Box>
               <Box sx={{ display: 'flex', gap: 2 }}>
                 <Button

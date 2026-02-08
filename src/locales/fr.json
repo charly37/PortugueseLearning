@@ -29,7 +29,12 @@
     "mobileFriendly": "Mode Mobile",
     "mobileFriendlyHelper": "Afficher des choix multiples au lieu de taper (plus facile sur mobile). Peut aussi être configuré dans votre profil.",
     "language": "Langue",
-    "guestAccount": "Compte Invité"
+    "guestAccount": "Compte Invité",
+    "usefulnessFilter": "Filtre d'Utilité des Mots",
+    "usefulness1Plus": "Tous les mots (1+)",
+    "usefulness2Plus": "Utiles+ (2+)",
+    "usefulness3": "Très Utiles Seulement (3)",
+    "usefulnessHelp": "Filtrer les défis par l'utilité du vocabulaire à apprendre"
   },
   "guest": {
     "banner": "Vous êtes en Mode Invité. Vos progrès sont sauvegardés temporairement.",
