@@ -44,17 +44,41 @@ The analytics service runs as a separate Docker container that:
 
 ## Local Development
 
-### Manual Run
+### Manual Run with Options
+
+All analytics scripts now support command-line arguments with automatic `-h` help generation:
+
+#### Weakness Analysis
 ```bash
 cd analytics
-pip install -r requirements.txt
-python analyze_weaknesses.py
+python analyze_weaknesses.py -h  # Show help
+
+# Run with custom parameters
+python analyze_weaknesses.py --days-back 30 --min-attempts 10
 ```
 
-### Quality Flag Management
+**Available Options:**
+- `--days-back` - Number of days to look back for analysis (default: 30)
+- `--min-attempts` - Minimum attempts required for user analysis (default: 10)
+
+#### Usefulness Aggregation
 ```bash
+python aggregate_usefulness.py -h  # Show help
+
+# Run with custom parameters
+python aggregate_usefulness.py --min-votes 3 --data-dir ../data
+```
+
+**Available Options:**
+- `--min-votes` - Minimum votes required to update a challenge (default: 1)
+- `--data-dir` - Directory containing challenge JSON files (default: ../data)
+
+#### Quality Flag Management
+```bash
+python aggregate_quality_flags.py -h  # Show help
+
 # Generate quality flag report
-python aggregate_quality_flags.py
+python aggregate_quality_flags.py --report
 
 # Reset all quality flags after fixing challenges
 python aggregate_quality_flags.py --reset
@@ -62,6 +86,10 @@ python aggregate_quality_flags.py --reset
 # Reset and verify with new report
 python aggregate_quality_flags.py --reset --report
 ```
+
+**Available Options:**
+- `--reset` - Reset (remove) all quality flags from the database
+- `--report` - Generate quality flag report (default if no --reset provided)
 
 ### Test Scheduler
 ```bash

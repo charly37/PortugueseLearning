@@ -25,6 +25,14 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 - Timed challenges with configurable difficulty
 - Tracks performance and scoring
 - Records results to database (for logged-in users)
+- **Challenge Configuration Options**:
+  - **Number of Rounds**: Choose 10-50 challenges per session
+  - **Difficulty Level**: Adjust from 0 (random) to 10 (focus on weak areas)
+  - **Usefulness Filter**: Filter vocabulary by usefulness level (1-3)
+    - *All words (1+)*: Includes all vocabulary regardless of usefulness
+    - *Useful+ (2+)*: Only moderately and very useful words
+    - *Very Useful Only (3)*: Only the most useful vocabulary
+  - **Mobile-Friendly Mode**: Enable multiple-choice options instead of typing
 
 #### Learn Mode (Flashcards)
 - Interactive flashcard interface with flip animation
@@ -33,6 +41,10 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 - Shuffle feature for randomized learning
 - Shows Portuguese on front, translation + notes on back
 - No pressure, self-paced learning
+- **Configuration Options**:
+  - **Number of Cards**: Choose 10-50 flashcards per session
+  - **Difficulty Level**: Adjust focus on weak areas vs. random selection
+  - **Usefulness Filter**: Same filtering options as Challenge Mode
 
 ### 3. **Challenge Statistics Dashboard**
 - Per-challenge-type statistics page
@@ -63,6 +75,7 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 - Visible after answering each challenge
 - Aggregated nightly to show community consensus
 - Helps prioritize which vocabulary/verbs/idioms to focus on
+- **Integration with Challenge Generation**: Users can filter challenges by minimum usefulness level when configuring their practice sessions
 
 #### Quality Flagging
 - "Flag for Review" button on all challenges
@@ -512,4 +525,4 @@ docker compose exec nginx nginx -t
 
 ---
 
-Last Updated: December 21, 2025
+Last Updated: February 8, 2026

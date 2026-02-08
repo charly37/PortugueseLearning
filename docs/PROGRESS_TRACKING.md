@@ -64,6 +64,80 @@ A dedicated statistics page for each challenge type (word/verb/idiom) that displ
 
 ## API Endpoints
 
+### Generate Challenge Set
+```
+POST /api/challenge/generate
+```
+**Purpose**: Generate a personalized set of challenges for quiz/test mode based on user preferences and weakness data.
+
+**Body:**
+```json
+{
+  "challengeType": "word" | "idiom" | "verb",
+  "totalTurns": number,           // 1-50, default: 10
+  "weaknessWeight": number,       // 0-1, default: 0.5 (50% weak areas)
+  "mobileFriendly": boolean,      // default: false
+  "minUsefulness": number         // 1-3, optional (filter by usefulness level)
+}
+```
+
+**Response:**
+```json
+{
+  "challengeType": "word",
+  "challenges": [
+    {
+      "id": "uuid",
+      "port": "palavra",
+      "fr": { "translation": "mot", "note": "..." },
+      "en": { "translation": "word", "note": "..." },
+      "user_usefulness": 2,
+      "source": "weakness" | "random",
+      "options": ["palavra", "..."],  // if mobileFriendly=true
+      "distractors": ["..."]          // if mobileFriendly=true
+    }
+  ],
+  "metadata": {
+    "totalChallenges": 10,
+    "weaknessChallenges": 5,
+    "randomChallenges": 5,
+    "weaknessWeight": 0.5,
+    "availableWeak": 15,
+    "availableTotal": 3000,
+    "mobileFriendly": false,
+    "usefulnessFiltered": true,
+    "minUsefulness": 2,
+    "availableAfterUsefulnessFilter": 2850
+  }
+}
+```
+
+**Usefulness Filter Behavior:**
+- `minUsefulness: 1` - All words (includes usefulness 1, 2, 3)
+- `minUsefulness: 2` - Useful+ (includes usefulness 2, 3 only)
+- `minUsefulness: 3` - Very Useful Only (includes usefulness 3 only)
+- `undefined` or omitted - Defaults to 1 (all words)
+
+**Filter Order:** Usefulness filtering is applied BEFORE weakness splitting, ensuring the two-pool system (weak/random) works correctly with the filtered set.
+
+### Generate Learn Set (Flashcards)
+```
+POST /api/challenge/generate-learn
+```
+**Purpose**: Generate a personalized set of flashcards for learning mode.
+
+**Body:**
+```json
+{
+  "challengeType": "word" | "idiom" | "verb",
+  "totalCards": number,           // 1-100, default: 50
+  "weaknessWeight": number,       // 0-1, default: 0.5
+  "minUsefulness": number         // 1-3, optional (filter by usefulness level)
+}
+```
+
+**Response:** Same structure as `/generate`, but challenges are ordered (weak first, then random) instead of shuffled.
+
 ### Submit Challenge Attempt
 ```
 POST /api/challenge/submit
