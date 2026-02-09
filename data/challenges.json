@@ -1,18 +1,5 @@
 [
     {
-        "id": "038f2ad2-19f6-4e0d-9aaa-04e818e1c983",
-        "port": "só",
-        "fr": {
-            "translation": "seulement",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "only",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "85998f02-d626-4496-9772-bbfab6ed072b",
         "port": "apenas",
         "fr": {
@@ -504,7 +491,7 @@
             "translation": "weak (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "954518cd-6d01-4bda-9149-53380e45e1ac",
@@ -959,7 +946,7 @@
             "translation": "refrigerator",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "4e6d7989-555a-4a0e-b78a-01e9369c7f75",
@@ -2194,7 +2181,7 @@
             "translation": "March",
             "note": "Março marca o início da primavera no hemisfério norte e do outono no hemisfério sul."
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "f0a1b2c3-d4e5-6789-4567-890123456789",
@@ -2233,7 +2220,7 @@
             "translation": "June",
             "note": "Nós vamos casar em junho. - We are getting married in June."
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "c3d4e5f6-a7b8-9012-7890-123456789012",
@@ -2376,7 +2363,7 @@
             "translation": "five",
             "note": "A estrela-do-mar tem cinco braços. - The starfish has five legs."
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "0a70f9bd-db49-4fcd-82ad-a552335b9054",
@@ -2818,7 +2805,7 @@
             "translation": "second",
             "note": "Há cinquenta e oito segundos restantes no cronômetro. - There are fifty eight seconds left on the stopwatch."
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "e3f4a5b6-c7d8-9012-8901-234567890123",
@@ -2915,14 +2902,14 @@
         "id": "c9d0e1f2-a3b4-5678-5678-901234567890",
         "port": "curto",
         "fr": {
-            "translation": "court",
+            "translation": "court (masculin)",
             "note": "todo"
         },
         "en": {
-            "translation": "short",
+            "translation": "short (masculine)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "d0e1f2a3-b4c5-6789-6789-012345678901",
@@ -4300,7 +4287,7 @@
             "translation": "horse",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "038f06c9-3d30-4066-8c30-ca0e77b15efa",
@@ -4410,8 +4397,8 @@
         "id": "aed937a0-78d6-480f-971c-0b86a4367554",
         "port": "crianças",
         "fr": {
-            "translation": "enfants",
-            "note": "todo"
+            "translation": "enfants (jeunes en generale)",
+            "note": "Filhos : enfants (progéniture personnelle, familial). Crianças : enfants (jeunes en général, par âge)."
         },
         "en": {
             "translation": "children",
@@ -4709,14 +4696,14 @@
         "id": "103ba396-1cbf-4b54-9447-4089d31c07a1",
         "port": "embora",
         "fr": {
-            "translation": "bien que",
-            "note": "todo"
+            "translation": "bien que, quoi que (concession)",
+            "note": "\"embora\" est principalement une conjonction signifiant \"bien que\" ou \"quoique\" (pour exprimer une concession)"
         },
         "en": {
             "translation": "though",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a09822fa-6e82-4122-b820-9030d54813dc",
@@ -9321,19 +9308,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "3333d19d-79ee-4d6f-a0b0-aed376c679da",
-        "port": "arrumar, estacionar",
-        "fr": {
-            "translation": "ranger, stationner",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to park",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "dfe93ff8-6f4e-405c-945e-3fc66c451a5b",
         "port": "arte (galeria)",
         "fr": {
@@ -9396,7 +9370,7 @@
             "translation": "to show, to sign",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "75898cfb-250b-4c20-b453-84cbd65bc265",
@@ -9946,7 +9920,7 @@
     },
     {
         "id": "fa99fd6c-7dc1-4582-8822-dcda01cd9a12",
-        "port": "bilheteira / bilheteria",
+        "port": "bilheteira",
         "fr": {
             "translation": "billetterie",
             "note": "todo"
@@ -11112,7 +11086,7 @@
             "translation": "to rain",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "24e102e2-2ebe-4f1e-a195-5624fb4e5470",
@@ -11333,7 +11307,7 @@
             "translation": "spoon",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "c03f5dee-a200-4359-a2ea-b001cca1842b",
@@ -11441,10 +11415,10 @@
     },
     {
         "id": "1c63e4e1-8495-4e44-bcfe-7d04baa1558b",
-        "port": "cómodo / cômodo",
+        "port": "cómodo",
         "fr": {
-            "translation": "commode / commode",
-            "note": "todo"
+            "translation": "confortable",
+            "note": "adjectif signifiant \"confortable\" ou \"commode/convenient\""
         },
         "en": {
             "translation": "comfortable, cosy",
@@ -12884,26 +12858,26 @@
     },
     {
         "id": "25ba7708-1f54-42ae-bc4b-fb7696edb0af",
-        "port": "encontro, partida",
-        "fr": {
-            "translation": "rencontre, match",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "match (=sport)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "d3e9eeae-22dd-457b-b7f9-a8b073544d8c",
         "port": "encontro",
         "fr": {
             "translation": "rencontre",
             "note": "todo"
         },
         "en": {
-            "translation": "meeting",
+            "translation": "match (= sport game)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "84fe6924-015d-4e27-b566-d7169dc0b90d",
+        "port": "partida",
+        "fr": {
+            "translation": "match",
+            "note": "\"partida\" est un nom féminin signifiant principalement \"départ\" (departure), \"match/partie\" (game/match), ou \"farce/blague\" (prank/joke)"
+        },
+        "en": {
+            "translation": "game (of game in a tournament)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -13328,8 +13302,8 @@
         "id": "61149c16-f091-4eff-ad1f-7a1a0e1fd971",
         "port": "esquina",
         "fr": {
-            "translation": "coin",
-            "note": "todo"
+            "translation": "coin, angle (coin de rue)",
+            "note": "\"A loja fica na esquina.\" (Le magasin est au coin de la rue.)"
         },
         "en": {
             "translation": "corner (street)",
@@ -13469,10 +13443,10 @@
     },
     {
         "id": "7455ad21-7e35-41ce-a330-81b06086db24",
-        "port": "estojo para lápis / estojo de canetas",
+        "port": "estojo",
         "fr": {
-            "translation": "trousse à crayons / trousse à stylos",
-            "note": "todo"
+            "translation": "trousse (à crayons, à stylos)",
+            "note": "estojo para lápis / estojo de canetas"
         },
         "en": {
             "translation": "pencil case",
@@ -14496,10 +14470,23 @@
     },
     {
         "id": "a55b5f87-5ec2-4e5d-9a79-7dac96b60c1a",
-        "port": "grátis, gratuito",
+        "port": "grátis",
         "fr": {
-            "translation": "gratuit",
+            "translation": "gratuit (adverbe)",
+            "note": "\"Entrada grátis.\" (Entrée gratuite.)"
+        },
+        "en": {
+            "translation": "free (=no charge)",
             "note": "todo"
+        },
+        "user_usefulness": 3
+    },
+    {
+        "id": "19259a50-78bf-45ec-8fff-8aee38561f4b",
+        "port": "gratuito",
+        "fr": {
+            "translation": "gratuit (Adjectif)",
+            "note": "\"O estacionamento é gratuito.\" (Le parking est gratuit.)"
         },
         "en": {
             "translation": "free (=no charge)",
@@ -15298,7 +15285,7 @@
             "translation": "laboratory",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "30c3a41c-7b9b-4ade-9a7d-93189fdcd853",
@@ -16878,7 +16865,7 @@
         "port": "partida",
         "fr": {
             "translation": "départ",
-            "note": "todo"
+            "note": "\"partida\" est un nom féminin signifiant principalement \"départ\" (departure), \"match/partie\" (game/match), ou \"farce/blague\" (prank/joke)"
         },
         "en": {
             "translation": "departure",
@@ -17313,7 +17300,7 @@
             "translation": "neck",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "8885116a-f3aa-491e-9a1a-6cc3af8f38cd",
@@ -18122,32 +18109,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "eac97f59-da6c-40a4-9dc2-044ac612e041",
-        "port": "quase almost",
-        "fr": {
-            "translation": "presque",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "que that (conj.)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "4b8d4a33-9260-4140-b9d5-6d5a43c741ad",
-        "port": "querer",
-        "fr": {
-            "translation": "vouloir",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to want to",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "57e8eac4-b6cd-43a1-b63f-79616d62f295",
         "port": "quilómetro / quilômetro",
         "fr": {
@@ -18266,9 +18227,9 @@
     },
     {
         "id": "af9e9b24-bdf8-4ede-8f3c-f30218868169",
-        "port": "receção / recepção",
+        "port": "receção",
         "fr": {
-            "translation": "réception",
+            "translation": "réception (=accueil)",
             "note": "todo"
         },
         "en": {
@@ -18847,7 +18808,7 @@
             "translation": "dry",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "3d70d7b9-af51-4792-be5a-24cba4e638b0",
@@ -19072,10 +19033,23 @@
     },
     {
         "id": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f",
-        "port": "só, sozinho",
+        "port": "só",
         "fr": {
-            "translation": "seul",
+            "translation": "seulement, juste ou uniquement (adverbe)",
+            "note": "\"só\" est plus adverbial et restrictif ; \"sozinho\" est adjectival et emphase l'isolement physique/émotionnel"
+        },
+        "en": {
+            "translation": "only, alone; not until",
             "note": "todo"
+        },
+        "user_usefulness": 3
+    },
+    {
+        "id": "fe2462d5-212b-41dd-874a-78f1ceceb27e",
+        "port": "sozinho",
+        "fr": {
+            "translation": "seul (sans compagnie) ou solitaire (adjectif)",
+            "note": "\"só\" est plus adverbial et restrictif ; \"sozinho\" est adjectival et emphase l'isolement physique/émotionnel"
         },
         "en": {
             "translation": "only, alone; not until",
@@ -19354,7 +19328,7 @@
             "translation": "i.t.",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "a002591a-4fb2-421f-81d1-428a19284409",
@@ -19523,7 +19497,7 @@
             "translation": "scissors",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd",
@@ -21593,19 +21567,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "c48bd674-bcc1-4a67-8cd2-e10925acb142",
-        "port": "andar",
-        "fr": {
-            "translation": "marcher",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to walk",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "fb58c19a-fa98-4f77-b7d1-bac17550e2f7",
         "port": "animar",
         "fr": {
@@ -22422,7 +22383,7 @@
             "translation": "to base",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "05852a56-d0e5-4d4f-86df-95d24ec683c1",
@@ -24957,7 +24918,7 @@
             "translation": "to doubt",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "2c12fa55-bff3-4a68-a157-47dc265a0a12",
@@ -25763,7 +25724,7 @@
             "translation": "to die",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "da15867e-1918-419f-9ad2-23250308a660",
@@ -27245,7 +27206,7 @@
             "translation": "to havelunch",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "1b9af755-fc1d-4566-8957-cdb768596619",
@@ -27570,7 +27531,7 @@
             "translation": "to rise",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "7138a4fc-5c9b-48c3-8b32-778a216ac926",
@@ -28129,7 +28090,7 @@
             "translation": "to step",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "724eb2cf-dc56-49b0-b6fb-0a89d3ac42bc",
@@ -29604,7 +29565,7 @@
         "id": "af425586-0eb4-42a4-9b19-ecbce0234cde",
         "port": "roubar",
         "fr": {
-            "translation": "voler",
+            "translation": "voler, dérober",
             "note": "todo"
         },
         "en": {
@@ -30209,7 +30170,7 @@
             "translation": "to sweat",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "4de27d17-9b97-4282-a6f5-76368855d7c5",
@@ -31015,7 +30976,7 @@
             "translation": ", masc. he, it",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "f983127e-9ecf-40d7-a650-7c9f19bdb3c4",
@@ -31522,7 +31483,7 @@
             "translation": "it seems, it looks, it",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "1cbd7e52-a9c9-4b4c-85df-906cbf84c1d9",
@@ -31552,13 +31513,13 @@
     },
     {
         "id": "b717d75f-0673-46f4-a99c-7743d171f990",
-        "port": "quer",
+        "port": "querer",
         "fr": {
-            "translation": "veut",
+            "translation": "vouloir",
             "note": "todo"
         },
         "en": {
-            "translation": "wants, loves",
+            "translation": "to want",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -31574,7 +31535,7 @@
             "translation": "something, anything, s",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "32cba946-aed8-47da-ae82-2876d13c448b",
@@ -32605,9 +32566,9 @@
     },
     {
         "id": "328b4683-f67d-46fa-9b6f-2fb2e25951f5",
-        "port": "anda",
+        "port": "andar",
         "fr": {
-            "translation": "marche",
+            "translation": "marcher",
             "note": "todo"
         },
         "en": {
@@ -32904,13 +32865,13 @@
     },
     {
         "id": "e6d6e9fd-cead-43e2-9283-358588a0bff0",
-        "port": "espero",
+        "port": "esperar",
         "fr": {
-            "translation": "j'espère",
+            "translation": "esperer",
             "note": "todo"
         },
         "en": {
-            "translation": "I hope, I wait, I expect",
+            "translation": "to hope",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -33030,7 +32991,7 @@
             "translation": "here, hither, to this",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "29adccd8-3d23-45f7-855a-89acc16d70a4",
@@ -33316,7 +33277,7 @@
             "translation": "in that, on that, abou",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "b7e1f02c-80f2-440e-b17d-ca33e7004fcb",
@@ -33446,7 +33407,7 @@
             "translation": "others, other",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "5a61ced7-24ff-4fb0-8d30-90ae064a2add",
@@ -34050,8 +34011,8 @@
         "id": "30a61eab-03cc-4949-82e2-98f68528ae81",
         "port": "ora",
         "fr": {
-            "translation": "or",
-            "note": "todo"
+            "translation": "eh bien, voyons, allons...",
+            "note": "\"ora\" est le plus souvent une particule de discours signifiant \"eh bien\", \"voyons\" ou \"allons\" (comme mot de remplissage pour introduire une idée)."
         },
         "en": {
             "translation": "Well, now, come on, ei",
@@ -34102,8 +34063,8 @@
         "id": "147ddf87-531e-4527-9541-de732a1de55c",
         "port": "filhos",
         "fr": {
-            "translation": "enfants",
-            "note": "todo"
+            "translation": "enfants (direct, progeniture)",
+            "note": "Filhos : enfants (progéniture personnelle, familial). Crianças : enfants (jeunes en général, par âge)."
         },
         "en": {
             "translation": ", masc. children, sons",
