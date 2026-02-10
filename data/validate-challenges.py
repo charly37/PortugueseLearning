@@ -34,7 +34,9 @@ EXCLUDED_IDS = [
     'e26e0569-0d2c-4ec3-83a1-a1e5887813d7', #esperar - attendre
     'f17c26dc-7b8f-4b3f-a19e-e2812d08a596',  #esperar - esperer
     '84fe6924-015d-4e27-b566-d7169dc0b90d', #partida - match
-    'fbf717ab-0985-4039-b545-ad7dc299e33e'  #partida - depart
+    'fbf717ab-0985-4039-b545-ad7dc299e33e',  #partida - depart
+    '64629bb7-89dc-41e2-b38a-c5bc43b30cfb', #saber - savoir
+    '442e210d-0c1a-4b77-9c5a-28186456f2a9'  #saber - avoir un gout
 ]
 
 

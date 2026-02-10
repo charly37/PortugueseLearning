@@ -117,6 +117,19 @@
         "user_usefulness": 2
     },
     {
+        "id": "715e76c6-5cb2-453e-9437-a6e18f740b27",
+        "port": "não antes de not",
+        "fr": {
+            "translation": "pas avant",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "until",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "4ebffe1a-60d5-44d2-89d3-6290a4039be8",
         "port": "em qualquer lugar, em algum lugar",
         "fr": {

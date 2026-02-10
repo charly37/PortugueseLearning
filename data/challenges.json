@@ -78,19 +78,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "96755536-971d-443d-8d7d-fd24980ce9f0",
-        "port": "quando",
-        "fr": {
-            "translation": "quand",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "when",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "2bf22d98-55f2-4c34-8c96-5ba1938a9416",
         "port": "porquê",
         "fr": {
@@ -4378,7 +4365,7 @@
             "translation": "together",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "66fcfa35-190c-419f-b7a3-08a6150e482f",
@@ -5684,14 +5671,14 @@
         "id": "a28ba803-aeed-44a1-9ab4-9135b9203c6b",
         "port": "frente",
         "fr": {
-            "translation": "devant",
-            "note": "todo"
+            "translation": "devant, front, facade",
+            "note": "A frente da casa (L'avant de la maison)"
         },
         "en": {
             "translation": "front",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a326081f-36a2-4b26-9538-4e5b7db5733a",
@@ -6981,19 +6968,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "5755c4eb-6169-493c-9eec-a637e65f1c59",
-        "port": "gone",
-        "fr": {
-            "translation": "parti",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "gone",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "65ceaae3-a51b-4aa8-a277-ad7b94e867ef",
         "port": "comércio",
         "fr": {
@@ -8024,8 +7998,8 @@
         "id": "11b19b45-74e9-4575-9238-14e6ea404d55",
         "port": "se",
         "fr": {
-            "translation": "si",
-            "note": "todo"
+            "translation": "se/soi (lui-même, elle-même, soi-même)",
+            "note": "\"Ele se lava\" (Il se lave). Utilisé pour des actions réflexives ou réciproques."
         },
         "en": {
             "translation": "whether",
@@ -8698,13 +8672,13 @@
     },
     {
         "id": "24ac7405-6632-4f21-ad6c-7b04999f43a5",
-        "port": "agenda, diário",
+        "port": "agenda",
         "fr": {
-            "translation": "agenda, journal",
+            "translation": "agenda",
             "note": "todo"
         },
         "en": {
-            "translation": "diary",
+            "translation": "Agenda",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -8934,7 +8908,7 @@
         "id": "ae8b195e-8983-4712-9f91-2a661328ffbb",
         "port": "almoço",
         "fr": {
-            "translation": "déjeuner",
+            "translation": "déjeuner (midi), repas de midi",
             "note": "todo"
         },
         "en": {
@@ -11690,8 +11664,8 @@
         "id": "5631cf54-1edf-46ac-aa3e-0e158c13b0f4",
         "port": "convite",
         "fr": {
-            "translation": "invitation",
-            "note": "todo"
+            "translation": "invitation (dinner)",
+            "note": "\"Recebi um convite\" (J'ai reçu une invitation)"
         },
         "en": {
             "translation": "invitation",
@@ -12403,16 +12377,29 @@
     },
     {
         "id": "aeb4bfd5-7b45-4f90-a761-82e7d4cf0c42",
-        "port": "detestar, odiar",
+        "port": "detestar,",
         "fr": {
-            "translation": "détester, haïr",
-            "note": "todo"
+            "translation": "détester, degouter",
+            "note": "\"Detestar\" est plus courant pour des dislikes quotidiens, \"odiar\" pour une haine plus forte."
+        },
+        "en": {
+            "translation": "to hate",
+            "note": "\"Detestar\" is more common for everyday dislikes, \"odiar\" for stronger hatred."
+        },
+        "user_usefulness": 3
+    },
+    {
+        "id": "ab5afa33-02c7-4f69-9b5a-ad36b2955598",
+        "port": "odiar",
+        "fr": {
+            "translation": "haïr",
+            "note": "\"Detestar\" est plus courant pour des dislikes quotidiens, \"odiar\" pour une haine plus forte."
         },
         "en": {
             "translation": "to hate",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "537fd1e8-26c1-47fd-8eb8-2cba3532e60c",
@@ -12821,8 +12808,8 @@
         "id": "903bfe9a-8e27-4944-b627-0184f5c09095",
         "port": "encaracolado",
         "fr": {
-            "translation": "bouclé",
-            "note": "todo"
+            "translation": "bouclé, frisé (cheveux)",
+            "note": "Cabelo encaracolado (Cheveux bouclés)"
         },
         "en": {
             "translation": "curly (=hair)",
@@ -14778,7 +14765,7 @@
             "translation": "immediately",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "d140312a-42d4-4971-bffc-dda823f572bb",
@@ -16263,19 +16250,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "715e76c6-5cb2-453e-9437-a6e18f740b27",
-        "port": "não antes de not",
-        "fr": {
-            "translation": "pas avant",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "until",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "8874566d-5fa8-4432-a5bc-48b62603aac0",
         "port": "não ter razão, estar errado",
         "fr": {
@@ -16563,13 +16537,26 @@
     },
     {
         "id": "bafe049d-38e6-418d-b223-7ea110c1b1d7",
-        "port": "reparos repair",
+        "port": "reparos",
         "fr": {
             "translation": "réparations",
             "note": "todo"
         },
         "en": {
-            "translation": "workshop, garage",
+            "translation": "reparation, fix",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
+        "id": "d6fc4354-2135-4631-a1be-ea68f2a46ccc",
+        "port": "reparar",
+        "fr": {
+            "translation": "réparer (une voiture)",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "to repair",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -17131,7 +17118,7 @@
             "translation": "pear",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "9be059fc-cb3a-432d-af50-8cc2691550d0",
@@ -18032,7 +18019,7 @@
     },
     {
         "id": "1b292311-41f0-41e7-8d74-71c37c49bfb8",
-        "port": "quando?",
+        "port": "quando",
         "fr": {
             "translation": "quand ?",
             "note": "todo"
@@ -18539,14 +18526,14 @@
     },
     {
         "id": "442e210d-0c1a-4b77-9c5a-28186456f2a9",
-        "port": "saber (bem/mal)",
+        "port": "saber",
         "fr": {
-            "translation": "avoir bon/mauvais goût",
-            "note": "todo"
+            "translation": "goût. avoir bon/mauvais goût",
+            "note": "saber (bem/mal)"
         },
         "en": {
             "translation": "to taste (e.g. good/bad)",
-            "note": "todo"
+            "note": "saber (bem/mal)"
         },
         "user_usefulness": 2
     },
@@ -18559,7 +18546,7 @@
         },
         "en": {
             "translation": "soap",
-            "note": "todo"
+            "note": "Sabonete = personal soap (body/hands) → bathroom. Sabão = cleaning soap (laundry, dishes, cleaning)"
         },
         "user_usefulness": 2
     },
@@ -20849,7 +20836,7 @@
             "translation": "to entail",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "60cd117d-6870-46ec-a59b-b107b4d629f4",
@@ -21590,7 +21577,7 @@
             "translation": "to precede",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a76c879a-4d2f-4562-a979-846568e9d017",
@@ -23293,7 +23280,7 @@
             "translation": "to consecrate",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b",
@@ -24931,7 +24918,7 @@
             "translation": "to build",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "4868d24b-13f0-4acb-b413-ab26c9dc998d",
@@ -26062,7 +26049,7 @@
             "translation": "to expand",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "c08bc464-7060-4337-b843-d0e0487720f6",
@@ -27885,19 +27872,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "b694ab74-bd81-4d4e-b719-411c861be545",
-        "port": "odiar",
-        "fr": {
-            "translation": "haïr",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to hate",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "38f96693-d3b6-45b6-b813-b1cd54ceb479",
         "port": "ofender",
         "fr": {
@@ -27979,8 +27953,8 @@
         "id": "bd7b78cd-7725-49ce-b157-9e2174aa8fb8",
         "port": "permanecer",
         "fr": {
-            "translation": "demeurer",
-            "note": "todo"
+            "translation": "demeurer (continuer à être dans un lieu ou état)",
+            "note": "Ele permaneceu calmo (Il est resté calme)"
         },
         "en": {
             "translation": "to stay",
@@ -29375,19 +29349,6 @@
         },
         "en": {
             "translation": "to waive",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "e0d70b9d-11aa-4678-921b-a05ddbdcf2a1",
-        "port": "reparar",
-        "fr": {
-            "translation": "réparer",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to repair",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -31148,19 +31109,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "7a4d7a9a-0aae-4e07-82a1-38fea82d0c17",
-        "port": "dizer",
-        "fr": {
-            "translation": "dire",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to say, to tell",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "cde618fa-8943-4731-b2de-5de61dca5128",
         "port": "sou",
         "fr": {
@@ -31591,13 +31539,13 @@
     },
     {
         "id": "80e24b38-3d1d-45cc-9570-a9d79c812809",
-        "port": "diz",
+        "port": "dizer",
         "fr": {
-            "translation": "dit",
-            "note": "todo"
+            "translation": "dire",
+            "note": "\"Ele diz que sim\" (Il dit que oui)"
         },
         "en": {
-            "translation": "says, tells",
+            "translation": "to say, to tell",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -32087,8 +32035,8 @@
         "id": "9fec39e2-e4ad-47a1-96b5-d75292e25167",
         "port": "esse",
         "fr": {
-            "translation": "ce",
-            "note": "todo"
+            "translation": "Ce/cet ou celui-là (masculin singulier, proche de l'interlocuteur ou neutre)",
+            "note": "\"Este/esta\" pour ce qui est près de toi ; \"esse\" pour ce qui est près de l'autre ; \"isto\" pour des idées ou objets neutres."
         },
         "en": {
             "translation": "that, this",
@@ -33433,7 +33381,7 @@
             "translation": ", masc. pleasure, delight, enj",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "fa5fa667-633b-45f0-8e0f-de70cb336625",
@@ -34024,7 +33972,7 @@
         "id": "efacc599-dce6-4525-a976-ea3734ee64e6",
         "port": "pena",
         "fr": {
-            "translation": "peine",
+            "translation": "peine, pitié",
             "note": "todo"
         },
         "en": {
