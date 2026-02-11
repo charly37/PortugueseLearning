@@ -1843,7 +1843,7 @@
             "translation": "water",
             "note": "Posso tomar água, por favor? - Can I have some water, please?"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
@@ -4105,7 +4105,7 @@
             "translation": "left",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "2f6ab6db-93f9-4d4b-aa74-f107ab669cb7",
@@ -4337,19 +4337,6 @@
         },
         "en": {
             "translation": "main (e.gstation/road/course)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "22b0220c-9273-4a58-9cd1-60379f6da479",
-        "port": "aberto",
-        "fr": {
-            "translation": "ouvert",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "open",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -5756,7 +5743,7 @@
             "translation": "mind",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "f2bebb22-5594-498b-849e-7e3c4030a99c",
@@ -5886,7 +5873,7 @@
             "translation": "hundred",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "3c579bc4-8b3a-48cc-9e69-9bed8f4ff0be",
@@ -6373,7 +6360,7 @@
         "id": "c86ce1e8-7094-4c95-afaa-e37b77527b5a",
         "port": "geral",
         "fr": {
-            "translation": "général",
+            "translation": "général (La majorité, la généralité)",
             "note": "todo"
         },
         "en": {
@@ -6562,7 +6549,7 @@
             "translation": "wide",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "a56b0bd7-0a98-40d7-8865-bf1b07396746",
@@ -7462,19 +7449,6 @@
         "user_usefulness": 2
     },
     {
-        "id": "d0f9f395-c4f0-4c98-9212-5eb3e4c30ff2",
-        "port": "meio",
-        "fr": {
-            "translation": "milieu",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "middle, half (adj)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
         "id": "b1510cae-96be-4ba5-a2c5-2da904696ddd",
         "port": "matar",
         "fr": {
@@ -7836,7 +7810,7 @@
             "translation": "iron",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "a628c1c8-8b74-4953-a427-08871efa499b",
@@ -7940,7 +7914,7 @@
             "translation": "hole",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "478bb8c7-7142-4c9f-be89-34f4a264ada7",
@@ -8412,14 +8386,14 @@
     },
     {
         "id": "dd6d369f-4d66-42b2-97ef-6727f5acadf3",
-        "port": "(comboio//trem) expresso",
+        "port": "expresso",
         "fr": {
-            "translation": "(train) express",
-            "note": "todo"
+            "translation": "express (train)",
+            "note": "(comboio//trem) expresso"
         },
         "en": {
-            "translation": "express train",
-            "note": "todo"
+            "translation": "express (train)",
+            "note": "(comboio//trem) expresso"
         },
         "user_usefulness": 2
     },
@@ -8503,7 +8477,7 @@
     },
     {
         "id": "438d77d4-d1c0-469f-9942-f6164ec15f1a",
-        "port": "aberto (adj.)",
+        "port": "aberto",
         "fr": {
             "translation": "ouvert (adj.)",
             "note": "todo"
@@ -9604,7 +9578,7 @@
             "translation": "cheap (= value for money, not",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "dc2c8f48-83d2-47fe-b7f9-4715bfa1b359",
@@ -10011,14 +9985,14 @@
     },
     {
         "id": "a4240854-cd91-462c-8da7-b5606c490747",
-        "port": "borrego, cordeiro lamb",
+        "port": "borrego",
         "fr": {
             "translation": "agneau, agneau agneau",
-            "note": "todo"
+            "note": "cordeiro (moins courant): un agneau jeune"
         },
         "en": {
-            "translation": "(=animal /meat)",
-            "note": "todo"
+            "translation": "lamb (=animal /meat)",
+            "note": "cordeiro (less common): a young lamb"
         },
         "user_usefulness": 2
     },
@@ -10596,16 +10570,16 @@
     },
     {
         "id": "debc737b-ea84-4695-af9e-81faa042bac5",
-        "port": "carne / carne assada",
+        "port": "carne",
         "fr": {
-            "translation": "viande / rôti de viande",
-            "note": "todo"
+            "translation": "viande",
+            "note": "rôti de viande: carne assada"
         },
         "en": {
             "translation": "meat / roast meat",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "74a1f1e4-9c97-4670-be2b-d517027d0c1e",
@@ -14869,7 +14843,7 @@
             "translation": "insect",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "e86f78c2-acb2-4ee4-9cbd-7bf79733c5d9",
@@ -15939,13 +15913,13 @@
     },
     {
         "id": "dd7e2811-fcac-46a5-9e68-bb5f7282850a",
-        "port": "meio (no meio de)",
+        "port": "meio",
         "fr": {
             "translation": "milieu (au milieu de)",
-            "note": "todo"
+            "note": "no meio de: au milieu de"
         },
         "en": {
-            "translation": "middle (in the middle of)",
+            "translation": "middle (in the middle of), half",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -16078,7 +16052,7 @@
             "translation": "wet",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "6e082364-0b20-40b7-9411-8bafba1c2294",
@@ -17720,7 +17694,7 @@
     },
     {
         "id": "bd9c47e7-2b58-4e62-96e8-0bb9daba4515",
-        "port": "prémio / prêmio",
+        "port": "prémio",
         "fr": {
             "translation": "prix (récompense)",
             "note": "todo"
@@ -17729,7 +17703,7 @@
             "translation": "prize",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "8c6b7f12-8da3-4daf-ae2f-34eddbe79c4e",
@@ -18470,7 +18444,7 @@
             "translation": "stream",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "d672b445-0179-4edb-8996-fc17cdf471e2",
@@ -18899,7 +18873,7 @@
             "translation": "traffic lights",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "932ed499-73cc-49ef-a8e4-e38fe2f36e48",
@@ -19373,11 +19347,11 @@
         "id": "e15b0625-d2c8-421f-93e8-c6be8448cbe4",
         "port": "tenda",
         "fr": {
-            "translation": "tente",
+            "translation": "tente (camping)",
             "note": "todo"
         },
         "en": {
-            "translation": "tent",
+            "translation": "tent (camping)",
             "note": "todo"
         },
         "user_usefulness": 2
@@ -19926,7 +19900,7 @@
             "translation": "empty",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 3
     },
     {
         "id": "f89cf9a1-53a9-44f8-8e0d-5334027c1414",
@@ -25113,7 +25087,7 @@
             "translation": "to lift",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 1
     },
     {
         "id": "34b3adc9-6e98-4162-8e38-90d60d80bfaa",
@@ -32854,12 +32828,12 @@
         "id": "69890582-38a1-4b57-b2df-bea54550eece",
         "port": "fixe",
         "fr": {
-            "translation": "cool",
-            "note": "todo"
+            "translation": "cool (adj - Qui plaît ou a des qualités positives)",
+            "note": "o livro é muito fixe = le livre est très cool/bien"
         },
         "en": {
             "translation": "cool, great, awesome",
-            "note": "todo"
+            "note": "the book is very cool/good = o livro é muito fixe"
         },
         "user_usefulness": 2
     },
@@ -33333,14 +33307,14 @@
     },
     {
         "id": "c6ab28a1-10e5-4550-a33c-4e56082151d8",
-        "port": "vão",
+        "port": "vã",
         "fr": {
-            "translation": "vont",
-            "note": "todo"
+            "translation": "creux, vide (une bouteille vide)",
+            "note": "uma garrafa vã = une bouteille vide. Adjectif (masculin/féminin : vão/vã)"
         },
         "en": {
-            "translation": ", masc. void, gap, span, opening",
-            "note": "todo"
+            "translation": "empty",
+            "note": "uma garrafa vã = empty bottle. Adjective (masculine/feminine: vão/vã)"
         },
         "user_usefulness": 2
     },
@@ -33756,19 +33730,6 @@
         },
         "en": {
             "translation": "Needs, requires, preci",
-            "note": "todo"
-        },
-        "user_usefulness": 2
-    },
-    {
-        "id": "3224eb04-12e9-4ab1-8f9e-083664ef02b6",
-        "port": "teve",
-        "fr": {
-            "translation": "a eu",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "had, possessed, experi",
             "note": "todo"
         },
         "user_usefulness": 2
