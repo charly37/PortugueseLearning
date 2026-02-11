@@ -36,6 +36,7 @@ interface User {
   isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
   mobileFriendly?: boolean;
+  practiceMode?: boolean;
   createdAt?: string;
   totalScore?: number;
   level?: number;
@@ -70,6 +71,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
   const [loading, setLoading] = useState(true);
   const [preferredLanguage, setPreferredLanguage] = useState<'fr' | 'en'>(user?.preferredLanguage || 'fr');
   const [mobileFriendly, setMobileFriendly] = useState<boolean>(user?.mobileFriendly || false);
+  const [practiceMode, setPracticeMode] = useState<boolean>(user?.practiceMode || false);
   const [updateSuccess, setUpdateSuccess] = useState(false);
 
   useEffect(() => {
@@ -94,6 +96,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
       fetchProgress();
       setPreferredLanguage(user.preferredLanguage || 'fr');
       setMobileFriendly(user.mobileFriendly || false);
+      setPracticeMode(user.practiceMode || false);
     }
   }, [user]);
 
@@ -146,6 +149,31 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
       }
     } catch (error) {
       console.error('Failed to update mobile-friendly preference:', error);
+    }
+  };
+
+  const handlePracticeModeChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = event.target.checked;
+    setPracticeMode(newValue);
+
+    try {
+      const response = await fetch('/api/auth/update-practice-mode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ practiceMode: newValue })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setUpdateSuccess(true);
+        // Update the user in parent component
+        if (onUserUpdate && data.user) {
+          onUserUpdate(data.user);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to update practice mode preference:', error);
     }
   };
 
@@ -430,6 +458,33 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
                       {t('profile.mobileFriendlyDescription')}
+                    </Typography>
+                  </Box>
+                }
+              />
+            </Paper>
+
+            <Paper
+              variant="outlined"
+              sx={{
+                p: 2,
+              }}
+            >
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked={practiceMode}
+                    onChange={handlePracticeModeChange}
+                    color="primary"
+                  />
+                }
+                label={
+                  <Box>
+                    <Typography variant="body1" fontWeight="medium">
+                      {t('profile.practiceMode')}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {t('profile.practiceModeDescription')}
                     </Typography>
                   </Box>
                 }

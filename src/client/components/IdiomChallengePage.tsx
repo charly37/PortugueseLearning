@@ -35,6 +35,7 @@ interface User {
   isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
   mobileFriendly?: boolean;
+  practiceMode?: boolean;
 }
 
 interface IdiomChallengePageProps {
@@ -67,18 +68,28 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const [generatedChallenges, setGeneratedChallenges] = useState<IdiomChallenge[]>([]);
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
+  
+  // Practice mode state
+  const [practiceMode, setPracticeMode] = useState<boolean>(user?.practiceMode || false);
+  const [masteredChallenges, setMasteredChallenges] = useState<Set<string>>(new Set());
+  const [pendingQueue, setPendingQueue] = useState<IdiomChallenge[]>([]);
+  const [attemptCounts, setAttemptCounts] = useState<Map<string, number>>(new Map());
+  
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Get user's preferred language or default to 'fr'
   const preferredLanguage = user?.preferredLanguage || 
     (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
 
-  // Update mobileFriendly when user changes (e.g., after guest creation)
+  // Update mobileFriendly and practiceMode when user changes (e.g., after guest creation)
   useEffect(() => {
     if (user?.mobileFriendly !== undefined) {
       setMobileFriendly(user.mobileFriendly);
     }
-  }, [user?.mobileFriendly]);
+    if (user?.practiceMode !== undefined) {
+      setPracticeMode(user.practiceMode);
+    }
+  }, [user?.mobileFriendly, user?.practiceMode]);
 
   const generateChallengeSet = async () => {
     setLoading(true);
@@ -138,15 +149,29 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
     setStartTime(Date.now());
     
     if (mode === 'challenge' && generatedChallenges.length > 0) {
-      const nextIndex = currentChallengeIndex + 1;
-      if (nextIndex < generatedChallenges.length) {
-        setCurrentChallengeIndex(nextIndex);
-        setChallenge(generatedChallenges[nextIndex]);
+      // Practice mode: check pending queue first
+      if (practiceMode && pendingQueue.length > 0) {
+        // Pop from end of queue (FIFO order)
+        const nextChallenge = pendingQueue[0];
+        setPendingQueue(pendingQueue.slice(1));
+        setChallenge(nextChallenge);
         setLoading(false);
       } else {
-        // All challenges completed
-        setChallengeComplete(true);
-        setLoading(false);
+        // Normal progression: move to next challenge in generated set
+        const nextIndex = currentChallengeIndex + 1;
+        if (nextIndex < generatedChallenges.length) {
+          setCurrentChallengeIndex(nextIndex);
+          setChallenge(generatedChallenges[nextIndex]);
+          setLoading(false);
+        } else if (practiceMode && pendingQueue.length === 0 && masteredChallenges.size < generatedChallenges.length) {
+          // Practice mode: We've gone through all challenges once but haven't mastered all
+          // This shouldn't happen if logic is correct, but just in case
+          setLoading(false);
+        } else {
+          // All challenges completed
+          setChallengeComplete(true);
+          setLoading(false);
+        }
       }
     } else {
       try {
@@ -194,10 +219,40 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
     if (mode === 'challenge') {
       const newTurnCount = turnCount + 1;
       setTurnCount(newTurnCount);
-      if (isCorrect) {
-        setCorrectCount(correctCount + 1);
+      
+      // Practice mode logic
+      if (practiceMode) {
+        // Track attempt count for this challenge
+        const currentAttempts = attemptCounts.get(challenge.id) || 0;
+        setAttemptCounts(new Map(attemptCounts.set(challenge.id, currentAttempts + 1)));
+        
+        if (isCorrect) {
+          // Mark as mastered
+          setMasteredChallenges(new Set(masteredChallenges.add(challenge.id)));
+          setCorrectCount(correctCount + 1);
+        } else {
+          // Add back to queue for retry
+          setPendingQueue([...pendingQueue, challenge]);
+          setIncorrectCount(incorrectCount + 1);
+        }
+        
+        // Check completion: all challenges mastered
+        const newMasteredCount = isCorrect ? masteredChallenges.size + 1 : masteredChallenges.size;
+        if (newMasteredCount >= generatedChallenges.length) {
+          setChallengeComplete(true);
+        }
       } else {
-        setIncorrectCount(incorrectCount + 1);
+        // Normal mode: just count
+        if (isCorrect) {
+          setCorrectCount(correctCount + 1);
+        } else {
+          setIncorrectCount(incorrectCount + 1);
+        }
+        
+        // Check completion: all turns completed
+        if (newTurnCount >= maxTurns) {
+          setChallengeComplete(true);
+        }
       }
       
       // Store attempt details
@@ -208,10 +263,6 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
         correct: isCorrect,
         timeSpent: timeSpent
       }]);
-      
-      if (newTurnCount >= maxTurns) {
-        setChallengeComplete(true);
-      }
     }
   };
 
@@ -254,7 +305,14 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
           }}
         >
           <Chip 
-            label={mode === 'challenge' ? t('challenge.idiom.title', { current: turnCount, total: maxTurns }) : t('challenge.idiom.practiceTitle')} 
+            label={
+              mode === 'challenge' 
+                ? (practiceMode 
+                    ? `${masteredChallenges.size}/${generatedChallenges.length} ${t('challenge.mastered')}`
+                    : t('challenge.idiom.title', { current: turnCount, total: maxTurns })
+                  )
+                : t('challenge.idiom.practiceTitle')
+            } 
             color="warning"
             sx={{ mb: 2, color: 'white' }} 
           />
@@ -400,6 +458,27 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                     }
                   />
                 </Box>
+                <Box sx={{ mb: 3 }}>
+                  <FormControlLabel
+                    control={
+                      <Switch
+                        checked={practiceMode}
+                        onChange={(e) => setPracticeMode(e.target.checked)}
+                        color="primary"
+                      />
+                    }
+                    label={
+                      <Box>
+                        <Typography variant="body2">
+                          {t('common.practiceMode')}
+                        </Typography>
+                        <Typography variant="caption" color="text.secondary">
+                          {t('common.practiceModeHelper')}
+                        </Typography>
+                      </Box>
+                    }
+                  />
+                </Box>
                 <Box sx={{ display: 'flex', gap: 2 }}>
                   <Button
                     variant="outlined"
@@ -427,12 +506,15 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
           {challengeComplete && (
             <>
               <Alert severity="success" sx={{ mb: 3, maxWidth: 700 }}>
-                Challenge completed! You finished all {maxTurns} turns. 🎉
+                {practiceMode 
+                  ? `🎉 ${t('challenge.practiceModeComplete', { total: generatedChallenges.length })}`
+                  : `${t('challenge.challengeComplete', { total: maxTurns })} 🎉`
+                }
               </Alert>
               <Card sx={{ width: '100%', maxWidth: 700, mb: 3 }} elevation={3}>
                 <CardContent sx={{ p: 4 }}>
                   <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
-                    Challenge Recap
+                    {t('challenge.recap')}
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: 'space-around', mb: 3 }}>
                     <Box sx={{ textAlign: 'center' }}>
@@ -440,7 +522,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                         {correctCount}
                       </Typography>
                       <Typography variant="body1" color="text.secondary">
-                        Correct
+                        {t('challenge.correct')}
                       </Typography>
                     </Box>
                     <Box sx={{ textAlign: 'center' }}>
@@ -448,13 +530,30 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                         {incorrectCount}
                       </Typography>
                       <Typography variant="body1" color="text.secondary">
-                        Incorrect
+                        {t('challenge.incorrect')}
                       </Typography>
                     </Box>
+                    {practiceMode && (
+                      <Box sx={{ textAlign: 'center' }}>
+                        <Typography variant="h3" sx={{ color: 'primary.main', fontWeight: 700 }}>
+                          {turnCount}
+                        </Typography>
+                        <Typography variant="body1" color="text.secondary">
+                          {t('challenge.totalAttempts')}
+                        </Typography>
+                      </Box>
+                    )}
                   </Box>
                   <Box sx={{ textAlign: 'center', mb: 3, pb: 3, borderBottom: 1, borderColor: 'divider' }}>
                     <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                      Success Rate: {((correctCount / maxTurns) * 100).toFixed(1)}%
+                      {practiceMode
+                        ? t('challenge.practiceModeSuccessRate', { 
+                            correct: generatedChallenges.length, 
+                            total: turnCount,
+                            efficiency: ((generatedChallenges.length / turnCount) * 100).toFixed(1)
+                          })
+                        : `${t('challenge.successRate')}: ${((correctCount / maxTurns) * 100).toFixed(1)}%`
+                      }
                     </Typography>
                   </Box>
                   

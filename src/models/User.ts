@@ -40,6 +40,7 @@ export interface IUser extends Document {
   createdAt: Date;
   preferredLanguage: 'fr' | 'en';
   mobileFriendly: boolean;
+  practiceMode: boolean;
   progress: {
     word: ChallengeProgress;
     idiom: ChallengeProgress;
@@ -92,6 +93,10 @@ const userSchema = new Schema<IUser>({
     default: 'fr'
   },
   mobileFriendly: {
+    type: Boolean,
+    default: false
+  },
+  practiceMode: {
     type: Boolean,
     default: false
   },

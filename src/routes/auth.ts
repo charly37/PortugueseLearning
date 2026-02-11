@@ -58,8 +58,7 @@ router.post('/register', async (req: Request, res: Response) => {
         email: user.email,
         isGuest: false,
         preferredLanguage: user.preferredLanguage,
-        mobileFriendly: user.mobileFriendly,
-        createdAt: user.createdAt,
+        mobileFriendly: user.mobileFriendly,        practiceMode: user.practiceMode,        createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
       }
@@ -103,8 +102,7 @@ router.post('/login', async (req: Request, res: Response) => {
         email: user.email,
         isGuest: false,
         preferredLanguage: user.preferredLanguage,
-        mobileFriendly: user.mobileFriendly,
-        createdAt: user.createdAt,
+        mobileFriendly: user.mobileFriendly,        practiceMode: user.practiceMode,        createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
       }
@@ -148,6 +146,7 @@ router.get('/check-auth', async (req: Request, res: Response) => {
         guestExpiresAt: user.guestExpiresAt,
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,
+        practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
@@ -191,6 +190,7 @@ router.post('/update-language', async (req: Request, res: Response) => {
         isGuest: user.isGuest,
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,
+        practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
@@ -234,6 +234,7 @@ router.post('/update-mobile-friendly', async (req: Request, res: Response) => {
         isGuest: user.isGuest,
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,
+        practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
         level: user.level
@@ -242,6 +243,50 @@ router.post('/update-mobile-friendly', async (req: Request, res: Response) => {
   } catch (error) {
     console.error('Update mobile-friendly error:', error);
     res.status(500).json({ message: 'Server error updating mobile-friendly preference' });
+  }
+});
+
+// Update practice mode preference
+router.post('/update-practice-mode', async (req: Request, res: Response) => {
+  try {
+    if (!req.session.userId) {
+      return res.status(401).json({ message: 'Not authenticated' });
+    }
+
+    const { practiceMode } = req.body;
+
+    if (typeof practiceMode !== 'boolean') {
+      return res.status(400).json({ message: 'Invalid practice mode preference' });
+    }
+
+    const user = await User.findByIdAndUpdate(
+      req.session.userId,
+      { practiceMode },
+      { new: true }
+    ).select('-password');
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json({
+      message: 'Practice mode preference updated',
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        isGuest: user.isGuest,
+        preferredLanguage: user.preferredLanguage,
+        mobileFriendly: user.mobileFriendly,
+        practiceMode: user.practiceMode,
+        createdAt: user.createdAt,
+        totalScore: user.totalScore,
+        level: user.level
+      }
+    });
+  } catch (error) {
+    console.error('Update practice mode error:', error);
+    res.status(500).json({ message: 'Server error updating practice mode preference' });
   }
 });
 
@@ -281,6 +326,7 @@ router.post('/create-guest', async (req: Request, res: Response) => {
         guestExpiresAt: guestUser.guestExpiresAt,
         preferredLanguage: guestUser.preferredLanguage,
         mobileFriendly: guestUser.mobileFriendly,
+        practiceMode: guestUser.practiceMode,
         createdAt: guestUser.createdAt,
         totalScore: guestUser.totalScore,
         level: guestUser.level
@@ -330,6 +376,7 @@ router.post('/restore-guest', async (req: Request, res: Response) => {
         guestExpiresAt: guestUser.guestExpiresAt,
         preferredLanguage: guestUser.preferredLanguage,
         mobileFriendly: guestUser.mobileFriendly,
+        practiceMode: guestUser.practiceMode,
         createdAt: guestUser.createdAt,
         totalScore: guestUser.totalScore,
         level: guestUser.level
@@ -406,6 +453,7 @@ router.post('/register-from-guest', async (req: Request, res: Response) => {
         isGuest: false,
         preferredLanguage: guestUser.preferredLanguage,
         mobileFriendly: guestUser.mobileFriendly,
+        practiceMode: guestUser.practiceMode,
         createdAt: guestUser.createdAt,
         totalScore: guestUser.totalScore,
         level: guestUser.level
