@@ -10,7 +10,11 @@
             "translation": "barely/just",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "85998f02-d626-4496-9772-bbfab6ed072b.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "7c22386a-4faa-4466-86a1-5baa995bf261",
@@ -23,7 +27,11 @@
             "translation": "too much",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "7c22386a-4faa-4466-86a1-5baa995bf261.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "a6e9ebbd-850f-4db3-8842-50ad590d3303",
@@ -36,7 +44,11 @@
             "translation": "still/yet",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "a6e9ebbd-850f-4db3-8842-50ad590d3303.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "cc277346-1d56-4b61-bb4b-9b57d58e2767",
@@ -49,7 +61,11 @@
             "translation": "what",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "cc277346-1d56-4b61-bb4b-9b57d58e2767.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "245b05a6-1e95-481c-860b-60d4c39304c7",
@@ -62,7 +78,11 @@
             "translation": "who",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "245b05a6-1e95-481c-860b-60d4c39304c7.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "d9e92a58-b26f-45c0-bf29-7051ae25dc05",
@@ -75,7 +95,11 @@
             "translation": "where",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "d9e92a58-b26f-45c0-bf29-7051ae25dc05.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "2bf22d98-55f2-4c34-8c96-5ba1938a9416",
@@ -88,7 +112,11 @@
             "translation": "why",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "2bf22d98-55f2-4c34-8c96-5ba1938a9416.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "c6699290-86c2-425f-8126-b3f1a268392b",
@@ -101,7 +129,11 @@
             "translation": "because",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "c6699290-86c2-425f-8126-b3f1a268392b.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "5e38ace0-0a52-4e3a-a0ea-0743b1ca11b8",
@@ -114,7 +146,11 @@
             "translation": "how",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "5e38ace0-0a52-4e3a-a0ea-0743b1ca11b8.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "e0e54382-f07e-4cd2-bffe-0b3000d7d82f",
@@ -127,7 +163,11 @@
             "translation": "which",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "e0e54382-f07e-4cd2-bffe-0b3000d7d82f.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "23680c58-e613-4bed-989a-a95c12bc025e",
@@ -140,7 +180,11 @@
             "translation": "how many (masc. plural)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "23680c58-e613-4bed-989a-a95c12bc025e.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "f36f2f8f-20ab-48b5-82c9-5d036f157d58",
@@ -153,7 +197,11 @@
             "translation": "how many (fem. plural)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "f36f2f8f-20ab-48b5-82c9-5d036f157d58.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "652d86db-d99d-4b88-bb22-0021b9a3598d",
@@ -166,7 +214,11 @@
             "translation": "how much (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "652d86db-d99d-4b88-bb22-0021b9a3598d.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "d3ee2d4d-b3f1-4cf0-bcac-440e9553b76f",
@@ -179,7 +231,11 @@
             "translation": "long (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 3
+        "user_usefulness": 3,
+        "audio": {
+            "filename": "d3ee2d4d-b3f1-4cf0-bcac-440e9553b76f.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "3adc0369-3b71-4714-93ec-74f2155ce5ef",
@@ -192,7 +248,11 @@
             "translation": "short (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "3adc0369-3b71-4714-93ec-74f2155ce5ef.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "a7a75496-3d19-4daa-bbd5-14535bc4a0b3",
@@ -205,7 +265,11 @@
             "translation": "good (masc.), fine (= weather)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "a7a75496-3d19-4daa-bbd5-14535bc4a0b3.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "82423148-f9bb-4e6f-81e0-1850acb7bab3",
@@ -218,7 +282,11 @@
             "translation": "good (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "82423148-f9bb-4e6f-81e0-1850acb7bab3.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "4a8821a4-794b-47da-8942-c6cd3d638ddd",
@@ -231,7 +299,11 @@
             "translation": "bad (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "4a8821a4-794b-47da-8942-c6cd3d638ddd.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "54e9dafc-a1bb-4c9b-a8c7-a10e76996a7c",
@@ -244,7 +316,11 @@
             "translation": "bad (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "54e9dafc-a1bb-4c9b-a8c7-a10e76996a7c.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "b861a99b-9e44-430b-9f83-854fa51d6106",
@@ -257,7 +333,11 @@
             "translation": "big/great",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "b861a99b-9e44-430b-9f83-854fa51d6106.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "e39487a7-2796-4c8b-a0c7-b06029e28edc",
@@ -270,7 +350,11 @@
             "translation": "tall, loud (masc.)",
             "note": "High (as in elevation or position, e.g., 'monte alto' = 'high mountain'). Tall (as in stature, e.g., 'homem alto' = 'tall man'). Loud (as in volume, e.g., 'som alto' = 'loud sound'). Loudly (as adverb, e.g., 'falar alto' = 'speak loudly')."
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "e39487a7-2796-4c8b-a0c7-b06029e28edc.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "376e9b6c-e7d6-4b16-99d1-69041915366a",
@@ -283,7 +367,11 @@
             "translation": "tall (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "376e9b6c-e7d6-4b16-99d1-69041915366a.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "78d1d6d3-b034-473d-a131-45adfcdb2436",
@@ -296,7 +384,11 @@
             "translation": "small (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "78d1d6d3-b034-473d-a131-45adfcdb2436.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "7ecdee1e-e26e-4f5a-a833-bb05ca163d6c",
@@ -309,7 +401,11 @@
             "translation": "small (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "7ecdee1e-e26e-4f5a-a833-bb05ca163d6c.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "b88757c3-9b31-42fd-a69d-5048f58d8b36",
@@ -322,7 +418,11 @@
             "translation": "old (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "b88757c3-9b31-42fd-a69d-5048f58d8b36.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "d65cb037-2754-4720-9303-9f7fd96b522f",
@@ -335,7 +435,11 @@
             "translation": "old (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "d65cb037-2754-4720-9303-9f7fd96b522f.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "e0ba55f3-6352-48bd-9ba0-eb3f35b750f2",
@@ -348,7 +452,11 @@
             "translation": "new (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "e0ba55f3-6352-48bd-9ba0-eb3f35b750f2.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "29b5282f-f3bb-4f79-a55c-187190df81c9",
@@ -361,7 +469,11 @@
             "translation": "new (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "29b5282f-f3bb-4f79-a55c-187190df81c9.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "b97ed065-ba6b-45c9-b9ca-34e8c0e61da2",
@@ -374,7 +486,11 @@
             "translation": "low (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "b97ed065-ba6b-45c9-b9ca-34e8c0e61da2.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "434b135d-8d67-42c7-8a3d-7389c5695b7f",
@@ -387,7 +503,11 @@
             "translation": "low (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "434b135d-8d67-42c7-8a3d-7389c5695b7f.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "44ea57c4-3861-4b93-980b-3dc6bbc974a3",
@@ -400,7 +520,11 @@
             "translation": "wide (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "44ea57c4-3861-4b93-980b-3dc6bbc974a3.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "be6e9e50-7ee8-4513-b27b-9e492c8a6c1f",
@@ -413,7 +537,11 @@
             "translation": "wide (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "be6e9e50-7ee8-4513-b27b-9e492c8a6c1f.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "f48b1180-8c21-4a3f-8c21-6a1b2e9f7507",
@@ -426,7 +554,11 @@
             "translation": "narrow (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "f48b1180-8c21-4a3f-8c21-6a1b2e9f7507.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "d26a1bfe-3a7d-407c-bd55-d04879ecf729",
@@ -439,7 +571,11 @@
             "translation": "narrow (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "d26a1bfe-3a7d-407c-bd55-d04879ecf729.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "c758a606-7753-42e5-b869-100a86ec16c0",
@@ -452,7 +588,11 @@
             "translation": "strong",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "c758a606-7753-42e5-b869-100a86ec16c0.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "9b4ea627-8af2-4a3e-859a-ee83a3b21b0e",
@@ -465,7 +605,11 @@
             "translation": "weak (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "9b4ea627-8af2-4a3e-859a-ee83a3b21b0e.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "4c0fc99b-e5c8-4fc4-b943-b94c62c81230",
@@ -478,7 +622,11 @@
             "translation": "weak (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 3
+        "user_usefulness": 3,
+        "audio": {
+            "filename": "4c0fc99b-e5c8-4fc4-b943-b94c62c81230.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "954518cd-6d01-4bda-9149-53380e45e1ac",
@@ -491,7 +639,11 @@
             "translation": "fast (masc.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "954518cd-6d01-4bda-9149-53380e45e1ac.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "85d63614-24ac-4da7-9e4e-376acb8752bf",
@@ -504,7 +656,11 @@
             "translation": "fast (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "85d63614-24ac-4da7-9e4e-376acb8752bf.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "3c2b19db-fecb-4350-a52a-f703eba0865e",
@@ -517,7 +673,11 @@
             "translation": "slowly",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "3c2b19db-fecb-4350-a52a-f703eba0865e.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "6e7f8b5d-6b16-4cbd-81f1-bd85039404f4",
@@ -530,7 +690,11 @@
             "translation": "early",
             "note": "todo"
         },
-        "user_usefulness": 3
+        "user_usefulness": 3,
+        "audio": {
+            "filename": "6e7f8b5d-6b16-4cbd-81f1-bd85039404f4.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "d437a7e8-0f23-4c79-884b-aa06ac4f5acc",
@@ -543,7 +707,11 @@
             "translation": "late",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "d437a7e8-0f23-4c79-884b-aa06ac4f5acc.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "717d1a2c-75ef-481b-a78c-1a46d56735b4",
@@ -556,7 +724,11 @@
             "translation": "very/much",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "717d1a2c-75ef-481b-a78c-1a46d56735b4.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "6b9d88fc-ed35-43c8-9729-8be93e8cd8ea",
@@ -569,7 +741,11 @@
             "translation": "well",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "6b9d88fc-ed35-43c8-9729-8be93e8cd8ea.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "cacb8dbd-6172-492f-a361-27b58949dac5",
@@ -582,7 +758,11 @@
             "translation": "badly",
             "note": "Mau: bad (adjective); Mal: badly (adverb) or evil (noun)."
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "cacb8dbd-6172-492f-a361-27b58949dac5.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "38003a85-72d5-43e6-a382-f91efaa93af6",
@@ -595,7 +775,11 @@
             "translation": "always",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "38003a85-72d5-43e6-a382-f91efaa93af6.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "1175baed-40e7-4e40-8203-ae00304290a8",
@@ -608,7 +792,11 @@
             "translation": "never",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "1175baed-40e7-4e40-8203-ae00304290a8.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "6797fa0a-d0e3-42b3-9b45-85b6fe555d12",
@@ -621,7 +809,11 @@
             "translation": "sometimes",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "6797fa0a-d0e3-42b3-9b45-85b6fe555d12.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "c9ec5435-fb15-4204-80b6-69a36b6afc9c",
@@ -634,7 +826,11 @@
             "translation": "now",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "c9ec5435-fb15-4204-80b6-69a36b6afc9c.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "3fd368f0-882b-4a19-a441-b48b354b85b4",
@@ -647,7 +843,11 @@
             "translation": "in/on, at (= place)",
             "note": "todo"
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "3fd368f0-882b-4a19-a441-b48b354b85b4.mp3",
+            "last_update": "2026-02-14"
+        }
     },
     {
         "id": "68f2f3ae-88c1-43aa-ad24-cd09d45a835b",

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Box, Typography, Button, Card, CardContent, IconButton, CircularProgress, Divider, Slider, FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import FlipCameraAndroidIcon from '@mui/icons-material/FlipCameraAndroid';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import InfoIcon from '@mui/icons-material/Info';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import WordUsefulnessVote from './WordUsefulnessVote';
 import ChallengeQualityFlag from './ChallengeQualityFlag';
 import './FlashcardLearnPage.css';
@@ -54,6 +55,8 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
   const [totalCards, setTotalCards] = useState<number>(20);
   const [difficulty, setDifficulty] = useState<number>(5);
   const [minUsefulness, setMinUsefulness] = useState<number>(1);
+  const [audioAvailable, setAudioAvailable] = useState<boolean>(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   
   const preferredLanguage = user?.preferredLanguage || 
     (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
@@ -103,10 +106,62 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
     }
   };
 
+  // Check audio availability when current challenge changes
+  useEffect(() => {
+    if (challenges.length > 0 && challenges[currentIndex]) {
+      checkAudioAvailability(challenges[currentIndex].id);
+    }
+  }, [currentIndex, challenges]);
+
+  // Auto-play audio when card is flipped to show Portuguese word
+  useEffect(() => {
+    if (isFlipped && audioAvailable && challenges[currentIndex]) {
+      // Small delay to ensure audio is ready and card flip animation completes
+      const timer = setTimeout(() => {
+        playAudio(challenges[currentIndex].id);
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+  }, [isFlipped, audioAvailable, currentIndex]);
+
   const handlePrevious = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
       setIsFlipped(false);
+    }
+  };
+
+  // Check if audio file exists for the current word
+  const checkAudioAvailability = async (challengeId: string) => {
+    try {
+      const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+      const testAudio = new Audio();
+      
+      const checkPromise = new Promise<boolean>((resolve) => {
+        testAudio.oncanplaythrough = () => resolve(true);
+        testAudio.onerror = () => resolve(false);
+        testAudio.src = audioPath;
+      });
+      
+      const result = await checkPromise;
+      setAudioAvailable(result);
+    } catch {
+      setAudioAvailable(false);
+    }
+  };
+
+  // Play audio pronunciation
+  const playAudio = (challengeId: string) => {
+    if (audioAvailable) {
+      const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      audioRef.current = new Audio(audioPath);
+      audioRef.current.play().catch(() => {
+        // Silently handle playback errors
+      });
     }
   };
 
@@ -422,18 +477,38 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                 <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                   Português
                 </Typography>
-                <Typography 
-                  variant="h3" 
-                  component="div" 
-                  sx={{ 
-                    fontWeight: 600, 
-                    color: getColor(),
-                    textAlign: 'center',
-                    mb: 2
-                  }}
-                >
-                  {targetText}
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1, mb: 2 }}>
+                  <Typography 
+                    variant="h3" 
+                    component="div" 
+                    sx={{ 
+                      fontWeight: 600, 
+                      color: getColor(),
+                      textAlign: 'center',
+                    }}
+                  >
+                    {targetText}
+                  </Typography>
+                  {audioAvailable && (
+                    <IconButton 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        playAudio(currentChallenge.id);
+                      }}
+                      color="primary"
+                      size="large"
+                      sx={{ 
+                        '&:hover': { 
+                          bgcolor: 'primary.lighter',
+                          transform: 'scale(1.1)'
+                        },
+                        transition: 'all 0.2s'
+                      }}
+                    >
+                      <VolumeUpIcon fontSize="large" />
+                    </IconButton>
+                  )}
+                </Box>
                 
                 {currentChallenge.fr.note && currentChallenge.fr.note !== "todo" && (
                   <Box sx={{ mt: 2, mb: 2, p: 2, bgcolor: 'info.lighter', borderRadius: 1, border: '1px solid', borderColor: 'info.light', width: '100%', maxWidth: '500px' }}>

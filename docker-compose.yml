@@ -7,6 +7,8 @@ services:
       - PORT=3000
       - MONGODB_URI=${MONGODB_URI}
       - SESSION_SECRET=${SESSION_SECRET}
+    volumes:
+      - ./data:/app/data:ro
     networks:
       - app-network
 
@@ -15,6 +17,8 @@ services:
     restart: unless-stopped
     environment:
       - MONGODB_URI=${MONGODB_URI}
+    volumes:
+      - ./data:/app/data:ro
     networks:
       - app-network
 

@@ -54,6 +54,9 @@ app.use('/api/challenge', challengeRoutes);
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));
 
+// Serve audio files from the data directory
+app.use('/data', express.static(path.join(__dirname, '../data')));
+
 // Load challenges from JSON files
 const challengesPath = path.join(__dirname, '../data/challenges.json');
 const challenges = JSON.parse(fs.readFileSync(challengesPath, 'utf-8'));

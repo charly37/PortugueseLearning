@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider, Slider, Switch, FormControlLabel, FormControl, InputLabel, Select, MenuItem, FormHelperText } from '@mui/material';
+import { Container, Box, Typography, Button, Card, CardContent, CircularProgress, TextField, Alert, Chip, List, ListItem, ListItemText, Divider, Slider, Switch, FormControlLabel, FormControl, InputLabel, Select, MenuItem, FormHelperText, IconButton } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import TimerIcon from '@mui/icons-material/Timer';
 import InfoIcon from '@mui/icons-material/Info';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { submitChallengeAttempt, normalizeString } from '../utils/challengeUtils';
 import WordUsefulnessVote from './WordUsefulnessVote';
 import ChallengeQualityFlag from './ChallengeQualityFlag';
@@ -68,6 +69,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
   const [generatedChallenges, setGeneratedChallenges] = useState<Challenge[]>([]);
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
+  const [audioAvailable, setAudioAvailable] = useState<boolean>(false);
   
   // Practice mode state
   const [practiceMode, setPracticeMode] = useState<boolean>(user?.practiceMode || false);
@@ -76,10 +78,45 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const [attemptCounts, setAttemptCounts] = useState<Map<string, number>>(new Map());
   
   const inputRef = useRef<HTMLInputElement>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Get user's preferred language or default to 'fr'
   const preferredLanguage = user?.preferredLanguage || 
     (localStorage.getItem('preferredLanguage') as 'fr' | 'en') || 'fr';
+
+  // Check if audio file exists for the current word
+  const checkAudioAvailability = async (challengeId: string) => {
+    try {
+      const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+      const testAudio = new Audio();
+      
+      const checkPromise = new Promise<boolean>((resolve) => {
+        testAudio.oncanplaythrough = () => resolve(true);
+        testAudio.onerror = () => resolve(false);
+        testAudio.src = audioPath;
+      });
+      
+      const result = await checkPromise;
+      setAudioAvailable(result);
+    } catch {
+      setAudioAvailable(false);
+    }
+  };
+
+  // Play audio pronunciation
+  const playAudio = () => {
+    if (challenge && audioAvailable) {
+      const audioPath = `${window.location.origin}/data/${challenge.id}.mp3`;
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+      audioRef.current = new Audio(audioPath);
+      audioRef.current.play().catch(() => {
+        // Silently handle playback errors
+      });
+    }
+  };
 
   // Update mobileFriendly and practiceMode when user changes (e.g., after guest creation)
   useEffect(() => {
@@ -90,6 +127,26 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       setPracticeMode(user.practiceMode);
     }
   }, [user?.mobileFriendly, user?.practiceMode]);
+
+  // Check audio availability when challenge changes
+  useEffect(() => {
+    if (challenge && challenge.id) {
+      checkAudioAvailability(challenge.id);
+    } else {
+      setAudioAvailable(false);
+    }
+  }, [challenge]);
+
+  // Auto-play audio when it becomes available
+  useEffect(() => {
+    if (audioAvailable && challenge) {
+      // Small delay to ensure audio is ready
+      const timer = setTimeout(() => {
+        playAudio();
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [audioAvailable, challenge]);
 
   const generateChallengeSet = async () => {
     setLoading(true);
@@ -643,9 +700,27 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                   <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                     {preferredLanguage === 'fr' ? 'Français' : 'English'}
                   </Typography>
-                  <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'primary.main' }}>
-                    {challenge[preferredLanguage].translation}
-                  </Typography>
+                  <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
+                    <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'primary.main' }}>
+                      {challenge[preferredLanguage].translation}
+                    </Typography>
+                    {audioAvailable && (
+                      <IconButton 
+                        onClick={playAudio}
+                        color="primary"
+                        size="large"
+                        sx={{ 
+                          '&:hover': { 
+                            bgcolor: 'primary.lighter',
+                            transform: 'scale(1.1)'
+                          },
+                          transition: 'all 0.2s'
+                        }}
+                      >
+                        <VolumeUpIcon fontSize="large" />
+                      </IconButton>
+                    )}
+                  </Box>
                 </Box>
                 
                 {mobileFriendly && challenge.options ? (
