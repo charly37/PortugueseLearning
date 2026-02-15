@@ -2,7 +2,7 @@ import os
 import json
 import time
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from elevenlabs.client import ElevenLabs
 from elevenlabs import VoiceSettings
 
@@ -24,6 +24,39 @@ def save_challenges_json(json_file_path, challenges):
         return False
 
 
+def is_audio_recent(challenge, months=6):
+    """
+    Check if a challenge has audio that was generated recently.
+    
+    Args:
+        challenge: Challenge dictionary object
+        months: Number of months to consider audio as "recent" (default: 6)
+    
+    Returns:
+        True if audio exists and was generated within the last 'months' months
+    """
+    audio = challenge.get('audio')
+    if not audio:
+        return False
+    
+    last_update = audio.get('last_update')
+    if not last_update:
+        return False
+    
+    try:
+        # Parse the last_update date (format: YYYY-MM-DD)
+        update_date = datetime.strptime(last_update, "%Y-%m-%d")
+        
+        # Calculate the cutoff date (today - months)
+        cutoff_date = datetime.now() - timedelta(days=months * 30)
+        
+        # Audio is recent if it was updated after the cutoff date
+        return update_date >= cutoff_date
+    except (ValueError, TypeError):
+        # If date parsing fails, consider audio as not recent
+        return False
+
+
 def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=True, max_conversions=50):
     """
     Generate audio files for all challenges in a JSON file.
@@ -31,8 +64,13 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
     Args:
         json_file_path: Path to the challenges JSON file
         output_dir: Directory where MP3 files will be saved (default: current directory)
-        skip_existing: If True, skip challenges that already have audio files
+        skip_existing: If True, skip challenges with audio generated in the last 6 months
         max_conversions: Maximum number of audio files to generate in this run (default: 50)
+        
+    Notes:
+        - Audio is considered "recent" if generated within the last 6 months
+        - The generation date is tracked in challenges.json under challenge['audio']['last_update']
+        - This allows periodic refresh of audio files for quality improvements
     """
     # Initialize ElevenLabs client
     api_key = os.environ.get('TEXT_TO_SPEECH_API_KEY')
@@ -67,6 +105,8 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
     print(f"\nStarting audio generation...")
     print(f"Output directory: {output_path.absolute()}")
     print(f"Skip existing files: {skip_existing}")
+    if skip_existing:
+        print(f"Audio refresh policy: Regenerate if older than 6 months")
     print(f"Max conversions per run: {max_conversions}\n")
     
     for idx, challenge in enumerate(challenges, 1):
@@ -85,11 +125,16 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
         
         output_file = output_path / f"{challenge_id}.mp3"
         
-        # Skip if file already exists
-        if skip_existing and output_file.exists():
-            print(f"[{idx}/{total}] ⏭️  Skipping '{portuguese_text}' (file already exists)")
+        # Skip if audio was recently generated (within last 6 months)
+        if skip_existing and is_audio_recent(challenge, months=6):
+            last_update = challenge.get('audio', {}).get('last_update', 'unknown')
+            print(f"[{idx}/{total}] ⏭️  Skipping '{portuguese_text}' (audio generated on {last_update})")
             skipped += 1
             continue
+        
+        # Check if file exists but is outdated (will be regenerated)
+        if output_file.exists() and not skip_existing:
+            print(f"[{idx}/{total}] 🔄 Regenerating outdated audio for '{portuguese_text}'...")
         
         # Generate audio
         try:
@@ -141,7 +186,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
     print(f"{'='*60}")
     print(f"Total challenges: {total}")
     print(f"Generated: {generated}")
-    print(f"Skipped (already exist): {skipped}")
+    print(f"Skipped (recent audio < 6 months): {skipped}")
     print(f"Errors: {errors}")
     remaining = total - generated - skipped
     if remaining > 0:
@@ -160,9 +205,11 @@ if __name__ == "__main__":
     print(f"{'='*60}\n")
     
     # Generate audio for all challenges
+    # skip_existing=True: Only regenerate audio older than 6 months
+    # skip_existing=False: Regenerate all audio files (useful for quality improvements)
     generate_audio_for_challenges(
         json_file_path=challenges_json,
         output_dir=output_directory,
         skip_existing=True,  # Change to False to regenerate all files
-        max_conversions=50   # Maximum number of conversions per run to control costs
+        max_conversions=300   # Maximum number of conversions per run to control costs
     )
