@@ -714,23 +714,6 @@
         }
     },
     {
-        "id": "717d1a2c-75ef-481b-a78c-1a46d56735b4",
-        "port": "muito",
-        "fr": {
-            "translation": "très/beaucoup",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "very/much",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "717d1a2c-75ef-481b-a78c-1a46d56735b4.mp3",
-            "last_update": "2026-02-14"
-        }
-    },
-    {
         "id": "6b9d88fc-ed35-43c8-9729-8be93e8cd8ea",
         "port": "bem",
         "fr": {
@@ -4811,23 +4794,6 @@
         }
     },
     {
-        "id": "ab760b9b-5061-49b3-b3c4-cfcb3f6b782e",
-        "port": "pouco",
-        "fr": {
-            "translation": "peu",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "little (=not much)",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "ab760b9b-5061-49b3-b3c4-cfcb3f6b782e.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "95dff1bc-d26b-4c7e-983f-f87f2c5ba000",
         "port": "através",
         "fr": {
@@ -5441,10 +5407,10 @@
     },
     {
         "id": "a647a749-9471-4924-87b8-6a66e7cf310c",
-        "port": "poucos",
+        "port": "pouco",
         "fr": {
             "translation": "peu",
-            "note": "todo"
+            "note": "(poucos pour masculin pluriel, poucas pour féminin pluriel ; pouco pour singulier masculin, pouca pour féminin singulier"
         },
         "en": {
             "translation": "few",
@@ -7905,23 +7871,6 @@
         }
     },
     {
-        "id": "57ebafee-bcbc-4313-9204-ac90a3b5a215",
-        "port": "lento",
-        "fr": {
-            "translation": "lent",
-            "note": "lento pour lent (adjectif) ; devagar pour lentement (adverbe)."
-        },
-        "en": {
-            "translation": "slow",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "57ebafee-bcbc-4313-9204-ac90a3b5a215.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "589f4985-15c8-4c21-80d0-47214f6f1234",
         "port": "centro",
         "fr": {
@@ -7966,7 +7915,7 @@
             "translation": "road",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "b76e1b36-b552-4c68-bc9a-6af2da545388.mp3",
             "last_update": "2026-02-15"
@@ -8918,7 +8867,7 @@
             "translation": "sign",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "b60e59d0-7c33-4ffe-afb5-cd7cf93e0bbc.mp3",
             "last_update": "2026-02-15"
@@ -9353,12 +9302,12 @@
         "id": "f9ec0496-fa11-407b-bd5d-25f0dcc84683",
         "port": "quintal",
         "fr": {
-            "translation": "cour",
-            "note": "todo"
+            "translation": "cour, jardin",
+            "note": "As crianças brincam no quintal. (Les enfants jouent dans le jardin arrière.)"
         },
         "en": {
             "translation": "yard",
-            "note": "todo"
+            "note": "As crianças brincam no quintal: The children are playing in the yard."
         },
         "user_usefulness": 2,
         "audio": {
@@ -11366,7 +11315,7 @@
             "translation": "to thank",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "c65c95a2-0c83-4687-ade4-5e262f1fc2a7.mp3",
             "last_update": "2026-02-15"
@@ -13644,7 +13593,7 @@
             "translation": "fishing rod",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "544d4083-e4a2-4963-8e58-eefd4c3c29b1.mp3",
             "last_update": "2026-02-15"
@@ -15097,14 +15046,14 @@
     },
     {
         "id": "403e7a65-8cc0-4d6f-b70e-32539fd11059",
-        "port": "constipação / resfriado",
+        "port": "resfriado",
         "fr": {
-            "translation": "constipation / rhume",
-            "note": "todo"
+            "translation": "rhume",
+            "note": "Estou resfriado e não saio de casa. (J'ai un rhume et je ne sors pas de la maison.)"
         },
         "en": {
             "translation": "cold (e.g.i have a cold)",
-            "note": "todo"
+            "note": "I'm cold and I don't leave the house. (Estou resfriado e não saio de casa.)"
         },
         "user_usefulness": 2,
         "audio": {
@@ -15303,12 +15252,12 @@
         "id": "82d1c133-2df6-46a2-aa0b-0b845006daaf",
         "port": "correios",
         "fr": {
-            "translation": "poste",
-            "note": "todo"
+            "translation": "poste (bureau de poste)",
+            "note": "Vou aos correios comprar selos. (Je vais à la poste acheter des timbres.)"
         },
         "en": {
             "translation": "post office",
-            "note": "todo"
+            "note": "I am going to the post office to buy stamps. (Vou aos correios comprar selos.)"
         },
         "user_usefulness": 2,
         "audio": {
@@ -15896,9 +15845,26 @@
     },
     {
         "id": "be022279-4330-44d0-a397-5efbed108e1c",
-        "port": "demasiado, muito",
+        "port": "muito",
         "fr": {
-            "translation": "trop, très",
+            "translation": "beaucoup, très ou fortement",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "much, very or strongly",
+            "note": "todo"
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "be022279-4330-44d0-a397-5efbed108e1c.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
+        "id": "65cc8373-bc98-443a-9458-1ab0638c926b",
+        "port": "demasiado",
+        "fr": {
+            "translation": "trop ou excessivement",
             "note": "todo"
         },
         "en": {
@@ -15907,7 +15873,7 @@
         },
         "user_usefulness": 2,
         "audio": {
-            "filename": "be022279-4330-44d0-a397-5efbed108e1c.mp3",
+            "filename": "65cc8373-bc98-443a-9458-1ab0638c926b.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -17418,7 +17384,7 @@
             "translation": "apprenticeship",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "16f165ee-80d9-464c-94cf-3064da8b0595.mp3",
             "last_update": "2026-02-15"
@@ -19024,18 +18990,52 @@
     },
     {
         "id": "7eb7d63f-c152-4621-a8de-0d5e070cb769",
-        "port": "guarda, porteiro//zelador",
+        "port": "guarda",
         "fr": {
-            "translation": "garde, portier // concierge",
+            "translation": "garde ou agent de sécurité",
             "note": "todo"
         },
         "en": {
-            "translation": "caretaker",
+            "translation": "security guard",
             "note": "todo"
         },
         "user_usefulness": 2,
         "audio": {
             "filename": "7eb7d63f-c152-4621-a8de-0d5e070cb769.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
+        "id": "5db88fee-c805-46a4-bb03-a141694009cc",
+        "port": "porteiro",
+        "fr": {
+            "translation": "portier",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "doorman",
+            "note": "todo"
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "5db88fee-c805-46a4-bb03-a141694009cc.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
+        "id": "1207a716-eb55-4c3b-a510-a3d80e3c6ce8",
+        "port": "zelador",
+        "fr": {
+            "translation": "concierge",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "caretaker/janitor",
+            "note": "todo"
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "1207a716-eb55-4c3b-a510-a3d80e3c6ce8.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -20121,7 +20121,7 @@
             "translation": "handkerchief",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "0fea3f46-15cd-4f3e-a1f8-afc445af2bc1.mp3",
             "last_update": "2026-02-15"
@@ -20146,10 +20146,10 @@
     },
     {
         "id": "df03d5e9-5f9e-4e39-a092-7cd04fd055b8",
-        "port": "lento, devagar",
+        "port": "lento",
         "fr": {
-            "translation": "lent, lentement",
-            "note": "todo"
+            "translation": "lent (adjectif)",
+            "note": "Lento / Lenta est un adjectif qui signifie lent(e). Il décrit un nom (une chose ou une personne) et s'accorde en genre et en nombre (lento pour masculin, lenta pour féminin ; lentos/lentas au pluriel)."
         },
         "en": {
             "translation": "slow",
@@ -20435,16 +20435,16 @@
     },
     {
         "id": "3f730dc4-4166-4e8e-a7bf-253016496b72",
-        "port": "logo que, assim que",
+        "port": "assim que",
         "fr": {
-            "translation": "dès que",
-            "note": "todo"
+            "translation": "dès que, aussitôt que",
+            "note": "Logo que : Plus formel, littéraire ou un peu archaïque"
         },
         "en": {
             "translation": "as soon as",
-            "note": "todo"
+            "note": "Logo que: more formal, literary or a bit archaic"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "3f730dc4-4166-4e8e-a7bf-253016496b72.mp3",
             "last_update": "2026-02-15"
@@ -21406,14 +21406,14 @@
         "id": "2ddb74be-020b-4fc2-a6f5-b0a909d6e629",
         "port": "ninguém",
         "fr": {
-            "translation": "personne",
-            "note": "todo"
+            "translation": "personne, nul (pronom indéfini)",
+            "note": "Ninguém veio à festa. (Personne n'est venu à la fête.)"
         },
         "en": {
             "translation": "no-one, nobody",
-            "note": "todo"
+            "note": "No one came to the party. (Ninguém veio à festa.)"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "2ddb74be-020b-4fc2-a6f5-b0a909d6e629.mp3",
             "last_update": "2026-02-15"
@@ -22518,7 +22518,7 @@
             "translation": "budgerigar",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "fc996528-c396-41d4-b815-509fd0583f53.mp3",
             "last_update": "2026-02-15"
@@ -22759,23 +22759,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "d616356b-cfae-47f2-a9de-14f705d68aa7.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "7f39c972-8961-4822-9e9e-4be6518530b6",
-        "port": "poder",
-        "fr": {
-            "translation": "pouvoir",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to be able to, \"can\"",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "7f39c972-8961-4822-9e9e-4be6518530b6.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -23065,23 +23048,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "c67e356f-e060-4adf-aa48-cc7d69804c40.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "55d55562-3368-4eed-8e9f-d5c459cacc17",
-        "port": "precisar",
-        "fr": {
-            "translation": "avoir besoin de",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to need",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "55d55562-3368-4eed-8e9f-d5c459cacc17.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -26516,23 +26482,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "d98828cf-1195-4715-b744-8bff712fbbd7.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "77413d75-5b21-46df-8724-086c4265b51d",
-        "port": "demasiado",
-        "fr": {
-            "translation": "trop",
-            "note": "excessif, trop (de)"
-        },
-        "en": {
-            "translation": "too much, in excess",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "77413d75-5b21-46df-8724-086c4265b51d.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -30627,7 +30576,7 @@
             "translation": "to care",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe.mp3",
             "last_update": "2026-02-15"
@@ -32463,7 +32412,7 @@
             "translation": "to bend",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "b6524bb8-efc0-4c19-868c-e8091ce0f90b.mp3",
             "last_update": "2026-02-15"
@@ -32888,7 +32837,7 @@
             "translation": "to choose",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "08f1cd3e-1327-42d1-b064-db0993114244.mp3",
             "last_update": "2026-02-15"
@@ -33092,7 +33041,7 @@
             "translation": "to forward",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "c8a25d2f-c8c7-457a-8186-09293cff68d8.mp3",
             "last_update": "2026-02-15"
@@ -33816,12 +33765,12 @@
         "id": "f7035e72-872e-4380-9e57-42f279be6ba0",
         "port": "fiscalizar",
         "fr": {
-            "translation": "contrôler",
-            "note": "todo"
+            "translation": "fiscaliser, inspecter, surveiller ou contrôler",
+            "note": "A polícia fiscaliza o trânsito na cidade. (La police surveille la circulation en ville.)"
         },
         "en": {
             "translation": "to inspect",
-            "note": "todo"
+            "note": "The police inspect the traffic in the city. (A polícia fiscaliza o trânsito na cidade.)"
         },
         "user_usefulness": 2,
         "audio": {
@@ -34921,8 +34870,8 @@
         "id": "eb5b83fe-46a3-4b00-adee-abd20251fd4c",
         "port": "guardar",
         "fr": {
-            "translation": "garder",
-            "note": "todo"
+            "translation": "garder, ranger, conserver, sauvegarder ou mettre de côté",
+            "note": "Manter = garder / maintenir (état, habitude)"
         },
         "en": {
             "translation": "to save",
@@ -35346,7 +35295,7 @@
         "id": "2ae468c4-53aa-4b25-a9b4-7c229f19d8f6",
         "port": "introduzir",
         "fr": {
-            "translation": "introduire",
+            "translation": "introduire (presenter)",
             "note": "todo"
         },
         "en": {
@@ -35404,7 +35353,7 @@
             "translation": "to reverse",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "87363e6f-6ea6-4fa3-9db2-ea0f7d2e9ed5.mp3",
             "last_update": "2026-02-15"
@@ -39552,7 +39501,7 @@
             "translation": "to torture",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "a349a716-1e92-4d76-9d3f-8d4c723d448c.mp3",
             "last_update": "2026-02-15"
@@ -41446,23 +41395,6 @@
         }
     },
     {
-        "id": "3f8049c3-47f0-49ff-9e8f-52ea90cd2237",
-        "port": "pensar",
-        "fr": {
-            "translation": "penser",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to think, to consider",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "3f8049c3-47f0-49ff-9e8f-52ea90cd2237.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "9a683828-378b-4639-bc9f-01ec8a886974",
         "port": "olha",
         "fr": {
@@ -41719,14 +41651,14 @@
     },
     {
         "id": "fa184dcd-c1db-47e0-b7c6-89cb6232f0bc",
-        "port": "pensei",
+        "port": "pensar",
         "fr": {
-            "translation": "j'ai pensé",
-            "note": "todo"
+            "translation": "penser",
+            "note": "Eu pensei que ias chegar mais cedo. (J'ai pensé que tu allais arriver plus tôt.)"
         },
         "en": {
-            "translation": "I thought, I considere",
-            "note": "todo"
+            "translation": "to think, to consider",
+            "note": "I thought you would arrive earlier. (Eu pensei que ias chegar mais cedo.)"
         },
         "user_usefulness": 2,
         "audio": {
@@ -41867,23 +41799,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "9fec39e2-e4ad-47a1-96b5-d75292e25167.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "d6d69f84-e454-40b3-8f9a-b8378048f930",
-        "port": "fui",
-        "fr": {
-            "translation": "j'ai été",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "I was, I went",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "d6d69f84-e454-40b3-8f9a-b8378048f930.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -42122,23 +42037,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "4f79f1cd-e24d-4dbb-b6b5-4541d3868fcf.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "093280ae-0aa5-46c3-a7c8-6356b694220e",
-        "port": "ia",
-        "fr": {
-            "translation": "allais",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "was going, used to go",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "093280ae-0aa5-46c3-a7c8-6356b694220e.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -42569,9 +42467,9 @@
     },
     {
         "id": "bdf2744d-5908-40ff-9144-d6bc197613f1",
-        "port": "podem",
+        "port": "poder",
         "fr": {
-            "translation": "peuvent",
+            "translation": "pouvoir",
             "note": "todo"
         },
         "en": {
@@ -42765,7 +42663,7 @@
             "translation": "soon, immediately, the",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "f002f5d6-983d-4e1a-9390-c4e7e41dec4b.mp3",
             "last_update": "2026-02-15"
@@ -43809,23 +43707,6 @@
         }
     },
     {
-        "id": "2ba3c6c6-39b2-4fac-bdbb-43a270fcfc1a",
-        "port": "acabar",
-        "fr": {
-            "translation": "finir",
-            "note": "todo"
-        },
-        "en": {
-            "translation": "to finish, to end, to",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "2ba3c6c6-39b2-4fac-bdbb-43a270fcfc1a.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "b490dd47-3e04-4f32-b18d-7109a255569a",
         "port": "pior",
         "fr": {
@@ -44218,14 +44099,14 @@
     },
     {
         "id": "898873db-54dc-4da2-980f-c66eee85c35e",
-        "port": "acabei",
+        "port": "acabar",
         "fr": {
-            "translation": "j'ai fini",
-            "note": "todo"
+            "translation": "finir, terminer",
+            "note": "Eu acabei o livro ontem. (J'ai fini le livre hier.)"
         },
         "en": {
-            "translation": "I finished, I ended, I",
-            "note": "todo"
+            "translation": "to finish, to end",
+            "note": "I finished the book yesterday. (Eu acabei o livro ontem.)"
         },
         "user_usefulness": 2,
         "audio": {
@@ -44286,14 +44167,14 @@
     },
     {
         "id": "a7bcaec7-c669-441d-954d-c7fecc8cdda8",
-        "port": "precisas",
+        "port": "precisar",
         "fr": {
-            "translation": "tu as besoin",
-            "note": "todo"
+            "translation": "avoir besoin de, nécessiter",
+            "note": "Tu precisas de ajuda? (As-tu besoin d'aide ?)"
         },
         "en": {
-            "translation": "you need",
-            "note": "todo"
+            "translation": "to need, to require",
+            "note": "Do you need help? (Tu precisas de ajuda ?)"
         },
         "user_usefulness": 2,
         "audio": {

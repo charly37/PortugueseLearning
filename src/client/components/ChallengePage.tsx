@@ -345,12 +345,18 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
           currentAttempts: currentAttempts + 1
         });
         
+        let newMasteredSize = masteredChallenges.size;
+        
         if (isCorrect) {
           // Mark as mastered
           const wasAlreadyMastered = masteredChallenges.has(challenge.id);
           const newMastered = new Set(masteredChallenges.add(challenge.id));
           setMasteredChallenges(newMastered);
-          setCorrectCount(correctCount + 1);
+          newMasteredSize = newMastered.size;
+          // Only increment correctCount if this is a newly mastered challenge
+          if (!wasAlreadyMastered) {
+            setCorrectCount(correctCount + 1);
+          }
           console.log('[Practice Mode] Challenge mastered!', {
             challengeId: challenge.id,
             word: challenge.port,
@@ -372,13 +378,12 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         }
         
         // Check completion: all challenges mastered
-        const newMasteredCount = isCorrect ? masteredChallenges.size + 1 : masteredChallenges.size;
         console.log('[Practice Mode] Completion check:', {
-          masteredCount: newMasteredCount,
+          masteredCount: newMasteredSize,
           totalChallenges: generatedChallenges.length,
-          complete: newMasteredCount >= generatedChallenges.length
+          complete: newMasteredSize >= generatedChallenges.length
         });
-        if (newMasteredCount >= generatedChallenges.length) {
+        if (newMasteredSize >= generatedChallenges.length) {
           setChallengeComplete(true);
         }
       } else {
@@ -535,7 +540,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                   <Slider
                     value={maxTurns}
                     onChange={(_, value) => setMaxTurns(value as number)}
-                    min={10}
+                    min={5}
                     max={50}
                     step={5}
                     valueLabelDisplay="auto"
@@ -866,12 +871,18 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                                     currentAttempts: currentAttempts + 1
                                   });
                                   
+                                  let newMasteredSize = masteredChallenges.size;
+                                  
                                   if (isCorrect) {
                                     // Mark as mastered
                                     const wasAlreadyMastered = masteredChallenges.has(challenge.id);
                                     const newMastered = new Set(masteredChallenges.add(challenge.id));
                                     setMasteredChallenges(newMastered);
-                                    setCorrectCount(prev => prev + 1);
+                                    newMasteredSize = newMastered.size;
+                                    // Only increment correctCount if this is a newly mastered challenge
+                                    if (!wasAlreadyMastered) {
+                                      setCorrectCount(prev => prev + 1);
+                                    }
                                     console.log('[Practice Mode - Mobile] Challenge mastered!', {
                                       challengeId: challenge.id,
                                       word: challenge.port,
@@ -895,13 +906,12 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                                   }
                                   
                                   // Check completion: all challenges mastered
-                                  const newMasteredCount = isCorrect ? masteredChallenges.size + 1 : masteredChallenges.size;
                                   console.log('[Practice Mode - Mobile] Completion check:', {
-                                    masteredCount: newMasteredCount,
+                                    masteredCount: newMasteredSize,
                                     totalChallenges: generatedChallenges.length,
-                                    complete: newMasteredCount >= generatedChallenges.length
+                                    complete: newMasteredSize >= generatedChallenges.length
                                   });
-                                  if (newMasteredCount >= generatedChallenges.length) {
+                                  if (newMasteredSize >= generatedChallenges.length) {
                                     setChallengeComplete(true);
                                   }
                                 } else {
