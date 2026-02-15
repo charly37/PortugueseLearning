@@ -137,17 +137,6 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
     }
   }, [challenge]);
 
-  // Auto-play audio when it becomes available
-  useEffect(() => {
-    if (audioAvailable && challenge) {
-      // Small delay to ensure audio is ready
-      const timer = setTimeout(() => {
-        playAudio();
-      }, 300);
-      return () => clearTimeout(timer);
-    }
-  }, [audioAvailable, challenge]);
-
   const generateChallengeSet = async () => {
     setLoading(true);
     setError(null);
@@ -270,6 +259,14 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
     } else {
       setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}` });
       setShowAnswer(true);
+    }
+
+    // Play audio to help with pronunciation after validation
+    if (audioAvailable) {
+      // Small delay to ensure feedback is visible first
+      setTimeout(() => {
+        playAudio();
+      }, 300);
     }
 
     // Submit attempt if user is logged in
@@ -759,6 +756,11 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                                 } else {
                                   setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}` });
                                   setShowAnswer(true);
+                                }
+
+                                // Play audio to help with pronunciation after validation
+                                if (audioAvailable) {
+                                  playAudio();
                                 }
 
                                 // Submit attempt
