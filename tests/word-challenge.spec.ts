@@ -287,9 +287,13 @@ test.describe('Word Challenge', () => {
       await page.click('text=Check Answer');
       
       // Verify SUCCESS message (must be correct in hard mode)
+      // Note: Last challenge might trigger completion immediately, showing different message
       const successAlert = page.locator('.MuiAlert-colorSuccess').last();
       await expect(successAlert).toBeVisible({ timeout: 10000 });
-      await expect(successAlert).toContainText(/Correct/i);
+      // Accept either individual correct message or completion message
+      const alertText = await successAlert.textContent();
+      const isCorrectMessage = alertText?.match(/Correct|mastered|Perfect/i);
+      expect(isCorrectMessage).toBeTruthy();
       
       answeredCount++;
       
@@ -325,9 +329,9 @@ test.describe('Word Challenge', () => {
     // Wait for completion screen - look for the actual completion message
     await expect(page.locator('text=/All.*challenges mastered|Challenge Complete/i')).toBeVisible({ timeout: 10000 });
     
-    // Verify we got perfect score
+    // Verify we got perfect score - should show 5 correct (bug is now fixed!)
     await expect(page.locator('text=/Perfect/i')).toBeVisible();
-    await expect(page.locator('text=/4.*Correct/i')).toBeVisible();
+    await expect(page.locator('text=/5.*Correct/i')).toBeVisible();
     
     console.log('✓ Successfully completed 5-turn hard mode challenge with 100% correct answers');
   });
