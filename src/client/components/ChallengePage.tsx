@@ -162,6 +162,13 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       }
       const data = await response.json();
       setGeneratedChallenges(data.challenges);
+      console.log('[Challenge Generation] Generated challenges:', {
+        total: data.challenges.length,
+        challengeIds: data.challenges.map((c: any) => c.id),
+        words: data.challenges.map((c: any) => c.port),
+        uniqueIds: new Set(data.challenges.map((c: any) => c.id)).size,
+        hasDuplicates: data.challenges.length !== new Set(data.challenges.map((c: any) => c.id)).size
+      });
       setCurrentChallengeIndex(0);
       setChallenge(data.challenges[0]);
       setChallengeStarted(true);
@@ -194,6 +201,15 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
     setShowAnswer(false);
     setStartTime(Date.now());
     
+    console.log('[fetchChallenge] Starting fetch:', {
+      mode,
+      practiceMode,
+      generatedChallengesCount: generatedChallenges.length,
+      currentIndex: currentChallengeIndex,
+      pendingQueueLength: pendingQueue.length,
+      masteredCount: masteredChallenges.size
+    });
+    
     // Use generated challenges in challenge mode, fetch randomly in practice mode
     if (mode === 'challenge' && generatedChallenges.length > 0) {
       // Practice mode: check pending queue first
@@ -202,6 +218,11 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         const nextChallenge = pendingQueue[0];
         setPendingQueue(pendingQueue.slice(1));
         setChallenge(nextChallenge);
+        console.log('[fetchChallenge] Loaded from retry queue:', {
+          challengeId: nextChallenge.id,
+          word: nextChallenge.port,
+          remainingInQueue: pendingQueue.length - 1
+        });
         setLoading(false);
       } else {
         // Normal progression: move to next challenge in generated set
@@ -210,7 +231,9 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         
         if (practiceMode) {
           // Find the next unmastered challenge
+          console.log('[fetchChallenge] Looking for next unmastered challenge starting at index:', nextIndex);
           while (nextIndex < generatedChallenges.length && masteredChallenges.has(generatedChallenges[nextIndex].id)) {
+            console.log('[fetchChallenge] Skipping mastered challenge at index', nextIndex, generatedChallenges[nextIndex].port);
             nextIndex++;
           }
         }
@@ -218,11 +241,36 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         if (nextIndex < generatedChallenges.length) {
           setCurrentChallengeIndex(nextIndex);
           setChallenge(generatedChallenges[nextIndex]);
+          console.log('[fetchChallenge] Loaded next challenge:', {
+            index: nextIndex,
+            challengeId: generatedChallenges[nextIndex].id,
+            word: generatedChallenges[nextIndex].port
+          });
           setLoading(false);
-        } else if (practiceMode && pendingQueue.length === 0 && masteredChallenges.size < generatedChallenges.length) {
-          // Practice mode: We've gone through all challenges once but haven't mastered all
-          // This shouldn't happen if logic is correct, but just in case
-          setLoading(false);
+        } else if (practiceMode && masteredChallenges.size < generatedChallenges.length) {
+          // Practice mode: Reached end of list but haven't mastered all
+          // Loop back from the beginning to find unmastered challenges
+          console.log('[fetchChallenge] Reached end, looping back to find unmastered challenges');
+          let loopIndex = 0;
+          while (loopIndex < generatedChallenges.length && masteredChallenges.has(generatedChallenges[loopIndex].id)) {
+            console.log('[fetchChallenge] Skipping mastered challenge at index', loopIndex, generatedChallenges[loopIndex].port);
+            loopIndex++;
+          }
+          if (loopIndex < generatedChallenges.length) {
+            setCurrentChallengeIndex(loopIndex);
+            setChallenge(generatedChallenges[loopIndex]);
+            console.log('[fetchChallenge] Loaded challenge from loop:', {
+              index: loopIndex,
+              challengeId: generatedChallenges[loopIndex].id,
+              word: generatedChallenges[loopIndex].port
+            });
+            setLoading(false);
+          } else {
+            // All challenges are mastered
+            console.log('[fetchChallenge] All challenges mastered!');
+            setChallengeComplete(true);
+            setLoading(false);
+          }
         } else {
           // All challenges completed
           setChallengeComplete(true);
@@ -290,18 +338,46 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         const currentAttempts = attemptCounts.get(challenge.id) || 0;
         setAttemptCounts(new Map(attemptCounts.set(challenge.id, currentAttempts + 1)));
         
+        console.log('[Practice Mode] Answer checked:', {
+          challengeId: challenge.id,
+          word: challenge.port,
+          isCorrect,
+          currentAttempts: currentAttempts + 1
+        });
+        
         if (isCorrect) {
           // Mark as mastered
-          setMasteredChallenges(new Set(masteredChallenges.add(challenge.id)));
+          const wasAlreadyMastered = masteredChallenges.has(challenge.id);
+          const newMastered = new Set(masteredChallenges.add(challenge.id));
+          setMasteredChallenges(newMastered);
           setCorrectCount(correctCount + 1);
+          console.log('[Practice Mode] Challenge mastered!', {
+            challengeId: challenge.id,
+            word: challenge.port,
+            wasAlreadyMastered,
+            masteredCount: newMastered.size,
+            totalChallenges: generatedChallenges.length,
+            masteredIds: Array.from(newMastered),
+            allChallengeIds: generatedChallenges.map(c => c.id)
+          });
         } else {
           // Add back to queue for retry
-          setPendingQueue([...pendingQueue, challenge]);
+          const newQueue = [...pendingQueue, challenge];
+          setPendingQueue(newQueue);
           setIncorrectCount(incorrectCount + 1);
+          console.log('[Practice Mode] Challenge added to retry queue', {
+            challengeId: challenge.id,
+            queueLength: newQueue.length
+          });
         }
         
         // Check completion: all challenges mastered
         const newMasteredCount = isCorrect ? masteredChallenges.size + 1 : masteredChallenges.size;
+        console.log('[Practice Mode] Completion check:', {
+          masteredCount: newMasteredCount,
+          totalChallenges: generatedChallenges.length,
+          complete: newMasteredCount >= generatedChallenges.length
+        });
         if (newMasteredCount >= generatedChallenges.length) {
           setChallengeComplete(true);
         }
@@ -773,13 +849,75 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                                   timeSpent
                                 );
 
-                                if (isCorrect) {
-                                  setCorrectCount(prev => prev + 1);
+                                // Increment turn count first
+                                const newTurnCount = turnCount + 1;
+                                setTurnCount(newTurnCount);
+
+                                // Practice mode logic
+                                if (practiceMode) {
+                                  // Track attempt count for this challenge
+                                  const currentAttempts = attemptCounts.get(challenge.id) || 0;
+                                  setAttemptCounts(new Map(attemptCounts.set(challenge.id, currentAttempts + 1)));
+                                  
+                                  console.log('[Practice Mode - Mobile] Answer checked:', {
+                                    challengeId: challenge.id,
+                                    word: challenge.port,
+                                    isCorrect,
+                                    currentAttempts: currentAttempts + 1
+                                  });
+                                  
+                                  if (isCorrect) {
+                                    // Mark as mastered
+                                    const wasAlreadyMastered = masteredChallenges.has(challenge.id);
+                                    const newMastered = new Set(masteredChallenges.add(challenge.id));
+                                    setMasteredChallenges(newMastered);
+                                    setCorrectCount(prev => prev + 1);
+                                    console.log('[Practice Mode - Mobile] Challenge mastered!', {
+                                      challengeId: challenge.id,
+                                      word: challenge.port,
+                                      wasAlreadyMastered,
+                                      masteredCount: newMastered.size,
+                                      totalChallenges: generatedChallenges.length,
+                                      masteredIds: Array.from(newMastered),
+                                      allChallengeIds: generatedChallenges.map(c => c.id)
+                                    });
+                                  } else {
+                                    // Add back to queue for retry
+                                    setPendingQueue(prev => {
+                                      const newQueue = [...prev, challenge];
+                                      console.log('[Practice Mode - Mobile] Challenge added to retry queue', {
+                                        challengeId: challenge.id,
+                                        queueLength: newQueue.length
+                                      });
+                                      return newQueue;
+                                    });
+                                    setIncorrectCount(prev => prev + 1);
+                                  }
+                                  
+                                  // Check completion: all challenges mastered
+                                  const newMasteredCount = isCorrect ? masteredChallenges.size + 1 : masteredChallenges.size;
+                                  console.log('[Practice Mode - Mobile] Completion check:', {
+                                    masteredCount: newMasteredCount,
+                                    totalChallenges: generatedChallenges.length,
+                                    complete: newMasteredCount >= generatedChallenges.length
+                                  });
+                                  if (newMasteredCount >= generatedChallenges.length) {
+                                    setChallengeComplete(true);
+                                  }
                                 } else {
-                                  setIncorrectCount(prev => prev + 1);
+                                  // Normal mode: just count
+                                  if (isCorrect) {
+                                    setCorrectCount(prev => prev + 1);
+                                  } else {
+                                    setIncorrectCount(prev => prev + 1);
+                                  }
+                                  
+                                  // Check completion: all turns completed
+                                  if (newTurnCount >= maxTurns) {
+                                    setChallengeComplete(true);
+                                  }
                                 }
 
-                                setTurnCount(prev => prev + 1);
                                 setAttemptHistory(prev => [{
                                   challengeId: challenge.port,
                                   userAnswer: option,
