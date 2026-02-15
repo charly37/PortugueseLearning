@@ -216,7 +216,16 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         setLoading(false);
       } else {
         // Normal progression: move to next challenge in generated set
-        const nextIndex = currentChallengeIndex + 1;
+        // In practice mode, skip over already-mastered challenges
+        let nextIndex = currentChallengeIndex + 1;
+        
+        if (practiceMode) {
+          // Find the next unmastered challenge
+          while (nextIndex < generatedChallenges.length && masteredChallenges.has(generatedChallenges[nextIndex].id)) {
+            nextIndex++;
+          }
+        }
+        
         if (nextIndex < generatedChallenges.length) {
           setCurrentChallengeIndex(nextIndex);
           setChallenge(generatedChallenges[nextIndex]);
