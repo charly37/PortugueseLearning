@@ -91,6 +91,7 @@ jobs:
         docker run -d -p 3000:3000 --name test-app \
           -e MONGODB_URI=mongodb://172.17.0.1:27017/portuguese-test \
           -e SESSION_SECRET=test-secret-key \
+          -v ${{ github.workspace }}/data:/app/data:ro \
           portuguese-learning:${{ steps.vars.outputs.short_sha }}
         
         # Wait for app to start
