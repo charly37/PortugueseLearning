@@ -6,7 +6,8 @@
             "translation": "seulement",
             "note": "En portugais, 'apenas' signifie surtout 'seulement'. Selon le contexte, on peut aussi dire 'à peine' ou 'juste'.",
             "fr_exemple": "J'ai seulement un livre.",
-            "port_exemple": "Eu tenho apenas um livro."
+            "port_exemple": "Eu tenho apenas um livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "barely/just",
@@ -25,7 +26,8 @@
             "translation": "trop",
             "note": "Remarque: 'demais' s'emploie surtout comme intensificateur signifiant 'trop'. Pour parler des autres ou du reste, on dira 'les autres' ou 'le reste', et non 'demais' seul.",
             "fr_exemple": "J'aime trop.",
-            "port_exemple": "Gosto demais."
+            "port_exemple": "Gosto demais.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "too much",
@@ -44,7 +46,8 @@
             "translation": "encore",
             "note": "Remarque: 'ainda' se traduit surtout par 'encore' lorsqu'une action se poursuit (par ex. 'Je suis encore en train d'apprendre'). Pour les phrases négatives, on dit 'pas encore'.",
             "fr_exemple": "J'apprends encore.",
-            "port_exemple": "Eu ainda estou aprendendo."
+            "port_exemple": "Eu ainda estou aprendendo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "still/yet",
@@ -60,10 +63,11 @@
         "id": "cc277346-1d56-4b61-bb4b-9b57d58e2767",
         "port": "o quê",
         "fr": {
-            "translation": "quoi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "Quoi ?",
+            "note": "L’expression 'o quê' peut se traduire par 'quoi ?' lorsqu’il s’agit d’une interjection isolée. Dans des phrases complètes, on utilisera plutôt « ce que » ou « qu’est-ce que » selon le contexte.",
+            "fr_exemple": "Quoi ?",
+            "port_exemple": "O quê?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "what",
@@ -80,9 +84,10 @@
         "port": "quem",
         "fr": {
             "translation": "qui",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'quem' peut être interrogatif ou relatif. En français, 'qui' est utilisé comme sujet et, après une préposition, on emploie 'à qui', 'de qui', 'avec qui' ou 'dont' selon le contexte.",
+            "fr_exemple": "Qui est-il ?",
+            "port_exemple": "Quem é ele?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "who",
@@ -99,9 +104,10 @@
         "port": "onde",
         "fr": {
             "translation": "où",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "onde signifie 'where' en portugais. En français, on utilise « où » de la même façon, tant en question qu'en proposition relative (par ex. le lieu où je vis).",
+            "fr_exemple": "Où est le livre ?",
+            "port_exemple": "Onde está o livro?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "where",
@@ -117,10 +123,11 @@
         "id": "2bf22d98-55f2-4c34-8c96-5ba1938a9416",
         "port": "porquê",
         "fr": {
-            "translation": "pourquoi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "la raison",
+            "note": "Le porquê est un nom en portugais signifiant la raison. En français, on utilise généralement 'la raison' et on peut aussi dire 'le pourquoi' dans certains contextes.",
+            "fr_exemple": "Je n'ai pas compris le pourquoi.",
+            "port_exemple": "Não entendi o porquê.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "why",
@@ -137,9 +144,10 @@
         "port": "porque",
         "fr": {
             "translation": "parce que",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'porque' introduit une raison dans une proposition. En français, on dit 'parce que'.",
+            "fr_exemple": "Je n'ai pas été à l'école parce que j'étais malade.",
+            "port_exemple": "Eu não fui à escola porque estava doente.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "because",
@@ -156,9 +164,10 @@
         "port": "como",
         "fr": {
             "translation": "comment",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Como peut aussi signifier 'comme' ou 'en tant que' selon le contexte (comparaison ou rôle). Pour poser une question sur le 'how', on utilise généralement 'comment'.",
+            "fr_exemple": "Comment vas-tu aujourd'hui ?",
+            "port_exemple": "Como estás hoje?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "how",
@@ -174,10 +183,11 @@
         "id": "e0e54382-f07e-4cd2-bffe-0b3000d7d82f",
         "port": "qual",
         "fr": {
-            "translation": "quel/lequel/laquelle (inv.)",
+            "translation": "quel / quelle (et leurs formes plurielles: quels / quelles)",
             "note": "en portugais, 'qual' peut effectivement être utilisé pour traduire à la fois 'quel/le' (comme adjectif interrogatif) et 'lequel/laquelle' (comme pronom interrogatif ou relatif), selon le contexte. Il s'adapte au genre et au nombre, mais en portugais, la forme de base 'qual' reste souvent inchangée, contrairement au français où on a des variantes (quel, quelle, quels, quelles pour l'adjectif ; lequel, laquelle, lesquels, lesquelles pour le pronom).Le pluriel est 'quais'.",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Quel est ton nom ?",
+            "port_exemple": "Qual é o teu nome?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "which",
@@ -193,10 +203,11 @@
         "id": "23680c58-e613-4bed-989a-a95c12bc025e",
         "port": "quantos",
         "fr": {
-            "translation": "combien (masculin pluriel)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "combien",
+            "note": "Le mot 'quantos' se traduit par 'combien'. Attention: en français, on dit toujours 'combien de [nom] ?' lorsque l’on parle d’un nom; 'combien' seul sert pour une estimation générale.",
+            "fr_exemple": "Combien de livres as-tu ?",
+            "port_exemple": "Quantos livros você tem?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "how many (masc. plural)",
@@ -212,10 +223,11 @@
         "id": "f36f2f8f-20ab-48b5-82c9-5d036f157d58",
         "port": "quantas",
         "fr": {
-            "translation": "combien (féminin pluriel)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "combien de",
+            "note": "En français, on n'emploie pas 'combien (féminin pluriel)'. On utilise 'combien de' suivi d'un nom pour poser une question sur la quantité. Le mot 'combien' est invariable et ne porte pas de genre.",
+            "fr_exemple": "Combien de pommes veux-tu ?",
+            "port_exemple": "Quantas maçãs queres?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "how many (fem. plural)",
@@ -232,9 +244,10 @@
         "port": "quanto",
         "fr": {
             "translation": "combien (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Quanto est l'interrogatif portugais équivalent à « combien ». En portugais il s'accorde selon le nom qui suit (quanto/quantos/quanta/quantas); en français on utilise simplement « combien » et on peut dire « combien de + nom ».",
+            "fr_exemple": "Combien ça coûte ?",
+            "port_exemple": "Quanto custa isto?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "how much (masc.)",
@@ -251,9 +264,10 @@
         "port": "comprida",
         "fr": {
             "translation": "longue femin. (la table est longue)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Comprida est la forme féminine de l'adjectif 'comprido'. En portugais, l'adjectif s'accorde avec le nom; en français, utilisez 'longue' avec un nom féminin comme 'table'.",
+            "fr_exemple": "La table est longue.",
+            "port_exemple": "A mesa é comprida.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "long (fem.)",
@@ -270,9 +284,10 @@
         "port": "curta",
         "fr": {
             "translation": "courte",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'curta' est l'adjectif féminin accordé au nom (par ex. 'saia curta' → 'jupe courte'). 'Curta' peut aussi être l'impératif du verbe 'curtar' (signifiant 'aimer' sur les réseaux), ce qui se traduirait par 'Aime!' en français.",
+            "fr_exemple": "La jupe est courte.",
+            "port_exemple": "A saia é curta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "short (fem.)",
@@ -308,9 +323,10 @@
         "port": "boa",
         "fr": {
             "translation": "bonne (féminin, qualite competence efficacite)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Boa é a forma feminina de 'bom' e concorda com o substantivo feminino. Em francês, o equivalente é 'bonne' quando o substantivo é feminino (ex.: 'bonne idée').",
+            "fr_exemple": "Cette idée est bonne.",
+            "port_exemple": "Essa ideia é boa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "good (fem.)",

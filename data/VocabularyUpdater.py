@@ -124,7 +124,7 @@ Focus on natural, everyday language that beginners can understand."""
             "error": str(e)
         }
 
-def main(max_words=300):
+def main(max_words=10):
     """
     Main function to process all challenges
     
@@ -196,6 +196,9 @@ def main(max_words=300):
             total_tokens["prompt"] += verification["prompt_tokens"]
             total_tokens["completion"] += verification["completion_tokens"]
             
+            # Track if we made any updates
+            made_updates = False
+            
             if is_accurate:
                 verified_count += 1
                 print(f"  ✅ Translation VERIFIED")
@@ -206,8 +209,8 @@ def main(max_words=300):
                 if "fr" not in challenge:
                     challenge["fr"] = {}
                 challenge["fr"]["translation"] = translation.french
-                challenge["fr"]["last_update"] = today_date
                 updated_translations_count += 1
+                made_updates = True
                 print(f"  💾 Updated French translation in challenges.json")
             
             # Update examples if they are empty
@@ -216,8 +219,8 @@ def main(max_words=300):
                     challenge["fr"] = {}
                 challenge["fr"]["port_exemple"] = translation.portuguese_example
                 challenge["fr"]["fr_exemple"] = translation.french_example
-                challenge["fr"]["last_update"] = today_date
                 updated_examples_count += 1
+                made_updates = True
                 print(f"  💾 Updated examples in challenges.json")
             
             # Update note if current note is "todo"
@@ -225,9 +228,16 @@ def main(max_words=300):
                 if "fr" not in challenge:
                     challenge["fr"] = {}
                 challenge["fr"]["note"] = translation.french_remark
-                challenge["fr"]["last_update"] = today_date
                 updated_notes_count += 1
+                made_updates = True
                 print(f"  💾 Updated note in challenges.json")
+            
+            # Always update last_update timestamp after processing (even if just verified)
+            if "fr" not in challenge:
+                challenge["fr"] = {}
+            challenge["fr"]["last_update"] = today_date
+            if made_updates:
+                print(f"  🕒 Set last_update: {today_date}")
             
             processed_count += 1
         else:
@@ -244,10 +254,13 @@ def main(max_words=300):
             print(f"Progress: Processed {processed_count} out of {len(challenges)} total challenges")
             break
     
-    # Save updated challenges back to file if any were updated
-    total_updates = updated_examples_count + updated_translations_count + updated_notes_count
-    if total_updates > 0:
-        print(f"\n💾 Saving {total_updates} updates to challenges.json...")
+    # Save updated challenges back to file if any were processed
+    if processed_count > 0:
+        print(f"\n💾 Saving changes to challenges.json...")
+        print(f"   - Translations updated: {updated_translations_count}")
+        print(f"   - Examples updated: {updated_examples_count}")
+        print(f"   - Notes updated: {updated_notes_count}")
+        print(f"   - Timestamps updated: {processed_count}")
         save_challenges(challenges)
         print("✅ Saved successfully!")
     
