@@ -304,9 +304,10 @@
         "port": "bom",
         "fr": {
             "translation": "bon (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'bom' est un adjectif qui s'accorde en genre et en nombre (bon, bonne, bons, bonnes). Pour l'adverbe signifiant 'bien' en portugais, on emploie 'bem' et en français on dit 'bien'.",
+            "fr_exemple": "Ce livre est bon.",
+            "port_exemple": "Este livro é bom.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "good (masc.), fine (= weather)",
@@ -344,8 +345,9 @@
         "fr": {
             "translation": "mauvais (moralement / méchant)(masculin)",
             "note": "ruim (adj inv en genre) = mauvaise qualité / désagréable. Mau (adj) = mauvais moralement / méchant (má est le féminin de mau)",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Le temps est mauvais aujourd'hui.",
+            "port_exemple": "O tempo está mau hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "bad (masc.)",
@@ -363,8 +365,9 @@
         "fr": {
             "translation": "mauvaise (féminin) - moralement / méchant",
             "note": "mau est le masculin. ",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Elle est méchante.",
+            "port_exemple": "Ela é má.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "bad (fem.)",
@@ -380,10 +383,11 @@
         "id": "b861a99b-9e44-430b-9f83-854fa51d6106",
         "port": "grande",
         "fr": {
-            "translation": "grande idee, ville, maison",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "grand / grande",
+            "note": "En portugais, 'grande' s'accorde avec le nom qui suit. En français, on utilise 'grand' ou 'grande' selon le genre du nom; cela peut aussi signifier 'grand' ou 'génial' selon le contexte.",
+            "fr_exemple": "La maison est grande.",
+            "port_exemple": "A casa é grande.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "big/great",
@@ -399,10 +403,11 @@
         "id": "e39487a7-2796-4c8b-a0c7-b06029e28edc",
         "port": "alto",
         "fr": {
-            "translation": "grand (il est grand), fort (parler fort)",
+            "translation": "haut",
             "note": "Haut (taille 'monte alto' = 'montagne haute'; 'homem alto' = 'homme grand'; 'som alto' = 'son haut').Fort (pour un son, 'falar alto' = 'parler fort').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "L'immeuble est haut.",
+            "port_exemple": "O prédio é alto.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "tall, loud (masc.)",
@@ -419,9 +424,10 @@
         "port": "alta",
         "fr": {
             "translation": "grande (elle est grande)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Alta est la forme féminine de l'adjectif portugais 'alto'. En pratique, pour parler d'une personne, on dira généralement 'grande' (Elle est grande).",
+            "fr_exemple": "Elle est grande.",
+            "port_exemple": "Ela é alta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "tall (fem.)",
@@ -438,9 +444,10 @@
         "port": "pequeno",
         "fr": {
             "translation": "petit (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'pequeno' peut précéder ou suivre le nom selon le sens. Avant le nom, il peut marquer une nuance subjective; après le nom, il décrit surtout la taille.",
+            "fr_exemple": "La voiture est petite.",
+            "port_exemple": "O carro é pequeno.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "small (masc.)",
@@ -457,9 +464,10 @@
         "port": "pequena",
         "fr": {
             "translation": "petite (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "« Pequena » est la forme féminine de l’adjectif portugais « pequeno ». En français, on le rend par « petite » et on l’emploie devant le nom (par exemple « une petite maison »), et en phrase on dit « Elle est petite ». ",
+            "fr_exemple": "Elle est petite.",
+            "port_exemple": "Ela é pequena.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "small (fem.)",
@@ -476,9 +484,10 @@
         "port": "velho",
         "fr": {
             "translation": "vieux (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Vieux est l'équivalent le plus courant de 'velho'. Devant une voyelle, on peut écrire 'vieil' (par exemple: 'un vieil ami').",
+            "fr_exemple": "Ce livre est vieux.",
+            "port_exemple": "Este livro é velho.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "old (masc.)",
@@ -495,9 +504,10 @@
         "port": "velha",
         "fr": {
             "translation": "vieille (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'velha' est l'adjectif féminin de 'velho' et signifie 'vieille'. Lorsqu'il est utilisé comme nom pour désigner une femme âgée, on dit 'une vieille femme' en français.",
+            "fr_exemple": "La maison est vieille.",
+            "port_exemple": "A casa é velha.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "old (fem.)",
@@ -514,9 +524,10 @@
         "port": "novo",
         "fr": {
             "translation": "nouveau (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'novo' s'accorde avec le nom. En français, 'nouveau' s'accorde: masculin singulier devant une consonne; devant une voyelle on écrit 'nouvel'; le féminin est 'nouvelle'.",
+            "fr_exemple": "Ce livre est nouveau.",
+            "port_exemple": "Este livro é novo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "new (masc.)",
@@ -533,9 +544,10 @@
         "port": "nova",
         "fr": {
             "translation": "nouvelle (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Nova est la forme féminine de l'adjectif 'new' en portugais et s'accorde avec le nom féminin. En français, l'équivalent est 'nouvelle' au féminin singulier; 'nouveau' au masculin et 'nouvel' devant un nom qui commence par une voyelle.",
+            "fr_exemple": "La maison est nouvelle.",
+            "port_exemple": "A casa é nova.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "new (fem.)",
@@ -551,10 +563,11 @@
         "id": "b97ed065-ba6b-45c9-b9ca-34e8c0e61da2",
         "port": "baixo",
         "fr": {
-            "translation": "bas (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "bas",
+            "note": "Bas s'utilise pour la hauteur ou le niveau, pas pour décrire la taille d'une personne. Pour parler de la taille d'une personne, on dira « petit ».",
+            "fr_exemple": "Le plafond est bas.",
+            "port_exemple": "O teto é baixo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "low (masc.)",
@@ -571,9 +584,10 @@
         "port": "baixa",
         "fr": {
             "translation": "basse (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'baixa' s'accorde avec le nom féminin (par ex. 'voix basse', 'pression basse'). Si le nom est masculin, on dirait 'bas' (par ex. 'prix bas').",
+            "fr_exemple": "La voix est basse.",
+            "port_exemple": "A voz é baixa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "low (fem.)",
@@ -590,9 +604,10 @@
         "port": "largo",
         "fr": {
             "translation": "large (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Largo est surtout utilisé pour décrire la largeur. Pour parler d'une durée longue, on dirait plutôt 'long' ou 'longtemps' en français.",
+            "fr_exemple": "Le couloir est large.",
+            "port_exemple": "O corredor é largo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "wide (masc.)",
@@ -609,9 +624,10 @@
         "port": "larga",
         "fr": {
             "translation": "large (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en français, 'large' décrit la largeur et ne change pas selon le genre du nom. En portugais, 'larga' est la forme féminine de 'largo'.",
+            "fr_exemple": "La porte est large.",
+            "port_exemple": "A porta é larga.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "wide (fem.)",
@@ -628,9 +644,10 @@
         "port": "estreito",
         "fr": {
             "translation": "étroit (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, estreito peut signifier 'narrow' ou 'proche' selon le contexte. En français, on dit 'étroit' pour un espace ou un objet, et 'proche' ou 'lien étroit' pour des relations.",
+            "fr_exemple": "La rue est étroite.",
+            "port_exemple": "A rua é estreita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "narrow (masc.)",
@@ -647,9 +664,10 @@
         "port": "estreita",
         "fr": {
             "translation": "étroite (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, estreita décrit surtout la largeur d’un espace ou d’un objet au féminin. En français, étroite s’emploie surtout pour des espaces physiques (une rue étroite, une porte étroite); on parle aussi d’un esprit étroit au masculin.",
+            "fr_exemple": "La rue est étroite.",
+            "port_exemple": "A rua é estreita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "narrow (fem.)",
@@ -665,10 +683,11 @@
         "id": "c758a606-7753-42e5-b869-100a86ec16c0",
         "port": "forte",
         "fr": {
-            "translation": "fort/forte (invariant)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "fort (masculin) / forte (féminin)",
+            "note": "En portugais, 'forte' s'accorde avec le nom. En français, on dit 'fort' (masculin) ou 'forte' (féminin); pour parler du volume, on dit 'parler fort'.",
+            "fr_exemple": "Elle est forte.",
+            "port_exemple": "Ela é forte.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "strong",
@@ -686,8 +705,9 @@
         "fr": {
             "translation": "faible (masculin)",
             "note": "'fraco' est un adjectif masculin singulier signifiant 'faible' ; sa forme féminine est 'fraca', pluriel masculin 'fracos' et féminin 'fracas'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Aujourd'hui, je suis faible.",
+            "port_exemple": "Hoje estou fraco.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "weak (masc.)",
@@ -703,10 +723,11 @@
         "id": "4c0fc99b-e5c8-4fc4-b943-b94c62c81230",
         "port": "fraca",
         "fr": {
-            "translation": "faible (féminin)",
+            "translation": "faible",
             "note": "'fraco' est un adjectif masculin singulier signifiant 'faible' ; sa forme féminine est 'fraca', pluriel masculin 'fracos' et féminin 'fracas'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Elle est faible.",
+            "port_exemple": "Ela é fraca.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "weak (fem.)",
@@ -723,9 +744,10 @@
         "port": "rápido",
         "fr": {
             "translation": "rapide (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Rapide est un adjectif qui ne change pas selon le genre au singulier: on dit « un homme rapide » et « une voiture rapide ». Pour décrire une action, utilisez rapidement.",
+            "fr_exemple": "La voiture est rapide.",
+            "port_exemple": "O carro é rápido.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "fast (masc.)",
@@ -742,9 +764,10 @@
         "port": "rápida",
         "fr": {
             "translation": "rapide (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en français, l'adjectif 'rapide' est invariable au genre au singulier (masculin et féminin identiques). On l'emploie pour décrire la vitesse d'une personne, d'un objet ou d'une action.",
+            "fr_exemple": "Elle est rapide.",
+            "port_exemple": "Ela é rápida.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "fast (fem.)",
@@ -762,8 +785,9 @@
         "fr": {
             "translation": "lentement",
             "note": "lento pour lent (adjectif) ; devagar pour lentement (adverbe).",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Parle lentement, s'il te plaît.",
+            "port_exemple": "Fala devagar, por favor.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "slowly",
@@ -780,9 +804,10 @@
         "port": "cedo",
         "fr": {
             "translation": "tôt",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'cedo' signifie généralement le début de la journée, c'est‑à‑dire 'tôt', et non 'bientôt' (soon). Le mot 'tôt' est d'usage courant pour parler du début de la journée.",
+            "fr_exemple": "Je me lève tôt.",
+            "port_exemple": "Eu acordo cedo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "early",
@@ -798,10 +823,11 @@
         "id": "d437a7e8-0f23-4c79-884b-aa06ac4f5acc",
         "port": "tarde",
         "fr": {
-            "translation": "tard",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "l'après-midi",
+            "note": "Remarque: \"tarde\" a deux sens principaux. Pour l'heure de la journée, on dit \"l'après-midi\"; pour l'idée de retard, on utilise \"tard\".",
+            "fr_exemple": "Je suis arrivé tard.",
+            "port_exemple": "Eu cheguei tarde.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "late",
@@ -818,9 +844,10 @@
         "port": "bem",
         "fr": {
             "translation": "bien",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Bem correspond principalement à l'adverbe 'bien' en français. Dans certains contextes, il peut aussi fonctionner comme intensificateur équivalent à 'assez' ou 'vraiment'.",
+            "fr_exemple": "Il a bien couru aujourd'hui.",
+            "port_exemple": "Ele correu bem hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "well",
@@ -838,8 +865,9 @@
         "fr": {
             "translation": "mal (adverbe/nom)",
             "note": "Mau : mauvais (adjectif) ; Mal : mal (adverbe) ou mal (nom). test simple : remplacez par l'opposé. Si « bom » (bon) convient, utilisez « mau ». Si « bem » (bien) convient, utilisez « mal ».",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Je vais mal.",
+            "port_exemple": "Eu estou mal.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "badly",
@@ -856,9 +884,10 @@
         "port": "sempre",
         "fr": {
             "translation": "toujours",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : Toujours indique une habitude ou une continuité. Dans l'usage courant, on peut aussi dire 'tout le temps' pour insister sur la répétition.",
+            "fr_exemple": "Je me réveille toujours à sept heures.",
+            "port_exemple": "Eu sempre acordo às sete.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "always",
@@ -875,9 +904,10 @@
         "port": "nunca",
         "fr": {
             "translation": "jamais",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "nunca est un adverbe de négation qui signifie 'jamais'. En français standard, on emploie 'jamais' avec 'ne' (ex: Je n'ai jamais mangé de sushi).",
+            "fr_exemple": "Je n'ai jamais mangé de sushi.",
+            "port_exemple": "Eu nunca comi sushi.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "never",
@@ -895,8 +925,9 @@
         "fr": {
             "translation": "parfois",
             "note": "en plus formel on peut dire 'por vezes'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Parfois, j'aime me promener.",
+            "port_exemple": "Às vezes, eu gosto de caminhar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sometimes",
@@ -913,9 +944,10 @@
         "port": "agora",
         "fr": {
             "translation": "maintenant",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: le mot agora indique le moment présent et l'action en cours. En portugais, c'est un mot très courant et polyvalent; on peut dire 'à présent' dans un registre plus soutenu.",
+            "fr_exemple": "Maintenant, je veux apprendre le français.",
+            "port_exemple": "Agora eu quero aprender francês.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "now",
@@ -931,10 +963,11 @@
         "id": "3fd368f0-882b-4a19-a441-b48b354b85b4",
         "port": "em",
         "fr": {
-            "translation": "dans/sur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "à",
+            "note": "En général, em indique un lieu sans préciser l'intérieur. En français, on dit 'à' devant une ville et 'en' ou 'au' devant un pays; le choix dépend du nom qui suit.",
+            "fr_exemple": "Je suis à Lisbonne.",
+            "port_exemple": "Estou em Lisboa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "in/on, at (= place)",
@@ -950,10 +983,11 @@
         "id": "68f2f3ae-88c1-43aa-ad24-cd09d45a835b",
         "port": "para",
         "fr": {
-            "translation": "pour/vers",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "pour (sens général: but/objectif) ; à / vers (destination/direction selon le contexte)",
+            "note": "Para est polyvalent et peut exprimer le but, la destination ou la direction selon le contexte. En français, utilisez 'pour' pour le but et 'à' ou 'vers' selon la destination.",
+            "fr_exemple": "Je vais à l'école.",
+            "port_exemple": "Vou para a escola.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "for/to (in order to)",
@@ -970,9 +1004,10 @@
         "port": "com",
         "fr": {
             "translation": "avec",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Com est une préposition simple et fréquente. En français, le mot correspondant est 'avec', utilisé de la même manière pour indiquer l'accompagnement ou l'instrument.",
+            "fr_exemple": "J'aime le thé avec du sucre.",
+            "port_exemple": "Eu gosto de chá com açúcar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "with",
@@ -988,10 +1023,11 @@
         "id": "2ed49c44-a845-4bc9-9d28-e8e35cfe4e93",
         "port": "de",
         "fr": {
-            "translation": "de/du",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "de",
+            "note": "De est une préposition très fréquente en portugais et en français. Elle indique l'origine ou la possession et peut aussi être suivie d'articles contractés comme du, de la, des.",
+            "fr_exemple": "Ce livre est de Maria.",
+            "port_exemple": "Este livro é de Maria.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "of/from (e.g. letter)",
@@ -1007,10 +1043,11 @@
         "id": "37645200-0320-47e8-9afa-b8f19c2c4935",
         "port": "a",
         "fr": {
-            "translation": "à/au",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "la",
+            "note": "Note: 'à/au' se réfère à la préposition 'to/at' et ne correspond pas à l'article défini féminin. Pour l'article 'a' (féminin singulier), on utilise 'la'.",
+            "fr_exemple": "La maison est ancienne.",
+            "port_exemple": "A casa é antiga.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "to/at",
@@ -1026,10 +1063,11 @@
         "id": "a8921aa2-920f-4b6e-8d3d-b3039a7b3c8e",
         "port": "por",
         "fr": {
-            "translation": "par/pour",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "par",
+            "note": "Le portugais 'por' a plusieurs sens et ne se traduit pas toujours par 'par' ou 'pour'. En général, 'par' s'emploie pour le moyen/agent et les taux; 'pour' pour le but ou la cause.",
+            "fr_exemple": "Merci pour tout.",
+            "port_exemple": "Obrigado por tudo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "by/for",
@@ -1046,9 +1084,10 @@
         "port": "debaixo",
         "fr": {
             "translation": "sous (sous la table)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'debaixo' s'utilise avec un nom comme 'debaixo da mesa', qui se traduit par 'sous la table'. En français, 'sous' est le choix le plus naturel; on peut aussi dire 'en dessous de', mais c'est moins courant.",
+            "fr_exemple": "Le livre est sous la table.",
+            "port_exemple": "O livro está debaixo da mesa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "under",
@@ -1064,10 +1103,11 @@
         "id": "5404b34c-8d59-480d-8870-cb9ee6c56e0f",
         "port": "sobre",
         "fr": {
-            "translation": "sur/à propos de/ au dessus de/environ",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "sur",
+            "note": "Le sens principal de « sobre » est « sur » (lieu ou sujet). Pour le sens « à propos de », on dit « à propos de ».",
+            "fr_exemple": "Ce livre parle de l'histoire du Portugal.",
+            "port_exemple": "Este livro é sobre a história de Portugal.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "on/about/over",
@@ -1084,9 +1124,10 @@
         "port": "entre",
         "fr": {
             "translation": "entre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Entre est une préposition simple et très fréquente. Elle sert à indiquer la position ou la relation entre deux éléments.",
+            "fr_exemple": "Entre toi et moi, ce n'est pas un secret.",
+            "port_exemple": "Entre você e mim, isso não é segredo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "between, among",
@@ -1103,9 +1144,10 @@
         "port": "sem",
         "fr": {
             "translation": "sans",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : sans est une préposition qui introduit une absence. On l'emploie devant un nom ou une expression nominale, comme 'sans sucre' ou 'sans parapluie'.",
+            "fr_exemple": "Je vais sans parapluie.",
+            "port_exemple": "Eu vou sem guarda-chuva.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "without",
@@ -1122,9 +1164,10 @@
         "port": "carro",
         "fr": {
             "translation": "voiture",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, 'carro' est le terme courant pour 'car'. 'Automóvel' est un registre plus formel ou soutenu.",
+            "fr_exemple": "Cette voiture est neuve.",
+            "port_exemple": "Este carro é novo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "car",
@@ -1141,9 +1184,10 @@
         "port": "mesa",
         "fr": {
             "translation": "table",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, 'mesa' est féminin (a mesa). En français, 'table' est aussi féminin; on dit 'la table'.",
+            "fr_exemple": "La table est mise.",
+            "port_exemple": "A mesa está posta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "table",
@@ -1160,9 +1204,10 @@
         "port": "cadeira",
         "fr": {
             "translation": "chaise",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'cadeira' désigne une chaise ordinaire. Pour parler d'un fauteuil rembourré ou plus grand, on dira 'poltrona'.",
+            "fr_exemple": "La chaise est confortable.",
+            "port_exemple": "A cadeira é confortável.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "chair",
@@ -1179,9 +1224,10 @@
         "port": "porta",
         "fr": {
             "translation": "porte",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, « porta » signifie surtout « porte ». Il existe aussi le verbe « portar » à la 3e pers. du singulier, qui donne « porta » (« il porte »).",
+            "fr_exemple": "La porte est ouverte.",
+            "port_exemple": "A porta está aberta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "door",
@@ -1198,9 +1244,10 @@
         "port": "janela",
         "fr": {
             "translation": "fenêtre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'janela' désigne l’objet physique. Dans des expressions comme 'janela de oportunidade', on dit 'fenêtre d'opportunité' en français.",
+            "fr_exemple": "La fenêtre est ouverte.",
+            "port_exemple": "A janela está aberta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "window",
@@ -1217,9 +1264,10 @@
         "port": "cama",
         "fr": {
             "translation": "lit",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'cama' est le nom courant pour 'bed' en portugais. En français, on dit 'un lit' (masculin) et on accorde les adjectifs en conséquence.",
+            "fr_exemple": "Le lit est très confortable.",
+            "port_exemple": "A cama é muito confortável.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "bed",
@@ -1236,9 +1284,10 @@
         "port": "livro",
         "fr": {
             "translation": "livre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'livro' en portugais correspond exactement à 'livre' en français (l'objet que l'on lit). 'Livre' peut aussi Signaler l'unité de poids (la livre) selon le contexte.",
+            "fr_exemple": "J'ai un livre.",
+            "port_exemple": "Eu tenho um livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "book",
@@ -1255,9 +1304,10 @@
         "port": "caneta",
         "fr": {
             "translation": "stylo",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'caneta' est le terme générique pour un outil d’écriture. En français, le mot courant est 'stylo' (par exemple stylo à bille, stylo plume selon le type).",
+            "fr_exemple": "J'écris avec le stylo.",
+            "port_exemple": "Eu escrevo com a caneta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "pen",
@@ -1274,9 +1324,10 @@
         "port": "papel",
         "fr": {
             "translation": "papier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens le plus courant est le papier. Si l'on parle du rôle, on dit 'rôle' en français.",
+            "fr_exemple": "J'ai acheté du papier.",
+            "port_exemple": "Eu comprei papel.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "paper",
@@ -1293,9 +1344,10 @@
         "port": "chave",
         "fr": {
             "translation": "clé",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, chave désigne surtout l'objet qui ouvre une serrure, mais peut aussi signifier 'clé' au sens abstrait. En français, on utilise surtout clé, avec des usages métaphoriques comme 'la clé du problème'.",
+            "fr_exemple": "La clé est sur la table.",
+            "port_exemple": "A chave está na mesa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "key",
@@ -1311,10 +1363,11 @@
         "id": "f936c147-16cc-4a5c-a8b7-5a9a9d28b17b",
         "port": "dinheiro",
         "fr": {
-            "translation": "l argent (le concept, la monnaie)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "argent",
+            "note": "Argent est utilisé pour parler de l'argent en général. 'Monnaie' désigne plutôt les pièces ou le système monétaire; on dit 'de l'argent' pour parler d'une somme.",
+            "fr_exemple": "Je n'ai pas d'argent.",
+            "port_exemple": "Eu não tenho dinheiro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "money",
@@ -1330,10 +1383,11 @@
         "id": "2771e2b9-937c-45b7-b571-bf80871c9dce",
         "port": "lâmpada",
         "fr": {
-            "translation": "lampe",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "ampoule",
+            "note": "En portugais, 'lâmpada' signifie surtout une ampoule. En français courant, on dira 'ampoule' pour l'élément lumineux, et 'lampe' pour l'appareil.",
+            "fr_exemple": "J'ai changé l'ampoule du salon.",
+            "port_exemple": "Troquei a lâmpada da sala.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "lamp",
@@ -1350,9 +1404,10 @@
         "port": "frigorífico",
         "fr": {
             "translation": "réfrigérateur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Cette traduction est exacte et courante en portugais europeu. En portugais, 'frigorífico' correspond au français 'réfrigérateur'; à l'oral, on peut aussi dire 'frigo'.",
+            "fr_exemple": "Le réfrigérateur est vide.",
+            "port_exemple": "O frigorífico está vazio.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "refrigerator",
@@ -1369,9 +1424,10 @@
         "port": "fogão",
         "fr": {
             "translation": "cuisinière (four, plaque)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot fogão désigne l'appareil de cuisson. En français, on dit 'cuisinière' pour l'appareil (avec four et plaques).",
+            "fr_exemple": "Cette cuisinière est ancienne, elle doit être remplacée.",
+            "port_exemple": "Este fogão é antigo, precisa ser trocado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "stove",
@@ -1388,9 +1444,10 @@
         "port": "microondas",
         "fr": {
             "translation": "micro-ondes",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'microondas' désigne l'appareil. En français, on écrit 'micro-ondes' avec un trait d'union et on l'utilise pour l'appareil de cuisson.",
+            "fr_exemple": "J'ai mis les restes au micro-ondes.",
+            "port_exemple": "Eu coloquei as sobras no microondas.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "microwave",
@@ -1407,9 +1464,10 @@
         "port": "máquina de lavar",
         "fr": {
             "translation": "lave-linge",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En français, on dit 'machine à laver' ou 'lave-linge'. Les deux sont corrects, mais 'machine à laver' est généralement plus courant à l'oral.",
+            "fr_exemple": "J'ai besoin d'une nouvelle machine à laver.",
+            "port_exemple": "Eu preciso de uma máquina de lavar nova.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "washing machine",
@@ -1426,9 +1484,10 @@
         "port": "secadora",
         "fr": {
             "translation": "sèche-linge",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'secadora' désigne principalement la machine à sécher les vêtements; en français on dit 'sèche-linge'. Pour le sèche-cheveux, on dit 'sèche-cheveux'.",
+            "fr_exemple": "Le sèche-linge met deux heures à sécher le linge.",
+            "port_exemple": "A secadora leva duas horas para secar as roupas.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "dryer",
@@ -1445,9 +1504,10 @@
         "port": "aspirador",
         "fr": {
             "translation": "aspirateur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En français, 'aspirateur' désigne surtout l'appareil ménager qui aspire la poussière. Si l'on parle d'un dispositif d'aspiration médicale ou technique, on précise par exemple 'aspirateur médical'.",
+            "fr_exemple": "J'ai acheté un aspirateur neuf.",
+            "port_exemple": "Comprei um aspirador novo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "vacuum cleaner",
@@ -1464,9 +1524,10 @@
         "port": "ventilador",
         "fr": {
             "translation": "ventilateur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'ventilador' désigne surtout le ventilateur électrique domestique. En contexte médical, on précise 'ventilateur mécanique'.",
+            "fr_exemple": "J'ai acheté un ventilateur hier.",
+            "port_exemple": "Eu comprei um ventilador ontem.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "fan",
@@ -1483,9 +1544,10 @@
         "port": "televisão",
         "fr": {
             "translation": "télévision",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'télévision' peut désigner l'appareil ou le programme. En portugais, 'televisão' est un nom féminin et on l'emploie couramment avec les verbes 'assistir' ou 'ver'.",
+            "fr_exemple": "Je regarde la télévision tous les jours.",
+            "port_exemple": "Eu vejo televisão todos os dias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "television",
@@ -1502,9 +1564,10 @@
         "port": "computador",
         "fr": {
             "translation": "ordinateur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "C'est le terme masculin standard pour 'computer' en français. Devant un nom commençant par une voyelle, on emploie 'nouvel' (par exemple 'un nouvel ordinateur').",
+            "fr_exemple": "J'ai un nouvel ordinateur.",
+            "port_exemple": "Eu tenho um computador novo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "computer",
@@ -1521,9 +1584,10 @@
         "port": "telemóvel",
         "fr": {
             "translation": "téléphone portable",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'telemóvel' est le terme courant en portugais européen pour désigner un téléphone mobile. En français, on dit le plus souvent 'téléphone portable'.",
+            "fr_exemple": "Mon téléphone portable sonne.",
+            "port_exemple": "O meu telemóvel está a tocar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "mobile phone",
@@ -1540,9 +1604,10 @@
         "port": "sofá",
         "fr": {
             "translation": "canapé",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot portugais 'sofá' se traduit généralement par 'canapé' en français. En français courant, 'canapé' est le terme standard; 'sofa' est aussi utilisé mais moins courant; 'canapé-lit' pour un canapé qui fait aussi lit.",
+            "fr_exemple": "Le canapé est confortable.",
+            "port_exemple": "O sofá é confortável.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sofa",
@@ -1559,9 +1624,10 @@
         "port": "tapete",
         "fr": {
             "translation": "tapis",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot portugais 'tapete' désigne un tapis ou une moquette. En français, 'tapis' couvre ces sens; pour un paillasson on dit 'paillasson'.",
+            "fr_exemple": "Le tapis du salon semble doux.",
+            "port_exemple": "O tapete da sala parece macio.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "carpet/rug",
@@ -1578,9 +1644,10 @@
         "port": "espelho",
         "fr": {
             "translation": "miroir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'espelho' désigne l'objet physique. En français, 'miroir' est utilisé pour cet objet; 'reflet' désigne l'image réfléchie et non l'objet.",
+            "fr_exemple": "Le miroir est propre.",
+            "port_exemple": "O espelho está limpo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "mirror",
@@ -1597,9 +1664,10 @@
         "port": "armário",
         "fr": {
             "translation": "armoire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'armoire' désigne généralement un grand meuble pour les vêtements. Pour un placard intégré ou un petit rangement, on dira plutôt 'placard'.",
+            "fr_exemple": "L'armoire est grande et contient beaucoup de vêtements.",
+            "port_exemple": "O armário é grande e contém muitas roupas.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "closet/wardrobe",
@@ -1616,9 +1684,10 @@
         "port": "gaveta",
         "fr": {
             "translation": "tiroir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, gaveta désigne le tiroir d’un meuble. C'est un mot courant et neutre, sans sens figuré majeur.",
+            "fr_exemple": "Le tiroir est vide.",
+            "port_exemple": "A gaveta está vazia.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "drawer",
@@ -1634,10 +1703,11 @@
         "id": "2d8e73c7-7184-4904-b317-e3525a5c5526",
         "port": "toalha",
         "fr": {
-            "translation": "serviette (salle de bain)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "serviette",
+            "note": "Notez que 'serviette' peut aussi signifier une serviette de table. Pour le linge de bain, dites 'serviette de bain'.",
+            "fr_exemple": "J'ai besoin d'une serviette.",
+            "port_exemple": "Preciso de uma toalha.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "towel",
@@ -1654,9 +1724,10 @@
         "port": "cobertor",
         "fr": {
             "translation": "couverture",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, « cobertor » désigne généralement une couverture épaisse pour le lit. En français, on dira surtout « couverture »; « couvre-lit » est plus décoratif.",
+            "fr_exemple": "J'ai acheté une nouvelle couverture pour l'hiver.",
+            "port_exemple": "Eu comprei um cobertor novo para o inverno.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "blanket",
@@ -1673,9 +1744,10 @@
         "port": "o",
         "fr": {
             "translation": "le",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, o est l'article défini masculin singulier. En français, l'équivalent est 'le' devant une consonne et 'l'' devant une voyelle ou un h muet.",
+            "fr_exemple": "Le garçon est sympathique.",
+            "port_exemple": "O rapaz é simpático.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "the (masc.)",
@@ -1692,9 +1764,10 @@
         "port": "a",
         "fr": {
             "translation": "la",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "A est l'article défini féminin en portugais. En français, l'équivalent courant est 'la'.",
+            "fr_exemple": "La maison est belle.",
+            "port_exemple": "A casa é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "the (fem.)",
@@ -1710,10 +1783,11 @@
         "id": "dc84e030-6c47-4ce4-b1a8-22b1a67ccd81",
         "port": "os",
         "fr": {
-            "translation": "les (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "les",
+            "note": "La traduction 'les' est correcte et porte indifféremment le masculin ou le féminin au pluriel; préciser '(masculin)' n’est pas nécessaire. En portugais, 'os' marque le genre masculin et le pluriel; en français, l’article pluriel 'les' ne distingue pas le genre.",
+            "fr_exemple": "Les livres sont intéressants.",
+            "port_exemple": "Os livros são interessantes.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "the (masc. plural)",
@@ -1729,10 +1803,11 @@
         "id": "1162ea3e-fa97-4cbe-9442-f5aefd128b7c",
         "port": "as",
         "fr": {
-            "translation": "les (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "les",
+            "note": "Notez que 'les' est l'article défini pluriel utilisé pour les noms au pluriel, quel que soit leur genre. Le genre n’est pas marqué au pluriel.",
+            "fr_exemple": "Les fleurs sont belles.",
+            "port_exemple": "as flores são bonitas.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "the (fem. plural)",
@@ -1749,9 +1824,10 @@
         "port": "um",
         "fr": {
             "translation": "un",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'um' est l'article indéfini masculin utilisé devant un nom masculin singulier. En français, 'un' est l'article indéfini masculin correspondant; 'une' est pour le féminin.",
+            "fr_exemple": "Un livre est sur la table.",
+            "port_exemple": "Um livro está na mesa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "a/an (masc.), one",
@@ -1768,9 +1844,10 @@
         "port": "uma",
         "fr": {
             "translation": "une",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'uma' est l'article indéfini féminin 'une' devant un nom féminin. Il peut aussi marquer l'idée de 'one' dans des contextes numériques ou lorsque l'on compte.",
+            "fr_exemple": "Une maison est belle.",
+            "port_exemple": "Uma casa é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "a/an (fem.)",
@@ -1786,10 +1863,11 @@
         "id": "86c1657d-0348-41ff-b524-27afbc1e5f3d",
         "port": "dos",
         "fr": {
-            "translation": "des (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "des",
+            "note": "Dos est la contraction de 'de' + 'os'. En français, l'équivalent courant est 'des' (de + les), qui peut signifier 'de les' ou être utilisé comme article indéfini 'quelques' selon le contexte.",
+            "fr_exemple": "Les livres des élèves sont nouveaux.",
+            "port_exemple": "Os livros dos alunos são novos.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "some/of the (masc.)",
@@ -1805,10 +1883,11 @@
         "id": "8aa3e9f5-abd3-4e6f-9ef2-30668dc39393",
         "port": "das",
         "fr": {
-            "translation": "des (féminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "des",
+            "note": "Des est la contraction de de + les et s'emploie devant les noms pluriels. Le genre du nom qui suit n'influence pas la forme « des ».",
+            "fr_exemple": "Il est venu des montagnes.",
+            "port_exemple": "Ele veio das montanhas.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "some/of the (fem.)",
@@ -1825,9 +1904,10 @@
         "port": "eu",
         "fr": {
             "translation": "je (sujet)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'eu' est le pronom sujet 'je' en portugais. En français, le verbe porte le sujet et l'on peut souvent omettre le sujet explicite, comme dans 'J'aime la musique'.",
+            "fr_exemple": "J'aime la musique.",
+            "port_exemple": "Eu gosto de música.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "I",
@@ -1843,10 +1923,11 @@
         "id": "b2d601d3-6e52-4c08-8a07-15c2a7b9c839",
         "port": "meu",
         "fr": {
-            "translation": "mon (masc.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "mon / ma / mes",
+            "note": "Le possessif portugais 'meu' s'accorde avec le nom qui suit. On dit 'mon', 'ma' ou 'mes' selon le genre et le nombre du nom: 'mon' devant un nom masculin singulier (ou féminin commençant par une voyelle), 'ma' devant un nom féminin singulier commençant par une consonne, et 'mes' devant un nom pluriel.",
+            "fr_exemple": "Mon ami est ici.",
+            "port_exemple": "Meu amigo está aqui.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "my (masc.)",
@@ -1862,10 +1943,11 @@
         "id": "28eb0052-cb0e-46b9-8dea-bc1613968596",
         "port": "minha",
         "fr": {
-            "translation": "mon (fém.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "ma",
+            "note": "Utilisé devant un nom féminin. Mon est utilisé devant un nom féminin qui commence par une voyelle (par ex. 'mon amie').",
+            "fr_exemple": "Ma maison est grande.",
+            "port_exemple": "A minha casa é grande.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "my (fem.)",
@@ -1882,9 +1964,10 @@
         "port": "me",
         "fr": {
             "translation": "me (COD/COI)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'me' est un pronom objet qui peut être COD ou COI. En français, on utilise 'me' (ou m' devant une voyelle) comme pronom COD/COI.",
+            "fr_exemple": "Elle m'aide.",
+            "port_exemple": "Ela me ajuda.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "me",
@@ -1902,8 +1985,9 @@
         "fr": {
             "translation": "tu (inf.)",
             "note": "en plus formel on peut dire 'você'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Tu es mon ami.",
+            "port_exemple": "Tu és meu amigo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "you (informal)",
@@ -1921,8 +2005,9 @@
         "fr": {
             "translation": "vous (sing. form.)",
             "note": "tu pour la version informelle",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Vous allez bien ?",
+            "port_exemple": "Você está bem?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "you (formal)",
@@ -1939,9 +2024,10 @@
         "port": "teu",
         "fr": {
             "translation": "ton (masc.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Teu est l'équivalent informel de 'your' et s'accorde avec le nom qui suit. En français, on emploie ton/ta/tes selon le genre et le nombre du nom.",
+            "fr_exemple": "C'est ton livre.",
+            "port_exemple": "Este é o teu livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "your (masc., informal)",
@@ -1957,10 +2043,11 @@
         "id": "e6e07e42-dd60-4ace-b4e2-6748ba72a67c",
         "port": "tua",
         "fr": {
-            "translation": "ton (fém.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "ta (fém.)",
+            "note": "Remarque : 'tua' est le déterminant possessif correspondant à 'tu' et s'accorde avec le nom féminin qui le suit. En français, on utilise 'ta' devant un nom féminin singulier.",
+            "fr_exemple": "Ta maison est jolie.",
+            "port_exemple": "A tua casa é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "your (fem., informal)",
@@ -1977,9 +2064,10 @@
         "port": "te",
         "fr": {
             "translation": "te",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'te' est le pronom complément pour la deuxième personne du singulier. En français, on utilise aussi l'élision t' devant une voyelle (par exemple Je t'aime).",
+            "fr_exemple": "Je te vois.",
+            "port_exemple": "Eu te vejo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "you (object)",
@@ -1996,9 +2084,10 @@
         "port": "lhe",
         "fr": {
             "translation": "lui",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, 'lhe' est un pronom indirect utilisé pour 'à lui/à elle/à vous'. En français, on dit généralement 'lui' pour 'à lui/à elle'.",
+            "fr_exemple": "Je lui donne le livre.",
+            "port_exemple": "Eu lhe dou o livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "him/her (indirect)",
@@ -2015,9 +2104,10 @@
         "port": "nós",
         "fr": {
             "translation": "nous",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Nós est le pronom sujet 'nous'. En français, 'nous' est aussi le pronom sujet et nécessite la forme verbale à la première personne du pluriel (nous allons, nous faisons, etc.).",
+            "fr_exemple": "Nous allons au parc.",
+            "port_exemple": "Nós vamos ao parque.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "we",
@@ -2033,10 +2123,11 @@
         "id": "a400fbe2-1e02-4bb9-b327-3f08f16c7ba6",
         "port": "nosso",
         "fr": {
-            "translation": "notre (masc.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "notre",
+            "note": "Remarque: 'notre' s'accorde avec le nom possédé et s'emploie au singulier (notre livre). Au pluriel, on utilise 'nos' et pour les pronoms, 'le nôtre/la nôtre/les nôtres'.",
+            "fr_exemple": "C'est notre livre.",
+            "port_exemple": "Este é o nosso livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "our (masc.)",
@@ -2052,10 +2143,11 @@
         "id": "ab854469-2a5b-4d38-8eb6-696be6210377",
         "port": "nossa",
         "fr": {
-            "translation": "notre (fém.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "notre",
+            "note": "Remarque : le mot 'nossa' s'accorde avec le nom qui suit en portugais (nossa casa, nossas casas). En français, on utilise 'notre' pour le singulier et 'nos' pour le pluriel.",
+            "fr_exemple": "Notre maison est grande.",
+            "port_exemple": "Nossa casa é grande.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "our (fem.)",
@@ -2072,9 +2164,10 @@
         "port": "nos",
         "fr": {
             "translation": "nous",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "'nos' est un pronom objet signifiant 'nous'. En portugais, il suit le verbe (Eles nos ajudam), et en français 'nous' peut être sujet ou objet selon le contexte.",
+            "fr_exemple": "Ils nous aidons.",
+            "port_exemple": "Eles nos ajudam.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "us",
@@ -2091,9 +2184,10 @@
         "port": "vocês",
         "fr": {
             "translation": "vous (pl.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'vocês' est la 2e personne du pluriel en portugais. En français, 'vous' est utilisé pour le pluriel et comme forme de politesse au singulier; c'est donc l'équivalent naturel de 'vocês' dans les phrases plurielles.",
+            "fr_exemple": "Vous allez au cinéma ?",
+            "port_exemple": "Vocês vão ao cinema?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "you (plural)",
@@ -2109,10 +2203,11 @@
         "id": "64c2384f-aaad-4569-bd54-4275c07f737d",
         "port": "vosso",
         "fr": {
-            "translation": "votre (masc.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "votre",
+            "note": "Notez que 'vosso' s'accorde avec le possesseur en portugais et peut varier selon le genre et le nombre du nom possédé. En français, on utilise 'votre' quel que soit le genre du nom.",
+            "fr_exemple": "C'est votre voiture.",
+            "port_exemple": "Este é o vosso carro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "your (masc., plural)",
@@ -2128,10 +2223,11 @@
         "id": "5aa56442-daec-40f7-a8da-268be6bc54dd",
         "port": "vossa",
         "fr": {
-            "translation": "votre (fém.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "votre",
+            "note": "Le mot portugais 'vossa' est le déterminant possessif féminin singulier utilisé devant un nom féminin (par exemple 'casa'). En français, 'votre' s'emploie quel que soit le genre du nom.",
+            "fr_exemple": "Votre maison est belle.",
+            "port_exemple": "A vossa casa é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "your (fem., plural)",
@@ -2148,9 +2244,10 @@
         "port": "lhes",
         "fr": {
             "translation": "leur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'lhes' est un pronom indirect utilisé pour 'à eux/à elles'. En français, le pronom correspondant est 'leur'.",
+            "fr_exemple": "Je leur ai donné les livres.",
+            "port_exemple": "Eu lhes dei os livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "them (indirect)",
@@ -2166,10 +2263,11 @@
         "id": "9641ff9f-c5e4-4c87-b5bd-247ab0e23493",
         "port": "este",
         "fr": {
-            "translation": "ce",
+            "translation": "ce (masc. sing. avant consonne), cet (masc. sing. avant voyelle), cette (fem. sing.), ces (pluriel)",
             "note": "'este' est le démonstratif masculin singulier pour quelque chose de proche ('este livro'), 'esta' est sa forme féminine singulière ('esta casa'), tandis que 'isto' est neutre et s'utilise pour des choses indéfinies ou sans genre spécifique ('isto é bom').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "C'est mon livre.",
+            "port_exemple": "Este é o meu livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "this (masc.)",
@@ -2187,8 +2285,9 @@
         "fr": {
             "translation": "cette",
             "note": "'este' est le démonstratif masculin singulier pour quelque chose de proche ('este livro'), 'esta' est sa forme féminine singulière ('esta casa'), tandis que 'isto' est neutre et s'utilise pour des choses indéfinies ou sans genre spécifique ('isto é bom').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Cette maison est belle.",
+            "port_exemple": "Esta casa é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "this (fem.)",
@@ -2204,10 +2303,11 @@
         "id": "01256968-fc1d-42a2-8418-45e3a0be0301",
         "port": "isto",
         "fr": {
-            "translation": "celui-ci, ceci",
+            "translation": "ceci",
             "note": "'este' est le démonstratif masculin singulier pour quelque chose de proche ('este livro'), 'esta' est sa forme féminine singulière ('esta casa'), tandis que 'isto' est neutre et s'utilise pour des choses indéfinies ou sans genre spécifique ('isto é bom').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Ceci est important.",
+            "port_exemple": "Isto é importante.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "this",
@@ -2223,10 +2323,11 @@
         "id": "f0d48166-7053-412c-8293-fc37eecb2aa0",
         "port": "aquilo",
         "fr": {
-            "translation": "celui-là, cela (inv.)",
+            "translation": "ça",
             "note": "'aquilo' est un pronom démonstratif neutre signifiant 'cela' (lointain), et il est invariable en genre et en nombre, car il s'utilise pour des choses indéfinies ou abstraites sans variation.",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Ça coûte cher.",
+            "port_exemple": "Aquilo é caro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "that",
@@ -2244,8 +2345,9 @@
         "fr": {
             "translation": "certains (masc. pluriel), quelques",
             "note": "les mots qui finissent par m au singulier prennent ns au pluriel. on evite le 'ms'. du coup ca ne s applique pas au feminin car le singulier est 'ma' et le pluriel 'mas'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Quelques amis vont à la fête.",
+            "port_exemple": "Alguns amigos vão à festa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "some (masc. plural)",
@@ -2263,8 +2365,9 @@
         "fr": {
             "translation": "certaines, quelques",
             "note": "les mots qui finissent par m au singulier prennent ns au pluriel. on evite le 'ms'. du coup ca ne s applique pas au feminin car le singulier est 'ma' et le pluriel 'mas'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Quelques personnes aiment le café.",
+            "port_exemple": "Algumas pessoas gostam de café.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "some (fem. plural)",
@@ -2280,10 +2383,11 @@
         "id": "705b3b50-f269-40c3-b0f6-b0ea4ae1115c",
         "port": "algum",
         "fr": {
-            "translation": "certain (masc. singulier)",
+            "translation": "quelques",
             "note": "les mots qui finissent par m au singulier prennent ns au pluriel. on evite le 'ms'. du coup ca ne s applique pas au feminin car le singulier est 'ma' et le pluriel 'mas'",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "J'ai du temps.",
+            "port_exemple": "Tenho algum tempo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "some (masc. singular)",
@@ -2299,10 +2403,11 @@
         "id": "34106a4d-b9f1-4c28-83cb-611ff5b33d40",
         "port": "nenhum",
         "fr": {
-            "translation": "aucun (masc.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "aucun/aucune",
+            "note": "Nenhum se traduit par 'aucun/aucune' selon le genre du nom qui suit. En pratique, on utilisera 'aucun' devant un nom masculin et 'aucune' devant un nom féminin.",
+            "fr_exemple": "Aucun élève n'est arrivé en retard.",
+            "port_exemple": "Nenhum aluno chegou atrasado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "none/no (masc.)",
@@ -2319,9 +2424,10 @@
         "port": "nenhuma",
         "fr": {
             "translation": "aucune (fém.)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : nenhuma s'accorde avec un nom féminin (par exemple 'idée'). Pour un nom masculin, on dit 'nenhum' et en français 'aucun'.",
+            "fr_exemple": "Je n'ai aucune idée.",
+            "port_exemple": "Não tenho nenhuma ideia.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "none/no (fem.)",
@@ -2337,10 +2443,11 @@
         "id": "a40d7e7c-8fae-4082-be67-67b5bdaa6a3e",
         "port": "cada",
         "fr": {
-            "translation": "chaque (chaque jour)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "chaque",
+            "note": "Remarque: « cada » signifie « chaque » ou « tous les » selon le contexte. En pratique, on utilise « chaque » devant un nom singulier (chaque jour, chaque personne) ou « tous les » pour parler d’éléments multiples.",
+            "fr_exemple": "Chaque jour est une nouvelle opportunité.",
+            "port_exemple": "Cada dia é uma nova oportunidade.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "each/every",
@@ -2356,10 +2463,11 @@
         "id": "6414280d-f1c8-41c2-88a7-9525977b32b3",
         "port": "todo",
         "fr": {
-            "translation": "tout / entier (adj)",
+            "translation": "tout (masc. sing.); tous (masc. plur.); toute (fem. sing.); toutes (fem. plur.)",
             "note": "todo est l adjectif. tudo est un pronom indéfini souvent utilisé pour exprimer la totalité. Je sais tout sur ça=Eu sei tudo sobre isso",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Tous les jours, je me réveille tôt.",
+            "port_exemple": "Todo dia eu acordo cedo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "all/whole",
@@ -2377,8 +2485,9 @@
         "fr": {
             "translation": "comme ça / ainsi / de cette façon / tel quel",
             "note": "Peut aussi signifier 'donc' (therefore), 'pareillement' (likewise), ou dans des expressions comme 'assim assim' pour 'bof' ou 'moyen' (so-so). Souvent utilisé pour 'comme ceci' ou 'comme cela' dans des contextes quotidiens.",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Faites comme ça.",
+            "port_exemple": "Faça assim.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "like that / thus / in this way / as is",
@@ -2394,10 +2503,11 @@
         "id": "f9ba33d8-03d4-499d-ab37-2389c101d08d",
         "port": "todos",
         "fr": {
-            "translation": "tout le monde (adjectif pluriel)",
+            "translation": "Tout le monde",
             "note": "todo est l adjectif.A ne pas confondre avec tudo est le pronom indéfini souvent utilisé pour exprimer la totalité",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Tout le monde aime la musique.",
+            "port_exemple": "Todos gostam de música.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "everyone/all",
@@ -2415,8 +2525,9 @@
         "fr": {
             "translation": "tout (pronom indéfini)",
             "note": "todo est l adjectif. tudo est un pronom indéfini souvent utilisé pour exprimer la totalité. Je sais tout sur ça=Eu sei tudo sobre isso",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Tout va bien.",
+            "port_exemple": "Tudo está bem.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "everything",
@@ -2433,9 +2544,10 @@
         "port": "humano",
         "fr": {
             "translation": "humain",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'humano' est l'équivalent adjectival en français. En pratique, on écrit 'humain' (masc.) et 'humaine' (féminin); pour parler d'un être humain, on utilise aussi 'un être humain'.",
+            "fr_exemple": "Il est humain.",
+            "port_exemple": "Ele é humano.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "human",
@@ -2451,10 +2563,11 @@
         "id": "8ea6be3c-9e63-4a68-85fb-a1bb67f82713",
         "port": "pessoas",
         "fr": {
-            "translation": "personnes/gens (formel)",
+            "translation": "personnes",
             "note": "gente est plus informel",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Les personnes aiment discuter.",
+            "port_exemple": "As pessoas gostam de conversar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "people (formal)",
@@ -2472,8 +2585,9 @@
         "fr": {
             "translation": "gens (informel)",
             "note": "pessoas est plus formel",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Ces gens sont très sympathiques.",
+            "port_exemple": "Essa gente é muito simpática.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "people (informal)",
@@ -2490,9 +2604,10 @@
         "port": "amigo",
         "fr": {
             "translation": "ami",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'amigo' est masculin. En français, 'ami' est le mot masculin pour 'friend' et 'amie' est féminin.",
+            "fr_exemple": "C'est mon ami.",
+            "port_exemple": "Este é o meu amigo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "friend",
@@ -2509,9 +2624,10 @@
         "port": "homem",
         "fr": {
             "translation": "homme",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'homem' désigne l'adulte masculin et s'emploie comme sujet ou objet dans des phrases simples. En portugais européen, 'homem' est le mot courant pour 'man'.",
+            "fr_exemple": "L'homme est en train de lire un livre.",
+            "port_exemple": "O homem está a ler um livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "man",
@@ -2528,9 +2644,10 @@
         "port": "mulher",
         "fr": {
             "translation": "femme",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "La traduction 'femme' est correcte et courante pour 'mulher'. Dans certaines expressions, 'ma femme' signifie 'ma épouse'.",
+            "fr_exemple": "La femme lit un livre.",
+            "port_exemple": "A mulher lê um livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "woman",
@@ -2547,9 +2664,10 @@
         "port": "menino",
         "fr": {
             "translation": "garçon",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque (français): 'garçon' est le terme standard pour 'un garçon'. Pour parler d'un enfant en général, on dit 'un enfant'.",
+            "fr_exemple": "Le garçon est en train de jouer dans le parc.",
+            "port_exemple": "O menino está a brincar no parque.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "boy",
@@ -2566,9 +2684,10 @@
         "port": "menina",
         "fr": {
             "translation": "fille",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'menina' désigne une jeune fille et s'emploie de manière neutre. Pour insister sur l'âge plus jeune, on peut dire 'petite fille'.",
+            "fr_exemple": "La fille lit un livre.",
+            "port_exemple": "A menina lê um livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "girl",
@@ -2586,8 +2705,9 @@
         "fr": {
             "translation": "enfant",
             "note": "le mot portugais 'criança' (qui signifie 'enfant' en français, et qui est féminin quel que soit le sexe de l'enfant) a un pluriel régulier : 'crianças'.",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "L'enfant est en train de jouer dans le parc.",
+            "port_exemple": "A criança está a brincar no parque.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "child",
@@ -2604,9 +2724,10 @@
         "port": "família",
         "fr": {
             "translation": "famille",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, 'família' peut désigner tout le lignage familial, pas seulement les proches. En français, 'famille' s'emploie de la même manière et s'accorde avec les déterminants possessifs.",
+            "fr_exemple": "Ma famille est très importante pour moi.",
+            "port_exemple": "A minha família é muito importante para mim.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "family",
@@ -2623,9 +2744,10 @@
         "port": "marido",
         "fr": {
             "translation": "mari",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'marido' est le mot courant pour 'husband' en portugais. En français, on utilise le plus souvent 'mari'; 'époux' est plus formel ou littéraire.",
+            "fr_exemple": "Mon mari travaille près de chez moi.",
+            "port_exemple": "Meu marido trabalha perto de casa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "husband",
@@ -2642,9 +2764,10 @@
         "port": "esposa",
         "fr": {
             "translation": "épouse",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Épouse est un terme plutôt soutenu ou littéraire. Dans le langage courant, on dit 'ma femme'.",
+            "fr_exemple": "Mon épouse est professeure.",
+            "port_exemple": "A minha esposa é professora.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "wife",
@@ -2661,9 +2784,10 @@
         "port": "vendedor",
         "fr": {
             "translation": "vendeur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'vendeur' est masculin. Pour parler d'une femme, on dit 'vendeuse'.",
+            "fr_exemple": "Le vendeur a aidé le client.",
+            "port_exemple": "O vendedor ajudou o cliente.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "salesman",
@@ -2680,9 +2804,10 @@
         "port": "água",
         "fr": {
             "translation": "eau",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'água' est féminin et s'emploie souvent sans article pour parler de l'eau en général. En français, 'eau' est féminin et s'emploie avec l'article défini 'l'eau' lorsque l'on parle de l'eau en contexte spécifique.",
+            "fr_exemple": "Je bois de l'eau tous les jours.",
+            "port_exemple": "Eu bebo água todos os dias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "water",
@@ -2699,9 +2824,10 @@
         "port": "carne de boi",
         "fr": {
             "translation": "bœuf",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'bœuf' désigne la viande en usage courant. Pour préciser qu'on parle de la viande et non de l'animal, on peut dire 'la viande de bœuf'.",
+            "fr_exemple": "Je mange de la viande de bœuf.",
+            "port_exemple": "Eu gosto de carne de boi.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "beef",
@@ -2717,10 +2843,11 @@
         "id": "d4e5f6a7-b8c9-0123-def1-234567890123",
         "port": "porco",
         "fr": {
-            "translation": "porc",
+            "translation": "cochon",
             "note": "viande de porc: carne de porco",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Le cochon est dans la porcherie.",
+            "port_exemple": "O porco está no chiqueiro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "pork",
@@ -2736,10 +2863,11 @@
         "id": "f6a7b8c9-d0e1-2345-f123-456789012345",
         "port": "carneiro",
         "fr": {
-            "translation": "agneau",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "bélier",
+            "note": "Remarque: 'carneiro' désigne l'animal mâle adulte (le bélier). 'agneau' correspond à l'agneau (animal jeune) ou à sa viande; ce n'est pas le bélier.",
+            "fr_exemple": "Le bélier est dans le champ.",
+            "port_exemple": "O carneiro está no campo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "lamb",
@@ -2756,9 +2884,10 @@
         "port": "peixe",
         "fr": {
             "translation": "poisson",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'peixe' désigne le poisson (animal) en portugais. En cuisine ou en parlant du plat, on dit 'poisson' en français; le contexte clarifie le sens.",
+            "fr_exemple": "J'aime le poisson.",
+            "port_exemple": "Eu gosto de peixe.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "fish",
@@ -2775,9 +2904,10 @@
         "port": "pé",
         "fr": {
             "translation": "pied",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'pé' désigne le pied du corps et se met au pluriel 'pés'. En français, le singulier est 'pied' et le pluriel est 'pieds'.",
+            "fr_exemple": "Mon pied me fait mal.",
+            "port_exemple": "O meu pé dói.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "foot",
@@ -2794,9 +2924,10 @@
         "port": "perna",
         "fr": {
             "translation": "jambe",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'jambe' est le mot courant pour la jambe du corps; utilisez 'pied' pour le pied; le pluriel est 'jambes'.",
+            "fr_exemple": "Ma jambe me fait mal quand je marche.",
+            "port_exemple": "A minha perna dói quando caminho.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "leg",
@@ -2813,9 +2944,10 @@
         "port": "cabeça",
         "fr": {
             "translation": "tête",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'cabeça' se traduit surtout par 'tête' (sens anatomique et usage courant). Dans des expressions composées (par exemple 'cabeça de alho' → 'tête d'ail'), le sens peut varier selon le contexte.",
+            "fr_exemple": "Ma tête me fait mal.",
+            "port_exemple": "A minha cabeça dói.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "head (=body)",
@@ -2832,9 +2964,10 @@
         "port": "braço",
         "fr": {
             "translation": "bras",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'braço' signifie le bras, le membre supérieur. En français, on dit 'bras' et l'on peut dire 'Mon bras me fait mal' pour exprimer une douleur.",
+            "fr_exemple": "Mon bras me fait mal.",
+            "port_exemple": "Meu braço dói.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "arm",
@@ -2851,9 +2984,10 @@
         "port": "mão",
         "fr": {
             "translation": "main",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'main' est féminin; on écrit 'la main'. C'est un mot courant pour parler du corps et des actions liées.",
+            "fr_exemple": "Ma main est sale.",
+            "port_exemple": "A minha mão está suja.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "hand",
@@ -2870,9 +3004,10 @@
         "port": "dedo",
         "fr": {
             "translation": "doigt",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'dedo' désigne le doigt en général. En français, l'équivalent est 'doigt' et on utilise 'orteil' pour les orteils.",
+            "fr_exemple": "Mon doigt est blessé.",
+            "port_exemple": "Meu dedo está machucado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "finger",
@@ -2889,9 +3024,10 @@
         "port": "corpo",
         "fr": {
             "translation": "corps",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'corps' est le terme le plus courant pour désigner le corps humain. On l'utilise aussi pour le corps d'un texte (corps du texte); pour le corps d'un véhicule, on dirait plutôt 'carrosserie'.",
+            "fr_exemple": "Le corps humain a besoin d'eau.",
+            "port_exemple": "O corpo humano precisa de água.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "body",
@@ -2908,9 +3044,10 @@
         "port": "estômago",
         "fr": {
             "translation": "estomac",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : estômago est un nom masculin en portugais. En français, on dit l’estomac et on peut dire avoir mal à l’estomac.",
+            "fr_exemple": "Mon estomac me fait mal.",
+            "port_exemple": "Meu estômago dói.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "stomach",
@@ -2928,8 +3065,9 @@
         "fr": {
             "translation": "dos",
             "note": "Costas (toujours au pluriel). Costela désigne une côte",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "J'ai des douleurs dans le dos.",
+            "port_exemple": "Eu tenho dores nas costas.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "back",
@@ -2946,9 +3084,10 @@
         "port": "peito",
         "fr": {
             "translation": "poitrine",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Poitrine est le terme le plus utilisé pour le thorax ou la poitrine humaine. Pour l'expression idiomatique 'não ter peito', on dirait plutôt 'avoir le cran' ou 'le courage'.",
+            "fr_exemple": "Ma poitrine me fait mal quand je respire.",
+            "port_exemple": "Meu peito dói quando respiro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "chest",
@@ -2965,9 +3104,10 @@
         "port": "enfermeira",
         "fr": {
             "translation": "infirmière",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, 'enfermeira' désigne une infirmière féminine. En français, 'infirmière' convient parfaitement; on peut préciser 'en service' pour indiquer qu'elle est en service.",
+            "fr_exemple": "L'infirmière est de service.",
+            "port_exemple": "A enfermeira está de serviço.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "nurse",
@@ -2984,9 +3124,10 @@
         "port": "policial",
         "fr": {
             "translation": "policier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'policial' peut être masculin ou féminin sans changer le mot; le genre se marque par l'article (o policial, a policial). En français, le nom correspondant varie: policier (masc.) et policière (fem.).",
+            "fr_exemple": "Le policier a aidé le conducteur.",
+            "port_exemple": "O policial ajudou o motorista.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "police officer",
@@ -3003,9 +3144,10 @@
         "port": "cozinheiro",
         "fr": {
             "translation": "cuisinier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'cozinheiro' est masculin. Pour le féminin, on dit 'cozinheira', et le terme correspondant en cuisine est 'cuisinier' ou 'cuisinière' selon le genre.",
+            "fr_exemple": "Le cuisinier prépare le déjeuner.",
+            "port_exemple": "O cozinheiro prepara o almoço.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cook",
@@ -3022,9 +3164,10 @@
         "port": "engenheiro",
         "fr": {
             "translation": "ingénieur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, engenheiro est masculin et s'accompagne de l'article 'o'. En français, ingénieur est masculin et s'accorde avec l'article 'le'.",
+            "fr_exemple": "L'ingénieur dessine des plans.",
+            "port_exemple": "O engenheiro desenha planos.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "engineer",
@@ -3041,9 +3184,10 @@
         "port": "médico",
         "fr": {
             "translation": "médecin",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'médico' désigne le médecin. En français, 'médecin' est le terme courant; 'docteur' peut être plus familier.",
+            "fr_exemple": "Le médecin reçoit des patients.",
+            "port_exemple": "O médico atende pacientes.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "doctor",
@@ -3060,9 +3204,10 @@
         "port": "gerente",
         "fr": {
             "translation": "gérant",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, « gerente » désigne le responsable d'une entreprise ou d'un magasin. En français, « gérant » est couramment utilisé pour ce rôle; la forme féminine est « gérante ».",
+            "fr_exemple": "Le gérant de l'entreprise est occupé.",
+            "port_exemple": "O gerente da empresa está ocupado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "manager",
@@ -3078,10 +3223,11 @@
         "id": "a5b6c7d8-e9f0-1234-9012-345678901234",
         "port": "professora",
         "fr": {
-            "translation": "professeur (feminin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "professeure",
+            "note": "Remarque: la forme féminine est 'professeure'. En pratique, on utilise souvent 'professeur' quel que soit le genre, mais 'professeure' est de plus en plus courante pour marquer le féminin.",
+            "fr_exemple": "La professeure est arrivée tôt.",
+            "port_exemple": "A professora chegou cedo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "teacher",
@@ -3098,9 +3244,10 @@
         "port": "programador",
         "fr": {
             "translation": "programmeur",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'programmeur' est correct pour désigner une personne qui écrit des programmes. En contexte informatique, 'développeur' est souvent plus courant.",
+            "fr_exemple": "Le programmeur a écrit le code.",
+            "port_exemple": "O programador escreveu o código.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "programmer",
@@ -3117,9 +3264,10 @@
         "port": "janeiro",
         "fr": {
             "translation": "janvier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: «janeiro» désigne le premier mois de l'année et s'écrit en minuscules; en français, on dit «janvier». Les noms des mois restent en minuscules en portugais et en français (sauf au début d'une phrase).",
+            "fr_exemple": "Le mois de janvier est froid.",
+            "port_exemple": "O mês de janeiro é frio.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "January",
@@ -3136,9 +3284,10 @@
         "port": "fevereiro",
         "fr": {
             "translation": "février",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "C'est le deuxième mois de l'année. En portugais européen, on dit 'em fevereiro' pour parler du mois.",
+            "fr_exemple": "Mon anniversaire est en février.",
+            "port_exemple": "O meu aniversário é em fevereiro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "February",
@@ -3155,9 +3304,10 @@
         "port": "março",
         "fr": {
             "translation": "mars (le mois)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Note: en portugais, 'março' désigne le mois de mars. En français, on écrit le mois 'mars' en minuscules; la planète s'écrit 'Mars' avec une majuscule.",
+            "fr_exemple": "Mon anniversaire est en mars.",
+            "port_exemple": "Meu aniversário é em março.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "March",
@@ -3174,9 +3324,10 @@
         "port": "abril",
         "fr": {
             "translation": "avril",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'abril' désigne le quatrième mois de l'année. En français, on écrit 'avril' et on l'utilise de la même façon.",
+            "fr_exemple": "En avril, les fleurs apparaissent.",
+            "port_exemple": "Em abril, as flores aparecem.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "April",
@@ -3193,9 +3344,10 @@
         "port": "maio",
         "fr": {
             "translation": "mai",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'maio' est le nom du mois de mai en portugais. En français, on écrit 'mai' et on l'utilise de la même façon pour parler du mois.",
+            "fr_exemple": "En mai, les fleurs s'épanouissent.",
+            "port_exemple": "Em maio, as flores desabrocham.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "May",
@@ -3212,9 +3364,10 @@
         "port": "junho",
         "fr": {
             "translation": "juin",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'juin' désigne le mois du calendrier. En portugais, 'junho' a la même signification et s'emploie comme 'em junho' pour dire 'in June'.",
+            "fr_exemple": "Mon anniversaire est en juin.",
+            "port_exemple": "Meu aniversário é em junho.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "June",
@@ -3231,9 +3384,10 @@
         "port": "julho",
         "fr": {
             "translation": "juillet",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Julho correspond au mois de juillet. En portugais, les noms des mois ne prennent pas de majuscule; en français non plus, 'juillet' s'écrit en minuscules.",
+            "fr_exemple": "Je vais voyager en juillet.",
+            "port_exemple": "Eu vou viajar em julho.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "July",
@@ -3250,9 +3404,10 @@
         "port": "agosto",
         "fr": {
             "translation": "août",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, agosto est le nom du mois et s'écrit sans majuscule sauf en début de phrase. En français, le mois correspondant est 'août'.",
+            "fr_exemple": "En août, je vais prendre des vacances.",
+            "port_exemple": "Em agosto, vou tirar férias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "August",
@@ -3269,9 +3424,10 @@
         "port": "setembro",
         "fr": {
             "translation": "septembre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'setembro' désigne le neuvième mois de l'année. En portugais, comme en français, c'est un nom commun neutre et il s'utilise comme les autres mois.",
+            "fr_exemple": "Je reprends les cours en septembre.",
+            "port_exemple": "Volto às aulas em setembro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "September",
@@ -3288,9 +3444,10 @@
         "port": "outubro",
         "fr": {
             "translation": "octobre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'outubro' est le nom du mois. En portugais et en français, les noms des mois s'écrivent en minuscules, sauf au début d'une phrase où on majuscule la première lettre.",
+            "fr_exemple": "Octobre compte 31 jours.",
+            "port_exemple": "Outubro tem 31 dias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "October",
@@ -3307,9 +3464,10 @@
         "port": "novembro",
         "fr": {
             "translation": "novembre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'novembro' est le nom du neuvième mois et se traduit par 'novembre'. En français, on dit 'en novembre' pour parler d'une période, sans article devant le mois.",
+            "fr_exemple": "Mes vacances commencent en novembre.",
+            "port_exemple": "As minhas férias começam em novembro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "November",
@@ -3326,9 +3484,10 @@
         "port": "dezembro",
         "fr": {
             "translation": "décembre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'dezembro' désigne le douzième mois de l'année. En français, on écrit 'décembre' en minuscules, et les mois ne prennent pas de majuscules.",
+            "fr_exemple": "Mon anniversaire est en décembre.",
+            "port_exemple": "O meu aniversário é em dezembro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "December",
@@ -3345,9 +3504,10 @@
         "port": "zero",
         "fr": {
             "translation": "zéro",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en français, zéro est le chiffre 0 et on l'accorde comme un nom masculin. Dans des expressions indiquant une absence totale, on emploie plutôt \"aucun/aucune\" ou \"pas un\" plutôt que \"zéro\".",
+            "fr_exemple": "Le prix est zéro.",
+            "port_exemple": "O preço é zero.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "zero",
@@ -3364,9 +3524,10 @@
         "port": "dois",
         "fr": {
             "translation": "deux",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, dois s'accorde avec le nom qui suit (dois homens, duas mulheres). En français, deux est invariable et s'emploie devant tous les noms.",
+            "fr_exemple": "J'ai deux livres.",
+            "port_exemple": "Tenho dois livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "two",
@@ -3383,9 +3544,10 @@
         "port": "três",
         "fr": {
             "translation": "trois",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Três est le chiffre cardinal 3 en portugais. En portugais, 'três' est invariable et s'emploie devant un nom pour indiquer la quantité, ex.: três livros, três pessoas.",
+            "fr_exemple": "J'ai trois livres.",
+            "port_exemple": "Eu tenho três livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "three",
@@ -3402,9 +3564,10 @@
         "port": "quatro",
         "fr": {
             "translation": "quatre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'quatro' est un nombre cardinal utilisé devant le nom: 'quatro livros'. En français, 'quatre' est invariable et s'emploie de la même façon: 'quatre livres'.",
+            "fr_exemple": "J'ai quatre livres.",
+            "port_exemple": "Eu tenho quatro livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "four",
@@ -3421,9 +3584,10 @@
         "port": "cinco",
         "fr": {
             "translation": "cinq",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "'cinco' est un nombre cardinal invariable devant n'importe quel nom. En français, 'cinq' est aussi invariable et s'écrit sans accord.",
+            "fr_exemple": "J'ai cinq livres.",
+            "port_exemple": "Tenho cinco livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "five",
@@ -3440,9 +3604,10 @@
         "port": "seis",
         "fr": {
             "translation": "six",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'seis' sert uniquement à compter (numéral cardinal). En français, 'six' est invariable et précède le nom: six pommes.",
+            "fr_exemple": "J'ai six pommes.",
+            "port_exemple": "Eu tenho seis maçãs.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "six",
@@ -3459,9 +3624,10 @@
         "port": "sete",
         "fr": {
             "translation": "sept",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Sept est le chiffre 7. En portugais, sete est le nom du chiffre et s'emploie pour compter; en français on dit simplement 'sept'.",
+            "fr_exemple": "J'ai sept livres.",
+            "port_exemple": "Eu tenho sete livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "seven",
@@ -3478,9 +3644,10 @@
         "port": "oito",
         "fr": {
             "translation": "huit",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "oito est le chiffre cardinal huit en portugais et se place devant le nom (oito livros). En français, on le traduit par 'huit' et il précède le nom.",
+            "fr_exemple": "J'ai huit livres.",
+            "port_exemple": "Eu tenho oito livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "eight",
@@ -3496,10 +3663,11 @@
         "id": "c1f3f6ca-6d45-4065-9e0c-a4203b4a8150",
         "port": "nove",
         "fr": {
-            "translation": "neuf (contraire de use)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "neuf",
+            "note": "Remarque: \"neuf\" peut signifier « neuf » (nine) ou « nouveau » selon le contexte. Quand le nom est féminin, on dit « neuve ».",
+            "fr_exemple": "Le nombre neuf est celui qui vient après huit.",
+            "port_exemple": "Nove é o número que vem depois de oito.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "new",
@@ -3516,9 +3684,10 @@
         "port": "dez",
         "fr": {
             "translation": "dix",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Dix est un nombre cardinal de base et il est invariable. Il se place devant le nom et ne s'accorde pas.",
+            "fr_exemple": "J'ai dix doigts.",
+            "port_exemple": "Eu tenho dez dedos.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "ten",
@@ -3535,9 +3704,10 @@
         "port": "café",
         "fr": {
             "translation": "café",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'café' peut signifier la boisson ou le café-lieu. En français, 'café' couvre ces deux sens selon le contexte.",
+            "fr_exemple": "J'aime prendre un café le matin.",
+            "port_exemple": "Gosto de café pela manhã.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "coffee",
@@ -3554,9 +3724,10 @@
         "port": "cerveja",
         "fr": {
             "translation": "bière",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "C'est le mot courant pour la boisson alcoolisée. En français, on dit simplement 'bière' et on peut préciser le type (bière blonde, bière brune, bière pression).",
+            "fr_exemple": "Je voudrais une bière, s'il vous plaît.",
+            "port_exemple": "Eu gosto de cerveja.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "beer",
@@ -3573,9 +3744,10 @@
         "port": "chá",
         "fr": {
             "translation": "thé",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot chá est masculin : il désigne la boisson chaude. En portugais, on peut dire « chá de camomila » pour parler d'un thé à la camomille.",
+            "fr_exemple": "Je bois du thé tous les matins.",
+            "port_exemple": "Eu tomo chá todas as manhãs.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "tea",
@@ -3592,9 +3764,10 @@
         "port": "vinho",
         "fr": {
             "translation": "vin",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'vinho' en portugais désigne le vin en général. En portugais, on précise souvent le type: vinho tinto, vinho branco; en français, on dit vin rouge ou vin blanc.",
+            "fr_exemple": "J'aime le vin.",
+            "port_exemple": "Eu gosto de vinho.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "wine",
@@ -3611,9 +3784,10 @@
         "port": "fácil",
         "fr": {
             "translation": "facile",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'fácil' s'accorde peu avec le genre au singulier (masculin/féminin) et devient 'fáceis' au pluriel. On le place généralement après le nom, comme dans 'um problema fácil'.",
+            "fr_exemple": "Cet exercice est facile.",
+            "port_exemple": "Este exercício é fácil.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "easy",
@@ -3630,9 +3804,10 @@
         "port": "perto",
         "fr": {
             "translation": "près",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: « perto » signifie « à proximité » ou « tout près » selon le contexte. En portugais, on dit « perto de » pour indiquer la proximité, et seul, « perto » équivaut à « proche ».",
+            "fr_exemple": "Je suis près.",
+            "port_exemple": "Estou perto.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "near",
@@ -3648,10 +3823,11 @@
         "id": "798b6a06-34a1-4194-b428-8804b0b9f32b",
         "port": "Olá",
         "fr": {
-            "translation": "Bonjour (informel)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "Bonjour",
+            "note": "Bonjour est l'équivalent neutre de «Olá». Salut est plus familier et moins formel.",
+            "fr_exemple": "Bonjour, comment ça va ?",
+            "port_exemple": "Olá, tudo bem?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Hello",
@@ -3667,10 +3843,11 @@
         "id": "c06f8ef6-37f5-45e4-ad6d-b79bee195aec",
         "port": "Bom dia",
         "fr": {
-            "translation": "Bonjour (formel)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "Bonjour",
+            "note": "Bonjour est le salut standard en français pendant la journée. Il est utilisé aussi bien dans des contextes formels que informels.",
+            "fr_exemple": "Bonjour ! Comment vas-tu ?",
+            "port_exemple": "Bom dia! Como estás?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Good morning",
@@ -3687,9 +3864,10 @@
         "port": "Boa tarde",
         "fr": {
             "translation": "Bon après-midi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'Boa tarde' est une salutation utilisée depuis le milieu de la journée jusqu'au début de la soirée. En français, 'Bon après-midi' est correct et fréquent, mais dans la conversation courante on utilise surtout 'Bonjour' jusqu'en début d'après-midi.",
+            "fr_exemple": "Bon après-midi, ça va ?",
+            "port_exemple": "Boa tarde, tudo bem?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Good afternoon",
@@ -3705,10 +3883,11 @@
         "id": "a1b2c3d4-e5f6-7890-6789-012345678901",
         "port": "Boa noite",
         "fr": {
-            "translation": "Bonne nuit",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "Bonsoir",
+            "note": "Remarque: 'Boa noite' est principalement une salutation du soir en portugais, équivalente à « bonsoir » en français. « Bonne nuit » est utilisé pour souhaiter une bonne nuit ou pour dire au revoir avant de dormir.",
+            "fr_exemple": "Bonsoir, tout le monde !",
+            "port_exemple": "Boa noite, pessoal!",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Good evening / Good night",
@@ -3725,9 +3904,10 @@
         "port": "Obrigado",
         "fr": {
             "translation": "Merci",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'obrigado' varie selon le genre (masculin 'obrigado', féminin 'obrigada'). En français, 'merci' ne varie pas et l'on peut dire 'je vous remercie' dans un contexte plus formel.",
+            "fr_exemple": "Merci pour votre aide.",
+            "port_exemple": "Obrigado pela sua ajuda.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Thank you",
@@ -3744,9 +3924,10 @@
         "port": "Não",
         "fr": {
             "translation": "Non",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Utilisé pour nier une action ou une affirmation. « Não » peut aussi apparaître au début d'une phrase pour marquer la négation.",
+            "fr_exemple": "Je ne sais pas.",
+            "port_exemple": "Não sei.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "No",
@@ -3763,9 +3944,10 @@
         "port": "Delicioso",
         "fr": {
             "translation": "Délicieux",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: l'équivalent portugais est 'delicioso' (masculin). En français, on emploie 'délicieux' au masculin et 'délicieuse' au féminin.",
+            "fr_exemple": "Ce plat est délicieux.",
+            "port_exemple": "Este prato é delicioso.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Delicious",
@@ -3782,9 +3964,10 @@
         "port": "Adeus",
         "fr": {
             "translation": "Au revoir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Dans le portugais européen, 'Adeus' correspond surtout à 'au revoir' dans les situations quotidiennes. Pour un adieu plus définitif, on peut aussi dire 'adieu' en français.",
+            "fr_exemple": "Adieu, à la prochaine fois!",
+            "port_exemple": "Adeus, até à próxima!",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Goodbye",
@@ -3801,9 +3984,10 @@
         "port": "Sim",
         "fr": {
             "translation": "Oui",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'sim' est une affirmation simple et directe. En français, 'oui' couvre le sens, mais on peut le renforcer avec 'bien sûr' ou 'certainement' selon le contexte.",
+            "fr_exemple": "Oui, j'ai compris.",
+            "port_exemple": "Sim, eu entendi.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Yes",
@@ -3820,9 +4004,10 @@
         "port": "segunda-feira",
         "fr": {
             "translation": "lundi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "segunda-feira est le nom courant du lundi en portugais. En portugais parlé, on peut dire 'na segunda' pour parler du lundi de manière informelle.",
+            "fr_exemple": "La réunion est lundi.",
+            "port_exemple": "A reunião é na segunda-feira.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Monday",
@@ -3839,9 +4024,10 @@
         "port": "terça-feira",
         "fr": {
             "translation": "mardi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'terça-feira' désigne le jour exact de la semaine. En français, on dit 'mardi' (sans article) pour évoquer ce jour, ou 'le mardi' pour parler d'un jour récurrent.",
+            "fr_exemple": "La réunion est mardi.",
+            "port_exemple": "A reunião é na terça-feira.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Tuesday",
@@ -3858,9 +4044,10 @@
         "port": "quarta-feira",
         "fr": {
             "translation": "mercredi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, les jours de la semaine s'écrivent en minuscules. 'quarta-feira' signifie mercredi et s'emploie souvent avec une préposition comme 'na' (na quarta-feira).",
+            "fr_exemple": "Le mercredi, j'ai une réunion.",
+            "port_exemple": "Na quarta-feira tenho uma reunião.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Wednesday",
@@ -3877,9 +4064,10 @@
         "port": "quinta-feira",
         "fr": {
             "translation": "jeudi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Quinta-feira désigne le jeudi en général; en français on dit simplement 'jeudi'. Pour parler des jours de manière répétée, on peut dire 'les jeudis'.",
+            "fr_exemple": "Le jeudi, c'est mon jour de congé.",
+            "port_exemple": "Quinta-feira é o meu dia de folga.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Thursday",
@@ -3896,9 +4084,10 @@
         "port": "sexta-feira",
         "fr": {
             "translation": "vendredi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'sexta-feira' est le nom du jour - vendredi - et s'utilise avec des expressions comme 'toda sexta-feira' pour parler d'habitudes. En français, on traduit par 'vendredi' et 'tous les vendredis' selon le contexte.",
+            "fr_exemple": "Tous les vendredis, je vais au marché.",
+            "port_exemple": "Toda sexta-feira eu vou ao mercado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Friday",
@@ -3915,9 +4104,10 @@
         "port": "sábado",
         "fr": {
             "translation": "samedi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, 'sábado' est le nom du jour et s'écrit en minuscules sauf en début de phrase. Le mot correspond directement à 'samedi' en français et s'emploie de la même manière.",
+            "fr_exemple": "Le samedi, je vais au marché.",
+            "port_exemple": "No sábado vou ao mercado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Saturday",
@@ -3934,9 +4124,10 @@
         "port": "domingo",
         "fr": {
             "translation": "dimanche",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Dimanche est le nom du septième jour de la semaine. En français, on emploie généralement l'article défini le devant le nom des jours, comme 'le dimanche'.",
+            "fr_exemple": "Le dimanche, j'aime me reposer.",
+            "port_exemple": "No domingo, eu gosto de descansar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "Sunday",
@@ -3953,9 +4144,10 @@
         "port": "semana",
         "fr": {
             "translation": "semaine",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'semaine' est féminin en français. On l'utilise avec des déterminants comme 'cette' et des expressions comme 'cette semaine' ou 'la semaine prochaine'.",
+            "fr_exemple": "Cette semaine, je vais au cinéma.",
+            "port_exemple": "Esta semana vou ao cinema.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "week",
@@ -3971,10 +4163,11 @@
         "id": "e7f8a9b0-c1d2-3456-2345-678901234567",
         "port": "ano",
         "fr": {
-            "translation": "année",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "an",
+            "note": "Remarque: en portugais, 'ano' signifie 'an' ou 'année' selon le contexte. En français, on dit 'un an' pour une durée ou une unité, et 'une année' pour parler de l'année elle-même ou d'une période.",
+            "fr_exemple": "Un an compte 365 jours.",
+            "port_exemple": "Um ano tem 365 dias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "year",
@@ -3991,9 +4184,10 @@
         "port": "hoje",
         "fr": {
             "translation": "aujourd'hui",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Usage courant: 'aujourd'hui' désigne le jour présent. Pour le sens général 'nowadays', on dit plutôt 'de nos jours'.",
+            "fr_exemple": "Aujourd'hui, c'est une bonne journée.",
+            "port_exemple": "Hoje é um bom dia.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "today",
@@ -4010,9 +4204,10 @@
         "port": "amanhã",
         "fr": {
             "translation": "demain",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Amanhã est un adverbe temporel signifiant le jour qui suit aujourd'hui et se traduit par demain. Utilisé pour parler d’un événement prévu pour le jour suivant.",
+            "fr_exemple": "Demain, j'ai une réunion.",
+            "port_exemple": "Amanhã tenho uma reunião.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "tomorrow",
@@ -4029,9 +4224,10 @@
         "port": "ontem",
         "fr": {
             "translation": "hier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Ontem indique le jour précédent aujourd'hui et s'utilise souvent en début de phrase. En français, hier s'emploie de la même façon; on le place fréquemment au début de la phrase, comme dans 'Hier, je suis allé au parc.'",
+            "fr_exemple": "Hier, je suis allé au parc.",
+            "port_exemple": "Ontem, eu fui ao parque.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "yesterday",
@@ -4048,9 +4244,10 @@
         "port": "calendário",
         "fr": {
             "translation": "calendrier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, calendário désigne le calendrier en général. En français, on dit 'calendrier' et on peut dire 'agenda' pour un carnet de rendez-vous.",
+            "fr_exemple": "Ce calendrier est utile pour organiser mes rendez-vous.",
+            "port_exemple": "Este calendário é útil para organizar os meus compromissos.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "calendar",
@@ -4066,10 +4263,11 @@
         "id": "d2e3f4a5-b6c7-8901-7890-123456789012",
         "port": "segundo",
         "fr": {
-            "translation": "seconde",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "deuxième",
+            "note": "En portugais, segundo peut signifier 'deuxième' (ordre) ou 'une seconde' (durée) selon le contexte. En français, on privilégie 'deuxième' ou 'en deuxième lieu' pour l'ordre.",
+            "fr_exemple": "Je suis le deuxième dans la file d'attente.",
+            "port_exemple": "Sou o segundo na fila.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "second",
@@ -4086,9 +4284,10 @@
         "port": "hora",
         "fr": {
             "translation": "heure",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Nuance: « hora » peut signifier l'heure ou le moment en portugais selon le contexte. En français, on emploie surtout « heure » pour parler de l'heure et du temps.",
+            "fr_exemple": "C'est l'heure d'étudier.",
+            "port_exemple": "É hora de estudar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "hour / o'clock",
@@ -4105,9 +4304,10 @@
         "port": "minuto",
         "fr": {
             "translation": "minute",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'minuto' est l'unité de temps. En français, 'minute' est féminin et s'emploie aussi bien pour parler de la durée que du temps qui s'écoule.",
+            "fr_exemple": "Il ne reste qu'une minute.",
+            "port_exemple": "Falta um minuto.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "minute",
@@ -4124,9 +4324,10 @@
         "port": "relógio",
         "fr": {
             "translation": "horloge",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : « relógio » peut désigner une horloge (clock) ou une montre (watch). En français, on utilise « horloge » pour une horloge et « montre » pour une montre; le contexte est important.",
+            "fr_exemple": "L'horloge murale est ancienne.",
+            "port_exemple": "O relógio da parede é antigo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "clock",
@@ -4143,9 +4344,10 @@
         "port": "longe",
         "fr": {
             "translation": "loin",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'longe' peut être utilisé comme adverbe ou adjectif pour indiquer une grande distance. En français, 'loin' est le choix le plus naturel dans les phrases simples; on peut aussi dire 'à distance' ou 'lointain' selon le contexte.",
+            "fr_exemple": "Le musée est loin d'ici.",
+            "port_exemple": "O museu fica longe daqui.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "far",
@@ -4162,9 +4364,10 @@
         "port": "bonito",
         "fr": {
             "translation": "beau",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Beau est le choix standard pour décrire quelqu'un ou quelque chose d'attirant. En portugais, bonito peut aussi signifier « joli » selon le contexte, et l'accord dépend du genre et du nombre.",
+            "fr_exemple": "Le garçon est beau.",
+            "port_exemple": "O rapaz é bonito.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "beautiful, pretty",
@@ -4181,9 +4384,10 @@
         "port": "feio",
         "fr": {
             "translation": "laid",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot le plus courant pour 'feio' (masc.) est 'laid'; pour le féminin, ce serait 'laide'. À l'oral familier, on peut aussi dire 'moche'.",
+            "fr_exemple": "Il est laid.",
+            "port_exemple": "Ele é feio.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "ugly",
@@ -4200,9 +4404,10 @@
         "port": "difícil",
         "fr": {
             "translation": "difficile",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Difficile s'emploie pour décrire ce qui demande de l'effort, une compétence ou une compréhension. C'est un adjectif courant et neutre, sans connotation émotionnelle particulière.",
+            "fr_exemple": "Cet exercice est difficile.",
+            "port_exemple": "Este exercício é difícil.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "difficult (hard)",
@@ -4219,9 +4424,10 @@
         "port": "curto",
         "fr": {
             "translation": "court (masculin)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, curto s'accorde avec le nom qu'il décrit (curto / curta). En français, court est l'équivalent courant pour 'short' en longueur ou durée.",
+            "fr_exemple": "Le temps est court.",
+            "port_exemple": "O tempo está curto.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "short (masculine)",
@@ -4238,9 +4444,10 @@
         "port": "magro",
         "fr": {
             "translation": "maigre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, magro peut décrire une personne ou de la viande. En français, maigre est généralement neutre pour la minceur, mais peut aussi évoquer une faiblesse ou une malnutrition selon le contexte.",
+            "fr_exemple": "Il est maigre.",
+            "port_exemple": "Ele é magro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "thin",
@@ -4257,9 +4464,10 @@
         "port": "frio",
         "fr": {
             "translation": "froid",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'frio' peut décrire la température ou la sensation de froid. En français, on emploie 'froid' comme adjectif et 'le froid' comme nom.",
+            "fr_exemple": "Il fait froid aujourd'hui.",
+            "port_exemple": "O tempo está frio.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cold",
@@ -4276,9 +4484,10 @@
         "port": "quente",
         "fr": {
             "translation": "chaud",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Quente se traduit par chaud lorsque l'on parle de température. En portugais, cet adjectif ne change pas selon le genre, mais en français 'chaud' s'accorde: chaud (masculin), chaude (féminin).",
+            "fr_exemple": "Le café est chaud.",
+            "port_exemple": "O café está quente.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "hot",
@@ -4295,9 +4504,10 @@
         "port": "aeroporto",
         "fr": {
             "translation": "aéroport",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, aeroporto est un nom masculin signifiant l'endroit où l'on prend l'avion. En français, aéroport est aussi masculin et s'écrit avec un accent circonflexe: aéroport.",
+            "fr_exemple": "Je vais à l'aéroport demain.",
+            "port_exemple": "Eu vou ao aeroporto amanhã.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "airport",
@@ -4314,9 +4524,10 @@
         "port": "táxi",
         "fr": {
             "translation": "taxi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'táxi' est l'orthographe portugaise; en français on écrit 'taxi'. On l'utilise pour désigner le véhicule de transport.",
+            "fr_exemple": "Je vais appeler un taxi.",
+            "port_exemple": "Vou chamar um táxi.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "taxi",
@@ -4333,9 +4544,10 @@
         "port": "ponte",
         "fr": {
             "translation": "pont",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'ponte' est féminin en portugais (a ponte). En français, 'pont' est masculin, ce qui peut surprendre les débutants.",
+            "fr_exemple": "Le pont relie les deux rives.",
+            "port_exemple": "A ponte liga as duas margens.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "bridge",
@@ -4352,9 +4564,10 @@
         "port": "estacionamento",
         "fr": {
             "translation": "parking",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En français courant, 'parking' est le mot le plus utilisé pour désigner le lieu où l'on gare les voitures. 'Parc de stationnement' est plus formel ou descriptif.",
+            "fr_exemple": "Je dois trouver un parking.",
+            "port_exemple": "Preciso encontrar um estacionamento.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "car park / parking lot",
@@ -4371,9 +4584,10 @@
         "port": "trem",
         "fr": {
             "translation": "train",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: trem est principalement utilisé au Brésil. En Portugal, on dit plutôt comboio.",
+            "fr_exemple": "Le train arrive à 8 heures.",
+            "port_exemple": "O trem chega às 8h.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "train",
@@ -4390,9 +4604,10 @@
         "port": "ônibus",
         "fr": {
             "translation": "bus",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'ônibus' est un mot brésilien. En portugais européen, on dit plutôt 'autocarro', et en français on emploie généralement 'bus'.",
+            "fr_exemple": "Le bus est arrivé en retard.",
+            "port_exemple": "O ônibus chegou atrasado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "bus",
@@ -4409,9 +4624,10 @@
         "port": "praia",
         "fr": {
             "translation": "plage",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Praia est un nom féminin et se traduit par 'plage' en français. On dit 'à la plage' pour parler d'aller ou d'être au bord de la mer.",
+            "fr_exemple": "J'aime aller à la plage.",
+            "port_exemple": "Eu gosto de ir à praia.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "beach",
@@ -4428,9 +4644,10 @@
         "port": "rua",
         "fr": {
             "translation": "rue",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, 'rua' est un nom féminin signifiant 'rue'. C'est un mot très courant pour parler des rues en ville.",
+            "fr_exemple": "La rue est étroite.",
+            "port_exemple": "A rua é estreita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "street",
@@ -4447,9 +4664,10 @@
         "port": "leite",
         "fr": {
             "translation": "lait",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot portugais 'leite' est masculin ('o leite'). En français, 'lait' est aussi masculin et c'est un nom non comptable.",
+            "fr_exemple": "Le lait est blanc.",
+            "port_exemple": "O leite é branco.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "milk",
@@ -4466,9 +4684,10 @@
         "port": "suco",
         "fr": {
             "translation": "jus",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot portugais 'suco' est propre au portugais du Brésil. En portugais européen, on dit plutôt 'sumo'.",
+            "fr_exemple": "Je bois du jus d'orange.",
+            "port_exemple": "Eu bebo suco de laranja.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "juice",
@@ -4485,9 +4704,10 @@
         "port": "café da manhã",
         "fr": {
             "translation": "petit-déjeuner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'café da manhã' est surtout brésilien et que, en portugais européen, on dirait plutôt 'pequeno-almoço'. Le sens se traduit en français par 'petit-déjeuner'.",
+            "fr_exemple": "Je prends le petit-déjeuner à huit heures.",
+            "port_exemple": "Eu tomo o café da manhã às oito.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "breakfast",
@@ -4504,9 +4724,10 @@
         "port": "bolo",
         "fr": {
             "translation": "gâteau",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, 'bolo' est le mot courant pour désigner un gâteau sucré. En français, 'gâteau' est le terme général; le contexte peut préciser le type (par exemple 'gâteau au chocolat').",
+            "fr_exemple": "J'ai mangé un gâteau.",
+            "port_exemple": "Eu comi um bolo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cake",
@@ -4523,9 +4744,10 @@
         "port": "pão",
         "fr": {
             "translation": "pain",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'pão' désigne le pain quotidien. En français, 'pain' est masculin et s'emploie avec les articles 'le' et 'un', comme dans 'du pain'.",
+            "fr_exemple": "J'aime le pain.",
+            "port_exemple": "Eu gosto de pão.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "bread",
@@ -4542,9 +4764,10 @@
         "port": "vermelho",
         "fr": {
             "translation": "rouge",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'vermelho' s'accorde en genre et en nombre (vermelho/vermelha; vermelhos/vermelhas). En français, 'rouge' est invariable et ne change pas selon le nom.",
+            "fr_exemple": "La voiture est rouge.",
+            "port_exemple": "O carro é vermelho.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "red",
@@ -4561,9 +4784,10 @@
         "port": "azul",
         "fr": {
             "translation": "bleu",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : Le mot azul est invariable en portugais; il ne change pas avec le genre du nom. En français, 'bleu' s'accorde selon le genre et le nombre: bleu, bleue, bleus, bleues.",
+            "fr_exemple": "Le ciel est bleu.",
+            "port_exemple": "O céu é azul.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "blue",
@@ -4580,9 +4804,10 @@
         "port": "verde",
         "fr": {
             "translation": "vert",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En français, l'adjectif de couleur s'accorde avec le nom. Pour un nom féminin comme 'la plante', on dit 'verte'.",
+            "fr_exemple": "La plante est verte.",
+            "port_exemple": "A planta é verde.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "green",
@@ -4599,9 +4824,10 @@
         "port": "amarelo",
         "fr": {
             "translation": "jaune",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, amarelo est l'adjectif masculin singulier et s'accorde avec le nom. Pour le féminin, on utilise amarela.",
+            "fr_exemple": "Ce cahier est jaune.",
+            "port_exemple": "Este caderno é amarelo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "yellow",
@@ -4618,9 +4844,10 @@
         "port": "preto",
         "fr": {
             "translation": "noir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'preto' peut être utilisé comme nom pour parler de la couleur noire (le noir). En pratique, on préfère dire « la couleur noire » lorsque l'on décrit une couleur, ou simplement « noir » selon le contexte.",
+            "fr_exemple": "Le noir est ma couleur préférée.",
+            "port_exemple": "O preto é a minha cor favorita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "black",
@@ -4637,9 +4864,10 @@
         "port": "branco",
         "fr": {
             "translation": "blanc",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Branco est l'adjectif masculin pour la couleur blanche. Il s'accorde avec le nom; au féminin on dit 'branca' → 'blanche', et 'le blanc' peut aussi servir de nom.",
+            "fr_exemple": "Le chat est blanc.",
+            "port_exemple": "O gato é branco.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "white",
@@ -4656,9 +4884,10 @@
         "port": "cidade",
         "fr": {
             "translation": "ville",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot portugais 'cidade' est courant pour 'city'. En contexte, 'cidade' peut aussi désigner une municipalité, mais on parle généralement de la ville.",
+            "fr_exemple": "La ville est belle.",
+            "port_exemple": "A cidade é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "city",
@@ -4675,9 +4904,10 @@
         "port": "país",
         "fr": {
             "translation": "pays",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'país' se traduit par 'pays'. C'est un nom masculin; utilisez 'un pays' au singulier et 'des pays' au pluriel.",
+            "fr_exemple": "Le pays a de nombreuses plages.",
+            "port_exemple": "O país tem muitas praias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "country",
@@ -4694,9 +4924,10 @@
         "port": "escola",
         "fr": {
             "translation": "école",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "L'école est un terme général pour 'school' en portugais, couvrant l'école primaire et secondaire. En français, 'école' est utilisé de manière générale; pour l'enseignement supérieur on dira 'université'.",
+            "fr_exemple": "Je vais à l'école tous les jours.",
+            "port_exemple": "Eu vou à escola todos os dias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "school",
@@ -4713,9 +4944,10 @@
         "port": "trabalho",
         "fr": {
             "translation": "travail",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Trabalho est un nom courant signifiant le travail ou l'emploi. En portugais, 'trabalho' peut aussi exprimer ce que l'on fait, comme verbe conjugué 'eu trabalho' (je travaille).",
+            "fr_exemple": "Mon travail est intéressant.",
+            "port_exemple": "O meu trabalho é interessante.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "work",
@@ -4731,10 +4963,11 @@
         "id": "744a1311-c123-4fa3-b674-6def14e79ba9",
         "port": "tempo",
         "fr": {
-            "translation": "temps (temps/météo)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "temps",
+            "note": "Le mot 'tempo' a plusieurs sens: le temps qui passe, la météo et le tempo musical. En français, on emploie 'temps' pour le temps et la météo, et 'tempo' est utilisé en musique.",
+            "fr_exemple": "Le temps est beau aujourd'hui.",
+            "port_exemple": "O tempo está bom hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "time/weather",
@@ -4751,9 +4984,10 @@
         "port": "dia",
         "fr": {
             "translation": "jour",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Dia est le mot portugais le plus courant pour 'day' au sens de la date ou d'une période de 24 heures. En revanche, 'journée' met l'accent sur la durée de ce jour ou ses activités.",
+            "fr_exemple": "Aujourd'hui est une belle journée.",
+            "port_exemple": "Hoje é um dia bonito.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "day",
@@ -4770,9 +5004,10 @@
         "port": "noite",
         "fr": {
             "translation": "nuit",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'noite' désigne le temps de la nuit, entre le coucher du soleil et le matin. En français, on emploie 'nuit' pour ce temps; pour parler d'une soirée, on dira 'soirée'.",
+            "fr_exemple": "La nuit est froide.",
+            "port_exemple": "A noite está fria.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "night",
@@ -4789,9 +5024,10 @@
         "port": "sol",
         "fr": {
             "translation": "soleil",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'soleil' est le mot pour le soleil en français. 'Sol' peut aussi signifier le sol ou le terrain selon le contexte.",
+            "fr_exemple": "Le soleil brille dans le ciel.",
+            "port_exemple": "O sol brilha no céu.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sun",
@@ -4808,9 +5044,10 @@
         "port": "lua",
         "fr": {
             "translation": "lune",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'lua' est un nom féminin. C'est le mot standard pour parler de la Lune dans la vie quotidienne et dans la poésie.",
+            "fr_exemple": "La lune brille dans le ciel.",
+            "port_exemple": "A lua brilha no céu.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "moon",
@@ -4827,9 +5064,10 @@
         "port": "feliz",
         "fr": {
             "translation": "heureux",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'feliz' en portugais s'accorde en genre et en nombre. En français, on utilise 'heureux' ou 'heureuse' selon le genre, ou 'content' selon le contexte.",
+            "fr_exemple": "Je suis heureux aujourd'hui.",
+            "port_exemple": "Estou feliz hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "happy",
@@ -4846,9 +5084,10 @@
         "port": "triste",
         "fr": {
             "translation": "triste",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Triste est l'adjectif courant pour décrire un état émotionnel. Il peut aussi exprimer la mélancolie selon le contexte.",
+            "fr_exemple": "Je suis triste aujourd'hui.",
+            "port_exemple": "Estou triste hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sad",
@@ -4865,9 +5104,10 @@
         "port": "cansado",
         "fr": {
             "translation": "fatigué",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Cansado est masculin singulier. En français, on dit fatigué (fatiguée au féminin).",
+            "fr_exemple": "Aujourd'hui, je suis fatigué après l'entraînement.",
+            "port_exemple": "Hoje estou cansado depois do treino.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "tired",
@@ -4884,9 +5124,10 @@
         "port": "doente",
         "fr": {
             "translation": "malade",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'doente' se traduit par 'malade' en français. Quand il est utilisé comme nom, on dira 'un malade'.",
+            "fr_exemple": "Il est malade aujourd'hui.",
+            "port_exemple": "Ele está doente hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sick",
@@ -4902,10 +5143,11 @@
         "id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
         "port": "saudável",
         "fr": {
-            "translation": "sain",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "sain, saine",
+            "note": "En portugais, 'saudável' peut décrire un mode de vie ou des aliments. En français, on utilise 'sain' ou 'saine' selon le genre, ou l'expression 'en bonne santé' pour parler d'une personne.",
+            "fr_exemple": "Une vie saine.",
+            "port_exemple": "Uma vida saudável.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "healthy",
@@ -4922,9 +5164,10 @@
         "port": "fruta",
         "fr": {
             "translation": "fruit",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'fruta' est féminin. En français, 'fruit' est masculin: on dit 'un fruit' au singulier et 'des fruits' au pluriel.",
+            "fr_exemple": "Je mange un fruit tous les matins.",
+            "port_exemple": "Eu como uma fruta todas as manhãs.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "fruit",
@@ -4941,9 +5184,10 @@
         "port": "legume",
         "fr": {
             "translation": "légume",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais européen, 'legume' désigne généralement un légume. En français, 'légume' est le terme général pour les légumes; on dit 'un légume' au singulier et 'des légumes' au pluriel.",
+            "fr_exemple": "J'ai acheté un légume au marché.",
+            "port_exemple": "Eu comprei um legume no mercado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "vegetable",
@@ -4960,9 +5204,10 @@
         "port": "arroz",
         "fr": {
             "translation": "riz",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En français, le mot 'riz' est masculin et non comptable; on dit 'du riz' pour parler d'une portion indéterminée. Pour parler du riz en tant que plat, on dira 'le riz'.",
+            "fr_exemple": "Je mange du riz.",
+            "port_exemple": "Eu como arroz.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "rice",
@@ -4979,9 +5224,10 @@
         "port": "feijão",
         "fr": {
             "translation": "haricots",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'feijão' désigne les haricots en général. En français, on dit 'haricots' au pluriel pour parler des haricots; on peut dire 'haricot' au singulier pour un grain unique ou pour parler de variétés (haricots rouges, haricots noirs).",
+            "fr_exemple": "J'aime les haricots.",
+            "port_exemple": "Eu gosto de feijão.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "green beans",
@@ -4998,9 +5244,10 @@
         "port": "ovo",
         "fr": {
             "translation": "œuf",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'ovo' désigne un œuf. Le pluriel portugais est 'ovos', et le pluriel français est 'œufs'.",
+            "fr_exemple": "Cet œuf est frais.",
+            "port_exemple": "Este ovo é fresco.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "egg",
@@ -5017,9 +5264,10 @@
         "port": "queijo",
         "fr": {
             "translation": "fromage",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En français, 'fromage' est un nom masculin et généralement non comptable. On dit 'du fromage' ou 'un morceau de fromage' selon le contexte.",
+            "fr_exemple": "J'ai acheté du fromage au marché.",
+            "port_exemple": "Eu comprei queijo no mercado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cheese",
@@ -5036,9 +5284,10 @@
         "port": "manteiga",
         "fr": {
             "translation": "beurre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Beurre est le terme courant pour le beurre en français. En portugais, manteiga correspond au même produit; le contexte culinaire précise le sens.",
+            "fr_exemple": "J'ai acheté du beurre pour le pain.",
+            "port_exemple": "Eu comprei manteiga para o pão.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "butter",
@@ -5055,9 +5304,10 @@
         "port": "sal",
         "fr": {
             "translation": "sel",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot portugais 'sal' désigne le sel utilisé en cuisine. En français, 'sel' est masculin et s'emploie avec l'article partitif 'du' (par exemple: du sel).",
+            "fr_exemple": "J'ai mis du sel dans la soupe.",
+            "port_exemple": "Coloquei sal na sopa.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "salt",
@@ -5074,9 +5324,10 @@
         "port": "açúcar",
         "fr": {
             "translation": "sucre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, açúcar est masculin et non dénombrable. En français, sucre est aussi masculin et s'emploie généralement avec un article ou un déterminant (du sucre, le sucre).",
+            "fr_exemple": "J'aime le sucre.",
+            "port_exemple": "Eu gosto de açúcar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sugar",
@@ -5093,9 +5344,10 @@
         "port": "também",
         "fr": {
             "translation": "aussi",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : aussi s'utilise pour ajouter une information similaire. En portugais, também se place souvent après le sujet et peut précéder le verbe selon le contexte.",
+            "fr_exemple": "J'aime aussi la musique.",
+            "port_exemple": "Eu também gosto de música.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "also, too",
@@ -5111,10 +5363,11 @@
         "id": "f693926f-10db-45be-9a31-c526abb6cf5c",
         "port": "fim",
         "fr": {
-            "translation": "fin",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "la fin",
+            "note": "Le mot portugais 'fim' signifie généralement la fin ou le but selon le contexte. En français, on dit 'la fin' pour la fin de quelque chose; 'Fin' seul peut apparaître sur les affiches ou à la fin d'un film.",
+            "fr_exemple": "La fin du film était émouvante.",
+            "port_exemple": "O fim do filme foi emocionante.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "end",
@@ -5131,9 +5384,10 @@
         "port": "port",
         "fr": {
             "translation": "port",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Astuce : porto signifie le port maritime en portugais. Pour ‘porte’ (la porte) on dit porta en portugais, pas porto.",
+            "fr_exemple": "Le port est plein de bateaux.",
+            "port_exemple": "O porto está cheio de navios.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "port",
@@ -5150,9 +5404,10 @@
         "port": "aqui",
         "fr": {
             "translation": "ici",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'aqui' indique un endroit proche du locuteur. En français, 'ici' est l'équivalent le plus courant et s'utilise dans la vie quotidienne pour parler de proximité.",
+            "fr_exemple": "Voici le livre.",
+            "port_exemple": "Aqui está o livro.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "here",
@@ -5168,10 +5423,11 @@
         "id": "5eb85e8d-f88c-4d9f-8dd0-ff9bc7eddd8f",
         "port": "tais",
         "fr": {
-            "translation": "tels",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "de tels",
+            "note": "Remarque: tais est un déterminant démonstratif signifiant 'de tels/telles', selon le genre du nom qui suit. En pratique, on utilise 'de tels' devant des noms masculins pluriels et 'de telles' devant des noms féminins pluriels.",
+            "fr_exemple": "De tels attitudes n'aident pas.",
+            "port_exemple": "Tais atitudes não ajudam.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "such",
@@ -5188,9 +5444,10 @@
         "port": "luz",
         "fr": {
             "translation": "lumière",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Cette traduction est naturelle et universelle. En portugais, 'luz' peut aussi désigner la lumière du jour ou l'éclairage intérieur selon le contexte.",
+            "fr_exemple": "La lumière entre par la fenêtre.",
+            "port_exemple": "A luz entra pela janela.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "light",
@@ -5207,9 +5464,10 @@
         "port": "imagem",
         "fr": {
             "translation": "image",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'imagem' est le terme générique pour une représentation visuelle. Selon le contexte, on peut préciser 'photo' pour une photographie ou 'image numérique' pour une image sur ordinateur.",
+            "fr_exemple": "L'image est belle.",
+            "port_exemple": "A imagem é bonita.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "picture",
@@ -5225,10 +5483,11 @@
         "id": "2135619c-3143-4d98-89b9-0656e482163e",
         "port": "novamente",
         "fr": {
-            "translation": "encore une fois",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "encore",
+            "note": "Remarque: 'novamente' est l'adverbe qui signifie 'à nouveau' ou 'encore' selon le contexte. En langage courant, 'encore' est le choix le plus naturel pour exprimer 'again'.",
+            "fr_exemple": "Je veux recommencer.",
+            "port_exemple": "Eu quero começar novamente.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "again",
@@ -5245,9 +5504,10 @@
         "port": "ponto",
         "fr": {
             "translation": "point",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'ponto' a plusieurs sens: le point principal, le point (au sens de ponctuation ou de marque) ou le point d'une discussion. En français, 'point' est polyvalent, mais le contexte permet de préciser le sens, par exemple 'ponto final' = 'point final' ou 'fin de la discussion'.",
+            "fr_exemple": "Quel est le point ?",
+            "port_exemple": "Qual é o ponto?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "point",
@@ -5264,9 +5524,10 @@
         "port": "mãe",
         "fr": {
             "translation": "mère",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "‘Mãe’ est le mot standard pour ‘mother’ en portugais européen. On l’utilise largement dans le quotidien et en contexte familial.",
+            "fr_exemple": "Ma mère prépare le dîner.",
+            "port_exemple": "A minha mãe prepara o jantar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "mother",
@@ -5283,9 +5544,10 @@
         "port": "mundo",
         "fr": {
             "translation": "monde",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'mundo' désigne le monde de façon générale. En français, on emploie 'monde' avec l'article 'le' dans les phrases courantes.",
+            "fr_exemple": "Le monde est grand.",
+            "port_exemple": "O mundo é grande.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "world",
@@ -5302,9 +5564,10 @@
         "port": "qualquer",
         "fr": {
             "translation": "n'importe quel",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'qualquer' se rend par 'n'importe quel' (masc.) ou 'n'importe quelle' (fém.) devant un nom. Pour parler d'une personne en général, on emploie souvent 'n'importe qui'.",
+            "fr_exemple": "N'importe qui peut participer.",
+            "port_exemple": "Qualquer pessoa pode participar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "any",
@@ -5320,10 +5583,11 @@
         "id": "a9e5c5d5-ead1-49e6-bc5e-d6e5d31c30f0",
         "port": "lugar",
         "fr": {
-            "translation": "endroit",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "lieu",
+            "note": "Le mot 'lugar' se traduit par 'lieu' ou 'endroit'. 'Lieu' est neutre et un peu plus soutenu; 'endroit' est plus courant à l'oral.",
+            "fr_exemple": "Ce lieu est beau.",
+            "port_exemple": "Este lugar é bonito.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "place",
@@ -5339,10 +5603,11 @@
         "id": "dcafc036-5170-4fab-bc60-966b454b9f00",
         "port": "depois",
         "fr": {
-            "translation": "après (prep)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "ensuite",
+            "note": "Le mot 'depois' peut se traduire par 'ensuite' (adverbe) ou 'après' selon le contexte. Dans l’usage courant, 'ensuite' est très naturel pour marquer une suite d’actions.",
+            "fr_exemple": "Ensuite, nous allons au cinéma.",
+            "port_exemple": "Depois, vamos ao cinema.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "after, then, afterwards (prep)",
@@ -5359,9 +5624,10 @@
         "port": "de volta",
         "fr": {
             "translation": "de retour",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'de volta' indique le retour après une absence. En français, on emploie le plus souvent 'de retour' pour ce sens.",
+            "fr_exemple": "Je suis de retour.",
+            "port_exemple": "Estou de volta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "back",
@@ -5378,9 +5644,10 @@
         "port": "através",
         "fr": {
             "translation": "à travers",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: «à travers» s’utilise pour parler du passage ou du moyen par lequel quelque chose est connu ou reçu. En portugais, «através de» est souvent suivi de «de» et peut se traduire en français par «par le biais de» ou «à travers» selon le contexte.",
+            "fr_exemple": "Elle a beaucoup appris à travers les livres.",
+            "port_exemple": "Ela aprendeu muito através de livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "through",
@@ -5397,9 +5664,10 @@
         "port": "justo",
         "fr": {
             "translation": "juste",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'justo' signifie surtout 'équitable' ou 'ce qui est dû'. En français, 'juste' couvre ces sens, mais pour 'exact' on dira plutôt 'exact' ou 'précis'.",
+            "fr_exemple": "Ce prix est juste.",
+            "port_exemple": "Este preço é justo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "fair",
@@ -5417,8 +5685,9 @@
         "fr": {
             "translation": "ligne, fil(couture), ligne de bus",
             "note": "Ligne (covers line, row, and various senses, e.g., 'desenhar uma linha' = 'dessiner une ligne'; 'linha de produção' = 'ligne de production'; 'linha de ônibus' = 'ligne de bus').Fil (as in thread for sewing, e.g., 'linha de costura' = 'fil à coudre').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "La ligne de bus passe par ma rue.",
+            "port_exemple": "A linha de ônibus passa pela minha rua.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "line, thread, row, bus route",
@@ -5434,10 +5703,11 @@
         "id": "0e90b385-65b5-4ea4-9f6c-430cef46e947",
         "port": "causa",
         "fr": {
-            "translation": "cause",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "raison",
+            "note": "En portugais, 'causa' est le mot générique pour la raison ou le motif. En français courant, on préfère 'raison' (ou 'motif') plutôt que 'cause' pour parler d'une explication.",
+            "fr_exemple": "Quelle est la raison du problème ?",
+            "port_exemple": "Qual é a causa do problema?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cause",
@@ -5454,9 +5724,10 @@
         "port": "antes",
         "fr": {
             "translation": "avant",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Avant est l'équivalent direct de 'antes' pour exprimer l'antériorité. En portugais, 'antes' peut aussi se combiner avec 'de' (antes de partir); en français on dit alors 'avant de partir'.",
+            "fr_exemple": "Je l'ai dit avant.",
+            "port_exemple": "Eu disse isso antes.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "before (conj.), beforehand, previously",
@@ -5472,10 +5743,11 @@
         "id": "a3428070-f6a0-4fe4-880b-f7da43c95dde",
         "port": "direito",
         "fr": {
-            "translation": "droit, droite, loi",
+            "translation": "droit",
             "note": "Droit (covers right as direction/side, straight, entitlement, and law, e.g., 'à direita' = 'à droite'; 'caminho direito' = 'chemin droit'; 'direito humano' = 'droit humain'; 'faculdade de direito' = 'faculté de droit').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "J'ai le droit de voter.",
+            "port_exemple": "Tenho o direito de votar.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "right (direction/side, straight, entitlement/law)",
@@ -5492,9 +5764,10 @@
         "port": "mesmo",
         "fr": {
             "translation": "même",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens le plus courant de 'mesmo' est 'le même' (ou 'la même/les mêmes' selon le genre). Pour l’emphase ou d'autres usages (par exemple 'eu mesmo' = 'moi-même'), on emploie des expressions françaises spécifiques comme 'moi-même' ou 'quand même'.",
+            "fr_exemple": "Je veux le même plat.",
+            "port_exemple": "Quero o mesmo prato.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "same, even",
@@ -5511,9 +5784,10 @@
         "port": "lá",
         "fr": {
             "translation": "là",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'lá' indique un endroit. Pour insister sur la distance, on peut dire 'là-bas'.",
+            "fr_exemple": "J'y vais.",
+            "port_exemple": "Vou lá.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "there",
@@ -5529,10 +5803,11 @@
         "id": "09af23f1-4741-40cf-bc51-2b654a79503e",
         "port": "muitos",
         "fr": {
-            "translation": "beaucoup",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "beaucoup de",
+            "note": "En portugais, 'muitos' s'accompagne d'un nom. En français, on utilise généralement 'beaucoup de' + nom; 'beaucoup' tout seul est un adverbe et 'nombreux' est une alternative plus soutenue.",
+            "fr_exemple": "Beaucoup d'étudiants aiment la musique.",
+            "port_exemple": "Muitos estudantes gostam de música.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "many",
@@ -5549,9 +5824,10 @@
         "port": "eles",
         "fr": {
             "translation": "ils",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "«ils» est le pronom personnel du pluriel masculin ou mixte en français. Pour un groupe entièrement féminin, on utilise « elles ».",
+            "fr_exemple": "Ils vont à l'école tous les jours.",
+            "port_exemple": "Eles vão à escola todos os dias.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "them",
@@ -5568,9 +5844,10 @@
         "port": "como",
         "fr": {
             "translation": "comme",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'como' a plusieurs sens en portugais: il peut signifier 'comme' (pour les comparaisons, 'as' / 'like'). Pour les questions 'how', on utilise 'comment' en français.",
+            "fr_exemple": "Comment vas-tu ?",
+            "port_exemple": "Como você está?",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "like, as",
@@ -5586,10 +5863,11 @@
         "id": "a28883cf-b515-493e-a987-35c17222cc0a",
         "port": "estes",
         "fr": {
-            "translation": "ces",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "ceux-ci",
+            "note": "En portugais, 'estes' est un démonstratif masculin pluriel. En français, on peut dire 'ces' devant un nom pluriel, ou 'ceux-ci' quand on remplace le nom par le pronom.",
+            "fr_exemple": "Ceux-ci sont mes livres.",
+            "port_exemple": "Estes são meus livros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "these",
@@ -5606,9 +5884,10 @@
         "port": "longo",
         "fr": {
             "translation": "long",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, longo s'accorde avec le nom. Le correspondant français est 'long' au masculin et 'longue' au féminin.",
+            "fr_exemple": "Le chemin est long.",
+            "port_exemple": "O caminho é longo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "long",
@@ -5625,9 +5904,10 @@
         "port": "coisa",
         "fr": {
             "translation": "chose",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'coisa' est très général. En français, 'chose' est neutre et convient à la plupart des usages; dans le registre familier, on peut aussi dire 'truc'.",
+            "fr_exemple": "Cette chose est nouvelle.",
+            "port_exemple": "Esta coisa é nova.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "thing",
@@ -5645,8 +5925,9 @@
         "fr": {
             "translation": "plus (quantité),plus (addition/maths)",
             "note": "Plus (covers more and plus, e.g., 'mais importante' = 'plus important'; 'dois mais dois' = 'deux plus deux').",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Je veux plus de pain.",
+            "port_exemple": "Quero mais pão.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "more, plus",
@@ -5663,9 +5944,10 @@
         "port": "número",
         "fr": {
             "translation": "nombre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'nombre' est utilisé pour parler d'une quantité ou d'un chiffre en mathématiques. Pour parler d'un numéro (téléphone, ordre, série), on dit 'numéro'.",
+            "fr_exemple": "Le nombre est grand.",
+            "port_exemple": "O número é grande.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "number",
@@ -5681,10 +5963,11 @@
         "id": "1512629b-244c-40fc-bf55-f4919a81d1a1",
         "port": "som",
         "fr": {
-            "translation": "son (bruit), sens (audition)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "son",
+            "note": "Le mot 'son' désigne le bruit ou le son produit par quelque chose. Pour parler de l'audition en tant que sens, on utilise 'ouïe'.",
+            "fr_exemple": "Le son de la pluie est apaisant.",
+            "port_exemple": "O som da chuva é tranquilizante.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sound",
@@ -5701,9 +5984,10 @@
         "port": "chamada",
         "fr": {
             "translation": "appel",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Chamada peut signifier un appel (téléphonique) ou un appel/invocation selon le contexte. En contexte téléphonique, on dira plutôt 'un appel' ou 'passer un appel'.",
+            "fr_exemple": "J'ai reçu un appel d'un numéro inconnu.",
+            "port_exemple": "Recebi uma chamada de um número desconhecido.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "call",
@@ -5720,9 +6004,10 @@
         "port": "primeiro",
         "fr": {
             "translation": "premier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'primeiro' s'accorde en portugais avec le nom qui le suit (par exemple 'primeira' au féminin). En français, 'premier/première' s'accorde selon le genre, et pour l'idée de 'd'abord', on utilise souvent 'd'abord' ou 'tout d'abord'.",
+            "fr_exemple": "Tout d'abord, nous allons écouter les instructions.",
+            "port_exemple": "Primeiro, vamos ouvir as instruções.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "first",
@@ -5739,9 +6024,10 @@
         "port": "lado",
         "fr": {
             "translation": "côté (position, direction)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'lado' se traduit principalement par 'côté' en français. Utilisez 'à côté de' pour dire 'à côté de quelque chose' et 'côté' pour parler d'un côté ou d'un aspect.",
+            "fr_exemple": "Le côté de la maison est peint en blanc.",
+            "port_exemple": "O lado da casa é pintado de branco.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "side (position, direction)",
@@ -5758,9 +6044,10 @@
         "port": "página",
         "fr": {
             "translation": "page",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'página' signifie aussi bien une page imprimée qu'une page web. En français, on utilise 'page' pour une page ordinaire et on précise le contexte avec 'page web' ou 'page d'accueil' selon le cas.",
+            "fr_exemple": "Ouvrez la page 42.",
+            "port_exemple": "Abra a página 42.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "page",
@@ -5777,9 +6064,10 @@
         "port": "planta",
         "fr": {
             "translation": "plante",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'planta' peut aussi désigner le plan d'un bâtiment ('planta baixa'). En français, 'plante' désigne surtout une plante; le sens 'plan' se traduit par 'plan'.",
+            "fr_exemple": "J'arrose la plante tous les matins.",
+            "port_exemple": "Eu rego a planta todas as manhãs.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "plant",
@@ -5796,9 +6084,10 @@
         "port": "cobertura",
         "fr": {
             "translation": "couverture",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'cobertura' se traduit par 'couverture' en français, selon le sens. Dans le domaine de l'assurance, on dira 'couverture d'assurance'; pour les médias on parle de 'couverture médiatique'.",
+            "fr_exemple": "La couverture de l'assurance couvre les dommages jusqu'à 5 000 euros.",
+            "port_exemple": "A cobertura do seguro cobre danos até 5.000 euros.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cover",
@@ -5814,10 +6103,11 @@
         "id": "f893ee4b-6df3-4147-926f-0786df6df712",
         "port": "alimentos",
         "fr": {
-            "translation": "nourriture, alliments",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "aliments",
+            "note": "La traduction actuelle contient une faute d'orthographe ('alliments' au lieu de 'aliments'). 'Nourriture' est plus général et moins précis que le pluriel 'aliments'.",
+            "fr_exemple": "Les aliments sont importants.",
+            "port_exemple": "Os alimentos são importantes.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "food",
@@ -5834,9 +6124,10 @@
         "port": "olho",
         "fr": {
             "translation": "œil",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot œil est masculin : on dit un œil et les yeux au pluriel. En français, on écrit l'œil avec une apostrophe devant une voyelle.",
+            "fr_exemple": "Mon œil me fait mal.",
+            "port_exemple": "O meu olho dói.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "eye",
@@ -5853,9 +6144,10 @@
         "port": "último",
         "fr": {
             "translation": "dernier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'último' se traduit par 'dernier' quand on parle du dernier d'une série. Pour dire 'le plus récent', on utilise 'plus récent' ou 'le dernier en date'.",
+            "fr_exemple": "C'est le dernier livre de la liste.",
+            "port_exemple": "Este é o último livro da lista.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "last",
@@ -5872,9 +6164,10 @@
         "port": "árvore",
         "fr": {
             "translation": "arbre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, 'árvore' est féminin; en français, 'arbre' est masculin. Le genre peut changer d'une langue à l'autre.",
+            "fr_exemple": "L'arbre de mon jardin est grand.",
+            "port_exemple": "A árvore do meu quintal é alta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "tree",
@@ -5891,9 +6184,10 @@
         "port": "atravessar",
         "fr": {
             "translation": "traverser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'traverser' est le verbe courant pour franchir un obstacle physique (rue, pont, frontière). En portugais, 'atravessar' peut aussi être utilisé métaphoriquement (atravessar dificuldades).",
+            "fr_exemple": "Je vais traverser la rue.",
+            "port_exemple": "Eu vou atravessar a rua.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "cross",
@@ -5910,9 +6204,10 @@
         "port": "fazenda",
         "fr": {
             "translation": "ferme",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais brésilien, 'fazenda' désigne généralement une ferme ou une grande propriété rurale. En français, 'ferme' convient le mieux, mais selon le contexte on peut dire 'grande ferme' ou 'propriété agricole'.",
+            "fr_exemple": "Sa ferme est grande.",
+            "port_exemple": "A fazenda dele é grande.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "farm",
@@ -5929,9 +6224,10 @@
         "port": "história",
         "fr": {
             "translation": "histoire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, « história » peut signifier l'histoire ou un récit. En français, « histoire » couvre ces deux sens et s'emploie selon le contexte.",
+            "fr_exemple": "L'histoire est intéressante.",
+            "port_exemple": "A história é interessante.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "story",
@@ -5948,9 +6244,10 @@
         "port": "mar",
         "fr": {
             "translation": "mer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'mar' désigne la mer en portugais. En français, le mot correspondant est 'mer' et il est féminin.",
+            "fr_exemple": "La mer est calme aujourd'hui.",
+            "port_exemple": "O mar está calmo hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "sea",
@@ -5967,9 +6264,10 @@
         "port": "esquerda",
         "fr": {
             "translation": "gauche",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'esquerda' signifie 'gauche' en français. Pour le sens directionnel, on dit 'à gauche'; pour le sens politique, on dit 'la gauche'.",
+            "fr_exemple": "La gauche de la carte indique le nord.",
+            "port_exemple": "A esquerda do mapa indica o norte.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "left",
@@ -5986,9 +6284,10 @@
         "port": "enquanto",
         "fr": {
             "translation": "pendant que",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, enquanto peut aussi signifier « tant que ». En français, on utilise généralement « pendant que » pour des actions qui se passent en même temps; « tant que » est réservé à l'idée de condition temporelle.",
+            "fr_exemple": "Pendant que j'étudie, il écoute de la musique.",
+            "port_exemple": "Enquanto eu estudo, ele ouve música.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "while, as (conj)",
@@ -6005,9 +6304,10 @@
         "port": "imprensa",
         "fr": {
             "translation": "la presse (journalisme, médias)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Dans le sens médiatique, 'la presse' est couramment utilisée. Si vous parlez de l'imprimerie, on dira plutôt 'l'imprimerie'.",
+            "fr_exemple": "La presse a publié cette nouvelle aujourd'hui.",
+            "port_exemple": "A imprensa publicou esta notícia hoje.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "the press (journalism, media)",
@@ -6023,10 +6323,11 @@
         "id": "65ca7231-b18d-4e40-827b-7ccb8a2a334e",
         "port": "reais",
         "fr": {
-            "translation": "réel",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "real (monnaie brésilienne)",
+            "note": "Le mot 'reais' est le pluriel de la monnaie brésilienne 'real'. En français courant, on peut dire 'cinquante reais' ou préciser 'real brésilien' pour éviter toute ambiguïté.",
+            "fr_exemple": "J'ai cinquante reais.",
+            "port_exemple": "Eu tenho cinquenta reais.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "real",
@@ -6042,10 +6343,11 @@
         "id": "f097f12c-1c30-493d-a6dc-6bda868a40ed",
         "port": "vida",
         "fr": {
-            "translation": "vie",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "la vie",
+            "note": "Le mot 'vida' se traduit le plus souvent par 'la vie'. On l'emploie aussi comme 'une vie' lorsqu'on parle d'une existence ou d'une durée de vie.",
+            "fr_exemple": "Ma vie a changé.",
+            "port_exemple": "A minha vida mudou.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "life",
@@ -6063,8 +6365,9 @@
         "fr": {
             "translation": "peu",
             "note": "(poucos pour masculin pluriel, poucas pour féminin pluriel ; pouco pour singulier masculin, pouca pour féminin singulier",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "J'ai peu de temps.",
+            "port_exemple": "Eu tenho pouco tempo.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "few",
@@ -6081,9 +6384,10 @@
         "port": "norte",
         "fr": {
             "translation": "nord",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'norte' est une direction générale. En français, on écrit 'nord' au sens courant, et 'Nord' (avec majuscule) pour une région ou un nom propre.",
+            "fr_exemple": "Nous allons vers le nord.",
+            "port_exemple": "Vamos para o norte.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "north",
@@ -6100,9 +6404,10 @@
         "port": "ciência",
         "fr": {
             "translation": "science",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, 'ciência' peut aussi signifier la connaissance en général, pas seulement la science. En français, on dit 'la science' (singulier) pour le domaine, et 'les sciences' quand on parle des disciplines.",
+            "fr_exemple": "La science est importante.",
+            "port_exemple": "A ciência é importante.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "science",
@@ -6119,9 +6424,10 @@
         "port": "quarto",
         "fr": {
             "translation": "chambre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'quarto' signifie généralement 'pièce' ou 'chambre' selon le contexte. En portugais courant, il est souvent utilisé pour désigner la chambre à coucher, d'où le choix 'chambre' en français.",
+            "fr_exemple": "Ma chambre est bien rangée.",
+            "port_exemple": "O meu quarto está arrumado.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "room",
@@ -6138,9 +6444,10 @@
         "port": "idéia",
         "fr": {
             "translation": "idée",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais moderne, on écrit 'ideia' sans accent. L'orthographe 'idéia' n'est plus correcte aujourd'hui.",
+            "fr_exemple": "J'ai une idée pour notre projet.",
+            "port_exemple": "Tenho uma ideia para o nosso projeto.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "idea",
@@ -6157,9 +6464,10 @@
         "port": "montanha",
         "fr": {
             "translation": "montagne",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'montanha' est féminin. En français, 'montagne' est aussi un nom féminin et s'emploie surtout pour une grande montagne; pour une colline, on utilise 'colline'.",
+            "fr_exemple": "La montagne est haute.",
+            "port_exemple": "A montanha é alta.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "mountain",
@@ -6175,10 +6483,11 @@
         "id": "a8934291-2c30-4c95-881c-b375d252994e",
         "port": "Pare",
         "fr": {
-            "translation": "arrête",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "Arrêtez",
+            "note": "Pare est l'impératif formel en portugais (« você »). En français, l'équivalent le plus courant est « Arrêtez » (pour le vou/forme polie).",
+            "fr_exemple": "Arrêtez maintenant.",
+            "port_exemple": "Pare agora!",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "stop",
@@ -6195,9 +6504,10 @@
         "port": "uma vez",
         "fr": {
             "translation": "une fois",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'uma vez' s'emploie surtout pour indiquer une occurrence. Dans des expressions comme 'une fois que', le sens évolue.",
+            "fr_exemple": "J'y suis déjà allé une fois.",
+            "port_exemple": "Eu já fui lá uma vez.",
+            "last_update": "2026-02-17"
         },
         "en": {
             "translation": "once",
