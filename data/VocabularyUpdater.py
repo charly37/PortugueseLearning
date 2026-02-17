@@ -3,6 +3,7 @@ import os
 from openai import OpenAI
 from pydantic import BaseModel
 from typing import Dict, List
+from datetime import datetime, timedelta
 
 class WordTranslation(BaseModel):
     translation_accurate: bool
@@ -29,6 +30,38 @@ def save_challenges(challenges: List[Dict]):
     """Save challenges back to challenges.json"""
     with open('challenges.json', 'w', encoding='utf-8') as f:
         json.dump(challenges, f, ensure_ascii=False, indent=4)
+
+def is_translation_recent(challenge, months=6):
+    """
+    Check if a challenge's French translation was updated recently.
+    
+    Args:
+        challenge: Challenge dictionary object
+        months: Number of months to consider translation as "recent" (default: 6)
+    
+    Returns:
+        True if translation exists and was updated within the last 'months' months
+    """
+    fr_section = challenge.get('fr')
+    if not fr_section:
+        return False
+    
+    last_update = fr_section.get('last_update')
+    if not last_update:
+        return False
+    
+    try:
+        # Parse the last_update date (format: YYYY-MM-DD)
+        update_date = datetime.strptime(last_update, "%Y-%m-%d")
+        
+        # Calculate the cutoff date (today - months)
+        cutoff_date = datetime.now() - timedelta(days=months * 30)
+        
+        # Translation is recent if it was updated after the cutoff date
+        return update_date >= cutoff_date
+    except (ValueError, TypeError):
+        # If date parsing fails, consider translation as not recent
+        return False
 
 def verify_french_translation(portuguese_word: str, current_french: str, english_translation: str) -> Dict:
     """
@@ -91,7 +124,7 @@ Focus on natural, everyday language that beginners can understand."""
             "error": str(e)
         }
 
-def main(max_words=3):
+def main(max_words=300):
     """
     Main function to process all challenges
     
@@ -105,6 +138,7 @@ def main(max_words=3):
     
     # Statistics
     processed_count = 0
+    skipped_count = 0
     verified_count = 0
     suggestions_count = 0
     errors_count = 0
@@ -121,8 +155,15 @@ def main(max_words=3):
         challenge_id = challenge.get("id", "unknown")
         current_note = challenge.get("fr", {}).get("note", "")
         
+        # Skip if translation was updated within the last 6 months
+        if is_translation_recent(challenge, months=6):
+            last_update = challenge.get("fr", {}).get("last_update", "unknown")
+            print(f"[{idx}/{len(challenges)}] ⏭️  Skipping '{portuguese_word}' (updated on {last_update})")
+            skipped_count += 1
+            continue
+        
         # Check if examples need to be populated
-        port_exemple = challenge.get("port_exemple", "")
+        port_exemple = challenge.get("fr", {}).get("port_exemple", "")
         fr_exemple = challenge.get("fr", {}).get("fr_exemple", "")
         needs_examples = not port_exemple or not fr_exemple
         
@@ -138,6 +179,9 @@ def main(max_words=3):
         
         if verification["status"] == "success":
             translation = verification["translation"]
+            
+            # Get today's date for tracking updates
+            today_date = datetime.now().strftime("%Y-%m-%d")
             
             # Use OpenAI's assessment of translation accuracy
             is_accurate = translation.translation_accurate
@@ -162,15 +206,17 @@ def main(max_words=3):
                 if "fr" not in challenge:
                     challenge["fr"] = {}
                 challenge["fr"]["translation"] = translation.french
+                challenge["fr"]["last_update"] = today_date
                 updated_translations_count += 1
                 print(f"  💾 Updated French translation in challenges.json")
             
             # Update examples if they are empty
             if needs_examples:
-                challenge["port_exemple"] = translation.portuguese_example
                 if "fr" not in challenge:
                     challenge["fr"] = {}
+                challenge["fr"]["port_exemple"] = translation.portuguese_example
                 challenge["fr"]["fr_exemple"] = translation.french_example
+                challenge["fr"]["last_update"] = today_date
                 updated_examples_count += 1
                 print(f"  💾 Updated examples in challenges.json")
             
@@ -179,6 +225,7 @@ def main(max_words=3):
                 if "fr" not in challenge:
                     challenge["fr"] = {}
                 challenge["fr"]["note"] = translation.french_remark
+                challenge["fr"]["last_update"] = today_date
                 updated_notes_count += 1
                 print(f"  💾 Updated note in challenges.json")
             
@@ -209,6 +256,7 @@ def main(max_words=3):
     print("VERIFICATION SUMMARY")
     print("="*60)
     print(f"Total challenges in file: {len(challenges)}")
+    print(f"Skipped (recently updated): {skipped_count}")
     print(f"Processed in this batch: {processed_count}")
     print(f"Verified (correct): {verified_count}")
     print(f"Suggestions (needs improvement): {suggestions_count}")
