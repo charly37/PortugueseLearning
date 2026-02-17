@@ -3,9 +3,9 @@
         "id": "85998f02-d626-4496-9772-bbfab6ed072b",
         "port": "apenas",
         "fr": {
-            "translation": "à peine",
-            "note": "todo",
-            "fr_exemple": ""
+            "translation": "seulement",
+            "note": "En portugais, 'apenas' signifie surtout 'seulement'. Selon le contexte, on peut aussi dire 'à peine' ou 'juste'.",
+            "fr_exemple": "J'ai seulement un livre."
         },
         "en": {
             "translation": "barely/just",
@@ -16,15 +16,15 @@
             "filename": "85998f02-d626-4496-9772-bbfab6ed072b.mp3",
             "last_update": "2026-02-14"
         },
-        "port_exemple": ""
+        "port_exemple": "Eu tenho apenas um livro."
     },
     {
         "id": "7c22386a-4faa-4466-86a1-5baa995bf261",
         "port": "demais",
         "fr": {
             "translation": "trop",
-            "note": "todo",
-            "fr_exemple": ""
+            "note": "Remarque: 'demais' s'emploie surtout comme intensificateur signifiant 'trop'. Pour parler des autres ou du reste, on dira 'les autres' ou 'le reste', et non 'demais' seul.",
+            "fr_exemple": "J'aime trop."
         },
         "en": {
             "translation": "too much",
@@ -35,15 +35,15 @@
             "filename": "7c22386a-4faa-4466-86a1-5baa995bf261.mp3",
             "last_update": "2026-02-14"
         },
-        "port_exemple": ""
+        "port_exemple": "Gosto demais."
     },
     {
         "id": "a6e9ebbd-850f-4db3-8842-50ad590d3303",
         "port": "ainda",
         "fr": {
             "translation": "encore",
-            "note": "todo",
-            "fr_exemple": ""
+            "note": "Remarque: 'ainda' se traduit surtout par 'encore' lorsqu'une action se poursuit (par ex. 'Je suis encore en train d'apprendre'). Pour les phrases négatives, on dit 'pas encore'.",
+            "fr_exemple": "J'apprends encore."
         },
         "en": {
             "translation": "still/yet",
@@ -54,7 +54,7 @@
             "filename": "a6e9ebbd-850f-4db3-8842-50ad590d3303.mp3",
             "last_update": "2026-02-14"
         },
-        "port_exemple": ""
+        "port_exemple": "Eu ainda estou aprendendo."
     },
     {
         "id": "cc277346-1d56-4b61-bb4b-9b57d58e2767",

@@ -8,6 +8,7 @@ class WordTranslation(BaseModel):
     translation_accurate: bool
     french: str
     french_example: str
+    french_remark: str
     portuguese: str
     portuguese_example: str
 
@@ -24,6 +25,11 @@ def load_challenges() -> List[Dict]:
     with open('challenges.json', 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def save_challenges(challenges: List[Dict]):
+    """Save challenges back to challenges.json"""
+    with open('challenges.json', 'w', encoding='utf-8') as f:
+        json.dump(challenges, f, ensure_ascii=False, indent=4)
+
 def verify_french_translation(portuguese_word: str, current_french: str, english_translation: str) -> Dict:
     """
     Use OpenAI to verify and suggest French translation for a Portuguese word
@@ -37,7 +43,7 @@ def verify_french_translation(portuguese_word: str, current_french: str, english
         Dictionary with verification results
     """
     try:
-        prompt = f"""Review this translation from Portuguese word to French and its examples. If you think there is a better translation, state that the translation is not accurate and provide the better one along with examples. If the current translation is accurate, confirm it.
+        prompt = f"""Review this translation from Portuguese word to French and its examples. If you think there is a better translation, state that the translation is not accurate and provide the better one along with examples. If the current translation is accurate, confirm it. You can also provide a short remark of 2 sentence max in french about the Portuguese word, its usage or nuances. This is optional but can be helpful for learners.
 
 Portuguese word: "{portuguese_word}"
 Current French translation: "{current_french}"
@@ -102,6 +108,9 @@ def main(max_words=3):
     verified_count = 0
     suggestions_count = 0
     errors_count = 0
+    updated_examples_count = 0
+    updated_translations_count = 0
+    updated_notes_count = 0
     total_tokens = {"prompt": 0, "completion": 0}
     
     # Process each challenge
@@ -110,6 +119,12 @@ def main(max_words=3):
         french_translation = challenge.get("fr", {}).get("translation", "")
         english_translation = challenge.get("en", {}).get("translation", "")
         challenge_id = challenge.get("id", "unknown")
+        current_note = challenge.get("fr", {}).get("note", "")
+        
+        # Check if examples need to be populated
+        port_exemple = challenge.get("port_exemple", "")
+        fr_exemple = challenge.get("fr", {}).get("fr_exemple", "")
+        needs_examples = not port_exemple or not fr_exemple
         
         print(f"[{idx}/{len(challenges)}] Processing: {portuguese_word}")
         print(f"  Current French: {french_translation}")
@@ -132,6 +147,7 @@ def main(max_words=3):
             print(f"  🇵🇹 Portuguese: {translation.portuguese}")
             print(f"  📝 Portuguese Example: {translation.portuguese_example}")
             print(f"  📝 French Example: {translation.french_example}")
+            print(f"  💬 French Remark: {translation.french_remark}")
             
             total_tokens["prompt"] += verification["prompt_tokens"]
             total_tokens["completion"] += verification["completion_tokens"]
@@ -142,6 +158,29 @@ def main(max_words=3):
             else:
                 suggestions_count += 1
                 print(f"  ⚠️  SUGGESTED change: '{french_translation}' → '{translation.french}'")
+                # Update the French translation when it's not accurate
+                if "fr" not in challenge:
+                    challenge["fr"] = {}
+                challenge["fr"]["translation"] = translation.french
+                updated_translations_count += 1
+                print(f"  💾 Updated French translation in challenges.json")
+            
+            # Update examples if they are empty
+            if needs_examples:
+                challenge["port_exemple"] = translation.portuguese_example
+                if "fr" not in challenge:
+                    challenge["fr"] = {}
+                challenge["fr"]["fr_exemple"] = translation.french_example
+                updated_examples_count += 1
+                print(f"  💾 Updated examples in challenges.json")
+            
+            # Update note if current note is "todo"
+            if current_note == "todo" and translation.french_remark:
+                if "fr" not in challenge:
+                    challenge["fr"] = {}
+                challenge["fr"]["note"] = translation.french_remark
+                updated_notes_count += 1
+                print(f"  💾 Updated note in challenges.json")
             
             processed_count += 1
         else:
@@ -158,6 +197,13 @@ def main(max_words=3):
             print(f"Progress: Processed {processed_count} out of {len(challenges)} total challenges")
             break
     
+    # Save updated challenges back to file if any were updated
+    total_updates = updated_examples_count + updated_translations_count + updated_notes_count
+    if total_updates > 0:
+        print(f"\n💾 Saving {total_updates} updates to challenges.json...")
+        save_challenges(challenges)
+        print("✅ Saved successfully!")
+    
     # Print summary
     print("\n" + "="*60)
     print("VERIFICATION SUMMARY")
@@ -166,6 +212,9 @@ def main(max_words=3):
     print(f"Processed in this batch: {processed_count}")
     print(f"Verified (correct): {verified_count}")
     print(f"Suggestions (needs improvement): {suggestions_count}")
+    print(f"Translations updated: {updated_translations_count}")
+    print(f"Examples updated: {updated_examples_count}")
+    print(f"Notes updated: {updated_notes_count}")
     print(f"Errors: {errors_count}")
     print(f"Total tokens used: {total_tokens['prompt'] + total_tokens['completion']}")
     print(f"  - Prompt tokens: {total_tokens['prompt']}")
