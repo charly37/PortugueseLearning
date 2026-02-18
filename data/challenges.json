@@ -13052,7 +13052,7 @@
             "translation": "to camp",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "e68442e1-4472-4d08-b4fd-342d0e6b7da9.mp3",
             "last_update": "2026-02-15"
@@ -14737,9 +14737,9 @@
     },
     {
         "id": "28a2df69-ed74-4836-8f4f-7b0f319b9c00",
-        "port": "barulho, ruído",
+        "port": "barulho",
         "fr": {
-            "translation": "bruit, bruit",
+            "translation": "bruit",
             "note": "Remarque : barulho est plutôt familier et désigne un bruit fort ou du vacarme. Le mot ruído peut être perçu comme légèrement plus formel; en français on utilise surtout bruit.",
             "fr_exemple": "Le bruit de la rue m'a réveillé.",
             "port_exemple": "O barulho da rua acordou-me.",
@@ -15757,7 +15757,7 @@
     },
     {
         "id": "89ba8a8a-6f15-40a8-83b7-e3616fd981ac",
-        "port": "câmara / câmera",
+        "port": "câmara",
         "fr": {
             "translation": "chambre / caméra",
             "note": "Remarque: câmara peut signifier une pièce ou une enceinte parlementaire; câmera signifie l'appareil photo. En FR, on dira chambre pour une pièce et caméra pour l'appareil.",
@@ -18414,25 +18414,6 @@
         }
     },
     {
-        "id": "96cb5b6f-782c-4280-8b57-45bac1c1c5a3",
-        "port": "de, desde",
-        "fr": {
-            "translation": "de, depuis",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
-        },
-        "en": {
-            "translation": "from (e.g. time)",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "96cb5b6f-782c-4280-8b57-45bac1c1c5a3.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "34690d03-0f50-4e3c-a821-69160a388eaf",
         "port": "degrau",
         "fr": {
@@ -19555,16 +19536,16 @@
     },
     {
         "id": "189d9a7c-80e1-48d4-a806-030465f7d6a9",
-        "port": "enfermeiro/enfermeira",
+        "port": "enfermeiro",
         "fr": {
-            "translation": "infirmier/infirmière",
-            "note": "todo",
+            "translation": "infirmier",
+            "note": "enfermeira = infirmière",
             "fr_exemple": "",
             "port_exemple": ""
         },
         "en": {
-            "translation": "nurse(male/female)",
-            "note": "todo"
+            "translation": "nurse (male/female)",
+            "note": "enfermeira = nurse (female)"
         },
         "user_usefulness": 2,
         "audio": {
@@ -24696,7 +24677,7 @@
             "translation": "nervous",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "5535e5d0-d034-4ef4-af98-798bc21ac8db.mp3",
             "last_update": "2026-02-15"
@@ -25200,13 +25181,13 @@
         "id": "65aa69b8-76bf-46a4-9106-f1412fbaaa23",
         "port": "paciente",
         "fr": {
-            "translation": "patient",
+            "translation": "patient (substantif), qui recoit des soins",
             "note": "todo",
             "fr_exemple": "",
             "port_exemple": ""
         },
         "en": {
-            "translation": "patient (adj)",
+            "translation": "patient (sick who receives care)",
             "note": "todo"
         },
         "user_usefulness": 2,
@@ -25214,6 +25195,21 @@
             "filename": "65aa69b8-76bf-46a4-9106-f1412fbaaa23.mp3",
             "last_update": "2026-02-15"
         }
+    },
+    {
+        "id": "8373574d-ebc9-4c91-9d22-6d62e4b4ab6d",
+        "port": "paciente",
+        "fr": {
+            "translation": "patient (tolérant, calme ou endurant)",
+            "note": "todo",
+            "fr_exemple": "",
+            "port_exemple": ""
+        },
+        "en": {
+            "translation": "patient (calm, tolerant or enduring)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
     },
     {
         "id": "37a7ede0-a2d6-436a-9497-918387ef9739",
@@ -36647,7 +36643,7 @@
             "translation": "to unroll",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "cba46377-6dbf-4e10-99de-0d2677dfa94f.mp3",
             "last_update": "2026-02-15"
@@ -40911,16 +40907,16 @@
     },
     {
         "id": "52851cda-df61-47c0-9ac8-f2e4bbb06223",
-        "port": "leccionar",
+        "port": "lecionar",
         "fr": {
-            "translation": "enseigner",
-            "note": "todo",
+            "translation": "enseigner (formel)",
+            "note": "ensinar est plus large et courant pour tout type d'apprentissage, tandis que lecionar est plus spécifique à l'enseignement formel",
             "fr_exemple": "",
             "port_exemple": ""
         },
         "en": {
-            "translation": "to teach",
-            "note": "todo"
+            "translation": "to teach (formal)",
+            "note": "ensinar is more general and common for any type of learning, while lecionar is more specific to formal education"
         },
         "user_usefulness": 2,
         "audio": {
@@ -42727,7 +42723,7 @@
             "translation": "to remember",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "4d42c7e2-4137-4860-8d57-f75d84af7928.mp3",
             "last_update": "2026-02-15"
@@ -48304,7 +48300,7 @@
         "id": "f637399a-715a-4736-b170-d4683649995c",
         "port": "querida",
         "fr": {
-            "translation": "chère",
+            "translation": "chère (sens affectueux)",
             "note": "todo",
             "fr_exemple": "",
             "port_exemple": ""
@@ -49898,15 +49894,15 @@
     },
     {
         "id": "1923e45b-68c5-4dfc-aed4-691bd08f01a8",
-        "port": "gosta",
+        "port": "gostar",
         "fr": {
-            "translation": "aime",
+            "translation": "aimer",
             "note": "todo",
             "fr_exemple": "",
             "port_exemple": ""
         },
         "en": {
-            "translation": "likes, enjoys, is fond of",
+            "translation": "to like",
             "note": "todo"
         },
         "user_usefulness": 2,

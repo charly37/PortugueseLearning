@@ -36,7 +36,9 @@ EXCLUDED_IDS = [
     '84fe6924-015d-4e27-b566-d7169dc0b90d', #partida - match
     'fbf717ab-0985-4039-b545-ad7dc299e33e',  #partida - depart
     '64629bb7-89dc-41e2-b38a-c5bc43b30cfb', #saber - savoir
-    '442e210d-0c1a-4b77-9c5a-28186456f2a9'  #saber - avoir un gout
+    '442e210d-0c1a-4b77-9c5a-28186456f2a9',  #saber - avoir un gout
+    '65aa69b8-76bf-46a4-9106-f1412fbaaa23', #patient - malade
+    '8373574d-ebc9-4c91-9d22-6d62e4b4ab6d'  #patient - calme
 ]
 
 
