@@ -124,7 +124,7 @@ Focus on natural, everyday language that beginners can understand."""
             "error": str(e)
         }
 
-def main(max_words=300):
+def main(max_words=100):
     """
     Main function to process all challenges
     
