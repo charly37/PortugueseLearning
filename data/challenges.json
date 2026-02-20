@@ -32940,9 +32940,10 @@
         "port": "afectar",
         "fr": {
             "translation": "affecter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Le verbe portugais 'afetar' peut signifier influencer ou toucher émotionnellement. En français, 'affecter' peut aussi signifier faire semblant; le contexte détermine le choix.",
+            "fr_exemple": "Cela peut affecter ma vie.",
+            "port_exemple": "Isso pode afetar a minha vida.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to affect",
@@ -33619,9 +33620,10 @@
         "port": "atrever",
         "fr": {
             "translation": "oser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'atrever' s'emploie le plus souvent avec le réflexif 'atrever-se a ...'. En français, 'oser' est le choix le plus courant et neutre.",
+            "fr_exemple": "Je vais oser parler en public.",
+            "port_exemple": "Eu vou atrever-me a falar em público.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to dare",
@@ -35918,9 +35920,10 @@
         "port": "criticar",
         "fr": {
             "translation": "critiquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, 'criticar' peut viser une personne ou une chose. En français, 'critiquer' peut avoir une nuance légère ou plus sévère selon le contexte.",
+            "fr_exemple": "Je vais critiquer le rapport.",
+            "port_exemple": "Eu vou criticar o relatório.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to criticize",
@@ -36177,9 +36180,10 @@
         "port": "constatar",
         "fr": {
             "translation": "constater",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Constater est un verbe plutôt formel qui signifie observer ou vérifier et en tirer un constat. Selon le contexte, on peut préférer 'vérifier' ou 'confirmer'.",
+            "fr_exemple": "Nous devons constater les faits.",
+            "port_exemple": "Precisamos constatar os factos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to verify",
@@ -38296,9 +38300,10 @@
         "port": "engolir",
         "fr": {
             "translation": "avaler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'avaler' est la traduction naturelle pour l'action physique d'avaler quelque chose. En portugais, 'engolir' peut aussi être utilisé au sens figuré (accepter sans protester), mais en français on dira plutôt 'tolérer' ou 'supporter' selon le contexte.",
+            "fr_exemple": "J'avale l'eau lentement.",
+            "port_exemple": "Eu engulo a água devagar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to swallow",
@@ -38315,9 +38320,10 @@
         "port": "enriquecer",
         "fr": {
             "translation": "enrichir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : le verbe portugais 'enriquecer' peut signifier rendre quelque chose plus riche ou devenir plus riche. En français, on emploie 'enrichir' pour rendre quelque chose plus riche et 's'enrichir' pour devenir plus riche.",
+            "fr_exemple": "Je veux enrichir ma vie avec plus de connaissances.",
+            "port_exemple": "Quero enriquecer a minha vida com mais conhecimento.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to enrich",
@@ -38334,9 +38340,10 @@
         "port": "enrolar",
         "fr": {
             "translation": "enrouler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Pour le sens physique, 'enrouler' est le verbe courant. Pour le sens 's’inscrire' (enrolar dans le sens s'inscrire à un cours), on emploie 's’inscrire' plutôt que 'enrouler'.",
+            "fr_exemple": "Je vais enrouler le fil.",
+            "port_exemple": "Eu vou enrolar o fio.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to curl",
@@ -38353,9 +38360,10 @@
         "port": "ensaiar",
         "fr": {
             "translation": "répéter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'ensaiar' signifie surtout répéter ou pratiquer pour une représentation. Pour le sens 'essayer' ou 'tester' (par exemple une hypothèse ou une méthode), on emploie 'essayer' ou 'tester' selon le contexte.",
+            "fr_exemple": "Je vais répéter mes répliques pour la pièce demain.",
+            "port_exemple": "Vou ensaiar as falas para a peça amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to rehearse",
@@ -38372,9 +38380,10 @@
         "port": "enterrar",
         "fr": {
             "translation": "enterrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "La traduction actuelle enterrer est correcte et courante. Attention: on peut aussi l'utiliser au sens figuré: enterrer une idée, enterrer la hache de guerre.",
+            "fr_exemple": "Je vais enterrer la graine dans le sol.",
+            "port_exemple": "Eu vou enterrar a semente no solo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to bury",
@@ -38390,10 +38399,11 @@
         "id": "ec28cc92-672a-453c-80c9-618c6a801d47",
         "port": "entregar",
         "fr": {
-            "translation": "livrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "remettre",
+            "note": "En contexte général, 'remettre' convient pour remettre, rendre ou soumettre quelque chose. 'Livrer' est plutôt utilisé pour la livraison d'objets.",
+            "fr_exemple": "Je vais remettre le rapport demain.",
+            "port_exemple": "Eu vou entregar o relatório amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to deliver",
@@ -38410,9 +38420,10 @@
         "port": "envelhecer",
         "fr": {
             "translation": "vieillir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Vieillir est un verbe intransitif utilisé pour décrire le passage du temps et le fait de devenir plus âgé. En portugais, envelhecer est aussi intransitif et s'emploie sans complément d'objet direct.",
+            "fr_exemple": "Avec le temps, nous allons vieillir.",
+            "port_exemple": "Com o tempo, vamos envelhecer.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to age",
@@ -38428,10 +38439,11 @@
         "id": "98733be0-a2c7-4911-b1b7-cd7d1c86f3d6",
         "port": "envolver",
         "fr": {
-            "translation": "impliquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "envelopper / impliquer",
+            "note": "Remarque : En portugais, 'envolver' peut signifier soit 'impliquer' (avec quelqu'un dans une action), soit 'envelopper' (entourer ou couvrir). Le choix dépend du sens voulu.",
+            "fr_exemple": "Cette tâche implique beaucoup de coûts.",
+            "port_exemple": "Essa tarefa envolve muitos custos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to involve",
@@ -38447,10 +38459,11 @@
         "id": "26e7208b-5712-48bd-8c7a-654c83588cd5",
         "port": "enxergar",
         "fr": {
-            "translation": "apercevoir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "voir",
+            "note": "La traduction actuelle 'apercevoir' n'est pas la plus adaptée pour le sens général de 'enxergar'. Le verbe 'voir' est plus courant et couvre aussi l'idée de voir clairement ou percevoir.",
+            "fr_exemple": "Je peux voir la différence entre les deux propositions.",
+            "port_exemple": "Eu consigo enxergar a diferença entre as duas propostas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to see",
@@ -38467,9 +38480,10 @@
         "port": "enxugar",
         "fr": {
             "translation": "essuyer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Enxugar peut signifier sécher ou essuyer quelque chose avec un chiffon. En français, le verbe le plus courant est 'essuyer'; 'sécher' est plus général et peut être moins précis selon le contexte.",
+            "fr_exemple": "Je vais essuyer la vaisselle.",
+            "port_exemple": "Eu vou enxugar a loiça.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to dry",
@@ -38486,9 +38500,10 @@
         "port": "equivaler",
         "fr": {
             "translation": "équivaloir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe équivaloir signifie être équivalent à ou représenter une valeur. On l’utilise avec 'à' pour introduire l’équivalence (cela équivaut à...).",
+            "fr_exemple": "Cela équivaut à deux mille euros.",
+            "port_exemple": "Isso equivale a dois mil euros.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to equate",
@@ -38505,9 +38520,10 @@
         "port": "erguer",
         "fr": {
             "translation": "ériger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe portugais erguer signifie lever ou élever physiquement. En français, on privilégie ériger pour des monuments et bâtiments, et soulever ou lever pour des actions plus générales.",
+            "fr_exemple": "Il peut soulever la boîte tout seul.",
+            "port_exemple": "Ele pode erguer a caixa sozinho.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lift",
@@ -38523,10 +38539,11 @@
         "id": "34b3adc9-6e98-4162-8e38-90d60d80bfaa",
         "port": "errar",
         "fr": {
-            "translation": "errer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "se tromper",
+            "note": "Attention : 'errer' en français n'est pas le sens correct ici; il signifie plutôt 'se promener' ou 's\\'égarer'. Pour traduire 'errar' dans le sens de faire une erreur ou manquer quelque chose, on utilise 'se tromper' ou 'rater'.",
+            "fr_exemple": "J'ai raté la cible.",
+            "port_exemple": "Eu errei o alvo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to err",
@@ -38543,9 +38560,10 @@
         "port": "escalar",
         "fr": {
             "translation": "escalader",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'escalar' se traduit le plus souvent par 'escalader'; pour les montagnes, 'gravir' peut aussi être utilisé et est parfois plus soutenu.",
+            "fr_exemple": "Je vais escalader la montagne aujourd'hui.",
+            "port_exemple": "Vou escalar a montanha hoje.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to climb",
@@ -38562,9 +38580,10 @@
         "port": "escapar",
         "fr": {
             "translation": "échapper",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, 'escapar' couvre aussi bien l'évasion physique que l'évitement. En français, on préfère 's'échapper' pour dire 'se libérer de quelque chose' (ici la routine).",
+            "fr_exemple": "J'ai besoin de m'échapper de la routine.",
+            "port_exemple": "Eu preciso escapar da rotina.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to escape",
@@ -38581,9 +38600,10 @@
         "port": "esclarecer",
         "fr": {
             "translation": "éclaircir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'esclarecer' se traduit le plus souvent par 'éclaircir' en français, pour rendre une situation ou un doute plus clair. Selon le contexte, 'élucider' peut être utilisé de façon plus formelle.",
+            "fr_exemple": "Je veux éclaircir les doutes.",
+            "port_exemple": "Quero esclarecer as dúvidas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to clarify",
@@ -38600,9 +38620,10 @@
         "port": "escolher",
         "fr": {
             "translation": "choisir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'escolher' exprime l'action de faire un choix parmi plusieurs options. En français, le verbe courant est 'choisir'; on peut aussi dire 'opter pour' dans un contexte plus soutenu.",
+            "fr_exemple": "J'ai besoin de choisir entre ces options.",
+            "port_exemple": "Eu preciso escolher entre estas opções.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to choose",
@@ -38619,9 +38640,10 @@
         "port": "elevar",
         "fr": {
             "translation": "élever",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Élever peut signifier augmenter physiquement ou éduquer quelqu'un. Utilisez-le aussi pour parler d'une amélioration ou d'une élévation du niveau.",
+            "fr_exemple": "Élevons le niveau.",
+            "port_exemple": "Vamos elevar o nível.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to elevate",
@@ -38638,9 +38660,10 @@
         "port": "eliminar",
         "fr": {
             "translation": "éliminer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Éliminer est le verbe standard pour signifier retirer ou faire disparaître quelque chose. Dans la vie courante, on peut aussi dire supprimer ou retirer selon le contexte.",
+            "fr_exemple": "Je veux éliminer les photos en double de mon téléphone.",
+            "port_exemple": "Quero eliminar as fotos duplicadas do meu telemóvel.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to eliminate",
@@ -38656,10 +38679,11 @@
         "id": "6319ba52-edf9-4f67-a354-a8048582648c",
         "port": "elogiar",
         "fr": {
-            "translation": "louer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "élogier",
+            "note": "Élogier est le sens direct et soutenu de « elogiar ». « Louer » peut signifier aussi « to praise », mais il est surtout utilisé pour le sens « louer un bien » et peut prêter à confusion pour les débutants.",
+            "fr_exemple": "J'aime élogier mes amis.",
+            "port_exemple": "Eu gosto de elogiar meus amigos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to praise",
@@ -38676,9 +38700,10 @@
         "port": "embarcar",
         "fr": {
             "translation": "embarquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'embarquer' est utilisé pour monter à bord d'un véhicule ou pour commencer une aventure/projet. En français, on peut aussi dire 'monter à bord' pour préciser le moyen de transport.",
+            "fr_exemple": "Nous allons embarquer dans l'avion à sept heures.",
+            "port_exemple": "Vamos embarcar no avião às sete.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to board",
@@ -38695,9 +38720,10 @@
         "port": "emergir",
         "fr": {
             "translation": "émerger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Émerger est le verbe direct pour 'to emerge'. En pratique, on peut dire aussi 'apparaître' ou 'surgir' selon le contexte; émerge décrit surtout ce qui devient visible après être resté caché.",
+            "fr_exemple": "Les opportunités commencent à émerger quand on s'y attend le moins.",
+            "port_exemple": "As oportunidades começam a emergir quando menos esperamos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to emerge",
@@ -38714,9 +38740,10 @@
         "port": "emigrar",
         "fr": {
             "translation": "émigrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : émigrer signifie quitter son pays pour s’installer ailleurs. En portugais, emigrar correspond à ce mouvement; on oppose émigrer (partir) à immigrer (arriver dans un pays).",
+            "fr_exemple": "Elle a décidé d'émigrer vers le Brésil.",
+            "port_exemple": "Ela decidiu emigrar para o Brasil.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to emigrate",
@@ -38733,9 +38760,10 @@
         "port": "emitir",
         "fr": {
             "translation": "émettre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Émettre est un verbe polyvalent. On l'utilise pour produire et diffuser quelque chose (factures, billets, signaux).",
+            "fr_exemple": "Je vais émettre une facture.",
+            "port_exemple": "Vou emitir uma fatura.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to issue",
@@ -38751,10 +38779,11 @@
         "id": "056bee5a-68cc-42c2-b51c-d0ee55a3a6f5",
         "port": "empatar",
         "fr": {
-            "translation": "égaliser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "faire un match nul",
+            "note": "Remarque: empatar est surtout utilisé pour dire qu'un match se termine sur un score égal. 'Égaliser' est plutôt utilisé lorsque l'action est de marquer pour égaliser le score pendant le match.",
+            "fr_exemple": "L'équipe a réussi à faire un match nul.",
+            "port_exemple": "O time conseguiu empatar o jogo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to tie",
@@ -38770,10 +38799,11 @@
         "id": "530acc97-12bd-4813-bccd-d9e5f8445eef",
         "port": "empenhar",
         "fr": {
-            "translation": "engager",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "s'engager",
+            "note": "En portugais, 'empenhar' signifie s'engager, faire un effort ou mobiliser des fonds. En français, on privilégie 's'engager' pour le sens personnel et 'mobiliser des fonds' pour le sens financier.",
+            "fr_exemple": "Elle s'engage à terminer le rapport.",
+            "port_exemple": "Ela se empenha em terminar o relatório.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to pledge",
@@ -38790,9 +38820,10 @@
         "port": "empreender",
         "fr": {
             "translation": "entreprendre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'empreender' exprime l'initiative et le démarrage d'un projet ou d'une activité. En français, 'entreprendre' correspond bien à ce sens, surtout dans un contexte professionnel.",
+            "fr_exemple": "Il a décidé d'entreprendre une nouvelle entreprise.",
+            "port_exemple": "Ele decidiu empreender um novo negócio.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to undertake",
@@ -38808,10 +38839,11 @@
         "id": "a830a8a0-a8c9-48ee-ba86-fb346a18e1e7",
         "port": "empregar",
         "fr": {
-            "translation": "employer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "utiliser",
+            "note": "Remarque: 'empregar' peut signifier 'utiliser' ou 'employer' selon le contexte. Pour parler d'engager du personnel, on dira plutôt 'embaucher'.",
+            "fr_exemple": "Je vais utiliser plus de temps pour ce projet.",
+            "port_exemple": "Vou empregar mais tempo neste projeto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to employ",
@@ -38827,10 +38859,11 @@
         "id": "c8a25d2f-c8c7-457a-8186-09293cff68d8",
         "port": "encaminhar",
         "fr": {
-            "translation": "acheminer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "transmettre",
+            "note": "Remarque : enc angar est polyvalent et peut signifier envoyer, transmettre ou diriger une information. Pour l’usage quotidien, privilégiez 'envoyer' ou 'transmettre' selon le contexte.",
+            "fr_exemple": "Je vais transmettre le rapport au directeur.",
+            "port_exemple": "Vou encaminhar o relatório ao diretor.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to forward",
@@ -38846,10 +38879,11 @@
         "id": "d7ff95a8-a7bf-4135-9adc-05698ef4b5d0",
         "port": "encarar",
         "fr": {
-            "translation": "affronter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "faire face à",
+            "note": "Remarque: 'encarar' se traduit le plus souvent par 'faire face à' lorsqu'il s'agit d'affronter une situation ou un défi. 'Affronter' est plus fort et peut impliquer une confrontation directe.",
+            "fr_exemple": "Allons faire face au défi.",
+            "port_exemple": "Vamos encarar o desafio.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to stare",
@@ -38866,9 +38900,10 @@
         "port": "encarregar",
         "fr": {
             "translation": "charger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Note: Encarregar peut signifier confier une tâche à quelqu'un. En français, on utilise souvent 'charger quelqu'un de quelque chose' ou 'assigner/mandater' selon le contexte.",
+            "fr_exemple": "Je vais charger João de préparer le rapport.",
+            "port_exemple": "Vou encarregar o João de preparar o relatório.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to charge",
@@ -38884,10 +38919,11 @@
         "id": "695d8f74-53e4-4c05-b3b2-0301cd6aa52b",
         "port": "encerrar",
         "fr": {
-            "translation": "clore",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "terminer",
+            "note": "La traduction 'clore' est trop soutenue pour un usage quotidien. En français, on privilégie 'terminer' ou 'mettre fin à' selon le contexte.",
+            "fr_exemple": "Je vais terminer la réunion à 17 heures.",
+            "port_exemple": "Vou encerrar a reunião às 17h.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to close",
@@ -38904,9 +38940,10 @@
         "port": "encolher",
         "fr": {
             "translation": "rétrécir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : « rétrécir » couvre surtout l’idée de diminution de taille (vêtement, matière). Pour décrire le recul ou la contraction du corps, on préfère « se recroqueviller » ou « se reculer » selon le contexte.",
+            "fr_exemple": "Elle a haussé les épaules.",
+            "port_exemple": "Ela encolheu os ombros.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to shrink",
@@ -38923,9 +38960,10 @@
         "port": "encostar",
         "fr": {
             "translation": "appuyer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que « encostar » peut signifier s'appuyer contre une surface. En français, on dit généralement s'appuyer contre X ou appuyer quelque chose contre Y selon le contexte.",
+            "fr_exemple": "Je me suis appuyé contre le mur pour me reposer.",
+            "port_exemple": "Encostei-me à parede para descansar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to pullover",
@@ -38942,9 +38980,10 @@
         "port": "enfatizar",
         "fr": {
             "translation": "souligner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'enfatizar' signifie surtout 'mettre l'accent sur', 'donner de l'importance à'. En français, 'souligner' convient à l'emphase ou à la mise en évidence, mais selon le contexte on peut aussi dire 'mettre en évidence'.",
+            "fr_exemple": "Je vais souligner les points principaux.",
+            "port_exemple": "Vou enfatizar os pontos principais.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to emphasize",
@@ -38961,9 +39000,10 @@
         "port": "enfiar",
         "fr": {
             "translation": "enfiler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Nuance : 'enfiar' en portugais peut signifier plusieurs sens, mais pour le contexte de couture et de vêtement, 'enfiler' est le choix le plus naturel. Pour d'autres sens, on emploie 'introduire' ou 'insérer'.",
+            "fr_exemple": "Je vais enfiler le fil dans l'œil de l'aiguille.",
+            "port_exemple": "Eu vou enfiar a linha na agulha.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to sticklanguage",
@@ -38980,9 +39020,10 @@
         "port": "escorregar",
         "fr": {
             "translation": "glisser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Escorregar signifie glisser et perdre l'adhérence sur une surface. En français, on emploie surtout glisser pour décrire ce mouvement; déraper convient davantage pour les véhicules ou des situations plus brusques.",
+            "fr_exemple": "Je glisse sur le sol mouillé.",
+            "port_exemple": "Eu escorrego no chão molhado.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to slip",
@@ -38998,10 +39039,11 @@
         "id": "7eeda2ce-dabb-4b51-9c10-6044e07cd01e",
         "port": "escorrer",
         "fr": {
-            "translation": "couler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "s'écouler",
+            "note": "Remarque: escorrer décrit surtout un liquide qui s'écoule ou ruisselle le long d'une surface. Pour les aliments, on utilisera plutôt égoutter.",
+            "fr_exemple": "L'eau a commencé à s'écouler par le robinet.",
+            "port_exemple": "A água começou a escorrer pela torneira.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to drip",
@@ -39018,9 +39060,10 @@
         "port": "esforçar",
         "fr": {
             "translation": "s'efforcer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe « esforçar » exprime l'idée de faire un effort pour atteindre un but. En français, on utilise « s'efforcer » ou « faire un effort » selon le contexte; « s'efforcer » est couramment utilisé pour décrire l'action de s'employer soi-même à réussir quelque chose.",
+            "fr_exemple": "Je vais m'efforcer de terminer le travail aujourd'hui.",
+            "port_exemple": "Eu vou me esforçar para terminar o trabalho hoje.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to strive",
@@ -39037,9 +39080,10 @@
         "port": "esfregar",
         "fr": {
             "translation": "frotter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: « esfregar » signifie principalement frotter, nettoyer en frottant. En pratique, on dit aussi « se frotter les yeux » pour décrire l'action de se frotter les yeux.",
+            "fr_exemple": "Je vais frotter le sol.",
+            "port_exemple": "Vou esfregar o chão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to scrub",
@@ -39056,9 +39100,10 @@
         "port": "esmagar",
         "fr": {
             "translation": "écraser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : « écraser » couvre le sens physique (compresser) et peut aussi être utilisé figurativement (par exemple « écraser quelqu'un » pour décrire vaincre ou humilier). C'est un verbe courant et utile pour les débutants.",
+            "fr_exemple": "Je vais écraser les raisins.",
+            "port_exemple": "Vou esmagar as uvas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to smash",
@@ -39075,9 +39120,10 @@
         "port": "espalhar",
         "fr": {
             "translation": "répandre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Espalhar est polyvalent: on utilise 'répandre' pour des informations, des rumeurs ou des liquides. Pour parler de répartition sur une surface ou de manière uniforme, on emploie plutôt 'étendre' ou 'étaler' selon le contexte.",
+            "fr_exemple": "Je vais répandre les graines dans le jardin.",
+            "port_exemple": "Vou espalhar as sementes no jardim.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to spread",
@@ -39094,9 +39140,10 @@
         "port": "espantar",
         "fr": {
             "translation": "effrayer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'espantar' a plusieurs sens selon le contexte: effrayer (faire peur) ou faire fuir. Pour dissiper des doutes ou de la curiosité, on utilisera 'dissiper'.",
+            "fr_exemple": "Il veut effrayer les oiseaux du jardin.",
+            "port_exemple": "Ele quer espantar os pássaros do jardim.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to scareaway",
@@ -39113,9 +39160,10 @@
         "port": "especificar",
         "fr": {
             "translation": "spécifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Préciser est le choix le plus courant pour clarifier ou détailler quelque chose. Spécifier peut sembler plus technique ou formel.",
+            "fr_exemple": "Pouvez-vous préciser votre demande ?",
+            "port_exemple": "Pode especificar o que precisa?",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to specify",
@@ -39132,9 +39180,10 @@
         "port": "espiar",
         "fr": {
             "translation": "espionner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Généralement, espiar = espionner. Dans le langage courant, on peut aussi dire 'jeter un coup d'œil' si l'on parle d'un regard discret.",
+            "fr_exemple": "J'aime espionner par la fenêtre pour voir qui arrive.",
+            "port_exemple": "Eu gosto de espiar pela janela para ver quem chega.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to spy",
@@ -39150,10 +39199,11 @@
         "id": "d836ff63-c00f-4a33-995e-8562b5c248b9",
         "port": "espreitar",
         "fr": {
-            "translation": "guetter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "jeter un coup d'œil",
+            "note": "Remarque: espreitar porte l'idée d'un regard rapide et discret. Pour l'action générale d'observer un peu sans s'attarder, 'jeter un coup d'œil' est le plus courant.",
+            "fr_exemple": "Elle jette un coup d'œil par la fenêtre pour voir qui arrive.",
+            "port_exemple": "Ela espreita pela janela para ver quem chega.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to peek",
@@ -39170,9 +39220,10 @@
         "port": "estabelecer",
         "fr": {
             "translation": "établir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Utilisez 'établir' pour des règles, des procédures ou des faits. Pour parler de projets ou d'organisations, des verbes comme 'mettre en place' ou 'créer' peuvent être plus naturels selon le contexte.",
+            "fr_exemple": "Il est important d'établir des objectifs.",
+            "port_exemple": "É importante estabelecer metas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to establish",
@@ -39188,10 +39239,11 @@
         "id": "30f12f9f-3436-4641-86a0-e3ce51aba104",
         "port": "estacionar",
         "fr": {
-            "translation": "stationner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "se garer",
+            "note": "Remarque: 'stationner' est correct mais moins courant à l'oral en portugais européen. Pour parler de garer sa voiture, on préfère généralement 'se garer' (ou 'aparcar' au Portugal).",
+            "fr_exemple": "Je vais me garer.",
+            "port_exemple": "Eu vou estacionar o carro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to park",
@@ -39208,9 +39260,10 @@
         "port": "estalar",
         "fr": {
             "translation": "craquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, estalar peut désigner le bruit de craquement ou l'action de faire craquer quelque chose. En français, on dit généralement craquer ses doigts ou claquer des doigts selon le contexte.",
+            "fr_exemple": "Je peux craquer mes doigts pour soulager la tension.",
+            "port_exemple": "Eu posso estalar os dedos para aliviar a tensão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to snap",
@@ -39227,9 +39280,10 @@
         "port": "estender",
         "fr": {
             "translation": "étendre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : estender couvre l'action d'étendre ou d'étaler quelque chose physiquement (linge, bras, surface). Pour parler d'un délai ou d'une extension abstraite, on privilégie souvent prolonger ou élargir.",
+            "fr_exemple": "Je vais étendre le linge sur le fil à linge.",
+            "port_exemple": "Eu vou estender a roupa no varal.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to extend",
@@ -39246,9 +39300,10 @@
         "port": "estimar",
         "fr": {
             "translation": "estimer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Estimer est polyvalent: il peut signifier évaluer quelque chose (quantité ou coût) ou estimer quelqu'un. En français, 'j'estime' peut aussi introduire une opinion ('j'estime que...').",
+            "fr_exemple": "Il est difficile d'estimer le coût total.",
+            "port_exemple": "É difícil estimar o custo total.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to estimate",
@@ -39265,9 +39320,10 @@
         "port": "estimular",
         "fr": {
             "translation": "stimuler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Estimuler se traduit le plus souvent par stimuler en français lorsque l'on parle d'inciter une action, une réaction ou un intérêt. Selon le contexte, encourager peut être plus naturel.",
+            "fr_exemple": "Stimuler la curiosité des enfants est important.",
+            "port_exemple": "Estimular a curiosidade das crianças é importante.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to encourage",
@@ -39284,9 +39340,10 @@
         "port": "estragar",
         "fr": {
             "translation": "abîmer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: estragar signifie endommager ou gâcher quelque chose. En pratique, 'abîmer' est polyvalent; pour la nourriture ou les surprises, 'gâcher' peut être plus naturel.",
+            "fr_exemple": "Ne gâche pas la surprise.",
+            "port_exemple": "Não estragues a surpresa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to spoil",
@@ -39303,9 +39360,10 @@
         "port": "estranhar",
         "fr": {
             "translation": "s'étonner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'estranhar' peut signifier 'être surpris' ou 'trouver quelque chose d'étrange'. En français, on emploie 's'étonner' pour la surprise et 'sembler étrange' ou 'trouver étrange' pour l'étrangeté.",
+            "fr_exemple": "Ça m'a paru étrange quand il est arrivé en retard.",
+            "port_exemple": "Eu estranhei quando ele chegou atrasado.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to wonder",
@@ -39322,9 +39380,10 @@
         "port": "extrair",
         "fr": {
             "translation": "extraire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, extrair est le verbe standard pour retirer ou obtenir quelque chose. En français, extraire est le choix le plus naturel et courant; pour obtenir des informations, on peut aussi dire « tirer des informations » mais c'est moins fréquent.",
+            "fr_exemple": "Je veux extraire des informations de cette feuille de calcul.",
+            "port_exemple": "Eu quero extrair informações desta planilha.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to extract",
@@ -39341,9 +39400,10 @@
         "port": "fabricar",
         "fr": {
             "translation": "fabriquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'fabriquer' convient surtout pour des objets ou des produits. Pour parler d'un mensonge, on dirait plutôt 'inventer un mensonge'.",
+            "fr_exemple": "Elle va fabriquer un nouveau meuble.",
+            "port_exemple": "Ela vai fabricar um móvel novo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to manufacture",
@@ -39360,9 +39420,10 @@
         "port": "facilitar",
         "fr": {
             "translation": "faciliter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Faciliter est un verbe du 1er groupe. On l’emploie pour rendre quelque chose plus facile (par exemple faciliter l’accès).",
+            "fr_exemple": "Ces outils aident à faciliter l'accès au contenu.",
+            "port_exemple": "Estas ferramentas ajudam a facilitar o acesso ao conteúdo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to facilitate",
@@ -39379,9 +39440,10 @@
         "port": "falecer",
         "fr": {
             "translation": "décéder",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Falecer est une forme soutenue et polie; elle s'emploie surtout dans les notices et les contextes formels. Pour le langage courant, on utilisera plutôt mourir.",
+            "fr_exemple": "Il est triste de penser que quelqu'un peut décéder.",
+            "port_exemple": "É triste pensar que alguém pode falecer.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to die",
@@ -39398,9 +39460,10 @@
         "port": "falhar",
         "fr": {
             "translation": "échouer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que falhar peut aussi signifier « manquer » dans le sens de ne pas atteindre un objectif. Selon le contexte, « manquer » ou « rater » peut être plus naturel que « échouer ». ",
+            "fr_exemple": "Si je n'étudie pas, j'éechouerai à l'examen.",
+            "port_exemple": "Se eu não estudar, vou falhar na prova.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to fail",
@@ -39416,10 +39479,11 @@
         "id": "f711bf65-9a95-4844-8db5-7ca534b7ebfc",
         "port": "fartar",
         "fr": {
-            "translation": "rassasier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "se rassasier",
+            "note": "Le verbe fartar a deux sens en portugais: se rassasier (faim) et être lassé de quelque chose (sens figuré). En français, privilégiez 'se rassasier' pour le sens alimentaire et 'se lasser de / en avoir assez de' pour le sens figuré.",
+            "fr_exemple": "Je me suis lassé des promesses.",
+            "port_exemple": "Fartei-me de promessas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to satiate",
@@ -39436,9 +39500,10 @@
         "port": "favorecer",
         "fr": {
             "translation": "favoriser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, favorecer signifie donner un avantage ou soutenir quelque chose. En français, 'favoriser' est le choix le plus courant; selon le sens, on peut aussi dire 'faciliter' ou 'bénéficier'.",
+            "fr_exemple": "Ce programme peut favoriser les petites entreprises.",
+            "port_exemple": "Este programa pode favorecer as pequenas empresas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to favor",
@@ -39455,9 +39520,10 @@
         "port": "ferir",
         "fr": {
             "translation": "blesser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: « ferir » est surtout utilisé pour les blessures physiques. En français, « blesser » couvre aussi bien les blessures physiques que les blessures morales et est donc plus polyvalent.",
+            "fr_exemple": "Il s'est blessé au doigt en coupant du bois.",
+            "port_exemple": "Ele feriu o dedo ao cortar madeira.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to hurt",
@@ -39474,9 +39540,10 @@
         "port": "ferver",
         "fr": {
             "translation": "bouillir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, 'ferver' est intransitif. En français, on dira 'L'eau bout' ou 'porter l'eau à ébullition' selon le contexte.",
+            "fr_exemple": "L'eau bout.",
+            "port_exemple": "A água está a ferver.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to boil",
@@ -39493,9 +39560,10 @@
         "port": "fiar",
         "fr": {
             "translation": "filer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens principal de fiar est le filage (faire filer la laine). Il existe aussi le sens figuré « se fiar », qui se traduit par « se fier à quelqu'un/quelque chose ».",
+            "fr_exemple": "Je vais filer la laine demain.",
+            "port_exemple": "Vou fiar a lã amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to spin",
@@ -39512,9 +39580,10 @@
         "port": "figurar",
         "fr": {
             "translation": "figurer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe figurar en portugais signifie apparaître ou être inclus dans une liste ou un document. En français, figurer s’emploie de la même manière dans ces contextes.",
+            "fr_exemple": "Son nom figure sur la liste.",
+            "port_exemple": "O nome dele figura na lista.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to figure",
@@ -39531,9 +39600,10 @@
         "port": "filmar",
         "fr": {
             "translation": "filmer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Filmer est le verbe courant pour prendre des vidéos avec une caméra. En portugais européen, 'filmar' est utilisé comme 'filmer'; 'gravar' peut aussi signifier enregistrer (son ou image) selon le contexte.",
+            "fr_exemple": "Je vais filmer le coucher du soleil.",
+            "port_exemple": "Vou filmar o pôr do sol.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to film",
@@ -39549,10 +39619,11 @@
         "id": "f11e3fa9-8624-445b-9d76-26232da51ce2",
         "port": "finalizar",
         "fr": {
-            "translation": "finaliser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "terminer",
+            "note": "En portugais, finalizar signifie terminer ou achever quelque chose. En français courant, terminer est plus fréquent pour parler de finir une tâche, tandis que finaliser a une nuance de finalisation plus technique.",
+            "fr_exemple": "Je dois terminer le rapport.",
+            "port_exemple": "Eu preciso finalizar o relatório.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to finalize",
@@ -39569,9 +39640,10 @@
         "port": "financiar",
         "fr": {
             "translation": "financer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'financiar' se traduit par 'financer'. En français, on emploie 'financer' pour parler de financer un projet ou une entreprise; on peut dire 'soutenir financièrement' pour insister sur le soutien.",
+            "fr_exemple": "Elle a décidé de financer le projet.",
+            "port_exemple": "Ela decidiu financiar o projeto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to finance",
@@ -39588,9 +39660,10 @@
         "port": "findar",
         "fr": {
             "translation": "finir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Findar est un verbe plutôt littéraire ou soutenu en portugais. En français, on emploie naturellement finir pour traduire cette idée et on peut l'utiliser avec des périodes ou des activités.",
+            "fr_exemple": "Je vais finir la journée plus tôt aujourd'hui.",
+            "port_exemple": "Vou findar o dia mais cedo hoje.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to end",
@@ -39607,9 +39680,10 @@
         "port": "fingir",
         "fr": {
             "translation": "feindre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: «feindre» est correct mais peut sembler soutenu. Dans la langue courante, on privilégie souvent «faire semblant de + infinitif» (par exemple: faire semblant d'être malade).",
+            "fr_exemple": "Il est facile de faire semblant que rien ne s'est passé.",
+            "port_exemple": "É fácil fingir que nada aconteceu.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to fake",
@@ -39626,9 +39700,10 @@
         "port": "firmar",
         "fr": {
             "translation": "signer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Selon le contexte, 'firmar' peut aussi signifier 'affirmer' ou 'renforcer'. En matière de documents, l'usage le plus courant est 'signer' (par exemple 'signer un contrat').",
+            "fr_exemple": "Nous allons signer un accord.",
+            "port_exemple": "Vamos firmar um acordo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to firm",
@@ -39644,10 +39719,11 @@
         "id": "f7035e72-872e-4380-9e57-42f279be6ba0",
         "port": "fiscalizar",
         "fr": {
-            "translation": "fiscaliser, inspecter, surveiller ou contrôler",
+            "translation": "contrôler",
             "note": "A polícia fiscaliza o trânsito na cidade. (La police surveille la circulation en ville.)",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Le gouvernement contrôle le respect des lois.",
+            "port_exemple": "O Governo fiscaliza o cumprimento das leis.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to inspect",
@@ -39664,9 +39740,10 @@
         "port": "evidenciar",
         "fr": {
             "translation": "mettre en évidence",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, evidenciar signifie mettre en évidence quelque chose. Selon le contexte, on peut aussi dire mettre en lumière ou faire ressortir.",
+            "fr_exemple": "Il est important de mettre en évidence les faits.",
+            "port_exemple": "É importante evidenciar os factos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to evidence",
@@ -39683,9 +39760,10 @@
         "port": "evocar",
         "fr": {
             "translation": "évoquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Évoquer signifie faire surgir dans l'esprit une image, un souvenir ou un sujet. On l'utilise surtout pour parler de mémoire ou pour mentionner brièvement quelque chose.",
+            "fr_exemple": "Il veut évoquer des souvenirs de l'enfance.",
+            "port_exemple": "Ele quer evocar memórias da infância.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to evoke",
@@ -39702,9 +39780,10 @@
         "port": "evoluir",
         "fr": {
             "translation": "évoluer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Évoluer décrit un développement progressif dans le temps, souvent personnel ou collectif. En français, on peut aussi dire 'progresser' selon le contexte.",
+            "fr_exemple": "Je veux évoluer.",
+            "port_exemple": "Quero evoluir.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to evolve",
@@ -39721,9 +39800,10 @@
         "port": "exceder",
         "fr": {
             "translation": "dépasser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, « exceder » peut s’appliquer à des limites physiques ou abstraites (attentes, budget). En français, le verbe courant est « dépasser »; « outrepasser » est plus soutenu ou juridique, et « excéder » s’emploie rarement dans ce sens.",
+            "fr_exemple": "Nous ne devons pas dépasser la limite de vitesse.",
+            "port_exemple": "Não devemos exceder o limite de velocidade.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to exceed",
@@ -39740,9 +39820,10 @@
         "port": "exclamar",
         "fr": {
             "translation": "s'exclamer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Exclamar exprime une exclamation forte et spontanée. En français courant, on dira plutôt s'exclamer ou s'écrier selon le contexte et le degré d'intonation.",
+            "fr_exemple": "Elle s'exclame: « Quelle surprise ! »",
+            "port_exemple": "Ela exclama: 'Que surpresa!'",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to exclaim",
@@ -39759,9 +39840,10 @@
         "port": "excluir",
         "fr": {
             "translation": "exclure",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : « excluir » signifie principalement « exclure » (ne pas inclure) ; selon le contexte informatique, on dira aussi « supprimer » ou « effacer » un fichier.",
+            "fr_exemple": "Je veux exclure cet élément de la liste.",
+            "port_exemple": "Quero excluir este item da lista.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to delete",
@@ -39778,9 +39860,10 @@
         "port": "executar",
         "fr": {
             "translation": "exécuter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'executar' est polyvalent: réaliser une tâche, mettre en œuvre un plan ou lancer un programme. En français, 'exécuter' convient dans la plupart des sens; selon le contexte, on peut aussi dire 'effectuer' ou 'réaliser'.",
+            "fr_exemple": "Je vais exécuter le plan demain.",
+            "port_exemple": "Eu vou executar o plano amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to execute",
@@ -39797,9 +39880,10 @@
         "port": "exercer",
         "fr": {
             "translation": "exercer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Exercer est couramment utilisé pour parler d'accomplir une activité, d'exercer un droit ou une fonction. En portugais, on voit souvent 'exercer' suivi d'une profession ou d'une activité.",
+            "fr_exemple": "Il veut exercer sa profession avec responsabilité.",
+            "port_exemple": "Ele quer exercer a sua profissão com responsabilidade.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to exercise",
@@ -39815,10 +39899,11 @@
         "id": "a9716c70-e2d1-4a37-9896-9d166af51cb4",
         "port": "exibir",
         "fr": {
-            "translation": "exhiber",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "afficher",
+            "note": "Remarque: En portugais, exibir peut se traduire par afficher ou montrer selon le contexte. 'Exhiber' est correct mais moins courant et peut sembler formel.",
+            "fr_exemple": "Je vais afficher le graphique à l'écran.",
+            "port_exemple": "Vou exibir o gráfico no ecrã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to display",
@@ -39835,9 +39920,10 @@
         "port": "exigir",
         "fr": {
             "translation": "exiger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Exiger indique une demande forte ou une obligation. Utilisez-le avec prudence selon le contexte et la relation avec la personne.",
+            "fr_exemple": "J'exigerai que tu arrives à l'heure.",
+            "port_exemple": "Vou exigir que você chegue na hora.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to demand",
@@ -39854,9 +39940,10 @@
         "port": "existir",
         "fr": {
             "translation": "exister",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'existir' exprime l'idée générale d'être ou d'avoir une présence. En français, on dit surtout 'exister'; 'vivre' est différent et plus lié à l'expérience.",
+            "fr_exemple": "Exister est simple.",
+            "port_exemple": "Existir é simples.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to exist",
@@ -39872,10 +39959,11 @@
         "id": "7952bc4a-f650-4932-9156-83af3999d9ec",
         "port": "expandir",
         "fr": {
-            "translation": "étendre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "élargir",
+            "note": "Note: expandir peut signifier étendre ou élargir selon le contexte. En français, privilégiez élargir pour élargir le champ d'action ou déployer/développer selon le contexte.",
+            "fr_exemple": "Nous voulons élargir nos services à davantage de villes.",
+            "port_exemple": "Queremos expandir os nossos serviços para mais cidades.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to expand",
@@ -39891,10 +39979,11 @@
         "id": "c08bc464-7060-4337-b843-d0e0487720f6",
         "port": "experimentar",
         "fr": {
-            "translation": "expérimenter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "essayer",
+            "note": "En général, 'essayer' est le sens le plus naturel pour 'experimentar'. 'Expérimenter' est plus formel et signifie surtout 'réaliser des expériences' ou 'vivre une expérience', ce qui peut sembler trop lourd en conversation courante.",
+            "fr_exemple": "Je veux essayer une nouvelle recette.",
+            "port_exemple": "Quero experimentar uma nova receita.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to experiment",
@@ -39911,9 +40000,10 @@
         "port": "explicar",
         "fr": {
             "translation": "expliquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe portugais 'explicar' est régulier en -ar. En français, 'expliquer' est transitif et s'emploie avec 'quelque chose à quelqu'un' ou avec 'comment cela fonctionne'.",
+            "fr_exemple": "Je vais expliquer comment cela fonctionne.",
+            "port_exemple": "Eu vou explicar como funciona.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to explain",
@@ -39930,9 +40020,10 @@
         "port": "explodir",
         "fr": {
             "translation": "exploser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, explodir peut aussi être utilisé au sens figuré (explodir de raiva). En français, on utilise principalement 'exploser', et on dira 'exploser de colère' pour le sens figuré.",
+            "fr_exemple": "Le ballon peut exploser.",
+            "port_exemple": "O balão pode explodir.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to explode",
@@ -39949,9 +40040,10 @@
         "port": "explorar",
         "fr": {
             "translation": "explorer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens le plus courant de 'explorar' est 'explorer' pour découvrir ou visiter. Pour parler d'utiliser ou d'exploiter des ressources, on emploie 'exploiter'.",
+            "fr_exemple": "J'aime explorer de nouveaux endroits.",
+            "port_exemple": "Eu quero explorar novos lugares.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to explore",
@@ -39968,9 +40060,10 @@
         "port": "expor",
         "fr": {
             "translation": "exposer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, expor peut signifier exposer ou présenter quelque chose. En français, exposer convient pour montrer ou révéler; pour parler du fait de s'exposer à un risque, on dit 's'exposer à'.",
+            "fr_exemple": "Je vais exposer mes idées lors de la réunion.",
+            "port_exemple": "Eu vou expor minhas ideias na reunião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to expose",
@@ -39987,9 +40080,10 @@
         "port": "exportar",
         "fr": {
             "translation": "exporter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Utilisé pour parler d'exporter des données, des biens ou des services. Le contexte précise s'il s'agit d'un export commercial ou d'un export informatique.",
+            "fr_exemple": "Je vais exporter les données demain.",
+            "port_exemple": "Eu vou exportar os dados amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to export",
@@ -40006,9 +40100,10 @@
         "port": "expressar",
         "fr": {
             "translation": "exprimer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'exprimer' est un verbe transitif qui prend un complément (une opinion, des sentiments). Pour parler de soi-même, on emploie le verbe pronominal s'exprimer.",
+            "fr_exemple": "Je veux exprimer mon avis.",
+            "port_exemple": "Quero expressar a minha opinião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to express",
@@ -40025,9 +40120,10 @@
         "port": "exprimir",
         "fr": {
             "translation": "exprimer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'exprimir' est correct et courant en portugais pour dire 'exprimer'. En contexte, on traduit généralement par 'exprimer' en français.",
+            "fr_exemple": "J'essaie d'exprimer ce que je ressens.",
+            "port_exemple": "Eu tento exprimir o que sinto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to express",
@@ -40044,9 +40140,10 @@
         "port": "expulsar",
         "fr": {
             "translation": "expulser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Expulser est un verbe transitif. On l'emploie pour retirer quelqu'un d'un lieu ou mettre fin à sa participation, souvent dans un contexte disciplinaire.",
+            "fr_exemple": "L'école peut expulser un élève pour un mauvais comportement.",
+            "port_exemple": "A escola pode expulsar um aluno por mau comportamento.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to kickoutlanguage",
@@ -40063,9 +40160,10 @@
         "port": "fixar",
         "fr": {
             "translation": "fixer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe fixar peut signifier « fixer », « attacher » ou « établir », selon le contexte. En pratique, on emploie surtout « fixer » en français pour parler de définir une date ou un horaire, ou de fixer quelque chose en place.",
+            "fr_exemple": "Je vais fixer la date de la réunion.",
+            "port_exemple": "Vou fixar a data da reunião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to fix",
@@ -40082,9 +40180,10 @@
         "port": "florescer",
         "fr": {
             "translation": "fleurir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "fleurir s’utilise aussi bien pour les plantes que pour des idées ou des projets qui se développent. Pour parler du développement personnel, on privilégie parfois 's’épanouir'.",
+            "fr_exemple": "Les plantes vont fleurir au printemps.",
+            "port_exemple": "As plantas vão florescer na primavera.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to bloom",
@@ -40101,9 +40200,10 @@
         "port": "flutuar",
         "fr": {
             "translation": "flotter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: « flotter » est le sens le plus courant pour flotter sur l'eau. Pour parler de planer dans l'air, on utilise plutôt « planer ».",
+            "fr_exemple": "J'aime flotter dans la piscine.",
+            "port_exemple": "Eu gosto de flutuar na piscina.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to float",
@@ -40120,9 +40220,10 @@
         "port": "forçar",
         "fr": {
             "translation": "forcer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'forçar' est polyvalent en portugais et couvre à la fois l'action et la contrainte. En français, 'forcer' est surtout utilisé pour des actions physiques et des situations de contrainte, mais pour contraindre quelqu'un, on dira plutôt 'obliger' ou 'contraindre'.",
+            "fr_exemple": "Il tente de forcer la porte.",
+            "port_exemple": "Ele tenta forçar a porta.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to force",
@@ -40139,9 +40240,10 @@
         "port": "formar",
         "fr": {
             "translation": "former",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'formar' se traduit principalement par 'former' (to form) dans des sens comme former une équipe, constituer un groupe. Pour dire 'to graduate', on emploie plutôt 'obtenir son diplôme' ou 'être diplômé'.",
+            "fr_exemple": "Je veux former une équipe.",
+            "port_exemple": "Eu quero formar uma equipe.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to form",
@@ -40158,9 +40260,10 @@
         "port": "formular",
         "fr": {
             "translation": "formuler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Formuler est le verbe le plus courant pour traduire 'formular'. Il s'utilise pour énoncer ou concevoir des idées, des questions ou des propositions.",
+            "fr_exemple": "Je vais formuler une question.",
+            "port_exemple": "Vou formular uma pergunta.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to formulate",
@@ -40177,9 +40280,10 @@
         "port": "fornecer",
         "fr": {
             "translation": "fournir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Fornecer peut signifier donner ou livrer des informations, des biens ou des services. C'est le verbe le plus naturel dans les contextes professionnels et administratifs.",
+            "fr_exemple": "Je dois fournir les documents d'ici demain.",
+            "port_exemple": "Preciso fornecer os documentos até amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to supply",
@@ -40196,9 +40300,10 @@
         "port": "fortalecer",
         "fr": {
             "translation": "renforcer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, fortalecer peut viser aussi bien le corps que des compétences abstraites (mémoire). En français, renforcer est polyvalent et convient à ces sens.",
+            "fr_exemple": "Je veux renforcer ma mémoire pour mieux étudier.",
+            "port_exemple": "Quero fortalecer a minha memória para estudar melhor.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to strengthen",
@@ -40215,9 +40320,10 @@
         "port": "fotografar",
         "fr": {
             "translation": "photographier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Photographier est le verbe standard pour l'action de prendre une photo. En français courant, on peut aussi dire « prendre une photo ».",
+            "fr_exemple": "Je vais photographier le coucher du soleil.",
+            "port_exemple": "Vou fotografar o pôr do sol.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to photograph",
@@ -40234,9 +40340,10 @@
         "port": "frequentar",
         "fr": {
             "translation": "fréquenter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'fréquenter' exprime l'idée d'aller régulièrement à un endroit ou de suivre une activité; il ne décrit pas une relation amoureuse. Pour parler de rencontres amoureuses, on dirait plutôt 'sortir avec quelqu'un' ou 'être en couple'.",
+            "fr_exemple": "Je fréquente les cours de français tous les lundis.",
+            "port_exemple": "Eu frequento as aulas de português todas as segundas-feiras.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to attend",
@@ -40253,9 +40360,10 @@
         "port": "frisar",
         "fr": {
             "translation": "souligner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Frisar signifie surtout mettre l'accent sur quelque chose. Selon le contexte, il peut être proche de 'souligner' ou 'accentuer'.",
+            "fr_exemple": "Je tiens à souligner que ce point est important.",
+            "port_exemple": "Quero frisar que este ponto é importante.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to crimp",
@@ -40271,10 +40379,11 @@
         "id": "8ad7e641-a293-4035-8ae6-85457399b284",
         "port": "fugir",
         "fr": {
-            "translation": "fuir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "s'enfuir",
+            "note": "Fuir est plutôt littéraire et rarement utilisé à l'oral. Pour parler de fuir une situation, on dira plutôt 's'enfuir' ou 's'échapper'.",
+            "fr_exemple": "Je vais m'enfuir.",
+            "port_exemple": "Eu vou fugir.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to escape",
@@ -40291,9 +40400,10 @@
         "port": "fundar",
         "fr": {
             "translation": "fonder",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "fundar signifie créer quelque chose de durable (institution, ville, entreprise). En français, 'fonder' est le choix naturel pour cela; on peut aussi dire 'établir' dans des contextes plus abstraits.",
+            "fr_exemple": "Il veut fonder une nouvelle entreprise.",
+            "port_exemple": "Ele quer fundar uma nova empresa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to found",
@@ -40310,9 +40420,10 @@
         "port": "fundir",
         "fr": {
             "translation": "fondre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Fondre est le verbe principal pour 'to melt' (solide → liquide). Pour parler de fusion d'entreprises ou d'objets, on dira 'fusionner'.",
+            "fr_exemple": "Je vais fondre le métal pour fabriquer une pièce.",
+            "port_exemple": "Vou fundir o metal para fazer uma peça.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to merge",
@@ -40328,10 +40439,11 @@
         "id": "4bceb5bd-be53-46b7-95a7-863436de9238",
         "port": "furar",
         "fr": {
-            "translation": "percer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "crever",
+            "note": "Le sens le plus courant de furar est 'faire un trou' ou 'percer'. Pour les crevaisons, on emploie plutôt 'crever' que 'percer'.",
+            "fr_exemple": "Le pneu a crevé.",
+            "port_exemple": "O pneu furou.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to pierce",
@@ -40348,9 +40460,10 @@
         "port": "garantir",
         "fr": {
             "translation": "garantir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe portugais 'garantir' correspond exactement au verbe français 'garantir'. Il s'emploie avec un complément direct et peut aussi être remplacé par 'assurer' selon le contexte.",
+            "fr_exemple": "Je vais garantir que tout ira bien.",
+            "port_exemple": "Vou garantir que tudo ficará bem.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to guarantee",
@@ -40386,9 +40499,10 @@
         "port": "gerar",
         "fr": {
             "translation": "générer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe « générer » s’emploie surtout pour des résultats, des données ou de l’énergie. Pour un objet matériel, on privilégie « produire » ou « fabriquer » selon le contexte.",
+            "fr_exemple": "Je vais générer un rapport.",
+            "port_exemple": "Vou gerar um relatório.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to generate",
@@ -40405,9 +40519,10 @@
         "port": "gerir",
         "fr": {
             "translation": "gérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Note: 'gérer' est utilisé pour parler de la gestion pratique de ressources, budgets ou tâches. Pour parler de diriger une organisation ou une équipe, on peut aussi dire 'diriger'.",
+            "fr_exemple": "Je vais gérer le budget de l'entreprise.",
+            "port_exemple": "Vou gerir o orçamento da empresa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to manage",
@@ -40424,9 +40539,10 @@
         "port": "imprimir",
         "fr": {
             "translation": "imprimer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Sens usuel : imprimer = to print. En contexte informatique, on dit aussi imprimer une page.",
+            "fr_exemple": "Je veux imprimer ce document.",
+            "port_exemple": "Quero imprimir este documento.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to printout",
@@ -40443,9 +40559,10 @@
         "port": "improvisar",
         "fr": {
             "translation": "improviser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, 'improvisar' est utilisé pour décrire l'action de créer ou dire quelque chose sur le moment. En français, 'improviser' est utilisé de la même façon, mais on conjugue selon le temps et le sujet.",
+            "fr_exemple": "Elle a dû improviser pendant la présentation.",
+            "port_exemple": "Ela precisou improvisar durante a apresentação.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to improvise",
@@ -40462,9 +40579,10 @@
         "port": "inaugurar",
         "fr": {
             "translation": "inaugurer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Inaugurer est principalement utilisé pour des cérémonies officielles d'ouverture. Pour lancer un projet ou un produit, on dira plutôt « lancer » ou « démarrer ».",
+            "fr_exemple": "Ils vont inaugurer la nouvelle bibliothèque la semaine prochaine.",
+            "port_exemple": "Eles vão inaugurar a nova biblioteca na próxima semana.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to inaugurate",
@@ -40480,10 +40598,11 @@
         "id": "b4c63caa-ea56-4ab1-91cf-cd6fd6d970e5",
         "port": "incentivar",
         "fr": {
-            "translation": "inciter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "encourager",
+            "note": "Remarque : 'incentivar' peut se traduire par 'encourager' ou 'stimuler', selon le contexte. En usage courant, 'encourager' est le sens le plus naturel pour parler de motivation par des encouragements.",
+            "fr_exemple": "Je veux encourager mes collègues à apprendre le français.",
+            "port_exemple": "Eu quero incentivar os meus colegas a aprender francês.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to encourage",
@@ -40499,10 +40618,11 @@
         "id": "e69392d4-666d-4259-aa45-ece1e8ec107a",
         "port": "incidir",
         "fr": {
-            "translation": "incidencer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "porter sur",
+            "note": "Remarque: 'incidir' n'existe pas en français. On dit plutôt 'porter sur' ou 'concerner' selon le contexte; par exemple, pour les impôts, on dit 'porter sur la consommation'.",
+            "fr_exemple": "L'impôt porte sur la consommation.",
+            "port_exemple": "O imposto incide sobre o consumo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to focus",
@@ -40519,9 +40639,10 @@
         "port": "inclinar",
         "fr": {
             "translation": "incliner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'incliner' peut signifier pencher ou incliner physiquement. En français, on emploie souvent 'incliner' pour un objet ou la tête, et 'se pencher' pour décrire l'action d'une personne.",
+            "fr_exemple": "Il faut incliner la tête pour mieux écouter.",
+            "port_exemple": "É preciso inclinar a cabeça para ouvir melhor.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lean",
@@ -40537,10 +40658,11 @@
         "id": "6ea2004e-0475-4940-bc96-158b6302cc12",
         "port": "incomodar",
         "fr": {
-            "translation": "incommoder",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "déranger",
+            "note": "Remarque: 'incomodar' peut se traduire par 'déranger' ou 'gêner' selon le contexte. Le verbe 'incommoder' est rare et soutenu; privilégiez 'déranger' ou 'gêner' dans l'usage courant.",
+            "fr_exemple": "Je ne veux pas te déranger.",
+            "port_exemple": "Não quero te incomodar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to disturb",
@@ -40557,9 +40679,10 @@
         "port": "incorporar",
         "fr": {
             "translation": "incorporer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'incorporar' en portugais se traduit surtout par 'incorporer' en français pour l'action d'ajouter. Selon le contexte, on peut aussi dire 'intégrer' ou 'inclure'.",
+            "fr_exemple": "Je dois incorporer de nouvelles données dans le rapport.",
+            "port_exemple": "Eu preciso incorporar novos dados no relatório.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to incorporate",
@@ -40575,10 +40698,11 @@
         "id": "22e44543-5f0e-42b4-a697-dbb5a5c624ae",
         "port": "indagar",
         "fr": {
-            "translation": "enquêter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "s'informer sur",
+            "note": "En portugais, indagar peut signifier s'informer ou poser des questions. En français, on privilégie s'informer sur ou interroger selon le contexte; enquêter est plus spécifique à une enquête formelle.",
+            "fr_exemple": "Je vais m'informer sur ce sujet.",
+            "port_exemple": "Eu vou indagar sobre o assunto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to inquire",
@@ -40595,9 +40719,10 @@
         "port": "indicar",
         "fr": {
             "translation": "indiquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens le plus courant est 'indiquer' (pointer, montrer). Selon le contexte, on peut aussi traduire par 'recommander' ou 'préconiser' pour signifier proposer une option ou guider.",
+            "fr_exemple": "Je peux indiquer le chemin.",
+            "port_exemple": "Posso indicar o caminho.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to indicate",
@@ -40614,9 +40739,10 @@
         "port": "induzir",
         "fr": {
             "translation": "induire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'induire' est formel et signifie généralement 'causer' ou 'donner lieu à'. Selon le contexte, on peut aussi préférer 'entrainer' ou 'favoriser' pour un usage plus courant.",
+            "fr_exemple": "Cette situation peut induire des changements sur le marché.",
+            "port_exemple": "Essa situação pode induzir mudanças no mercado.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to induce",
@@ -40633,9 +40759,10 @@
         "port": "influenciar",
         "fr": {
             "translation": "influencer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, influenciar signifie exercer une influence sur quelqu'un ou quelque chose. En français, influencer est un verbe courant et neutre; selon le contexte, il peut aussi impliquer une manipulation négative.",
+            "fr_exemple": "Je veux influencer mes choix.",
+            "port_exemple": "Eu quero influenciar as minhas escolhas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to influence",
@@ -40652,9 +40779,10 @@
         "port": "informar",
         "fr": {
             "translation": "informer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : « informer » est un verbe courant pour donner des informations à quelqu’un. Dans un contexte plus formel, on peut aussi utiliser « notifier » ou « aviser » selon le registre.",
+            "fr_exemple": "Je vais informer mes collègues.",
+            "port_exemple": "Eu vou informar os meus colegas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to inform",
@@ -40670,10 +40798,11 @@
         "id": "b22b9fae-1e6e-43c4-a08f-7ef7b601304e",
         "port": "ingressar",
         "fr": {
-            "translation": "entrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "intégrer",
+            "note": "Ingressar signifie joindre ou devenir membre d'une organisation ou d'un programme. En français, on dira plutôt 'intégrer' pour rejoindre une entité, ou 's'inscrire' pour s'inscrire à un cours.",
+            "fr_exemple": "Elle veut intégrer l'université cette année.",
+            "port_exemple": "Ela quer ingressar na universidade este ano.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to join",
@@ -40689,10 +40818,11 @@
         "id": "ccb848a6-80ac-4400-b55b-f2818c7278bd",
         "port": "iniciar",
         "fr": {
-            "translation": "initier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "démarrer",
+            "note": "Remarque: Iniciar est plutôt formel et correspond à 'initier' ou 'mettre en route'. Pour parler de commencer quelque chose au quotidien, on dit plutôt démarrer ou lancer.",
+            "fr_exemple": "Je vais démarrer un nouveau projet demain.",
+            "port_exemple": "Vou iniciar um novo projeto amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to start",
@@ -40709,9 +40839,10 @@
         "port": "inserir",
         "fr": {
             "translation": "insérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Inserir est le verbe général pour ajouter ou placer quelque chose. En français, « insérer » est couramment utilisé dans les contextes physiques et numériques; pour entrer des données, on peut aussi dire « saisir ».",
+            "fr_exemple": "Je vais insérer le document dans le formulaire.",
+            "port_exemple": "Vou inserir o documento no formulário.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to insert",
@@ -40728,9 +40859,10 @@
         "port": "insistir",
         "fr": {
             "translation": "insister",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, 'insistir' peut aussi exprimer la persévérance ou l'insistance répétée. En français, 'insister' est un verbe du 1er groupe et se conjugue régulièrement.",
+            "fr_exemple": "Je vais insister jusqu'à obtenir ce que je veux.",
+            "port_exemple": "Eu vou insistir até conseguir o que quero.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to insist",
@@ -40747,9 +40879,10 @@
         "port": "inspirar",
         "fr": {
             "translation": "inspirer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'inspirar' peut signifier soit inspirer physiquement (prendre de l'air) soit inspirer quelqu'un (donner de l'inspiration). En français, 'inspirer' correspond à ces sens, en particulier 'inspirer profondément' pour l'inhalation et 'inspirer quelqu'un' pour influencer.",
+            "fr_exemple": "J'aime inspirer profondément lorsque je fais du yoga.",
+            "port_exemple": "Eu gosto de inspirar profundamente quando faço yoga.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to inspire",
@@ -40766,9 +40899,10 @@
         "port": "instalar",
         "fr": {
             "translation": "installer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'instalar' signifie principalement mettre en place ou configurer quelque chose, comme un logiciel ou un appareil. C'est l'usage le plus courant en portugais européen.",
+            "fr_exemple": "Je vais installer le logiciel.",
+            "port_exemple": "Eu vou instalar o software.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to install",
@@ -40784,10 +40918,11 @@
         "id": "c9694a69-2998-4c6b-90c8-0c980508096a",
         "port": "instituir",
         "fr": {
-            "translation": "instituer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "instaurer",
+            "note": "Remarque : instaurer est courant pour l'introduction de règles ou de pratiques. Instituer est plus formel et peut concerner la création d'institutions.",
+            "fr_exemple": "Nous allons instaurer une nouvelle politique.",
+            "port_exemple": "Vamos instituir uma nova política.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to institute",
@@ -40804,9 +40939,10 @@
         "port": "integrar",
         "fr": {
             "translation": "intégrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Intégrer signifie devenir partie d'un groupe ou d'un système. Pour parler de l'adaptation d'une personne, on dit « s'intégrer ».",
+            "fr_exemple": "Il veut intégrer l'équipe de l'entreprise.",
+            "port_exemple": "Ele quer integrar a equipa da empresa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to integrate",
@@ -40823,9 +40959,10 @@
         "port": "intensificar",
         "fr": {
             "translation": "intensifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Intensifier signifie augmenter l'intensité ou la fréquence de quelque chose. On l'emploie souvent avec des activités comme les études, l'entraînement ou la pratique.",
+            "fr_exemple": "Je vais intensifier mes études pour les examens.",
+            "port_exemple": "Vou intensificar os meus estudos para as provas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to intensify",
@@ -40841,10 +40978,11 @@
         "id": "e30fd227-8f74-4064-9bb3-ffe53f9697e2",
         "port": "gozar",
         "fr": {
-            "translation": "jouir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "profiter de",
+            "note": "En portugais européen, gozar signifie surtout profiter ou s'amuser. Le sens « jouir » en français est trop fort et peut être ambigu, notamment sexuel; on privilégie « profiter de ».",
+            "fr_exemple": "J'aime profiter des vacances.",
+            "port_exemple": "Eu gosto de gozar as férias.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to enjoy",
@@ -40860,10 +40998,11 @@
         "id": "fc83c6b2-1093-40a0-aa79-8a0f8e6f589c",
         "port": "gravar",
         "fr": {
-            "translation": "graver",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "enregistrer",
+            "note": "Remarque: gravar au portugais couvre à la fois enregistrer et graver (physique). En français courant, utilisez enregistrer pour enregistrer des sons ou des données; graver s'emploie surtout pour graver un disque ou graver physiquement.",
+            "fr_exemple": "Je vais enregistrer l'audio.",
+            "port_exemple": "Eu vou gravar o áudio.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to record",
@@ -40881,8 +41020,9 @@
         "fr": {
             "translation": "garder, ranger, conserver, sauvegarder ou mettre de côté",
             "note": "Manter = garder / maintenir (état, habitude)",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Je vais mettre l'argent de côté.",
+            "port_exemple": "Vou guardar o dinheiro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to save",
@@ -40899,9 +41039,10 @@
         "port": "guiar",
         "fr": {
             "translation": "guider",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'guiar' s'emploie surtout pour guider des personnes ou diriger quelque chose. Pour conduire un véhicule, on dit 'conduire'.",
+            "fr_exemple": "Je vais guider le groupe jusqu'au musée.",
+            "port_exemple": "Eu vou guiar o grupo até ao museu.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to guide",
@@ -40918,9 +41059,10 @@
         "port": "habitar",
         "fr": {
             "translation": "habiter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, habitar signifie « vivre dans » un lieu. En français, le verbe courant est « habiter ».",
+            "fr_exemple": "Les gens habitent la nouvelle maison.",
+            "port_exemple": "As pessoas habitam a nova casa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to dwell",
@@ -40937,9 +41079,10 @@
         "port": "habituar",
         "fr": {
             "translation": "habituer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'habituar' peut être transitif (habituar alguém a algo) ou pronominal (habituar-se). En français, on emploie 'habituer' pour accoutumer quelqu'un à quelque chose et 's'habituer à' pour se familiariser soi-même.",
+            "fr_exemple": "Je veux m'habituer à me lever tôt.",
+            "port_exemple": "Quero habituar-me a acordar cedo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to accustom",
@@ -40955,10 +41098,11 @@
         "id": "bd666ff2-0eb8-473a-9b08-94bf4cca629f",
         "port": "haver",
         "fr": {
-            "translation": "avoir (auxiliaire)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "il y a",
+            "note": "Le sens principal de 'haver' est l'existence (il y a). Comme auxiliaire des temps composés, on l'emploie rarement dans le portugais moderne; on utilise plutôt 'avoir' ou 'ter' selon le contexte.",
+            "fr_exemple": "Il y a beaucoup de livres sur la table.",
+            "port_exemple": "Há muitas pessoas na sala.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to be",
@@ -40975,9 +41119,10 @@
         "port": "herdar",
         "fr": {
             "translation": "hériter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Cette traduction est exacte: 'hériter' est le verbe usuel pour 'herdar'. En français, on dit 'hériter de quelque chose'.",
+            "fr_exemple": "Je vais hériter de la maison de ma grand-mère.",
+            "port_exemple": "Eu vou herdar a casa da minha avó.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to inherit",
@@ -40994,9 +41139,10 @@
         "port": "hesitar",
         "fr": {
             "translation": "hésiter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'hésiter' signifie douter ou être indécis. On l'emploie souvent avec 'à' (hésiter à faire quelque chose) ou avec 'entre' (hésiter entre A et B).",
+            "fr_exemple": "J'hésite avant de répondre.",
+            "port_exemple": "Eu hesito antes de responder.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to hesitate",
@@ -41012,10 +41158,11 @@
         "id": "aafdea8e-c047-4e45-a7fd-c42651a7c35e",
         "port": "homenagear",
         "fr": {
-            "translation": "honorer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "rendre hommage à",
+            "note": "Remarque: l'expression naturelle est 'rendre hommage à'. 'Honorer' existe mais est moins idiomatique pour parler d'un hommage rendu à quelqu'un.",
+            "fr_exemple": "Nous allons rendre hommage aux personnes qui ont aidé.",
+            "port_exemple": "Vamos homenagear as pessoas que ajudaram.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to honor",
@@ -41032,9 +41179,10 @@
         "port": "identificar",
         "fr": {
             "translation": "identifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'identificar' peut signifier 'identifier' ou 'reconhecer'. En français, 'identifier' est utilisé pour marquer ou nommer quelque chose; pour reconnaître une personne, on dira 'reconnaître'.",
+            "fr_exemple": "J'ai besoin d'identifier le problème.",
+            "port_exemple": "Eu preciso identificar o problema.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to identify",
@@ -41051,9 +41199,10 @@
         "port": "ignorar",
         "fr": {
             "translation": "ignorer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'ignorar' en portugais peut aussi signifier faire abstraction de quelque chose, pas seulement ne pas voir une personne. En français, 'ignorer' convient pour ces usages, mais le choix entre 'ignorer' et d'autres verbes comme 'négliger' dépend du contexte.",
+            "fr_exemple": "Il est facile d'ignorer les avertissements, mais c'est dangereux.",
+            "port_exemple": "É fácil ignorar os avisos, mas é perigoso.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to ignore",
@@ -41070,9 +41219,10 @@
         "port": "iluminar",
         "fr": {
             "translation": "illuminer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'iluminar' peut signifier éclairer physiquement ou rendre clair. En français, 'illuminer' convient surtout pour l'éclairage ou l'effet lumineux, et pour parler d'idées ou de questions on dira plutôt 'éclairer'.",
+            "fr_exemple": "Je vais illuminer la pièce.",
+            "port_exemple": "Eu vou iluminar o quarto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to illuminate",
@@ -41089,9 +41239,10 @@
         "port": "ilustrar",
         "fr": {
             "translation": "illustrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: « illustrer » est le verbe usuel pour montrer ou décrire par des images. On peut aussi l'utiliser au sens figuré: illustrer un argument.",
+            "fr_exemple": "Je vais illustrer l'affiche avec des images.",
+            "port_exemple": "Vou ilustrar o cartaz com imagens.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to illustrate",
@@ -41108,9 +41259,10 @@
         "port": "imaginar",
         "fr": {
             "translation": "imaginer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Imaginer est un verbe courant pour décrire la formation d'images mentales ou l'envisagement de possibilités. En portugais, il peut aussi signifier 'supposer' selon le contexte.",
+            "fr_exemple": "J'aime imaginer ce qui peut arriver.",
+            "port_exemple": "Eu gosto de imaginar o que pode acontecer.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to imagine",
@@ -41127,9 +41279,10 @@
         "port": "imitar",
         "fr": {
             "translation": "imiter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : imiter est un verbe du premier groupe et se conjugue comme parler. On dit imiter quelqu'un pour signifier copier ou reproduire le comportement de quelqu'un.",
+            "fr_exemple": "Les enfants aiment imiter les héros.",
+            "port_exemple": "As crianças gostam de imitar os heróis.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to imitate",
@@ -41146,9 +41299,10 @@
         "port": "impedir",
         "fr": {
             "translation": "empêcher",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que 'impedir' se traduit par 'empêcher' quand on parle d'empêcher quelqu'un de faire quelque chose. Utilisez 'empêcher de + verbe' dans ce sens.",
+            "fr_exemple": "Je veux l'empêcher de partir.",
+            "port_exemple": "Quero impedir que ele vá embora.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to prevent",
@@ -41165,9 +41319,10 @@
         "port": "implantar",
         "fr": {
             "translation": "implanter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, 'implantar' se traduit le plus souvent par 'implanter', surtout pour des systèmes ou des implants. Pour parler d'établir une entreprise ou d'un projet, on peut aussi dire 'établir' ou 'mettre en place' selon le contexte.",
+            "fr_exemple": "L'entreprise va implanter un nouveau système.",
+            "port_exemple": "A empresa vai implantar um novo sistema.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to deploy",
@@ -41184,9 +41339,10 @@
         "port": "implementar",
         "fr": {
             "translation": "implémenter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Implémenter est courant en informatique et en développement logiciel. Pour un usage plus général, on peut dire mettre en œuvre.",
+            "fr_exemple": "Je vais implémenter une nouvelle fonctionnalité demain.",
+            "port_exemple": "Vou implementar uma nova funcionalidade amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to implement",
@@ -41203,9 +41359,10 @@
         "port": "implicar",
         "fr": {
             "translation": "impliquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : En portugais, implicar peut signifier 'incriminer' ou 'entraîner'. En français, impliquer couvre ces sens, mais pour parler d'incriminer, on dit souvent 'impliquer quelqu'un dans un crime' ou 'mettre quelqu'un en cause'.",
+            "fr_exemple": "Cela peut impliquer des coûts supplémentaires.",
+            "port_exemple": "Isso pode implicar custos adicionais.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to imply",
@@ -41222,9 +41379,10 @@
         "port": "impor",
         "fr": {
             "translation": "imposer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'imposer' implique souvent une contrainte ou une autorité. On peut dire 'imposer quelque chose à quelqu'un'.",
+            "fr_exemple": "Elle veut imposer ses idées.",
+            "port_exemple": "Ela quer impor as suas ideias.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to impose",
@@ -41241,9 +41399,10 @@
         "port": "importar",
         "fr": {
             "translation": "importer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, importar peut signifier 'importer' ou 'se soucier/compter' selon le contexte. Le verbe français 'importer' peut alors couvrir ces sens, par exemple dans 'J'ai besoin d'importer des marchandises' et 'Cela m'importe'.",
+            "fr_exemple": "J'ai besoin d'importer des marchandises.",
+            "port_exemple": "Eu preciso importar mercadorias.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to importlanguage",
@@ -41259,10 +41418,11 @@
         "id": "2893b3b2-8eb7-4dc1-92c0-0bcd12297df4",
         "port": "interferir",
         "fr": {
-            "translation": "interférer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "intervenir",
+            "note": "Remarque: 'interferir' en portugais peut signifier 'se mêler de' ou 'intervenir'. En français, privilégiez 'intervenir' ou 'se mêler de' selon le contexte.",
+            "fr_exemple": "Je ne veux pas intervenir dans ce sujet.",
+            "port_exemple": "Não quero interferir no assunto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to interfere",
@@ -41279,9 +41439,10 @@
         "port": "interpretar",
         "fr": {
             "translation": "interpréter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: « interpretar » en portugais couvre à la fois l'interprétation et l'action de jouer un rôle. En français, « interpréter » convient pour ces sens; pour parler du théâtre, on peut aussi dire « jouer un rôle ».",
+            "fr_exemple": "J'aime interpréter des chansons.",
+            "port_exemple": "Eu gosto de interpretar músicas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to interpret",
@@ -41298,9 +41459,10 @@
         "port": "interrogar",
         "fr": {
             "translation": "interroger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Interroger est un verbe plutôt soutenu et lié à une enquête ou à une évaluation. Pour parler simplement de poser des questions en classe, on peut aussi dire 'poser des questions' ou 'questionner'.",
+            "fr_exemple": "Le professeur va interroger les élèves sur la leçon.",
+            "port_exemple": "O professor vai interrogar os alunos sobre a lição.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to interrogate",
@@ -41317,9 +41479,10 @@
         "port": "interromper",
         "fr": {
             "translation": "interrompre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Interrompre est un verbe transitif qui prend généralement un complément direct (interrompre quelqu'un, interrompre une réunion). Dans la vie quotidienne, on l'emploie quand quelqu'un brise le cours d'une activité.",
+            "fr_exemple": "Je ne veux pas interrompre la réunion.",
+            "port_exemple": "Não quero interromper a reunião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to interrupt",
@@ -41336,9 +41499,10 @@
         "port": "intervir",
         "fr": {
             "translation": "intervenir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Intervenir est utilisé pour décrire l'action d'agir dans une situation afin d'aider ou de changer quelque chose. Notez que ce verbe est irrégulier au présent (j'interviens, tu interviens, il intervient, nous intervenons, vous intervenez, ils interviennent).",
+            "fr_exemple": "Il est nécessaire d'intervenir rapidement pour éviter les problèmes.",
+            "port_exemple": "É necessário intervir rapidamente para evitar problemas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to intervene",
@@ -41354,10 +41518,11 @@
         "id": "2ae468c4-53aa-4b25-a9b4-7c229f19d8f6",
         "port": "introduzir",
         "fr": {
-            "translation": "introduire (presenter)",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "présenter",
+            "note": "En français courant, on utilise plutôt 'présenter quelqu'un' pour présenter une personne. 'Introduire' est moins naturel et peut sembler formel ou technique dans le contexte humain.",
+            "fr_exemple": "Je vais présenter mon ami au groupe.",
+            "port_exemple": "Vou introduzir o meu amigo ao grupo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to introduce",
@@ -41374,9 +41539,10 @@
         "port": "invadir",
         "fr": {
             "translation": "envahir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, invadir peut décrire une invasion physique ou une intrusion. En français, envahir est surtout utilisé pour l'invasion d'un territoire ou d'un espace.",
+            "fr_exemple": "L'armée peut envahir le pays.",
+            "port_exemple": "O exército pode invadir o país.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to breakinto",
@@ -41393,9 +41559,10 @@
         "port": "inventar",
         "fr": {
             "translation": "inventer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'inventar' peut aussi signifier 'fabriquer' ou 'faire semblant'. En français, on dira plutôt 'inventer une histoire' ou 'inventer un mensonge'.",
+            "fr_exemple": "J'aime inventer des histoires.",
+            "port_exemple": "Eu gosto de inventar histórias.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to invent",
@@ -41412,9 +41579,10 @@
         "port": "inverter",
         "fr": {
             "translation": "inverser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, inverter signifie changer l'ordre ou le sens de quelque chose. En français, inverser est le verbe le plus courant pour ce sens, mais on peut aussi dire retourner ou renverser selon le contexte.",
+            "fr_exemple": "Je dois inverser l'ordre des mots dans cette phrase.",
+            "port_exemple": "Eu preciso inverter a ordem das palavras nesta frase.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to reverse",
@@ -41430,10 +41598,11 @@
         "id": "d0ca06fd-bff8-4542-b2ed-88844fbae49a",
         "port": "investigar",
         "fr": {
-            "translation": "investiguer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "enquêter",
+            "note": "En portugais, 'investigar' signifie 'to investigate' (anglais). En français courant, on utilise plutôt 'enquêter'; 'investiguer' existe mais est moins naturel.",
+            "fr_exemple": "Je vais enquêter.",
+            "port_exemple": "Eu vou investigar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to investigate",
@@ -41450,9 +41619,10 @@
         "port": "investir",
         "fr": {
             "translation": "investir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'investir' en français est utilisé tel quel pour le sens d'investir (financement). On précise souvent par 'dans' (investir dans un projet) ou par 'de l'argent' (investir de l'argent).",
+            "fr_exemple": "Je vais investir de l'argent dans ce projet.",
+            "port_exemple": "Vou investir dinheiro neste projeto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to invest",
@@ -41469,9 +41639,10 @@
         "port": "invocar",
         "fr": {
             "translation": "invoquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'invocar' est employé dans des contextes formels ou juridiques. En français, on peut aussi dire 'faire appel à' selon le contexte.",
+            "fr_exemple": "Je vais invoquer l'aide d'un ami.",
+            "port_exemple": "Vou invocar a ajuda de um amigo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to summonup",
@@ -41488,9 +41659,10 @@
         "port": "irar",
         "fr": {
             "translation": "irriter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : le verbe 'irar' est rarement utilisé en portugais moderne. En pratique, on emploie plutôt 'irritar' ou 'énerver' selon le contexte.",
+            "fr_exemple": "Le verbe 'irar' est peu utilisé dans le portugais moderne.",
+            "port_exemple": "O verbo 'irar' é pouco usado no português moderno.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to anger",
@@ -41507,9 +41679,10 @@
         "port": "irritar",
         "fr": {
             "translation": "irriter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Irriter signifie provoquer de l'irritation ou de l'agacement chez quelqu'un. En usage courant, on peut aussi dire 'agacer' pour un agacement plus léger et 'énerver' pour quelque chose de plus fort.",
+            "fr_exemple": "Le bruit peut irriter les gens.",
+            "port_exemple": "O barulho pode irritar as pessoas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to irritate",
@@ -41526,9 +41699,10 @@
         "port": "isolar",
         "fr": {
             "translation": "isoler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'isolar' peut signifier isoler physiquement quelque chose ou s'isoler soi-même. En contexte social, on emploie aussi 'se isoler'.",
+            "fr_exemple": "Je vais isoler la chambre pour ne pas entendre le bruit.",
+            "port_exemple": "Vou isolar o quarto para não ouvir o barulho.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to isolate",
@@ -41545,9 +41719,10 @@
         "port": "jantar",
         "fr": {
             "translation": "dîner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'jantar' peut être un nom (o jantar) ou un verbe (jantar). En français, 'dîner' remplit ces deux usages selon le contexte.",
+            "fr_exemple": "Allons dîner.",
+            "port_exemple": "Vamos jantar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to havelunch",
@@ -41564,9 +41739,10 @@
         "port": "jazer",
         "fr": {
             "translation": "gésir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que « gésir » est archaïque/poétique en français. Pour un registre courant, on dirait plutôt « être allongé » ou « se coucher » selon le contexte.",
+            "fr_exemple": "Le corps gît dans le cercueil.",
+            "port_exemple": "O corpo jaz no caixão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lie",
@@ -41583,9 +41759,10 @@
         "port": "julgar",
         "fr": {
             "translation": "juger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en français, 'juger' peut signifier former une opinion ou estimer quelque chose. Dans un contexte légal, il peut aussi signifier rendre un jugement.",
+            "fr_exemple": "Ne jugez pas les gens sur leur apparence.",
+            "port_exemple": "Não julgue as pessoas pela aparência.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to judge",
@@ -41601,10 +41778,11 @@
         "id": "022c4d05-10c3-4969-aec5-667273df27df",
         "port": "juntar",
         "fr": {
-            "translation": "joindre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "rassembler",
+            "note": "Remarque : « juntar » a plusieurs sens (réunir, assembler, économiser). En français, on privilégie 'rassembler' ou 'assembler' pour l’idée de mettre ensemble, et 'joindre' pour attacher des documents.",
+            "fr_exemple": "Je vais rassembler de l'argent pour le voyage.",
+            "port_exemple": "Eu vou juntar dinheiro para a viagem.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to bringtogether",
@@ -41621,9 +41799,10 @@
         "port": "jurar",
         "fr": {
             "translation": "jurer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : jurer peut signifier promettre ou maudire, selon le contexte. En français, 'jurer' couvre ces sens dans le langage courant; pour un serment formel, on dira plutôt 'prêter serment'.",
+            "fr_exemple": "Je vais jurer que je dis la vérité.",
+            "port_exemple": "Vou jurar que estou a dizer a verdade.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to swear",
@@ -41640,9 +41819,10 @@
         "port": "justificar",
         "fr": {
             "translation": "justifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en portugais, 'justificar' signifie donner des raisons. En français, 'justifier' est le verbe le plus courant pour exprimer cela; on peut aussi dire 'expliquer pourquoi' selon le contexte.",
+            "fr_exemple": "Je dois justifier mon retard.",
+            "port_exemple": "Preciso justificar o meu atraso.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to justify",
@@ -41658,10 +41838,11 @@
         "id": "ab6ba8e7-1884-47e4-bd5d-f80513f8ca86",
         "port": "lamentar",
         "fr": {
-            "translation": "lamenter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "regretter",
+            "note": "Remarque: 'lamentar' se traduit principalement par 'regretter' ou 'déplorer' selon le contexte. Pour exprimer un regret personnel, utilisez 'regretter'; pour déplorer une situation, 'déplorer'.",
+            "fr_exemple": "Je voudrais regretter ce qui s'est passé.",
+            "port_exemple": "Quero lamentar o ocorrido.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lament",
@@ -41678,9 +41859,10 @@
         "port": "melhorar",
         "fr": {
             "translation": "améliorer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "melhorar est essentiellement transitif: on améliore quelque chose. Quand on parle de sa propre condition, on peut dire « s'améliorer » ou « aller mieux » selon le contexte.",
+            "fr_exemple": "Je veux améliorer mon français.",
+            "port_exemple": "Eu quero melhorar meu francês.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to improve",
@@ -41697,9 +41879,10 @@
         "port": "mencionar",
         "fr": {
             "translation": "mentionner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Utilisez 'mentionner' pour évoquer un sujet ou une personne. 'Citer' est plus utilisé lorsque l'on donne une citation précise.",
+            "fr_exemple": "Je vais mentionner mon nom.",
+            "port_exemple": "Vou mencionar o meu nome.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to mention",
@@ -41716,9 +41899,10 @@
         "port": "mentir",
         "fr": {
             "translation": "mentir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'mentir' peut se construire avec 'a alguém' ou 'para alguém'. En français, on dit 'mentir à quelqu'un'.",
+            "fr_exemple": "Je n'aime pas mentir.",
+            "port_exemple": "Eu não gosto de mentir.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lie",
@@ -41735,9 +41919,10 @@
         "port": "merecer",
         "fr": {
             "translation": "mériter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'merecer' signifie 'to deserve' ou 'to merit'. En français, 'mériter' se conjugue comme un verbe du premier groupe et s'utilise de la même manière pour parler de ce que l’on mérite.",
+            "fr_exemple": "Je mérite ça.",
+            "port_exemple": "Eu mereço isto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to deserve",
@@ -41754,9 +41939,10 @@
         "port": "mergulhar",
         "fr": {
             "translation": "plonger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'mergulhar' peut signifier entrer dans l'eau ou s'immerger dans une activité. En français, 'plonger' est le sens le plus courant pour l'action physique; pour l'immersion mentale ou approfondie, on peut dire 's'immerger' ou 'se plonger dans'.",
+            "fr_exemple": "J'aime plonger dans la mer.",
+            "port_exemple": "Eu gosto de mergulhar no mar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to dive",
@@ -41773,9 +41959,10 @@
         "port": "meter",
         "fr": {
             "translation": "mettre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Meter est polyvalent et signifie 'mettre' en général. En fonction du contexte, on peut aussi employer 'poser' ou 'insérer'.",
+            "fr_exemple": "Je vais mettre le livre dans mon sac à dos.",
+            "port_exemple": "Eu vou meter o livro na mochila.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to puttoin",
@@ -41792,9 +41979,10 @@
         "port": "mexer",
         "fr": {
             "translation": "remuer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remuer est le sens le plus courant de mexer, utilisé pour mélanger ou agiter quelque chose. Selon le contexte, on peut aussi dire « bouger » pour indiquer un déplacement simple.",
+            "fr_exemple": "Je vais remuer la soupe.",
+            "port_exemple": "Eu vou mexer a sopa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to mix",
@@ -41811,9 +41999,10 @@
         "port": "mobilizar",
         "fr": {
             "translation": "mobiliser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'mobiliser' s'emploie pour rassembler des personnes ou des ressources, et pour inciter à l'action. En portugais, le sens est proche et utilisé dans des contextes variés.",
+            "fr_exemple": "Nous devons mobiliser les ressources disponibles.",
+            "port_exemple": "Precisamos mobilizar os recursos disponíveis.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to mobilize",
@@ -41830,9 +42019,10 @@
         "port": "modificar",
         "fr": {
             "translation": "modifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'Modifier' est utilisé pour décrire une modification précise ou une mise à jour d'un élément existant (un document, un plan, des paramètres). En revanche 'changer' est plus général et peut impliquer un remplacement complet.",
+            "fr_exemple": "Je vais modifier le plan.",
+            "port_exemple": "Vou modificar o plano.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to modify",
@@ -41849,9 +42039,10 @@
         "port": "moer",
         "fr": {
             "translation": "moudre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'moer' s'emploie pour le grain, les graines ou les épices. En français, 'moudre' se dit aussi pour le café et les céréales, et il peut impliquer la transformation en poudre ou en farine.",
+            "fr_exemple": "Je vais moudre le grain pour en faire de la farine.",
+            "port_exemple": "Eu vou moer o grão para fazer farinha.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to grind",
@@ -41868,9 +42059,10 @@
         "port": "montar",
         "fr": {
             "translation": "monter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Montar, en portugais, a plusieurs sens: assembler, mettre sur pied, ou monter à cheval. En français, on utilise souvent monter pour ces sens, et on peut aussi dire assembler pour insister sur l'idée d'assembler des pièces.",
+            "fr_exemple": "J'aime monter des meubles.",
+            "port_exemple": "Eu gosto de montar móveis.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to assemble",
@@ -41887,9 +42079,10 @@
         "port": "morder",
         "fr": {
             "translation": "mordre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'morder' est l'infinitif qui signifie 'to bite'. En français, 'mordre' est le verbe courant; pour une expression naturelle, on dira 'J'aime mordre des pommes' ou 'J'aime croquer des pommes'.",
+            "fr_exemple": "J'aime mordre des pommes.",
+            "port_exemple": "Eu gosto de morder maçãs.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to bite",
@@ -41906,9 +42099,10 @@
         "port": "motivar",
         "fr": {
             "translation": "motiver",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Note : En portugais, motivar signifie donner des raisons ou inciter. En français, motiver peut aussi signifier justifier une décision selon le contexte.",
+            "fr_exemple": "Je veux motiver l'équipe.",
+            "port_exemple": "Eu quero motivar a equipa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to motivate",
@@ -41924,10 +42118,11 @@
         "id": "a99e6860-1aca-4704-a506-ddc215e19e56",
         "port": "mover",
         "fr": {
-            "translation": "mouvoir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "déplacer",
+            "note": "Mouvoir est archaïque et peu utilisé dans le français courant. Pour parler de déplacer quelque chose, on dira plutôt 'déplacer' ou 'bouger' selon le contexte.",
+            "fr_exemple": "Je vais déplacer le canapé.",
+            "port_exemple": "Vou mover o sofá.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to move",
@@ -41943,10 +42138,11 @@
         "id": "f4919acf-42c9-4708-a296-6499375adbc5",
         "port": "movimentar",
         "fr": {
-            "translation": "mouvoir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "bouger",
+            "note": "En français courant, « mouvoir » est archaïque et n’est pas utilisé pour le mouvement physique. On emploie plutôt « bouger » pour le corps, « déplacer » pour décaler quelque chose, ou « mobiliser » pour rassembler des personnes ou des ressources.",
+            "fr_exemple": "Pouvez-vous bouger votre corps sans douleur ?",
+            "port_exemple": "Consegue movimentar o corpo sem dor?",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to move",
@@ -41963,9 +42159,10 @@
         "port": "murmurar",
         "fr": {
             "translation": "murmurer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : murmurer peut signifier parler à voix basse ou dire quelque chose à peine audible. En portugais, ce verbe peut aussi exprimer un murmure intérieur ou une excuse peu convaincante selon le contexte.",
+            "fr_exemple": "Il a commencé à murmurer pendant la réunion.",
+            "port_exemple": "Ele começou a murmurar durante a reunião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to murmur",
@@ -41982,9 +42179,10 @@
         "port": "lavar",
         "fr": {
             "translation": "laver",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : le verbe 'laver' correspond à 'lavar' et s’utilise avec un objet direct (laver la voiture, la vaisselle). En portugais, l’infinitif peut être utilisé seul, mais en français on le conjugue selon le sujet.",
+            "fr_exemple": "Je dois laver la voiture.",
+            "port_exemple": "Tenho de lavar o carro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to wash",
@@ -42002,8 +42200,9 @@
         "fr": {
             "translation": "enseigner (formel)",
             "note": "ensinar est plus large et courant pour tout type d'apprentissage, tandis que lecionar est plus spécifique à l'enseignement formel",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "J'enseigne à l'école.",
+            "port_exemple": "Eu leciono na escola.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to teach (formal)",
@@ -42020,9 +42219,10 @@
         "port": "levantar",
         "fr": {
             "translation": "lever",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais européen, levantar signifie lever quelque chose ou se lever (forme réfléchie). En français, on emploie lever pour l'action de soulever et se lever pour l'action de se mettre debout.",
+            "fr_exemple": "Je vais lever la boîte.",
+            "port_exemple": "Vou levantar a caixa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to rise",
@@ -42039,9 +42239,10 @@
         "port": "liberar",
         "fr": {
             "translation": "libérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'libérer' peut signifier délivrer ou autoriser. Dans le domaine informatique, on parle souvent de 'libérer l'accès' pour donner l'accès.",
+            "fr_exemple": "Nous allons libérer l'accès au système.",
+            "port_exemple": "Vamos liberar o acesso ao sistema.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to release",
@@ -42058,9 +42259,10 @@
         "port": "libertar",
         "fr": {
             "translation": "libérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe libertar est utilisé comme transitif et signifie libérer quelqu'un ou quelque chose. En français, libérer est le choix standard pour exprimer cette idée.",
+            "fr_exemple": "Je veux libérer mon ami.",
+            "port_exemple": "Quero libertar o meu amigo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to release",
@@ -42077,9 +42279,10 @@
         "port": "licenciar",
         "fr": {
             "translation": "licencier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'licencier' est surtout utilisé pour renvoyer un salarié. Pour le sens 'délivrer une licence', on dirait plutôt 'délivrer une licence' ou 'octroyer une licence'.",
+            "fr_exemple": "L'entreprise a licencié l'employé.",
+            "port_exemple": "A empresa licenciou o funcionário.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to license",
@@ -42096,9 +42299,10 @@
         "port": "lidar",
         "fr": {
             "translation": "gérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'lidar' se traduit le plus souvent par 'gérer'. Dans les contextes où l'on insiste sur l'affrontement d'un problème, on peut aussi dire 'faire face à'.",
+            "fr_exemple": "Je dois gérer plusieurs tâches aujourd'hui.",
+            "port_exemple": "Tenho de lidar com várias tarefas hoje.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lead",
@@ -42115,9 +42319,10 @@
         "port": "liderar",
         "fr": {
             "translation": "diriger",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : « liderar » met l'accent sur la capacité à guider et inspirer un groupe. « Diriger » est polyvalent et naturel pour dire « to lead » dans la plupart des contextes quotidiens.",
+            "fr_exemple": "Elle sait diriger une équipe.",
+            "port_exemple": "Ela sabe liderar uma equipe.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lead",
@@ -42134,9 +42339,10 @@
         "port": "limitar",
         "fr": {
             "translation": "limiter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'limitar' en portugais est un verbe courant signifiant mettre une limite ou restreindre quelque chose. En français, 'limiter' s'utilise de la même manière avec un complément d'objet direct.",
+            "fr_exemple": "Je vais limiter la consommation de sucre.",
+            "port_exemple": "Vou limitar o consumo de açúcar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to limit",
@@ -42153,9 +42359,10 @@
         "port": "livrar",
         "fr": {
             "translation": "libérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Livrar est polysemique: il peut signifier libérer/délivrer ou se débarrasser de quelque chose selon le contexte. Le sens le plus fréquent est 'se débarrasser de' (livrar-se de), tandis que l'action de livrer des produits se traduit par 'livrer'.",
+            "fr_exemple": "Je veux me débarrasser de mes dettes.",
+            "port_exemple": "Quero livrar-me de dívidas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to rid",
@@ -42172,9 +42379,10 @@
         "port": "localizar",
         "fr": {
             "translation": "localiser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, localizar peut aussi signifier trouver ou décrire l’emplacement d’un lieu. En français, localiser est couramment utilisé pour désigner la localisation précise d’un endroit ou d’un objet.",
+            "fr_exemple": "Je veux localiser le restaurant.",
+            "port_exemple": "Eu quero localizar o restaurante.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to locate",
@@ -42191,9 +42399,10 @@
         "port": "lutar",
         "fr": {
             "translation": "lutter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'lutter' peut signifier lutter contre quelque chose de manière abstraite ou physique; pour un combat physique, on dira plutôt 'se battre' ou 'combattre'.",
+            "fr_exemple": "Je vais lutter pour mon rêve.",
+            "port_exemple": "Eu vou lutar pelo meu sonho.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to fight",
@@ -42209,10 +42418,11 @@
         "id": "609d8d3c-64c7-4ec6-8d17-530415f6b92b",
         "port": "manifestar",
         "fr": {
-            "translation": "manifester",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "exprimer",
+            "note": "Remarque : 'exprimer' est plus naturel pour les opinions personnelles. 'Manifester' peut aussi signifier protester, selon le contexte.",
+            "fr_exemple": "Je veux exprimer mon opinion.",
+            "port_exemple": "Quero manifestar a minha opinião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to manifest",
@@ -42229,9 +42439,10 @@
         "port": "manter",
         "fr": {
             "translation": "maintenir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : Maintenir est le sens le plus courant de 'manter' (soutenir, préserver, continuer). Selon le contexte, 'garder' peut être plus naturel pour l'idée de garder quelque chose.",
+            "fr_exemple": "Je veux maintenir ma routine.",
+            "port_exemple": "Eu quero manter a minha rotina.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to maintain",
@@ -42248,9 +42459,10 @@
         "port": "marcar",
         "fr": {
             "translation": "marquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'marcar' en portugais est polyvalent. Pour l'idée de programmer un rendez-vous, on dira plutôt 'fixer un rendez-vous' en français.",
+            "fr_exemple": "Je vais fixer un rendez-vous.",
+            "port_exemple": "Vou marcar uma consulta.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to mark",
@@ -42267,9 +42479,10 @@
         "port": "marchar",
         "fr": {
             "translation": "marcher",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, « marchar » peut signifier se déplacer à pied (marcher) ou progresser/aller bien. En français, « marcher » couvre ces sens et l’expression « ça marche » est courante pour dire que cela fonctionne.",
+            "fr_exemple": "Les soldats marchent sur la place.",
+            "port_exemple": "Os soldados marcham pela praça.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to march",
@@ -42285,10 +42498,11 @@
         "id": "b7fcf59e-803f-4d2b-87e7-54c42831a5a7",
         "port": "narrar",
         "fr": {
-            "translation": "narrer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "raconter",
+            "note": "Le verbe 'narrer' existe mais il est plutôt littéraire et rare. Pour l'usage courant, privilégiez 'raconter'.",
+            "fr_exemple": "J'aime raconter des histoires à mes amis.",
+            "port_exemple": "Eu gosto de narrar histórias para os meus amigos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to narrate",
@@ -42305,9 +42519,10 @@
         "port": "navegar",
         "fr": {
             "translation": "naviguer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : 'navegar' se traduit par 'naviguer' pour les sens de se déplacer ou d'explorer. Pour le web, on dit aussi 'naviguer sur internet' ou 'surfer sur internet'.",
+            "fr_exemple": "J'aime naviguer sur internet.",
+            "port_exemple": "Eu gosto de navegar na internet.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to browse",
@@ -42324,9 +42539,10 @@
         "port": "necessitar",
         "fr": {
             "translation": "nécessiter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Nécessiter est assez formel. Dans le quotidien, on dit plutôt 'avoir besoin de'.",
+            "fr_exemple": "J'ai besoin d'aide.",
+            "port_exemple": "Eu necessito de ajuda.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to need",
@@ -42343,9 +42559,10 @@
         "port": "negar",
         "fr": {
             "translation": "nier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Nier est le verbe courant pour contester la véracité d'une affirmation. Dans certains contextes, cela peut aussi exprimer un refus ou un déni plus général.",
+            "fr_exemple": "Je vais nier cela.",
+            "port_exemple": "Vou negar isso.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to deny",
@@ -42362,9 +42579,10 @@
         "port": "negociar",
         "fr": {
             "translation": "négocier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Négocier s'emploie pour discuter des termes d'un accord. Pour parler du prix dans un contexte plus familier, on peut dire 'marchander'.",
+            "fr_exemple": "Je veux négocier le prix.",
+            "port_exemple": "Eu quero negociar o preço.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to negotiate",
@@ -42381,9 +42599,10 @@
         "port": "nomear",
         "fr": {
             "translation": "nommer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'nommer' est polyvalent: il peut signifier donner un nom ou désigner/nommer à un poste. En usage courant, on l'utilise surtout pour nommer quelqu'un à un poste.",
+            "fr_exemple": "Nous allons nommer quelqu'un à un poste.",
+            "port_exemple": "Vamos nomear alguém para o cargo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to name",
@@ -42399,10 +42618,11 @@
         "id": "2ddcd1c8-c717-4b27-8ad0-89f49becc919",
         "port": "notar",
         "fr": {
-            "translation": "noter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "remarquer",
+            "note": "Remarquer est l'équivalent naturel pour 'notar' au sens de percevoir. Noter s'utilise quand on écrit une information ou une observation.",
+            "fr_exemple": "Je vais remarquer cela.",
+            "port_exemple": "Vou notar isso.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to notice",
@@ -42418,10 +42638,11 @@
         "id": "e46ffce2-53a5-4d47-a06e-c4ebff668ce9",
         "port": "noticiar",
         "fr": {
-            "translation": "notifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "rapporter",
+            "note": "Noticiar signifie rapporter des faits, souvent dans le cadre de la presse. En français, on utilise plutôt 'rapporter' ou 'relater'; 'notifier' n'est pas approprié ici.",
+            "fr_exemple": "Les journaux rapportent les événements.",
+            "port_exemple": "Os jornais noticiam os acontecimentos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to report",
@@ -42438,9 +42659,10 @@
         "port": "obedecer",
         "fr": {
             "translation": "obéir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Obéir est le verbe courant pour suivre une règle ou une autorité. En portugais, 'obedecer' se combine souvent avec 'às' ou 'ao' selon l'objet: 'obedecer às leis', 'obedecer ao chefe'.",
+            "fr_exemple": "Il est important d'obéir aux règles.",
+            "port_exemple": "É importante obedecer às regras.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to obey",
@@ -42457,9 +42679,10 @@
         "port": "observar",
         "fr": {
             "translation": "observer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, 'observar' peut signifier regarder attentivement ou respecter des règles selon le contexte. En français, on utilise souvent 'observer' pour regarder ou remarquer; pour les règles, on dira plutôt 'respecter les règles' ou 'se conformer à'.",
+            "fr_exemple": "Je vais observer les étoiles.",
+            "port_exemple": "Vou observar as estrelas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to observe",
@@ -42476,9 +42699,10 @@
         "port": "obter",
         "fr": {
             "translation": "obtenir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Obter est un verbe plutôt soutenu en portugais européen; il s'emploie surtout dans des contextes formels (administratif, académique). Dans le langage courant, on préfère 'conseguir'.",
+            "fr_exemple": "Je veux obtenir plus d'informations sur le cours.",
+            "port_exemple": "Quero obter mais informações sobre o curso.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to obtain",
@@ -42494,10 +42718,11 @@
         "id": "c22ec99a-93e5-4245-9a09-f66485f9a003",
         "port": "ocorrer",
         "fr": {
-            "translation": "survenir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "arriver",
+            "note": "Ocorrer signifie généralement 'se produire' ou 'arriver'. En français, on privilégie 'arriver' ou 'se produire' selon le contexte.",
+            "fr_exemple": "Cela peut arriver demain.",
+            "port_exemple": "Pode ocorrer amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to occur",
@@ -42513,10 +42738,11 @@
         "id": "6c8691e1-4466-4560-970f-2b08cab39785",
         "port": "ocultar",
         "fr": {
-            "translation": "occulter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "cacher",
+            "note": "En portugais, ocultar signifie principalement cacher ou dissimuler. En français, 'cacher' est le choix le plus courant ; 'occulter' est plus soutenu et sert surtout à parler de dissimulation d'informations.",
+            "fr_exemple": "Je vais cacher la vérité.",
+            "port_exemple": "Vou ocultar a verdade.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to hide",
@@ -42533,9 +42759,10 @@
         "port": "ocupar",
         "fr": {
             "translation": "occuper",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: occuper se traduit surtout par 'occuper' en français pour parler d'espace, de temps ou d'un poste. Si l'on parle de s'occuper de quelqu'un, on préfère 's'occuper de'.",
+            "fr_exemple": "Je veux occuper mon temps libre avec la lecture.",
+            "port_exemple": "Quero ocupar o meu tempo livre com a leitura.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to occupy",
@@ -42552,9 +42779,10 @@
         "port": "ofender",
         "fr": {
             "translation": "offenser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Offenser est un verbe correct et courant dans la plupart des contextes. Selon le contexte, on peut aussi dire 'blesser' ou 'vexer' pour nuancer.",
+            "fr_exemple": "Je ne veux offenser personne.",
+            "port_exemple": "Não quero ofender ninguém.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to offend",
@@ -42571,9 +42799,10 @@
         "port": "olhar",
         "fr": {
             "translation": "regarder",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'olhar' peut être un verbe ou un nom en portugais. En français, le verbe se traduit par 'regarder' et le nom par 'regard'.",
+            "fr_exemple": "J'aime regarder le coucher du soleil.",
+            "port_exemple": "Gosto de olhar para o pôr do sol.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to look",
@@ -42590,9 +42819,10 @@
         "port": "operar",
         "fr": {
             "translation": "opérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: en français, « opérer » s'emploie surtout pour une intervention chirurgicale ou pour parler d'opérations. Pour parler du fonctionnement d'une machine, on dira plutôt « faire fonctionner » ou « faire marcher ».",
+            "fr_exemple": "Il va opérer demain.",
+            "port_exemple": "Ele vai operar amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to operate",
@@ -42609,9 +42839,10 @@
         "port": "opor",
         "fr": {
             "translation": "opposer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Opôr est un verbe un peu soutenu. À l'usage courant, on dira plutôt 'résister' ou 's’opposer à quelque chose'.",
+            "fr_exemple": "Ils vont opposer une résistance.",
+            "port_exemple": "Eles vão opor resistência.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to oppose",
@@ -42627,10 +42858,11 @@
         "id": "a0ab0dae-ed35-4ea1-adaa-6bafd2b5b73b",
         "port": "optar",
         "fr": {
-            "translation": "opter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "opter pour",
+            "note": "Traduction recommandée: opter pour. En portugais, optar est souvent suivi de por; en français, on utilise 'opter pour' pour exprimer ce choix.",
+            "fr_exemple": "Je vais opter pour cette option.",
+            "port_exemple": "Vou optar por esta opção.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to choose",
@@ -42647,9 +42879,10 @@
         "port": "ordenar",
         "fr": {
             "translation": "ordonner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'ordenar' couvre à la fois l'idée de donner un ordre et celle d'organiser. Pour parler d'organiser ou de trier des objets, on dirait plutôt 'ranger', 'organiser' ou 'trier'.",
+            "fr_exemple": "J'ordonne qu'il aille.",
+            "port_exemple": "Eu ordeno que ele vá.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to order",
@@ -42665,10 +42898,11 @@
         "id": "bd7b78cd-7725-49ce-b157-9e2174aa8fb8",
         "port": "permanecer",
         "fr": {
-            "translation": "demeurer (continuer à être dans un lieu ou état)",
+            "translation": "rester",
             "note": "Ele permaneceu calmo (Il est resté calme)",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "fr_exemple": "Je vais rester à la maison aujourd'hui.",
+            "port_exemple": "Vou permanecer em casa hoje.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to stay",
@@ -42685,9 +42919,10 @@
         "port": "permitir",
         "fr": {
             "translation": "permettre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, 'permitir' signifie 'autoriser'. En français, 'permettre' est le verbe le plus courant pour traduire ce sens; selon le contexte, on peut aussi dire 'autoriser' ou 'laisser'.",
+            "fr_exemple": "Je veux vous permettre d'entrer.",
+            "port_exemple": "Quero permitir que você entre.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to allow",
@@ -42703,10 +42938,11 @@
         "id": "9e5faff7-7b73-4a43-823f-1b09789568db",
         "port": "perseguir",
         "fr": {
-            "translation": "persécuter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "poursuivre",
+            "note": "Remarque: 'perseguir' se traduit le plus souvent par 'poursuivre'. 'Persécuter' a une nuance forte et s'applique à opprimer ou harceler.",
+            "fr_exemple": "Je veux poursuivre mon rêve.",
+            "port_exemple": "Eu quero perseguir o meu sonho.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to chase",
@@ -42723,9 +42959,10 @@
         "port": "persistir",
         "fr": {
             "translation": "persister",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Persister signifie continuer malgré les obstacles. En usage courant, on peut aussi dire persévérer pour insister sur l'effort et la détermination.",
+            "fr_exemple": "Je vais persister jusqu'à ce que j'y parvienne.",
+            "port_exemple": "Eu vou persistir até conseguir.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to persist",
@@ -42742,9 +42979,10 @@
         "port": "pertencer",
         "fr": {
             "translation": "appartenir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe 'pertencer' se conjugue avec la préposition 'a' (pertencer a alguém/algo). En français, on dit 'appartenir' et on peut dire 'Ce livre m'appartient'.",
+            "fr_exemple": "Ce livre m'appartient.",
+            "port_exemple": "Este livro pertence a mim.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to belong",
@@ -42761,9 +42999,10 @@
         "port": "perturbar",
         "fr": {
             "translation": "perturber",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Perturber est correct mais plutôt soutenu. Pour parler de gêner quelqu'un de façon plus courante, on dit souvent déranger.",
+            "fr_exemple": "Je ne veux pas vous perturber.",
+            "port_exemple": "Eu não quero perturbar você.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to disturb",
@@ -42779,10 +43018,11 @@
         "id": "186e546d-67de-4585-bcd9-83455393a877",
         "port": "pesquisar",
         "fr": {
-            "translation": "rechercher",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "chercher",
+            "note": "En portugais européen, 'pesquisar' signifie surtout 'chercher' ou 'faire des recherches'. En français, on privilégie 'chercher' pour des recherches simples et 'rechercher' pour des recherches plus formelles.",
+            "fr_exemple": "Je vais chercher sur Internet.",
+            "port_exemple": "Eu vou pesquisar na Internet.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to lookfor",
@@ -42799,9 +43039,10 @@
         "port": "picar",
         "fr": {
             "translation": "piquer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'picar' a plusieurs sens. En français, 'piquer' convient pour le sens piquer/prick, mais en cuisine on emploie plutôt 'hacher' ou 'émincer'.",
+            "fr_exemple": "Le moustique m'a piqué.",
+            "port_exemple": "O mosquito picou-me.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to sting",
@@ -42817,10 +43058,11 @@
         "id": "109ead29-e468-4fb4-a745-1d9cfc243160",
         "port": "pisar",
         "fr": {
-            "translation": "piétiner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "poser le pied sur",
+            "note": "Piétiner est plus fort et signifie écraser ou marcher sur quelque chose de manière répétée. Pour l'action générale de poser le pied sur quelque chose, on dira plutôt 'poser le pied sur' ou 'marcher sur'.",
+            "fr_exemple": "Je pose le pied sur le sol.",
+            "port_exemple": "Eu piso no chão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to step",
@@ -42837,9 +43079,10 @@
         "port": "planejar",
         "fr": {
             "translation": "planifier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Planifier est le verbe usuel pour organiser, préparer et programmer quelque chose dans le futur. Dans certains contextes, 'prévoir' peut mieux rendre l'idée de se préparer ou d'anticiper des événements.",
+            "fr_exemple": "Je dois planifier mon voyage pour le mois prochain.",
+            "port_exemple": "Eu preciso planejar minha viagem para o próximo mês.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to plan",
@@ -42856,9 +43099,10 @@
         "port": "plantar",
         "fr": {
             "translation": "planter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Notez que planter s'utilise pour mettre en terre une plante ou des graines. En français, on précise parfois le sens: planter des graines, planter un arbre.",
+            "fr_exemple": "Je vais planter des arbres ce week-end.",
+            "port_exemple": "Vou plantar árvores neste fim de semana.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to plant",
@@ -42875,9 +43119,10 @@
         "port": "ponderar",
         "fr": {
             "translation": "pondérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Note: «pondérer» est correct mais un peu soutenu. En usage courant, on dira plutôt «réfléchir à» ou «considérer» les options.",
+            "fr_exemple": "Il faut pondérer les options avant de décider.",
+            "port_exemple": "É necessário ponderar as opções antes de decidir.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to ponder",
@@ -42893,10 +43138,11 @@
         "id": "204d5283-0af2-4862-8856-a3bbe518c772",
         "port": "pôr",
         "fr": {
-            "translation": "poser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "mettre",
+            "note": "Le verbe 'pôr' se traduit le plus souvent par 'mettre'. 'Poser' est plutôt limité au dépôt sur une surface; pour le sens général de 'mettre quelque chose', on utilise 'mettre'.",
+            "fr_exemple": "Je vais mettre le livre sur la table.",
+            "port_exemple": "Vou pôr o livro na mesa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to per",
@@ -42913,9 +43159,10 @@
         "port": "possibilitar",
         "fr": {
             "translation": "permettre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Possibilitar est un verbe neutre et peut sonner soutenu. En usage courant, on dira plutôt 'permettre' ou 'ouvrir'.",
+            "fr_exemple": "Ce changement peut ouvrir de nouvelles opportunités.",
+            "port_exemple": "Essa mudança pode possibilitar novas oportunidades.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to enable",
@@ -42932,9 +43179,10 @@
         "port": "possuir",
         "fr": {
             "translation": "posséder",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Posséder est un verbe soutenu qui exprime l'acquisition ou la détention de biens. En français courant, on privilégie souvent 'avoir' pour parler simplement de posséder quelque chose.",
+            "fr_exemple": "Il veut posséder une maison.",
+            "port_exemple": "Ele quer possuir uma casa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to possess",
@@ -42950,10 +43198,11 @@
         "id": "e06de5d3-8287-4e3f-b48c-a1579e9472a7",
         "port": "pousar",
         "fr": {
-            "translation": "poser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "atterrir",
+            "note": "Le verbe portugais 'pousar' ne se traduit pas par 'poser' dans le sens d'atterrir. Pour l'atterrissage d'un avion, on dit 'atterrir'; pour l'action d'un animal ou d'un oiseau qui se pose, on peut dire 'se poser'.",
+            "fr_exemple": "L'avion va atterrir.",
+            "port_exemple": "O avião vai pousar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to land",
@@ -42988,10 +43237,11 @@
         "id": "ed0c5813-fce8-4f46-b494-04b6db8c97bd",
         "port": "originar",
         "fr": {
-            "translation": "originer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "provoquer",
+            "note": "Notez que 'originar' peut être compris comme 'to originate' en français, mais ce n'est pas le choix le plus naturel pour signifier 'causer'. Préférez 'provoquer' ou 'engendrer' selon le contexte.",
+            "fr_exemple": "Cela peut provoquer des problèmes.",
+            "port_exemple": "Isso pode originar problemas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to originate",
@@ -43008,9 +43258,10 @@
         "port": "oscilar",
         "fr": {
             "translation": "osciller",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Osciller s’utilise pour décrire un mouvement de va-et-vient ou une fluctuation entre deux états. En portugais, oscilar peut aussi s’employer avec 'oscilar entre' deux options selon le contexte.",
+            "fr_exemple": "Le prix peut osciller entre 10 et 20 euros.",
+            "port_exemple": "O preço pode oscilar entre 10 e 20 euros.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to oscillate",
@@ -43026,10 +43277,11 @@
         "id": "a71ea284-8f22-4cb8-a6e3-071baf1a869d",
         "port": "ostentar",
         "fr": {
-            "translation": "ostentatoire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "afficher",
+            "note": "Le verbe ostentar n'existe pas en français; on emploie plutôt 'afficher' ou 'faire ostentation de'. Pour parler de richesse, 'afficher sa richesse' est le plus naturel.",
+            "fr_exemple": "Il aime afficher sa richesse.",
+            "port_exemple": "Ele gosta de ostentar suas riquezas.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to boast",
@@ -43046,9 +43298,10 @@
         "port": "ousar",
         "fr": {
             "translation": "oser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : Oser est un verbe courant qui porte l'idée de courage ou d'audace. En portugais comme en français, il s'emploie avec l'infinitif qui suit.",
+            "fr_exemple": "J'ose dire la vérité.",
+            "port_exemple": "Eu ouso dizer a verdade.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to dare",
@@ -43065,9 +43318,10 @@
         "port": "pairar",
         "fr": {
             "translation": "planer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'planer' est le verbe courant pour décrire quelque chose qui reste en suspension dans l'air. Pour l'usage figuré, on peut dire 'planer dans l'air' ou 'planer au-dessus de'.",
+            "fr_exemple": "La peur planait dans l'air.",
+            "port_exemple": "O medo pairava no ar.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to hover",
@@ -43084,9 +43338,10 @@
         "port": "parecer",
         "fr": {
             "translation": "sembler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: Parecer peut être verbe ou nom. Le sens le plus courant à enseigner est 'sembler' pour le verbe; 'un avis' pour le nom.",
+            "fr_exemple": "L'avis du jury a été favorable.",
+            "port_exemple": "O parecer do júri foi favorável.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to seem",
@@ -43102,10 +43357,11 @@
         "id": "7a3541cb-ff26-4de7-b034-97fb46b3dc60",
         "port": "parir",
         "fr": {
-            "translation": "mettre bas",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "accoucher",
+            "note": "Pour parler d'un être humain qui naît, on dit plutôt 'accoucher'. 'Mettre bas' s'emploie surtout pour les animaux ou de façon plus soutenue et littéraire.",
+            "fr_exemple": "Elle va accoucher demain.",
+            "port_exemple": "Ela vai parir amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to givebirth",
@@ -43122,9 +43378,10 @@
         "port": "participar",
         "fr": {
             "translation": "participer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En français, on utilise généralement 'participer à' pour indiquer la participation à une activité. Le verbe est intransitif et nécessite la préposition 'à'.",
+            "fr_exemple": "Je veux participer à la réunion.",
+            "port_exemple": "Eu quero participar da reunião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to participate",
@@ -43141,9 +43398,10 @@
         "port": "passear",
         "fr": {
             "translation": "se promener",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'passear' signifie généralement se promener pour le plaisir ou flâner. En français, on utilise 'se promener' ou, de manière plus familière, 'se balader'.",
+            "fr_exemple": "J'aime me promener dans le parc.",
+            "port_exemple": "Eu gosto de passear pelo parque.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to stroll",
@@ -43160,9 +43418,10 @@
         "port": "pegar",
         "fr": {
             "translation": "prendre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le mot 'pegar' est polysémique en portugais européen: il peut signifier prendre, attraper ou saisir selon le contexte. En français, on utilise 'prendre' pour le sens général, 'attraper' pour 'to catch' et 'saisir' pour 'to grab'.",
+            "fr_exemple": "Je vais prendre le bus.",
+            "port_exemple": "Eu vou pegar o autocarro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to take",
@@ -43179,9 +43438,10 @@
         "port": "pender",
         "fr": {
             "translation": "pendre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : pender peut signifier 'être suspendu' ou 'pencher' en portugais européen. En français, utilisez 'pendre' pour l'idée de suspendre; pour le sens 'dépendre de', dites 'dépendre de'.",
+            "fr_exemple": "La lampe pend du plafond.",
+            "port_exemple": "A lâmpada pende do teto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to hang",
@@ -43217,9 +43477,10 @@
         "port": "percorrer",
         "fr": {
             "translation": "parcourir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Parcourir s'emploie pour voyager à travers un lieu ou pour lire rapidement un texte. On peut dire 'parcourir des kilomètres'.",
+            "fr_exemple": "Je vais parcourir le pays du nord au sud.",
+            "port_exemple": "Vou percorrer o país de norte a sul.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to gothrough",
@@ -43235,10 +43496,11 @@
         "id": "8300dfe3-ce28-4b37-af1e-7da8647eb921",
         "port": "predominar",
         "fr": {
-            "translation": "prédominer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "prévaloir",
+            "note": "Remarque: 'prévaloir' est utilisé pour indiquer qu'une chose est plus importante ou répandue que les autres. C'est un registre plutôt soutenu et abstrait; 'dominer' est plus dynamique et concret.",
+            "fr_exemple": "La majorité prévaut dans les statistiques de cette étude.",
+            "port_exemple": "A maioria predomina nas estatísticas deste estudo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to predominate",
@@ -43255,9 +43517,10 @@
         "port": "preferir",
         "fr": {
             "translation": "préférer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Utilisez 'préférer' pour exprimer une préférence entre deux choix. À l'oral, on peut aussi dire 'aimer mieux' dans des contextes familiers, mais 'préférer' est plus courant.",
+            "fr_exemple": "Je préfère le thé au café.",
+            "port_exemple": "Eu prefiro chá ao café.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to prefer",
@@ -43274,9 +43537,10 @@
         "port": "pregar",
         "fr": {
             "translation": "prêcher",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens principal est « prêcher » (religieux). Selon le contexte, il peut aussi signifier « clouer » (un clou) ou « accrocher » (un tableau); d'autres usages se reflètent dans des expressions comme « jouer un tour » ou « faire une farce ».",
+            "fr_exemple": "Il va prêcher à l'église demain.",
+            "port_exemple": "Ele vai pregar na igreja amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to preach",
@@ -43292,10 +43556,11 @@
         "id": "492c8a17-902a-443f-a801-74605d29c045",
         "port": "prejudicar",
         "fr": {
-            "translation": "préjudicier",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "nuire",
+            "note": "Remarque : Le verbe se traduit le plus couramment par 'nuire à' ou par 'porter préjudice à'. En contexte courant, on utilise 'nuire à' dans une phrase simple.",
+            "fr_exemple": "Cela peut nuire à ma carrière.",
+            "port_exemple": "Isso pode prejudicar a minha carreira.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to harm",
@@ -43311,10 +43576,11 @@
         "id": "6d9d8168-c810-4ea7-b6f2-37da2e417dc2",
         "port": "prender",
         "fr": {
-            "translation": "attacher",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "arrêter",
+            "note": "Remarque: en portugais, prender signifie surtout 'arrêter' quelqu'un ou 'retenir' quelqu'un, et aussi 'attacher' dans certains contextes. En français, le verbe le plus courant pour l'arrestation est 'arrêter'; 'attacher' est réservé au sens de fixer physiquement.",
+            "fr_exemple": "La police a arrêté le voleur.",
+            "port_exemple": "A polícia prendeu o ladrão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to secure",
@@ -43330,10 +43596,11 @@
         "id": "1c754acb-933e-493f-8fb4-d7f2a2b66844",
         "port": "preocupar",
         "fr": {
-            "translation": "préoccuper",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "inquiéter",
+            "note": "En portugais, 'preocupar' exprime une inquiétude ou une préoccupation. En français, on privilégie 'inquiéter' pour le sens général; 'préoccuper' est plus soutenu et moins fréquent.",
+            "fr_exemple": "Cela m'inquiète.",
+            "port_exemple": "Isso me preocupa.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to worry",
@@ -43350,9 +43617,10 @@
         "port": "preservar",
         "fr": {
             "translation": "préserver",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: préserver est utilisé pour protéger quelque chose du dommage ou de la dégradation. Selon le contexte, on peut aussi dire protéger ou conserver selon l’idée précise.",
+            "fr_exemple": "Il est important de préserver la nature.",
+            "port_exemple": "É importante preservar a natureza.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to preserve",
@@ -43369,9 +43637,10 @@
         "port": "presidir",
         "fr": {
             "translation": "présider",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'présider' est un verbe formel, utilisé pour diriger des réunions, comités ou assemblées. En contexte courant, on peut dire 'diriger' ou 'conduire' selon le sens.",
+            "fr_exemple": "Il va présider la réunion.",
+            "port_exemple": "Ele vai presidir a reunião.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to preside",
@@ -43388,9 +43657,10 @@
         "port": "pressentir",
         "fr": {
             "translation": "pressentir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe pressentir exprime une intuition ou un sentiment prémonitoire. Il est courant à l'oral et à l'écrit pour décrire ce qu'on ressent avant que cela se confirme.",
+            "fr_exemple": "Elle a pressenti que quelque chose n'allait pas.",
+            "port_exemple": "Ela pressentiu que algo não estava certo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to envision",
@@ -43407,9 +43677,10 @@
         "port": "prestar",
         "fr": {
             "translation": "prêter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le verbe portugais prestar est polysemique. En français, prêter s'applique surtout au sens 'lender'; d'autres sens nécessitent des traductions comme faire attention, rendre des comptes ou fournir des services.",
+            "fr_exemple": "Je vais faire attention à ce que tu dis.",
+            "port_exemple": "Vou prestar atenção ao que dizes.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to provide",
@@ -43425,10 +43696,11 @@
         "id": "6522b516-511c-4f97-ad40-7da1c8f7dbb8",
         "port": "pretender",
         "fr": {
-            "translation": "prétendre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "avoir l'intention de",
+            "note": "Remarque: En portugais, pretender exprime une intention ou un projet. Le verbe prétendre en français signifie plutôt 'affirmer' ou 'faire semblant'.",
+            "fr_exemple": "J'ai l'intention de voyager l'été prochain.",
+            "port_exemple": "Eu pretendo viajar no próximo verão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to intend",
@@ -43445,9 +43717,10 @@
         "port": "prevalecer",
         "fr": {
             "translation": "prévaloir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "« Prévaloir » indique qu'une chose a plus d'influence ou prévaut dans une situation donnée. On l'emploie souvent avec « sur » pour parler de ce qui l'emporte.",
+            "fr_exemple": "La tradition prévaut sur les modes passagères.",
+            "port_exemple": "A tradição prevalece sobre as modas passageiras.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to prevail",
@@ -43464,9 +43737,10 @@
         "port": "prevenir",
         "fr": {
             "translation": "prévenir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Prévenir peut signifier 'to prevent' ou 'to warn'. Le sens dépend du complément: prévenir quelque chose (prévenir un problème) ou prévenir quelqu'un de quelque chose (avertir).",
+            "fr_exemple": "Nous devons prévenir les problèmes dans le futur.",
+            "port_exemple": "Precisamos prevenir problemas no futuro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to prevent",
@@ -43483,9 +43757,10 @@
         "port": "prever",
         "fr": {
             "translation": "prévoir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'Prévoir' peut signifier anticiper un événement ou planifier quelque chose à l'avance. En portugais, prever s'emploie de manière similaire et se conjugue comme un verbe régulier.",
+            "fr_exemple": "Il est difficile de prévoir l'avenir.",
+            "port_exemple": "É difícil prever o futuro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to predict",
@@ -43502,9 +43777,10 @@
         "port": "proceder",
         "fr": {
             "translation": "procéder",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "En portugais, 'proceder' se suit souvent de 'ao' pour indiquer l'action à réaliser. En français, on dit 'procéder au paiement' ou 'effectuer le paiement' selon le contexte.",
+            "fr_exemple": "Nous allons procéder au paiement maintenant.",
+            "port_exemple": "Vamos proceder ao pagamento agora.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to proceed",
@@ -43521,9 +43797,10 @@
         "port": "processar",
         "fr": {
             "translation": "traiter",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le sens courant de 'processar' est 'traiter' (par exemple des données, une demande). En contexte juridique, on dira plutôt 'poursuivre en justice' ou 'intenter un procès'.",
+            "fr_exemple": "J'ai besoin de traiter les données.",
+            "port_exemple": "Eu preciso processar os dados.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to process",
@@ -43540,9 +43817,10 @@
         "port": "proclamar",
         "fr": {
             "translation": "proclamer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : Proclamer est un verbe plutôt soutenu, utilisé pour des annonces officielles ou solennelles. Dans le langage courant, on pourrait plutôt dire 'annoncer' ou 'déclarer' selon le contexte.",
+            "fr_exemple": "Nous allons proclamer notre victoire.",
+            "port_exemple": "Vamos proclamar a nossa vitória.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to proclaim",
@@ -43559,9 +43837,10 @@
         "port": "produzir",
         "fr": {
             "translation": "produire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'produzir' signifie généralement 'to produce'. En français, 'produire' est l'équivalent courant; pour des objets manufacturés, on peut aussi dire 'fabriquer'.",
+            "fr_exemple": "Je veux produire plus ce mois-ci.",
+            "port_exemple": "Quero produzir mais este mês.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to produce",
@@ -43577,10 +43856,11 @@
         "id": "63dc4758-e993-4b54-9d0a-26e895d9a872",
         "port": "proferir",
         "fr": {
-            "translation": "proférer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "prononcer",
+            "note": "Remarque: proferir est correct mais plus soutenu et moins courant. En pratique, on emploie plutôt prononcer pour dire des mots ou donner un discours.",
+            "fr_exemple": "Il va prononcer un discours demain.",
+            "port_exemple": "Ele vai proferir um discurso amanhã.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to utter",
@@ -43596,10 +43876,11 @@
         "id": "5a7d6130-bdf9-4f2b-98a3-c32468e5c66e",
         "port": "realçar",
         "fr": {
-            "translation": "souligner",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "mettre en valeur",
+            "note": "Remarque: realçar signifie mettre en évidence ou valoriser quelque chose. En français, l'équivalent le plus courant est 'mettre en valeur', qui rend bien l'idée d'attirer l'attention sur des éléments positifs.",
+            "fr_exemple": "Je veux mettre en valeur les couleurs de ce tableau.",
+            "port_exemple": "Quero realçar as cores desta pintura.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to enhance",
@@ -43616,9 +43897,10 @@
         "port": "realizar",
         "fr": {
             "translation": "réaliser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Réaliser est utilisé pour exprimer l'accomplissement ou l'atteinte d'un objectif (par ex. réaliser son rêve). On emploie aussi 'réaliser que' pour dire 'prendre conscience que'.",
+            "fr_exemple": "Je veux réaliser mon rêve.",
+            "port_exemple": "Quero realizar o meu sonho.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to accomplish",
@@ -43635,9 +43917,10 @@
         "port": "reaparecer",
         "fr": {
             "translation": "réapparaître",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Le préfixe ré- indique que quelque chose qui avait disparu réapparaît. C'est un verbe courant pour décrire le retour d'un phénomène.",
+            "fr_exemple": "Le soleil peut réapparaître après la tempête.",
+            "port_exemple": "O sol pode reaparecer depois da tempestade.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to reappear",
@@ -43653,10 +43936,11 @@
         "id": "ed2fda00-6ebd-4167-bc87-05db1d56a6d1",
         "port": "rebater",
         "fr": {
-            "translation": "rebattre",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "réfuter",
+            "note": "Le sens principal de rebater est réfuter ou contester un argument. Pour l'action physique (rebondir une balle), on dirait plutôt rebondir ou repousser.",
+            "fr_exemple": "Elle a tenté de réfuter les accusations.",
+            "port_exemple": "Ela tentou rebater as acusações.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to bat",
@@ -43673,9 +43957,10 @@
         "port": "rebentar",
         "fr": {
             "translation": "éclater",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Éclater couvre la plupart des sens courants de rebentar (exploser, se fendre). Pour l’expression rebentar de rir, on dit plutôt éclater de rire.",
+            "fr_exemple": "Le ballon a éclaté quand il est tombé au sol.",
+            "port_exemple": "O balão rebentou quando caiu ao chão.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to bust",
@@ -43710,10 +43995,11 @@
         "id": "2472dcd9-75d0-4785-bc6c-cbd8f89d478f",
         "port": "reclamar",
         "fr": {
-            "translation": "réclamer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "réclamer / se plaindre",
+            "note": "Le verbe 'reclamar' a deux sens: réclamer (exiger/obtenir quelque chose) et se plaindre (manifester son mécontentement). En français, il faut choisir entre 'réclamer' et 'se plaindre' selon le sens.",
+            "fr_exemple": "Il a tendance à se plaindre de tout.",
+            "port_exemple": "Ele costuma reclamar de tudo.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to complain",
@@ -43730,9 +44016,10 @@
         "port": "recolher",
         "fr": {
             "translation": "recueillir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'récolter' est le choix courant pour 'collecter' des données, des signatures ou une récolte. 'Recueillir' met l'accent sur l'action de recevoir quelque chose et convient pour des dons ou des informations.",
+            "fr_exemple": "Je vais récolter les signatures aujourd'hui.",
+            "port_exemple": "Vou recolher as assinaturas hoje.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to recall",
@@ -43749,9 +44036,10 @@
         "port": "recomeçar",
         "fr": {
             "translation": "recommencer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Recommencer est le verbe courant pour dire 'start again' après une interruption. En portugais, recomeçar peut aussi signifier recommencer à zéro.",
+            "fr_exemple": "Après la pause, nous allons recommencer le projet.",
+            "port_exemple": "Depois da pausa, vamos recomeçar o projeto.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to restart",
@@ -43768,9 +44056,10 @@
         "port": "recomendar",
         "fr": {
             "translation": "recommander",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'recommander' est un verbe transitif. Pour exprimer un conseil plus général, on peut dire 'conseiller'.",
+            "fr_exemple": "Je recommande ce livre.",
+            "port_exemple": "Eu recomendo este livro.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to recommend",
@@ -43787,9 +44076,10 @@
         "port": "reconhecer",
         "fr": {
             "translation": "reconnaître",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque : en portugais, « reconhecer » peut aussi signifier « admettre ». En français, « reconnaître » convient pour reconnaître quelqu'un ou quelque chose et pour admettre une faute, selon le contexte.",
+            "fr_exemple": "Je veux apprendre à reconnaître mes erreurs.",
+            "port_exemple": "Quero aprender a reconhecer os meus erros.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to recognize",
@@ -43805,10 +44095,11 @@
         "id": "4d42c7e2-4137-4860-8d57-f75d84af7928",
         "port": "recordar",
         "fr": {
-            "translation": "rappeler",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "translation": "se rappeler",
+            "note": "Remarque : en portugais, 'recordar' peut signifier 'se rappeler' ou 'se souvenir de'. En français, 'rappeler' est surtout utilisé pour dire que quelque chose rappelle quelque chose à quelqu'un; pour exprimer l'idée de se souvenir, on emploie plutôt 'se rappeler' ou 'se souvenir de'.",
+            "fr_exemple": "Je me rappelle bien ce jour-là.",
+            "port_exemple": "Eu recordo bem aquele dia.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to remember",
@@ -43825,9 +44116,10 @@
         "port": "recorrer",
         "fr": {
             "translation": "recourir",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: En portugais, recorrer signifie recourir à quelque chose ou faire appel à quelqu'un. En français, on dira 'recourir à' pour l'idée générale de recourir à quelque chose; pour l'appel d'une décision, on utilisera plutôt 'faire appel'.",
+            "fr_exemple": "Je vais recourir à son aide.",
+            "port_exemple": "Vou recorrer à à ajuda dele.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to resort",
@@ -43844,9 +44136,10 @@
         "port": "recuar",
         "fr": {
             "translation": "reculer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'recuar' peut désigner un mouvement en arrière ou un retrait, au sens physique ou figuratif. En français, on emploie principalement 'reculer'.",
+            "fr_exemple": "Je dois reculer un peu.",
+            "port_exemple": "Preciso recuar um pouco.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to backoff",
@@ -43863,9 +44156,10 @@
         "port": "recuperar",
         "fr": {
             "translation": "récupérer",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Récupérer est un verbe polyvalent : il s'emploie pour retrouver quelque chose (données, objet, mot de passe) ou pour regagner sa santé. Dans certains cas, on peut dire 'se remettre' pour parler de la santé.",
+            "fr_exemple": "Je veux récupérer mon mot de passe.",
+            "port_exemple": "Eu quero recuperar minha senha.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to recover",
@@ -43882,9 +44176,10 @@
         "port": "recusar",
         "fr": {
             "translation": "refuser",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Remarque: 'recusar' est le verbe courant pour refuser une offre ou une invitation. En français, 'refuser' est la traduction standard.",
+            "fr_exemple": "Je vais refuser l'invitation.",
+            "port_exemple": "Eu vou recusar o convite.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to refuse",
@@ -43901,9 +44196,10 @@
         "port": "reduzir",
         "fr": {
             "translation": "réduire",
-            "note": "todo",
-            "fr_exemple": "",
-            "port_exemple": ""
+            "note": "Réduire est le verbe courant pour diminuer quelque chose. Pour les coûts, on dit généralement 'réduire les coûts'.",
+            "fr_exemple": "Je veux réduire les coûts.",
+            "port_exemple": "Eu quero reduzir os custos.",
+            "last_update": "2026-02-20"
         },
         "en": {
             "translation": "to reduce",
