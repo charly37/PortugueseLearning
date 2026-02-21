@@ -12,8 +12,8 @@ import ChallengeQualityFlag from './ChallengeQualityFlag';
 interface IdiomChallenge {
   id: string;
   port: string;
-  fr: { translation: string; note: string };
-  en: { translation: string; note: string };
+  fr: { translation: string; note: string; use_exemple?: string; port_exemple?: string };
+  en: { translation: string; note: string; use_exemple?: string; port_exemple?: string };
   source?: 'weakness' | 'random';
   user_usefulness?: number;
   options?: string[];  // For multiple-choice mode
@@ -198,10 +198,12 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
     const timeSpent = Date.now() - startTime;
 
     if (isCorrect) {
-      setFeedback({ type: 'success', message: `${t('challenge.correct')} ${challenge.port}` });
+      const exampleText = challenge[preferredLanguage].port_exemple ? `\n"${challenge[preferredLanguage].port_exemple}"` : '';
+      setFeedback({ type: 'success', message: `${t('challenge.correct')} ${challenge.port}${exampleText}` });
       setShowAnswer(true);
     } else {
-      setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}` });
+      const exampleText = challenge[preferredLanguage].port_exemple ? `\n"${challenge[preferredLanguage].port_exemple}"` : '';
+      setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}${exampleText}` });
       setShowAnswer(true);
     }
 
@@ -645,6 +647,11 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                   <Typography variant="h4" component="div" sx={{ fontWeight: 600, color: 'warning.main' }}>
                     {challenge[preferredLanguage].translation}
                   </Typography>
+                  {challenge[preferredLanguage].use_exemple && (
+                    <Typography variant="body2" color="text.secondary" sx={{ mt: 1, fontStyle: 'italic' }}>
+                      {challenge[preferredLanguage].use_exemple}
+                    </Typography>
+                  )}
                 </Box>
                 
                 {mobileFriendly && challenge.options ? (
@@ -669,10 +676,12 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                                 const timeSpent = Date.now() - startTime;
 
                                 if (isCorrect) {
-                                  setFeedback({ type: 'success', message: `${t('challenge.correct')} ${challenge.port}` });
+                                  const exampleText = challenge[preferredLanguage].port_exemple ? `\n"${challenge[preferredLanguage].port_exemple}"` : '';
+                                  setFeedback({ type: 'success', message: `${t('challenge.correct')} ${challenge.port}${exampleText}` });
                                   setShowAnswer(true);
                                 } else {
-                                  setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}` });
+                                  const exampleText = challenge[preferredLanguage].port_exemple ? `\n"${challenge[preferredLanguage].port_exemple}"` : '';
+                                  setFeedback({ type: 'error', message: `${t('challenge.incorrect')} ${challenge.port}${exampleText}` });
                                   setShowAnswer(true);
                                 }
 
@@ -733,7 +742,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 )}
 
                 {feedback && (
-                  <Alert severity={feedback.type} sx={{ mb: 2 }}>
+                  <Alert severity={feedback.type} sx={{ mb: 2, whiteSpace: 'pre-line' }}>
                     {feedback.message}
                   </Alert>
                 )}

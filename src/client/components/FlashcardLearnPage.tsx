@@ -13,8 +13,8 @@ import './FlashcardLearnPage.css';
 interface Challenge {
   id: string;
   port: string;
-  fr: { translation: string; note: string };
-  en: { translation: string; note: string };
+  fr: { translation: string; note: string; use_exemple?: string; port_exemple?: string };
+  en: { translation: string; note: string; use_exemple?: string; port_exemple?: string };
   present?: string[]; // For verbs
   user_usefulness?: number;
 }
@@ -451,11 +451,25 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                     fontWeight: 600, 
                     color: getColor(),
                     textAlign: 'center',
-                    mb: 4
+                    mb: 2
                   }}
                 >
                   {sourceText}
                 </Typography>
+                {currentChallenge[preferredLanguage].use_exemple && (
+                  <Typography 
+                    variant="body1" 
+                    color="text.secondary" 
+                    sx={{ 
+                      fontStyle: 'italic',
+                      textAlign: 'center',
+                      mb: 2,
+                      px: 2
+                    }}
+                  >
+                    {currentChallenge[preferredLanguage].use_exemple}
+                  </Typography>
+                )}
                 <Box sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}>
                   <FlipCameraAndroidIcon sx={{ mr: 1 }} />
                   <Typography variant="body2">
