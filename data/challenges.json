@@ -873,7 +873,7 @@
             "translation": "badly",
             "note": "Mau: bad (adjective); Mal: badly (adverb) or evil (noun)."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "cacb8dbd-6172-492f-a361-27b58949dac5.mp3",
             "last_update": "2026-02-14"
@@ -2433,7 +2433,7 @@
             "translation": "none/no (fem.)",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "983e2880-d960-4c3d-8276-93a16e37b515.mp3",
             "last_update": "2026-02-15"
@@ -2553,7 +2553,7 @@
             "translation": "human",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "a846dd0e-7219-4868-8edc-5f76de530cff.mp3",
             "last_update": "2026-02-15"
@@ -3553,7 +3553,7 @@
             "translation": "three",
             "note": "São três horas agora. - It is three o'clock now."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "d573b932-dbfd-4a0b-a2ff-ba07e69e6bbb.mp3",
             "last_update": "2026-02-15"
@@ -4153,7 +4153,7 @@
             "translation": "week",
             "note": "Há sete dias em uma semana. - There are seven days in a week."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "d6e7f8a9-b0c1-2345-1234-567890123456.mp3",
             "last_update": "2026-02-15"
@@ -8573,7 +8573,7 @@
             "translation": "correct",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "fbc69b32-93ba-4c5f-b002-853fe7c425aa.mp3",
             "last_update": "2026-02-15"
@@ -8773,7 +8773,7 @@
             "translation": "special",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "f747e8de-d943-488b-b2a2-e5be6249454e.mp3",
             "last_update": "2026-02-15"
@@ -9153,7 +9153,7 @@
             "translation": "several",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "85459bbd-e82a-4856-9a22-3d20b2eddca4.mp3",
             "last_update": "2026-02-15"
@@ -9413,7 +9413,7 @@
             "translation": "notice",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "a609f290-5d70-4321-ad7b-5d520b213af8.mp3",
             "last_update": "2026-02-15"
@@ -10863,7 +10863,7 @@
         "id": "39d02caf-c34d-4a36-9c77-fdb6b05fd7c9",
         "port": "tom",
         "fr": {
-            "translation": "ton",
+            "translation": "ton (voix, couleur)",
             "note": "Remarque : le mot portugais « tom » peut désigner le ton, l’intonation ou la teinte. En français, « ton » est utilisé pour le ton (voix, couleur) et peut aussi être l’adjectif possessif signifiant « your » dans un registre familier.",
             "use_exemple": "Le ton de ta voix est doux.",
             "port_exemple": "O tom da tua voz é suave.",
@@ -14493,7 +14493,7 @@
             "translation": "avenue",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "97b80979-635f-4fd0-909f-a2d09bf1143f.mp3",
             "last_update": "2026-02-15"
@@ -18053,7 +18053,7 @@
             "translation": "leather",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "b868227e-2c4e-49e5-a14e-d2b64dc7499f.mp3",
             "last_update": "2026-02-15"
@@ -20813,7 +20813,7 @@
             "translation": "army",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "74c9194a-3e27-43d6-b42f-5ae9141408c6.mp3",
             "last_update": "2026-02-15"
@@ -20913,7 +20913,7 @@
             "translation": "to be missing",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "29702075-74ce-4f80-810d-0290e06b2463.mp3",
             "last_update": "2026-02-15"
@@ -21216,26 +21216,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "4747070e-99f3-4fdb-9ebc-dfb7d5296001.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "7b196e05-b7f5-47e7-bae3-340b1fb6572d",
-        "port": "fazer / desfazer as malas",
-        "fr": {
-            "translation": "faire / défaire les valises",
-            "note": "Remarque: En portugais, 'fazer as malas' signifie préparer ses affaires pour partir; 'desfazer as malas' signifie défaire les bagages après le voyage. En français courant, on dit plutôt 'faire ses valises' et 'défaire ses valises', avec le possessif 'ses' pour indiquer que ce sont nos propres valises.",
-            "use_exemple": "Je vais faire mes valises pour le voyage.",
-            "port_exemple": "Vou fazer as malas para a viagem.",
-            "last_update": "2026-02-19"
-        },
-        "en": {
-            "translation": "to (un)pack",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "7b196e05-b7f5-47e7-bae3-340b1fb6572d.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -22121,7 +22101,7 @@
     },
     {
         "id": "f0a717f4-6c68-46aa-92b5-03612524d79f",
-        "port": "gostar de",
+        "port": "gostar",
         "fr": {
             "translation": "aimer",
             "note": "En portugais, 'gostar de' exprime le goût ou l'appréciation pour quelque chose. En français, 'aimer' convient dans la plupart des cas; pour une nuance plus légère, on peut dire 'aimer bien'.",
@@ -23141,16 +23121,16 @@
     },
     {
         "id": "e52b7d0b-552f-48fd-a58c-f274bdcc56bd",
-        "port": "itália (italiano)",
+        "port": "itália",
         "fr": {
-            "translation": "Italie (italien)",
+            "translation": "Italie",
             "note": "Remarque : Itália désigne le pays; italien désigne la langue (ou l'adjectif lié à l'Italie). Le contexte précise le sens.",
             "use_exemple": "L'Italie est célèbre pour sa cuisine.",
             "port_exemple": "A Itália é famosa pela culinária.",
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "italy (italian)",
+            "translation": "italy",
             "note": "todo"
         },
         "user_usefulness": 2,
@@ -23340,24 +23320,20 @@
         }
     },
     {
-        "id": "3006f3c5-1639-48f9-990a-710bcf2c7963",
-        "port": "jovem, adolescente",
+        "id": "150659eb-81d7-469b-9368-8db0770cda87",
+        "port": "adolescente",
         "fr": {
-            "translation": "jeune, adolescent",
-            "note": "Remarque: 'jeune' est un terme général pour une personne de faible âge, sans préciser l'âge. 'adolescent' désigne plus précisément l'adolescence (environ 12 à 18 ans).",
-            "use_exemple": "Le jeune étudie.",
-            "port_exemple": "O jovem está a estudar.",
+            "translation": "adolescent",
+            "note": "Remarque: 'adolescent' désigne plus précisément l'adolescence (environ 12 à 18 ans).",
+            "use_exemple": "L'adolescent étudie.",
+            "port_exemple": "O adolescente está a estudar.",
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "young person, teenager",
+            "translation": "teenager",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "3006f3c5-1639-48f9-990a-710bcf2c7963.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
     },
     {
         "id": "a1d46331-fb1d-4c74-8025-67783c036ed8",
@@ -26349,7 +26325,7 @@
             "translation": "to understand",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "50a7eca1-59ac-4779-a0a9-6ae046082b2e.mp3",
             "last_update": "2026-02-15"
@@ -28569,7 +28545,7 @@
             "translation": "exit (=bldg/motorway)#",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "1ee30098-297d-42bb-b213-bc53ccaf3e23.mp3",
             "last_update": "2026-02-15"
@@ -28769,7 +28745,7 @@
             "translation": "greeting",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d.mp3",
             "last_update": "2026-02-15"
@@ -29449,7 +29425,7 @@
             "translation": "dirty",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf.mp3",
             "last_update": "2026-02-15"
@@ -35029,7 +35005,7 @@
             "translation": "to marry",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "e427d232-5f7b-4cfd-8d51-770578147e44.mp3",
             "last_update": "2026-02-15"
@@ -36289,7 +36265,7 @@
             "translation": "to tell",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def.mp3",
             "last_update": "2026-02-15"
@@ -38189,7 +38165,7 @@
             "translation": "to last",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "0a8dcde3-138a-4422-bea7-d37d0d8eb32b.mp3",
             "last_update": "2026-02-15"
@@ -42209,7 +42185,7 @@
             "translation": "to teach (formal)",
             "note": "ensinar is more general and common for any type of learning, while lecionar is more specific to formal education"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "52851cda-df61-47c0-9ac8-f2e4bbb06223.mp3",
             "last_update": "2026-02-15"
@@ -43609,7 +43585,7 @@
             "translation": "to worry",
             "note": "todo"
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "1c754acb-933e-493f-8fb4-d7f2a2b66844.mp3",
             "last_update": "2026-02-15"
@@ -51652,26 +51628,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "8e335185-480a-452e-8ee8-50ae56a95e5e.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "1923e45b-68c5-4dfc-aed4-691bd08f01a8",
-        "port": "gostar",
-        "fr": {
-            "translation": "aimer",
-            "note": "Utilisation courante: 'gostar' signifie 'aimer' ou 'prendre plaisir à quelque chose'. En français, on emploie surtout 'aimer' pour exprimer ce sentiment.",
-            "use_exemple": "J'aime le chocolat.",
-            "port_exemple": "Gosto de chocolate.",
-            "last_update": "2026-02-20"
-        },
-        "en": {
-            "translation": "to like",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "1923e45b-68c5-4dfc-aed4-691bd08f01a8.mp3",
             "last_update": "2026-02-15"
         }
     },
