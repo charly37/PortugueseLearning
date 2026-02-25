@@ -57,7 +57,67 @@ def is_audio_recent(challenge, months=6):
         return False
 
 
-def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=True, max_conversions=50):
+def is_example_audio_recent(example_audio_dict, months=6):
+    """
+    Check if example audio was generated recently.
+    
+    Args:
+        example_audio_dict: Audio dictionary with 'filename' and 'last_update'
+        months: Number of months to consider audio as "recent" (default: 6)
+    
+    Returns:
+        True if audio exists and was generated within the last 'months' months
+    """
+    if not example_audio_dict:
+        return False
+    
+    last_update = example_audio_dict.get('last_update')
+    if not last_update:
+        return False
+    
+    try:
+        update_date = datetime.strptime(last_update, "%Y-%m-%d")
+        cutoff_date = datetime.now() - timedelta(days=months * 30)
+        return update_date >= cutoff_date
+    except (ValueError, TypeError):
+        return False
+
+
+def generate_tts_audio(client, text, language_code, voice_id, output_file, speed=0.75):
+    """
+    Generate TTS audio for a given text and save to file.
+    
+    Args:
+        client: ElevenLabs client instance
+        text: Text to convert to speech
+        language_code: Language code (e.g., 'pt', 'fr', 'en')
+        voice_id: ElevenLabs voice ID
+        output_file: Path object for output MP3 file
+        speed: Speech speed (default: 0.85)
+    
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        audio = client.text_to_speech.convert(
+            text=text,
+            voice_id=voice_id,
+            language_code=language_code,
+            model_id="eleven_flash_v2_5",
+            output_format="mp3_44100_128",
+            voice_settings=VoiceSettings(speed=speed),
+        )
+        
+        with open(output_file, "wb") as f:
+            for chunk in audio:
+                f.write(chunk)
+        return True
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        return False
+
+
+def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=True, max_conversions=50, generate_examples=False):
     """
     Generate audio files for all challenges in a JSON file.
     
@@ -66,11 +126,13 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
         output_dir: Directory where MP3 files will be saved (default: current directory)
         skip_existing: If True, skip challenges with audio generated in the last 6 months
         max_conversions: Maximum number of audio files to generate in this run (default: 50)
+        generate_examples: If True, also generate audio for example sentences in each language
         
     Notes:
         - Audio is considered "recent" if generated within the last 6 months
         - The generation date is tracked in challenges.json under challenge['audio']['last_update']
         - This allows periodic refresh of audio files for quality improvements
+        - When generate_examples=True, also generates audio for fr.use_exemple, fr.port_exemple, etc.
     """
     # Initialize ElevenLabs client
     api_key = os.environ.get('TEXT_TO_SPEECH_API_KEY')
@@ -101,13 +163,23 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
     generated = 0
     skipped = 0
     errors = 0
+    examples_generated = 0
+    examples_skipped = 0
+    
+    # Voice IDs for different languages
+    VOICES = {
+        'pt': 'aLFUti4k8YKvtQGXv0UO',  # Portuguese EU accent
+        'fr': 'ICk609TItINMseDpChFt',  # French (Rachel)
+        'en': 'pNInz6obpgDQGcFmaJgB',  # English (Adam)
+    }
     
     print(f"\nStarting audio generation...")
     print(f"Output directory: {output_path.absolute()}")
     print(f"Skip existing files: {skip_existing}")
     if skip_existing:
         print(f"Audio refresh policy: Regenerate if older than 6 months")
-    print(f"Max conversions per run: {max_conversions}\n")
+    print(f"Max conversions per run: {max_conversions}")
+    print(f"Generate example sentences: {generate_examples}\n")
     
     for idx, challenge in enumerate(challenges, 1):
         # Stop if we've reached the maximum number of conversions
@@ -123,6 +195,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
             errors += 1
             continue
         
+        # === MAIN WORD AUDIO ===
         output_file = output_path / f"{challenge_id}.mp3"
         
         # Skip if audio was recently generated (within last 6 months)
@@ -130,66 +203,149 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
             last_update = challenge.get('audio', {}).get('last_update', 'unknown')
             print(f"[{idx}/{total}] ⏭️  Skipping '{portuguese_text}' (audio generated on {last_update})")
             skipped += 1
-            continue
-        
-        # Check if file exists but is outdated (will be regenerated)
-        if output_file.exists() and not skip_existing:
-            print(f"[{idx}/{total}] 🔄 Regenerating outdated audio for '{portuguese_text}'...")
-        
-        # Generate audio
-        try:
+        else:
+            # Generate audio for main word
             print(f"[{idx}/{total}] 🎙️  Generating audio for '{portuguese_text}'...")
             
-            audio = client.text_to_speech.convert(
-                text=portuguese_text,
-                voice_id="aLFUti4k8YKvtQGXv0UO",  # Pt EU accent
-                language_code="pt",  # Portuguese
-                model_id="eleven_flash_v2_5",
-                output_format="mp3_44100_128",
-                voice_settings=VoiceSettings(
-                    speed=0.85,
-                ),
-            )
-            
-            # Save audio to file
-            with open(output_file, "wb") as f:
-                for chunk in audio:
-                    f.write(chunk)
-            
-            print(f"[{idx}/{total}] ✅ Saved to {output_file.name}")
-            generated += 1
-            
-            # Update the challenge entry in the JSON
-            audio_filename = output_file.name
-            today_date = datetime.now().strftime("%Y-%m-%d")
-            challenge['audio'] = {
-                'filename': audio_filename,
-                'last_update': today_date
-            }
-            
-            # Save updated JSON back to file
-            if save_challenges_json(json_file_path, challenges):
-                print(f"[{idx}/{total}] 📝 Updated JSON entry for '{portuguese_text}'")
+            if generate_tts_audio(client, portuguese_text, 'pt', VOICES['pt'], output_file):
+                print(f"[{idx}/{total}] ✅ Saved to {output_file.name}")
+                generated += 1
+                
+                # Update the challenge entry in the JSON
+                today_date = datetime.now().strftime("%Y-%m-%d")
+                challenge['audio'] = {
+                    'filename': output_file.name,
+                    'last_update': today_date
+                }
+                
+                # Save updated JSON back to file
+                if save_challenges_json(json_file_path, challenges):
+                    print(f"[{idx}/{total}] 📝 Updated JSON entry for '{portuguese_text}'")
+                
+                # Small delay to avoid rate limiting
+                time.sleep(0.5)
             else:
-                print(f"[{idx}/{total}] ⚠️  Failed to update JSON entry")
+                errors += 1
+        
+        # === EXAMPLE SENTENCES AUDIO ===
+        if generate_examples:
+            today_date = datetime.now().strftime("%Y-%m-%d")
             
-            # Small delay to avoid rate limiting
-            time.sleep(0.5)
+            # Process French examples
+            fr_data = challenge.get('fr', {})
+            if fr_data and isinstance(fr_data, dict):
+                # French example sentence
+                fr_use_exemple = fr_data.get('use_exemple')
+                if fr_use_exemple:
+                    audio_dict = fr_data.get('use_exemple_audio', {})
+                    if skip_existing and is_example_audio_recent(audio_dict, months=6):
+                        print(f"[{idx}/{total}]   ⏭️  Skipping FR example (recent)")
+                        examples_skipped += 1
+                    else:
+                        fr_filename = f"{challenge_id}_fr_exemple.mp3"
+                        fr_output = output_path / fr_filename
+                        print(f"[{idx}/{total}]   🎙️  FR: '{fr_use_exemple[:40]}...'")
+                        
+                        if generate_tts_audio(client, fr_use_exemple, 'fr', VOICES['fr'], fr_output):
+                            print(f"[{idx}/{total}]   ✅ Saved {fr_filename}")
+                            fr_data['use_exemple_audio'] = {
+                                'filename': fr_filename,
+                                'last_update': today_date
+                            }
+                            examples_generated += 1
+                            save_challenges_json(json_file_path, challenges)
+                            time.sleep(0.5)
+                        else:
+                            errors += 1
+                
+                # Portuguese example in French section
+                fr_port_exemple = fr_data.get('port_exemple')
+                if fr_port_exemple:
+                    audio_dict = fr_data.get('port_exemple_audio', {})
+                    if skip_existing and is_example_audio_recent(audio_dict, months=6):
+                        print(f"[{idx}/{total}]   ⏭️  Skipping PT example (recent)")
+                        examples_skipped += 1
+                    else:
+                        pt_filename = f"{challenge_id}_fr_pt_exemple.mp3"
+                        pt_output = output_path / pt_filename
+                        print(f"[{idx}/{total}]   🎙️  PT: '{fr_port_exemple[:40]}...'")
+                        
+                        if generate_tts_audio(client, fr_port_exemple, 'pt', VOICES['pt'], pt_output):
+                            print(f"[{idx}/{total}]   ✅ Saved {pt_filename}")
+                            fr_data['port_exemple_audio'] = {
+                                'filename': pt_filename,
+                                'last_update': today_date
+                            }
+                            examples_generated += 1
+                            save_challenges_json(json_file_path, challenges)
+                            time.sleep(0.5)
+                        else:
+                            errors += 1
             
-        except Exception as e:
-            print(f"[{idx}/{total}] ❌ Error generating audio for '{portuguese_text}': {e}")
-            errors += 1
+            # Process English examples (if they exist)
+            en_data = challenge.get('en', {})
+            if en_data and isinstance(en_data, dict):
+                # English example sentence
+                en_use_exemple = en_data.get('use_exemple')
+                if en_use_exemple:
+                    audio_dict = en_data.get('use_exemple_audio', {})
+                    if skip_existing and is_example_audio_recent(audio_dict, months=6):
+                        print(f"[{idx}/{total}]   ⏭️  Skipping EN example (recent)")
+                        examples_skipped += 1
+                    else:
+                        en_filename = f"{challenge_id}_en_exemple.mp3"
+                        en_output = output_path / en_filename
+                        print(f"[{idx}/{total}]   🎙️  EN: '{en_use_exemple[:40]}...'")
+                        
+                        if generate_tts_audio(client, en_use_exemple, 'en', VOICES['en'], en_output):
+                            print(f"[{idx}/{total}]   ✅ Saved {en_filename}")
+                            en_data['use_exemple_audio'] = {
+                                'filename': en_filename,
+                                'last_update': today_date
+                            }
+                            examples_generated += 1
+                            save_challenges_json(json_file_path, challenges)
+                            time.sleep(0.5)
+                        else:
+                            errors += 1
+                
+                # Portuguese example in English section
+                en_port_exemple = en_data.get('port_exemple')
+                if en_port_exemple:
+                    audio_dict = en_data.get('port_exemple_audio', {})
+                    if skip_existing and is_example_audio_recent(audio_dict, months=6):
+                        print(f"[{idx}/{total}]   ⏭️  Skipping PT example (recent)")
+                        examples_skipped += 1
+                    else:
+                        pt_filename = f"{challenge_id}_en_pt_exemple.mp3"
+                        pt_output = output_path / pt_filename
+                        print(f"[{idx}/{total}]   🎙️  PT: '{en_port_exemple[:40]}...'")
+                        
+                        if generate_tts_audio(client, en_port_exemple, 'pt', VOICES['pt'], pt_output):
+                            print(f"[{idx}/{total}]   ✅ Saved {pt_filename}")
+                            en_data['port_exemple_audio'] = {
+                                'filename': pt_filename,
+                                'last_update': today_date
+                            }
+                            examples_generated += 1
+                            save_challenges_json(json_file_path, challenges)
+                            time.sleep(0.5)
+                        else:
+                            errors += 1
     
     # Print summary
     print(f"\n{'='*60}")
     print(f"Audio Generation Complete!")
     print(f"{'='*60}")
     print(f"Total challenges: {total}")
-    print(f"Generated: {generated}")
-    print(f"Skipped (recent audio < 6 months): {skipped}")
+    print(f"Main word audio generated: {generated}")
+    print(f"Main word audio skipped (recent < 6 months): {skipped}")
+    if generate_examples:
+        print(f"Example sentences generated: {examples_generated}")
+        print(f"Example sentences skipped (recent < 6 months): {examples_skipped}")
     print(f"Errors: {errors}")
     remaining = total - generated - skipped
-    if remaining > 0:
+    if remaining > 0 and not generate_examples:
         print(f"Remaining (not processed): {remaining}")
         print(f"\n💡 Run the script again to generate more (up to {max_conversions} per run)")
     print(f"{'='*60}")
@@ -198,8 +354,8 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
 if __name__ == "__main__":
     # Path to challenges.json relative to this script
     script_dir = Path(__file__).parent
-    challenges_json = script_dir.parent / "data" / "challenges.json"
-    output_directory = script_dir.parent / "data"
+    challenges_json = script_dir / "challenges.json"
+    output_directory = script_dir
     
     print(f"Text-to-Speech Audio Generator for Portuguese Challenges")
     print(f"{'='*60}\n")
@@ -207,9 +363,11 @@ if __name__ == "__main__":
     # Generate audio for all challenges
     # skip_existing=True: Only regenerate audio older than 6 months
     # skip_existing=False: Regenerate all audio files (useful for quality improvements)
+    # generate_examples=True: Also generate audio for example sentences in each language
     generate_audio_for_challenges(
         json_file_path=challenges_json,
         output_dir=output_directory,
-        skip_existing=True,  # Change to False to regenerate all files
-        max_conversions=300   # Maximum number of conversions per run to control costs
+        skip_existing=True,      # Change to False to regenerate all files
+        max_conversions=300,     # Maximum number of conversions per run to control costs
+        generate_examples=True   # Set to True to generate example sentence audio
     )

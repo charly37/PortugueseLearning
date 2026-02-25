@@ -32,6 +32,7 @@ Comprehensive documentation is available in the [`docs/`](docs/) folder:
 - **[Testing Guide](docs/TESTING.md)** - Playwright testing setup and usage
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Docker and CI/CD deployment
 - **[Analytics](docs/ANALYTICS.md)** - Weakness analysis, usefulness aggregation, and quality monitoring
+- **[Audio Generation](docs/AUDIO_GENERATION.md)** - TTS audio generation for words and example sentences
 - **[Authentication Setup](docs/AUTHENTICATION_SETUP.md)** - User authentication implementation
 - **[HTTPS Setup](docs/HTTPS_SETUP.md)** - SSL certificate configuration
 - **[Progress Tracking](docs/PROGRESS_TRACKING.md)** - Development progress and milestones
