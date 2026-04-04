@@ -24116,6 +24116,21 @@
         }
     },
     {
+        "id": "6b7d705d-0548-4164-9e0c-63dd0d868d81",
+        "port": "antigo",
+        "fr": {
+            "translation": "ancien",
+            "note": "Remarque: 'antigo' en portugais signifie 'ancien' en français.",
+            "use_exemple": "Ce bâtiment est ancien.",
+            "port_exemple": "Este edifício é antigo."
+        },
+        "en": {
+            "translation": "ancient, old, former",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "16f165ee-80d9-464c-94cf-3064da8b0595",
         "port": "estágio",
         "fr": {
@@ -25154,6 +25169,22 @@
             "filename": "c61bbde0-e848-4a6e-8aa4-a86e68176e52.mp3",
             "last_update": "2026-02-15"
         }
+    },
+    {
+        "id": "48e7ed60-7314-44c1-a196-5ee0a9360508",
+        "port": "antipatico",
+        "fr": {
+            "translation": "antipathique",
+            "note": "Remarque: 'antipático' en portugais signifie 'antipathique' en français.",
+            "use_exemple": "Il est très antipathique.",
+            "port_exemple": "Ele é muito antipático.",
+            "last_update": "2026-02-19"
+        },
+        "en": {
+            "translation": "unpleasant, unfriendly",
+            "note": "todo"
+        },
+        "user_usefulness": 2
     },
     {
         "id": "cca65888-35df-4a2c-9c0a-b30b43f59f6f",
@@ -47460,6 +47491,21 @@
         }
     },
     {
+        "id": "0c168525-f7aa-47ee-9476-3c238004bd43",
+        "port": "amargo",
+        "fr": {
+            "translation": "amer",
+            "note": "En portugais, 'amargo' signifie 'amer' en français.",
+            "use_exemple": "Ce chocolat est très amer.",
+            "port_exemple": "Este chocolate é muito amargo."
+        },
+        "en": {
+            "translation": "bitter",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "767fade8-ce49-4dff-9c70-caa465013ccc",
         "port": "processar",
         "fr": {
@@ -47478,6 +47524,21 @@
             "filename": "767fade8-ce49-4dff-9c70-caa465013ccc.mp3",
             "last_update": "2026-02-15"
         }
+    },
+    {
+        "id": "4b1c3334-51ca-4875-8715-fb2ad44b7d43",
+        "port": "amavel",
+        "fr": {
+            "translation": "aimable",
+            "note": "En portugais, 'amável' signifie 'aimable' en français.",
+            "use_exemple": "Elle est très aimable.",
+            "port_exemple": "Ela é muito amável."
+        },
+        "en": {
+            "translation": "kind",
+            "note": "todo"
+        },
+        "user_usefulness": 2
     },
     {
         "id": "97d975c5-f175-46eb-ab3c-9cf745b9ba45",
@@ -52860,6 +52921,21 @@
         }
     },
     {
+        "id": "4cc93305-1ca9-46a3-8a7d-50c7c08ca9ea",
+        "port": "amigavel",
+        "fr": {
+            "translation": "aimable",
+            "note": "En portugais, 'amável' signifie 'aimable' en français.",
+            "use_exemple": "Elle est très aimable.",
+            "port_exemple": "Ela é muito amável."
+        },
+        "en": {
+            "translation": "friendly",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "de19283b-6089-4ea5-93bd-c19f1a017b59",
         "port": "pessoal",
         "fr": {
@@ -56237,6 +56313,438 @@
         "audio": {
             "filename": "4bc8dd6b-ff25-451c-8907-bba9260fd6e7.mp3",
             "last_update": "2026-02-15"
+        }
+    },
+    {
+        "id": "f3bc6b78-79df-4d6a-ac1b-661cec76c7d8",
+        "port": "amável",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "kind/friendly",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "b30ccc37-89f3-4545-a282-6b767588fb06",
+        "port": "assustador",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "scary",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "5e20b11c-64f3-48e3-9266-9cd70f85eb74",
+        "port": "chateado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "upset",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1d08306a-4b96-4c02-9a08-140b82bcb9bd",
+        "port": "chato",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "boring",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "14675600-8aac-416b-901a-440db47d99a4",
+        "port": "colorido",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "colored/colorful",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "2ad0bc28-3300-4d97-9e23-ff5e73ba2722",
+        "port": "comestível",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "edible",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6cdead1f-f779-4e27-8c4f-5fe2c3c578f7",
+        "port": "complexo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "complex",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "fa06d933-30ee-4180-a570-cf56cfbfe80f",
+        "port": "corajoso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "brave/courageous",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "d5043bc3-5537-4540-905c-a452ca4aa694",
+        "port": "curioso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "curious",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "a0f03b21-15a4-4938-9365-9c16548aa332",
+        "port": "deprimido",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "depressed",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "22851901-eebb-417a-8e16-37072d3e05e5",
+        "port": "determinado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "determined",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "df171f07-2fb6-4557-b7a9-3c2c23912d57",
+        "port": "ecológico",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "ecological",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "eb08a5e5-6890-4e9f-b2a2-dc41daa12faf",
+        "port": "econômico",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "economic/economical",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6cc50310-db83-4868-99a7-cc5ea4d64b72",
+        "port": "eficiente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "efficient",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "ce660f06-7337-4f39-b459-57d0f587a8ea",
+        "port": "elegante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "elegant",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "e351481b-7e0e-4ec0-8680-d5735846c39f",
+        "port": "emocionante",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "exciting",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "afafe8ab-2ca9-4eef-a6dc-f80ceeb51259",
+        "port": "enorme",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "huge",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "6a889bba-101b-4fc7-b9a3-707e922438e7",
+        "port": "falso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "false/fake",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "59230e58-3624-40a1-a3b3-7d8231170e05",
+        "port": "fechado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "closed",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "01472418-31c8-4f9a-aa99-5555e76f250f",
+        "port": "frequente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "frequent",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "864b45d2-87c2-48e2-b0b6-eff5985e1ee5",
+        "port": "furioso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "furious",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "7dcaf91f-277c-4635-91af-9b35064affaf",
+        "port": "generoso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "generous",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c5f08c7d-3d15-497f-aaa8-0cff7a2fc739",
+        "port": "horrível",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "horrible",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "098e1779-d496-4c4d-8d75-11b9cb81f53c",
+        "port": "ilegal",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "illegal",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "162679bb-147b-4217-b426-1db1c443a5fd",
+        "port": "incrível",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "incredible",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "35e4cdb3-dec7-40ca-97c8-143ea3c65249",
+        "port": "independente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "independent",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "31ea200f-f835-46b3-97f4-8dd69ac1b1e4",
+        "port": "infeliz",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "unhappy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "c80bddbc-677b-45e7-b308-ae541d253eca",
+        "port": "inocente",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "innocent",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "534551ce-e1ee-4674-a5cc-40c577951114",
+        "port": "internacional",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "international",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "1face5d4-9764-49b3-98da-234ab413d5db",
+        "port": "irritado",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "irritated",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3d0959a0-db2f-4c3f-a21f-9ee1f64b4dd2",
+        "port": "local",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "local",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "f386aa3a-b9fc-4700-9ead-8e3c1561a653",
+        "port": "louco",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "crazy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "8f6f587a-aef6-4e34-8539-35090b950528",
+        "port": "orgulhoso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "proud",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "57f01568-0608-460d-98dc-051df8c28d33",
+        "port": "preguiçoso",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "lazy",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "3ccc4d76-5d3e-4642-9845-d2d7bf27d579",
+        "port": "raro",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "rare",
+            "note": "todo"
+        }
+    },
+    {
+        "id": "943693fd-d350-4265-b2f0-3f93ed57e67a",
+        "port": "tolo",
+        "fr": {
+            "translation": "todo",
+            "note": "todo"
+        },
+        "en": {
+            "translation": "foolish",
+            "note": "todo"
         }
     }
 ]
