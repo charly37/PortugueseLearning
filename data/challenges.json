@@ -18065,10 +18065,10 @@
     },
     {
         "id": "e7bf4a5f-4161-4137-8944-237bf7cba947",
-        "port": "aula, lição",
+        "port": "aula",
         "fr": {
-            "translation": "cours, leçon",
-            "note": "En portugais, 'aula' correspond à 'cours' (la séance). 'Lição' correspond à 'leçon' (ce qui est appris; le contenu), et peut aussi signifier une morale.",
+            "translation": "cours",
+            "note": "En portugais 'Lição' correspond à 'leçon' (ce qui est appris; le contenu), et peut aussi signifier une morale.",
             "use_exemple": "Aujourd'hui, j'ai un cours et une leçon à étudier.",
             "port_exemple": "Hoje tenho uma aula e uma lição para estudar.",
             "last_update": "2026-02-18"
@@ -18077,11 +18077,23 @@
             "translation": "class (=lesson)",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "e7bf4a5f-4161-4137-8944-237bf7cba947.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
+    },
+    {
+        "id": "026cbe6e-aaf1-4426-b079-98c96228869d",
+        "port": "lição",
+        "fr": {
+            "translation": "leçon",
+            "note": "En portugais, 'Lição' correspond à 'leçon' (ce qui est appris; le contenu), et peut aussi signifier une morale.",
+            "use_exemple": "Aujourd'hui, j'ai une leçon à étudier.",
+            "port_exemple": "Hoje tenho uma lição para estudar.",
+            "last_update": "2026-02-18"
+        },
+        "en": {
+            "translation": "class (=lesson)",
+            "note": "todo"
+        },
+        "user_usefulness": 2
     },
     {
         "id": "8b5aeb2a-6c9c-4968-9862-2d504e71e8b3",
@@ -18765,23 +18777,19 @@
     },
     {
         "id": "611cf854-b66e-4e80-bde4-89639453ea39",
-        "port": "bicicleta de montanha",
+        "port": "bicicleta",
         "fr": {
-            "translation": "vélo de montagne",
-            "note": "En pratique, on dit surtout VTT ou vélo tout-terrain. 'vélo de montagne' se comprend mais est moins courant que l'abréviation.",
-            "use_exemple": "Ce week-end, j'ai acheté un VTT.",
-            "port_exemple": "Este fim de semana comprei uma bicicleta de montanha.",
+            "translation": "vélo",
+            "note": "le vélo c'est bon pour la santé",
+            "use_exemple": "Ce week-end, j'ai acheté un vélo.",
+            "port_exemple": "Este fim de semana comprei uma bicicleta.",
             "last_update": "2026-02-18"
         },
         "en": {
             "translation": "mountain bike",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "611cf854-b66e-4e80-bde4-89639453ea39.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 3
     },
     {
         "id": "52ca314b-43d2-4075-b948-1574044d9350",
@@ -19425,23 +19433,19 @@
     },
     {
         "id": "7680a353-258a-41f0-9f13-d658366111e6",
-        "port": "cama (de solteiro / de casal)",
+        "port": "cama",
         "fr": {
-            "translation": "lit (simple / double)",
+            "translation": "lit (pour dormir)",
             "note": "En portugais, 'cama' est le terme général pour 'bed'. En français, on précise le type avec 'lit simple' ou 'lit double'.",
             "use_exemple": "Le lit simple se trouve dans la chambre d'amis.",
             "port_exemple": "A cama de solteiro fica no quarto de hóspedes.",
             "last_update": "2026-02-18"
         },
         "en": {
-            "translation": " bed (single / double)",
+            "translation": " bed (to sleep)",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "7680a353-258a-41f0-9f13-d658366111e6.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
     },
     {
         "id": "bddf3588-62e4-4f3d-b106-f19afd624907",
@@ -20161,9 +20165,9 @@
     },
     {
         "id": "9431a6bc-bbb6-4aa9-a723-f42185e1b2b2",
-        "port": "casa de banho / banheiro",
+        "port": "casa de banho",
         "fr": {
-            "translation": "salle de bains / salle de bain",
+            "translation": "salle de bains",
             "note": "Remarque : En portugais européen, on dit 'casa de banho' pour la salle de bains. 'Banheiro' est le mot brésilien correspondant.",
             "use_exemple": "La salle de bains est au bout du couloir.",
             "port_exemple": "A casa de banho fica no final do corredor.",
@@ -20561,7 +20565,7 @@
     },
     {
         "id": "ffb18f67-fab8-4c62-ac28-df1274bd7382",
-        "port": "cheque de",
+        "port": "cheque",
         "fr": {
             "translation": "chèque",
             "note": "En portugais, 'cheque' est un nom masculin qui peut être suivi d'un type introduit par 'de' (par ex. 'cheque de viagem'). En français, on écrit 'chèque' avec un accent et on précise le type, par exemple 'chèque de voyage'.",
@@ -22777,7 +22781,7 @@
     },
     {
         "id": "8415fe67-cc10-4670-ba0f-f150f4b8bc94",
-        "port": "divertimento, diversão",
+        "port": "diversão",
         "fr": {
             "translation": "divertissement, amusement",
             "note": "Remarque: divertimento peut être plus littéraire ou technique (par exemple en musique). Diversão est plus courant et familier pour le sens de « fun » au quotidien.",
@@ -22789,11 +22793,7 @@
             "translation": "fun",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "8415fe67-cc10-4670-ba0f-f150f4b8bc94.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
     },
     {
         "id": "dfc6b042-b200-46fe-9f2f-26adc10b751f",
@@ -24867,26 +24867,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "551ff93a-d03d-40e3-806c-ab896604f002.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "8109b0e3-7d1c-49d0-ae52-aefc13594923",
-        "port": "fazer transbordo",
-        "fr": {
-            "translation": "prendre une correspondance",
-            "note": "Remarque: 'prendre une correspondance' s'utilise pour changer de véhicule lors d'un trajet (train, métro, bus). Dans certains contextes, on peut aussi dire 'changer de train'.",
-            "use_exemple": "J'ai besoin de prendre une correspondance pour arriver à destination.",
-            "port_exemple": "Eu preciso fazer transbordo para chegar ao destino.",
-            "last_update": "2026-02-19"
-        },
-        "en": {
-            "translation": "to change (e.g.trains)",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "8109b0e3-7d1c-49d0-ae52-aefc13594923.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -30379,26 +30359,6 @@
         }
     },
     {
-        "id": "8b34df3a-11a3-46b5-9d1a-ea273b24e639",
-        "port": "pires",
-        "fr": {
-            "translation": "Pires",
-            "note": "Remarque: 'Pires' est un nom de famille portugais courant; il n'est pas traduit en français. On écrit 'Pires' avec une majuscule et, au pluriel, 'les Pires'.",
-            "use_exemple": "Les Pires habitent ici.",
-            "port_exemple": "Os Pires moram aqui.",
-            "last_update": "2026-02-19"
-        },
-        "en": {
-            "translation": "saucer",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "8b34df3a-11a3-46b5-9d1a-ea273b24e639.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "ae5dfd49-0c9d-4929-8932-82a5db1d6687",
         "port": "piscina",
         "fr": {
@@ -30882,7 +30842,7 @@
         "id": "bd9c47e7-2b58-4e62-96e8-0bb9daba4515",
         "port": "prémio",
         "fr": {
-            "translation": "prix",
+            "translation": "prix (recompense)",
             "note": "Le mot prémio signifie généralement « prix » ou « récompense ». En pratique, on utilise surtout « prix » pour les concours et les récompenses officielles; « récompense » peut dénoter un geste ou un mérite.",
             "use_exemple": "Elle a gagné le prix de la compétition.",
             "port_exemple": "Ela ganhou o prémio da competição.",
@@ -36376,7 +36336,7 @@
         "fr": {
             "translation": "adapter",
             "note": "Remarque: En portugais, 'adaptar' peut signifier 'modifier pour convenir' ou 'ajuster'. En français, on utilise 'adapter' pour modifier quelque chose afin qu'il corresponde à une situation, et 's'adapter' pour décrire l'action de s'ajuster soi-même.",
-            "use_exemple": "Je doisadapter mon plan aux ressources disponibles.",
+            "use_exemple": "Je dois adapter mon plan aux ressources disponibles.",
             "port_exemple": "Eu preciso adaptar o meu plano aos recursos disponíveis.",
             "last_update": "2026-02-19"
         },
@@ -38112,12 +38072,12 @@
     },
     {
         "id": "02ede283-6f96-41c2-ad85-b2cc20a0e899",
-        "port": "botar",
+        "port": "pôr",
         "fr": {
             "translation": "mettre",
             "note": "Note: botar est familier et surtout brésilien; en portugais européen, on dirait plutôt pôr ou colocar. Le sens général « to put » se rend par « mettre » en français.",
             "use_exemple": "Je vais mettre la veste dans l'armoire.",
-            "port_exemple": "Vou botar o casaco no guarda-roupa.",
+            "port_exemple": "Vou pôr o casaco no guarda-roupa.",
             "last_update": "2026-02-19"
         },
         "en": {
@@ -51944,7 +51904,7 @@
         "id": "8c1a73e1-6c9e-43a9-bcd2-96449fa8c2d1",
         "port": "estamos",
         "fr": {
-            "translation": "nous sommes",
+            "translation": "(nous) sommes",
             "note": "Remarque: « estamos » signifie « nous sommes ». En portugais européen, c’est l’indicateur du sujet « nós » au présent; on peut aussi former des formes progressives avec « estar » + « a » + infinitif, par exemple « estamos a estudar » = « nous sommes en train d’étudier ».",
             "use_exemple": "Nous allons bien.",
             "port_exemple": "Estamos bem.",
@@ -53259,7 +53219,7 @@
         "id": "523fc0fb-4bfe-47c9-bfc7-5ce66ef01ec8",
         "port": "sabem",
         "fr": {
-            "translation": "ils savent",
+            "translation": "(ils) savent",
             "note": "En portugais, sabem correspond soit à 'eles sabem' soit à 'vocês sabem' selon le sujet. En français, la forme courante est 'ils savent' (ou 'vous savez' selon le contexte).",
             "use_exemple": "Ils savent la réponse.",
             "port_exemple": "Eles sabem a resposta.",
@@ -54639,14 +54599,14 @@
         "id": "baf2ebd5-426d-4c3f-a19a-0d754ff28270",
         "port": "muitas",
         "fr": {
-            "translation": "beaucoup",
+            "translation": "beaucoup (nombreux) (fem. plural)",
             "note": "Le mot 'muitas' s'accorde avec un nom féminin pluriel. On peut aussi dire 'de nombreuses' devant un nom féminin pluriel pour insister sur le nombre.",
-            "use_exemple": "Beaucoup de gens aiment la musique.",
+            "use_exemple": "Beaucoup de filles aiment la musique.",
             "port_exemple": "Muitas pessoas gostam de música.",
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "many, a lot of",
+            "translation": "many, a lot of (fem. plural)",
             "note": "todo"
         },
         "user_usefulness": 2,

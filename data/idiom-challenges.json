@@ -117,6 +117,26 @@
         "user_usefulness": 2
     },
     {
+        "id": "8109b0e3-7d1c-49d0-ae52-aefc13594923",
+        "port": "fazer transbordo",
+        "fr": {
+            "translation": "prendre une correspondance",
+            "note": "Remarque: 'prendre une correspondance' s'utilise pour changer de véhicule lors d'un trajet (train, métro, bus). Dans certains contextes, on peut aussi dire 'changer de train'.",
+            "use_exemple": "J'ai besoin de prendre une correspondance pour arriver à destination.",
+            "port_exemple": "Eu preciso fazer transbordo para chegar ao destino.",
+            "last_update": "2026-02-19"
+        },
+        "en": {
+            "translation": "to change (e.g.trains)",
+            "note": "todo"
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "8109b0e3-7d1c-49d0-ae52-aefc13594923.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
         "id": "7b196e05-b7f5-47e7-bae3-340b1fb6572d",
         "port": "fazer / desfazer as malas",
         "fr": {
