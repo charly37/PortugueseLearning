@@ -18993,9 +18993,9 @@
     },
     {
         "id": "6dc4e343-7675-4442-a997-75077e61dceb",
-        "port": "borracha rubber (=material",
+        "port": "borracha",
         "fr": {
-            "translation": "caoutchouc caoutchouc (=matière",
+            "translation": "caoutchouc (matière)",
             "note": "En portugais, 'borracha' peut désigner le matériau (caoutchouc) ou l'objet 'gomme' dans certains pays. En français, on dit 'caoutchouc' pour le matériau et 'gomme' pour l'objet à effacer.",
             "use_exemple": "Le caoutchouc est utilisé pour fabriquer des pneus.",
             "port_exemple": "A borracha é usada para fabricar pneus.",
@@ -52939,7 +52939,7 @@
         "id": "1218019e-f71c-4f8c-8660-5ddd2d6af793",
         "port": "és",
         "fr": {
-            "translation": "tu es",
+            "translation": "(tu) es",
             "note": "“És” est la forme conjuguée du verbe être à la deuxième personne du singulier et s’emploie avec le pronom tu dans un registre familier. En français, on dit généralement « tu es », et on utilise cette construction pour parler à quelqu’un que l’on tutoie.",
             "use_exemple": "Tu es mon ami.",
             "port_exemple": "És o meu amigo.",
