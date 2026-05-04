@@ -117,6 +117,22 @@
         "user_usefulness": 2
     },
     {
+        "id": "cc64b982-5ac7-4362-9674-b40a45b3e1fe",
+        "port": "ter razão",
+        "fr": {
+            "translation": "avoir raison",
+            "note": "Dans l'usage courant, 'ter razão' se traduit le plus souvent par 'avoir raison'",
+            "use_exemple": "Vous avez raison",
+            "port_exemple": "Você tem razão",
+            "last_update": "2026-02-19"
+        },
+        "en": {
+            "translation": "to be right",
+            "note": "todo"
+        },
+        "user_usefulness": 2
+    },
+    {
         "id": "8109b0e3-7d1c-49d0-ae52-aefc13594923",
         "port": "fazer transbordo",
         "fr": {
