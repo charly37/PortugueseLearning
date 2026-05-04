@@ -5,6 +5,8 @@ public/
 .env.test
 *.log
 .DS_Store
+__pycache__/
+*.pyc
 test-results/
 playwright-report/
 playwright/.cache/
