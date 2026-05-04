@@ -18776,22 +18776,6 @@
         }
     },
     {
-        "id": "611cf854-b66e-4e80-bde4-89639453ea39",
-        "port": "bicicleta",
-        "fr": {
-            "translation": "vélo",
-            "note": "le vélo c'est bon pour la santé",
-            "use_exemple": "Ce week-end, j'ai acheté un vélo.",
-            "port_exemple": "Este fim de semana comprei uma bicicleta.",
-            "last_update": "2026-02-18"
-        },
-        "en": {
-            "translation": "mountain bike",
-            "note": "todo"
-        },
-        "user_usefulness": 3
-    },
-    {
         "id": "52ca314b-43d2-4075-b948-1574044d9350",
         "port": "bife",
         "fr": {
@@ -19430,22 +19414,6 @@
             "filename": "78ebdf62-884b-4f5d-8181-c2152bb67b82.mp3",
             "last_update": "2026-02-15"
         }
-    },
-    {
-        "id": "7680a353-258a-41f0-9f13-d658366111e6",
-        "port": "cama",
-        "fr": {
-            "translation": "lit (pour dormir)",
-            "note": "En portugais, 'cama' est le terme général pour 'bed'. En français, on précise le type avec 'lit simple' ou 'lit double'.",
-            "use_exemple": "Le lit simple se trouve dans la chambre d'amis.",
-            "port_exemple": "A cama de solteiro fica no quarto de hóspedes.",
-            "last_update": "2026-02-18"
-        },
-        "en": {
-            "translation": " bed (to sleep)",
-            "note": "todo"
-        },
-        "user_usefulness": 2
     },
     {
         "id": "bddf3588-62e4-4f3d-b106-f19afd624907",
@@ -22778,22 +22746,6 @@
             "filename": "c9ad663f-8a49-48b1-bd43-080a2ce73ddc.mp3",
             "last_update": "2026-02-15"
         }
-    },
-    {
-        "id": "8415fe67-cc10-4670-ba0f-f150f4b8bc94",
-        "port": "diversão",
-        "fr": {
-            "translation": "divertissement, amusement",
-            "note": "Remarque: divertimento peut être plus littéraire ou technique (par exemple en musique). Diversão est plus courant et familier pour le sens de « fun » au quotidien.",
-            "use_exemple": "Le divertissement du festival a beaucoup plu au public.",
-            "port_exemple": "O divertimento do festival agradou bastante ao público.",
-            "last_update": "2026-02-19"
-        },
-        "en": {
-            "translation": "fun",
-            "note": "todo"
-        },
-        "user_usefulness": 2
     },
     {
         "id": "dfc6b042-b200-46fe-9f2f-26adc10b751f",
@@ -46791,26 +46743,6 @@
         }
     },
     {
-        "id": "204d5283-0af2-4862-8856-a3bbe518c772",
-        "port": "pôr",
-        "fr": {
-            "translation": "mettre",
-            "note": "Le verbe 'pôr' se traduit le plus souvent par 'mettre'. 'Poser' est plutôt limité au dépôt sur une surface; pour le sens général de 'mettre quelque chose', on utilise 'mettre'.",
-            "use_exemple": "Je vais mettre le livre sur la table.",
-            "port_exemple": "Vou pôr o livro na mesa.",
-            "last_update": "2026-02-20"
-        },
-        "en": {
-            "translation": "to per",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "204d5283-0af2-4862-8856-a3bbe518c772.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "5899868b-4fc5-403e-90a6-1c7394a81689",
         "port": "possibilitar",
         "fr": {
@@ -56285,7 +56217,8 @@
         "en": {
             "translation": "kind/friendly",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "b30ccc37-89f3-4545-a282-6b767588fb06",
@@ -56297,7 +56230,8 @@
         "en": {
             "translation": "scary",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "5e20b11c-64f3-48e3-9266-9cd70f85eb74",
@@ -56309,7 +56243,8 @@
         "en": {
             "translation": "upset",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "1d08306a-4b96-4c02-9a08-140b82bcb9bd",
@@ -56321,7 +56256,8 @@
         "en": {
             "translation": "boring",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "14675600-8aac-416b-901a-440db47d99a4",
@@ -56333,7 +56269,8 @@
         "en": {
             "translation": "colored/colorful",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "2ad0bc28-3300-4d97-9e23-ff5e73ba2722",
@@ -56345,7 +56282,8 @@
         "en": {
             "translation": "edible",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "6cdead1f-f779-4e27-8c4f-5fe2c3c578f7",
@@ -56357,7 +56295,8 @@
         "en": {
             "translation": "complex",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "fa06d933-30ee-4180-a570-cf56cfbfe80f",
@@ -56369,7 +56308,8 @@
         "en": {
             "translation": "brave/courageous",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "d5043bc3-5537-4540-905c-a452ca4aa694",
@@ -56381,7 +56321,8 @@
         "en": {
             "translation": "curious",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "a0f03b21-15a4-4938-9365-9c16548aa332",
@@ -56393,7 +56334,8 @@
         "en": {
             "translation": "depressed",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "22851901-eebb-417a-8e16-37072d3e05e5",
@@ -56405,7 +56347,8 @@
         "en": {
             "translation": "determined",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "df171f07-2fb6-4557-b7a9-3c2c23912d57",
@@ -56417,7 +56360,8 @@
         "en": {
             "translation": "ecological",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "eb08a5e5-6890-4e9f-b2a2-dc41daa12faf",
@@ -56429,7 +56373,8 @@
         "en": {
             "translation": "economic/economical",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "6cc50310-db83-4868-99a7-cc5ea4d64b72",
@@ -56441,7 +56386,8 @@
         "en": {
             "translation": "efficient",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "ce660f06-7337-4f39-b459-57d0f587a8ea",
@@ -56453,7 +56399,8 @@
         "en": {
             "translation": "elegant",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "e351481b-7e0e-4ec0-8680-d5735846c39f",
@@ -56465,7 +56412,8 @@
         "en": {
             "translation": "exciting",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "afafe8ab-2ca9-4eef-a6dc-f80ceeb51259",
@@ -56477,7 +56425,8 @@
         "en": {
             "translation": "huge",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "6a889bba-101b-4fc7-b9a3-707e922438e7",
@@ -56489,7 +56438,8 @@
         "en": {
             "translation": "false/fake",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "59230e58-3624-40a1-a3b3-7d8231170e05",
@@ -56501,7 +56451,8 @@
         "en": {
             "translation": "closed",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "01472418-31c8-4f9a-aa99-5555e76f250f",
@@ -56513,7 +56464,8 @@
         "en": {
             "translation": "frequent",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "864b45d2-87c2-48e2-b0b6-eff5985e1ee5",
@@ -56525,7 +56477,8 @@
         "en": {
             "translation": "furious",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "7dcaf91f-277c-4635-91af-9b35064affaf",
@@ -56537,7 +56490,8 @@
         "en": {
             "translation": "generous",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "c5f08c7d-3d15-497f-aaa8-0cff7a2fc739",
@@ -56549,7 +56503,8 @@
         "en": {
             "translation": "horrible",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "098e1779-d496-4c4d-8d75-11b9cb81f53c",
@@ -56561,7 +56516,8 @@
         "en": {
             "translation": "illegal",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "162679bb-147b-4217-b426-1db1c443a5fd",
@@ -56573,7 +56529,8 @@
         "en": {
             "translation": "incredible",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "35e4cdb3-dec7-40ca-97c8-143ea3c65249",
@@ -56585,7 +56542,8 @@
         "en": {
             "translation": "independent",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "31ea200f-f835-46b3-97f4-8dd69ac1b1e4",
@@ -56597,7 +56555,8 @@
         "en": {
             "translation": "unhappy",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "c80bddbc-677b-45e7-b308-ae541d253eca",
@@ -56609,7 +56568,8 @@
         "en": {
             "translation": "innocent",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "534551ce-e1ee-4674-a5cc-40c577951114",
@@ -56621,7 +56581,8 @@
         "en": {
             "translation": "international",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "1face5d4-9764-49b3-98da-234ab413d5db",
@@ -56633,7 +56594,8 @@
         "en": {
             "translation": "irritated",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "3d0959a0-db2f-4c3f-a21f-9ee1f64b4dd2",
@@ -56645,7 +56607,8 @@
         "en": {
             "translation": "local",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "f386aa3a-b9fc-4700-9ead-8e3c1561a653",
@@ -56657,7 +56620,8 @@
         "en": {
             "translation": "crazy",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "8f6f587a-aef6-4e34-8539-35090b950528",
@@ -56669,7 +56633,8 @@
         "en": {
             "translation": "proud",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "57f01568-0608-460d-98dc-051df8c28d33",
@@ -56681,7 +56646,8 @@
         "en": {
             "translation": "lazy",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "3ccc4d76-5d3e-4642-9845-d2d7bf27d579",
@@ -56693,7 +56659,8 @@
         "en": {
             "translation": "rare",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     },
     {
         "id": "943693fd-d350-4265-b2f0-3f93ed57e67a",
@@ -56705,6 +56672,7 @@
         "en": {
             "translation": "foolish",
             "note": "todo"
-        }
+        },
+        "user_usefulness": 2
     }
 ]
