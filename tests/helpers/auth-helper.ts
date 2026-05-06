@@ -5,6 +5,9 @@ import { Page, Locator } from '@playwright/test';
  * Returns a function that when called will click the button appropriately
  */
 export async function findAuthButton(page: Page, buttonName: string): Promise<Locator> {
+  // Wait for page to be fully loaded and stable before interacting with buttons
+  await page.waitForLoadState('networkidle');
+
   // First check if it's visible directly (desktop mode)
   const directButton = page.getByRole('button', { name: buttonName }).first();
   const isDirectlyVisible = await directButton.isVisible().catch(() => false);
@@ -74,6 +77,7 @@ export async function registerAndLogin(
     await page.locator('[role="presentation"]').getByRole('button', { name: 'Register' }).click();
   } else {
     // On desktop: click register button directly in header
+    await page.waitForLoadState('networkidle');
     await page.getByRole('button', { name: 'Register' }).click();
   }
   

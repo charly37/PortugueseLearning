@@ -19537,23 +19537,19 @@
     },
     {
         "id": "13c3b441-ded1-4d5a-be38-ef98981714e3",
-        "port": "caminho-de-ferro / estrada de ferro",
+        "port": "ferrovia",
         "fr": {
-            "translation": "chemin de fer / voie ferrée",
+            "translation": "voie ferrée",
             "note": "Note: En portugais européen, on dit plutôt 'ferrovia' ou 'linha ferroviária'. 'caminho-de-ferro' et 'estrada de ferro' sont corrects mais plus courants au Brésil.",
             "use_exemple": "La ligne de chemin de fer relie plusieurs villes.",
-            "port_exemple": "A estrada de ferro liga várias cidades.",
+            "port_exemple": "A ferrovia liga várias cidades.",
             "last_update": "2026-02-18"
         },
         "en": {
             "translation": "railway",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "13c3b441-ded1-4d5a-be38-ef98981714e3.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
     },
     {
         "id": "481bef8e-ee7f-411b-8219-47f733cdbd1c",
@@ -23691,7 +23687,7 @@
         "id": "6c94b94b-a940-4789-8b4d-c1bd941b66cb",
         "port": "escola secundária",
         "fr": {
-            "translation": "lycée",
+            "translation": "lycée (2 mots)",
             "note": "L’expression « école secondaire » est compréhensible mais peu utilisée en français courant. Pour parler du secondaire supérieur, on dit plutôt « lycée »; pour le concept général d’enseignement secondaire, on utilise « enseignement secondaire ». ",
             "use_exemple": "Le lycée se trouve près de chez moi.",
             "port_exemple": "A escola secundária fica perto da minha casa.",
@@ -28176,7 +28172,7 @@
     },
     {
         "id": "4b38bcb8-bc6d-4217-906c-79e62a42e28f",
-        "port": "membro, sócio",
+        "port": "sócio",
         "fr": {
             "translation": "membre, associé",
             "note": "Attention : 'sociétaire' est rare et réservé à certains contextes (par ex. les membres d'une société ou d'une troupe). Pour un sens général de 'sócio', privilégiez 'associé'.",
@@ -28188,11 +28184,7 @@
             "translation": "member",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "4b38bcb8-bc6d-4217-906c-79e62a42e28f.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
     },
     {
         "id": "47ff3de8-b33e-43e2-b597-3908576ec11f",
@@ -31494,7 +31486,7 @@
         "id": "bcef5c65-1595-4f3f-b56b-9d5876643d23",
         "port": "rapaz",
         "fr": {
-            "translation": "garçon",
+            "translation": "garçon (familier)",
             "note": "Rapaz désigne généralement un garçon ou un jeune homme et est courant dans le portugais européen. Son registre est plutôt familier et peut varier selon le contexte.",
             "use_exemple": "Le garçon est à l'école.",
             "port_exemple": "O rapaz está na escola.",
@@ -34668,23 +34660,19 @@
     },
     {
         "id": "56d6e433-8616-4418-912d-98f228bae2ca",
-        "port": "vovô / vovó",
+        "port": "vovô",
         "fr": {
-            "translation": "grand-père / grand-mère",
+            "translation": "grand-père (familier))",
             "note": "Les termes vovô et vovó sont affectueux et familiers. En français, on emploie plutôt papy et mamie pour le même registre.",
             "use_exemple": "Mon papy et ma mamie adorent raconter des histoires.",
             "port_exemple": "Meu vovô e minha vovó adoram contar histórias.",
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "grandad/granny",
+            "translation": "grandad (fam.)",
             "note": "todo"
         },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "56d6e433-8616-4418-912d-98f228bae2ca.mp3",
-            "last_update": "2026-02-15"
-        }
+        "user_usefulness": 2
     },
     {
         "id": "3dc55213-0cbe-402e-a19b-1b145c1970cf",
