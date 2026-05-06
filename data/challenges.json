@@ -1337,7 +1337,7 @@
             "translation": "now",
             "note": "todo"
         },
-        "user_usefulness": 3,
+        "user_usefulness": 2,
         "audio": {
             "filename": "c9ec5435-fb15-4204-80b6-69a36b6afc9c.mp3",
             "last_update": "2026-02-14"
@@ -13884,26 +13884,6 @@
         }
     },
     {
-        "id": "270c4bd8-d348-4374-af92-5d16235c96e3",
-        "port": "montanha",
-        "fr": {
-            "translation": "montagne",
-            "note": "Remarque : 'montanha' désigne une grande montagne naturelle en portugais. Pour des collines plus petites, on utilise 'colina' ou 'monte' selon le contexte.",
-            "use_exemple": "La montagne est haute.",
-            "port_exemple": "A montanha é alta.",
-            "last_update": "2026-02-18"
-        },
-        "en": {
-            "translation": "mount",
-            "note": "todo"
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "270c4bd8-d348-4374-af92-5d16235c96e3.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "21b23bf5-4247-48fc-8051-63cad8bd270f",
         "port": "desejo",
         "fr": {
@@ -20141,7 +20121,7 @@
             "translation": "bathroom / toilet",
             "note": "todo"
         },
-        "user_usefulness": 3,
+        "user_usefulness": 2,
         "audio": {
             "filename": "9431a6bc-bbb6-4aa9-a723-f42185e1b2b2.mp3",
             "last_update": "2026-02-15"
@@ -23217,7 +23197,7 @@
             "translation": "to lend",
             "note": "todo"
         },
-        "user_usefulness": 3,
+        "user_usefulness": 2,
         "audio": {
             "filename": "779eeaf2-488c-4c6d-a74c-4c4b8d1124fe.mp3",
             "last_update": "2026-02-15"
@@ -25268,7 +25248,7 @@
             "translation": "camp fire",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "c1944d2f-4296-4e1d-a344-dcd37866bcaa.mp3",
             "last_update": "2026-02-15"
@@ -27084,7 +27064,7 @@
             "translation": "to have afternoon tea / coffee",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "30c3a41c-7b9b-4ade-9a7d-93189fdcd853.mp3",
             "last_update": "2026-02-15"
@@ -29240,7 +29220,7 @@
             "translation": "sheep",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "239c7e21-be78-45e0-b5e7-37084e299274.mp3",
             "last_update": "2026-02-15"
@@ -29856,7 +29836,7 @@
             "translation": "comb",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "5c1760de-8759-4e71-9bec-9b5d47091189.mp3",
             "last_update": "2026-02-15"
@@ -31516,7 +31496,7 @@
             "translation": "raquete",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "67d36fc7-8e42-4bb7-ab18-0262205a3c86.mp3",
             "last_update": "2026-02-15"
@@ -35328,7 +35308,7 @@
             "translation": "to shake",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "f8aaec60-d5b1-46cc-9ecd-3bb02c565906.mp3",
             "last_update": "2026-02-15"
@@ -36448,7 +36428,7 @@
             "translation": "to worship",
             "note": "todo"
         },
-        "user_usefulness": 3,
+        "user_usefulness": 2,
         "audio": {
             "filename": "7491bee8-5944-4aa5-bc2b-bbf6361b4175.mp3",
             "last_update": "2026-02-15"
@@ -37388,7 +37368,7 @@
             "translation": "to catchsightof",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "9e5aaf95-e99e-4016-a6f2-e1e183ba07f8.mp3",
             "last_update": "2026-02-15"
@@ -40608,7 +40588,7 @@
             "translation": "to dismiss",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "80ee0c9c-20a8-4895-b5ad-c170a4092f2b.mp3",
             "last_update": "2026-02-15"
@@ -40868,7 +40848,7 @@
             "translation": "to devour",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "c279b6fb-285f-4eba-b99e-88e893e140dd.mp3",
             "last_update": "2026-02-15"
@@ -41288,7 +41268,7 @@
             "translation": "to initiate",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "5ec64bc4-1221-42cb-876e-e4696055f5df.mp3",
             "last_update": "2026-02-15"
@@ -42988,7 +42968,7 @@
             "translation": "to extract",
             "note": "todo"
         },
-        "user_usefulness": 1,
+        "user_usefulness": 2,
         "audio": {
             "filename": "c8b99c64-1c49-4fc7-97e4-d1fc8d293a96.mp3",
             "last_update": "2026-02-15"
