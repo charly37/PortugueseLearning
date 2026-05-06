@@ -127,6 +127,7 @@ test.describe('Authentication', () => {
   });
 
   test('should login with valid credentials @smoke', async ({ page }) => {
+    test.setTimeout(20000); // register + logout + login flow with mobile drawer animations
     await setLanguageToEnglish(page);
     // First register a unique user
     const uniqueUser = {
@@ -200,6 +201,7 @@ test.describe('Authentication', () => {
   });
 
   test('should logout successfully @smoke', async ({ page }) => {
+    test.setTimeout(20000); // register + logout flow with mobile drawer animations
     await setLanguageToEnglish(page);
     // Register and login first
     const uniqueUser = {

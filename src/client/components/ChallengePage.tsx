@@ -75,6 +75,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const [practiceMode, setPracticeMode] = useState<boolean>(user?.practiceMode || false);
   const [masteredChallenges, setMasteredChallenges] = useState<Set<string>>(new Set());
   const [pendingQueue, setPendingQueue] = useState<Challenge[]>([]);
+  const [flaggedInSession, setFlaggedInSession] = useState<Set<string>>(new Set());
   const [attemptCounts, setAttemptCounts] = useState<Map<string, number>>(new Map());
   
   const inputRef = useRef<HTMLInputElement>(null);
@@ -232,7 +233,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
         if (practiceMode) {
           // Find the next unmastered challenge
           console.log('[fetchChallenge] Looking for next unmastered challenge starting at index:', nextIndex);
-          while (nextIndex < generatedChallenges.length && masteredChallenges.has(generatedChallenges[nextIndex].id)) {
+          while (nextIndex < generatedChallenges.length && (masteredChallenges.has(generatedChallenges[nextIndex].id) || flaggedInSession.has(generatedChallenges[nextIndex].id))) {
             console.log('[fetchChallenge] Skipping mastered challenge at index', nextIndex, generatedChallenges[nextIndex].port);
             nextIndex++;
           }
@@ -247,12 +248,12 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
             word: generatedChallenges[nextIndex].port
           });
           setLoading(false);
-        } else if (practiceMode && masteredChallenges.size < generatedChallenges.length) {
-          // Practice mode: Reached end of list but haven't mastered all
-          // Loop back from the beginning to find unmastered challenges
+        } else if (practiceMode && new Set([...masteredChallenges, ...flaggedInSession]).size < generatedChallenges.length) {
+          // Practice mode: Reached end of list but haven't mastered/flagged all
+          // Loop back from the beginning to find unmastered, unflagged challenges
           console.log('[fetchChallenge] Reached end, looping back to find unmastered challenges');
           let loopIndex = 0;
-          while (loopIndex < generatedChallenges.length && masteredChallenges.has(generatedChallenges[loopIndex].id)) {
+          while (loopIndex < generatedChallenges.length && (masteredChallenges.has(generatedChallenges[loopIndex].id) || flaggedInSession.has(generatedChallenges[loopIndex].id))) {
             console.log('[fetchChallenge] Skipping mastered challenge at index', loopIndex, generatedChallenges[loopIndex].port);
             loopIndex++;
           }
@@ -368,8 +369,8 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
             masteredIds: Array.from(newMastered),
             allChallengeIds: generatedChallenges.map(c => c.id)
           });
-        } else {
-          // Add back to queue for retry
+        } else if (!flaggedInSession.has(challenge.id)) {
+          // Add back to queue for retry (skip if already flagged as bad quality)
           const newQueue = [...pendingQueue, challenge];
           setPendingQueue(newQueue);
           setIncorrectCount(incorrectCount + 1);
@@ -377,15 +378,17 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
             challengeId: challenge.id,
             queueLength: newQueue.length
           });
+        } else {
+          setIncorrectCount(incorrectCount + 1);
         }
         
-        // Check completion: all challenges mastered
+        // Check completion: all challenges mastered or flagged
         console.log('[Practice Mode] Completion check:', {
           masteredCount: newMasteredSize,
           totalChallenges: generatedChallenges.length,
-          complete: newMasteredSize >= generatedChallenges.length
+          complete: newMasteredSize + flaggedInSession.size >= generatedChallenges.length
         });
-        if (newMasteredSize >= generatedChallenges.length) {
+        if (newMasteredSize + flaggedInSession.size >= generatedChallenges.length) {
           setChallengeComplete(true);
         }
       } else {
@@ -416,6 +419,21 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter' && !showAnswer) {
       checkAnswer();
+    }
+  };
+
+  const handleChallengeFlag = (challengeId: string) => {
+    // Remove the flagged challenge from the retry queue so it won't repeat
+    setPendingQueue(prev => prev.filter(c => c.id !== challengeId));
+    // Track as flagged so it gets skipped in forward traversal
+    const newFlagged = new Set([...flaggedInSession, challengeId]);
+    setFlaggedInSession(newFlagged);
+    // Check if all challenges are now either mastered or flagged
+    if (practiceMode) {
+      const doneCount = new Set([...masteredChallenges, ...newFlagged]).size;
+      if (doneCount >= generatedChallenges.length) {
+        setChallengeComplete(true);
+      }
     }
   };
 
@@ -901,8 +919,8 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                                       masteredIds: Array.from(newMastered),
                                       allChallengeIds: generatedChallenges.map(c => c.id)
                                     });
-                                  } else {
-                                    // Add back to queue for retry
+                                  } else if (!flaggedInSession.has(challenge.id)) {
+                                    // Add back to queue for retry (skip if already flagged as bad quality)
                                     setPendingQueue(prev => {
                                       const newQueue = [...prev, challenge];
                                       console.log('[Practice Mode - Mobile] Challenge added to retry queue', {
@@ -912,15 +930,17 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                                       return newQueue;
                                     });
                                     setIncorrectCount(prev => prev + 1);
+                                  } else {
+                                    setIncorrectCount(prev => prev + 1);
                                   }
                                   
-                                  // Check completion: all challenges mastered
+                                  // Check completion: all challenges mastered or flagged
                                   console.log('[Practice Mode - Mobile] Completion check:', {
                                     masteredCount: newMasteredSize,
                                     totalChallenges: generatedChallenges.length,
-                                    complete: newMasteredSize >= generatedChallenges.length
+                                    complete: newMasteredSize + flaggedInSession.size >= generatedChallenges.length
                                   });
-                                  if (newMasteredSize >= generatedChallenges.length) {
+                                  if (newMasteredSize + flaggedInSession.size >= generatedChallenges.length) {
                                     setChallengeComplete(true);
                                   }
                                 } else {
@@ -1006,6 +1026,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                   <ChallengeQualityFlag
                     challengeId={challenge.id}
                     isGuest={user?.isGuest}
+                    onFlagSubmit={() => handleChallengeFlag(challenge.id)}
                   />
                 )}
 
