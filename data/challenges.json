@@ -18,8 +18,11 @@
             }
         },
         "en": {
-            "translation": "barely/just",
-            "note": "todo"
+            "translation": "only",
+            "note": "Best translation is 'only' or 'just'. 'Barely' is not a usual meaning of apenas; use it only when you mean 'almost not'.",
+            "port_exemple": "Eu apenas quero um café.",
+            "en_exemple": "I only want a coffee.",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -47,7 +50,10 @@
         },
         "en": {
             "translation": "too much",
-            "note": "todo"
+            "note": "In European Portuguese, demais usually means 'too much' or 'too many' depending on what it describes. It can also serve as an intensifier meaning 'very' in some expressions, but 'too much' is the most common usage.",
+            "port_exemple": "Isso é demais.",
+            "en_exemple": "That is too much.",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -75,7 +81,10 @@
         },
         "en": {
             "translation": "still/yet",
-            "note": "todo"
+            "note": "Still is the common meaning in affirmative statements. It also appears in 'ainda não' to mean not yet.",
+            "port_exemple": "Eu ainda estou aprendendo.",
+            "en_exemple": "I am still learning.",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -103,7 +112,10 @@
         },
         "en": {
             "translation": "what",
-            "note": "todo"
+            "note": "'O quê' means 'what' and is used in questions to ask for clarification. In everyday writing, you often see 'o que' (without the accent) inside a sentence.",
+            "port_exemple": "O quê você disse?",
+            "en_exemple": "What did you say?",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -131,7 +143,10 @@
         },
         "en": {
             "translation": "who",
-            "note": "todo"
+            "note": "Quem is used for people in questions. It is also used after prepositions in relative clauses.",
+            "port_exemple": "Quem ligou?",
+            "en_exemple": "Who called?",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -159,7 +174,10 @@
         },
         "en": {
             "translation": "where",
-            "note": "todo"
+            "note": "Where is used for asking about location. For asking about destinations, use 'para onde'.",
+            "port_exemple": "Onde fica a biblioteca?",
+            "en_exemple": "Where is the library located?",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -186,8 +204,11 @@
             }
         },
         "en": {
-            "translation": "why",
-            "note": "todo"
+            "translation": "the reason",
+            "note": "Note that porquê is a noun meaning 'the reason'. It is normally used with an article (o porquê) and is not used to form questions.",
+            "port_exemple": "Qual é o porquê de tanta demora?",
+            "en_exemple": "What is the reason for so much delay?",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -215,7 +236,10 @@
         },
         "en": {
             "translation": "because",
-            "note": "todo"
+            "note": "porque is used to mean 'because' in a clause of cause. For asking 'why', use 'por que' (two words) or 'por quê' at the end, and note that 'porquê' is the noun meaning 'the reason'.",
+            "port_exemple": "Não fui à escola porque estava doente.",
+            "en_exemple": "I didn't go to school because I was sick.",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -243,7 +267,10 @@
         },
         "en": {
             "translation": "how",
-            "note": "todo"
+            "note": "Como is commonly used to ask about manner or method, as in 'How did you do that?'. It can also mean 'as' or 'like' in comparisons.",
+            "port_exemple": "Como estás hoje?",
+            "en_exemple": "How are you today?",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
@@ -270,8 +297,11 @@
             }
         },
         "en": {
-            "translation": "which",
-            "note": "todo"
+            "translation": "which (also 'what' in open-ended questions)",
+            "note": "Qual is an interrogative pronoun meaning 'which' or 'what'. Use 'which' when choosing from a known set, and 'what' for open-ended questions.",
+            "port_exemple": "Qual desses livros você prefere?",
+            "en_exemple": "Which of these books do you prefer?",
+            "last_update": "2026-05-07"
         },
         "user_usefulness": 2,
         "audio": {
