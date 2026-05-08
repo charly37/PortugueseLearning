@@ -25521,8 +25521,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "director (boss)",
-            "note": "todo"
+            "translation": "director",
+            "note": "English 'diretor' is 'director'. Note that 'boss' is not a standard translation; use 'chefe' in Portuguese for 'boss'.",
+            "port_exemple": "O diretor da empresa apresentou o relatório.",
+            "en_exemple": "The director of the company presented the report.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26577,7 +26580,10 @@
         },
         "en": {
             "translation": "peas",
-            "note": "todo"
+            "note": "Note that ervilha is feminine; the plural is ervilhas. Use 'ervilhas' for edible peas (e.g., 'ervilhas verdes').",
+            "port_exemple": "Eu comi ervilhas no almoço.",
+            "en_exemple": "I ate peas for lunch.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26597,7 +26603,10 @@
         },
         "en": {
             "translation": "stairs",
-            "note": "todo"
+            "note": "Escadas is the plural form meaning 'stairs'. In everyday Portuguese, you often say 'as escadas' to refer to the staircase in a building; 'escada' is the singular.",
+            "port_exemple": "Subi as escadas para o segundo andar.",
+            "en_exemple": "I went up the stairs to the second floor.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26616,8 +26625,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "escalope",
-            "note": "todo"
+            "translation": "cutlet",
+            "note": "In Portuguese, escalopes are thin slices of meat; in English, 'cutlet' is the natural general term. When the meat type is known, specify it (e.g., veal cutlet, chicken cutlet).",
+            "port_exemple": "Este escalope de vitela está delicioso.",
+            "en_exemple": "This veal cutlet is delicious.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26637,7 +26649,10 @@
         },
         "en": {
             "translation": "private school",
-            "note": "todo"
+            "note": "In Portugal, 'escola particular' refers to a privately funded school. It contrasts with 'escola pública' (public school).",
+            "port_exemple": "A escola particular oferece várias atividades extracurriculares.",
+            "en_exemple": "The private school offers several extracurricular activities.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26657,7 +26672,10 @@
         },
         "en": {
             "translation": "secondary school",
-            "note": "todo"
+            "note": "In European Portuguese, 'secondary school' is the standard term for this level of education. In some contexts, especially American English, you might hear 'high school.'",
+            "port_exemple": "A escola secundária da minha cidade fica perto de casa.",
+            "en_exemple": "The secondary school in my town is near my house.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26676,8 +26694,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "technical college",
-            "note": "todo"
+            "translation": "technical school",
+            "note": "In European Portuguese, escola técnica refers to a school offering technical or vocational education, often at secondary or post-secondary level. The natural English equivalents are 'technical school' or 'vocational school'.",
+            "port_exemple": "Ele estuda na escola técnica para aprender mecânica.",
+            "en_exemple": "He studies at a technical school to learn mechanics.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26696,8 +26717,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to choose",
-            "note": "todo"
+            "translation": "choice",
+            "note": "The Portuguese noun for 'choice' is usually 'escolha'. The verb form is 'escolher' (to choose).",
+            "port_exemple": "A escolha foi difícil.",
+            "en_exemple": "The choice was difficult.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26717,7 +26741,10 @@
         },
         "en": {
             "translation": "hairbrush",
-            "note": "todo"
+            "note": "Hairbrush is a common everyday noun. In European Portuguese, you often say 'escova de cabelo' without the article when speaking generally, and add the definite article 'a' when referring to a specific hairbrush: 'a escova de cabelo'.",
+            "port_exemple": "Eu uso a escova de cabelo todas as manhãs.",
+            "en_exemple": "I use the hairbrush every morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26736,8 +26763,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to brush e.g.(hair)",
-            "note": "todo"
+            "translation": "to brush",
+            "note": "Not fully accurate. 'Escovar' means 'to brush' in general and is used for teeth, hair, and other surfaces.",
+            "port_exemple": "Eu tenho de escovar os dentes antes de sair.",
+            "en_exemple": "I have to brush my teeth before going out.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26757,7 +26787,10 @@
         },
         "en": {
             "translation": "to write",
-            "note": "todo"
+            "note": "Escrever is the standard verb meaning 'to write'. In everyday Portuguese, you usually pair it with the thing you write (letters, emails) and conjugate it to match the subject.",
+            "port_exemple": "Eu escrevo cartas todos os dias.",
+            "en_exemple": "I write letters every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26777,7 +26810,10 @@
         },
         "en": {
             "translation": "office",
-            "note": "todo"
+            "note": "Escritório is the general term for an office or workspace. Gabinete can mean 'cabinet' (as in government) or a consulting/medical office; context determines which is correct.",
+            "port_exemple": "Vou ao escritório amanhã.",
+            "en_exemple": "I'm going to the office tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26796,8 +26832,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to sell (out)",
-            "note": "todo"
+            "translation": "to exhaust",
+            "note": "Es gotar means to exhaust or deplete. In everyday Portuguese it is used with resources, money, or stock; for stock, it often translates as 'to run out' or 'to sell out'.",
+            "port_exemple": "O estoque esgotou.",
+            "en_exemple": "The stock ran out.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26816,8 +26855,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to wait for",
-            "note": "wait (for): esperar por, hope (that): Espero que"
+            "translation": "to wait",
+            "note": "wait (for): esperar por, hope (that): Espero que",
+            "port_exemple": "Eu espero pelo autocarro.",
+            "en_exemple": "I am waiting for the bus.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -26836,8 +26878,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to hope that",
-            "note": "wait (for): esperar por, hope (that): Espero que"
+            "translation": "to hope",
+            "note": "wait (for): esperar por, hope (that): Espero que",
+            "port_exemple": "Eu espero que venhas.",
+            "en_exemple": "I hope you come.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -26857,7 +26902,10 @@
         },
         "en": {
             "translation": "splendid",
-            "note": "todo"
+            "note": "Esplêndido is a strong, positive descriptor and can sound a bit formal. In everyday speech you might use 'maravilhoso' or 'ótimo' for a more casual tone.",
+            "port_exemple": "O tempo hoje está esplêndido.",
+            "en_exemple": "The weather today is splendid.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26877,7 +26925,10 @@
         },
         "en": {
             "translation": "police station",
-            "note": "todo"
+            "note": "Esquadra and delegacia de polícia both refer to a police office in Portuguese. In English, the natural term for the building is 'police station' (not 'police department', which refers to the organization).",
+            "port_exemple": "Vou à delegacia de polícia para registrar um boletim de ocorrência.",
+            "en_exemple": "I am going to the police station to file a police report.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26897,7 +26948,10 @@
         },
         "en": {
             "translation": "to forget",
-            "note": "todo"
+            "note": "Esquecer is a common everyday verb meaning 'to forget.' In European Portuguese, you often use 'esquecer de' + infinitive to express forgetting to do something (e.g., 'Esqueci de pagar' = I forgot to pay).",
+            "port_exemple": "Eu esqueci as chaves em casa.",
+            "en_exemple": "I forgot the keys at home.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26916,8 +26970,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "ski (instructor)",
-            "note": "todo"
+            "translation": "ski instructor",
+            "note": "In European Portuguese, esqui can refer to skiing as a sport or to skis as equipment, depending on context. When you see instrutor de, the natural translation is 'ski instructor'.",
+            "port_exemple": "O esqui é uma atividade de inverno.",
+            "en_exemple": "Skiing is a winter activity.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26937,7 +26994,10 @@
         },
         "en": {
             "translation": "to ski",
-            "note": "todo"
+            "note": "Esquiar is a regular -ar verb used for skiing. In European Portuguese you typically say 'gosto de esquiar' or 'vou esquiar' to express liking or going skiing.",
+            "port_exemple": "Eu gosto de esquiar no inverno.",
+            "en_exemple": "I like to ski in the winter.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26956,8 +27016,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "corner (street)",
-            "note": "todo"
+            "translation": "corner",
+            "note": "Esquina means 'corner' in general. Use 'street corner' when you want to specify the corner of a street.",
+            "port_exemple": "A casa fica na esquina.",
+            "en_exemple": "The house is on the corner.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -26976,8 +27039,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "funny (=strange)",
-            "note": "todo"
+            "translation": "strange",
+            "note": "In European Portuguese, esquisito usually means strange/odd, not funny. It can also imply something suspicious in some contexts.",
+            "port_exemple": "Isso é esquisito.",
+            "en_exemple": "That is strange.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -26996,8 +27062,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "that (adj)",
-            "note": "todo"
+            "translation": "esse = that (near the listener); aquele = that (over there)",
+            "note": "Esse refers to something closer to the listener or previously mentioned; aquele refers to something farther away or not near either speaker. In everyday speech, esse is used for items near the listener, while aquele is used for distant items or for emphasis.",
+            "port_exemple": "Esse livro é meu; aquele ali é dele.",
+            "en_exemple": "That book is mine; that one over there is his.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27016,8 +27085,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "station (=train, tube)",
-            "note": "todo"
+            "translation": "station",
+            "note": "Estação can mean a place (station) or a season of the year; context determines which meaning is intended. In European Portuguese, you often say 'estação de comboio' for the train station and 'estação do ano' for a season.",
+            "port_exemple": "Vou à estação para apanhar o comboio.",
+            "en_exemple": "I'm going to the station to catch the train.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27036,7 +27108,10 @@
         },
         "en": {
             "translation": "ancient, old, former",
-            "note": "todo"
+            "note": "In European Portuguese, antigo mainly means 'old' when describing objects or people by age. It can also mean 'former' when referring to roles or states, such as 'antigo ministro', depending on context.",
+            "port_exemple": "Este livro é antigo.",
+            "en_exemple": "This book is old.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2
     },
@@ -27051,8 +27126,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "apprenticeship",
-            "note": "todo"
+            "translation": "internship",
+            "note": "Estágio is most commonly used for an internship or temporary training position. It can also mean a stage or phase in a process; use 'internship' for job-based learning and 'estágio' for periods of practical training.",
+            "port_exemple": "Estou à procura de um estágio numa empresa de marketing.",
+            "en_exemple": "I'm looking for an internship at a marketing company.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -27071,8 +27149,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "balnear, praia / local de",
-            "note": "todo"
+            "translation": "residence (often a large house or estate; can mean a summer/holiday home)",
+            "note": "Estância can be formal or literary; it often refers to a large house, estate, or seasonal residence. In everyday Portuguese, people may say casa de veraneio or fazenda depending on the region.",
+            "port_exemple": "A estância de veraneio da família fica perto da praia.",
+            "en_exemple": "The family's summer residence is near the beach.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27111,8 +27192,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "book case",
-            "note": "todo"
+            "translation": "bookshelf",
+            "note": "Estante usually means a piece of furniture with multiple shelves. If you mean a single shelf, use 'prateleira'.",
+            "port_exemple": "Coloquei os livros na estante.",
+            "en_exemple": "I put the books on the bookshelf.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27132,7 +27216,10 @@
         },
         "en": {
             "translation": "to be interested in",
-            "note": "todo"
+            "note": "This phrase expresses a current state of interest about something. The adjective agrees with the speaker's gender: 'interessado' (masculine) or 'interessada' (feminine).",
+            "port_exemple": "Eu estou interessado em aprender português.",
+            "en_exemple": "I am interested in learning Portuguese.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27151,8 +27238,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to lead",
-            "note": "todo"
+            "translation": "to drive",
+            "note": "Dirigir has multiple meanings; the most common in everyday language is 'to drive' (a vehicle). It can also mean 'to lead' or 'to run' a business, depending on the context.",
+            "port_exemple": "Eu sei dirigir um carro.",
+            "en_exemple": "I know how to drive a car.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27171,8 +27261,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to get/be engaged (ie. a fiancé)",
-            "note": "todo"
+            "translation": "to be engaged (to someone)",
+            "note": "Noivo is masculine and noiva is feminine. Estar noivo describes a current state of engagement, not the act of getting engaged (which is ficar noivo).",
+            "port_exemple": "Eu estou noivo do João.",
+            "en_exemple": "I am engaged to João.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27192,7 +27285,10 @@
         },
         "en": {
             "translation": "pencil case",
-            "note": "todo"
+            "note": "Estojo is a general word for a small container. It is commonly used for pencil cases, but can also refer to makeup cases or other small boxes depending on the context.",
+            "port_exemple": "Guardei os lápis no estojo azul.",
+            "en_exemple": "I kept the pencils in the blue pencil case.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27212,7 +27308,10 @@
         },
         "en": {
             "translation": "foreigner",
-            "note": "todo"
+            "note": "In Portuguese, 'estrangeiro' can be a noun meaning 'foreigner' or an adjective meaning 'foreign' (masc. estrangeiro, fem. estrangeira). It agrees with gender and number and is used in everyday speech.",
+            "port_exemple": "Ele é um estrangeiro na cidade.",
+            "en_exemple": "He is a foreigner in the city.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27232,7 +27331,10 @@
         },
         "en": {
             "translation": "student",
-            "note": "todo"
+            "note": "Estudante is used for someone who studies, typically at college or university. In European Portuguese, it contrasts with 'aluno,' which is more common for school pupils.",
+            "port_exemple": "O estudante lê o livro.",
+            "en_exemple": "The student reads the book.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27251,8 +27353,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "a level (student/exams)",
-            "note": "todo"
+            "translation": "level",
+            "note": "Nível is a general term for level, stage, or degree. In education, it usually refers to your level of proficiency or level of schooling rather than specific exams like the UK 'A-level' unless the context makes that clear.",
+            "port_exemple": "Qual é o teu nível de inglês?",
+            "en_exemple": "What is your English level?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27272,7 +27377,10 @@
         },
         "en": {
             "translation": "to study",
-            "note": "todo"
+            "note": "Estudar is a regular -ar verb used for studying a subject or material. It implies deliberate learning, often for exams or coursework.",
+            "port_exemple": "Eu gosto de estudar português.",
+            "en_exemple": "I like to study Portuguese.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -27312,7 +27420,10 @@
         },
         "en": {
             "translation": "to empty",
-            "note": "todo"
+            "note": "Esvaziar is a straightforward, everyday verb meaning to remove the contents of something. It can also be used figuratively, as in 'to empty one's mind'.",
+            "port_exemple": "Eu preciso esvaziar a lata de lixo.",
+            "en_exemple": "I need to empty the trash can.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27332,7 +27443,10 @@
         },
         "en": {
             "translation": "to avoid",
-            "note": "todo"
+            "note": "Evitar is a regular -ar verb. It takes a direct object (evitar o açúcar) and can be followed by an infinitive (evitar fazer algo).",
+            "port_exemple": "É importante evitar o desperdício de água.",
+            "en_exemple": "It's important to avoid wasting water.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27351,8 +27465,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to test (exams)",
-            "note": "todo"
+            "translation": "to examine",
+            "note": "Examinar means to examine, inspect, or assess. In European Portuguese, it’s used for medical checks and for inspecting documents or objects.",
+            "port_exemple": "O médico vai examinar o paciente.",
+            "en_exemple": "The doctor will examine the patient.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27372,7 +27489,10 @@
         },
         "en": {
             "translation": "excellent",
-            "note": "todo"
+            "note": "Excelente is a strong, positive adjective used for high quality or performance. It’s common in everyday speech and formal writing and can describe people, things, or experiences.",
+            "port_exemple": "O filme foi excelente.",
+            "en_exemple": "The movie was excellent.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27391,8 +27511,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "great",
-            "note": "todo"
+            "translation": "excellent",
+            "note": "Ótimo is a strong positive adjective meaning 'excellent' or 'great'. It is commonly used in everyday Portuguese; 'excellent' is often the closest formal translation, though 'great' is also common in casual speech.",
+            "port_exemple": "Este filme é ótimo.",
+            "en_exemple": "This movie is excellent.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27412,7 +27535,10 @@
         },
         "en": {
             "translation": "excursion, trip, outing",
-            "note": "todo"
+            "note": "In European Portuguese, excursão usually refers to an organized day trip with a group. In English, the natural everyday translation is 'excursion'.",
+            "port_exemple": "Vamos fazer uma excursão ao museu amanhã.",
+            "en_exemple": "We are going on an excursion to the museum tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27432,7 +27558,10 @@
         },
         "en": {
             "translation": "army",
-            "note": "todo"
+            "note": "Exército refers to the land-based military force of a country. For a broader sense of the military, you can also use 'forças armadas'.",
+            "port_exemple": "O exército chegou à cidade.",
+            "en_exemple": "The army arrived in the city.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -27452,7 +27581,10 @@
         },
         "en": {
             "translation": "factory",
-            "note": "todo"
+            "note": "Fábrica is a standard noun for a place where goods are produced, usually on an industrial scale. The stress is on the first syllable (FÁ-bri-ca).",
+            "port_exemple": "A fábrica fica ao lado da estação.",
+            "en_exemple": "The factory is next to the station.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27472,7 +27604,10 @@
         },
         "en": {
             "translation": "knife",
-            "note": "todo"
+            "note": "Faca is a feminine noun meaning 'knife'. Note the difference with 'faça' (with a cedilla) which is the verb form meaning 'do/make' in formal imperative or subjunctive.",
+            "port_exemple": "Eu preciso de uma faca para cortar o pão.",
+            "en_exemple": "I need a knife to cut the bread.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27491,8 +27626,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "college/university",
-            "note": "todo"
+            "translation": "faculdade = faculty/college; universidade = university",
+            "note": "In European Portuguese, faculdade can mean a faculty (a division or department within a university) or a college, while universidade refers to the university as a whole. They are related but not interchangeable.",
+            "port_exemple": "Eu estudo na faculdade e espero ir para a universidade.",
+            "en_exemple": "I study at college and I hope to go on to university.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27512,7 +27650,10 @@
         },
         "en": {
             "translation": "to speak",
-            "note": "todo"
+            "note": "Falar is a general verb meaning 'to speak.' In everyday Portuguese, it often means either 'to speak' or 'to talk,' depending on context.",
+            "port_exemple": "Eu gosto de falar com meus amigos.",
+            "en_exemple": "I like to speak with my friends.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27531,8 +27672,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to be missing",
-            "note": "todo"
+            "translation": "to lack",
+            "note": "Faltar expresses lack or absence, and in time phrases it can mean how much time remains. In European Portuguese, you often see clitic forms like falta-me or faltam-te.",
+            "port_exemple": "Falta-me dinheiro.",
+            "en_exemple": "I lack money.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -27552,7 +27696,10 @@
         },
         "en": {
             "translation": "fantastic",
-            "note": "todo"
+            "note": "Fantástico is a strong, upbeat adjective used for enthusiastic praise. It’s common in everyday speech to express approval or admiration.",
+            "port_exemple": "Este filme é fantástico.",
+            "en_exemple": "This movie is fantastic.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27571,8 +27718,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "chemist('s shop)",
-            "note": "todo"
+            "translation": "pharmacy",
+            "note": "In European Portuguese, farmácia is the place to buy medicines and health products. 'Pharmacy' is the standard English term.",
+            "port_exemple": "Vou à farmácia comprar remédios.",
+            "en_exemple": "I'm going to the pharmacy to buy medicines.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27591,8 +27741,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "headlight",
-            "note": "todo"
+            "translation": "lighthouse",
+            "note": "In European Portuguese, farol primarily means 'lighthouse'. In automotive contexts, it can also refer to a 'headlight', but that meaning is context-specific.",
+            "port_exemple": "O farol ilumina o mar à noite.",
+            "en_exemple": "The lighthouse shines over the sea at night.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27612,7 +27765,10 @@
         },
         "en": {
             "translation": "favourable",
-            "note": "todo"
+            "note": "Both 'favorable' and 'favourable' are correct translations. Use 'favorable' in American English and 'favourable' in British English.",
+            "port_exemple": "Esta decisão é favorável.",
+            "en_exemple": "This decision is favorable.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27632,7 +27788,10 @@
         },
         "en": {
             "translation": "favourite",
-            "note": "todo"
+            "note": "Usage note: 'favorito' means the thing you like the most. In Portuguese, it agrees with gender: 'meu livro favorito' (masc.) vs. 'minha música favorita' (fem.).",
+            "port_exemple": "Este é o meu livro favorito.",
+            "en_exemple": "This is my favorite book.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27652,7 +27811,10 @@
         },
         "en": {
             "translation": "to do, to make",
-            "note": "todo"
+            "note": "Fazer is highly versatile and can mean both 'to do' and 'to make' depending on context. It appears in many fixed expressions with different shades of meaning.",
+            "port_exemple": "Eu vou fazer o jantar.",
+            "en_exemple": "I'm going to make dinner.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27672,7 +27834,10 @@
         },
         "en": {
             "translation": "to collect (e.g. stamps)",
-            "note": "todo"
+            "note": "This phrase means to collect as a hobby. In everyday Portuguese, people often use 'colecionar' or 'fazer coleção de [itens]'.",
+            "port_exemple": "Eu faço coleção de selos.",
+            "en_exemple": "I collect stamps.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27691,8 +27856,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to shop",
-            "note": "todo"
+            "translation": "to go shopping",
+            "note": "The phrase 'fazer compras' is a general term for shopping (not just groceries). In everyday English, 'to go shopping' is the most natural translation.",
+            "port_exemple": "Vamos fazer compras no centro amanhã.",
+            "en_exemple": "Let's go shopping downtown tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27711,8 +27879,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to do sport",
-            "note": "todo"
+            "translation": "to play sports",
+            "note": "In European Portuguese, fazer desporto means to engage in sport activities. The natural English forms are 'to play sport' or 'to play sports'; 'to do sport' is not commonly used.",
+            "port_exemple": "Eu gosto de fazer desporto.",
+            "en_exemple": "I like to play sport.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27732,7 +27903,10 @@
         },
         "en": {
             "translation": "to queue",
-            "note": "todo"
+            "note": "This is commonly used in UK/European English. In American English, you would say 'wait in line'.",
+            "port_exemple": "Vamos fazer fila para comprar bilhetes.",
+            "en_exemple": "We're going to queue up to buy tickets.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27751,8 +27925,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to jog",
-            "note": "todo"
+            "translation": "to go jogging",
+            "note": "Note: In European Portuguese, 'fazer jogging' is a common fixed expression for the activity of running for exercise. In English, people usually say 'go jogging' or simply 'jog' as a verb.",
+            "port_exemple": "Eu gosto de fazer jogging todas as manhãs.",
+            "en_exemple": "I like to go jogging every morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27771,8 +27948,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to surf",
-            "note": "todo"
+            "translation": "to surf (surfar) or to go surfing (fazer surf)",
+            "note": "In European Portuguese, surfar is the direct verb meaning 'to surf', while fazer surf emphasizes the activity. Use surfar for simple statements and fazer surf when you want to stress the act.",
+            "port_exemple": "Eu gosto de fazer surf.",
+            "en_exemple": "I like to go surfing.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27791,8 +27971,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to go sight-seeing",
-            "note": "todo"
+            "translation": "to go sightseeing",
+            "note": "It's a common phrase for visiting sights as a tourist. Use it for leisure trips; if you mean tourism as a general concept, you’d use 'turismo' as a noun.",
+            "port_exemple": "Durante as férias, vamos fazer turismo em Lisboa.",
+            "en_exemple": "During the holidays, we're going to go sightseeing in Lisbon.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27811,8 +27994,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to have a break",
-            "note": "todo"
+            "translation": "to take a break",
+            "note": "Both phrases mean 'to take a break.' In everyday use, 'fazer uma pausa' is the natural choice, while 'fazer um intervalo' is common in contexts like schools, theatres, or longer breaks.",
+            "port_exemple": "Vamos fazer uma pausa.",
+            "en_exemple": "Let's take a break.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27831,8 +28017,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "fever / temperature",
-            "note": "todo"
+            "translation": "fever",
+            "note": "In Portuguese, 'febre' means fever, a medical symptom. It does not mean 'temperature' (that's 'temperatura').",
+            "port_exemple": "Ela está com febre desde ontem.",
+            "en_exemple": "She has had a fever since yesterday.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27852,7 +28041,10 @@
         },
         "en": {
             "translation": "closed",
-            "note": "todo"
+            "note": "Fechado is used for physical closures (a door, a shop). Encerrado is used for something that has been finished or concluded; in everyday Portuguese you might say 'o estabelecimento está fechado' and 'o caso está encerrado'.",
+            "port_exemple": "O estabelecimento está fechado; o caso está encerrado.",
+            "en_exemple": "The store is closed; the case is closed.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27871,8 +28063,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to close (door, lock)",
-            "note": "todo"
+            "translation": "to close (also 'to shut')",
+            "note": "Fechar is a versatile verb in Portuguese. It can be literal—meaning to close something physical—or figurative, like closing a deal or a shop; context determines the nuance.",
+            "port_exemple": "Vou fechar a porta.",
+            "en_exemple": "I'm going to close the door.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27891,8 +28086,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "bank holiday",
-            "note": "todo"
+            "translation": "public holiday",
+            "note": "In European Portuguese, feriado usually means a public holiday or day off. 'Bank holiday' is mainly used in the UK; in Portugal you would commonly say 'public holiday' or 'national holiday'.",
+            "port_exemple": "Hoje é feriado.",
+            "en_exemple": "Today is a public holiday.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27911,8 +28109,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "holiday",
-            "note": "todo"
+            "translation": "vacation (time off work)",
+            "note": "The translation 'holiday' isn’t the best general translation; 'férias' usually means time off work (vacation). For public holidays, use 'holidays'.",
+            "port_exemple": "Vou tirar férias na próxima semana.",
+            "en_exemple": "I'm going on vacation next week.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27931,8 +28132,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "tools",
-            "note": "todo"
+            "translation": "tool",
+            "note": "In Portuguese, 'ferramenta' is used for a tool or instrument. The plural form 'ferramentas' means 'tools'.",
+            "port_exemple": "Esta ferramenta é muito útil no meu trabalho.",
+            "en_exemple": "This tool is very useful in my work.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27952,7 +28156,10 @@
         },
         "en": {
             "translation": "party",
-            "note": "todo"
+            "note": "Festa is used for social gatherings and celebrations. In everyday Portuguese, it's most often 'party,' but context can suggest 'celebration' or 'festival'.",
+            "port_exemple": "Vamos à festa amanhã.",
+            "en_exemple": "We are going to the party tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27972,7 +28179,10 @@
         },
         "en": {
             "translation": "festival",
-            "note": "todo"
+            "note": "Festival is a direct loanword in Portuguese and is used much like in English. In Portuguese, it's a masculine noun (o festival) and the plural is festivais.",
+            "port_exemple": "Vamos ao festival este fim de semana.",
+            "en_exemple": "We're going to the festival this weekend.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -27992,7 +28202,10 @@
         },
         "en": {
             "translation": "ham",
-            "note": "todo"
+            "note": "Note: presunto is the standard noun for the cured ham used in sandwiches. As an adjective, it can mean 'alleged' or 'supposed' (e.g., 'presunto culpado' = 'the alleged culprit'), which is less common in everyday speech; for 'suspected' you'd usually use 'suspeito'.",
+            "port_exemple": "Eu comprei presunto para o sanduíche.",
+            "en_exemple": "I bought ham for the sandwich.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28012,7 +28225,10 @@
         },
         "en": {
             "translation": "to stay, remain",
-            "note": "permanecer is used in more formal and literary contexts"
+            "note": "permanecer is used in more formal and literary contexts",
+            "port_exemple": "Vou ficar em casa hoje.",
+            "en_exemple": "I will stay at home today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -28032,7 +28248,10 @@
         },
         "en": {
             "translation": "liver",
-            "note": "todo"
+            "note": "In Portuguese, fígado is the masculine noun for the organ. It’s used in medical and everyday contexts about health or food (e.g., fígado de boi).",
+            "port_exemple": "O fígado é um órgão importante.",
+            "en_exemple": "The liver is an important organ.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28052,7 +28271,10 @@
         },
         "en": {
             "translation": "row (e.g of seats, etc)",
-            "note": "todo"
+            "note": "Note: In European Portuguese, 'fila' can mean a row of seats or a queue. Context determines which sense is meant.",
+            "port_exemple": "Sentei-me na segunda fila.",
+            "en_exemple": "I sat in the second row.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28072,7 +28294,10 @@
         },
         "en": {
             "translation": "unpleasant, unfriendly",
-            "note": "todo"
+            "note": "Antipático describes a person who is not friendly or pleasant. For stronger rudeness you might use mal-educado.",
+            "port_exemple": "Ele é antipático.",
+            "en_exemple": "He is unfriendly.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2
     },
@@ -28087,8 +28312,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "film (horror/love/science-fiction)",
-            "note": "todo"
+            "translation": "movie (horror/romantic/science fiction)",
+            "note": "In Portuguese, 'filme' means 'movie' or 'film'. The genre phrases are usually formed as '[genre] film' in English, e.g., 'horror film' or 'romantic film'.",
+            "port_exemple": "Este filme é de terror.",
+            "en_exemple": "This movie is a horror film.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28107,8 +28335,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "detective film",
-            "note": "todo"
+            "translation": "crime film",
+            "note": "The current translation 'detective film' is not the best. In European Portuguese, 'filme policial' most commonly means 'crime film'.",
+            "port_exemple": "Assisti a um filme policial no cinema.",
+            "en_exemple": "I watched a crime film at the cinema.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28128,7 +28359,10 @@
         },
         "en": {
             "translation": "finally",
-            "note": "todo"
+            "note": "Finally typically means 'finally' or 'at last' after effort or waiting. In everyday Portuguese it sounds natural; in more formal writing you might prefer 'por fim' for 'in the end'.",
+            "port_exemple": "Finalmente, consegui terminar o meu trabalho.",
+            "en_exemple": "Finally, I managed to finish my work.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28148,7 +28382,10 @@
         },
         "en": {
             "translation": "physics",
-            "note": "todo"
+            "note": "In Portuguese, 'física' usually means the science 'physics'. It can also be the feminine form of the adjective meaning 'physical' when describing a noun (e.g., 'características físicas').",
+            "port_exemple": "A física é uma ciência que estuda a matéria e o universo.",
+            "en_exemple": "Physics is a science that studies matter and the universe.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28167,8 +28404,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "gas cooker",
-            "note": "todo"
+            "translation": "gas stove",
+            "note": "Note: In PT-PT, 'fogão a gás' usually refers to the entire appliance (stove with burners and oven). In British English you might also hear 'gas cooker' or 'gas hob' for the top, while 'gas stove' is common in American English and widely understood.",
+            "port_exemple": "O fogão a gás está a funcionar bem.",
+            "en_exemple": "The gas stove is working well.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28188,7 +28428,10 @@
         },
         "en": {
             "translation": "electric cooker",
-            "note": "todo"
+            "note": "Fogão elétrico refers to the whole cooking appliance. In European Portuguese, fogão can also refer to the oven or the cooktop depending on context.",
+            "port_exemple": "Comprei um fogão elétrico novo.",
+            "en_exemple": "I bought a new electric stove.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28207,8 +28450,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "fireworks",
-            "note": "todo"
+            "translation": "firework",
+            "note": "In Portuguese, fogo de artifício is singular (a single firework). For multiple, use fogos de artifício.",
+            "port_exemple": "O fogo de artifício estourou no céu.",
+            "en_exemple": "The firework exploded in the sky.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28227,8 +28473,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "camp fire",
-            "note": "todo"
+            "translation": "bonfire",
+            "note": "Bonfire is the natural general term for 'fogueira'. For a smaller campfire at a campsite, you can also say 'campfire'.",
+            "port_exemple": "Na praia, acendemos uma fogueira para assar marshmallows.",
+            "en_exemple": "On the beach, we light a bonfire to roast marshmallows.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28247,8 +28496,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "piece (=of paper)",
-            "note": "todo"
+            "translation": "a sheet of paper",
+            "note": "Folha de papel is the standard expression for one sheet of paper in European Portuguese. 'Folha' refers to a single sheet, while 'papel' is the material as a whole.",
+            "port_exemple": "Eu preciso de uma folha de papel.",
+            "en_exemple": "I need a sheet of paper.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28268,7 +28520,10 @@
         },
         "en": {
             "translation": "outside",
-            "note": "todo"
+            "note": "Fora is versatile and typically means 'outside' or 'out' depending on context. It can appear as a sharp command, 'Fora!', meaning 'Out!'",
+            "port_exemple": "Vamos para fora.",
+            "en_exemple": "Let's go outside.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28288,7 +28543,10 @@
         },
         "en": {
             "translation": "oven",
-            "note": "todo"
+            "note": "In everyday use, 'forno' means an oven. In technical contexts, it can also mean a furnace or kiln.",
+            "port_exemple": "Coloque o pão no forno para assar.",
+            "en_exemple": "Put the bread in the oven to bake.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28308,7 +28566,10 @@
         },
         "en": {
             "translation": "photo (camera picture)",
-            "note": "todo"
+            "note": "Foto is a common, informal shortening of fotografia. It’s widely used in everyday Portuguese; fotografia is more formal.",
+            "port_exemple": "Eu tirei uma foto na praia.",
+            "en_exemple": "I took a photo on the beach.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28327,8 +28588,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "photography",
-            "note": "todo"
+            "translation": "photograph",
+            "note": "In European Portuguese, fotografia mainly means a photograph or the art of photography. In everyday speech, people often use 'foto' instead of 'fotografia'.",
+            "port_exemple": "Esta fotografia é incrível.",
+            "en_exemple": "This photograph is amazing.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28348,7 +28612,10 @@
         },
         "en": {
             "translation": "raspberry",
-            "note": "todo"
+            "note": "Framboesa means raspberry in European Portuguese. It is a common fruit name used in everyday speech, recipes, and desserts.",
+            "port_exemple": "Eu comi uma framboesa.",
+            "en_exemple": "I ate a raspberry.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28367,8 +28634,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "chicken (food)",
-            "note": "galinha is the live animal (hen)"
+            "translation": "chicken",
+            "note": "galinha is the live animal (hen)",
+            "port_exemple": "Eu comi frango no almoço.",
+            "en_exemple": "I had chicken for lunch.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28387,8 +28657,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "cool (temperature)",
-            "note": "todo"
+            "translation": "fresco: fresh; cool (when referring to weather); frio: cold",
+            "note": "Fresco can mean fresh or cool depending on context; frio is more strictly 'cold'.",
+            "port_exemple": "O pão está fresco. Hoje está frio.",
+            "en_exemple": "The bread is fresh. It's cold today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28407,8 +28680,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to work (function)",
-            "note": "todo"
+            "translation": "to work",
+            "note": "Used for devices, machines, and systems. In everyday English, 'to work' is the most natural translation, while 'to function' is more formal.",
+            "port_exemple": "Para funcionar, precisa de energia.",
+            "en_exemple": "To function, it needs power.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28427,8 +28703,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "civil servant",
-            "note": "todo"
+            "translation": "employee",
+            "note": "In European Portuguese, 'funcionário' usually means 'employee' or 'staff member'; 'civil servant' is only correct when referring to a government employee ('funcionário público').",
+            "port_exemple": "O funcionário da loja foi muito prestável.",
+            "en_exemple": "The store employee was very helpful.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -28447,8 +28726,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "puncture",
-            "note": "todo"
+            "translation": "hole",
+            "note": "Note that furo can refer to a hole or opening in any material (wall, fabric, tire, etc.). Puncture is a related sense used when a hole is caused by a sharp object; context matters.",
+            "port_exemple": "Há um furo na parede.",
+            "en_exemple": "There is a hole in the wall.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28468,7 +28750,10 @@
         },
         "en": {
             "translation": "football",
-            "note": "todo"
+            "note": "In European Portuguese, 'futebol' refers to the sport known as football in many English-speaking countries. In American English, you would usually say 'soccer'.",
+            "port_exemple": "Gosto de jogar futebol aos fins de semana.",
+            "en_exemple": "I enjoy playing football on weekends.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28487,8 +28772,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to earn",
-            "note": "todo"
+            "translation": "to win (also used as 'to earn' in money or rewards contexts)",
+            "note": "Ganhar has multiple meanings. In everyday use, it can mean 'to win' (as in a game) or 'to earn' money; the intended meaning is clear from context.",
+            "port_exemple": "Ele quer ganhar o jogo amanhã.",
+            "en_exemple": "He wants to win the game tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28508,7 +28796,10 @@
         },
         "en": {
             "translation": "goose",
-            "note": "todo"
+            "note": "The word 'goose' is the natural English word for the animal. In Portuguese, 'ganso' is commonly used in everyday speech; plural is 'gansos'.",
+            "port_exemple": "Vi um ganso no parque.",
+            "en_exemple": "I saw a goose in the park.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28528,7 +28819,10 @@
         },
         "en": {
             "translation": "bottle",
-            "note": "todo"
+            "note": "Garrafa is a common everyday noun for a bottle, typically made of glass or plastic. It is feminine, so you say 'a garrafa'.",
+            "port_exemple": "A garrafa está vazia.",
+            "en_exemple": "The bottle is empty.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28547,8 +28841,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "petrol",
-            "note": "todo"
+            "translation": "gasoline",
+            "note": "Gasoline is the standard American English term. Petrol is the British English term; both refer to the same fuel.",
+            "port_exemple": "Preciso de gasolina.",
+            "en_exemple": "I need gasoline.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28568,7 +28865,10 @@
         },
         "en": {
             "translation": "to spend (=money)",
-            "note": "todo"
+            "note": "Gastar is a common verb meaning 'to spend' (money, time, energy). It can also imply waste in some contexts; context matters.",
+            "port_exemple": "Eu preciso gastar menos dinheiro.",
+            "en_exemple": "I need to spend less money.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28588,7 +28888,10 @@
         },
         "en": {
             "translation": "cat",
-            "note": "todo"
+            "note": "Note: 'gato' is the standard word for the animal 'cat'. In Brazilian Portuguese, 'gato' can also be slang for an attractive person, but that's informal and not the meaning here.",
+            "port_exemple": "Eu tenho um gato.",
+            "en_exemple": "I have a cat.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28608,7 +28911,10 @@
         },
         "en": {
             "translation": "frost",
-            "note": "todo"
+            "note": "Geada refers to frost on surfaces in cold weather and is commonly used in weather reports and farming contexts. For a more precise term describing ice crystals, you might use 'hoarfrost', but 'frost' is the everyday and widely understood choice.",
+            "port_exemple": "Esta manhã houve geada.",
+            "en_exemple": "There was frost this morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28628,7 +28934,10 @@
         },
         "en": {
             "translation": "ice cream",
-            "note": "todo"
+            "note": "Gelado is an adjective meaning cold or frozen. As a noun (o gelado), it means ice cream, and in Portugal this is the usual term; in Brazil, people often say sorvete.",
+            "port_exemple": "Queres um gelado?",
+            "en_exemple": "Would you like an ice cream?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28648,7 +28957,10 @@
         },
         "en": {
             "translation": "twins",
-            "note": "todo"
+            "note": "Note: gêmeos is the masculine plural form; the feminine plural is gêmeas. It refers to two people born from the same pregnancy.",
+            "port_exemple": "Os gémeos nasceram ontem.",
+            "en_exemple": "The twins were born yesterday.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -28668,7 +28980,10 @@
         },
         "en": {
             "translation": "geography",
-            "note": "todo"
+            "note": "Geografia is a feminine noun and refers to the science of the Earth as well as the school subject. In everyday Portuguese, you use 'a geografia' to talk about geography.",
+            "port_exemple": "Eu estudo geografia na escola.",
+            "en_exemple": "I study geography at school.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28688,7 +29003,10 @@
         },
         "en": {
             "translation": "fat",
-            "note": "todo"
+            "note": "Gordo literally means 'fat' and is commonly used to describe someone who is overweight. It can be insulting if said directly about a person, so consider softer terms like 'overweight' or using diminutives (gordinho) for affection.",
+            "port_exemple": "Ele é gordo.",
+            "en_exemple": "He is fat.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28708,7 +29026,10 @@
         },
         "en": {
             "translation": "tip (money)",
-            "note": "todo"
+            "note": "Gorjeta is the everyday word for a service tip. In English, 'tip' is the natural equivalent; 'gratuity' is more formal.",
+            "port_exemple": "Eu deixei uma gorjeta no restaurante.",
+            "en_exemple": "I left a tip at the restaurant.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28727,8 +29048,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to like (to)",
-            "note": "todo"
+            "translation": "to like",
+            "note": "Used with 'de' to link to the thing or activity you like. For example, 'gosto de ler' means 'I like to read'.",
+            "port_exemple": "Eu gosto de ler livros.",
+            "en_exemple": "I like to read books.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28748,7 +29072,10 @@
         },
         "en": {
             "translation": "free (=no charge)",
-            "note": "todo"
+            "note": "Grátis means 'free of charge' and is often used after the noun (amostra grátis) or with 'é grátis' (it's free). In everyday European Portuguese, 'de graça' is another common way to say the same.",
+            "port_exemple": "A amostra é grátis.",
+            "en_exemple": "The sample is free.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -28768,7 +29095,10 @@
         },
         "en": {
             "translation": "free (=no charge)",
-            "note": "todo"
+            "note": "Gratuito means free of charge. It agrees with the noun in gender and number (gratuito, gratuita, gratuitos, gratuitas).",
+            "port_exemple": "Este serviço é gratuito.",
+            "en_exemple": "This service is free.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28788,7 +29118,10 @@
         },
         "en": {
             "translation": "degree (=temperature)",
-            "note": "todo"
+            "note": "Grau is usually translated as 'degree'. In Portuguese it also means 'level' or 'grade' in phrases like 'grau de dificuldade' or 'grau de parentesco', and in English you would use 'degree of ...' or 'level of ...' depending on the context.",
+            "port_exemple": "Qual é o grau de dificuldade deste exame?",
+            "en_exemple": "What is the degree of difficulty of this exam?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28808,7 +29141,10 @@
         },
         "en": {
             "translation": "tie",
-            "note": "todo"
+            "note": "Gravata refers to the specific clothing item worn around the neck. The most precise English word is necktie; 'tie' is also correct but less specific.",
+            "port_exemple": "Ele usou uma gravata vermelha para a reunião.",
+            "en_exemple": "He wore a red necktie to the meeting.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -28828,7 +29164,10 @@
         },
         "en": {
             "translation": "serious",
-            "note": "todo"
+            "note": "Grave is a common Portuguese adjective meaning 'serious' or 'severe.' It is used for people, illnesses, and situations, but it is not used to mean a tomb (that would be a noun like 'túmulo' or 'sepultura').",
+            "port_exemple": "Esta doença é grave.",
+            "en_exemple": "This disease is serious.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28848,7 +29187,10 @@
         },
         "en": {
             "translation": "to grill (flame, stove)",
-            "note": "todo"
+            "note": "Grelhar means to cook on a grill, grill pan, or over an open flame. It's a common everyday verb used for grilling foods like fish, meat, and vegetables.",
+            "port_exemple": "Vou grelhar peixe para o jantar.",
+            "en_exemple": "I'm going to grill fish for dinner.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28867,8 +29209,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to grill, barbecue",
-            "note": "todo"
+            "translation": "to roast",
+            "note": "In European Portuguese, assar mainly means 'to roast'. It can also mean 'to bake' for bread or pastries in some contexts.",
+            "port_exemple": "Vou assar o frango no forno.",
+            "en_exemple": "I will roast the chicken in the oven.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28888,7 +29233,10 @@
         },
         "en": {
             "translation": "flu",
-            "note": "todo"
+            "note": "Note that gripe specifically means influenza. In everyday English, people say 'the flu'.",
+            "port_exemple": "Estou com gripe e preciso descansar.",
+            "en_exemple": "I have the flu and I need to rest.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28907,8 +29255,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "call (=shout)",
-            "note": "todo"
+            "translation": "to shout (to yell)",
+            "note": "Gritar means to shout or yell; it conveys a loud, abrupt vocalization. It is used when the speaker raises their voice, often in anger, alarm, or to attract attention.",
+            "port_exemple": "Ele grita quando está com raiva.",
+            "en_exemple": "He shouts when he's angry.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28927,8 +29278,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "security guard",
-            "note": "todo"
+            "translation": "guard",
+            "note": "Note: guarda is the everyday term for a guard or watchman. For job titles like 'security guard', Portuguese speakers often use 'segurança' or 'vigilante' depending on the context.",
+            "port_exemple": "O guarda do museu não deixou ninguém entrar.",
+            "en_exemple": "The museum guard didn't let anyone in.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28948,7 +29302,10 @@
         },
         "en": {
             "translation": "doorman",
-            "note": "todo"
+            "note": "Porteiro commonly refers to the person guarding an entrance in a building. For everyday use, the natural translation is 'doorman'.",
+            "port_exemple": "O porteiro abriu a porta aos visitantes.",
+            "en_exemple": "The doorman opened the door for the visitors.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28968,7 +29325,10 @@
         },
         "en": {
             "translation": "caretaker/janitor",
-            "note": "todo"
+            "note": "Zelador is best translated as 'caretaker' in most European Portuguese contexts. 'Janitor' is also understood but is more common in North American English.",
+            "port_exemple": "O zelador da escola limpou os corredores.",
+            "en_exemple": "The school caretaker cleaned the corridors.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -28988,7 +29348,10 @@
         },
         "en": {
             "translation": "umbrella",
-            "note": "todo"
+            "note": "Guarda-chuva is a compound noun (guarda = guard, chuva = rain). It’s the standard everyday word for an umbrella in European Portuguese.",
+            "port_exemple": "Eu trouxe o guarda-chuva comigo.",
+            "en_exemple": "I brought the umbrella with me.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29008,7 +29371,10 @@
         },
         "en": {
             "translation": "wardrobe",
-            "note": "todo"
+            "note": "Note: guarda-roupa typically refers to a wardrobe or closet for clothing. Armário is a more general term for a cabinet.",
+            "port_exemple": "Eu organizei as minhas roupas no guarda-roupa.",
+            "en_exemple": "I organized my clothes in the wardrobe.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29028,7 +29394,10 @@
         },
         "en": {
             "translation": "there is/are",
-            "note": "todo"
+            "note": "Há is the present-tense form of haver used to indicate existence (there is/there are). It also means 'ago' in time expressions, e.g., há dois dias = two days ago.",
+            "port_exemple": "Há muitos livros na mesa.",
+            "en_exemple": "There are many books on the table.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29047,8 +29416,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "inhabitant",
-            "note": "todo"
+            "translation": "resident",
+            "note": "Habitante is a neutral term for a person who lives somewhere. In everyday English, 'resident' is more natural, and 'inhabitant' is more formal or used in demographic contexts.",
+            "port_exemple": "Cada habitante da cidade tem uma história diferente.",
+            "en_exemple": "Each resident of the city has a different story.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29068,7 +29440,10 @@
         },
         "en": {
             "translation": "helicopter",
-            "note": "todo"
+            "note": "Great basic vocabulary for talking about air transport. In European Portuguese, use 'o helicóptero' for 'the helicopter' and 'um helicóptero' for 'a helicopter'.",
+            "port_exemple": "O helicóptero está a voar sobre a cidade.",
+            "en_exemple": "The helicopter is flying over the city.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29088,7 +29463,10 @@
         },
         "en": {
             "translation": "honest",
-            "note": "todo"
+            "note": "Honesto describes someone morally upright or sincere. In European Portuguese it is used commonly in everyday speech to describe people or their actions.",
+            "port_exemple": "Ele é honesto.",
+            "en_exemple": "He is honest.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29107,8 +29485,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "timetable (bus/train/school)",
-            "note": "todo"
+            "translation": "schedule",
+            "note": "Best general translation is 'schedule' rather than 'timetable'. 'Horário' can also mean opening hours or working hours depending on context (horário de funcionamento, horário de trabalho).",
+            "port_exemple": "Qual é o seu horário?",
+            "en_exemple": "What's your schedule?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29127,8 +29508,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "air hostess",
-            "note": "todo"
+            "translation": "hostess / flight attendant",
+            "note": "Note: Hospedeira refers to a female host (like at a hotel or event). Aeromoça specifically means a flight attendant; in English, 'flight attendant' is the common term today, while 'air hostess' is older and less used.",
+            "port_exemple": "Ela é aeromoça na companhia aérea.",
+            "en_exemple": "She is a flight attendant for an airline.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -29148,7 +29532,10 @@
         },
         "en": {
             "translation": "hospital",
-            "note": "todo"
+            "note": "In Portuguese, hospital is a masculine noun: o hospital. The 'h' is silent, and the word is used the same as in English.",
+            "port_exemple": "Fui ao hospital porque me senti mal.",
+            "en_exemple": "I went to the hospital because I felt unwell.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29168,7 +29555,10 @@
         },
         "en": {
             "translation": "hotel",
-            "note": "todo"
+            "note": "Note that 'hotel' is a direct loanword in Portuguese with the same meaning as English. It is commonly used in everyday speech to refer to a place where you stay.",
+            "port_exemple": "Vamos ficar num hotel no centro da cidade.",
+            "en_exemple": "We are going to stay at a hotel in the city centre.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29187,8 +29577,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "humid",
-            "note": "todo"
+            "translation": "moist",
+            "note": "úmido usually means moist or damp for objects. húmido is used for humidity in the air.",
+            "port_exemple": "A toalha está úmida.",
+            "en_exemple": "The towel is moist.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29208,7 +29601,10 @@
         },
         "en": {
             "translation": "idea",
-            "note": "todo"
+            "note": "Ideia is the standard word for 'idea' in Portuguese. It is used for thoughts, plans, or suggestions in everyday speech and can refer to a notion, a concept, or a proposal.",
+            "port_exemple": "Tenho uma ideia.",
+            "en_exemple": "I have an idea.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29228,7 +29624,10 @@
         },
         "en": {
             "translation": "church",
-            "note": "todo"
+            "note": "Igreja is the standard European Portuguese word for a Christian church (the building or the church community). In everyday speech you’ll usually say 'na igreja' for 'at church' and 'dentro da igreja' for 'inside the church'.",
+            "port_exemple": "A igreja fica no centro da cidade.",
+            "en_exemple": "The church is in the city center.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29248,7 +29647,10 @@
         },
         "en": {
             "translation": "immediately",
-            "note": "todo"
+            "note": "‘Imediatamente’ is a common adverb meaning right away or without delay. It is used in everyday Portuguese to express immediacy, similar to ‘immediately’ in English.",
+            "port_exemple": "Ele respondeu imediatamente.",
+            "en_exemple": "He replied immediately.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -29268,7 +29670,10 @@
         },
         "en": {
             "translation": "impossible",
-            "note": "todo"
+            "note": "It's a straightforward adjective meaning 'cannot be done'. In everyday Portuguese, it's used for strong statements about what's possible or not, and you can soften it with 'parece' (it seems) or 'quase' (almost).",
+            "port_exemple": "É impossível terminar o projeto hoje.",
+            "en_exemple": "It's impossible to finish the project today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29288,7 +29693,10 @@
         },
         "en": {
             "translation": "included",
-            "note": "todo"
+            "note": "Incluído is the past participle of incluir and is used as the adjective meaning 'included' or 'enclosed.' It agrees in gender and number with the noun it describes.",
+            "port_exemple": "O preço já está incluído.",
+            "en_exemple": "The price is already included.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29308,7 +29716,10 @@
         },
         "en": {
             "translation": "childhood",
-            "note": "todo"
+            "note": "Infância refers to the early period of life before adolescence. In Portuguese, it's used to talk about early memories and development.",
+            "port_exemple": "Na minha infância, eu gostava de brincar no quintal.",
+            "en_exemple": "In my childhood, I liked to play in the yard.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29327,8 +29738,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "creche nursery school",
-            "note": "todo"
+            "translation": "nursery",
+            "note": "Best translation: 'nursery'. In Portugal, infantário refers to a nursery/daycare for very young children, not a school.",
+            "port_exemple": "A criança vai para o infantário todas as manhãs.",
+            "en_exemple": "The child goes to the nursery every morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29348,7 +29762,10 @@
         },
         "en": {
             "translation": "unfortunately",
-            "note": "todo"
+            "note": "Infelizmente is a common adverb used to express regret. It can appear at the start of a sentence or after the subject.",
+            "port_exemple": "Infelizmente, não posso ir ao cinema hoje.",
+            "en_exemple": "Unfortunately, I can't go to the cinema today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29368,7 +29785,10 @@
         },
         "en": {
             "translation": "information",
-            "note": "todo"
+            "note": "In Portuguese, informação can be counted as 'uma informação' or 'informações'. In English, information is usually uncountable, so you use 'a piece of information' when talking about one item.",
+            "port_exemple": "Recebi uma informação importante.",
+            "en_exemple": "I received an important piece of information.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29387,8 +29807,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "english (=language/person)",
-            "note": "todo"
+            "translation": "English",
+            "note": "In Portuguese, 'inglês' can mean the English language or an English person, depending on context. When referring to the language, the English word is 'English' with a capital E.",
+            "port_exemple": "Eu estudo inglês todos os dias.",
+            "en_exemple": "I study English every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29408,7 +29831,10 @@
         },
         "en": {
             "translation": "insect",
-            "note": "todo"
+            "note": "In Portuguese, inseto is a general term for any insect. It's a neutral word used in everyday speech; for specific types you usually use a more precise name (besouro, mosca, abelha, etc.).",
+            "port_exemple": "Há um inseto na cozinha.",
+            "en_exemple": "There is an insect in the kitchen.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -29428,7 +29854,10 @@
         },
         "en": {
             "translation": "intelligent",
-            "note": "todo"
+            "note": "Inteligente is used for people or things with high intelligence. In everyday English, 'smart' is often used in casual speech.",
+            "port_exemple": "Ela é muito inteligente.",
+            "en_exemple": "She is very intelligent.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29447,8 +29876,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "escolar school exchange",
-            "note": "todo"
+            "translation": "exchange (often used as 'student exchange' or 'exchange program')",
+            "note": "Intercâmbio is commonly used for educational or cultural exchange programs. It can also refer to any kind of exchange between people or institutions, depending on the context.",
+            "port_exemple": "Participei de um intercâmbio para estudar na Alemanha.",
+            "en_exemple": "I took part in a student exchange program to study in Germany.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29468,7 +29900,10 @@
         },
         "en": {
             "translation": "interesting",
-            "note": "todo"
+            "note": "Interessante is a common, everyday adjective used for things, ideas, events, or people that catch your attention. In European Portuguese, it usually means 'interesting' but can also imply 'fascinating' in stronger contexts; adjust tone with surrounding words.",
+            "port_exemple": "Este livro é interessante.",
+            "en_exemple": "This book is interesting.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29488,7 +29923,10 @@
         },
         "en": {
             "translation": "internet",
-            "note": "todo"
+            "note": "In Portuguese, internet is a common noun and is usually written in lowercase ('a internet'). It refers to the global network of networks.",
+            "port_exemple": "Eu uso a internet todos os dias.",
+            "en_exemple": "I use the Internet every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29507,8 +29945,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "break (lunch)",
-            "note": "todo"
+            "translation": "lunch break",
+            "note": "This is the natural, commonly used term for a break for lunch. In European Portuguese, 'intervalo' can mean any short break, so specify 'para almoço' to indicate lunch.",
+            "port_exemple": "O intervalo para almoço é às 12h.",
+            "en_exemple": "The lunch break is at 12:00.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29528,7 +29969,10 @@
         },
         "en": {
             "translation": "useless",
-            "note": "todo"
+            "note": "Note: inútil describes something that doesn't serve its purpose. When used about people, it can come across as rude, so use with care.",
+            "port_exemple": "Este objeto é inútil.",
+            "en_exemple": "This object is useless.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29547,8 +29991,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "yoghurt",
-            "note": "todo"
+            "translation": "yogurt",
+            "note": "In Portuguese, 'iogurte' refers to the dairy product yogurt. In English, the common spelling is 'yogurt' (though 'yoghurt' is also correct in British English).",
+            "port_exemple": "Gosto de iogurte com granola pela manhã.",
+            "en_exemple": "I like yogurt with granola in the morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29567,8 +30014,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "ipod",
-            "note": "todo"
+            "translation": "iPod",
+            "note": "Note: iPod is a proper noun and is capitalized. In European Portuguese, people often use iPod to refer to the Apple device; it's a loanword.",
+            "port_exemple": "O meu iPod está a carregar.",
+            "en_exemple": "My iPod is charging.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29587,8 +30037,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to go = travel",
-            "note": "todo"
+            "translation": "to go",
+            "note": "Ir is the basic verb meaning 'to go' and is used for movement and for near-future constructions with the infinitive (ir + infinitive).",
+            "port_exemple": "Eu quero ir ao cinema.",
+            "en_exemple": "I want to go to the cinema.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29608,7 +30061,10 @@
         },
         "en": {
             "translation": "to go shopping",
-            "note": "todo"
+            "note": "This phrase is very common in everyday Portuguese. It usually refers to a casual shopping trip rather than a specific purchase.",
+            "port_exemple": "Vou às compras amanhã.",
+            "en_exemple": "I'm going shopping tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29627,8 +30083,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to meet = pickup, fetch",
-            "note": "todo"
+            "translation": "to pick up",
+            "note": "In European Portuguese, 'ir buscar' means to go and retrieve someone or something. In everyday English, 'pick up' is the most natural equivalent for people or things.",
+            "port_exemple": "Vou buscar o meu amigo ao aeroporto.",
+            "en_exemple": "I'm going to pick up my friend at the airport.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29648,7 +30107,10 @@
         },
         "en": {
             "translation": "to go to sleep",
-            "note": "todo"
+            "note": "ir dormir is the infinitive form meaning 'to go to sleep' and is commonly used with other verbs (vou, tenho de, etc.). In everyday speech, people may simply say 'dormir' or 'vou dormir'.",
+            "port_exemple": "É tarde, tenho de ir dormir.",
+            "en_exemple": "It's late, I have to go to sleep.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29668,7 +30130,10 @@
         },
         "en": {
             "translation": "to go to bed",
-            "note": "todo"
+            "note": "Note that 'ir para a cama' conveys the act of going to sleep, not merely moving to a bed. In everyday Portuguese you commonly say 'vou para a cama' or 'vamos para a cama' to indicate going to sleep.",
+            "port_exemple": "Eu vou para a cama agora.",
+            "en_exemple": "I am going to bed now.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29688,7 +30153,10 @@
         },
         "en": {
             "translation": "to go (ice/roller) skating",
-            "note": "todo"
+            "note": "Note: 'ir patinar' means 'to go skating' in general. If you need to be specific, use 'patinagem no gelo' for ice skating or mention 'roller skating' with 'patins' depending on the context.",
+            "port_exemple": "Queres ir patinar comigo este fim de semana?",
+            "en_exemple": "Do you want to go skating with me this weekend?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29708,7 +30176,10 @@
         },
         "en": {
             "translation": "sister",
-            "note": "todo"
+            "note": "Irmã is the standard word for a female sibling. In everyday Portuguese you combine it with possessives like 'minha irmã' (my sister); the plural is 'irmãs' and a diminutive form is 'irmãzinha'.",
+            "port_exemple": "A minha irmã está a ler um livro.",
+            "en_exemple": "My sister is reading a book.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29727,8 +30198,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "brothers & sisters",
-            "note": "todo"
+            "translation": "brothers",
+            "note": "Note: irmãos literally means 'brothers' (masc.). In everyday usage, it can refer to siblings in general, but for explicit gender you should use 'irmãs' for sisters or 'irmãos e irmãs' for a mixed group.",
+            "port_exemple": "Eu tenho dois irmãos.",
+            "en_exemple": "I have two brothers.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29747,8 +30221,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "italy",
-            "note": "todo"
+            "translation": "Italy",
+            "note": "Itália is a proper noun and is always capitalized and accented in Portuguese. In English, the country name is 'Italy' with a capital I.",
+            "port_exemple": "Eu vou viajar para a Itália no próximo verão.",
+            "en_exemple": "I will travel to Italy next summer.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29768,7 +30245,10 @@
         },
         "en": {
             "translation": "already",
-            "note": "todo"
+            "note": "Já mainly means 'already' and is used with verbs to express something has happened before now. It is very common in European Portuguese and its nuance depends on the context.",
+            "port_exemple": "Eu já comi.",
+            "en_exemple": "I've already eaten.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29788,7 +30268,10 @@
         },
         "en": {
             "translation": "no longer",
-            "note": "todo"
+            "note": "It indicates a change from a previous situation. It is used with verbs to express that something is not the case anymore.",
+            "port_exemple": "Ele já não trabalha aqui.",
+            "en_exemple": "He no longer works here.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29807,8 +30290,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "evening meal",
-            "note": "todo"
+            "translation": "dinner",
+            "note": "In European Portuguese, jantar is primarily used as a noun meaning the evening meal. The verb jantar means 'to have dinner'.",
+            "port_exemple": "Vamos jantar às oito.",
+            "en_exemple": "Let's have dinner at eight.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29828,7 +30314,10 @@
         },
         "en": {
             "translation": "knee",
-            "note": "todo"
+            "note": "Joelho is the standard word for the knee (body part). The plural is joelhos (os joelhos).",
+            "port_exemple": "Eu bati o joelho na porta.",
+            "en_exemple": "I hit my knee on the door.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29848,7 +30337,10 @@
         },
         "en": {
             "translation": "player",
-            "note": "todo"
+            "note": "The masculine form is 'jogador'; the feminine is 'jogadora'. In English, 'player' is the standard translation; 'gamer' is often used for video games.",
+            "port_exemple": "O jogador marcou um golo.",
+            "en_exemple": "The player scored a goal.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29868,7 +30360,10 @@
         },
         "en": {
             "translation": "to play (e.g. games)",
-            "note": "todo"
+            "note": "Jogar primarily means 'to play' in European Portuguese, especially with games and sports. It can also mean 'to gamble' (e.g., jogar cartas) or 'to throw' in some phrases, and the meaning depends on context.",
+            "port_exemple": "Eu gosto de jogar futebol.",
+            "en_exemple": "I like to play football.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29887,8 +30382,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "computador computer game",
-            "note": "todo"
+            "translation": "card game",
+            "note": "In Portuguese, 'jogo de' introduces the type of game. When followed by a specific noun, English usually places the noun before 'game' (e.g., 'jogo de cartas' becomes 'card game', 'jogo de tabuleiro' becomes 'board game').",
+            "port_exemple": "Este é um jogo de cartas.",
+            "en_exemple": "This is a card game.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29908,7 +30406,10 @@
         },
         "en": {
             "translation": "newspaper",
-            "note": "todo"
+            "note": "Note: Jornal primarily means 'newspaper' in everyday use. It can also refer to a TV or radio news program (the news segment) depending on context.",
+            "port_exemple": "Eu leio o jornal todas as manhãs.",
+            "en_exemple": "I read the newspaper every morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29928,7 +30429,10 @@
         },
         "en": {
             "translation": "journalist",
-            "note": "todo"
+            "note": "Jornalista is gender-neutral in form; you show gender with the article (o jornalista = male, a jornalista = female). It refers to someone who reports for newspapers, magazines, or TV and radio.",
+            "port_exemple": "O jornalista entrevistou o ministro hoje.",
+            "en_exemple": "The journalist interviewed the minister today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29948,7 +30452,10 @@
         },
         "en": {
             "translation": "teenager",
-            "note": "todo"
+            "note": "Adolescente is the standard noun for a young person roughly 12 to 18 years old. In Portuguese, it can also function as an adjective meaning 'adolescent'.",
+            "port_exemple": "O meu irmão é adolescente e gosta de futebol.",
+            "en_exemple": "My brother is a teenager and likes football.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2
     },
@@ -29963,8 +30470,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "young",
-            "note": "todo"
+            "translation": "young, new",
+            "note": "The two words are separate adjectives. 'Jovem' means 'young' and 'novo' means 'new'.",
+            "port_exemple": "A jovem ganhou um livro novo.",
+            "en_exemple": "The young girl got a new book.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -29984,7 +30494,10 @@
         },
         "en": {
             "translation": "wool",
-            "note": "todo"
+            "note": "Lã refers to the wool material used in textiles. It is feminine (a lã) and the plural is as lãs.",
+            "port_exemple": "Eu comprei lã para tricotar.",
+            "en_exemple": "I bought wool to knit.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30004,7 +30517,10 @@
         },
         "en": {
             "translation": "lip",
-            "note": "todo"
+            "note": "In Portuguese, 'lábio' is a masculine noun meaning 'lip'. The plural is 'lábios'.",
+            "port_exemple": "Ela mordeu o lábio por nervosismo.",
+            "en_exemple": "She bit her lip out of nervousness.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30024,7 +30540,10 @@
         },
         "en": {
             "translation": "laboratory",
-            "note": "todo"
+            "note": "In everyday English, 'lab' is a common informal form. Use 'laboratory' in formal writing.",
+            "port_exemple": "O cientista trabalha no laboratório.",
+            "en_exemple": "The scientist works in the laboratory.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -30043,8 +30562,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to have afternoon tea / coffee",
-            "note": "todo"
+            "translation": "to snack",
+            "note": "Lanchar means to have a light meal or snack between meals, not specifically afternoon tea. It is casual Portuguese for a small meal or bite to eat.",
+            "port_exemple": "Vamos lanchar às quatro.",
+            "en_exemple": "Let's have a snack at four.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30063,8 +30585,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "torch",
-            "note": "todo"
+            "translation": "flashlight",
+            "note": "In European Portuguese, lanterna usually means a handheld electric light (a flashlight). 'Lantern' refers to a larger portable lamp with a glass enclosure, often used for camping or nighttime lighting, and is less common in everyday speech.",
+            "port_exemple": "Eu preciso de uma lanterna.",
+            "en_exemple": "I need a flashlight to see in the dark.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30084,7 +30609,10 @@
         },
         "en": {
             "translation": "pencil",
-            "note": "todo"
+            "note": "In Portuguese, lápis is a masculine noun. The plural form is os lápis; the singular 'o lápis' vs the plural 'os lápis', and the spelling is the same for both.",
+            "port_exemple": "Eu tenho um lápis.",
+            "en_exemple": "I have a pencil.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30103,8 +30631,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "orange (=fruit)",
-            "note": "todo"
+            "translation": "orange",
+            "note": "In Portuguese, laranja can mean both the fruit and the color. Context usually makes the intended meaning clear.",
+            "port_exemple": "Eu comi uma laranja esta manhã.",
+            "en_exemple": "I ate an orange this morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30123,8 +30654,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": " can, tin (opener)",
-            "note": "todo"
+            "translation": "can (or tin) and can opener",
+            "note": "Note: 'lata' is a metal can; 'abre-latas' or 'abridor de lata' is the can opener. Both terms are common in everyday European Portuguese.",
+            "port_exemple": "Eu usei o abridor de lata para abrir a lata.",
+            "en_exemple": "I used the can opener to open the can.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30143,8 +30677,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to wash (o.s.)",
-            "note": "todo"
+            "translation": "to wash oneself",
+            "note": "In European Portuguese, lavar-se indicates an action done to oneself. In everyday usage, you often use lavar without the reflexive when the body part is the object, e.g., \"lavo as mãos\" (I wash my hands).",
+            "port_exemple": "Eu lavo-me todos os dias.",
+            "en_exemple": "I wash myself every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30163,8 +30700,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to clean (teeth)",
-            "note": "todo"
+            "translation": "to wash; to clean",
+            "note": "Lavar means 'to wash' (with water). Limpar means 'to clean' in a broader sense; for the phrase 'lavar os dentes' the natural English is 'brush your teeth'.",
+            "port_exemple": "Eu vou lavar a louça e limpar a casa.",
+            "en_exemple": "I'm going to wash the dishes and clean the house.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30184,7 +30724,10 @@
         },
         "en": {
             "translation": "washbasin",
-            "note": "todo"
+            "note": "Note: lavatório mainly refers to a sink, usually in a bathroom. For kitchen sinks, people more often say 'pia'.",
+            "port_exemple": "O lavatório da casa de banho está sujo.",
+            "en_exemple": "The bathroom sink is dirty.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30204,7 +30747,10 @@
         },
         "en": {
             "translation": "lion",
-            "note": "todo"
+            "note": "Leão is the standard word for the animal. It can also be used figuratively to describe strength or bravery.",
+            "port_exemple": "O leão está no zoológico.",
+            "en_exemple": "The lion is at the zoo.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30224,7 +30770,10 @@
         },
         "en": {
             "translation": "to remember, remind",
-            "note": "todo"
+            "note": "Used mainly as 'to remember'. It also means 'to remind someone of something' when used with 'de' (lembrar alguém de algo).",
+            "port_exemple": "Eu lembro disso.",
+            "en_exemple": "I remember that.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30244,7 +30793,10 @@
         },
         "en": {
             "translation": "handkerchief",
-            "note": "todo"
+            "note": "Lenço mainly means a handkerchief for wiping the nose. In some contexts it can also refer to a scarf, but handkerchief is the most common meaning.",
+            "port_exemple": "Ela tirou o lenço do bolso para enxugar o nariz.",
+            "en_exemple": "She took the handkerchief out of her pocket to wipe her nose.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -30264,7 +30816,10 @@
         },
         "en": {
             "translation": "sheet (=bed)",
-            "note": "todo"
+            "note": "Lençol is the standard word for a bed sheet in European Portuguese. In everyday language, people typically say 'lençóis' for multiple sheets, and 'lençol freático' is a technical term meaning groundwater layer.",
+            "port_exemple": "Eu preciso de um lençol novo.",
+            "en_exemple": "I need a new sheet.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30284,7 +30839,10 @@
         },
         "en": {
             "translation": "slow",
-            "note": "todo"
+            "note": "Lento is the standard adjective for 'slow' in European Portuguese. It describes pace or speed and can sound blunt if used about people.",
+            "port_exemple": "O trânsito está lento nesta manhã.",
+            "en_exemple": "Traffic is slow this morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30304,7 +30862,10 @@
         },
         "en": {
             "translation": "to read",
-            "note": "todo"
+            "note": "Ler is the basic verb for 'to read' and is a regular -er verb. In European Portuguese, you usually say 'eu leio', 'tu lês', 'ele lê', 'nós lemos', and 'vocês leem' in everyday speech.",
+            "port_exemple": "Eu gosto de ler antes de dormir.",
+            "en_exemple": "I like to read before going to sleep.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30324,7 +30885,10 @@
         },
         "en": {
             "translation": "letter (=of alphabet)",
-            "note": "todo"
+            "note": "Note: 'letra' primarily means a letter (character) of the alphabet. It can also mean the lyrics of a song, depending on context.",
+            "port_exemple": "A primeira letra do alfabeto é A.",
+            "en_exemple": "The first letter of the alphabet is A.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30344,7 +30908,10 @@
         },
         "en": {
             "translation": "to stand up, get up",
-            "note": "todo"
+            "note": "Levantar-se is a reflexive verb meaning to get up (rise from bed) or to stand up (from a seated/lying position). In European Portuguese, the reflexive pronoun is used with the verb (e.g., eu levanto-me).",
+            "port_exemple": "Eu levanto-me às seis.",
+            "en_exemple": "I get up at six.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30363,8 +30930,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to take (with you)",
-            "note": "todo"
+            "translation": "to take",
+            "note": "Levar means to move something away from the speaker or to take it to another place. It also contrasts with 'trazer' (to bring toward the speaker).",
+            "port_exemple": "Eu vou levar o livro para a escola.",
+            "en_exemple": "I'll take the book to school.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30384,7 +30954,10 @@
         },
         "en": {
             "translation": "leader (e.g of travel group)",
-            "note": "todo"
+            "note": "Líder is a general word for someone who leads a group. In European Portuguese, you can specify the context with phrases like 'líder da equipa' for a team's leader; for a tour guide, use 'guia'.",
+            "port_exemple": "Ele é o líder da equipa.",
+            "en_exemple": "He is the team leader.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30404,7 +30977,10 @@
         },
         "en": {
             "translation": "league",
-            "note": "todo"
+            "note": "Liga is a noun meaning 'league' used for sports leagues. It can also be a verb form (he/she/you turn on or call) depending on context.",
+            "port_exemple": "A liga de futebol começou hoje.",
+            "en_exemple": "The football league started today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30423,8 +30999,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "connection (trains)",
-            "note": "todo"
+            "translation": "train connection",
+            "note": "Note: In European Portuguese, ligação is the general term for a 'connection' or 'link'. For trains, 'ligação de comboio' is a common way to refer to a connecting service.",
+            "port_exemple": "Tenho uma ligação de comboio para Lisboa às 16h.",
+            "en_exemple": "I have a train connection to Lisbon at 4:00 PM.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30443,8 +31022,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to start (cars)",
-            "note": "todo"
+            "translation": "to turn on",
+            "note": "The given translation is too narrow. A more common meaning is 'to turn on' (a device or light), and it can also mean 'to call' someone in other contexts (ligar para alguém).",
+            "port_exemple": "Ligo a luz quando entro no quarto.",
+            "en_exemple": "I turn on the light when I enter the room.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30464,7 +31046,10 @@
         },
         "en": {
             "translation": "lemon",
-            "note": "todo"
+            "note": "Limão is the standard word for the citrus fruit, usually lemon. For lime, Portuguese typically uses 'lima' (or 'limão-taiti' for the lime variety).",
+            "port_exemple": "Gosto de beber água com limão.",
+            "en_exemple": "I like to drink water with lemon.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30484,7 +31069,10 @@
         },
         "en": {
             "translation": "lemonade",
-            "note": "todo"
+            "note": "Limonada is the standard term in Portuguese for the lemon-flavored drink. In European Portuguese you commonly say uma limonada, especially when it is well chilled.",
+            "port_exemple": "Eu bebi uma limonada fresca.",
+            "en_exemple": "I drank a refreshing lemonade.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30504,7 +31092,10 @@
         },
         "en": {
             "translation": "to clean",
-            "note": "todo"
+            "note": "Limpar primarily means removing dirt or making something clean. For tidying up a space, 'arrumar' is often more natural; in computing, 'limpar' can also mean 'to clear'.",
+            "port_exemple": "Vou limpar a casa hoje.",
+            "en_exemple": "I'm going to clean the house today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30524,7 +31115,10 @@
         },
         "en": {
             "translation": "beautiful",
-            "note": "todo"
+            "note": "Lindo is a strong, affectionate way to say something is very beautiful or handsome. It is commonly used in everyday speech for people and things, and it can feel warmer than 'bonito'.",
+            "port_exemple": "Este carro é lindo.",
+            "en_exemple": "This car is beautiful.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30544,7 +31138,10 @@
         },
         "en": {
             "translation": "tongue; language",
-            "note": "todo"
+            "note": "Translation is accurate. In Portuguese, língua can mean either the tongue or a language, depending on context.",
+            "port_exemple": "A língua é o músculo que usamos para saborear a comida.",
+            "en_exemple": "The tongue is the muscle we use to taste food.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30563,8 +31160,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "straight (e.g.hair)",
-            "note": "todo"
+            "translation": "smooth",
+            "note": "Liso mainly means smooth or flat in general usage. For hair, the common translation is 'straight'.",
+            "port_exemple": "O piso é liso.",
+            "en_exemple": "The floor is smooth.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30584,7 +31184,10 @@
         },
         "en": {
             "translation": "bookshop",
-            "note": "todo"
+            "note": "Livraria means a bookstore (not a library). In European Portuguese it's the standard term for a shop that sells books; 'biblioteca' is the library.",
+            "port_exemple": "Eu comprei um livro na livraria ontem.",
+            "en_exemple": "I bought a book at the bookstore yesterday.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30603,8 +31206,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "litter, rubbish",
-            "note": "todo"
+            "translation": "garbage",
+            "note": "Note that lixo usually means household garbage rather than litter on the street; 'garbage' or 'trash' are the common translations. It can also be used figuratively to mean something of poor quality.",
+            "port_exemple": "Este lixo cheira mal.",
+            "en_exemple": "This garbage smells bad.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30624,7 +31230,10 @@
         },
         "en": {
             "translation": "as soon as",
-            "note": "Logo que: more formal, literary or a bit archaic"
+            "note": "Logo que: more formal, literary or a bit archaic",
+            "port_exemple": "Assim que chegar, ligue-me.",
+            "en_exemple": "As soon as you arrive, call me.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -30644,7 +31253,10 @@
         },
         "en": {
             "translation": "clothes shop",
-            "note": "todo"
+            "note": "Translation 'clothes shop' is accurate. In American English, 'clothing store' is more common; 'clothes shop' is more typical in British English.",
+            "port_exemple": "Fui à loja de roupa para comprar uma camisa.",
+            "en_exemple": "I went to the clothing store to buy a shirt.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30664,7 +31276,10 @@
         },
         "en": {
             "translation": "bright",
-            "note": "todo"
+            "note": "Luminoso is often used for things that emit light or glow. In everyday speech, 'bright' is the more natural choice for daylight or general description.",
+            "port_exemple": "O dia está luminoso.",
+            "en_exemple": "The day is bright.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30684,7 +31299,10 @@
         },
         "en": {
             "translation": "sunny",
-            "note": "todo"
+            "note": "Ensolarado describes weather or sunlit conditions. It’s commonly used in European Portuguese to talk about how sunny something is, like the day or the sky.",
+            "port_exemple": "Hoje está ensolarado.",
+            "en_exemple": "Today is sunny.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30704,7 +31322,10 @@
         },
         "en": {
             "translation": "luxury",
-            "note": "todo"
+            "note": "In Portuguese, luxo is a noun meaning luxury. When used as 'de luxo', it describes high-end, premium quality.",
+            "port_exemple": "Este hotel é de luxo.",
+            "en_exemple": "This hotel is luxurious.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30724,7 +31345,10 @@
         },
         "en": {
             "translation": "apple",
-            "note": "todo"
+            "note": "The noun maçã is feminine. You use 'uma maçã' for 'an apple' or 'a maçã' for 'the apple', and the plural is maçãs.",
+            "port_exemple": "Eu como uma maçã todas as manhãs.",
+            "en_exemple": "I eat an apple every morning.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30744,7 +31368,10 @@
         },
         "en": {
             "translation": "monkey",
-            "note": "todo"
+            "note": "‘Macaco’ is the standard word for the animal. Be cautious: using it to refer to a person can be offensive; avoid using it as an insult.",
+            "port_exemple": "O macaco subiu na árvore.",
+            "en_exemple": "The monkey climbed up the tree.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30764,7 +31391,10 @@
         },
         "en": {
             "translation": "handle (door)",
-            "note": "todo"
+            "note": "Maçaneta is the standard term for a door handle in European Portuguese. It refers to the part you turn or push to open a door.",
+            "port_exemple": "A maçaneta da porta está solta.",
+            "en_exemple": "The door handle is loose.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30783,8 +31413,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "smooth",
-            "note": "todo"
+            "translation": "soft",
+            "note": "Macio mainly means soft in texture or feel. For a smooth surface, use 'liso' or 'suave' depending on the context.",
+            "port_exemple": "A cama é macia.",
+            "en_exemple": "The bed is soft.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30803,8 +31436,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "slim",
-            "note": "todo"
+            "translation": "slender",
+            "note": "Note: magro esbelto describes someone who is thin in a graceful, well-proportioned way. In everyday speech, slender or lean is common; slim is acceptable but less precise.",
+            "port_exemple": "O rapaz magro esbelto caminhava pela sala.",
+            "en_exemple": "The slender, lean young man walked across the room.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30824,7 +31460,10 @@
         },
         "en": {
             "translation": "suitcase",
-            "note": "todo"
+            "note": "Common, straightforward term for luggage. For carry-on, you often hear 'mala de mão'; for other bags, use 'bolsa' or 'saco' depending on size.",
+            "port_exemple": "Eu preciso de uma mala nova para a viagem.",
+            "en_exemple": "I need a new suitcase for the trip.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30843,8 +31482,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to order (e.g. in restaurant)",
-            "note": "todo"
+            "translation": "to order",
+            "note": "Note: In European Portuguese, 'encomendar' is usually used for ordering goods or services or to commission something. For ordering food in a restaurant, you would typically use 'pedir'.",
+            "port_exemple": "Vou encomendar comida para o jantar.",
+            "en_exemple": "I'm going to order some food for dinner.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30864,7 +31506,10 @@
         },
         "en": {
             "translation": "to send (informal) (e.g. text message)",
-            "note": "Enviar is more formal for 'send'"
+            "note": "Enviar is more formal for 'send'",
+            "port_exemple": "Vou mandar uma mensagem.",
+            "en_exemple": "I'm going to send a message.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30884,7 +31529,10 @@
         },
         "en": {
             "translation": "train driver",
-            "note": "todo"
+            "note": "Maquinista can mean a machine operator or a locomotive driver. In railway contexts, 'train driver' is the standard translation.",
+            "port_exemple": "O maquinista cumprimentou os passageiros na plataforma.",
+            "en_exemple": "The train driver greeted the passengers on the platform.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 1,
         "audio": {
@@ -30904,7 +31552,10 @@
         },
         "en": {
             "translation": "wonderful",
-            "note": "todo"
+            "note": "It conveys strong positive emotion and is widely used for places, things, or experiences. In casual speech you might also use 'incrível' or 'fantástico' for a similar sense.",
+            "port_exemple": "Este lugar é maravilhoso.",
+            "en_exemple": "This place is wonderful.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30924,7 +31575,10 @@
         },
         "en": {
             "translation": "but",
-            "note": "todo"
+            "note": "Mas is the everyday 'but' in European Portuguese. It introduces a contrast between two clauses; in more formal writing you might use 'porém', 'entretanto', or 'no entanto'.",
+            "port_exemple": "Quero ir ao parque, mas está frio.",
+            "en_exemple": "I want to go to the park, but it's cold.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30943,8 +31597,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "pasta, noodles",
-            "note": "todo"
+            "translation": "pasta, tagliatelle",
+            "note": "In European Portuguese, massa typically means pasta when talking about food (not just dough). Talharim is a flat ribbon pasta, usually translated as tagliatelle in English.",
+            "port_exemple": "Na despensa, tenho massa e talharim para o almoço.",
+            "en_exemple": "In the pantry, I have pasta and tagliatelle for lunch.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30963,8 +31620,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "maths",
-            "note": "todo"
+            "translation": "mathematics",
+            "note": "In Portuguese, 'matemática' is the standard term for the subject. It is used in both formal and everyday contexts to refer to the discipline.",
+            "port_exemple": "A matemática é uma disciplina importante.",
+            "en_exemple": "Mathematics is a challenging subject.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -30984,7 +31644,10 @@
         },
         "en": {
             "translation": "material",
-            "note": "todo"
+            "note": "In Portuguese, material can refer to substances or equipment. In English, 'material' works for both senses; use 'materials' for multiple items or 'study materials' when talking about educational content.",
+            "port_exemple": "Este material é necessário para o experimento.",
+            "en_exemple": "This material is necessary for the experiment.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31004,7 +31667,10 @@
         },
         "en": {
             "translation": "mechanic",
-            "note": "todo"
+            "note": "Note that mecânico is the masculine noun for a male mechanic. The feminine form is mecânica, used for a female mechanic or when referring to the field of mechanics.",
+            "port_exemple": "O mecânico consertou o carro.",
+            "en_exemple": "The mechanic fixed the car.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31024,7 +31690,10 @@
         },
         "en": {
             "translation": "medium (=height/length)",
-            "note": "todo"
+            "note": "médio has multiple senses: for size it means 'medium'. In other contexts it can mean 'average' or 'moderate'.",
+            "port_exemple": "Ele tem estatura média.",
+            "en_exemple": "He has an average height.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31044,7 +31713,10 @@
         },
         "en": {
             "translation": "midnight",
-            "note": "todo"
+            "note": "Used to denote the middle of the night. Commonly said as 'à meia-noite' to mean 'at midnight'.",
+            "port_exemple": "Ela chegou à meia-noite.",
+            "en_exemple": "She arrived at midnight.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31063,8 +31735,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "middle (in the middle of), half",
-            "note": "todo"
+            "translation": "half",
+            "note": "Current translation is not fully accurate because meio has several uses. The most common meaning is 'half' for quantities, but it can also mean 'somewhat' (a little) or 'a means/way' depending on the context.",
+            "port_exemple": "Estou meio cansado hoje.",
+            "en_exemple": "I'm a bit tired today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31083,8 +31758,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "a half",
-            "note": "todo"
+            "translation": "half",
+            "note": "Meio is often used before a quantity to mean 'half' of something (e.g., meio litro, meio copo). Metade is the standard noun for 'half' of something.",
+            "port_exemple": "Eu bebi meio copo de água.",
+            "en_exemple": "I drank half a glass of water.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31104,7 +31782,10 @@
         },
         "en": {
             "translation": "midday",
-            "note": "todo"
+            "note": "Meio-dia refers to the time around 12:00. In everyday English, 'noon' is the most natural translation; 'midday' is correct but less common in speech.",
+            "port_exemple": "Vamos nos encontrar ao meio-dia.",
+            "en_exemple": "Let's meet at noon.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31124,7 +31805,10 @@
         },
         "en": {
             "translation": "honey",
-            "note": "todo"
+            "note": "Mel is the standard word for the sweet substance produced by bees. It is not commonly used as a term of endearment; for affection, use 'amor' or 'querido'.",
+            "port_exemple": "Eu gosto de mel no meu chá.",
+            "en_exemple": "I like honey in my tea.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31143,8 +31827,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "member",
-            "note": "todo"
+            "translation": "partner",
+            "note": "Context determines the best translation: 'sócio' can mean a business partner or a club member. In business contexts, use 'partner' or 'co-owner'; for clubs, 'member' is more natural.",
+            "port_exemple": "Ele é sócio da empresa.",
+            "en_exemple": "He is a partner in the company.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2
     },
@@ -31160,7 +31847,10 @@
         },
         "en": {
             "translation": "market (place)",
-            "note": "todo"
+            "note": "In Portuguese, mercado can refer to a physical market or a market in general. In economics, it also means the market for goods or services (mercado financeiro).",
+            "port_exemple": "Vou ao mercado todos os sábados.",
+            "en_exemple": "I go to the market every Saturday.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31179,8 +31869,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "fashion (able)",
-            "note": "fashion(able): na moda"
+            "translation": "fashion",
+            "note": "fashion(able): na moda",
+            "port_exemple": "A moda está mudando rapidamente.",
+            "en_exemple": "Fashion is changing quickly.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31200,7 +31893,10 @@
         },
         "en": {
             "translation": "moderate",
-            "note": "todo"
+            "note": "Moderado is used for things that are not extreme, such as people, opinions, or levels of intensity. In everyday Portuguese, it's a common word for 'balanced' or 'not extreme'.",
+            "port_exemple": "Ele é um homem moderado.",
+            "en_exemple": "He is a moderate man.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31219,8 +31915,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "manner",
-            "note": "todo"
+            "translation": "way",
+            "note": "Modo is a versatile word meaning 'way', 'manner', or 'method'. In everyday speech, 'way' is usually the most natural translation, as in 'modo de pensar' (way of thinking).",
+            "port_exemple": "Este é o meu modo de pensar.",
+            "en_exemple": "This is my way of thinking.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31240,7 +31939,10 @@
         },
         "en": {
             "translation": "coin",
-            "note": "todo"
+            "note": "Moeda usually means a coin. When referring to money in general, use dinheiro.",
+            "port_exemple": "Preciso de moeda para o parquímetro.",
+            "en_exemple": "I need a coin for the parking meter.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31260,7 +31962,10 @@
         },
         "en": {
             "translation": "wet",
-            "note": "todo"
+            "note": "Molhado is the standard word for something covered with water. For a lighter degree of wetness, you might use úmido.",
+            "port_exemple": "O chão ficou molhado.",
+            "en_exemple": "The floor got wet.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -31279,8 +31984,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "gravy, sauce",
-            "note": "todo"
+            "translation": "sauce",
+            "note": "Note: 'molho' is a general term for any sauce; 'gravy' is a specific meat-based sauce, not a generic term.",
+            "port_exemple": "Este molho está delicioso.",
+            "en_exemple": "This sauce is delicious.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31300,7 +32008,10 @@
         },
         "en": {
             "translation": "strawberry",
-            "note": "todo"
+            "note": "Morango is a common, everyday noun for the fruit. In European Portuguese, you usually say 'um morango' for 'a strawberry' and 'morangos' for plural.",
+            "port_exemple": "Eu comi um morango.",
+            "en_exemple": "I ate a strawberry.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31320,7 +32031,10 @@
         },
         "en": {
             "translation": "to live (place)",
-            "note": "todo"
+            "note": "Morar specifically means to reside or live in a place. It is used with 'em' + place (e.g., 'moro em Lisboa').",
+            "port_exemple": "Eu moro em Lisboa.",
+            "en_exemple": "I live in Lisbon.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31340,7 +32054,10 @@
         },
         "en": {
             "translation": "mustard",
-            "note": "todo"
+            "note": "Mostarda is the condiment made from mustard seeds. In Portuguese, 'mostarda' can also refer to the mustard color (a yellow-brown shade).",
+            "port_exemple": "Eu gosto de mostarda no meu sanduíche.",
+            "en_exemple": "I like mustard on my sandwich.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31360,7 +32077,10 @@
         },
         "en": {
             "translation": "to show",
-            "note": "todo"
+            "note": "Mostrar is the standard verb for showing or displaying something. In European Portuguese, pronouns are commonly attached to mostrar (e.g., mostrar-lhe).",
+            "port_exemple": "Eu quero mostrar-lhe o mapa.",
+            "en_exemple": "I want to show you the map.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31380,7 +32100,10 @@
         },
         "en": {
             "translation": "to change",
-            "note": "todo"
+            "note": "Mudar mainly means 'to change.' In some contexts it can also mean 'to move' or 'to relocate' (as in 'mudar de casa').",
+            "port_exemple": "Eu quero mudar de opinião.",
+            "en_exemple": "I want to change my mind.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31399,8 +32122,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "a lot, much, many",
-            "note": "todo"
+            "translation": "muito: much / very / a lot; muitos: many / a lot (of)",
+            "note": "Note that muito can mean very or a lot depending on context, and muitos means many or a lot (of) before plural masculine nouns. The form agrees with number and gender (muitos for masculine plural, muitas for feminine plural).",
+            "port_exemple": "Há muitos livros na sala, e este é muito interessante.",
+            "en_exemple": "There are many books in the room, and this one is very interesting.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31419,8 +32145,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "wall (exterior)",
-            "note": "todo"
+            "translation": "wall",
+            "note": "Muro is typically used for exterior walls or boundaries around a space. For interior walls inside a building, use 'parede'.",
+            "port_exemple": "O muro da casa é alto.",
+            "en_exemple": "The wall of the house is tall.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31440,7 +32169,10 @@
         },
         "en": {
             "translation": "museum",
-            "note": "todo"
+            "note": "In Portuguese, 'museu' is masculine (o museu). The plural is 'museus'.",
+            "port_exemple": "Vamos ao museu amanhã.",
+            "en_exemple": "Let's go to the museum tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31460,7 +32192,10 @@
         },
         "en": {
             "translation": "music (pop/classical/folk)",
-            "note": "todo"
+            "note": "Note that música is uncountable in Portuguese and is used to refer to the art form in general. When naming genres, you say música pop, música clássica, or música folclórica.",
+            "port_exemple": "Gosto de música pop.",
+            "en_exemple": "I like pop music.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31480,7 +32215,10 @@
         },
         "en": {
             "translation": "musician",
-            "note": "todo"
+            "note": "Músico is the masculine noun for a musician; for a female musician, use musicista.",
+            "port_exemple": "O músico está no palco.",
+            "en_exemple": "The musician is on stage.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31499,8 +32237,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "at the front",
-            "note": "todo"
+            "translation": "in front of",
+            "note": "Use 'in front of' when a noun follows (e.g., in front of the house). 'Na frente' can also mean simply 'the front' or 'in front' depending on the sentence.",
+            "port_exemple": "O carro está na frente da casa.",
+            "en_exemple": "The car is in front of the house.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31520,7 +32261,10 @@
         },
         "en": {
             "translation": "to swim",
-            "note": "todo"
+            "note": "Nadar is a regular -ar verb (infinitive). It describes the act of swimming in general and is often used with phrases like 'gostar de nadar' (to like swimming).",
+            "port_exemple": "Eu gosto de nadar.",
+            "en_exemple": "I like to swim.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31540,7 +32284,10 @@
         },
         "en": {
             "translation": "to be wrong",
-            "note": "todo"
+            "note": "Note: 'ter razão' means to be right in an argument. 'Não ter razão' means you're wrong or mistaken.",
+            "port_exemple": "Você não tem razão.",
+            "en_exemple": "You're wrong.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31560,7 +32307,10 @@
         },
         "en": {
             "translation": "birth",
-            "note": "todo"
+            "note": "Nascimento is a common noun for the event of being born. It is often used in phrases like 'data de nascimento' (date of birth).",
+            "port_exemple": "O nascimento do bebê foi celebrado pela família.",
+            "en_exemple": "The birth of the baby was celebrated by the family.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31579,8 +32329,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "cream (cooking cream)",
-            "note": "todo"
+            "translation": "cream",
+            "note": "Nata refers to dairy cream—the fat that rises to the top of milk. In European Portuguese it's commonly used in cooking and desserts, and in English you simply say 'cream'.",
+            "port_exemple": "O cozinheiro usou nata para fazer o molho cremoso.",
+            "en_exemple": "The cook used cream to make the sauce creamy.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31599,8 +32352,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "cream (cosmetic)",
-            "note": "todo"
+            "translation": "cream",
+            "note": "Creme means cream in general. The exact meaning (cosmetic vs food) depends on context.",
+            "port_exemple": "Este creme hidrata bem a pele.",
+            "en_exemple": "This cream moisturizes the skin well.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31620,7 +32376,10 @@
         },
         "en": {
             "translation": "swimming",
-            "note": "todo"
+            "note": "Natação is a common noun for the activity of swimming. It’s used in sports, fitness, or class contexts and isn’t a verb.",
+            "port_exemple": "A natação é excelente para a saúde.",
+            "en_exemple": "Swimming is excellent for health.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31639,8 +32398,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to sail",
-            "note": "todo"
+            "translation": "to sail (velejar); to navigate/browse (navegar)",
+            "note": "Navegar has multiple meanings (online or navigation). Velejar is specifically about sailing a boat.",
+            "port_exemple": "Eu gosto de navegar pela internet e velejar no verão.",
+            "en_exemple": "I like to browse the internet and sail in the summer.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31659,8 +32421,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "preciso necessary",
-            "note": "todo"
+            "translation": "necessary",
+            "note": "Note: 'necessário' means 'necessary' or 'required' in general. It is more formal than 'preciso,' which is used for personal needs ('I need') or can mean 'precise' in other contexts.",
+            "port_exemple": "É necessário levar um casaco quando sair.",
+            "en_exemple": "It's necessary to take a coat when you go out.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31679,8 +32444,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "minus (e.g temperature)",
-            "note": "todo"
+            "translation": "negative",
+            "note": "Negativo is the standard adjective meaning 'negative' in Portuguese and is used for numbers, results, or attitudes. For the sense of 'minus' or 'less than zero,' Portuguese uses menos, not negativo.",
+            "port_exemple": "O resultado do teste foi negativo.",
+            "en_exemple": "The test result was negative.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -31700,7 +32468,10 @@
         },
         "en": {
             "translation": "nervous",
-            "note": "todo"
+            "note": "Nervoso commonly translates as 'nervous' or 'anxious' in everyday Portuguese. In some contexts, especially with 'ficar nervoso', it can also mean 'to get irritated' or 'angry'.",
+            "port_exemple": "Estou nervoso com o exame de amanhã.",
+            "en_exemple": "I am nervous about tomorrow's exam.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -31720,7 +32491,10 @@
         },
         "en": {
             "translation": "to snow",
-            "note": "todo"
+            "note": "Nevar is an impersonal weather verb. In European Portuguese, you normally say 'está a nevar' for 'it's snowing' and 'nevou' for 'it snowed'.",
+            "port_exemple": "Hoje está a nevar.",
+            "en_exemple": "It's snowing today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31740,7 +32514,10 @@
         },
         "en": {
             "translation": "fog",
-            "note": "todo"
+            "note": "Note that nevoeiro refers to fog, a weather condition that reduces visibility. It is commonly used in weather reports.",
+            "port_exemple": "Hoje há nevoeiro.",
+            "en_exemple": "There is fog today.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31760,7 +32537,10 @@
         },
         "en": {
             "translation": "no-one, nobody",
-            "note": "No one came to the party. (Ninguém veio à festa.)"
+            "note": "No one came to the party. (Ninguém veio à festa.)",
+            "port_exemple": "Ninguém sabe onde ele está.",
+            "en_exemple": "No one knows where he is.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -31779,8 +32559,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "in future",
-            "note": "todo"
+            "translation": "in the future",
+            "note": "No futuro is used to refer to a time after now. In English, the natural expression is 'in the future' with the definite article.",
+            "port_exemple": "No futuro, quero viajar pelo mundo.",
+            "en_exemple": "In the future, I want to travel around the world.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31799,8 +32582,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "at first",
-            "note": "todo"
+            "translation": "in the beginning",
+            "note": "No princípio is often used in more formal or narrative contexts. In everyday speech, people commonly say 'no início' or 'a princípio' to express 'at the beginning' or 'initially'.",
+            "port_exemple": "No princípio, tudo parecia confuso.",
+            "en_exemple": "In the beginning, everything seemed confusing.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31819,8 +32605,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "at the top",
-            "note": "todo"
+            "translation": "at the top of",
+            "note": "No topo de and no cimo mean 'at the top of'. In everyday use, 'at the top of' is natural; no cimo can be more formal and may refer to a summit.",
+            "port_exemple": "No topo da colina há uma pequena casa.",
+            "en_exemple": "There is a small house at the top of the hill.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31839,8 +32628,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "name (also = surname)",
-            "note": "todo"
+            "translation": "name",
+            "note": "Nome means 'name' and can refer to a given name or a full name. For 'surname', use 'sobrenome'.",
+            "port_exemple": "Qual é o teu nome?",
+            "en_exemple": "What is your name?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31859,8 +32651,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "geralmente usually",
-            "note": "todo"
+            "translation": "usually",
+            "note": "Normally translates to 'usually' or 'normally'. It describes habitual actions and can appear at the start or in the middle of a sentence.",
+            "port_exemple": "Normalmente eu acordo às sete.",
+            "en_exemple": "I usually wake up at seven.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31879,8 +32674,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "nut",
-            "note": "todo"
+            "translation": "walnut",
+            "note": "Noz typically means 'nut' in general. When referring to the actual walnut, 'walnut' is more natural in English.",
+            "port_exemple": "Eu comi uma noz.",
+            "en_exemple": "I ate a walnut.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31900,7 +32698,10 @@
         },
         "en": {
             "translation": "what?",
-            "note": "todo"
+            "note": "In European Portuguese, 'o que' is the standard interrogative for 'what'. 'O quê' (with an accent) is used after prepositions or for emphasis in certain contexts.",
+            "port_exemple": "O que é isto?",
+            "en_exemple": "What is this?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31920,7 +32721,10 @@
         },
         "en": {
             "translation": "western",
-            "note": "todo"
+            "note": "Ocidental is a neutral, formal adjective meaning 'western'. In everyday Portuguese, you can also say 'do Ocidente' for 'in the West'.",
+            "port_exemple": "O lado ocidental da cidade é mais calmo.",
+            "en_exemple": "The western side of the city is quieter.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31940,7 +32744,10 @@
         },
         "en": {
             "translation": "to offer",
-            "note": "todo"
+            "note": "Oferecer is a regular verb used to give or present something, such as help or a gift. It is commonly used in everyday speech for voluntary or proactive offers.",
+            "port_exemple": "Quero oferecer minha ajuda.",
+            "en_exemple": "I want to offer my help.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31960,7 +32767,10 @@
         },
         "en": {
             "translation": "special offer",
-            "note": "todo"
+            "note": "Common in advertising. It refers to a promotional price, often for a limited time or while supplies last.",
+            "port_exemple": "A loja lançou uma oferta especial.",
+            "en_exemple": "The store launched a special offer.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -31979,8 +32789,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "reparation, fix",
-            "note": "todo"
+            "translation": "repairs",
+            "note": "Repairs is the natural translation for reparos in everyday Portuguese. In some contexts reparo can also mean an objection or remark, but reparos most often refers to fixes or maintenance.",
+            "port_exemple": "Fiz alguns reparos no carro ontem.",
+            "en_exemple": "I did some repairs on the car yesterday.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32000,7 +32813,10 @@
         },
         "en": {
             "translation": "to repair",
-            "note": "todo"
+            "note": "Note: In European Portuguese, reparar also means 'to notice' (as in reparer em algo). The primary sense is to fix or repair something.",
+            "port_exemple": "O mecânico vai reparar o carro amanhã.",
+            "en_exemple": "The mechanic will repair the car tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32019,8 +32835,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "o.k",
-            "note": "todo"
+            "translation": "OK",
+            "note": "OK is a common, informal interjection meaning 'all right' or 'satisfactory'. It is widely used in European Portuguese in everyday speech and informal texting to indicate agreement or that something is acceptable.",
+            "port_exemple": "Tudo OK com o teu computador?",
+            "en_exemple": "Is everything OK with your computer?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32039,8 +32858,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to look",
-            "note": "todo"
+            "translation": "to look at",
+            "note": "Note that 'olhar' is the verb 'to look,' but it is commonly used with 'para' to mean 'look at' (e.g., 'olhar para o céu'). The noun form 'o olhar' means 'the look' or 'the gaze.'",
+            "port_exemple": "Eu olho para o céu.",
+            "en_exemple": "I look at the sky.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32059,8 +32881,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": " where? (to?)/(from?)",
-            "note": "todo"
+            "translation": "onde? = where? (location); aonde? = where to? / where are you going to?; de onde? = where from? (from where?). Note: 'donde?' is Spanish; in Portuguese the equivalents are 'onde?' or 'de onde?'.",
+            "note": "Remark: In European Portuguese, onde = 'where' (location) and aonde = 'where to?' (movement toward a destination; for many speakers in Portugal, 'para onde' is also common). For origin, use 'de onde'. Also, note that 'donde' is Spanish.",
+            "port_exemple": "Onde fica a biblioteca? Aonde você quer ir depois?",
+            "en_exemple": "Where is the library? Where do you want to go afterward?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32079,8 +32904,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "wages",
-            "note": "todo"
+            "translation": "salary",
+            "note": "In European Portuguese, ordenado is the standard word for salary. It can be confused with its other meaning in different contexts (e.g., 'ordered').",
+            "port_exemple": "O meu ordenado chega no final do mês.",
+            "en_exemple": "My salary arrives at the end of the month.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32100,7 +32928,10 @@
         },
         "en": {
             "translation": "to organise",
-            "note": "todo"
+            "note": "In European Portuguese, 'organizar' means 'to organize'. Use 'to organize' (US spelling) or 'to organise' (UK spelling); both are correct depending on your chosen dialect.",
+            "port_exemple": "Eu preciso organizar a minha agenda.",
+            "en_exemple": "I need to organize my schedule.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32119,8 +32950,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "...ou either… or",
-            "note": "todo"
+            "translation": "or",
+            "note": "The current translation isn't accurate as a standalone word. In Portuguese, 'ou' means 'or'; to express 'either ... or' you would use 'ou ... ou' with two options.",
+            "port_exemple": "Você quer chá ou café?",
+            "en_exemple": "Do you want tea or coffee?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32139,8 +32973,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "other",
-            "note": "todo"
+            "translation": "another",
+            "note": "Outro can mean 'another' or 'the other' depending on context. Use 'another' when introducing a new item; use 'the other' when referring to the second of two.",
+            "port_exemple": "Quero outro café.",
+            "en_exemple": "I’d like another coffee.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 3,
         "audio": {
@@ -32160,7 +32997,10 @@
         },
         "en": {
             "translation": "to hear",
-            "note": "todo"
+            "note": "Generally, 'ouvir' means 'to hear.' When you are actively listening (e.g., music, conversations), use 'to listen to' instead.",
+            "port_exemple": "Eu ouço música todos os dias.",
+            "en_exemple": "I hear music every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32180,7 +33020,10 @@
         },
         "en": {
             "translation": "to listen to (actively paying attention)",
-            "note": "ouvir is more to hear (passive). escutar is to listen (actively paying attention)."
+            "note": "ouvir is more to hear (passive). escutar is to listen (actively paying attention).",
+            "port_exemple": "Eu gosto de escutar música.",
+            "en_exemple": "I like to listen to music.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32199,8 +33042,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "sheep",
-            "note": "todo"
+            "translation": "ewe",
+            "note": "Note: ovelha is a female sheep; the precise English term is 'ewe'. If you mean the animal in general, use 'sheep'.",
+            "port_exemple": "A ovelha branca está comendo grama.",
+            "en_exemple": "The ewe is eating grass.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32220,7 +33066,10 @@
         },
         "en": {
             "translation": "boiled egg",
-            "note": "todo"
+            "note": "The translation is accurate. It simply means a boiled egg; to specify soft- or hard-boiled, use 'ovo cozido mole' or 'ovo cozido duro'.",
+            "port_exemple": "Eu como um ovo cozido todos os dias.",
+            "en_exemple": "I eat a boiled egg every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32240,7 +33089,10 @@
         },
         "en": {
             "translation": "patient (sick who receives care)",
-            "note": "todo"
+            "note": "Paciente is used as both a noun (a person receiving medical care) and an adjective (meaning patient, i.e., calm or tolerant). In everyday Portuguese, the meaning is clear from context.",
+            "port_exemple": "O paciente está esperando na sala de espera.",
+            "en_exemple": "The patient is waiting in the waiting room.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32259,8 +33111,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "patient (calm, tolerant or enduring)",
-            "note": "todo"
+            "translation": "patient (noun: the patient; adjective: calm, tolerant or enduring)",
+            "note": "In Portuguese, paciente is both a noun and an adjective. As an adjective, it means calm or tolerant; as a noun, it refers to the person receiving medical care.",
+            "port_exemple": "Ela é muito paciente.",
+            "en_exemple": "She is very patient.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2
     },
@@ -32275,8 +33130,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "packet",
-            "note": "todo"
+            "translation": "package",
+            "note": "Most often, this word translates to 'package' in everyday use. For mailed items in UK English, you might say 'parcel', and for travel deals, 'tour package'.",
+            "port_exemple": "Enviei um pacote para o meu amigo.",
+            "en_exemple": "I sent a package to my friend.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32296,7 +33154,10 @@
         },
         "en": {
             "translation": "bakery",
-            "note": "todo"
+            "note": "Padaria means a bakery—the shop where you buy bread and bakery goods. If you’re specifically looking for pastries, use pastelaria.",
+            "port_exemple": "Vou à padaria todos os dias.",
+            "en_exemple": "I go to the bakery every day.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32315,8 +33176,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to pay (for)",
-            "note": "todo"
+            "translation": "to pay",
+            "note": "Pagar means 'to pay' and is used with money, bills, or debts. In European Portuguese, you often say 'pagar a conta' (pay the bill) or 'pagar por algo' (to pay for something).",
+            "port_exemple": "Eu tenho que pagar a conta.",
+            "en_exemple": "I have to pay the bill.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32336,7 +33200,10 @@
         },
         "en": {
             "translation": "word",
-            "note": "todo"
+            "note": "In Portuguese, 'palavra' mainly means 'word' as in a unit of language. It also appears in phrases like 'dar a minha palavra' (to give my word) and 'palavras' as in 'words'—context determines meaning.",
+            "port_exemple": "Essa palavra é difícil de pronunciar.",
+            "en_exemple": "This word is difficult to pronounce.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32356,7 +33223,10 @@
         },
         "en": {
             "translation": "pale (colour)",
-            "note": "todo"
+            "note": "Pálido is a common adjective for color and for describing pale skin or surfaces. In everyday English, 'pale' is the natural equivalent; 'pallid' is more literary or clinical, and 'wan' is a slightly more formal option.",
+            "port_exemple": "O rosto dele ficou pálido de surpresa.",
+            "en_exemple": "His face turned pale with surprise.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32376,7 +33246,10 @@
         },
         "en": {
             "translation": "bread roll",
-            "note": "todo"
+            "note": "Pãozinho is the diminutive form of pão, used for a small, soft bread roll. In European Portuguese it's a common everyday term, often used with toppings or fillings.",
+            "port_exemple": "Queria um pãozinho quente, por favor.",
+            "en_exemple": "Could I have a warm bread roll, please?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32395,8 +33268,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "to stop(e.g. if walking)",
-            "note": "todo"
+            "translation": "to stop",
+            "note": "Parar is the base verb meaning 'to stop.' It covers stopping movement or an action (parar de fazer algo) and appears in phrases like parar o carro (to stop the car) or parar para pensar (to stop to think).",
+            "port_exemple": "Eu vou parar agora.",
+            "en_exemple": "I will stop now.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32416,7 +33292,10 @@
         },
         "en": {
             "translation": "park",
-            "note": "todo"
+            "note": "Parque is a common everyday noun for a public park. If you mean an amusement park, say 'parque de diversões'.",
+            "port_exemple": "Vamos ao parque amanhã.",
+            "en_exemple": "We're going to the park tomorrow.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32436,7 +33315,10 @@
         },
         "en": {
             "translation": "part",
-            "note": "todo"
+            "note": "The translation 'part' is accurate in many contexts. 'Parte' also means portion, share, side, or role; use context to choose the best English word.",
+            "port_exemple": "Qual parte do livro você leu?",
+            "en_exemple": "Which part of the book did you read?",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32455,8 +33337,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "particular(ly)",
-            "note": "todo"
+            "translation": "particular (adj) = specific or special; particularmente (adv) = particularly.",
+            "note": "The word 'particular' is versatile in European Portuguese. As an adjective it means 'specific' or 'special'; the adverb 'particularmente' means 'especially' or 'particularly'.",
+            "port_exemple": "Este assunto é particular para mim, e eu gosto dele particularmente.",
+            "en_exemple": "This topic is personal to me, and I like it particularly.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32476,7 +33361,10 @@
         },
         "en": {
             "translation": "departure",
-            "note": "todo"
+            "note": "Partida can mean 'departure' in travel contexts and 'game' or 'match' in sports. Context decides the best translation.",
+            "port_exemple": "A partida de hoje foi atrasada.",
+            "en_exemple": "Today's departure was delayed.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32496,7 +33384,10 @@
         },
         "en": {
             "translation": "party (=political)",
-            "note": "todo"
+            "note": "In European Portuguese, 'partido' mainly means a political party. For a social gathering, use 'festa' or 'celebração' depending on the context.",
+            "port_exemple": "O partido político ganhou as eleições.",
+            "en_exemple": "The political party won the elections.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
@@ -32515,8 +33406,11 @@
             "last_update": "2026-02-19"
         },
         "en": {
-            "translation": "quebrado broken",
-            "note": "todo"
+            "translation": "party",
+            "note": "Partido is most often translated as 'party' (political party or social gathering). It can also mean 'game/match' in sports and, when used as an adjective, can describe something broken (as in 'vidro partido').",
+            "port_exemple": "O partido ganhou as eleições.",
+            "en_exemple": "The party won the elections.",
+            "last_update": "2026-05-08"
         },
         "user_usefulness": 2,
         "audio": {
