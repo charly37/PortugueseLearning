@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "required": ["id", "port", "fr", "en", "user_usefulness"],
+        "additionalProperties": false,
+        "properties": {
+            "id": {
+                "type": "string",
+                "format": "uuid"
+            },
+            "port": {
+                "type": "string",
+                "minLength": 1
+            },
+            "user_usefulness": {
+                "type": "number"
+            },
+            "fr": {
+                "$ref": "#/$defs/fr_translation"
+            },
+            "en": {
+                "$ref": "#/$defs/en_translation"
+            },
+            "audio": {
+                "$ref": "#/$defs/audio"
+            }
+        }
+    },
+    "$defs": {
+        "audio": {
+            "type": "object",
+            "required": ["filename", "last_update"],
+            "additionalProperties": false,
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "last_update": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                }
+            }
+        },
+        "fr_translation": {
+            "type": "object",
+            "required": ["translation", "note"],
+            "additionalProperties": false,
+            "properties": {
+                "translation": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "note": {
+                    "type": "string"
+                },
+                "port_exemple": {
+                    "type": "string"
+                },
+                "use_exemple": {
+                    "type": "string"
+                },
+                "last_update": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "use_exemple_audio": {
+                    "$ref": "#/$defs/audio"
+                },
+                "port_exemple_audio": {
+                    "$ref": "#/$defs/audio"
+                }
+            }
+        },
+        "en_translation": {
+            "type": "object",
+            "required": ["translation", "note"],
+            "additionalProperties": false,
+            "properties": {
+                "translation": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "note": {
+                    "type": "string"
+                },
+                "port_exemple": {
+                    "type": "string"
+                },
+                "use_exemple": {
+                    "type": "string"
+                },
+                "last_update": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                }
+            }
+        }
+    }
+}

@@ -2,21 +2,19 @@
 """
 Validate data quality for challenges.json
 
-Checks:
-1. Each challenge has all required fields (id, port, fr, en, user_usefulness)
-2. Each challenge has a valid UUID format for id
-3. No duplicate IDs (each UUID must be unique)
-4. French translation exists and is not empty
-5. English translation exists and is not empty
-6. Translation objects have 'translation' and 'note' fields
-7. Portuguese word (port) is not empty
-8. user_usefulness field exists and is a number
-9. Translations are not placeholder value "todo"
-10. Optional: Check for duplicate Portuguese words with different translations
+Level 1 - JSON Schema (challenges.schema.json):
+  Structural validation: required fields, types, UUID format, date patterns,
+  minLength constraints, and unknown field detection (additionalProperties: false).
+
+Level 2 - Custom Python checks (not expressible in JSON Schema):
+  - No duplicate IDs
+  - No unexpected duplicate Portuguese words
+  - Translations are not placeholder value "todo"
+  - fr.note and en.note fields are present
 """
 
 import json
-import uuid
+import jsonschema
 import sys
 import os
 from collections import defaultdict
@@ -40,15 +38,6 @@ EXCLUDED_IDS = [
     '65aa69b8-76bf-46a4-9106-f1412fbaaa23', #patient - malade
     '8373574d-ebc9-4c91-9d22-6d62e4b4ab6d'  #patient - calme
 ]
-
-
-def is_valid_uuid(uuid_string):
-    """Check if a string is a valid UUID."""
-    try:
-        uuid.UUID(uuid_string)
-        return True
-    except (ValueError, AttributeError, TypeError):
-        return False
 
 
 def validate_challenges(filepath):
@@ -80,89 +69,72 @@ def validate_challenges(filepath):
     port_word_map = defaultdict(list)  # Track Portuguese words with different translations
     id_map = defaultdict(list)  # Track duplicate IDs
     
-    # Validate each challenge
+    # --- Level 1: JSON Schema validation ---
+    schema_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'challenges.schema.json')
+    try:
+        with open(schema_path, 'r', encoding='utf-8') as f:
+            schema = json.load(f)
+    except FileNotFoundError:
+        print(f"❌ ERROR: Schema file not found: {schema_path}")
+        return False
+    
+    print("Running schema validation...")
+    validator = jsonschema.Draft7Validator(schema, format_checker=jsonschema.FormatChecker())
+    schema_errors = sorted(validator.iter_errors(challenges), key=lambda e: list(e.absolute_path))
+    
+    if schema_errors:
+        print(f"\n❌ Schema validation failed with {len(schema_errors)} error(s):")
+        print("-" * 80)
+        for error in schema_errors[:20]:
+            path = ' -> '.join(str(p) for p in error.absolute_path) or '(root)'
+            print(f"  • [{path}]: {error.message}")
+            issues.append(f"[Schema] {path}: {error.message}")
+        if len(schema_errors) > 20:
+            print(f"\n  ... and {len(schema_errors) - 20} more schema errors")
+        print("\n" + "=" * 80)
+        print(f"Summary: {len(challenges)} challenges validated")
+        print(f"  • Critical Issues: {len(issues)}")
+        print(f"  • Warnings: 0")
+        print("=" * 80)
+        return False
+    
+    print("✅ Schema validation passed\n")
+    
+    # --- Level 2: Custom checks (not expressible in JSON Schema) ---
     for idx, challenge in enumerate(challenges):
         challenge_location = f"Challenge at index {idx}"
+        port = challenge['port']
+        fr_trans = challenge['fr'].get('translation', '')
+        en_trans = challenge['en'].get('translation', '')
         
-        # Check if challenge is a dictionary
-        if not isinstance(challenge, dict):
-            issues.append(f"{challenge_location}: Not a dictionary object")
-            continue
+        # Warn on "todo" placeholder translations
+        if str(fr_trans).strip().lower() == 'todo':
+            warnings.append(f"{challenge_location} (port: '{port}'): French translation is placeholder 'todo'")
+        if str(en_trans).strip().lower() == 'todo':
+            warnings.append(f"{challenge_location} (port: '{port}'): English translation is placeholder 'todo'")
         
-        # Check required fields
-        if 'id' not in challenge:
-            issues.append(f"{challenge_location}: Missing 'id' field")
-        elif not challenge['id']:
-            issues.append(f"{challenge_location}: 'id' field is empty")
-        elif not is_valid_uuid(challenge['id']):
-            issues.append(f"{challenge_location}: 'id' is not a valid UUID: {challenge['id']}")
-        
-        if 'port' not in challenge:
-            issues.append(f"{challenge_location}: Missing 'port' field")
-        elif not challenge['port'] or not str(challenge['port']).strip():
-            issues.append(f"{challenge_location}: 'port' field is empty")
-        
-        if 'user_usefulness' not in challenge:
-            issues.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): Missing 'user_usefulness' field")
-        elif not isinstance(challenge['user_usefulness'], (int, float)):
-            issues.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): 'user_usefulness' should be a number, got {type(challenge['user_usefulness'])}")
-        
-        if 'fr' not in challenge:
-            issues.append(f"{challenge_location}: Missing 'fr' field")
-        else:
-            # Validate French translation object
-            fr_obj = challenge['fr']
-            if not isinstance(fr_obj, dict):
-                issues.append(f"{challenge_location}: 'fr' should be an object, got {type(fr_obj)}")
-            else:
-                if 'translation' not in fr_obj:
-                    issues.append(f"{challenge_location}: Missing 'fr.translation' field")
-                elif not fr_obj['translation'] or not str(fr_obj['translation']).strip():
-                    issues.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): French translation is empty")
-                elif str(fr_obj['translation']).strip().lower() == 'todo':
-                    warnings.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): French translation is placeholder 'todo'")
-                
-                if 'note' not in fr_obj:
-                    warnings.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): Missing 'fr.note' field")
-        
-        if 'en' not in challenge:
-            issues.append(f"{challenge_location}: Missing 'en' field")
-        else:
-            # Validate English translation object
-            en_obj = challenge['en']
-            if not isinstance(en_obj, dict):
-                issues.append(f"{challenge_location}: 'en' should be an object, got {type(en_obj)}")
-            else:
-                if 'translation' not in en_obj:
-                    issues.append(f"{challenge_location}: Missing 'en.translation' field")
-                elif not en_obj['translation'] or not str(en_obj['translation']).strip():
-                    issues.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): English translation is empty")
-                elif str(en_obj['translation']).strip().lower() == 'todo':
-                    warnings.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): English translation is placeholder 'todo'")
-                
-                if 'note' not in en_obj:
-                    warnings.append(f"{challenge_location} (port: '{challenge.get('port', 'N/A')}'): Missing 'en.note' field")
+        # Warn on missing notes (optional field, but expected)
+        if 'note' not in challenge['fr']:
+            warnings.append(f"{challenge_location} (port: '{port}'): Missing 'fr.note' field")
+        if 'note' not in challenge['en']:
+            warnings.append(f"{challenge_location} (port: '{port}'): Missing 'en.note' field")
         
         # Track Portuguese words for duplicate detection
-        if 'port' in challenge and challenge['port']:
-            port_word = challenge['port'].strip().lower()
-            en_trans = challenge.get('en', {}).get('translation', '')
-            fr_trans = challenge.get('fr', {}).get('translation', '')
-            port_word_map[port_word].append({
-                'index': idx,
-                'id': challenge.get('id', 'N/A'),
-                'en': en_trans,
-                'fr': fr_trans
-            })
+        port_word = port.strip().lower()
+        port_word_map[port_word].append({
+            'index': idx,
+            'id': challenge['id'],
+            'en': en_trans,
+            'fr': fr_trans
+        })
         
         # Track IDs for duplicate detection
-        if 'id' in challenge and challenge['id']:
-            id_map[challenge['id']].append({
-                'index': idx,
-                'port': challenge.get('port', 'N/A'),
-                'en': challenge.get('en', {}).get('translation', 'N/A'),
-                'fr': challenge.get('fr', {}).get('translation', 'N/A')
-            })
+        id_map[challenge['id']].append({
+            'index': idx,
+            'port': port,
+            'en': en_trans,
+            'fr': fr_trans
+        })
     
     # Check for duplicate IDs (critical error)
     duplicate_ids = {cid: entries for cid, entries in id_map.items() if len(entries) > 1}
@@ -223,12 +195,11 @@ def validate_challenges(filepath):
     
     if not issues and not warnings:
         print("\n✅ ALL VALIDATION CHECKS PASSED!")
-        print("   • All challenges have required fields")
+        print("   • Schema validation passed (structure, types, formats, unknown fields)")
         print("   • All IDs are valid UUIDs and unique")
-        print("   • All French translations are present and non-empty")
-        print("   • All English translations are present and non-empty")
-        print("   • All Portuguese words are present and non-empty")
-        print("   • All user_usefulness fields are present and valid")
+        print("   • No unexpected duplicate Portuguese words")
+        print("   • No placeholder 'todo' translations")
+        print("   • All fr.note and en.note fields are present")
     
     print("\n" + "=" * 80)
     print(f"Summary: {len(challenges)} challenges validated")
