@@ -75,16 +75,23 @@ python VocabularyUpdater.py --language en
 python VocabularyUpdater.py --language fr --max-words 50
 ```
 
+#### Use a shorter refresh period (e.g. 3 months)
+
+```bash
+python VocabularyUpdater.py --months 3
+```
+
 ### CLI Arguments
 
 | Argument | Values | Default | Description |
 |---|---|---|---|
 | `--language` | `fr`, `en` | `fr` | Language section to update in `challenges.json` |
 | `--max-words` | integer | `300` | Maximum number of challenges to process per run |
+| `--months` | integer | `6` | Number of months before a translation is considered stale and eligible for refresh |
 
 ### Batching
 
-The script skips any challenge whose `last_update` in the target language section is less than **6 months** old. This means:
+The script skips any challenge whose `last_update` in the target language section is within the refresh period (default: **6 months**). Use `--months` to override this. This means:
 
 - You can safely re-run the script repeatedly — already-fresh entries are skipped automatically
 - Run multiple times to process the full dataset in batches (e.g. `--max-words 300` per run)
@@ -133,4 +140,4 @@ Total tokens used: 124500
 
 ## Cost Considerations
 
-Each word processed makes one OpenAI API call. Use `--max-words` to limit spending per run. The `last_update` timestamp mechanism ensures you only pay to process each word once per 6-month window.
+Each word processed makes one OpenAI API call. Use `--max-words` to limit spending per run. The `last_update` timestamp mechanism ensures you only pay to process each word once per refresh window (default: 6 months, configurable with `--months`).

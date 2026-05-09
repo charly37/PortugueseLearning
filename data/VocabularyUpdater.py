@@ -152,19 +152,21 @@ def verify_translation(portuguese_word: str, current_translation: str, language:
             "error": str(e)
         }
 
-def main(max_words=300, language="fr"):
+def main(max_words=300, language="fr", months=6):
     """
     Main function to process all challenges
     
     Args:
         max_words: Maximum number of words to process in this batch (default: 300)
         language: Language key to update in challenges ('fr' or 'en', default: 'fr')
+        months: Number of months before a translation is considered stale and eligible for refresh (default: 6)
     """
     print("Loading challenges.json...")
     challenges = load_challenges()
     print(f"Loaded {len(challenges)} challenges")
     print(f"Language: {language}")
-    print(f"Max words to process in this batch: {max_words}\n")
+    print(f"Max words to process in this batch: {max_words}")
+    print(f"Refresh period: {months} months\n")
     
     # Statistics
     processed_count = 0
@@ -184,8 +186,8 @@ def main(max_words=300, language="fr"):
         challenge_id = challenge.get("id", "unknown")
         current_note = challenge.get(language, {}).get("note", "")
         
-        # Skip if translation was updated within the last 6 months
-        if is_translation_recent(challenge, language, months=6):
+        # Skip if translation was updated within the refresh period
+        if is_translation_recent(challenge, language, months=months):
             last_update = challenge.get(language, {}).get("last_update", "unknown")
             print(f"[{idx}/{len(challenges)}] ⏭️  Skipping '{portuguese_word}' (updated on {last_update})")
             skipped_count += 1
@@ -193,7 +195,7 @@ def main(max_words=300, language="fr"):
         
         # Check if examples need to be populated
         port_exemple = challenge.get(language, {}).get("port_exemple", "")
-        lang_exemple = challenge.get(language, {}).get(f"{language}_exemple", "")
+        lang_exemple = challenge.get(language, {}).get("use_exemple", "")
         needs_examples = not port_exemple or not lang_exemple
         
         print(f"[{idx}/{len(challenges)}] Processing: {portuguese_word}")
@@ -247,7 +249,7 @@ def main(max_words=300, language="fr"):
                 if language not in challenge:
                     challenge[language] = {}
                 challenge[language]["port_exemple"] = translation.portuguese_example
-                challenge[language][f"{language}_exemple"] = translation.target_example
+                challenge[language]["use_exemple"] = translation.target_example
                 updated_examples_count += 1
                 made_updates = True
                 print(f"  💾 Updated examples in challenges.json")
@@ -322,5 +324,7 @@ if __name__ == "__main__":
                         help="Language section to update (default: fr)")
     parser.add_argument("--max-words", type=int, default=300,
                         help="Maximum number of words to process per batch (default: 300)")
+    parser.add_argument("--months", type=int, default=6,
+                        help="Number of months before a translation is considered stale and eligible for refresh (default: 6)")
     args = parser.parse_args()
-    main(max_words=args.max_words, language=args.language)
+    main(max_words=args.max_words, language=args.language, months=args.months)
