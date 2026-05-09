@@ -27104,7 +27104,9 @@
             "translation": "ancien",
             "note": "Remarque: 'antigo' en portugais signifie 'ancien' en français.",
             "use_exemple": "Ce bâtiment est ancien.",
-            "port_exemple": "Este edifício é antigo."
+            "port_exemple": "Este livro é antigo.",
+            "fr_exemple": "Ce livre est ancien.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "ancient, old, former",
@@ -53893,7 +53895,9 @@
             "translation": "amer",
             "note": "En portugais, 'amargo' signifie 'amer' en français.",
             "use_exemple": "Ce chocolat est très amer.",
-            "port_exemple": "Este chocolate é muito amargo."
+            "port_exemple": "O café está amargo.",
+            "fr_exemple": "Le café est amer.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "bitter",
@@ -53934,7 +53938,9 @@
             "translation": "aimable",
             "note": "En portugais, 'amável' signifie 'aimable' en français.",
             "use_exemple": "Elle est très aimable.",
-            "port_exemple": "Ela é muito amável."
+            "port_exemple": "Ela é muito amavel.",
+            "fr_exemple": "Elle est très aimable.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "kind",
@@ -60139,7 +60145,9 @@
             "translation": "aimable",
             "note": "En portugais, 'amável' signifie 'aimable' en français.",
             "use_exemple": "Elle est très aimable.",
-            "port_exemple": "Ela é muito amável."
+            "port_exemple": "Ele é amigável com toda a gente.",
+            "fr_exemple": "Il est aimable avec tout le monde.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "friendly",
@@ -64041,8 +64049,11 @@
         "id": "f3bc6b78-79df-4d6a-ac1b-661cec76c7d8",
         "port": "amável",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "aimable",
+            "note": "La traduction actuelle 'todo' n'est pas correcte. La meilleure traduction est 'aimable' et s'emploie pour décrire une personne agréable.",
+            "port_exemple": "Ela é muito amável.",
+            "fr_exemple": "Elle est très aimable.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "kind",
@@ -64057,8 +64068,11 @@
         "id": "b30ccc37-89f3-4545-a282-6b767588fb06",
         "port": "assustador",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "effrayant",
+            "note": "Assustador se dit généralement 'effrayant' en français. Le sens peut être plus fort ('terrifiant') selon le contexte.",
+            "port_exemple": "Este filme é assustador.",
+            "fr_exemple": "Ce film est effrayant.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "scary",
@@ -64073,8 +64087,11 @@
         "id": "5e20b11c-64f3-48e3-9266-9cd70f85eb74",
         "port": "chateado",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "contrarié",
+            "note": "En portugais, 'chateado' décrit une contrariété ou une irritation légère. En français, on dira surtout 'contrarié' ou 'énervé' selon le contexte; 'embêté' est plus familier.",
+            "port_exemple": "Estou chateado com o atraso.",
+            "fr_exemple": "Je suis contrarié par le retard.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "annoyed",
@@ -64089,8 +64106,11 @@
         "id": "1d08306a-4b96-4c02-9a08-140b82bcb9bd",
         "port": "chato",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "ennuyeux",
+            "note": "Note: 'todo' n'est pas une traduction française. 'Chato' signifie généralement 'ennuyeux' ou 'pénible'; en registre familier, on peut dire 'chiant'.",
+            "port_exemple": "Este filme é chato.",
+            "fr_exemple": "Ce film est ennuyeux.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "annoying",
@@ -64105,8 +64125,11 @@
         "id": "14675600-8aac-416b-901a-440db47d99a4",
         "port": "colorido",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "coloré",
+            "note": "Remarque: 'colorido' se traduit généralement par 'coloré' (masculin sing., accord avec le sujet). Pour le féminin, utilisez 'colorée'.",
+            "port_exemple": "O mapa é colorido.",
+            "fr_exemple": "La carte est colorée.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "colorful",
@@ -64121,8 +64144,11 @@
         "id": "2ad0bc28-3300-4d97-9e23-ff5e73ba2722",
         "port": "comestível",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "comestible",
+            "note": "En français, comestible décrit ce qui peut être mangé sans danger. C'est un terme plutôt neutre; 'mangeable' est plus familier.",
+            "port_exemple": "Este queijo é comestível.",
+            "fr_exemple": "Ce fromage est comestible.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "edible",
@@ -64137,8 +64163,11 @@
         "id": "6cdead1f-f779-4e27-8c4f-5fe2c3c578f7",
         "port": "complexo",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "complexe",
+            "note": "Le mot courant est 'complexe'. S'il est utilisé comme nom, on emploie 'un complexe' ou 'le complexe' selon le contexte (par exemple 'un complexe immobilier' ou 'un complexe psychologique').",
+            "port_exemple": "Este problema é complexo.",
+            "fr_exemple": "Ce problème est complexe.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "complex",
@@ -64153,8 +64182,11 @@
         "id": "fa06d933-30ee-4180-a570-cf56cfbfe80f",
         "port": "corajoso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "courageux (masculin) / courageuse (féminin) selon le genre",
+            "note": "En portugais, corajoso décrit une personne prête à prendre des risques. En français, utilisez courageux ou courageuse selon le genre.",
+            "port_exemple": "Ele é corajoso quando enfrenta desafios.",
+            "fr_exemple": "Il est courageux quand il fait face à des défis.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "brave/courageous",
@@ -64169,8 +64201,11 @@
         "id": "d5043bc3-5537-4540-905c-a452ca4aa694",
         "port": "curioso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "curieux",
+            "note": "Remarque : en portugais, 'curioso' peut signifier 'curioso' (intéressé) ou 'intrusif' selon le contexte. En français, 'curieux' est le sens le plus courant, mais le contexte peut influencer l'interprétation.",
+            "port_exemple": "Ele é muito curioso.",
+            "fr_exemple": "Il est très curieux.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "curious",
@@ -64185,8 +64220,11 @@
         "id": "a0f03b21-15a4-4938-9365-9c16548aa332",
         "port": "deprimido",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "déprimé",
+            "note": "Ce mot se traduit par 'déprimé' (masc.) et le féminin est 'déprimée'. Le mot 'todo' n'est pas approprié ici.",
+            "port_exemple": "Ele está deprimido e não quer sair de casa.",
+            "fr_exemple": "Il est déprimé et il ne veut pas sortir de chez lui.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "depressed",
@@ -64201,8 +64239,11 @@
         "id": "22851901-eebb-417a-8e16-37072d3e05e5",
         "port": "determinado",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "déterminé",
+            "note": "Dans ce contexte, 'determinado' se traduit principalement par 'déterminé' (masc.) ou 'déterminée' (fem.). En portugais, il peut aussi signifier 'certain' dans des expressions comme « em determinados casos ».",
+            "port_exemple": "O rapaz é determinado.",
+            "fr_exemple": "Le garçon est déterminé.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "determined",
@@ -64217,8 +64258,11 @@
         "id": "df171f07-2fb6-4557-b7a9-3c2c23912d57",
         "port": "ecológico",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "écologique",
+            "note": "Remarque: « ecológico » signifie respectueux de l'environnement. En français, l'adjectif correspondant est « écologique », utilisé de la même manière.",
+            "port_exemple": "Este produto é ecológico.",
+            "fr_exemple": "Ce produit est écologique.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "eco-friendly",
@@ -64233,8 +64277,11 @@
         "id": "eb08a5e5-6890-4e9f-b2a2-dc41daa12faf",
         "port": "econômico",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "économique",
+            "note": "Remarque : en portugais, 'econômico' décrit ce qui concerne l'économie ou ce qui est rentable économiquement. En français, 'économique' a le même sens, mais pour l'idée de coût bas on dirait plutôt bon marché.",
+            "port_exemple": "Este plano econômico ajuda a reduzir custos.",
+            "fr_exemple": "Ce plan économique aide à réduire les coûts.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "economic",
@@ -64249,8 +64296,11 @@
         "id": "6cc50310-db83-4868-99a7-cc5ea4d64b72",
         "port": "eficiente",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "efficace",
+            "note": "Remarque: 'eficiente' se traduit le mieux par 'efficace' en français. En portugais, l'adjectif s'accorde en genre et en nombre avec le nom.",
+            "port_exemple": "Este método é eficiente.",
+            "fr_exemple": "Cette méthode est efficace.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "efficient",
@@ -64265,8 +64315,11 @@
         "id": "ce660f06-7337-4f39-b459-57d0f587a8ea",
         "port": "elegante",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "élégant",
+            "note": "En français, l'adjectif élégant s'accorde avec le genre du nom: élégant (masculin singulier) et élégante (féminin singulier).",
+            "port_exemple": "Este casaco é elegante.",
+            "fr_exemple": "Ce manteau est élégant.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "elegant",
@@ -64281,8 +64334,11 @@
         "id": "e351481b-7e0e-4ec0-8680-d5735846c39f",
         "port": "emocionante",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "émouvant",
+            "note": "Remarque: \"émouvant\" décrit quelque chose qui touche émotionnellement. Selon le contexte, on peut aussi employer \"passionnant\" ou \"palpitant\" pour insister sur l'aspect excitant.",
+            "port_exemple": "O filme foi emocionante.",
+            "fr_exemple": "Le film a été émouvant.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "exciting",
@@ -64297,8 +64353,11 @@
         "id": "afafe8ab-2ca9-4eef-a6dc-f80ceeb51259",
         "port": "enorme",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "énorme",
+            "note": "En portugais, enorme est un adjectif courant signifiant « très grand ». Il s'accorde avec le nom (genre et nombre), tout comme en français.",
+            "port_exemple": "A casa é enorme.",
+            "fr_exemple": "La maison est énorme.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "huge",
@@ -64313,8 +64372,11 @@
         "id": "6a889bba-101b-4fc7-b9a3-707e922438e7",
         "port": "falso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "faux",
+            "note": "Falso est un adjectif qui s'accorde selon le genre et le nombre: falso/falsa, falsos/falsas. En portugais, il sert à décrire quelque chose de faux ou trompeur, par exemple une affirmation.",
+            "port_exemple": "Isso é falso.",
+            "fr_exemple": "C'est faux.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "false/fake",
@@ -64329,8 +64391,11 @@
         "id": "59230e58-3624-40a1-a3b3-7d8231170e05",
         "port": "fechado",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "fermé",
+            "note": "Remarque: 'fermé' s'accorde avec le nom qu'il décrit. En portugais, 'fechado' peut aussi signifier 'fermé, indisponible' dans des sens figurés ou pour décrire une porte/commerce.",
+            "port_exemple": "O livro está fechado.",
+            "fr_exemple": "Le livre est fermé.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "closed",
@@ -64345,8 +64410,11 @@
         "id": "01472418-31c8-4f9a-aa99-5555e76f250f",
         "port": "frequente",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "fréquent",
+            "note": "Le mot 'frequente' signifie 'fréquent' en portugais et s'accorde avec le nom. En français, l'équivalent est 'fréquent' (masc) ou 'fréquente' (fem), selon le nom.",
+            "port_exemple": "Ela é uma visitante frequente.",
+            "fr_exemple": "Elle est une visiteuse fréquente.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "frequent",
@@ -64361,8 +64429,11 @@
         "id": "864b45d2-87c2-48e2-b0b6-eff5985e1ee5",
         "port": "furioso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "furieux",
+            "note": "La traduction correcte est 'furieux' (masculin) ou 'furieuse' (féminin). Utilisez-le selon le genre du sujet.",
+            "port_exemple": "Ele ficou furioso quando soube da notícia.",
+            "fr_exemple": "Il est devenu furieux quand il a appris la nouvelle.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "furious",
@@ -64377,8 +64448,11 @@
         "id": "7dcaf91f-277c-4635-91af-9b35064affaf",
         "port": "generoso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "généreux",
+            "note": "La traduction actuelle 'todo' n'est pas correcte. En portugais, 'generoso' correspond à 'généreux' (masculin) ou 'généreuse' (féminin).",
+            "port_exemple": "Ele é muito generoso com os amigos.",
+            "fr_exemple": "Il est très généreux avec ses amis.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "generous",
@@ -64393,8 +64467,11 @@
         "id": "c5f08c7d-3d15-497f-aaa8-0cff7a2fc739",
         "port": "horrível",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "horrible",
+            "note": "En portugais, 'horrível' est fort et s'applique surtout à des expériences ou des choses négatives; pour décrire une personne, on utiliserait plutôt 'affreux/affreuse' ou 'terrible' selon le contexte.",
+            "port_exemple": "Este filme é horrível.",
+            "fr_exemple": "Ce film est horrible.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "horrible",
@@ -64409,8 +64486,11 @@
         "id": "098e1779-d496-4c4d-8d75-11b9cb81f53c",
         "port": "ilegal",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "illégal / illégale (masculin/féminin)",
+            "note": "Remarque: en portugais, 'ilegal' est un adjectif qui s’accorde en genre et en nombre avec le nom qu’il qualifie. En français, on écrit 'illégal' au masculin et 'illégale' au féminin; on forme 'illégaux'/'illégales' au pluriel.",
+            "port_exemple": "Isso é ilegal.",
+            "fr_exemple": "C'est illégal.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "illegal",
@@ -64425,8 +64505,11 @@
         "id": "162679bb-147b-4217-b426-1db1c443a5fd",
         "port": "incrível",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "incroyable",
+            "note": "Remarque: 'incrível' signifie 'incroyable' et s'emploie pour décrire quelque chose de très positif ou surprenant. Il peut aussi être utilisé comme exclamation: 'Incrível!'",
+            "port_exemple": "Este filme é incrível.",
+            "fr_exemple": "Ce film est incroyable.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "incredible",
@@ -64441,8 +64524,11 @@
         "id": "35e4cdb3-dec7-40ca-97c8-143ea3c65249",
         "port": "independente",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "indépendant / indépendante",
+            "note": "Indépendant décrit quelqu'un qui n'a pas besoin d'aide et peut agir seul. En portugais, l'adjectif s'accorde en genre et en nombre: indépendant (masc.), indépendante (fém.).",
+            "port_exemple": "Ela é independente.",
+            "fr_exemple": "Elle est indépendante.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "independent",
@@ -64457,8 +64543,11 @@
         "id": "31ea200f-f835-46b3-97f4-8dd69ac1b1e4",
         "port": "infeliz",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "malheureux / malheureuse",
+            "note": "Remarque : infeliz signifie malheureux/malheureuse selon le genre et peut décrire un état temporaire ou durable selon le contexte. En portugais, on l'emploie aussi pour exprimer une déception ou une malchance.",
+            "port_exemple": "Ele ficou infeliz com a notícia.",
+            "fr_exemple": "Il est devenu malheureux à cause de cette nouvelle.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "unhappy",
@@ -64473,8 +64562,11 @@
         "id": "c80bddbc-677b-45e7-b308-ae541d253eca",
         "port": "inocente",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "innocent (masc.) / innocente (fem.)",
+            "note": "En portugais, 'inocente' peut aussi signifier 'naïf'. En français on dit 'innocent' (masc) ou 'innocente' (fem) selon le genre; le sens de base demeure 'non coupable'.",
+            "port_exemple": "Ele é inocente.",
+            "fr_exemple": "Il est innocent.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "innocent",
@@ -64489,8 +64581,11 @@
         "id": "534551ce-e1ee-4674-a5cc-40c577951114",
         "port": "internacional",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "international (masc.) / internationale (fém.)",
+            "note": "Remarque: en portugais, 'internacional' s'accorde avec le nom. En français, l'équivalent est 'international' (masc.) ou 'internationale' (fém.).",
+            "port_exemple": "Este festival é internacional.",
+            "fr_exemple": "Ce festival est international.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "international",
@@ -64505,8 +64600,11 @@
         "id": "1face5d4-9764-49b3-98da-234ab413d5db",
         "port": "irritado",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "irrité",
+            "note": "Forme masculine: 'irrité', forme féminine: 'irritée'. Accordez toujours l'accord du participe passé avec le sujet.",
+            "port_exemple": "Estou irritado.",
+            "fr_exemple": "Je suis irrité.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "annoyed",
@@ -64521,8 +64619,11 @@
         "id": "3d0959a0-db2f-4c3f-a21f-9ee1f64b4dd2",
         "port": "local",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "L'endroit",
+            "note": "En portugais, 'local' peut désigner le lieu ou servir d'adjectif 'local'. En français, privilégiez 'lieu' ou 'endroit' pour le nom, et 'local' comme adjectif.",
+            "port_exemple": "O local é muito agradável.",
+            "fr_exemple": "L'endroit est très agréable.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "location",
@@ -64537,8 +64638,11 @@
         "id": "f386aa3a-b9fc-4700-9ead-8e3c1561a653",
         "port": "louco",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "fou",
+            "note": "Remarque: En portugais, 'louco' signifie 'fou' et s'emploie aussi dans des expressions comme 'louco por' pour exprimer une passion intense. Le registre peut être familier et l'usage dépend du contexte.",
+            "port_exemple": "Ele é louco.",
+            "fr_exemple": "Il est fou.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "crazy",
@@ -64553,8 +64657,11 @@
         "id": "8f6f587a-aef6-4e34-8539-35090b950528",
         "port": "orgulhoso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "fier",
+            "note": "En portugais, orgulhoso s'accorde en genre et en nombre. En français, l'équivalent le plus couramment utilisé est « fier » (ou « fière » au féminin).",
+            "port_exemple": "Ele está orgulhoso de seu filho.",
+            "fr_exemple": "Il est fier de ce qu'il a accompli.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "proud",
@@ -64569,8 +64676,11 @@
         "id": "57f01568-0608-460d-98dc-051df8c28d33",
         "port": "preguiçoso",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "paresseux",
+            "note": "Remarque: le mot standard pour désigner quelqu'un qui évite l'effort est 'paresseux' (masculin) ou 'paresseuse' (féminin). En portugais, 'preguiçoso' peut aussi contenir une nuance légère d'ironie selon le contexte.",
+            "port_exemple": "Ele é muito preguiçoso para acordar cedo.",
+            "fr_exemple": "Il est trop paresseux pour se lever tôt.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "lazy",
@@ -64585,8 +64695,11 @@
         "id": "3ccc4d76-5d3e-4642-9845-d2d7bf27d579",
         "port": "raro",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "rare",
+            "note": "La traduction actuelle 'todo' est incorrecte pour le mot 'raro'. 'Raro' se traduit par 'rare' en français et s'emploie pour exprimer la rareté ou l'infrequence; 'peu fréquent' est aussi possible selon le contexte, mais pas 'todo'.",
+            "port_exemple": "É raro ver alguém assim.",
+            "fr_exemple": "Il est rare de voir quelqu'un comme ça.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "rare",
@@ -64601,8 +64714,11 @@
         "id": "943693fd-d350-4265-b2f0-3f93ed57e67a",
         "port": "tolo",
         "fr": {
-            "translation": "todo",
-            "note": "todo"
+            "translation": "bête",
+            "note": "Remarque: 'tolo' est familier et peut être perçu comme péjoratif. Utilisez-le pour décrire quelqu'un de naïf ou de pas très malin, et évitez-le dans un registre formel.",
+            "port_exemple": "Ele é tolo.",
+            "fr_exemple": "Il est bête.",
+            "last_update": "2026-05-09"
         },
         "en": {
             "translation": "silly",
