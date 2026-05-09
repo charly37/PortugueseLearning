@@ -56969,8 +56969,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to become",
-            "note": "todo"
+            "translation": "to make",
+            "note": "The verb 'tornar' is versatile: it often means 'to make' or 'to turn into' depending on context. Use 'tornar-se' to express 'to become.'",
+            "port_exemple": "Isso pode tornar as coisas mais fáceis.",
+            "en_exemple": "That can make things easier.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -57036,7 +57039,10 @@
         },
         "en": {
             "translation": "to translate",
-            "note": "todo"
+            "note": "Traduzir is the standard infinitive verb meaning 'to translate'. It is used for translating texts, speech, or ideas, and related words include 'tradução' (translation) and 'tradutor' (translator).",
+            "port_exemple": "Eu quero traduzir este texto.",
+            "en_exemple": "I want to translate this text.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60707,8 +60713,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to the, at the",
-            "note": "todo"
+            "translation": "to the",
+            "note": "Aos is the contraction of a + os, used before masculine plural nouns to express direction toward something (to the). It is not used to mean 'at the' in everyday Portuguese.",
+            "port_exemple": "Vou aos jardins todos os domingos.",
+            "en_exemple": "I go to the gardens every Sunday.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60728,7 +60737,10 @@
         },
         "en": {
             "translation": "we are",
-            "note": "todo"
+            "note": "Somos is the first-person plural present of ser (to be). It expresses a stable state or identity; in everyday Portuguese it's often used without the subject 'Nós'.",
+            "port_exemple": "Somos estudantes.",
+            "en_exemple": "We are students.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60747,8 +60759,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. friends",
-            "note": "todo"
+            "translation": "friends",
+            "note": "Amigos is the masculine plural form in Portuguese, used for male or mixed-gender groups. In English, the equivalent is simply 'friends'; use 'amigas' for all-female groups.",
+            "port_exemple": "Eu tenho muitos amigos.",
+            "en_exemple": "I have many friends.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60767,8 +60782,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. certainty, assurance",
-            "note": "todo"
+            "translation": "certainty",
+            "note": "Certeza mainly translates to 'certainty' and is often used with 'tenho/tem certeza' to express being sure. It can also mean 'assurance' in some contexts, but 'garantia' is the more common word for guarantee.",
+            "port_exemple": "Tenho certeza de que vai chover hoje.",
+            "en_exemple": "I'm sure it's going to rain today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60787,8 +60805,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "stays, remains, is loc",
-            "note": "todo"
+            "translation": "is located",
+            "note": "Context matters: fica can mean 'is located' or 'stays/remains' depending on the sentence. It is a versatile word used for location and for states or changes.",
+            "port_exemple": "A casa fica perto da praça.",
+            "en_exemple": "The house is located near the square.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60807,8 +60828,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "could, was able to",
-            "note": "todo"
+            "translation": "could",
+            "note": "Podia is the imperfect of poder, used for past general ability or habitual actions. For hypothetical or conditional situations, use poderia.",
+            "port_exemple": "Quando era jovem, eu podia ficar acordado até tarde.",
+            "en_exemple": "When I was young, I could stay up late.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60827,8 +60851,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. in the, on the, at the",
-            "note": "todo"
+            "translation": "in the (feminine plural) — can also mean on the / at the depending on the context",
+            "note": "Nas is the contraction of em + as and is used before feminine plural nouns; it indicates location and can take different English prepositions (in, on, at) depending on the situation.",
+            "port_exemple": "As chaves estão nas mesas.",
+            "en_exemple": "The keys are on the tables.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60848,7 +60875,10 @@
         },
         "en": {
             "translation": "did, made",
-            "note": "todo"
+            "note": "Fez is the past tense of fazer. It can mean 'did' or 'made' depending on context.",
+            "port_exemple": "Ele fez o jantar.",
+            "en_exemple": "He made dinner.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60867,8 +60897,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. first",
-            "note": "todo"
+            "translation": "first (feminine form of 'primeiro')",
+            "note": "Primeira is the feminine form of 'primeiro' and is used with feminine nouns. For example, 'primeira vez' means 'first time'.",
+            "port_exemple": "Esta é a primeira vez que visito Portugal.",
+            "en_exemple": "This is the first time I have visited Portugal.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60887,8 +60920,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "walks, goes, runs, fun",
-            "note": "todo"
+            "translation": "to walk",
+            "note": "The previous translation isn't accurate. The best meaning is 'to walk', though 'andar' can also mean to go around or to function in other contexts.",
+            "port_exemple": "Eu gosto de andar no parque.",
+            "en_exemple": "I like to walk in the park.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60907,8 +60943,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. love, affection, beloved",
-            "note": "todo"
+            "translation": "love",
+            "note": "Amor mainly means 'love' or 'affection'. It is also used as a term of endearment in everyday speech (e.g., 'Oi, amor').",
+            "port_exemple": "Oi, amor, tudo bem?",
+            "en_exemple": "Hi, love, how are you?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60927,8 +60966,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "knew, used to know",
-            "note": "todo"
+            "translation": "knew",
+            "note": "Sabia is the imperfect form of saber ('to know'). It can also be the feminine form of 'sábio' (wise), depending on context.",
+            "port_exemple": "Eu sabia a resposta.",
+            "en_exemple": "I knew the answer.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60947,8 +60989,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "hears, listens",
-            "note": "todo"
+            "translation": "hears",
+            "note": "Ouve is the 3rd person singular present of ouvir, meaning 'he/she hears' (and can mean 'you hear' when the subject is você). It does not typically mean 'to listen' in everyday Portuguese.",
+            "port_exemple": "Ele ouve a música.",
+            "en_exemple": "He hears the music.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60968,7 +61013,10 @@
         },
         "en": {
             "translation": "all",
-            "note": "todo"
+            "note": "Todas is the feminine plural form of todo, meaning 'all' and it agrees with feminine plural nouns. It can also be used as a pronoun, meaning 'all of them', when referring to a feminine group.",
+            "port_exemple": "Todas chegaram cedo.",
+            "en_exemple": "All of them arrived early.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -60987,8 +61035,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "can, may, are able to",
-            "note": "todo"
+            "translation": "to be able to (also 'power' as a noun)",
+            "note": "Current translation is incomplete. Poder also means 'power' as a noun, and the verb sense is best rendered as 'to be able to' (or simply 'can').",
+            "port_exemple": "Eu posso falar português.",
+            "en_exemple": "I can speak Portuguese.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61008,7 +61059,10 @@
         },
         "en": {
             "translation": ", fem. dear, beloved, darling",
-            "note": "todo"
+            "note": "Used as a feminine vocative to address a woman with warmth or affection. In English, 'dear' or 'darling' cover this sense depending on tone.",
+            "port_exemple": "Querida, como estás?",
+            "en_exemple": "Dear, how are you today?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61027,8 +61081,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "ended, finished, ran out",
-            "note": "todo"
+            "translation": "it's over",
+            "note": "Acabou is most commonly used to say that something has ended or is finished. It can also mean 'ran out' when used with a noun, like acabou o açúcar.",
+            "port_exemple": "Acabou o tempo.",
+            "en_exemple": "Time's up.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61048,7 +61105,10 @@
         },
         "en": {
             "translation": "important, significant",
-            "note": "todo"
+            "note": "Note: In everyday Portuguese, 'importante' is used as 'important' in most contexts. It can also mean 'significant' in more formal or technical contexts.",
+            "port_exemple": "Esta decisão é muito importante.",
+            "en_exemple": "This decision is very important.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61067,8 +61127,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "that one, that",
-            "note": "todo"
+            "translation": "that",
+            "note": "Aquele is the masculine singular demonstrative meaning 'that'. It is used before masculine nouns or as a pronoun ('that one').",
+            "port_exemple": "Aquele carro é rápido.",
+            "en_exemple": "That car is fast.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61088,7 +61151,10 @@
         },
         "en": {
             "translation": "you do, you make",
-            "note": "todo"
+            "note": "Note: 'fazes' is the informal 'you do' or 'you make' using the 'tu' form in European Portuguese. In formal contexts you would use 'você faz' or 'o senhor/a senhora faz'.",
+            "port_exemple": "O que fazes agora?",
+            "en_exemple": "What are you doing now?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61107,8 +61173,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. sex, gender, intercourse",
-            "note": "todo"
+            "translation": "Sex",
+            "note": "Note that 'sexo' is a masculine noun in Portuguese. It mainly means biological sex, and can also refer to sexual intercourse in some contexts; for gender identity, use 'género'.",
+            "port_exemple": "O sexo é uma parte natural da vida.",
+            "en_exemple": "Sex is a natural part of life.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61127,8 +61196,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "you should have, you o",
-            "note": "todo"
+            "translation": "you should",
+            "note": "In European Portuguese, devias is the informal tu form meaning 'you should' or 'you ought to'. It is used for mild advice and is often followed by another verb.",
+            "port_exemple": "Tu devias ir ao médico.",
+            "en_exemple": "You should go to the doctor.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61147,8 +61219,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "go, may go",
-            "note": "todo"
+            "translation": "Go!",
+            "note": "Vá is the formal imperative of ir, used with você (formal address). In everyday European Portuguese, 'vai' is used for informal 'you'.",
+            "port_exemple": "Vá para casa.",
+            "en_exemple": "Go home.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 3,
         "audio": {
@@ -61168,7 +61243,10 @@
         },
         "en": {
             "translation": ", fem. speech, talk, discourse",
-            "note": "todo"
+            "note": "Fala is a feminine noun meaning 'speech' or 'talk.' It can refer to a spoken message, a prepared speech, or someone's way of speaking.",
+            "port_exemple": "A fala dele na reunião foi clara.",
+            "en_exemple": "His speech in the meeting was clear.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61188,7 +61266,10 @@
         },
         "en": {
             "translation": "been",
-            "note": "todo"
+            "note": "Sido is the past participle of ser. It is used with have/has/had to form perfect tenses (e.g., tem sido) and translates as 'been' in English.",
+            "port_exemple": "Isso tem sido difícil.",
+            "en_exemple": "That has been difficult.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61207,8 +61288,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "soon, immediately, the",
-            "note": "todo"
+            "translation": "soon",
+            "note": "Logo mainly means 'soon' or 'shortly' in European Portuguese. It does not mean 'the'; context decides whether it should be translated as 'soon' or 'shortly'.",
+            "port_exemple": "Logo chegaremos ao destino.",
+            "en_exemple": "We will arrive at the destination soon.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 3,
         "audio": {
@@ -61228,7 +61312,10 @@
         },
         "en": {
             "translation": "my",
-            "note": "todo"
+            "note": "Minhas is a feminine plural possessive determiner used before feminine plural nouns. It agrees with the noun in gender and number (e.g., minhas botas, minhas amigas).",
+            "port_exemple": "Minhas botas são novas.",
+            "en_exemple": "My boots are new.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61247,8 +61334,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. face, guy, expensive",
-            "note": "todo"
+            "translation": "face (noun); guy (slang for a man); expensive (feminine adjective)",
+            "note": "Cara is informal and common in spoken European Portuguese. It has several meanings: face (neutral noun), guy (slang for a man), and the feminine form meaning 'expensive' when describing feminine nouns.",
+            "port_exemple": "Esse cara é meu amigo.",
+            "en_exemple": "That guy is my friend.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61268,7 +61358,10 @@
         },
         "en": {
             "translation": "up, above, on top",
-            "note": "todo"
+            "note": "Usage: cima is usually the noun 'top' or 'upper part.' It appears in phrases like 'em cima' meaning 'on top (of).','portuguese_word.txt_label':",
+            "port_exemple": "O livro está em cima da mesa.",
+            "en_exemple": "The book is on the table.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61287,8 +61380,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "excuse me, sorry, pard",
-            "note": "todo"
+            "translation": "Sorry",
+            "note": "Desculpe is the formal form of apologizing or asking for something politely. In informal speech, desculpa is used instead.",
+            "port_exemple": "Desculpe, pode ajudar-me?",
+            "en_exemple": "Sorry, could you help me?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61307,8 +61403,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "were, went",
-            "note": "todo"
+            "translation": "were",
+            "note": "fosse is the imperfect subjunctive form of 'ser' (and also of 'ir') used in hypothetical or conditional statements. It expresses situations that are not real and is common in 'Se eu fosse...' clauses.",
+            "port_exemple": "Se eu fosse você, eu falaria com ele.",
+            "en_exemple": "If I were you, I would talk to him.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61327,8 +61426,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. company, business, fir",
-            "note": "todo"
+            "translation": "company",
+            "note": "Empresa is a feminine noun meaning 'company' or 'business'. It is used for corporations and organizations, and in more formal contexts it can be translated as 'enterprise'.",
+            "port_exemple": "A empresa lançou um novo produto.",
+            "en_exemple": "The company launched a new product.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61347,8 +61449,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to hope",
-            "note": "todo"
+            "translation": "to wait (for)",
+            "note": "Esperar has several meanings: to wait, to hope, or to expect. In European Portuguese, the common sense is 'to wait (for)' when followed by a noun, often with pelo/por.",
+            "port_exemple": "Eu espero pelo autocarro.",
+            "en_exemple": "I am waiting for the bus.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61368,7 +61473,10 @@
         },
         "en": {
             "translation": "you did, you made",
-            "note": "todo"
+            "note": "'Fizeste' is the informal second-person singular form (tu) in the preterite. It mainly translates as 'you did', and 'you made' is possible when the verb refers to making something.",
+            "port_exemple": "Fizeste o jantar?",
+            "en_exemple": "Did you make dinner?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61387,8 +61495,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. Christmas, natal, birth",
-            "note": "todo"
+            "translation": "Christmas",
+            "note": "In everyday European Portuguese, natal mainly means Christmas (the holiday). For 'birth', the usual word is nascimento.",
+            "port_exemple": "A árvore de Natal está iluminada.",
+            "en_exemple": "The Christmas tree is lit.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61408,7 +61519,10 @@
         },
         "en": {
             "translation": "cool, great, awesome",
-            "note": "the book is very cool/good = o livro é muito fixe"
+            "note": "the book is very cool/good = o livro é muito fixe",
+            "port_exemple": "Este filme é fixe.",
+            "en_exemple": "This movie is cool.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61427,8 +61541,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. days",
-            "note": "todo"
+            "translation": "days",
+            "note": "The current translation is not accurate. The correct translation is 'days', and 'dias' is the plural of 'dia' (day) used for counts of days or durations.",
+            "port_exemple": "Fiquei aqui por dois dias.",
+            "en_exemple": "I stayed here for two days.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61447,8 +61564,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. women",
-            "note": "todo"
+            "translation": "women",
+            "note": "‘Mulheres’ is the plural of ‘mulher’ (woman). In Portuguese you often use the definite article (as/ as) to mean 'the women'; without an article it can refer to women in general.",
+            "port_exemple": "As mulheres gostam de chá.",
+            "en_exemple": "Women like tea.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61468,7 +61588,10 @@
         },
         "en": {
             "translation": "almost, nearly",
-            "note": "todo"
+            "note": "Quase translates most naturally as 'almost'. 'Nearly' is a close alternative in some contexts.",
+            "port_exemple": "Ele quase perdeu o autocarro.",
+            "en_exemple": "He almost missed the bus.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61488,7 +61611,10 @@
         },
         "en": {
             "translation": "some, a few",
-            "note": "todo"
+            "note": "umas is the feminine plural form of 'uma' and means 'some' or 'a few' when describing feminine plural nouns. It is used before feminine plural nouns.",
+            "port_exemple": "Quero umas bananas.",
+            "en_exemple": "I want some bananas.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61507,8 +61633,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. luck, fate, fortune, c",
-            "note": "todo"
+            "translation": "luck",
+            "note": "Mostly, sorte means 'luck' in everyday Portuguese. In more literary contexts it can refer to fortune or fate, but the common usage is 'luck'.",
+            "port_exemple": "Ela tem muita sorte hoje.",
+            "en_exemple": "She is very lucky today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61527,8 +61656,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "here, hither, to this",
-            "note": "todo"
+            "translation": "here",
+            "note": "Cá is commonly used in European Portuguese to mean 'here' in spoken language and with near-imperative emphasis. It is more colloquial than 'aqui' and frequent in everyday speech.",
+            "port_exemple": "Vem cá!",
+            "en_exemple": "Come here!",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 3,
         "audio": {
@@ -61548,7 +61680,10 @@
         },
         "en": {
             "translation": "your, yours",
-            "note": "todo"
+            "note": "Teus agrees with masculine plural nouns and is the informal possessive for 'you'. For feminine nouns, use 'tuas'.",
+            "port_exemple": "Os teus livros estão na mesa.",
+            "en_exemple": "Your books are on the table.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61567,8 +61702,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. minutes",
-            "note": "todo"
+            "translation": "minutes",
+            "note": "Minutos is the masculine plural noun meaning minutes. It is used for durations, time on a clock, and time left.",
+            "port_exemple": "Faltam cinco minutos.",
+            "en_exemple": "There are five minutes left.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61588,7 +61726,10 @@
         },
         "en": {
             "translation": ", masc. dear, beloved, darling",
-            "note": "todo"
+            "note": "Querido is a common term of endearment and the standard 'Dear' in letters. Remember the gender forms: querido (masc.) and querida (fem.).",
+            "port_exemple": "Meu querido amigo, muito obrigado pela tua ajuda.",
+            "en_exemple": "My dear friend, thank you for your help.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61607,8 +61748,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "Hey, Hi, Psst",
-            "note": "todo"
+            "translation": "Hey!",
+            "note": "Ei is an informal interjection used to get someone's attention, like 'Hey!' in English. It is casual and direct, not a whisper like 'psst.'",
+            "port_exemple": "Ei! Você viu isso?",
+            "en_exemple": "Hey! Did you see that?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61627,8 +61771,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. that one, that",
-            "note": "todo"
+            "translation": "that (feminine) / that one (feminine)",
+            "note": "Aquela is the feminine form of 'that'. It is used before feminine nouns (e.g., 'aquela casa') and can also stand as a pronoun meaning 'that one'.",
+            "port_exemple": "Aquela casa é antiga.",
+            "en_exemple": "That house is old.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61648,7 +61795,10 @@
         },
         "en": {
             "translation": ", fem. room, living room, hall",
-            "note": "todo"
+            "note": "The translation is broadly accurate, but the 'fem.' note is unnecessary for learners. In everyday use, 'sala' mainly means 'room'; for the living room specifically, you often say 'sala de estar'.",
+            "port_exemple": "A sala é grande.",
+            "en_exemple": "The room is big.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61668,7 +61818,10 @@
         },
         "en": {
             "translation": "I see, I watch",
-            "note": "todo"
+            "note": "Vejo is most commonly used as 'I see' to express understanding or noticing. It can also mean 'I realize' in some contexts; the sense 'I watch' usually uses 'assistir' instead.",
+            "port_exemple": "Eu vejo o que você quer dizer.",
+            "en_exemple": "I see what you mean.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61687,8 +61840,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to play, to joke, to t",
-            "note": "todo"
+            "translation": "to play; to joke; to fool around",
+            "note": "Brincar is a versatile verb mainly meaning 'to play' or 'to joke around.' Its nuance depends on the preposition: 'brincar de' can mean to pretend or play at something, and 'brincar com' can mean to toy with or tease.",
+            "port_exemple": "As crianças gostam de brincar no parque.",
+            "en_exemple": "The children like to play in the park.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61707,8 +61863,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "they want, you want",
-            "note": "todo"
+            "translation": "they want",
+            "note": "Note: 'querem' is the 3rd-person plural present form of 'querer' (they want). It can also mean 'you (plural) want' when the subject is 'vocês'.",
+            "port_exemple": "Eles querem ir ao cinema.",
+            "en_exemple": "They want to go to the cinema.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61727,8 +61886,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "of this, from this",
-            "note": "todo"
+            "translation": "about this",
+            "note": "Disto is the fused form of de + isto, and it usually means 'about this' or 'this (thing/matter)'. It is common in informal European Portuguese (e.g., 'Gosto disto' = 'I like this').",
+            "port_exemple": "Gosto disto.",
+            "en_exemple": "I like this.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61748,7 +61910,10 @@
         },
         "en": {
             "translation": "you went, you were",
-            "note": "todo"
+            "note": "Foste is the 2nd person singular preterite form of both ir (to go) and ser (to be). Context usually clarifies which verb is meant.",
+            "port_exemple": "Foste ao cinema ontem?",
+            "en_exemple": "Did you go to the cinema yesterday?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61767,8 +61932,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "have, may have, has",
-            "note": "todo"
+            "translation": "have",
+            "note": "Tenha is the present subjunctive form of ter, used for formal imperatives or in clauses after 'que'. In isolation it translates as 'have', but in everyday phrases it conveys commands like 'Be careful'.",
+            "port_exemple": "Tenha cuidado ao atravessar a rua.",
+            "en_exemple": "Be careful when crossing the street.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61787,8 +61955,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "I say, I tell",
-            "note": "todo"
+            "translation": "I tell",
+            "note": "digo is the first-person singular present of dizer. With an object, it means 'I tell [something]'; without an object, it can mean 'I say' in more general usage.",
+            "port_exemple": "Eu digo a verdade.",
+            "en_exemple": "I tell the truth.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61807,8 +61978,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to happen, to occur, t",
-            "note": "todo"
+            "translation": "to happen",
+            "note": "It describes events that occur. In European Portuguese, you often use 'acontecer' in phrases like 'O que vai acontecer?' or 'Pode acontecer' to mean 'What will happen?' or 'It can happen.'",
+            "port_exemple": "O que vai acontecer amanhã?",
+            "en_exemple": "What will happen tomorrow?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61827,8 +62001,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. bath, shower",
-            "note": "todo"
+            "translation": "bath",
+            "note": "Banho is the usual word for 'bath' in European Portuguese. For 'shower', use 'ducha' or 'duche'.",
+            "port_exemple": "Tomar banho é relaxante.",
+            "en_exemple": "Taking a bath is relaxing.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61848,7 +62025,10 @@
         },
         "en": {
             "translation": ", fem. help, aid, assistance",
-            "note": "todo"
+            "note": "Ajuda is a feminine noun meaning 'help' or 'assistance.' It is common in everyday language; the related verb is ajudar (to help).",
+            "port_exemple": "Preciso de ajuda.",
+            "en_exemple": "I need help.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61867,8 +62047,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. parents, countries",
-            "note": "todo"
+            "translation": "parents",
+            "note": "Note: 'pais' means 'parents' (masculine plural). The word for 'countries' is 'países'.",
+            "port_exemple": "Os meus pais moram aqui.",
+            "en_exemple": "My parents live here.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61887,8 +62070,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. of them, theirs",
-            "note": "todo"
+            "translation": "theirs",
+            "note": "deles is the masculine plural form meaning either 'of them' or, as a possessive pronoun, 'theirs'. For feminine groups use delas.",
+            "port_exemple": "Os livros são deles.",
+            "en_exemple": "The books are theirs.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61907,8 +62093,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to feel, to sense, to",
-            "note": "todo"
+            "translation": "to feel",
+            "note": "Sentir is the basic verb for perceiving with the senses and for emotions. It can also mean 'to sense' in some contexts, and in European Portuguese you often use the reflexive form sentir-se (sinto-me feliz) to express a state.",
+            "port_exemple": "Eu sinto frio.",
+            "en_exemple": "I feel cold.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61928,7 +62117,10 @@
         },
         "en": {
             "translation": "many, a lot of (fem. plural)",
-            "note": "todo"
+            "note": "Muitas is the feminine plural form of muito (much). It agrees with feminine plural nouns and is used as 'many' or 'a lot (of)'.",
+            "port_exemple": "Muitas pessoas gostam de música.",
+            "en_exemple": "Many people enjoy music.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61948,7 +62140,10 @@
         },
         "en": {
             "translation": "find, meet, encounter",
-            "note": "todo"
+            "note": "Note: 'encontrar' primarily means 'to find' in everyday use. It can also mean 'to meet' or 'to encounter' someone in contexts like 'encontrar com alguém' or simply 'encontrar alguém' depending on construction.",
+            "port_exemple": "Preciso encontrar as minhas chaves.",
+            "en_exemple": "I need to find my keys.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -61967,8 +62162,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "in that, on that, abou",
-            "note": "todo"
+            "translation": "in that",
+            "note": "Nisso is a neuter form of 'em isso' used to refer to a previously mentioned matter or situation. It translates as 'in that' or 'in that regard,' and the exact English depends on the context.",
+            "port_exemple": "Não vejo nisso nada de errado.",
+            "en_exemple": "I don't see anything wrong with that.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 3,
         "audio": {
@@ -61988,7 +62186,10 @@
         },
         "en": {
             "translation": "these",
-            "note": "todo"
+            "note": "Estas means 'these' for feminine plural nouns in European Portuguese. For masculine plural, use 'estes'.",
+            "port_exemple": "Estas casas são bonitas.",
+            "en_exemple": "These houses are beautiful.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62008,7 +62209,10 @@
         },
         "en": {
             "translation": "of this",
-            "note": "todo"
+            "note": "Note that desta is de + esta (feminine). It usually precedes a feminine noun to mean 'of this' or 'from this' and appears in phrases like 'desta forma' meaning 'in this way'.",
+            "port_exemple": "Desta forma, podemos continuar.",
+            "en_exemple": "In this way, we can continue.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62028,7 +62232,10 @@
         },
         "en": {
             "translation": ", masc. done, made, finished",
-            "note": "todo"
+            "note": "Feito is the masculine singular past participle of fazer, used as 'done' or 'made'. It agrees with the noun (feito/feita/feitos/feitas) and can also mean a 'fact' or 'deed' when used as a noun (um feito).",
+            "port_exemple": "O trabalho já está feito.",
+            "en_exemple": "The work is already done.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62047,8 +62254,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "have, they have",
-            "note": "todo"
+            "translation": "they have",
+            "note": "têm is the third-person plural present tense of ter (to have). It is used with eles/elas or vocês to express possession in everyday Portuguese.",
+            "port_exemple": "Eles têm um carro novo.",
+            "en_exemple": "They have a new car.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62067,8 +62277,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "means, signifies, repr",
-            "note": "todo"
+            "translation": "means",
+            "note": "Significa is the standard present tense form of significar. It is used to express what something means or signifies in everyday Portuguese.",
+            "port_exemple": "O que isso significa?",
+            "en_exemple": "What does that mean?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62088,7 +62301,10 @@
         },
         "en": {
             "translation": ", fem. joke, gag, prank",
-            "note": "todo"
+            "note": "The primary meaning is 'joke'. 'Gag' can be used in some contexts, but 'prank' is less common.",
+            "port_exemple": "Ele contou uma piada na festa.",
+            "en_exemple": "He told a joke at the party.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62107,8 +62323,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "boss, chief, head, lea",
-            "note": "todo"
+            "translation": "boss",
+            "note": "Note: 'chefe' is commonly used for a boss or manager in everyday Portuguese. In more formal contexts, you might specify the role, e.g., 'chefe de departamento' (head of a department).",
+            "port_exemple": "O meu chefe pediu para falar com você.",
+            "en_exemple": "My boss asked to speak with you.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62127,8 +62346,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "Ah, Oh, Aha",
-            "note": "todo"
+            "translation": "ah!",
+            "note": "Ah is a general interjection used to express surprise, realization, or emotion in European Portuguese. It is typically translated as 'ah!' or 'oh!' in English depending on the context; 'aha' is reserved for moments of discovery.",
+            "port_exemple": "Ah, agora percebi.",
+            "en_exemple": "Ah, now I understand.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62147,8 +62369,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "empty",
-            "note": "uma garrafa vã = empty bottle. Adjective (masculine/feminine: vão/vã)"
+            "translation": "vain",
+            "note": "uma garrafa vã = empty bottle. Adjective (masculine/feminine: vão/vã)",
+            "port_exemple": "Essa esperança é vã.",
+            "en_exemple": "That hope is vain.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62168,7 +62393,10 @@
         },
         "en": {
             "translation": "others, other",
-            "note": "todo"
+            "note": "Outros is the masculine plural form of outro. It is used before masculine plural nouns to mean 'other' (as in other books) or to mean 'the others' when used with a definite article.",
+            "port_exemple": "Tenho outros livros.",
+            "en_exemple": "I have other books.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 3,
         "audio": {
@@ -62188,7 +62416,10 @@
         },
         "en": {
             "translation": "your",
-            "note": "todo"
+            "note": "Tu as is the informal possessive for 'tu' and is used with feminine plural nouns. For masculine plural nouns, use teus.",
+            "port_exemple": "Estas são as tuas chaves.",
+            "en_exemple": "These are your keys.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62208,7 +62439,10 @@
         },
         "en": {
             "translation": ", masc. pleasure, delight, enj",
-            "note": "todo"
+            "note": "Prazer is the standard noun meaning 'pleasure.' It appears in greetings such as 'Prazer em conhecê-lo' or 'Muito prazer.'",
+            "port_exemple": "Foi um prazer conhecê-lo.",
+            "en_exemple": "It was a pleasure to meet you.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 3,
         "audio": {
@@ -62227,8 +62461,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. telephone, phone",
-            "note": "todo"
+            "translation": "phone",
+            "note": "Note that 'telefone' is a masculine noun ('o telefone') in Portuguese. In everyday usage, 'phone' is more common in English, while 'telephone' is the more formal term.",
+            "port_exemple": "O telefone está a tocar.",
+            "en_exemple": "The phone is ringing.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62247,8 +62484,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. men",
-            "note": "todo"
+            "translation": "men",
+            "note": "Note that 'homens' is the masculine plural form of 'homem' (man). In everyday Portuguese, you use 'homens' for adult males; for informal groups you might hear 'caras' instead, depending on tone.",
+            "port_exemple": "Os homens estão na praça.",
+            "en_exemple": "The men are in the square.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62267,8 +62507,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "much, many, a lot of",
-            "note": "todo"
+            "translation": "a lot of",
+            "note": "Muita is the feminine singular form of muito, used before feminine nouns to mean 'a lot of' or 'much'. For masculine nouns or plural forms, use muito, muitos, or muitas.",
+            "port_exemple": "Há muita gente no parque.",
+            "en_exemple": "There are a lot of people in the park.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62287,8 +62530,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. at the",
-            "note": "todo"
+            "translation": "to the",
+            "note": "Às is the contraction of 'a' + 'as', used before feminine plural nouns and in time expressions. In time phrases it means 'at' (e.g., às oito = at eight).",
+            "port_exemple": "Cheguei às oito.",
+            "en_exemple": "I arrived at eight.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62307,8 +62553,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "gives, give, it gives",
-            "note": "todo"
+            "translation": "gives",
+            "note": "Dá is the 3rd-person singular present of dar, meaning 'he/she/it gives'. In everyday European Portuguese, 'você dá' is also used to say 'you give'.",
+            "port_exemple": "Ela dá um presente.",
+            "en_exemple": "She gives a present.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62328,7 +62577,10 @@
         },
         "en": {
             "translation": "I heard",
-            "note": "todo"
+            "note": "Ouvi is the first-person preterite (simple past) form of ouvir, meaning 'I heard'. It is used for completed past actions and can refer to sounds, voices, or information you perceived.",
+            "port_exemple": "Eu ouvi o barulho lá fora.",
+            "en_exemple": "I heard the noise outside.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62347,8 +62599,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. fear, dread, fright, a",
-            "note": "todo"
+            "translation": "fear",
+            "note": "Medo is a masculine noun meaning 'fear'. It is commonly used with ter medo de + something or estar com medo to express fear.",
+            "port_exemple": "Tenho medo do escuro.",
+            "en_exemple": "I am afraid of the dark.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62367,8 +62622,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. eyes",
-            "note": "todo"
+            "translation": "eyes",
+            "note": "In Portuguese, 'olhos' is a masculine plural noun. English does not mark gender for 'eyes'.",
+            "port_exemple": "Ela tem olhos azuis.",
+            "en_exemple": "She has blue eyes.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62387,8 +62645,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "you like, you enjoy",
-            "note": "todo"
+            "translation": "you like",
+            "note": "It is the informal second-person singular form used with 'tu'. In European Portuguese, 'tu' is common in casual speech; in Brazil, 'você' is more common and would use 'gosta'.",
+            "port_exemple": "Gostas de música?",
+            "en_exemple": "Do you like music?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62407,8 +62668,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "greater, bigger, major",
-            "note": "todo"
+            "translation": "bigger",
+            "note": "Maior is the comparative form of grande. In everyday Portuguese it is used for bigger or larger size, or for age (older) depending on the context.",
+            "port_exemple": "Este prédio é maior do que aquele.",
+            "en_exemple": "This building is bigger than that one.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62427,8 +62691,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "I stay, I remain, I be",
-            "note": "todo"
+            "translation": "I stay",
+            "note": "The standard translation is 'I stay' or 'I remain', depending on context. 'I be' is not correct in standard English.",
+            "port_exemple": "Eu fico em casa hoje.",
+            "en_exemple": "I stay at home today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62448,7 +62715,10 @@
         },
         "en": {
             "translation": "worse, worst",
-            "note": "todo"
+            "note": "Note: 'pior' is the comparative form meaning 'worse'. The superlative form 'o pior' means 'the worst'.",
+            "port_exemple": "Hoje está pior.",
+            "en_exemple": "Today it's worse.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62468,7 +62738,10 @@
         },
         "en": {
             "translation": ", masc. film, movie",
-            "note": "todo"
+            "note": "Filme is masculine in Portuguese ('o filme'). It refers to a film or movie in general; in English you can use 'film' or 'movie' depending on regional preference.",
+            "port_exemple": "Eu assisti a um filme incrível ontem.",
+            "en_exemple": "I watched an amazing film yesterday.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62488,7 +62761,10 @@
         },
         "en": {
             "translation": "they were, they went",
-            "note": "todo"
+            "note": "In Portuguese, foram is the preterite (simple past) form for both ser (to be) and ir (to go). The meaning depends on the verb it replaces; context will tell you whether it means 'they were' or 'they went.'",
+            "port_exemple": "Eles foram ao cinema ontem.",
+            "en_exemple": "They went to the cinema yesterday.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62507,8 +62783,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. same, very, itself",
-            "note": "todo"
+            "translation": "the same (feminine form)",
+            "note": "‘mesma’ is the feminine form of 'the same' and must agree with a feminine noun (e.g., 'a mesma casa'). It is not used to mean 'very' or 'itself'.",
+            "port_exemple": "Ela usou a mesma desculpa.",
+            "en_exemple": "She used the same excuse.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62527,8 +62806,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "of this, from this",
-            "note": "todo"
+            "translation": "from this",
+            "note": "Note: 'deste' is the contraction of 'de este' used before masculine singular nouns, and appears in fixed phrases like 'deste modo' (in this way). It often translates as 'from this' or 'of this' depending on the context.",
+            "port_exemple": "Deste modo, podemos começar a aula.",
+            "en_exemple": "In this way, we can start the class.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62548,7 +62830,10 @@
         },
         "en": {
             "translation": "would have",
-            "note": "todo"
+            "note": "Teria is the present conditional form of 'ter' (to have). It is used for hypothetical or conditional statements, often with 'se' to express what would happen under different conditions.",
+            "port_exemple": "Eu teria ido ao concerto, se fosse possível.",
+            "en_exemple": "I would have gone to the concert if it were possible.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62568,7 +62853,10 @@
         },
         "en": {
             "translation": "you were",
-            "note": "todo"
+            "note": "Estavas is the imperfect form of estar used with the informal 'tu'. It usually expresses a past ongoing state or a habitual action; in some contexts you could translate as 'you were' or 'you used to be'.",
+            "port_exemple": "Tu estavas a trabalhar quando cheguei.",
+            "en_exemple": "You were working when I arrived.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62587,8 +62875,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "therefore, consequentl",
-            "note": "todo"
+            "translation": "therefore",
+            "note": "The current translation has a typo ('consequentl'). 'Portanto' is best translated as 'therefore' (or 'thus').",
+            "port_exemple": "Portanto, precisamos terminar agora.",
+            "en_exemple": "Therefore, we need to finish now.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62607,8 +62898,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "in this, on this, at this",
-            "note": "todo"
+            "translation": "in this",
+            "note": "Note: 'neste' is a contraction of 'em este' and is used before masculine singular nouns. In time expressions it can mean 'at this' (e.g., 'neste momento' = 'at this moment').",
+            "port_exemple": "Neste momento, preciso de silêncio.",
+            "en_exemple": "At this moment, I need silence.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62627,8 +62921,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "himself, herself, itse",
-            "note": "todo"
+            "translation": "oneself",
+            "note": "Si is a third-person reflexive pronoun used after prepositions to refer back to the subject. It tends to appear in formal or literary contexts and in fixed phrases like 'por si' (by oneself).",
+            "port_exemple": "Ele fez isso por si.",
+            "en_exemple": "He did that by himself.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62647,8 +62944,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "idiot, fool, stupid pe",
-            "note": "todo"
+            "translation": "idiot",
+            "note": "Best single-word translation is 'idiot'. The given 'stupid pe' appears truncated; 'fool' is another option, but 'idiot' is the most natural in everyday speech.",
+            "port_exemple": "Ele é um idiota.",
+            "en_exemple": "He's an idiot.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62668,7 +62968,10 @@
         },
         "en": {
             "translation": "I think",
-            "note": "todo"
+            "note": "Penso is the standard present tense form meaning 'I think' in European Portuguese. It is commonly used with 'que' to introduce a clause (e.g., Penso que... = I think that...).",
+            "port_exemple": "Penso que é uma boa ideia.",
+            "en_exemple": "I think it's a good idea.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62687,8 +62990,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "I found, I thought",
-            "note": "todo"
+            "translation": "I found",
+            "note": "Achei is the first-person past tense of achar. It usually means 'I found' when judging something, but 'I thought' is used with a following clause (eu achei que...).",
+            "port_exemple": "Achei o filme muito bom.",
+            "en_exemple": "I found the movie very good.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62708,7 +63014,10 @@
         },
         "en": {
             "translation": "they do, they make",
-            "note": "todo"
+            "note": "Fazem can mean both 'they do' and 'they make.' The exact meaning depends on the context.",
+            "port_exemple": "Eles fazem os deveres de casa.",
+            "en_exemple": "They do their homework.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62727,8 +63036,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. height, altitude, leve",
-            "note": "todo"
+            "translation": "height",
+            "note": "Height is the primary meaning of altura in everyday Portuguese. In geographic contexts, it can mean altitude or elevation; for elevation use elevação.",
+            "port_exemple": "A altura da torre é impressionante.",
+            "en_exemple": "The height of the tower is impressive.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62747,8 +63059,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "Needs, requires, preci",
-            "note": "todo"
+            "translation": "needs",
+            "note": "The current translation includes a typo 'preci' and is not accurate overall. The correct translation for 'precisa' (as a form of precisar) is 'needs' and it is often used with 'de' to specify what is needed (e.g., precisa de água).",
+            "port_exemple": "Ela precisa de ajuda.",
+            "en_exemple": "She needs help.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62768,7 +63083,10 @@
         },
         "en": {
             "translation": ", fem. friend, female friend",
-            "note": "todo"
+            "note": "Amiga is the feminine form of amigo and means a female friend. It does not mean girlfriend.",
+            "port_exemple": "A minha amiga é muito simpática.",
+            "en_exemple": "My female friend is very nice.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62788,7 +63106,10 @@
         },
         "en": {
             "translation": ", fem. Girlfriend",
-            "note": "todo"
+            "note": "Namorada means a female romantic partner. It’s not used for a female friend; use amiga for a platonic friend.",
+            "port_exemple": "Minha namorada gosta de cinema.",
+            "en_exemple": "My girlfriend likes cinema.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62807,8 +63128,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. daughter",
-            "note": "todo"
+            "translation": "daughter",
+            "note": "Filha means daughter. It is a common, neutral term used for one's female child; 'minha filha' means 'my daughter'.",
+            "port_exemple": "Minha filha está lendo um livro.",
+            "en_exemple": "My daughter is reading a book.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62827,8 +63151,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "you remember, do you r",
-            "note": "todo"
+            "translation": "you remember",
+            "note": "Lembras is the informal tu form meaning 'you remember'. In formal contexts use 'você lembra' or 'o senhor lembra' depending on region and level of formality.",
+            "port_exemple": "Lembras o que eu te disse?",
+            "en_exemple": "Do you remember what I told you?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62847,8 +63174,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "Arrives, reaches, enou",
-            "note": "todo"
+            "translation": "arrives (also used as an interjection meaning 'enough!')",
+            "note": "Chega is the third-person singular present of chegar, meaning 'to arrive.' It is also used as an exclamation meaning 'enough!' in European Portuguese.",
+            "port_exemple": "Ele chega às oito.",
+            "en_exemple": "He arrives at eight.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62867,8 +63197,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "in this, on this, at this",
-            "note": "todo"
+            "translation": "in this",
+            "note": "Nisto is a formal, literary contraction of em + isto. It is mainly used in writing or formal speech to refer to a thing or idea just mentioned.",
+            "port_exemple": "Nisto reside o problema.",
+            "en_exemple": "In this lies the problem.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62888,7 +63221,10 @@
         },
         "en": {
             "translation": "to finish, to end",
-            "note": "I finished the book yesterday. (Eu acabei o livro ontem.)"
+            "note": "I finished the book yesterday. (Eu acabei o livro ontem.)",
+            "port_exemple": "Vamos acabar com isto.",
+            "en_exemple": "Let's end this.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62908,7 +63244,10 @@
         },
         "en": {
             "translation": ", fem. conversation, talk, chat",
-            "note": "todo"
+            "note": "Conversa is a feminine noun meaning 'conversation' or 'chat'. It is used for both formal and informal exchanges.",
+            "port_exemple": "Tive uma boa conversa com o meu professor.",
+            "en_exemple": "I had a good conversation with my professor.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62928,7 +63267,10 @@
         },
         "en": {
             "translation": "I must, I should, I owe",
-            "note": "todo"
+            "note": "Devo expresses obligation: it is used for 'I must' or 'I should' in most contexts. It can also mean 'I owe' when used with a direct object (e.g., Devo dinheiro a ele = I owe him money).",
+            "port_exemple": "Eu devo terminar o relatório hoje.",
+            "en_exemple": "I must finish the report today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62947,8 +63289,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. Mr., sir, lord, gentle",
-            "note": "todo"
+            "translation": "sir (addressing a man directly) or Mr. (as a formal title before a surname)",
+            "note": "Remark: 'Senhor' is a formal, polite way to address a man. In everyday English, you would use 'sir' (or 'Mr.' before a surname).",
+            "port_exemple": "Senhor, pode me ajudar, por favor?",
+            "en_exemple": "Sir, could you help me, please?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62968,7 +63313,10 @@
         },
         "en": {
             "translation": "to need, to require",
-            "note": "Do you need help? (Tu precisas de ajuda ?)"
+            "note": "Do you need help? (Tu precisas de ajuda ?)",
+            "port_exemple": "Eu preciso de ajuda.",
+            "en_exemple": "I need help.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -62988,7 +63336,10 @@
         },
         "en": {
             "translation": "Look (plural imperative)",
-            "note": "todo"
+            "note": "Look is the plural imperative of 'olhar' used when addressing a group (vocês). It is common in everyday speech and in notices to grab a group's attention.",
+            "port_exemple": "Olhem para o mar; está lindo hoje.",
+            "en_exemple": "Look at the sea; it's beautiful today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63007,8 +63358,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "you must, you should",
-            "note": "todo"
+            "translation": "you should",
+            "note": "In European Portuguese, 'deves' is the second-person singular form of 'dever' for 'tu' and is used to give advice or mild obligation. It is not as strong as 'you must'; context will determine whether it means 'should' or 'must'.",
+            "port_exemple": "Tu deves estudar para a prova.",
+            "en_exemple": "You should study for the exam.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63027,8 +63381,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "leaves, goes out, exit",
-            "note": "todo"
+            "translation": "leaves",
+            "note": "Note that 'sai' is the present tense form of 'sair' and means 'he/she leaves' (or 'you leave' in the formal 'você'). 'Exit' is not a correct meaning for this verb form.",
+            "port_exemple": "Ele sai de casa às oito.",
+            "en_exemple": "He leaves the house at eight.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63047,8 +63404,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "Well, now, come on, ei",
-            "note": "todo"
+            "translation": "come on",
+            "note": "Ora is a soft, informal discourse marker used to urge someone or introduce a point. Its meaning can be 'come on' or 'now' depending on the context and tone.",
+            "port_exemple": "Ora, vamos lá!",
+            "en_exemple": "Come on, let's go!",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63067,8 +63427,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. pity, sorrow, penalty",
-            "note": "todo"
+            "translation": "pity; sorrow; penalty; punishment (legal sentence)",
+            "note": "Pena mainly means pity or regret in everyday Portuguese. It also has a legal sense as penalty or punishment, so use the context to choose the right meaning.",
+            "port_exemple": "É uma pena que não possas vir.",
+            "en_exemple": "It's a pity that you can't come.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63088,7 +63451,10 @@
         },
         "en": {
             "translation": "you saw",
-            "note": "todo"
+            "note": "Viste is the preterite form of ver for the informal 'tu' in European Portuguese. In Brazilian Portuguese, you would more commonly say 'você viu'.",
+            "port_exemple": "Viste o filme ontem?",
+            "en_exemple": "Did you see the movie yesterday?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63108,7 +63474,10 @@
         },
         "en": {
             "translation": "there was, there were",
-            "note": "todo"
+            "note": "Havia is the imperfect past form of haver, meaning 'to exist' or 'to be there'. It describes existence in the past without a specific moment.",
+            "port_exemple": "Havia uma casa antiga no meio da vila.",
+            "en_exemple": "There was an old house in the middle of the village.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63127,8 +63496,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. children, sons",
-            "note": "todo"
+            "translation": "children",
+            "note": "The given translation is not fully accurate. The common translation is 'children' (neutral); 'filhos' is the masculine plural of 'filho' and is used for offspring; 'sons' is used specifically for male children.",
+            "port_exemple": "Tenho dois filhos.",
+            "en_exemple": "I have two children.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63147,8 +63519,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. good, fine, pleasant",
-            "note": "todo"
+            "translation": "good (feminine plural)",
+            "note": "Boas is the feminine plural form of boa and agrees with feminine plural nouns (e.g., ideias). It is also used informally as a greeting in Portugal, meaning 'Hi!'",
+            "port_exemple": "Estas ideias são boas.",
+            "en_exemple": "These ideas are good.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63167,8 +63542,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "matters, imports, is i",
-            "note": "todo"
+            "translation": "matters",
+            "note": "Note that 'importa' is most often used to mean 'it matters' (as in 'Isso importa' = That matters). It can also be the third-person singular form of 'importar' meaning 'to import' in trade contexts.",
+            "port_exemple": "Isso importa.",
+            "en_exemple": "That matters.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63188,7 +63566,10 @@
         },
         "en": {
             "translation": "I came",
-            "note": "todo"
+            "note": "Vim is the simple past form of 'vir' (to come). It is used to narrate past actions in European Portuguese and Brazilian Portuguese.",
+            "port_exemple": "Eu vim à festa ontem.",
+            "en_exemple": "I came to the party yesterday.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63207,8 +63588,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. problems, issues, trou",
-            "note": "todo"
+            "translation": "problems",
+            "note": "The current translation is not accurate. 'Problemas' translates to 'problems' in most contexts; it can also be 'issues' depending on context.",
+            "port_exemple": "Tenho muitos problemas.",
+            "en_exemple": "I have many problems.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63228,7 +63612,10 @@
         },
         "en": {
             "translation": "we need, we require",
-            "note": "todo"
+            "note": "Note: 'precisamos' is the first-person plural present tense of 'precisar'. In everyday European Portuguese, it is commonly followed by 'de' before the object (e.g., precisamos de ajuda).",
+            "port_exemple": "Precisamos de mais tempo para terminar o projeto.",
+            "en_exemple": "We need more time to finish the project.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63247,8 +63634,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. months",
-            "note": "todo"
+            "translation": "months",
+            "note": "Current translation includes ', masc.', which is not standard; the natural form is 'months'. Meses is the plural of mês (month) and is used to talk about durations.",
+            "port_exemple": "Eles moram aqui há vários meses.",
+            "en_exemple": "They have lived here for several months.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63267,8 +63657,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "take, drink, receive",
-            "note": "todo"
+            "translation": "Take",
+            "note": "toma is an informal imperative meaning 'take.' It can also mean 'have' or 'drink' depending on context, for example 'toma água' = 'drink water'.",
+            "port_exemple": "Toma isto.",
+            "en_exemple": "Take this.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63288,7 +63681,10 @@
         },
         "en": {
             "translation": ", masc. boyfriend, lover, suitor",
-            "note": "todo"
+            "note": "Namorado is the everyday word for a male romantic partner. For a female partner, use namorada; 'lover' is rarely used and sounds formal or old-fashioned.",
+            "port_exemple": "O meu namorado chegou.",
+            "en_exemple": "My boyfriend arrived.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63307,8 +63703,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "you had",
-            "note": "todo"
+            "translation": "you used to have",
+            "note": "Tinhas is the imperfect form of 'ter' for the second person singular 'tu'. It expresses a past habit or an ongoing state.",
+            "port_exemple": "Tu tinhas uma mochila vermelha.",
+            "en_exemple": "You used to have a red backpack.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63327,8 +63726,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. gang, crowd, group",
-            "note": "todo"
+            "translation": "the crowd",
+            "note": "Malta is informal and widely used in Portugal to refer to people in a group. It can mean the crowd or the guys depending on context.",
+            "port_exemple": "A malta já chegou ao bar.",
+            "en_exemple": "The crowd has already arrived at the bar.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63348,7 +63750,10 @@
         },
         "en": {
             "translation": "we do, we make",
-            "note": "todo"
+            "note": "'Fazer' can mean both 'to do' and 'to make.' In many everyday phrases like 'fazemos perguntas,' the natural translation is 'we ask questions' rather than a literal 'we make questions.'",
+            "port_exemple": "Nós fazemos perguntas durante a aula.",
+            "en_exemple": "We ask questions during class.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63367,8 +63772,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "to die, to pass away",
-            "note": "todo"
+            "translation": "to die",
+            "note": "Morrer is the direct verb for death. 'To pass away' is a softer English euphemism; use it when politeness is intended.",
+            "port_exemple": "Ele morreu ontem.",
+            "en_exemple": "He died yesterday.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63387,8 +63795,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "Wow, Damn, Gosh, Goodness",
-            "note": "todo"
+            "translation": "damn!",
+            "note": "Remark: 'caramba' is a mild exclamation of surprise or annoyance. In English, 'damn' is the closest common equivalent in informal speech; 'wow' or 'gosh' can fit softer tones.",
+            "port_exemple": "Caramba, esqueci as chaves em casa.",
+            "en_exemple": "Damn, I forgot my keys at home.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63407,8 +63818,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "in this, on this, at this",
-            "note": "todo"
+            "translation": "in this",
+            "note": "nesta = em + esta (feminine). It is used before feminine nouns; in time expressions like 'nesta semana', it translates as 'this week' (not 'in this week').",
+            "port_exemple": "Nesta semana vou começar um novo curso de português.",
+            "en_exemple": "This week I will start a new Portuguese course.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63427,8 +63841,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "had",
-            "note": "todo"
+            "translation": "had (in the past subjunctive; used in hypothetical clauses such as 'If I had...')",
+            "note": "Tivesse is the imperfect subjunctive form of ter (to have). It is used for hypothetical or unreal conditions, often after se (if).",
+            "port_exemple": "Se eu tivesse tempo, leria mais.",
+            "en_exemple": "If I had time, I would read more.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63447,8 +63864,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. turn, spin, tour, walk",
-            "note": "todo"
+            "translation": "turn (also spin; tour; short ride)",
+            "note": "Note: 'giro' primarily means a turn or spin, or a short outing/tour. In spoken Portuguese, 'que giro!' means 'how cool!' and 'dar um giro' often implies a quick drive or circular outing rather than a simple walk.",
+            "port_exemple": "Vamos dar um giro pela cidade.",
+            "en_exemple": "Let's take a spin around the city.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63467,8 +63887,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "I perceive, I understa",
-            "note": "todo"
+            "translation": "I understand",
+            "note": "Percebo usually means 'I understand' in everyday Portuguese. It can also mean 'I notice' or 'I realize' depending on the context.",
+            "port_exemple": "Percebo o que você quer dizer.",
+            "en_exemple": "I understand what you mean.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63487,8 +63910,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "You can, you manage, y",
-            "note": "todo"
+            "translation": "you can",
+            "note": "Consegues is the informal 'tu' form of 'conseguir', meaning 'you can' or 'you are able to'. In formal contexts you'd use 'consegue' (with você) or 'você consegue'.",
+            "port_exemple": "Consegues ir agora?",
+            "en_exemple": "You can go now.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63507,8 +63933,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": "find, think, believe",
-            "note": "todo"
+            "translation": "think",
+            "note": "Acha mainly means 'to think' or 'to believe' in everyday Portuguese. It can also mean 'to find' when used with a direct object, so context is important.",
+            "port_exemple": "Ele acha que é tarde.",
+            "en_exemple": "He thinks it's late.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63528,7 +63957,10 @@
         },
         "en": {
             "translation": "we know",
-            "note": "todo"
+            "note": "Sabemos is the present indicative form of saber (to know). It is used for facts, information, or skills we have, and it can be followed by clauses or infinitives (sabemos onde fica a escola; sabemos falar português).",
+            "port_exemple": "Nós sabemos a resposta.",
+            "en_exemple": "We know the answer.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63548,7 +63980,10 @@
         },
         "en": {
             "translation": "they were, you were",
-            "note": "todo"
+            "note": "Eram is the imperfect past tense of 'ser' (to be). It is used with plural subjects (eles/elas) and with 'vocês' to mean 'you were'.",
+            "port_exemple": "Eles eram bons alunos.",
+            "en_exemple": "They were good students.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63567,8 +64002,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", fem. lack, absence, fault",
-            "note": "todo"
+            "translation": "lack",
+            "note": "Falta is a feminine noun meaning lack/absence. It is used with 'há' or 'de' to indicate missing things.",
+            "port_exemple": "Há falta de água nesta região.",
+            "en_exemple": "There is a lack of water in this region.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63587,8 +64025,11 @@
             "last_update": "2026-02-20"
         },
         "en": {
-            "translation": ", masc. coming, having come, a",
-            "note": "todo"
+            "translation": "coming",
+            "note": "Vindo is the present participle of vir (to come) and is used with estar to form 'is coming' or with auxiliaries to indicate compound tenses. When you mean 'upcoming,' use words like próximo or que vem, not just vindo.",
+            "port_exemple": "Ele está vindo.",
+            "en_exemple": "He is coming.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2,
         "audio": {
@@ -63604,8 +64045,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "kind/friendly",
-            "note": "todo"
+            "translation": "kind",
+            "note": "Amável primarily means 'kind' or 'pleasant', describing a person's character or behavior. It is commonly used for polite, helpful people in everyday Portuguese.",
+            "port_exemple": "Ela é uma pessoa amável.",
+            "en_exemple": "She is a kind person.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63618,7 +64062,10 @@
         },
         "en": {
             "translation": "scary",
-            "note": "todo"
+            "note": "Assustador describes something that causes fear or strong surprise. It is commonly used for films, stories, scenes, or situations that feel frightening or alarming.",
+            "port_exemple": "Este filme é assustador.",
+            "en_exemple": "This movie is scary.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63630,8 +64077,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "upset",
-            "note": "todo"
+            "translation": "annoyed",
+            "note": "Chateado conveys mild to moderate annoyance or disappointment. In many contexts it can be translated as 'annoyed' rather than 'upset'.",
+            "port_exemple": "Estou chateado com o atraso.",
+            "en_exemple": "I'm annoyed by the delay.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63643,8 +64093,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "boring",
-            "note": "todo"
+            "translation": "annoying",
+            "note": "Chato is informal and versatile: it can mean annoying or boring depending on the context. Use with people or situations; tone is casual.",
+            "port_exemple": "Essa pessoa é chata.",
+            "en_exemple": "That person is annoying.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63656,8 +64109,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "colored/colorful",
-            "note": "todo"
+            "translation": "colorful",
+            "note": "Best translated as 'colorful' in everyday English. 'Colored' is used mainly for things that have been colored, not for describing something with natural colors.",
+            "port_exemple": "O céu ficou colorido ao pôr do sol.",
+            "en_exemple": "This shirt is colorful.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63670,7 +64126,10 @@
         },
         "en": {
             "translation": "edible",
-            "note": "todo"
+            "note": "Comestível is the standard adjective meaning edible in European Portuguese. It describes food that can be eaten safely, often used on labels or in recipes.",
+            "port_exemple": "Este cogumelo é comestível.",
+            "en_exemple": "This mushroom is edible.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63683,7 +64142,10 @@
         },
         "en": {
             "translation": "complex",
-            "note": "todo"
+            "note": "In European Portuguese, complexo often means something with many parts or something hard to understand. In English, 'complex' fits best for most cases.",
+            "port_exemple": "Este problema é complexo.",
+            "en_exemple": "This problem is complex.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63696,7 +64158,10 @@
         },
         "en": {
             "translation": "brave/courageous",
-            "note": "todo"
+            "note": "Corajoso means brave or courageous, typically describing someone who faces danger or challenges. It can refer to moral courage as well as physical bravery, and it's commonly used for people or actions.",
+            "port_exemple": "Ele é corajoso ao enfrentar o perigo.",
+            "en_exemple": "He is brave when facing danger.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63709,7 +64174,10 @@
         },
         "en": {
             "translation": "curious",
-            "note": "todo"
+            "note": "Curioso mainly means 'curious' about things and is commonly used for someone who wants to learn more. In some contexts it can imply nosiness.",
+            "port_exemple": "Ele é muito curioso sobre tudo.",
+            "en_exemple": "He is very curious about everything.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63722,7 +64190,10 @@
         },
         "en": {
             "translation": "depressed",
-            "note": "todo"
+            "note": "Deprimido describes a sad mood and can range from feeling down to clinical depression. In everyday speech, 'feeling down' or 'unhappy' might be more natural in English depending on context.",
+            "port_exemple": "Estou deprimido hoje.",
+            "en_exemple": "I feel depressed today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63735,7 +64206,10 @@
         },
         "en": {
             "translation": "determined",
-            "note": "todo"
+            "note": "In Portuguese, 'determinado' primarily describes a person who is resolute, i.e., 'determined.' It can also mean 'definite' or 'specific' in other contexts (e.g., 'dados determinados').",
+            "port_exemple": "Ele é determinado.",
+            "en_exemple": "He is determined.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63747,8 +64221,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "ecological",
-            "note": "todo"
+            "translation": "eco-friendly",
+            "note": "Ecológico is technically correct as 'ecological'. In everyday English, 'eco-friendly' (or 'environmentally friendly') is more natural when talking about products or practices.",
+            "port_exemple": "Este produto é ecológico.",
+            "en_exemple": "This product is eco-friendly.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63760,8 +64237,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "economic/economical",
-            "note": "todo"
+            "translation": "economic",
+            "note": "Portuguese 'econômico' is usually about the economy and is translated as 'economic' in general. If you mean something that saves money, English uses 'economical' or 'cost-effective' depending on the context.",
+            "port_exemple": "As políticas econômicas foram discutidas.",
+            "en_exemple": "The economic policies were discussed.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63774,7 +64254,10 @@
         },
         "en": {
             "translation": "efficient",
-            "note": "todo"
+            "note": "In European Portuguese, 'eficiente' describes someone or something that uses resources well. It contrasts with 'eficaz' (effective), which focuses on achieving the desired result.",
+            "port_exemple": "Este computador é muito eficiente.",
+            "en_exemple": "This computer is very efficient.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63787,7 +64270,10 @@
         },
         "en": {
             "translation": "elegant",
-            "note": "todo"
+            "note": "Elegant is a common, slightly formal adjective in European Portuguese. Use it for people, clothing, and places; for a more casual vibe, you might use 'chique'.",
+            "port_exemple": "Ela usou um vestido elegante na festa.",
+            "en_exemple": "She wore an elegant dress to the party.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63800,7 +64286,10 @@
         },
         "en": {
             "translation": "exciting",
-            "note": "todo"
+            "note": "Emocionante conveys a strong emotional impact and can mean exciting or moving. In everyday Portuguese, it describes events, films, or moments that stir strong feelings; use 'exciting' for something stimulating, or 'moving' for touching.",
+            "port_exemple": "O filme foi emocionante.",
+            "en_exemple": "The movie was exciting.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63813,7 +64302,10 @@
         },
         "en": {
             "translation": "huge",
-            "note": "todo"
+            "note": "Enorme is a strong word meaning 'very big' or 'enormous.' It’s common in everyday speech, but for milder sizes you might prefer 'grande'.",
+            "port_exemple": "Esta casa é enorme.",
+            "en_exemple": "This house is enormous.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63826,7 +64318,10 @@
         },
         "en": {
             "translation": "false/fake",
-            "note": "todo"
+            "note": "Falso is a general adjective meaning 'not true' or 'not genuine.' Use 'false' for statements and 'fake' for counterfeit items or insincere behavior.",
+            "port_exemple": "Essa afirmação é falsa.",
+            "en_exemple": "That statement is false.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63839,7 +64334,10 @@
         },
         "en": {
             "translation": "closed",
-            "note": "todo"
+            "note": "Note: 'fechado' agrees in gender and number with the noun it describes. It mainly describes a state of being not open (a physical state) and can also mean 'shut' for things like doors, shops, or lids.",
+            "port_exemple": "O portão está fechado.",
+            "en_exemple": "The gate is closed.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63852,7 +64350,10 @@
         },
         "en": {
             "translation": "frequent",
-            "note": "todo"
+            "note": "Frequente is an adjective meaning 'frequent' or 'regular'. For 'often' as an adverb, use frequentemente or com frequência.",
+            "port_exemple": "Ele é um cliente frequente neste supermercado.",
+            "en_exemple": "He is a frequent customer at this supermarket.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63865,7 +64366,10 @@
         },
         "en": {
             "translation": "furious",
-            "note": "todo"
+            "note": "Furioso is a strong adjective for intense anger. In everyday speech you might use milder terms like 'muito bravo' or 'irritado'.",
+            "port_exemple": "Ele ficou furioso quando soube da notícia.",
+            "en_exemple": "He became furious when he heard the news.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63878,7 +64382,10 @@
         },
         "en": {
             "translation": "generous",
-            "note": "todo"
+            "note": "Generoso is the standard adjective for someone who is generous. It’s used for people and actions that show generosity.",
+            "port_exemple": "Ela é muito generosa.",
+            "en_exemple": "She is very generous.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63891,7 +64398,10 @@
         },
         "en": {
             "translation": "horrible",
-            "note": "todo"
+            "note": "Horrível is a strong negative adjective. Use it for things that are very bad or unpleasant, similar to 'horrible' or 'terrible' in English.",
+            "port_exemple": "O filme foi horrível.",
+            "en_exemple": "The movie was horrible.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63904,7 +64414,10 @@
         },
         "en": {
             "translation": "illegal",
-            "note": "todo"
+            "note": "Ilegal is a common adjective used for laws and rules. It describes actions or situations that are against the law.",
+            "port_exemple": "É ilegal estacionar aqui.",
+            "en_exemple": "It's illegal to park here.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63917,7 +64430,10 @@
         },
         "en": {
             "translation": "incredible",
-            "note": "todo"
+            "note": "In everyday Portuguese, incrível expresses strong admiration or surprise. It can describe things, people, or experiences that seem exceptional.",
+            "port_exemple": "O filme foi incrível.",
+            "en_exemple": "The movie was amazing.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63930,7 +64446,10 @@
         },
         "en": {
             "translation": "independent",
-            "note": "todo"
+            "note": "Independente is a common word meaning not dependent on others. It describes people, things, or movements that operate on their own.",
+            "port_exemple": "Ela é uma pessoa independente e toma as próprias decisões.",
+            "en_exemple": "She is an independent person and makes her own decisions.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63943,7 +64462,10 @@
         },
         "en": {
             "translation": "unhappy",
-            "note": "todo"
+            "note": "Infeliz primarily means unhappy, especially about a person’s mood. It can also mean unfortunate when describing situations or events; context will guide the best choice.",
+            "port_exemple": "Ele parece infeliz hoje.",
+            "en_exemple": "He seems unhappy today.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63956,7 +64478,10 @@
         },
         "en": {
             "translation": "innocent",
-            "note": "todo"
+            "note": "In Portuguese, inocente is the standard word for 'not guilty' or 'not to blame.' It can also describe someone naive or gullible in everyday speech.",
+            "port_exemple": "A criança é inocente.",
+            "en_exemple": "The child is innocent.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63969,7 +64494,10 @@
         },
         "en": {
             "translation": "international",
-            "note": "todo"
+            "note": "Internacional is a common adjective used for things involving more than one country. In European Portuguese, adjectives like internacional usually come after the noun (e.g., um evento internacional).",
+            "port_exemple": "Este evento é internacional.",
+            "en_exemple": "This event is international.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63981,8 +64509,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "irritated",
-            "note": "todo"
+            "translation": "annoyed",
+            "note": "Irritado is commonly translated as 'annoyed' in everyday English. Both 'annoyed' and 'irritated' are possible depending on intensity and context.",
+            "port_exemple": "Estou irritado com o barulho.",
+            "en_exemple": "I'm irritated by the noise.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -63994,8 +64525,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "local",
-            "note": "todo"
+            "translation": "location",
+            "note": "Note: 'local' as a noun means 'place' or 'location' in English, so use 'location' (or 'place'). As an adjective, it translates naturally as 'local' (e.g., local news).",
+            "port_exemple": "Qual é o local do evento?",
+            "en_exemple": "What is the location of the event?",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -64008,7 +64542,10 @@
         },
         "en": {
             "translation": "crazy",
-            "note": "todo"
+            "note": "Louco is the common everyday adjective for 'crazy' in European Portuguese. It is informal and can be affectionate or insulting depending on tone and context.",
+            "port_exemple": "Ele é louco.",
+            "en_exemple": "He is crazy.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -64021,7 +64558,10 @@
         },
         "en": {
             "translation": "proud",
-            "note": "todo"
+            "note": "Orgulhoso is used to express personal pride about achievements or loved ones. In everyday usage it's generally positive, but in some contexts it can suggest arrogance.",
+            "port_exemple": "Estou muito orgulhoso do meu filho.",
+            "en_exemple": "I am very proud of my son.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -64034,7 +64574,10 @@
         },
         "en": {
             "translation": "lazy",
-            "note": "todo"
+            "note": "Preguiçoso is a common everyday adjective used for people who avoid work. It carries a mild negative nuance, similar to 'lazy' in English.",
+            "port_exemple": "Ele é muito preguiçoso.",
+            "en_exemple": "He is very lazy.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -64047,7 +64590,10 @@
         },
         "en": {
             "translation": "rare",
-            "note": "todo"
+            "note": "In European Portuguese, raro is commonly used to mean 'rare' or 'uncommon'. Use it for things that don't happen often; for people, it can imply unusual or exceptional, depending on context.",
+            "port_exemple": "É raro ver pessoas assim.",
+            "en_exemple": "It's rare to see people like that.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     },
@@ -64059,8 +64605,11 @@
             "note": "todo"
         },
         "en": {
-            "translation": "foolish",
-            "note": "todo"
+            "translation": "silly",
+            "note": "In everyday English, 'silly' is the natural, softer translation for 'tolo'. 'Tolo' can also describe someone naive or a foolish action; for a harsher tone, 'foolish' or 'a fool' is more appropriate.",
+            "port_exemple": "Não seja tolo.",
+            "en_exemple": "Don't be silly.",
+            "last_update": "2026-05-09"
         },
         "user_usefulness": 2
     }
