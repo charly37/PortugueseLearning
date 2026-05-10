@@ -79,48 +79,16 @@ def run_usefulness_aggregation():
         return False
 
 
-def run_quality_flag_aggregation():
-    """Run the quality flag aggregation job."""
-    print(f"[{datetime.now()}] Starting quality flag aggregation")
-    
-    try:
-        # Run the aggregation script
-        result = subprocess.run(
-            ['python3', '/app/aggregate_quality_flags.py'],
-            capture_output=True,
-            text=True,
-            timeout=300  # 5 minute timeout
-        )
-        
-        if result.returncode == 0:
-            print(f"[{datetime.now()}] Quality flag aggregation completed successfully")
-            if result.stdout:
-                print(result.stdout)
-            return True
-        else:
-            print(f"[{datetime.now()}] ERROR during quality flag aggregation", file=sys.stderr)
-            if result.stderr:
-                print(result.stderr, file=sys.stderr)
-            return False
-            
-    except subprocess.TimeoutExpired:
-        print(f"[{datetime.now()}] ERROR: Quality flag aggregation timed out", file=sys.stderr)
-        return False
-    except Exception as e:
-        print(f"[{datetime.now()}] ERROR during quality flag aggregation: {e}", file=sys.stderr)
-        return False
-
 
 def main():
     """Main scheduler loop."""
     print(f"[{datetime.now()}] Analytics Scheduler started")
-    print(f"[{datetime.now()}] Will run weakness analysis, usefulness aggregation, and quality flag aggregation daily at 2:00 AM")
+    print(f"[{datetime.now()}] Will run weakness analysis and usefulness aggregation daily at 2:00 AM")
     
     # Run immediately on startup (optional - comment out if not desired)
     print(f"[{datetime.now()}] Running initial jobs...")
     run_analysis()
     run_usefulness_aggregation()
-    run_quality_flag_aggregation()
     
     # Main scheduling loop
     while True:
@@ -137,7 +105,6 @@ def main():
         # Run all jobs
         run_analysis()
         run_usefulness_aggregation()
-        run_quality_flag_aggregation()
 
 
 if __name__ == '__main__':

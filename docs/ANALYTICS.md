@@ -15,12 +15,6 @@ Python service that analyzes user challenge attempts to identify learning weakne
 - Calculates average usefulness per challenge
 - Updates challenge JSON files with aggregated scores
 
-### Quality Flag Monitoring
-- Aggregates user-reported quality issues
-- Identifies challenges flagged by multiple users (2+ threshold)
-- Generates detailed reports with challenge content for manual review
-- Reset option to clear all flags after fixing issues
-
 ### Scheduling
 - Runs as a Docker container with scheduled execution
 - All jobs execute daily at 2:00 AM
@@ -38,9 +32,13 @@ The analytics service runs as a separate Docker container that:
 - **`scheduler.py`** - Main entry point, handles scheduling with sleep loop
 - **`analyze_weaknesses.py`** - Core weakness analysis logic
 - **`aggregate_usefulness.py`** - Aggregates user usefulness votes
-- **`aggregate_quality_flags.py`** - Generates reports of flagged challenges
 - **`Dockerfile`** - Container definition
 - **`requirements.txt`** - Python dependencies
+
+> **Note:** Quality flag monitoring is no longer handled by a standalone analytics script.
+> `data/VocabularyUpdater.py` now reads user-flagged challenges directly from MongoDB
+> at startup and prioritizes them for AI review (highest flag count first), then
+> automatically clears those flags from the database after processing.
 
 ## Local Development
 
@@ -72,24 +70,6 @@ python aggregate_usefulness.py --min-votes 3 --data-dir ../data
 **Available Options:**
 - `--min-votes` - Minimum votes required to update a challenge (default: 1)
 - `--data-dir` - Directory containing challenge JSON files (default: ../data)
-
-#### Quality Flag Management
-```bash
-python aggregate_quality_flags.py -h  # Show help
-
-# Generate quality flag report
-python aggregate_quality_flags.py --report
-
-# Reset all quality flags after fixing challenges
-python aggregate_quality_flags.py --reset
-
-# Reset and verify with new report
-python aggregate_quality_flags.py --reset --report
-```
-
-**Available Options:**
-- `--reset` - Reset (remove) all quality flags from the database
-- `--report` - Generate quality flag report (default if no --reset provided)
 
 ### Test Scheduler
 ```bash
@@ -173,42 +153,6 @@ Updates `user_usefulness` field in challenge JSON files:
 }
 ```
 
-### Quality Flag Report
-Outputs to Docker logs:
-
-```
-================================================================================
-QUALITY FLAG REPORT
-Generated at: 2026-01-26 02:00:00.123456
-Minimum flags threshold: 2
-================================================================================
-
-Challenge ID: abc-123
-Type: word
-Portuguese: palavra
-French: mot
-English: word
-Flags: 3 user(s) reported this challenge
---------------------------------------------------------------------------------
-
-Total challenges needing review: 1
-================================================================================
-```
-
-### Quality Flag Reset
-When using the `--reset` option:
-
-```
-================================================================================
-RESETTING ALL QUALITY FLAGS
-Time: 2026-01-30 10:30:00.123456
-================================================================================
-
-✓ Successfully removed 15 quality flag(s)
-
-================================================================================
-```
-
 ## Configuration
 
 ### Weakness Analysis
@@ -223,6 +167,7 @@ Edit `analytics/aggregate_usefulness.py` to adjust:
 - Rounding behavior (currently rounds to nearest integer 1-3)
 
 ### Quality Flag Monitoring
-Edit `analytics/aggregate_quality_flags.py` to adjust:
-- `min_flags=2` - Minimum flags before appearing in report
-- Report sorting (currently by flag count descending)
+Quality flag prioritization is handled by `data/VocabularyUpdater.py`.
+Use the `--min-flags` argument to control the minimum number of user flags required
+to prioritize a challenge (default: 1). Flags are automatically cleared from MongoDB
+after the flagged challenge is processed.

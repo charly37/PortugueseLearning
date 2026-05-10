@@ -1,3 +1,12 @@
+# TODO: Language awareness for DB flags
+#   Currently, quality flags stored in MongoDB have no language field — they only record
+#   the challengeId. This means that when a user flags a challenge (e.g. because the French
+#   translation is wrong), running the script with --language en will still prioritize and
+#   process that challenge in English, then clear the flag without fixing French.
+#   Fix: store the user's active language in the flag document at flag creation time
+#   (in the app), then filter prioritized flags by the current --language argument here,
+#   and only clear flags matching that language.
+
 import argparse
 import json
 import os
@@ -5,6 +14,8 @@ from openai import OpenAI
 from pydantic import BaseModel
 from typing import Dict, List
 from datetime import datetime, timedelta
+
+from pymongo import MongoClient
 
 class WordTranslation(BaseModel):
     translation_accurate: bool
@@ -64,6 +75,56 @@ def is_translation_recent(challenge, language, months=6):
     except (ValueError, TypeError):
         # If date parsing fails, consider translation as not recent
         return False
+
+def get_flagged_challenge_ids(mongodb_uri: str, min_flags: int = 1) -> List[str]:
+    """
+    Connect to MongoDB and return word challenge IDs flagged by users,
+    ordered by flag count descending.
+    """
+    try:
+        mongo_client = MongoClient(mongodb_uri)
+        mongo_client.admin.command('ping')
+        db = mongo_client.get_database()
+        pipeline = [
+            {
+                '$group': {
+                    '_id': '$challengeId',
+                    'flagCount': {'$sum': 1}
+                }
+            },
+            {
+                '$match': {'flagCount': {'$gte': min_flags}}
+            },
+            {
+                '$sort': {'flagCount': -1}
+            }
+        ]
+        results = list(db.challengequalityflags.aggregate(pipeline))
+        mongo_client.close()
+        flagged_ids = [r['_id'] for r in results]
+        print(f"Found {len(flagged_ids)} flagged challenge(s) in DB (min_flags={min_flags})")
+        return flagged_ids
+    except Exception as e:
+        print(f"⚠️  Could not fetch flagged challenges from MongoDB: {e}")
+        return []
+
+
+def clear_quality_flags(mongodb_uri: str, challenge_ids: List[str]):
+    """
+    Delete quality flags from MongoDB for the given challenge IDs.
+    Called automatically after processing flagged challenges.
+    """
+    if not challenge_ids:
+        return
+    try:
+        mongo_client = MongoClient(mongodb_uri)
+        db = mongo_client.get_database()
+        result = db.challengequalityflags.delete_many({'challengeId': {'$in': challenge_ids}})
+        mongo_client.close()
+        print(f"🗑️  Cleared {result.deleted_count} quality flag(s) from DB for {len(challenge_ids)} processed challenge(s)")
+    except Exception as e:
+        print(f"⚠️  Could not clear quality flags from MongoDB: {e}")
+
 
 def build_prompt(portuguese_word: str, current_translation: str, language: str):
     """Return (system_message, user_prompt) for the given language."""
@@ -152,7 +213,7 @@ def verify_translation(portuguese_word: str, current_translation: str, language:
             "error": str(e)
         }
 
-def main(max_words=300, language="fr", months=6):
+def main(max_words=300, language="fr", months=6, min_flags=1):
     """
     Main function to process all challenges
     
@@ -166,7 +227,30 @@ def main(max_words=300, language="fr", months=6):
     print(f"Loaded {len(challenges)} challenges")
     print(f"Language: {language}")
     print(f"Max words to process in this batch: {max_words}")
-    print(f"Refresh period: {months} months\n")
+    print(f"Refresh period: {months} months")
+
+    # Prioritize challenges flagged by users in the DB
+    mongodb_uri = os.environ.get('MONGODB_URI')
+    if not mongodb_uri:
+        print("ERROR: MONGODB_URI environment variable not set!")
+        exit(1)
+
+    flagged_id_set = set()
+    print("\nChecking MongoDB for user-flagged challenges...")
+    flagged_ids = get_flagged_challenge_ids(mongodb_uri, min_flags=min_flags)
+    if flagged_ids:
+        flagged_id_set = set(flagged_ids)
+        flagged_order = {cid: i for i, cid in enumerate(flagged_ids)}
+        flagged = sorted(
+            [c for c in challenges if c.get('id') in flagged_id_set],
+            key=lambda c: flagged_order.get(c.get('id'), 999999)
+        )
+        non_flagged = [c for c in challenges if c.get('id') not in flagged_id_set]
+        challenges = flagged + non_flagged
+        print(f"🚩 Prioritized {len(flagged)} flagged challenge(s) at the start of the queue")
+    else:
+        print("No flagged challenges found. Processing in normal order.")
+    print()
     
     # Statistics
     processed_count = 0
@@ -178,6 +262,7 @@ def main(max_words=300, language="fr", months=6):
     updated_translations_count = 0
     updated_notes_count = 0
     total_tokens = {"prompt": 0, "completion": 0}
+    processed_flagged_ids = []
     
     # Process each challenge
     for idx, challenge in enumerate(challenges, 1):
@@ -187,9 +272,9 @@ def main(max_words=300, language="fr", months=6):
         current_note = challenge.get(language, {}).get("note", "")
         
         # Skip if translation was updated within the refresh period
-        if is_translation_recent(challenge, language, months=months):
-            last_update = challenge.get(language, {}).get("last_update", "unknown")
-            print(f"[{idx}/{len(challenges)}] ⏭️  Skipping '{portuguese_word}' (updated on {last_update})")
+        # but never skip user-flagged challenges — they must be reviewed regardless
+        is_flagged = challenge_id in flagged_id_set
+        if not is_flagged and is_translation_recent(challenge, language, months=months):
             skipped_count += 1
             continue
         
@@ -271,11 +356,15 @@ def main(max_words=300, language="fr", months=6):
                 print(f"  🕒 Set last_update: {today_date}")
             
             processed_count += 1
+            if challenge_id in flagged_id_set:
+                processed_flagged_ids.append(challenge_id)
         else:
             errors_count += 1
             print(f"  ❌ Error: {verification['error']}")
             # Still count errors toward the batch limit
             processed_count += 1
+            if challenge_id in flagged_id_set:
+                processed_flagged_ids.append(challenge_id)
         
         print()
         
@@ -294,6 +383,11 @@ def main(max_words=300, language="fr", months=6):
         print(f"   - Timestamps updated: {processed_count}")
         save_challenges(challenges)
         print("✅ Saved successfully!")
+
+    # Clean up processed flags from DB
+    if processed_flagged_ids:
+        print(f"\n🗑️  Cleaning up {len(processed_flagged_ids)} processed flag(s) from DB...")
+        clear_quality_flags(mongodb_uri, processed_flagged_ids)
     
     # Print summary
     print("\n" + "="*60)
@@ -326,5 +420,7 @@ if __name__ == "__main__":
                         help="Maximum number of words to process per batch (default: 300)")
     parser.add_argument("--months", type=int, default=6,
                         help="Number of months before a translation is considered stale and eligible for refresh (default: 6)")
+    parser.add_argument("--min-flags", type=int, default=1,
+                        help="Minimum number of user flags to prioritize a challenge (default: 1)")
     args = parser.parse_args()
-    main(max_words=args.max_words, language=args.language, months=args.months)
+    main(max_words=args.max_words, language=args.language, months=args.months, min_flags=args.min_flags)

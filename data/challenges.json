@@ -1,5 +1,51 @@
 [
     {
+        "id": "48348b0d-cf1d-44f5-8252-e460884dd22c",
+        "port": "roupa",
+        "fr": {
+            "translation": "vêtements",
+            "note": "Remarque: En portugais, 'roupa' réfère surtout aux vêtements en général, mais peut aussi signifier le linge (lessive). En français, utilisez 'vêtements' pour les vêtements et 'linge' pour le linge.",
+            "use_exemple": "Ma tenue est sale.",
+            "port_exemple": "A minha roupa está suja.",
+            "last_update": "2026-05-10"
+        },
+        "en": {
+            "translation": "clothes/clothing",
+            "note": "Roupa is a general term for clothes. When talking about several items, use 'roupas', or for one item say 'uma peça de roupa'.",
+            "port_exemple": "Eu comprei roupa nova.",
+            "last_update": "2026-05-08",
+            "use_exemple": "I bought new clothes."
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "48348b0d-cf1d-44f5-8252-e460884dd22c.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
+        "id": "472e0c9a-8db3-42dc-8545-e04cd8d3fb7d",
+        "port": "viagem de",
+        "fr": {
+            "translation": "un voyage de",
+            "note": "En portugais, « viagem de » introduit le type ou l’origine du voyage. En français, on utilise généralement « voyage » seul, ou « un voyage de … » selon le contexte.",
+            "use_exemple": "C'était un voyage de week-end.",
+            "port_exemple": "Foi uma viagem de fim de semana.",
+            "last_update": "2026-05-10"
+        },
+        "en": {
+            "translation": "trip",
+            "note": "Viagem de is usually part of a longer phrase (e.g., viagem de negócios, viagem de regresso) and needs another noun after de or a destination. In context, it translates as 'trip' or 'journey' depending on what follows.",
+            "port_exemple": "A viagem de negócios começa amanhã.",
+            "last_update": "2026-05-08",
+            "use_exemple": "The business trip starts tomorrow."
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "472e0c9a-8db3-42dc-8545-e04cd8d3fb7d.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
         "id": "85998f02-d626-4496-9772-bbfab6ed072b",
         "port": "apenas",
         "fr": {
@@ -26201,29 +26247,6 @@
         }
     },
     {
-        "id": "4c8c8b98-e5b8-4318-aad2-a25ed1ce3cc7",
-        "port": "encontrar-se com",
-        "fr": {
-            "translation": "rencontrer quelqu'un",
-            "note": "Notez que 'rencontrer quelqu'un' est la façon standard de dire que l'on rencontre une personne. Si l'on parle de deux personnes qui se voient mutuellement, on dira plutôt 'se rencontrer'.",
-            "use_exemple": "Je vais rencontrer João demain.",
-            "port_exemple": "Vou encontrar-me com o João amanhã.",
-            "last_update": "2026-05-09"
-        },
-        "en": {
-            "translation": "to meet up with",
-            "note": "Best translation: to meet up with (casual) or to meet with (for formal meetings). It’s used for arranging a meeting with someone.",
-            "port_exemple": "Vou encontrar-me com o João amanhã.",
-            "last_update": "2026-05-07",
-            "use_exemple": "I will meet up with João tomorrow."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "4c8c8b98-e5b8-4318-aad2-a25ed1ce3cc7.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "25ba7708-1f54-42ae-bc4b-fb7696edb0af",
         "port": "encontro",
         "fr": {
@@ -27946,18 +27969,18 @@
     },
     {
         "id": "551ff93a-d03d-40e3-806c-ab896604f002",
-        "port": "fazer surf / surfar",
+        "port": "surfar",
         "fr": {
-            "translation": "faire du surf / surfer",
+            "translation": "surfer (faire du surf ou surfer sur internet)",
             "note": "En français, on privilégie 'faire du surf' pour parler de la pratique sportive. 'Surfer' est aussi correct et courant comme verbe, mais attention au contexte (utilisé aussi pour le surf sur Internet).",
             "use_exemple": "J'aime faire du surf le week-end.",
             "port_exemple": "Eu gosto de fazer surf aos fins de semana.",
             "last_update": "2026-05-09"
         },
         "en": {
-            "translation": "to surf (surfar) or to go surfing (fazer surf)",
+            "translation": "to surf (the sport or the activity of browsing the net)",
             "note": "In European Portuguese, surfar is the direct verb meaning 'to surf', while fazer surf emphasizes the activity. Use surfar for simple statements and fazer surf when you want to stress the act.",
-            "port_exemple": "Eu gosto de fazer surf.",
+            "port_exemple": "Eu gosto de surfar.",
             "last_update": "2026-05-08",
             "use_exemple": "I like to go surfing."
         },
@@ -36209,29 +36232,6 @@
         }
     },
     {
-        "id": "48348b0d-cf1d-44f5-8252-e460884dd22c",
-        "port": "roupa",
-        "fr": {
-            "translation": "vêtements",
-            "note": "Remarque: En portugais, 'roupa' réfère surtout aux vêtements en général, mais peut aussi signifier le linge (lessive). En français, utilisez 'vêtements' pour les vêtements et 'linge' pour le linge.",
-            "use_exemple": "Ma tenue est sale.",
-            "port_exemple": "A minha roupa está suja.",
-            "last_update": "2026-02-19"
-        },
-        "en": {
-            "translation": "clothes/clothing",
-            "note": "Roupa is a general term for clothes. When talking about several items, use 'roupas', or for one item say 'uma peça de roupa'.",
-            "port_exemple": "Eu comprei roupa nova.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I bought new clothes."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "48348b0d-cf1d-44f5-8252-e460884dd22c.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "64629bb7-89dc-41e2-b38a-c5bc43b30cfb",
         "port": "saber",
         "fr": {
@@ -38915,29 +38915,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "ecf395a5-2ba9-4be8-8106-e2ccf3d28990.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "472e0c9a-8db3-42dc-8545-e04cd8d3fb7d",
-        "port": "viagem de",
-        "fr": {
-            "translation": "voyage",
-            "note": "En portugais, « viagem de » introduit le type ou l’origine du voyage. En français, on utilise généralement « voyage » seul, ou « un voyage de … » selon le contexte.",
-            "use_exemple": "C'était un voyage de week-end.",
-            "port_exemple": "Foi uma viagem de fim de semana.",
-            "last_update": "2026-02-19"
-        },
-        "en": {
-            "translation": "trip",
-            "note": "Viagem de is usually part of a longer phrase (e.g., viagem de negócios, viagem de regresso) and needs another noun after de or a destination. In context, it translates as 'trip' or 'journey' depending on what follows.",
-            "port_exemple": "A viagem de negócios começa amanhã.",
-            "last_update": "2026-05-08",
-            "use_exemple": "The business trip starts tomorrow."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "472e0c9a-8db3-42dc-8545-e04cd8d3fb7d.mp3",
             "last_update": "2026-02-15"
         }
     },

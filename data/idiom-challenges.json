@@ -117,6 +117,29 @@
         "user_usefulness": 2
     },
     {
+        "id": "4c8c8b98-e5b8-4318-aad2-a25ed1ce3cc7",
+        "port": "encontrar-se com",
+        "fr": {
+            "translation": "rencontrer quelqu'un",
+            "note": "Notez que 'rencontrer quelqu'un' est la façon standard de dire que l'on rencontre une personne. Si l'on parle de deux personnes qui se voient mutuellement, on dira plutôt 'se rencontrer'.",
+            "use_exemple": "Je vais rencontrer João demain.",
+            "port_exemple": "Vou encontrar-me com o João amanhã.",
+            "last_update": "2026-05-09"
+        },
+        "en": {
+            "translation": "to meet up with",
+            "note": "Best translation: to meet up with (casual) or to meet with (for formal meetings). It’s used for arranging a meeting with someone.",
+            "port_exemple": "Vou encontrar-me com o João amanhã.",
+            "last_update": "2026-05-07",
+            "use_exemple": "I will meet up with João tomorrow."
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "4c8c8b98-e5b8-4318-aad2-a25ed1ce3cc7.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
         "id": "cc64b982-5ac7-4362-9674-b40a45b3e1fe",
         "port": "ter razão",
         "fr": {
