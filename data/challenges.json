@@ -20286,7 +20286,7 @@
             "note": "Le portugais européen utilise autocarro pour dire bus. En français, le terme standard est autobus, mais bus est aussi très utilisé à l'oral.",
             "use_exemple": "L'autobus arrive.",
             "port_exemple": "O autocarro está a chegar.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-11"
         },
         "en": {
             "translation": "bus",
@@ -27278,29 +27278,6 @@
         }
     },
     {
-        "id": "3f5374f2-8ffd-44ed-b30a-2ddad7de767f",
-        "port": "estar noivo",
-        "fr": {
-            "translation": "être fiancé",
-            "note": "Remarque: 'fiancé'/'fiancée' dépend du genre en français. Pour un homme, on dit 'être fiancé'; pour une femme, on dit 'être fiancée'.",
-            "use_exemple": "Je suis fiancé.",
-            "port_exemple": "Eu estou noivo.",
-            "last_update": "2026-05-09"
-        },
-        "en": {
-            "translation": "to be engaged (to someone)",
-            "note": "Noivo is masculine and noiva is feminine. Estar noivo describes a current state of engagement, not the act of getting engaged (which is ficar noivo).",
-            "port_exemple": "Eu estou noivo do João.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I am engaged to João."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "3f5374f2-8ffd-44ed-b30a-2ddad7de767f.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "7455ad21-7e35-41ce-a330-81b06086db24",
         "port": "estojo",
         "fr": {
@@ -32908,7 +32885,7 @@
             "note": "Onde indique un lieu sans mouvement; aonde indique une direction ou une destination. En français, on emploie généralement 'où' et on précise le sens avec le contexte (par ex. 'Où vas-tu ?').",
             "use_exemple": "Où habites-tu ?",
             "port_exemple": "Onde vives?",
-            "last_update": "2026-02-19"
+            "last_update": "2026-05-11"
         },
         "en": {
             "translation": "onde? = where? (location); aonde? = where to? / where are you going to?; de onde? = where from? (from where?). Note: 'donde?' is Spanish; in Portuguese the equivalents are 'onde?' or 'de onde?'.",

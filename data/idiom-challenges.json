@@ -140,6 +140,29 @@
         }
     },
     {
+        "id": "3f5374f2-8ffd-44ed-b30a-2ddad7de767f",
+        "port": "estar noivo",
+        "fr": {
+            "translation": "être fiancé",
+            "note": "Remarque: 'fiancé'/'fiancée' dépend du genre en français. Pour un homme, on dit 'être fiancé'; pour une femme, on dit 'être fiancée'.",
+            "use_exemple": "Je suis fiancé.",
+            "port_exemple": "Eu estou noivo.",
+            "last_update": "2026-05-11"
+        },
+        "en": {
+            "translation": "to be engaged (to someone)",
+            "note": "Noivo is masculine and noiva is feminine. Estar noivo describes a current state of engagement, not the act of getting engaged (which is ficar noivo).",
+            "port_exemple": "Eu estou noivo do João.",
+            "last_update": "2026-05-08",
+            "use_exemple": "I am engaged to João."
+        },
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "3f5374f2-8ffd-44ed-b30a-2ddad7de767f.mp3",
+            "last_update": "2026-02-15"
+        }
+    },
+    {
         "id": "cc64b982-5ac7-4362-9674-b40a45b3e1fe",
         "port": "ter razão",
         "fr": {

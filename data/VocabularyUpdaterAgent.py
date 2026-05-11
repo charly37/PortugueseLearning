@@ -130,10 +130,11 @@ def update_challenge(
     target_language_example: str,
     note: str,
     translation_was_accurate: bool,
+    corrected_portuguese_word: str = "",
 ) -> str:
     """
-    Persist an updated translation (and optionally examples and note) for a
-    challenge identified by challenge_id.
+    Persist an updated translation (and optionally examples, note, and Portuguese
+    word correction) for a challenge identified by challenge_id.
 
     - new_translation: the best translation in the active target language.
     - portuguese_example: a simple example sentence in Portuguese.
@@ -142,6 +143,10 @@ def update_challenge(
       empty string if you have nothing useful to add.
     - translation_was_accurate: True if the existing translation was already
       correct (so only examples / note / timestamp are updated).
+    - corrected_portuguese_word: corrected form of the Portuguese word. Use this
+      when the current Portuguese word is unsuitable for a typing lesson — e.g. it
+      is a multi-word phrase when a single word exists, contains typos, has stray
+      punctuation, or is otherwise bad data. Leave empty if the word is fine.
 
     Returns a short status string.
     """
@@ -156,6 +161,10 @@ def update_challenge(
             challenge[_language] = {}
 
         section = challenge[_language]
+
+        if corrected_portuguese_word:
+            challenge["port"] = corrected_portuguese_word
+            updated_fields.append("port")
 
         if not translation_was_accurate:
             section["translation"] = new_translation
@@ -244,6 +253,16 @@ Guidelines for translations:
 - Do NOT skip a challenge because its translation looks correct — always call
   update_challenge (with translation_was_accurate=True) so the timestamp is
   refreshed and examples / notes can be filled in if missing.
+
+Guidelines for correcting the Portuguese word:
+- If the Portuguese word is a multi-word phrase (e.g. "ir embora") but a single
+  canonical word exists and is more appropriate for a typing lesson, provide the
+  single word in corrected_portuguese_word.
+- If the word has a typo, extra punctuation, or is clearly malformed, provide the
+  correct form in corrected_portuguese_word.
+- If the word is a legitimate phrase that has no single-word equivalent (e.g. an
+  idiom), leave corrected_portuguese_word empty — phrases are acceptable.
+- When in doubt, leave corrected_portuguese_word empty.
 """
     return Agent(
         name="VocabularyUpdaterAgent",
