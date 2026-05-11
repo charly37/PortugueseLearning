@@ -123,6 +123,35 @@ def get_pending_challenges(max_words: int) -> str:
 
 
 @function_tool
+def log_review(
+    portuguese_word: str,
+    current_translation: str,
+    assessment: str,
+    planned_changes: str,
+    flagged_by_users: bool,
+) -> str:
+    """
+    Emit a human-readable log line before processing a challenge.
+    Call this once per challenge, just before calling update_challenge.
+
+    - portuguese_word: the Portuguese word being reviewed.
+    - current_translation: the existing translation in the target language.
+    - assessment: one sentence explaining whether the translation is good or why
+      it needs changing (e.g. "Translation is accurate.", "Better word exists: X").
+    - planned_changes: comma-separated list of fields that will be updated
+      (e.g. "translation, examples, note"), or "timestamp only" if nothing needs
+      changing.
+    - flagged_by_users: whether this challenge was flagged by users in the app.
+    """
+    flag_marker = " 🚩 [USER FLAGGED]" if flagged_by_users else ""
+    print(f"\n🔍 Reviewing: '{portuguese_word}'{flag_marker}")
+    print(f"   Current translation : {current_translation}")
+    print(f"   Assessment          : {assessment}")
+    print(f"   Planned changes     : {planned_changes}")
+    return "logged"
+
+
+@function_tool
 def update_challenge(
     challenge_id: str,
     new_translation: str,
@@ -182,7 +211,9 @@ def update_challenge(
         section["last_update"] = today
         updated_fields.append("last_update")
 
-        return f"Updated challenge {challenge_id}: {', '.join(updated_fields)}"
+        msg = f"Updated challenge {challenge_id}: {', '.join(updated_fields)}"
+        print(f"   ✅ {msg}")
+        return msg
 
     return f"Challenge {challenge_id} not found."
 
@@ -239,7 +270,9 @@ Workflow:
    c. Translate that example sentence into {lang_name}.
    d. Optionally write a brief remark (≤ 2 sentences) in {lang_name} about the
       word's usage, nuances, or register — leave it empty if nothing useful to add.
-   e. Call update_challenge with your assessment.
+   e. Call log_review with the word, current translation, your one-sentence
+      assessment, and the list of fields you plan to change.
+   f. Call update_challenge with your assessment.
 3. After processing all challenges, call save_all_changes exactly once.
 4. Collect the IDs of all challenges that were flagged_by_users=true and call
    clear_quality_flags with those IDs.
@@ -267,7 +300,7 @@ Guidelines for correcting the Portuguese word:
     return Agent(
         name="VocabularyUpdaterAgent",
         instructions=instructions,
-        tools=[get_pending_challenges, update_challenge, save_all_changes, clear_quality_flags],
+        tools=[get_pending_challenges, log_review, update_challenge, save_all_changes, clear_quality_flags],
         model=model,
     )
 
@@ -276,7 +309,7 @@ Guidelines for correcting the Portuguese word:
 # Entry point
 # ---------------------------------------------------------------------------
 
-async def _run_agent(max_words: int, language: str, months: int, model: str = "gpt-4.1-mini") -> None:
+async def _run_agent(max_words: int, language: str, months: int, model: str = "gpt-5.4-mini") -> None:
     global _challenges, _language, _months, _mongodb_uri
 
     _language = language
