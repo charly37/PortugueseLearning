@@ -19903,7 +19903,7 @@
             "note": "Remarque: En portugais, « aquecimento » peut signifier le chauffage ou l’échauffement; pour le chauffage domestique, « chauffage » est le mot français le plus courant.",
             "use_exemple": "L'échauffement du moteur prend quelques minutes.",
             "port_exemple": "O aquecimento do motor demora alguns minutos.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-14"
         },
         "en": {
             "translation": "(central) heating (central)",
@@ -27992,13 +27992,13 @@
     },
     {
         "id": "4747070e-99f3-4fdb-9ebc-dfb7d5296001",
-        "port": "fazer um intervalo, fazer uma pausa",
+        "port": "fazer uma pausa",
         "fr": {
             "translation": "faire une pause",
             "note": "Dans ce contexte, on dit plutôt 'prendre une pause' ou 'faire une pause'. 'Prendre' met l'action de commencer la pause, tandis que 'faire' insiste sur l'acte lui-même.",
             "use_exemple": "Je vais faire une pause maintenant.",
             "port_exemple": "Vou fazer uma pausa agora.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-14"
         },
         "en": {
             "translation": "to take a break",
@@ -35825,7 +35825,7 @@
             "note": "Remarque: En portugais, 'recreio' désigne la pause à l'école; 'pátio de recreio' est l'aire de jeux extérieure. En français, on emploie 'récréation' pour la période et 'cour de récréation' pour l'espace de jeu (ou 'préau' dans certains contextes).",
             "use_exemple": "Pendant la récréation, les enfants jouent dans la cour de récréation.",
             "port_exemple": "Durante o recreio, as crianças brincam no pátio de recreio.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-05-14"
         },
         "en": {
             "translation": "recess (for recreio) / playground or schoolyard (for pátio de recreio)",

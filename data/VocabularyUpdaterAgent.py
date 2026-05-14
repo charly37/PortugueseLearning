@@ -152,18 +152,52 @@ def log_review(
 
 
 @function_tool
-def update_challenge(
+def apply_portuguese_corrections(corrections_json: str) -> str:
+    """
+    Apply Portuguese word corrections to the in-memory challenges list.
+    corrections_json must be a JSON array of objects, each with:
+      - challenge_id: string ID of the challenge
+      - corrected_word: the correct Portuguese word, or empty string if no change needed
+      - reason: brief explanation of the correction, or "ok" if no change
+
+    Only entries with a non-empty corrected_word are applied.
+    Returns a summary of applied corrections.
+    """
+    try:
+        corrections: list[dict] = json.loads(corrections_json)
+    except Exception as e:
+        return f"Error parsing corrections JSON: {e}"
+
+    applied = 0
+    skipped = 0
+    for c in corrections:
+        corrected = c.get("corrected_word", "").strip()
+        if not corrected:
+            skipped += 1
+            continue
+        for challenge in _challenges:
+            if challenge.get("id") == c.get("challenge_id"):
+                old = challenge.get("port", "")
+                challenge["port"] = corrected
+                print(f"   ✅ Corrected '{old}' → '{corrected}' (reason: {c.get('reason', '')})")
+                applied += 1
+                break
+
+    return f"Applied {applied} correction(s), {skipped} word(s) unchanged."
+
+
+@function_tool
+def update_translation(
     challenge_id: str,
     new_translation: str,
     portuguese_example: str,
     target_language_example: str,
     note: str,
     translation_was_accurate: bool,
-    corrected_portuguese_word: str = "",
 ) -> str:
     """
-    Persist an updated translation (and optionally examples, note, and Portuguese
-    word correction) for a challenge identified by challenge_id.
+    Persist an updated translation (and optionally examples and note) for a
+    challenge identified by challenge_id.
 
     - new_translation: the best translation in the active target language.
     - portuguese_example: a simple example sentence in Portuguese.
@@ -172,10 +206,6 @@ def update_challenge(
       empty string if you have nothing useful to add.
     - translation_was_accurate: True if the existing translation was already
       correct (so only examples / note / timestamp are updated).
-    - corrected_portuguese_word: corrected form of the Portuguese word. Use this
-      when the current Portuguese word is unsuitable for a typing lesson — e.g. it
-      is a multi-word phrase when a single word exists, contains typos, has stray
-      punctuation, or is otherwise bad data. Leave empty if the word is fine.
 
     Returns a short status string.
     """
@@ -190,10 +220,6 @@ def update_challenge(
             challenge[_language] = {}
 
         section = challenge[_language]
-
-        if corrected_portuguese_word:
-            challenge["port"] = corrected_portuguese_word
-            updated_fields.append("port")
 
         if not translation_was_accurate:
             section["translation"] = new_translation
@@ -251,56 +277,78 @@ def clear_quality_flags(challenge_ids_json: str) -> str:
 
 
 # ---------------------------------------------------------------------------
-# Agent definition
+# Agent definitions
 # ---------------------------------------------------------------------------
 
-def _build_agent(language: str, model: str = "gpt-4.1-mini") -> Agent:
+def _build_validator_agent(model: str = "gpt-4.1") -> Agent:
+    instructions = """You are a European Portuguese language expert and data quality auditor.
+Your ONLY job is to review the Portuguese words in a vocabulary dataset and correct those
+that are unsuitable for a typing lesson. You are NOT responsible for translations.
+
+Workflow:
+1. Call get_pending_challenges to obtain the list of challenges, passing the max_words
+   limit provided in the user message.
+2. For each challenge, evaluate ONLY the portuguese_word field:
+   - Is it a multi-word phrase when a single canonical Portuguese word clearly exists?
+   - Does it contain a typo, extra punctuation, or is it clearly malformed?
+   - Is it otherwise unsuitable as a standalone typing-lesson entry?
+3. Build a single JSON array covering ALL reviewed challenges, where each object has:
+   - "challenge_id": the challenge ID string
+   - "corrected_word": the correct single word, or empty string "" if no change is needed
+   - "reason": a brief explanation, or "ok" if no change
+4. Call apply_portuguese_corrections once with that array.
+5. Call save_all_changes to persist any corrections.
+6. Report a concise summary: how many words were reviewed and how many were corrected.
+
+Rules:
+- Multi-word phrases (e.g. "ir embora") are acceptable when no single-word equivalent exists.
+- When in doubt, leave corrected_word empty — do not over-correct.
+- Do NOT assess or modify any translation fields.
+"""
+    return Agent(
+        name="PortugueseWordValidator",
+        instructions=instructions,
+        tools=[get_pending_challenges, apply_portuguese_corrections, save_all_changes],
+        model=model,
+    )
+
+
+def _build_translation_agent(language: str, model: str = "gpt-4.1-mini") -> Agent:
     lang_name = "French" if language == "fr" else "English"
-    instructions = f"""You are a Portuguese vocabulary maintenance agent.
-Your job is to review and improve the {lang_name} translations for a set of
-European Portuguese vocabulary challenges.
+    instructions = f"""You are a {lang_name} translation specialist for European Portuguese vocabulary.
+Your job is to review and improve the {lang_name} translations for a set of vocabulary
+challenges. The Portuguese words have already been validated and corrected by a separate agent
+— do NOT change or judge the Portuguese words, focus exclusively on translation quality.
 
 Workflow:
 1. Call get_pending_challenges to obtain the list of challenges that need work,
    passing the max_words limit provided in the user message.
 2. For each challenge in the returned list:
-   a. Use your language knowledge to assess whether the current translation is
-      the best possible {lang_name} equivalent of the Portuguese word.
+   a. Assess whether the current translation is the best possible {lang_name} equivalent.
    b. Compose a short, natural example sentence in Portuguese that uses the word.
    c. Translate that example sentence into {lang_name}.
-   d. Optionally write a brief remark (≤ 2 sentences) in {lang_name} about the
-      word's usage, nuances, or register — leave it empty if nothing useful to add.
-   e. Call log_review with the word, current translation, your one-sentence
-      assessment, and the list of fields you plan to change.
-   f. Call update_challenge with your assessment.
+   d. Optionally write a brief remark (≤ 2 sentences) in {lang_name} about the word's
+      usage, nuances, or register — leave it empty if nothing useful to add.
+   e. Call log_review with the word, current translation, your one-sentence assessment,
+      and the list of fields you plan to change.
+   f. Call update_translation with your results.
 3. After processing all challenges, call save_all_changes exactly once.
-4. Collect the IDs of all challenges that were flagged_by_users=true and call
+4. Collect the IDs of all challenges where flagged_by_users=true and call
    clear_quality_flags with those IDs.
-5. Report a concise summary: how many challenges were processed, how many
-   translations were corrected, how many example sets were added, and how many
-   notes were written.
+5. Report a concise summary: how many challenges were processed, how many translations
+   were corrected, how many example sets were added, and how many notes were written.
 
-Guidelines for translations:
+Guidelines:
 - Prefer common, everyday vocabulary over obscure alternatives.
-- For {lang_name} examples, keep sentences short enough for a beginner.
+- Keep {lang_name} example sentences short enough for a beginner.
 - Do NOT skip a challenge because its translation looks correct — always call
-  update_challenge (with translation_was_accurate=True) so the timestamp is
-  refreshed and examples / notes can be filled in if missing.
-
-Guidelines for correcting the Portuguese word:
-- If the Portuguese word is a multi-word phrase (e.g. "ir embora") but a single
-  canonical word exists and is more appropriate for a typing lesson, provide the
-  single word in corrected_portuguese_word.
-- If the word has a typo, extra punctuation, or is clearly malformed, provide the
-  correct form in corrected_portuguese_word.
-- If the word is a legitimate phrase that has no single-word equivalent (e.g. an
-  idiom), leave corrected_portuguese_word empty — phrases are acceptable.
-- When in doubt, leave corrected_portuguese_word empty.
+  update_translation (with translation_was_accurate=True) so the timestamp is refreshed
+  and examples / notes can be filled in if missing.
 """
     return Agent(
-        name="VocabularyUpdaterAgent",
+        name="TranslationUpdaterAgent",
         instructions=instructions,
-        tools=[get_pending_challenges, log_review, update_challenge, save_all_changes, clear_quality_flags],
+        tools=[get_pending_challenges, log_review, update_translation, save_all_changes, clear_quality_flags],
         model=model,
     )
 
@@ -309,7 +357,13 @@ Guidelines for correcting the Portuguese word:
 # Entry point
 # ---------------------------------------------------------------------------
 
-async def _run_agent(max_words: int, language: str, months: int, model: str = "gpt-5.4-mini") -> None:
+async def _run_agent(
+    max_words: int,
+    language: str,
+    months: int,
+    model: str = "gpt-4.1-mini",
+    validator_model: str = "gpt-4.1",
+) -> None:
     global _challenges, _language, _months, _mongodb_uri
 
     _language = language
@@ -324,18 +378,36 @@ async def _run_agent(max_words: int, language: str, months: int, model: str = "g
     print(f"Loaded {len(_challenges)} challenges")
     print(f"Language: {language}  |  Max words: {max_words}  |  Refresh period: {months} months\n")
 
-    agent = _build_agent(language, model)
-
-    user_message = (
-        f"Process up to {max_words} Portuguese vocabulary challenges "
-        f"and update their {language.upper()} translations."
-    )
-
-    result = await Runner.run(agent, user_message)
-    print("\n" + "=" * 60)
-    print("AGENT FINAL REPORT")
+    # ------------------------------------------------------------------
+    # Phase 1: Portuguese word validation
+    # ------------------------------------------------------------------
     print("=" * 60)
-    print(result.final_output)
+    print("PHASE 1: Portuguese Word Validation")
+    print(f"Model: {validator_model}")
+    print("=" * 60)
+    validator = _build_validator_agent(validator_model)
+    validator_result = await Runner.run(
+        validator,
+        f"Review up to {max_words} Portuguese vocabulary words for correctness.",
+    )
+    print("\nValidator Report:")
+    print(validator_result.final_output)
+
+    # ------------------------------------------------------------------
+    # Phase 2: Translation updates
+    # ------------------------------------------------------------------
+    print("\n" + "=" * 60)
+    print("PHASE 2: Translation Updates")
+    print(f"Model: {model}")
+    print("=" * 60)
+    translator = _build_translation_agent(language, model)
+    translation_result = await Runner.run(
+        translator,
+        f"Process up to {max_words} Portuguese vocabulary challenges "
+        f"and update their {language.upper()} translations.",
+    )
+    print("\nTranslation Agent Report:")
+    print(translation_result.final_output)
     print("=" * 60)
 
 
@@ -371,11 +443,23 @@ def main() -> None:
         "--model",
         type=str,
         default="gpt-4.1-mini",
-        help="OpenAI model to use (default: gpt-4.1-mini)",
+        help="OpenAI model for the translation agent (default: gpt-4.1-mini)",
+    )
+    parser.add_argument(
+        "--validator-model",
+        type=str,
+        default="gpt-4.1",
+        help="OpenAI model for the Portuguese word validator agent (default: gpt-4.1)",
     )
     args = parser.parse_args()
 
-    asyncio.run(_run_agent(max_words=args.max_words, language=args.language, months=args.months, model=args.model))
+    asyncio.run(_run_agent(
+        max_words=args.max_words,
+        language=args.language,
+        months=args.months,
+        model=args.model,
+        validator_model=args.validator_model,
+    ))
 
 
 if __name__ == "__main__":
