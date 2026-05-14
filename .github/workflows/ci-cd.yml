@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ master, main, dev ]
   pull_request:
     branches: [ master, main ]
   workflow_dispatch:
@@ -56,7 +56,7 @@ jobs:
   docker-build:
     needs: build-and-test
     runs-on: ubuntu-latest
-    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev')
 
     steps:
     - name: Checkout code
@@ -75,50 +75,65 @@ jobs:
       id: vars
       run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
+    - name: Set image tags
+      id: tags
+      run: |
+        if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
+          echo "app_tag=dev-${{ steps.vars.outputs.short_sha }}" >> $GITHUB_OUTPUT
+          echo "floating_tag=dev" >> $GITHUB_OUTPUT
+        else
+          echo "app_tag=${{ steps.vars.outputs.short_sha }}" >> $GITHUB_OUTPUT
+          echo "floating_tag=latest" >> $GITHUB_OUTPUT
+        fi
+
     - name: Build App Docker image
-      run: docker build -t portuguese-learning:${{ steps.vars.outputs.short_sha }} .
+      run: docker build -t portuguese-learning:${{ steps.tags.outputs.app_tag }} .
 
     - name: Build Analytics Docker image
-      run: docker build -t portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} -f analytics/Dockerfile .
+      run: docker build -t portuguese-learning-analytics:${{ steps.tags.outputs.app_tag }} -f analytics/Dockerfile .
 
     - name: Test Docker image with MongoDB
       run: |
+        # Create isolated network for container communication
+        docker network create test-network
+
         # Start MongoDB container
-        docker run -d --name test-mongo -p 27017:27017 mongo:latest
+        docker run -d --name test-mongo --network test-network mongo:latest
         sleep 5
-        
-        # Start app container with MongoDB connection
-        docker run -d -p 3000:3000 --name test-app \
-          -e MONGODB_URI=mongodb://172.17.0.1:27017/portuguese-test \
+
+        # Start app container connected via container hostname
+        docker run -d -p 3000:3000 --name test-app --network test-network \
+          -e MONGODB_URI=mongodb://test-mongo:27017/portuguese-test \
           -e SESSION_SECRET=test-secret-key \
           -v ${{ github.workspace }}/data:/app/data:ro \
-          portuguese-learning:${{ steps.vars.outputs.short_sha }}
-        
+          portuguese-learning:${{ steps.tags.outputs.app_tag }}
+
         # Wait for app to start
         sleep 10
-        
+
         # Test health endpoint
         curl -f http://localhost:3000/api/health || exit 1
-        
+
         # Cleanup
         docker stop test-app test-mongo
         docker rm test-app test-mongo
+        docker network rm test-network
 
-    - name: Push to Docker Hub with commit SHA
+    - name: Push to Docker Hub
       run: |
-        # Tag and push with commit SHA
-        docker tag portuguese-learning:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.vars.outputs.short_sha }}
-        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.vars.outputs.short_sha }}
-        
-        docker tag portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }}
-        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }}
-        
-        # Also tag and push as latest for backward compatibility
-        docker tag portuguese-learning:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
-        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
-        
-        docker tag portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
-        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
+        # Tag and push with commit-specific tag
+        docker tag portuguese-learning:${{ steps.tags.outputs.app_tag }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.tags.outputs.app_tag }}
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.tags.outputs.app_tag }}
+
+        docker tag portuguese-learning-analytics:${{ steps.tags.outputs.app_tag }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.tags.outputs.app_tag }}
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.tags.outputs.app_tag }}
+
+        # Also tag and push floating tag (latest or dev)
+        docker tag portuguese-learning:${{ steps.tags.outputs.app_tag }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.tags.outputs.floating_tag }}
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.tags.outputs.floating_tag }}
+
+        docker tag portuguese-learning-analytics:${{ steps.tags.outputs.app_tag }} ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.tags.outputs.floating_tag }}
+        docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.tags.outputs.floating_tag }}
 
     - name: Create deployment info
       run: |
@@ -130,8 +145,8 @@ jobs:
         echo "Build Date: $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> deployment-info.txt
         echo "" >> deployment-info.txt
         echo "Docker Images:" >> deployment-info.txt
-        echo "  - ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.vars.outputs.short_sha }}" >> deployment-info.txt
-        echo "  - ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.vars.outputs.short_sha }}" >> deployment-info.txt
+        echo "  - ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ steps.tags.outputs.app_tag }}" >> deployment-info.txt
+        echo "  - ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ steps.tags.outputs.app_tag }}" >> deployment-info.txt
         cat deployment-info.txt
 
     - name: Upload deployment info
