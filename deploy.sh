@@ -10,8 +10,14 @@ echo "Portuguese Learning - Deployment Script"
 echo "========================================"
 
 # Configuration
-IMAGE_TAG="${IMAGE_TAG:-latest}"  # Default to 'latest' if not specified
-IMAGE_NAME="charly37/portuguese-learning:${IMAGE_TAG}"
+# Version can be supplied as:
+#   1. Positional argument:  ./deploy.sh v1.5.0
+#   2. Environment variable: VERSION=v1.5.0 ./deploy.sh
+#   3. Legacy env variable:  IMAGE_TAG=v1.5.0 ./deploy.sh
+# Falls back to 'latest' when none are provided.
+IMAGE_TAG="${1:-${VERSION:-${IMAGE_TAG:-latest}}}"
+APP_IMAGE="charly37/portuguese-learning:${IMAGE_TAG}"
+ANALYTICS_IMAGE="charly37/portuguese-learning-analytics:${IMAGE_TAG}"
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -66,12 +72,21 @@ if [ -z "$SESSION_SECRET" ]; then
 fi
 print_success "Required environment variables are set"
 
+# Validate version format
+if [[ "${IMAGE_TAG}" != "latest" && ! "${IMAGE_TAG}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    print_error "Invalid version format: '${IMAGE_TAG}'"
+    echo "Expected a semver tag (e.g. v1.5.0) or 'latest'."
+    exit 1
+fi
+
 # Display version information
 echo ""
 print_version "Deploying version: ${IMAGE_TAG}"
+print_version "App image:         ${APP_IMAGE}"
+print_version "Analytics image:   ${ANALYTICS_IMAGE}"
 echo ""
 
-# Check if .env file exists, if not create it
+# Write .env so docker-compose picks up IMAGE_TAG
 print_info "Setting up .env file..."
 cat > .env <<EOF
 MONGODB_URI=${MONGODB_URI}
@@ -167,9 +182,15 @@ echo "  Restart app:          docker compose restart app"
 echo "  Restart analytics:    docker compose restart analytics"
 echo "  View status:          docker compose ps"
 echo ""
-echo "To deploy a specific version:"
-echo "  IMAGE_TAG=abc1234 ./deploy.sh"
+echo "To deploy a specific release version:"
+echo "  ./deploy.sh v1.5.0"
 echo ""
-echo "To rollback to a previous version:"
-echo "  IMAGE_TAG=<previous-commit-sha> ./deploy.sh"
+echo "To deploy using an environment variable:"
+echo "  VERSION=v1.5.0 ./deploy.sh"
+echo ""
+echo "To deploy the latest image:"
+echo "  ./deploy.sh          (defaults to 'latest')"
+echo ""
+echo "To rollback to a previous release:"
+echo "  ./deploy.sh v1.4.0"
 echo ""
