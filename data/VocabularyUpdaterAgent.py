@@ -290,6 +290,7 @@ Workflow:
    limit provided in the user message.
 2. For each challenge, evaluate ONLY the portuguese_word field:
    - Is it a multi-word phrase when a single canonical Portuguese word clearly exists?
+   - There should not be multiple synonyms for a word, as the user needs a clear solution to the challenge. If you see several synonyms (usually separated by "/"), you should choose the most common one and justify your choice in the reason field.
    - Does it contain a typo, extra punctuation, or is it clearly malformed?
    - Is it otherwise unsuitable as a standalone typing-lesson entry?
 3. Build a single JSON array covering ALL reviewed challenges, where each object has:

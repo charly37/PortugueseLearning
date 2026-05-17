@@ -24569,13 +24569,13 @@
     },
     {
         "id": "c620009c-6f52-4d98-900d-8f0f7830b3af",
-        "port": "creme / loção",
+        "port": "creme",
         "fr": {
-            "translation": "crème / lotion",
+            "translation": "crème",
             "note": "Remarque: en français, « crème » est le terme le plus courant pour les soins hydratants du visage. « Lotion » peut désigner une texture plus légère ou un soin tonique; elle est moins utilisée pour les crèmes quotidiennes.",
             "use_exemple": "J'ai utilisé une crème pour le visage et une lotion pour le corps.",
             "port_exemple": "Eu usei creme para o rosto e loção para o corpo.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-17"
         },
         "en": {
             "translation": "cream / lotion",
@@ -26944,7 +26944,7 @@
             "note": "En portugais, esquadra et delegacia de polícia désignent un lieu ou une unité de police. En français, le terme le plus courant pour le lieu est « commissariat de police », tandis que « poste de police » peut être utilisé dans certaines régions ou contextes.",
             "use_exemple": "Je vais au commissariat de police.",
             "port_exemple": "Eu vou à delegacia de polícia.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-17"
         },
         "en": {
             "translation": "police station",
@@ -60136,7 +60136,7 @@
         "port": "consigo",
         "fr": {
             "translation": "je peux",
-            "note": "Consigo peut signifier 'je peux' lorsque c'est le verbe 'conseguir' conjugué à la 1re personne du singulier ('eu consigo'). En tant que pronom, 'consigo' signifie 'avec vous' (forme soutenue) ou 'avec lui/elle', selon le contexte.",
+            "note": "Consigo peut signifier 'je peux' lorsque c'est le verbe 'conseguir' conjugué à la 1re personne du singulier ('eu consigo'). En tant que pronom, 'consigo' signifie 'avec vous' (forme soutenue) ou 'avec lui/elle', selon le contexte. Pode (poder) = peut (permission ou possibilité générale) Mais pas forcément qu’on va y arriver. Consigo (conseguir) = j’y arrive / je réussis à / je suis capable de (plus concret, avec l’idée de succès)",
             "use_exemple": "Je peux terminer le travail aujourd'hui.",
             "port_exemple": "Consigo terminar o trabalho hoje.",
             "last_update": "2026-02-20"
