@@ -23,7 +23,6 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from dotenv import dotenv_values
 from pymongo import MongoClient
 from bson import ObjectId
 
@@ -42,12 +41,10 @@ CHALLENGE_FILES = {
 
 
 def load_env() -> str:
-    """Return MONGODB_URI from .env or environment."""
-    env_path = REPO_ROOT / ".env"
-    cfg = dotenv_values(env_path) if env_path.exists() else {}
-    uri = cfg.get("MONGODB_URI") or os.environ.get("MONGODB_URI")
+    """Return MONGODB_URI from environment."""
+    uri = os.environ.get("MONGODB_URI")
     if not uri:
-        sys.exit("ERROR: MONGODB_URI not found in .env or environment variables.")
+        sys.exit("ERROR: MONGODB_URI environment variable not set.")
     return uri
 
 

@@ -13,10 +13,6 @@ from datetime import datetime, timedelta
 from collections import defaultdict
 from typing import Dict, List, Any, Set
 from pymongo import MongoClient
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
 
 # UUID regex pattern
 UUID_PATTERN = re.compile(r'^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$', re.IGNORECASE)
