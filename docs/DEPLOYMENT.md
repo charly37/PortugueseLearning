@@ -5,26 +5,67 @@
 ### Prerequisites
 - Docker installed on your server
 - Docker Compose installed on your server
+- `MONGODB_URI` and `SESSION_SECRET` environment variables set
 
 ### Quick Deploy
 
-1. Clone the repository on your server:
+1. Clone the repository **at the tag you want to deploy**, so that `deploy.sh` and `docker-compose.yml` are guaranteed to match the image:
 ```bash
-git clone <your-repo-url>
+# Replace v1.2.0 with the target release tag
+git clone --branch v1.2.0 --depth 1 <your-repo-url>
 cd PortugueseLearning
 ```
+
+> **Why?** `deploy.sh` and `docker-compose.yml` evolve alongside the app. Cloning HEAD risks running a newer (possibly broken) script against an older image. Always pin the checkout to the same tag as the image you are deploying.
 
 2. Make the deployment script executable:
 ```bash
 chmod +x deploy.sh
 ```
 
-3. Run the deployment script:
+3. Set required environment variables:
 ```bash
+export MONGODB_URI=your_mongodb_connection_string
+export SESSION_SECRET=your_secret_key
+```
+
+4. Run the deployment script with the matching tag:
+```bash
+IMAGE_TAG=v1.2.0 ./deploy.sh
+```
+
+The application will be available at `http://localhost`
+
+### Deploying a Specific Version
+
+`deploy.sh` reads the `IMAGE_TAG` environment variable to select which image to pull from Docker Hub (`charly37/portuguese-learning:<tag>`). If omitted, it defaults to `latest`.
+
+```bash
+# Deploy a specific commit SHA
+IMAGE_TAG=abc1234 ./deploy.sh
+
+# Deploy a named tag / release
+IMAGE_TAG=v1.2.0 ./deploy.sh
+
+# Deploy latest (default)
 ./deploy.sh
 ```
 
-The application will be available at `http://localhost:3000`
+The script will:
+1. Pull `charly37/portuguese-learning:<IMAGE_TAG>` from Docker Hub
+2. Restart the `app` and `analytics` containers (nginx stays up to avoid downtime)
+3. Run health checks against `/api/health` and `/nginx-health`
+4. Append a record to `deployments.log`
+
+### Rollback
+
+Roll back to any previously-deployed image by passing its tag:
+
+```bash
+IMAGE_TAG=<previous-commit-sha> ./deploy.sh
+```
+
+Check `deployments.log` in the repo root for a history of deployed tags.
 
 ### Manual Docker Deployment
 
@@ -62,36 +103,38 @@ docker rm portuguese-learning-app
 
 ### Environment Variables
 
-You can customize the deployment by setting environment variables:
-
-```bash
-# In docker-compose.yml or when running docker run
-PORT=3000                    # Application port
-NODE_ENV=production          # Environment mode
-```
+| Variable        | Required | Description                              |
+|-----------------|----------|------------------------------------------|
+| `MONGODB_URI`   | Yes      | MongoDB Atlas connection string          |
+| `SESSION_SECRET`| Yes      | Secret key for session signing           |
+| `IMAGE_TAG`     | No       | Docker image tag to deploy (default: `latest`) |
 
 ### Updating the Application
 
-```bash
-# Pull latest changes
-git pull origin master
+Checkout the target release tag first so the scripts stay in sync with the image:
 
-# Rebuild and restart
-./deploy.sh
+```bash
+git fetch --tags
+git checkout v1.2.0        # pin to the release you want to deploy
+IMAGE_TAG=v1.2.0 ./deploy.sh
 ```
 
-Or manually:
+### Useful Commands
+
 ```bash
-docker compose down
-docker compose build --no-cache
-docker compose up -d
+docker compose logs -f            # All logs
+docker compose logs -f app        # App logs only
+docker compose logs -f analytics  # Analytics logs
+docker compose ps                 # Container status
+docker compose restart nginx      # Reload nginx (e.g. after config change)
+docker compose down               # Stop everything
 ```
 
 ### Health Check
 
 Check if the application is running:
 ```bash
-curl http://localhost:3000/api/health
+curl http://localhost/api/health
 ```
 
 Expected response:

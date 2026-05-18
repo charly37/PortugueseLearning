@@ -8,6 +8,22 @@ updates:
     labels:
       - "dependencies"
 
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+    labels:
+      - "dependencies"
+
+  - package-ecosystem: "docker"
+    directory: "/analytics"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+    labels:
+      - "dependencies"
+
   # - package-ecosystem: "npm"
   #   directory: "/"
   #   schedule:
