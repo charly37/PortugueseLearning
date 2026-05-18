@@ -1,5 +1,5 @@
 # Python Analytics Container
-FROM python:3.11-alpine
+FROM python:3.14-alpine
 
 # Set working directory
 WORKDIR /app
