@@ -21,6 +21,13 @@ updates:
     labels:
       - "dependencies"
 
+  - package-ecosystem: "pip"
+    directory: "/analytics"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+
   # - package-ecosystem: "npm"
   #   directory: "/"
   #   schedule:
