@@ -28,6 +28,13 @@ updates:
     labels:
       - "dependencies"
 
+  - package-ecosystem: "pip"
+    directory: "/data"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+
   # - package-ecosystem: "npm"
   #   directory: "/"
   #   schedule:
