@@ -1,0 +1,3 @@
+pymongo==4.17.0
+elevenlabs==2.48.0
+openai-agents>=0.17.2
