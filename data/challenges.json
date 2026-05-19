@@ -19598,13 +19598,13 @@
     },
     {
         "id": "0cdddf58-902b-42f2-b8b0-c8a08db3dd61",
-        "port": "anteontem day",
+        "port": "anteontem",
         "fr": {
             "translation": "avant-hier",
             "note": "C'est un repère temporel précis pour parler de deux jours avant aujourd'hui. On peut aussi dire 'il y a deux jours' si l'on veut être plus vague ou dans un registre plus soutenu.",
             "use_exemple": "Avant-hier, j'ai acheté du pain.",
             "port_exemple": "Anteontem, comprei pão.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-19"
         },
         "en": {
             "translation": "the day before yesterday",
@@ -35135,7 +35135,7 @@
             "note": "En portugais européen, 'proibir' se conjugue avec 'de' + infinitif pour interdire à quelqu'un de faire quelque chose. En français, on emploie 'interdire de + infinitif' ou la construction impersonnelle 'il est interdit de + infinitif'.",
             "use_exemple": "Il est interdit de fumer dans cet endroit.",
             "port_exemple": "É proibido fumar neste local.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-05-19"
         },
         "en": {
             "translation": "to prohibit",
