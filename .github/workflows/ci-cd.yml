@@ -195,18 +195,18 @@ jobs:
         echo "Rendered manifests:"
         grep -h "image:" rendered-k8s/*.yaml || true
 
-    - name: Install kubectl
-      uses: azure/setup-kubectl@v4
-
-    - name: Validate manifests (dry-run, client-side)
+    - name: Install kubeconform
       run: |
-        # Client-side dry-run validates manifest structure without a live cluster
-        kubectl apply --dry-run=client -f rendered-k8s/namespace.yaml
-        kubectl apply --dry-run=client -f rendered-k8s/secret.yaml
-        kubectl apply --dry-run=client -f rendered-k8s/app-deployment.yaml
-        kubectl apply --dry-run=client -f rendered-k8s/app-service.yaml
-        kubectl apply --dry-run=client -f rendered-k8s/ingress.yaml
-        kubectl apply --dry-run=client -f rendered-k8s/analytics-cronjob.yaml
+        curl -sSL https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz | tar -xz
+        sudo mv kubeconform /usr/local/bin/
+
+    - name: Validate manifests with kubeconform
+      run: |
+        kubeconform \
+          -strict \
+          -summary \
+          -kubernetes-version 1.35.4 \
+          rendered-k8s/*.yaml
         echo "All manifests are valid"
 
     - name: Upload rendered K8s manifests
