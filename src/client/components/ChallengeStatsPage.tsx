@@ -231,7 +231,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
 
           <Grid container spacing={3}>
             {/* Overview Cards */}
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Card sx={{ bgcolor: `${color}10`, border: `2px solid ${color}40` }}>
                 <CardContent sx={{ textAlign: 'center' }}>
                   <TrendingUpIcon sx={{ fontSize: 40, color, mb: 1 }} />
@@ -245,11 +245,11 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Card>
                 <CardContent sx={{ textAlign: 'center' }}>
                   <CheckCircleIcon sx={{ fontSize: 40, color: 'success.main', mb: 1 }} />
-                  <Typography variant="h4" fontWeight="bold">
+                  <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                     {stats.correctAnswers}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -259,11 +259,11 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Card>
                 <CardContent sx={{ textAlign: 'center' }}>
                   <LocalFireDepartmentIcon sx={{ fontSize: 40, color: 'orange', mb: 1 }} />
-                  <Typography variant="h4" fontWeight="bold">
+                  <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                     {stats.streak}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -273,10 +273,10 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid size={{ xs: 12, md: 3 }}>
               <Card>
                 <CardContent sx={{ textAlign: 'center' }}>
-                  <Typography variant="h4" fontWeight="bold">
+                  <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
                     {stats.completedChallenges}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
@@ -287,7 +287,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
             </Grid>
 
             {/* Detailed Stats */}
-            <Grid item xs={12}>
+            <Grid size={12}>
               <Paper sx={{ p: 3 }}>
                 <Typography variant="h6" gutterBottom>
                   {t('stats.progressOverview')}
@@ -299,7 +299,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                     <Typography variant="body2" color="text.secondary">
                       {t('stats.overallAccuracy')}
                     </Typography>
-                    <Typography variant="body2" fontWeight="bold">
+                    <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
                       {stats.accuracy}%
                     </Typography>
                   </Box>
@@ -318,7 +318,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                 </Box>
 
                 <Grid container spacing={2}>
-                  <Grid item xs={6} sm={3}>
+                  <Grid size={{ xs: 6, sm: 3 }}>
                     <Typography variant="body2" color="text.secondary">
                       {t('stats.totalAttempts')}
                     </Typography>
@@ -326,7 +326,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                       {stats.totalAttempts}
                     </Typography>
                   </Grid>
-                  <Grid item xs={6} sm={3}>
+                  <Grid size={{ xs: 6, sm: 3 }}>
                     <Typography variant="body2" color="text.secondary">
                       {t('stats.correct')}
                     </Typography>
@@ -334,7 +334,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                       {stats.correctAnswers}
                     </Typography>
                   </Grid>
-                  <Grid item xs={6} sm={3}>
+                  <Grid size={{ xs: 6, sm: 3 }}>
                     <Typography variant="body2" color="text.secondary">
                       {t('stats.incorrect')}
                     </Typography>
@@ -342,7 +342,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                       {stats.totalAttempts - stats.correctAnswers}
                     </Typography>
                   </Grid>
-                  <Grid item xs={6} sm={3}>
+                  <Grid size={{ xs: 6, sm: 3 }}>
                     <Typography variant="body2" color="text.secondary">
                       {t('stats.successRate')}
                     </Typography>
@@ -358,7 +358,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
 
             {/* Recent Activity */}
             {history.length > 0 && (
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h6" gutterBottom>
                     {t('stats.recentAttempts')}
@@ -386,7 +386,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                         <ListItemText
                           primary={
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-                              <Typography variant="body1" fontWeight="medium">
+                              <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                                 {attempt.challengeId}
                               </Typography>
                               {attempt.timeSpent && (
@@ -423,7 +423,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
             )}
 
             {history.length === 0 && stats.totalAttempts === 0 && (
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Paper sx={{ p: 4, textAlign: 'center' }}>
                   <Typography variant="h6" color="text.secondary" gutterBottom>
                     {t('stats.noAttemptsYet')}
@@ -450,7 +450,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
 
             {/* Weaknesses Section */}
             {weaknesses && weaknesses.weakWords && weaknesses.weakWords.length > 0 && (
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <Paper sx={{ p: 3 }}>
                   <Typography variant="h6" gutterBottom>
                     {t('stats.areasForImprovement')}
@@ -479,7 +479,7 @@ const ChallengeStatsPage: React.FC<ChallengeStatsPageProps> = ({
                         <ListItemText
                           primary={
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-                              <Typography variant="body1" fontWeight="medium">
+                              <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                                 {weakWord.word}
                               </Typography>
                               {weakWord.frTranslation && (

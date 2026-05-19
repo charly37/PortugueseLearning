@@ -86,7 +86,7 @@ const ChallengeQualityFlag: React.FC<ChallengeQualityFlagProps> = ({
         borderColor: isFlagged ? 'warning.main' : 'grey.300'
       }}
     >
-      <Typography variant="caption" color="text.secondary" gutterBottom display="block" sx={{ mb: 1 }}>
+      <Typography variant="caption" color="text.secondary" gutterBottom sx={{ mb: 1, display: 'block' }}>
         {t('challenge.qualityFlag.description', { 
           defaultValue: 'Report quality issues (missing translations, errors, etc.)'
         })}

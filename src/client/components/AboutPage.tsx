@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
             <Typography variant="h4" gutterBottom sx={{ fontWeight: 600, mb: 2 }}>
               {t('about.purposeTitle')}
             </Typography>
-            <Typography variant="body1" color="text.secondary" paragraph>
+            <Typography variant="body1" color="text.secondary"sx={{ mb: 2 }}>
               {t('about.purposeText')}
             </Typography>
             
@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
                   {t('about.personalProjectTitle')}
                 </Typography>
               </Box>
-              <Typography variant="body2" color="text.secondary" paragraph sx={{ mb: 1 }}>
+              <Typography variant="body2" color="text.secondary"sx={{ mb: 1 }}>
                 {t('about.personalProjectText')}
               </Typography>
               <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
@@ -65,7 +65,7 @@ const AboutPage: React.FC = () => {
                 {t('about.openSourceTitle')}
               </Typography>
             </Box>
-            <Typography variant="body1" color="text.secondary" paragraph>
+            <Typography variant="body1" color="text.secondary"sx={{ mb: 2 }}>
               {t('about.openSourceText')}
             </Typography>
             
@@ -115,7 +115,7 @@ const AboutPage: React.FC = () => {
                 {t('about.languagesTitle')}
               </Typography>
             </Box>
-            <Typography variant="body1" color="text.secondary" paragraph>
+            <Typography variant="body1" color="text.secondary"sx={{ mb: 2 }}>
               {t('about.languagesText')}
             </Typography>
           </Paper>
@@ -127,7 +127,7 @@ const AboutPage: React.FC = () => {
             </Typography>
             
             <Grid container spacing={3}>
-              <Grid item xs={12} md={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                   <TranslateIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
                   <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
@@ -139,7 +139,7 @@ const AboutPage: React.FC = () => {
                 </Box>
               </Grid>
 
-              <Grid item xs={12} md={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                   <SchoolIcon sx={{ fontSize: 48, color: 'secondary.main', mb: 2 }} />
                   <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
@@ -151,7 +151,7 @@ const AboutPage: React.FC = () => {
                 </Box>
               </Grid>
 
-              <Grid item xs={12} md={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
                   <RecordVoiceOverIcon sx={{ fontSize: 48, color: '#ff9800', mb: 2 }} />
                   <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
@@ -173,7 +173,7 @@ const AboutPage: React.FC = () => {
             
             <Grid container spacing={4}>
               {/* Guest Account */}
-              <Grid item xs={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <Box sx={{ 
                   p: 3, 
                   border: '2px solid',
@@ -190,7 +190,7 @@ const AboutPage: React.FC = () => {
                     </Typography>
                   </Box>
                   
-                  <Typography variant="body1" color="text.secondary" paragraph>
+                  <Typography variant="body1" color="text.secondary"sx={{ mb: 2 }}>
                     {t('about.guestAccountText')}
                   </Typography>
                   
@@ -213,7 +213,7 @@ const AboutPage: React.FC = () => {
               </Grid>
 
               {/* Registered Account */}
-              <Grid item xs={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <Box sx={{ 
                   p: 3, 
                   border: '2px solid',
@@ -230,7 +230,7 @@ const AboutPage: React.FC = () => {
                     </Typography>
                   </Box>
                   
-                  <Typography variant="body1" color="text.secondary" paragraph>
+                  <Typography variant="body1" color="text.secondary"sx={{ mb: 2 }}>
                     {t('about.registeredAccountText')}
                   </Typography>
                   

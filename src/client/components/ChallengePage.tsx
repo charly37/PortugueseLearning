@@ -749,7 +749,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                           </Box>
                           <Box sx={{ flex: 1 }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap', mb: 0.5 }}>
-                              <Typography variant="body1" fontWeight="medium">
+                              <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                                 {attempt.challengeId}
                               </Typography>
                               <Chip 

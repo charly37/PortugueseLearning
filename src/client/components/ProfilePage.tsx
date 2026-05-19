@@ -211,7 +211,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
             <Typography variant="body2" color="text.secondary">
               {t('profile.accuracy')}
             </Typography>
-            <Typography variant="body2" fontWeight="bold">
+            <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
               {data.accuracy}%
             </Typography>
           </Box>
@@ -352,12 +352,12 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                 gap: 2,
               }}
             >
-              <PersonIcon color="primary" sx={{ fontSize: 32 }} />
+              <PersonIcon data-testid="PersonIcon" color="primary" sx={{ fontSize: 32 }} />
               <Box>
                 <Typography variant="caption" color="text.secondary">
                   {t('profile.username')}
                 </Typography>
-                <Typography variant="body1" fontWeight="medium">
+                <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                   {user.username}
                 </Typography>
               </Box>
@@ -372,12 +372,12 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                 gap: 2,
               }}
             >
-              <EmailIcon color="primary" sx={{ fontSize: 32 }} />
+              <EmailIcon data-testid="EmailIcon" color="primary" sx={{ fontSize: 32 }} />
               <Box>
                 <Typography variant="caption" color="text.secondary">
                   {t('profile.email')}
                 </Typography>
-                <Typography variant="body1" fontWeight="medium">
+                <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                   {user.email}
                 </Typography>
               </Box>
@@ -392,12 +392,12 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                 gap: 2,
               }}
             >
-              <CalendarTodayIcon color="primary" sx={{ fontSize: 32 }} />
+              <CalendarTodayIcon data-testid="CalendarTodayIcon" color="primary" sx={{ fontSize: 32 }} />
               <Box>
                 <Typography variant="caption" color="text.secondary">
                   {t('profile.createdOn')}
                 </Typography>
-                <Typography variant="body1" fontWeight="medium">
+                <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                   {formatDate(user.createdAt)}
                 </Typography>
               </Box>
@@ -415,7 +415,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                   <Typography variant="caption" color="text.secondary">
                     I speak (source language)
                   </Typography>
-                  <Typography variant="body1" fontWeight="medium">
+                  <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                     {preferredLanguage === 'fr' ? '🇫🇷 Français' : '🇬🇧 English'}
                   </Typography>
                 </Box>
@@ -453,7 +453,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                 }
                 label={
                   <Box>
-                    <Typography variant="body1" fontWeight="medium">
+                    <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                       {t('profile.mobileFriendly')}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -480,7 +480,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                 }
                 label={
                   <Box>
-                    <Typography variant="body1" fontWeight="medium">
+                    <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                       {t('profile.practiceMode')}
                     </Typography>
                     <Typography variant="caption" color="text.secondary">
@@ -503,13 +503,13 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
               </Divider>
 
               <Grid container spacing={2}>
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   {renderChallengeStats('word', progress.word, '#1976d2')}
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   {renderChallengeStats('idiom', progress.idiom, '#9c27b0')}
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid size={{ xs: 12, md: 4 }}>
                   {renderChallengeStats('verb', progress.verb, '#2e7d32')}
                 </Grid>
               </Grid>

@@ -587,7 +587,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                           </Box>
                           <Box sx={{ flex: 1 }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap', mb: 0.5 }}>
-                              <Typography variant="body1" fontWeight="medium">
+                              <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
                                 {attempt.challengeId}
                               </Typography>
                               <Chip 
@@ -759,7 +759,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                         <ListItem key={index}>
                           <ListItemText
                             primary={conjugation}
-                            primaryTypographyProps={{ variant: 'body1', fontWeight: 'medium' }}
+                            slotProps={{ primary: { variant: 'body1', sx: { fontWeight: 'medium' } } }}
                           />
                         </ListItem>
                       ))}

@@ -91,7 +91,7 @@ const WordUsefulnessVote: React.FC<WordUsefulnessVoteProps> = ({
         borderColor: 'grey.300'
       }}
     >
-      <Typography variant="caption" color="text.secondary" gutterBottom display="block" sx={{ mb: 1, fontStyle: 'italic' }}>
+      <Typography variant="caption" color="text.secondary" gutterBottom sx={{ mb: 1, fontStyle: 'italic', display: 'block' }}>
         ℹ️ {t('challenge.voteUsefulness.description', { 
           defaultValue: 'Optional: Help improve the learning experience by rating this word\'s usefulness (completely optional, you can skip this)'
         })}

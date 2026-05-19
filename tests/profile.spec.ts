@@ -57,6 +57,9 @@ test.describe('Profile Page', () => {
       await mobileMenuButton.click();
       await page.waitForTimeout(300); // Wait for drawer animation
       await page.locator('[role="presentation"]').getByRole('button', { name: 'Home' }).click();
+      // Wait for drawer to close and landing page to fully settle (MUI v9 animations)
+      await page.waitForSelector('[role="presentation"]', { state: 'hidden', timeout: 3000 }).catch(() => {});
+      await page.waitForLoadState('networkidle');
     } else {
       // On desktop: click Home button in header
       await page.getByRole('button', { name: 'Home' }).click({ force: true });
