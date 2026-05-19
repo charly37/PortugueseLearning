@@ -1,0 +1,26 @@
+# Traefik Ingress - routes external HTTP traffic to the app service.
+# Traefik is bundled with k3s and enabled by default.
+#
+# Before applying, set your domain or use the VM's IP:
+#   - For a real domain: replace 'YOUR_DOMAIN_OR_VM_IP' with e.g. 'myapp.example.com'
+#   - For local testing with VM IP: use nip.io, e.g. '192.168.1.100.nip.io'
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portuguese-learning-ingress
+  namespace: portuguese-learning
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  rules:
+    - host: YOUR_DOMAIN_OR_VM_IP
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portuguese-learning-app
+                port:
+                  number: 80
