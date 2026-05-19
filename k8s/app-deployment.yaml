@@ -54,3 +54,12 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
+          volumeMounts:
+            - name: data
+              mountPath: /app/data
+              readOnly: true
+      volumes:
+        - name: data
+          hostPath:
+            path: /home/ubuntu/PortugueseLearning/data
+            type: Directory

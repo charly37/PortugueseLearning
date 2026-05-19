@@ -30,7 +30,7 @@ Comprehensive documentation is available in the [`docs/`](docs/) folder:
 - **[Setup Guide](docs/SETUP.md)** - Installation, environment setup, and getting started
 - **[Design Documentation](docs/design.md)** - Architecture, features, and project structure
 - **[Testing Guide](docs/TESTING.md)** - Playwright testing setup and usage
-- **[Deployment Guide](docs/DEPLOYMENT.md)** - Docker and CI/CD deployment
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Kubernetes (k3s) and CI/CD deployment
 - **[Analytics](docs/ANALYTICS.md)** - Weakness analysis, usefulness aggregation, and quality monitoring
 - **[Audio Generation](docs/AUDIO_GENERATION.md)** - TTS audio generation for words and example sentences
 - **[Authentication Setup](docs/AUTHENTICATION_SETUP.md)** - User authentication implementation

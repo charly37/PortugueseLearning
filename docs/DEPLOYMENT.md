@@ -1,140 +1,77 @@
 # Portuguese Learning - Deployment Guide
 
-## Docker Deployment
+## Kubernetes Deployment (k3s)
+
+The application runs on Kubernetes using k3s on a single Ubuntu VM.
 
 ### Prerequisites
-- Docker installed on your server
-- Docker Compose installed on your server
-- `MONGODB_URI` and `SESSION_SECRET` environment variables set
+- k3s installed (`curl -sfL https://get.k3s.io | sh -`)
+- cert-manager installed (see [HTTPS Setup](HTTPS_SETUP.md))
+- `portuguese-learning` namespace and secrets created (one-time setup below)
 
-### Quick Deploy
-
-1. Clone the repository **at the tag you want to deploy**, so that `deploy.sh` and `docker-compose.yml` are guaranteed to match the image:
-```bash
-# Replace v1.2.0 with the target release tag
-git clone --branch v1.2.0 --depth 1 <your-repo-url>
-cd PortugueseLearning
-```
-
-> **Why?** `deploy.sh` and `docker-compose.yml` evolve alongside the app. Cloning HEAD risks running a newer (possibly broken) script against an older image. Always pin the checkout to the same tag as the image you are deploying.
-
-2. Make the deployment script executable:
-```bash
-chmod +x deploy.sh
-```
-
-3. Set required environment variables:
-```bash
-export MONGODB_URI=your_mongodb_connection_string
-export SESSION_SECRET=your_secret_key
-```
-
-4. Run the deployment script with the matching tag:
-```bash
-IMAGE_TAG=v1.2.0 ./deploy.sh
-```
-
-The application will be available at `http://localhost`
-
-### Deploying a Specific Version
-
-`deploy.sh` reads the `IMAGE_TAG` environment variable to select which image to pull from Docker Hub (`charly37/portuguese-learning:<tag>`). If omitted, it defaults to `latest`.
+### One-Time Setup
 
 ```bash
-# Deploy a specific commit SHA
-IMAGE_TAG=abc1234 ./deploy.sh
+# Create namespace
+sudo kubectl apply -f rendered-k8s/namespace.yaml
 
-# Deploy a named tag / release
-IMAGE_TAG=v1.2.0 ./deploy.sh
-
-# Deploy latest (default)
-./deploy.sh
+# Create secrets with real values
+sudo kubectl create secret generic portuguese-learning-secrets \
+  --namespace=portuguese-learning \
+  --from-literal=mongodb-uri='your-atlas-uri' \
+  --from-literal=session-secret='your-secret-key'
 ```
 
-The script will:
-1. Pull `charly37/portuguese-learning:<IMAGE_TAG>` from Docker Hub
-2. Restart the `app` and `analytics` containers (nginx stays up to avoid downtime)
-3. Run health checks against `/api/health` and `/nginx-health`
-4. Append a record to `deployments.log`
+### Deploy a Release
+
+1. Download the manifests zip from the [GitHub Release](https://github.com/charly37/PortugueseLearning/releases) assets
+2. Unzip and apply:
+
+```bash
+unzip k8s-manifests-v1.x.x.zip -d rendered-k8s
+sudo kubectl apply -f rendered-k8s/
+```
+
+Or use the `gh` CLI:
+```bash
+gh release download v1.x.x \
+  --repo charly37/PortugueseLearning \
+  --pattern "k8s-manifests-v1.x.x.zip"
+unzip k8s-manifests-v1.x.x.zip -d rendered-k8s
+sudo kubectl apply -f rendered-k8s/
+```
 
 ### Rollback
 
-Roll back to any previously-deployed image by passing its tag:
-
 ```bash
-IMAGE_TAG=<previous-commit-sha> ./deploy.sh
-```
-
-Check `deployments.log` in the repo root for a history of deployed tags.
-
-### Manual Docker Deployment
-
-#### Using Docker Compose (Recommended)
-```bash
-# Build and start
-docker compose up -d
-
-# View logs
-docker compose logs -f
-
-# Stop
-docker compose down
-```
-
-#### Using Docker directly
-```bash
-# Build image
-docker build -t portuguese-learning .
-
-# Run container
-docker run -d \
-  -p 3000:3000 \
-  --name portuguese-learning-app \
-  -v $(pwd)/data:/app/data \
-  portuguese-learning
-
-# View logs
-docker logs -f portuguese-learning-app
-
-# Stop container
-docker stop portuguese-learning-app
-docker rm portuguese-learning-app
+# Download and apply manifests from a previous release
+gh release download v1.x.x --repo charly37/PortugueseLearning --pattern "*.zip"
+unzip k8s-manifests-v1.x.x.zip -d rendered-k8s
+sudo kubectl apply -f rendered-k8s/
 ```
 
 ### Environment Variables
 
-| Variable        | Required | Description                              |
-|-----------------|----------|------------------------------------------|
-| `MONGODB_URI`   | Yes      | MongoDB Atlas connection string          |
-| `SESSION_SECRET`| Yes      | Secret key for session signing           |
-| `IMAGE_TAG`     | No       | Docker image tag to deploy (default: `latest`) |
+| Variable         | Required | Description                              |
+|------------------|----------|------------------------------------------|
+| `MONGODB_URI`    | Yes      | MongoDB Atlas connection string          |
+| `SESSION_SECRET` | Yes      | Secret key for session signing           |
 
-### Updating the Application
-
-Checkout the target release tag first so the scripts stay in sync with the image:
-
-```bash
-git fetch --tags
-git checkout v1.2.0        # pin to the release you want to deploy
-IMAGE_TAG=v1.2.0 ./deploy.sh
-```
+Both are stored in the `portuguese-learning-secrets` Kubernetes Secret — never in manifests.
 
 ### Useful Commands
 
 ```bash
-docker compose logs -f            # All logs
-docker compose logs -f app        # App logs only
-docker compose logs -f analytics  # Analytics logs
-docker compose ps                 # Container status
-docker compose restart nginx      # Reload nginx (e.g. after config change)
-docker compose down               # Stop everything
+sudo kubectl get all -n portuguese-learning        # Status overview
+sudo kubectl logs -f <pod-name> -n portuguese-learning  # App logs
+sudo kubectl rollout restart deployment/portuguese-learning-app -n portuguese-learning  # Restart app
+sudo kubectl get certificate -n portuguese-learning  # TLS cert status
 ```
 
 ### Health Check
 
-Check if the application is running:
 ```bash
-curl http://localhost/api/health
+curl https://dialecthub.net/api/health
 ```
 
 Expected response:
@@ -142,61 +79,43 @@ Expected response:
 {"status":"ok","message":"Server is running"}
 ```
 
-### Useful Commands
+---
+
+## CI/CD with GitHub Actions
+
+Two workflows handle the full pipeline:
+
+### `ci-cd.yml` — runs on every push to master
+1. Builds and tests the application
+2. Builds and pushes Docker images to Docker Hub (tagged with short commit SHA)
+3. Renders K8s manifests with the image tag and validates with `kubeconform`
+4. Uploads rendered manifests as a 90-day artifact
+
+### `release.yml` — triggered manually
+1. Validates version format (`v1.2.3`)
+2. Runs full build + tests
+3. Pushes Docker images with semver tag + `latest`
+4. Renders K8s manifests and attaches `k8s-manifests-v1.x.x.zip` to the GitHub Release permanently
+
+Required GitHub secrets/vars:
+- `DOCKER_USERNAME` (var): Docker Hub username
+- `DOCKER_PASSWORD` (secret): Docker Hub password or access token
+
+---
+
+## Legacy: Docker Compose
+
+> Docker Compose was the previous deployment method. The app now runs on k3s.
+> These instructions are kept for reference only.
 
 ```bash
-# View running containers
-docker ps
-
-# View all containers
-docker ps -a
-
-# View logs
-docker compose logs -f
-
-# Restart application
-docker compose restart
-
-# Stop application
-docker compose down
-
-# Remove all containers and images
-docker compose down --rmi all
-
-# Access container shell
-docker compose exec portuguese-learning sh
+export MONGODB_URI=your_mongodb_connection_string
+export SESSION_SECRET=your_secret_key
+IMAGE_TAG=v1.2.0 ./deploy.sh
 ```
 
-### Nginx Reverse Proxy (Optional)
+The `deploy.sh` script pulls images from Docker Hub and restarts containers via `docker compose`.
 
-If you want to expose the application on port 80 or use a domain name:
-
-```nginx
-server {
-    listen 80;
-    server_name your-domain.com;
-
-    location / {
-        proxy_pass http://localhost:3000;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-    }
-}
-```
-
-### CI/CD with GitHub Actions
-
-The repository includes a GitHub Actions workflow (`.github/workflows/ci-cd.yml`) that:
-- Automatically builds and tests the application on every push
-- Builds a Docker image
-- Optionally pushes to Docker Hub
-
-To use Docker Hub integration, add these secrets to your GitHub repository:
-- `DOCKER_USERNAME`: Your Docker Hub username
-- `DOCKER_PASSWORD`: Your Docker Hub password or access token
 
 ### Troubleshooting
 
