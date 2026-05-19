@@ -117,7 +117,7 @@ app.get('/api/idiom-challenges-all', (req: Request, res: Response) => {
 });
 
 // Serve the React app for all other routes
-app.get('*', (req: Request, res: Response) => {
+app.get('/{*path}', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
