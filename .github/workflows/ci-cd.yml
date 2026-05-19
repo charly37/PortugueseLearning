@@ -161,3 +161,57 @@ jobs:
         name: deployment-info-${{ steps.vars.outputs.short_sha }}
         path: deployment-info.txt
         retention-days: 90
+
+  k8s-validate:
+    needs: docker-build
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'pull_request' ||
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev')
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v6
+
+    - name: Get short commit SHA
+      id: vars
+      run: echo "short_sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+    - name: Set image tag
+      id: tags
+      run: |
+        if [[ "${{ github.ref }}" == "refs/heads/dev" ]]; then
+          echo "app_tag=dev-${{ steps.vars.outputs.short_sha }}" >> $GITHUB_OUTPUT
+        else
+          echo "app_tag=${{ steps.vars.outputs.short_sha }}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Render K8s manifests with image tag
+      run: |
+        mkdir -p rendered-k8s
+        for f in k8s/*.yaml; do
+          sed "s/IMAGE_TAG_PLACEHOLDER/${{ steps.tags.outputs.app_tag }}/g" "$f" > "rendered-k8s/$(basename $f)"
+        done
+        echo "Rendered manifests:"
+        grep -h "image:" rendered-k8s/*.yaml || true
+
+    - name: Install kubectl
+      uses: azure/setup-kubectl@v4
+
+    - name: Validate manifests (dry-run, client-side)
+      run: |
+        # Client-side dry-run validates manifest structure without a live cluster
+        kubectl apply --dry-run=client -f rendered-k8s/namespace.yaml
+        kubectl apply --dry-run=client -f rendered-k8s/secret.yaml
+        kubectl apply --dry-run=client -f rendered-k8s/app-deployment.yaml
+        kubectl apply --dry-run=client -f rendered-k8s/app-service.yaml
+        kubectl apply --dry-run=client -f rendered-k8s/ingress.yaml
+        kubectl apply --dry-run=client -f rendered-k8s/analytics-cronjob.yaml
+        echo "All manifests are valid"
+
+    - name: Upload rendered K8s manifests
+      uses: actions/upload-artifact@v7
+      with:
+        name: k8s-manifests-${{ steps.vars.outputs.short_sha }}
+        path: rendered-k8s/
+        retention-days: 90

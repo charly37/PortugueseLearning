@@ -94,6 +94,16 @@ jobs:
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ github.event.inputs.version }}
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
 
+    - name: Render K8s manifests
+      run: |
+        mkdir -p rendered-k8s
+        for f in k8s/*.yaml; do
+          sed "s/IMAGE_TAG_PLACEHOLDER/${{ github.event.inputs.version }}/g" "$f" > "rendered-k8s/$(basename $f)"
+        done
+        zip -j k8s-manifests-${{ github.event.inputs.version }}.zip rendered-k8s/*.yaml
+        echo "Manifests rendered with image tag: ${{ github.event.inputs.version }}"
+        grep -h "image:" rendered-k8s/*.yaml || true
+
     - name: Create GitHub Release
       run: |
         DOCKER_NOTES=$(printf '%s\n' \
@@ -103,7 +113,15 @@ jobs:
           "[View on Docker Hub](https://hub.docker.com/r/${{ vars.DOCKER_USERNAME }}/portuguese-learning/tags)" \
           '' \
           "**Analytics:** \`docker pull ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ github.event.inputs.version }}\`" \
-          "[View on Docker Hub](https://hub.docker.com/r/${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics/tags)")
+          "[View on Docker Hub](https://hub.docker.com/r/${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics/tags)" \
+          '' \
+          '## Kubernetes Deployment' \
+          '' \
+          "Download \`k8s-manifests-${{ github.event.inputs.version }}.zip\` from the release assets, then:" \
+          '```bash' \
+          "unzip k8s-manifests-${{ github.event.inputs.version }}.zip -d rendered-k8s" \
+          'kubectl apply -f rendered-k8s/' \
+          '```')
 
         EXTRA="${{ github.event.inputs.notes }}"
         if [ -n "$EXTRA" ]; then
@@ -113,6 +131,7 @@ jobs:
         fi
 
         gh release create "${{ github.event.inputs.version }}" \
+          k8s-manifests-${{ github.event.inputs.version }}.zip \
           --title "Release ${{ github.event.inputs.version }}" \
           --notes "$NOTES" \
           --generate-notes \
