@@ -35129,9 +35129,9 @@
     },
     {
         "id": "87fbd47e-bb6f-49c7-b179-d55a5ca1ed86",
-        "port": "proibir (proibido)",
+        "port": "proibir",
         "fr": {
-            "translation": "interdire (interdit)",
+            "translation": "interdire",
             "note": "En portugais européen, 'proibir' se conjugue avec 'de' + infinitif pour interdire à quelqu'un de faire quelque chose. En français, on emploie 'interdire de + infinitif' ou la construction impersonnelle 'il est interdit de + infinitif'.",
             "use_exemple": "Il est interdit de fumer dans cet endroit.",
             "port_exemple": "É proibido fumar neste local.",
