@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: portuguese-learning
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}

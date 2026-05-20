@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: portuguese-learning-analytics
+  namespace: portuguese-learning
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.analytics.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.analytics.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.analytics.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-analytics
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: analytics
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+              resources:
+                {{- toYaml .Values.resources.analytics | nindent 16 }}

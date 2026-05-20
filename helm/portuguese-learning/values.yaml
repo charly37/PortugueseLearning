@@ -1,0 +1,53 @@
+# Default values for portuguese-learning.
+# Override with values-prod.yaml for production deployments.
+
+image:
+  app:
+    repository: charly37/portuguese-learning
+    tag: latest
+    pullPolicy: IfNotPresent
+  analytics:
+    repository: charly37/portuguese-learning-analytics
+    tag: latest
+    pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+app:
+  nodeEnv: production
+  port: 3000
+
+# Path on the host node where challenge data JSON files live.
+# Must exist on the k3s node before deploying.
+data:
+  hostPath: /home/ubuntu/PortugueseLearning/data
+
+ingress:
+  host: dialecthub.net
+  # Use letsencrypt-staging for first-time testing to avoid rate limits
+  clusterIssuer: letsencrypt-prod
+  tlsSecretName: dialecthub-tls
+
+certManager:
+  email: admin@dialecthub.net
+
+resources:
+  app:
+    requests:
+      memory: "128Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+  analytics:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
+
+analytics:
+  schedule: "0 2 * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
