@@ -1,20 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: portuguese-learning-app
-  namespace: portuguese-learning
+  name: {{ .Release.Name }}-app
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "portuguese-learning.labels" . | nindent 4 }}
-    app: portuguese-learning-app
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: portuguese-learning-app
+      app: {{ .Release.Name }}-app
   template:
     metadata:
       labels:
-        app: portuguese-learning-app
+        app: {{ .Release.Name }}-app
         {{- include "portuguese-learning.selectorLabels" . | nindent 8 }}
     spec:
       containers:

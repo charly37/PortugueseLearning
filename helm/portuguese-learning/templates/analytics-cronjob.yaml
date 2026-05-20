@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: portuguese-learning-analytics
-  namespace: portuguese-learning
+  name: {{ .Release.Name }}-analytics
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "portuguese-learning.labels" . | nindent 4 }}
 spec:

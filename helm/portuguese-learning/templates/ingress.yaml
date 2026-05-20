@@ -1,8 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: portuguese-learning-ingress
-  namespace: portuguese-learning
+  name: {{ .Release.Name }}-ingress
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "portuguese-learning.labels" . | nindent 4 }}
   annotations:
@@ -21,6 +21,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: portuguese-learning-app
+                name: {{ .Release.Name }}-app
                 port:
                   number: 80

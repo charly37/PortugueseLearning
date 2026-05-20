@@ -2,6 +2,10 @@
 # Two issuers are provided:
 #   letsencrypt-staging: use first to test without hitting rate limits
 #   letsencrypt-prod:    use once staging works (set ingress.clusterIssuer=letsencrypt-prod)
+#
+# Set certManager.createIssuers=false on secondary releases (e.g. staging)
+# since ClusterIssuers are shared cluster-wide and already created by the primary release.
+{{- if .Values.certManager.createIssuers }}
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -36,3 +40,4 @@ spec:
       - http01:
           ingress:
             ingressClassName: traefik
+{{- end }}

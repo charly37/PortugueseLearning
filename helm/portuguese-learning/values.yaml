@@ -1,6 +1,10 @@
 # Default values for portuguese-learning.
 # Override with values-prod.yaml for production deployments.
 
+# Namespace where all resources are deployed.
+# Use a different value per Helm release to run prod and staging side-by-side.
+namespace: portuguese-learning
+
 image:
   app:
     repository: charly37/portuguese-learning
@@ -30,6 +34,9 @@ ingress:
 
 certManager:
   email: admin@dialecthub.net
+  # Set to false for secondary releases (e.g. staging) to skip creating
+  # ClusterIssuers that were already created by the primary (prod) release.
+  createIssuers: true
 
 resources:
   app:
