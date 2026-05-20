@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: portuguese-learning-app
+  namespace: portuguese-learning
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  selector:
+    app: portuguese-learning-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: {{ .Values.app.port }}
+  type: ClusterIP

@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portuguese-learning-app
+  namespace: portuguese-learning
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+    app: portuguese-learning-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: portuguese-learning-app
+  template:
+    metadata:
+      labels:
+        app: portuguese-learning-app
+        {{- include "portuguese-learning.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: app
+          image: "{{ .Values.image.app.repository }}:{{ .Values.image.app.tag }}"
+          imagePullPolicy: {{ .Values.image.app.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.app.port }}
+          env:
+            - name: NODE_ENV
+              value: {{ .Values.app.nodeEnv | quote }}
+            - name: PORT
+              value: {{ .Values.app.port | quote }}
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: portuguese-learning-secrets
+                  key: mongodb-uri
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: portuguese-learning-secrets
+                  key: session-secret
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: {{ .Values.app.port }}
+            initialDelaySeconds: 15
+            periodSeconds: 30
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: {{ .Values.app.port }}
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          resources:
+            {{- toYaml .Values.resources.app | nindent 12 }}
+          volumeMounts:
+            - name: data
+              mountPath: /app/data
+              readOnly: true
+      volumes:
+        - name: data
+          hostPath:
+            path: {{ .Values.data.hostPath }}
+            type: Directory

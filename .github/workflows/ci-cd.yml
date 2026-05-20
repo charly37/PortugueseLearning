@@ -186,33 +186,40 @@ jobs:
           echo "app_tag=${{ steps.vars.outputs.short_sha }}" >> $GITHUB_OUTPUT
         fi
 
-    - name: Render K8s manifests with image tag
-      run: |
-        mkdir -p rendered-k8s
-        for f in k8s/*.yaml; do
-          sed "s/IMAGE_TAG_PLACEHOLDER/${{ steps.tags.outputs.app_tag }}/g" "$f" > "rendered-k8s/$(basename $f)"
-        done
-        echo "Rendered manifests:"
-        grep -h "image:" rendered-k8s/*.yaml || true
+    - name: Install Helm
+      run: curl -sSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+    - name: Lint Helm chart
+      run: helm lint helm/portuguese-learning
 
     - name: Install kubeconform
       run: |
         curl -sSL https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz | tar -xz
         sudo mv kubeconform /usr/local/bin/
 
-    - name: Validate manifests with kubeconform
+    - name: Validate rendered Helm chart with kubeconform
       run: |
-        kubeconform \
-          -strict \
-          -summary \
-          -ignore-missing-schemas \
-          -kubernetes-version 1.35.4 \
-          rendered-k8s/*.yaml
+        helm template portuguese-learning helm/portuguese-learning \
+          --set image.app.tag=${{ steps.tags.outputs.app_tag }} \
+          --set image.analytics.tag=${{ steps.tags.outputs.app_tag }} \
+          | kubeconform \
+            -strict \
+            -summary \
+            -ignore-missing-schemas \
+            -kubernetes-version 1.35.4 \
+            -
         echo "All manifests are valid"
 
-    - name: Upload rendered K8s manifests
+    - name: Package Helm chart
+      run: |
+        helm package helm/portuguese-learning \
+          --app-version ${{ steps.tags.outputs.app_tag }} \
+          --destination .
+        echo "Helm chart packaged: $(ls portuguese-learning-*.tgz)"
+
+    - name: Upload Helm chart artifact
       uses: actions/upload-artifact@v7
       with:
-        name: k8s-manifests-${{ steps.vars.outputs.short_sha }}
-        path: rendered-k8s/
+        name: helm-chart-${{ steps.vars.outputs.short_sha }}
+        path: portuguese-learning-*.tgz
         retention-days: 90

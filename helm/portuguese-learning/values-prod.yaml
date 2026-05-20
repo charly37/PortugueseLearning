@@ -1,0 +1,27 @@
+# Production overrides — apply alongside values.yaml:
+#   helm upgrade --install portuguese-learning ./helm/portuguese-learning \
+#     --values helm/portuguese-learning/values.yaml \
+#     --values helm/portuguese-learning/values-prod.yaml \
+#     --set image.app.tag=<version> \
+#     --set image.analytics.tag=<version>
+
+replicaCount: 1
+
+ingress:
+  clusterIssuer: letsencrypt-prod
+
+resources:
+  app:
+    requests:
+      memory: "128Mi"
+      cpu: "100m"
+    limits:
+      memory: "512Mi"
+      cpu: "500m"
+  analytics:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"

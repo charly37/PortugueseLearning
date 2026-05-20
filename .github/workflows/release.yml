@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
 
     steps:
     - name: Checkout code
@@ -94,15 +95,23 @@ jobs:
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ github.event.inputs.version }}
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
 
-    - name: Render K8s manifests
+    - name: Install Helm
+      run: curl -sSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+    - name: Lint Helm chart
+      run: helm lint helm/portuguese-learning
+
+    - name: Package Helm chart
       run: |
-        mkdir -p rendered-k8s
-        for f in k8s/*.yaml; do
-          sed "s/IMAGE_TAG_PLACEHOLDER/${{ github.event.inputs.version }}/g" "$f" > "rendered-k8s/$(basename $f)"
-        done
-        zip -j k8s-manifests-${{ github.event.inputs.version }}.zip rendered-k8s/*.yaml
-        echo "Manifests rendered with image tag: ${{ github.event.inputs.version }}"
-        grep -h "image:" rendered-k8s/*.yaml || true
+        helm package helm/portuguese-learning \
+          --app-version ${{ github.event.inputs.version }} \
+          --destination .
+        echo "Helm chart packaged: $(ls portuguese-learning-*.tgz)"
+
+    - name: Push Helm chart to GHCR
+      run: |
+        echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io -u ${{ github.actor }} --password-stdin
+        helm push portuguese-learning-*.tgz oci://ghcr.io/${{ github.repository_owner }}
 
     - name: Create GitHub Release
       run: |
@@ -117,10 +126,29 @@ jobs:
           '' \
           '## Kubernetes Deployment' \
           '' \
-          "Download \`k8s-manifests-${{ github.event.inputs.version }}.zip\` from the release assets, then:" \
+          'Ensure the `portuguese-learning-secrets` secret exists before installing (one-time setup):' \
           '```bash' \
-          "unzip k8s-manifests-${{ github.event.inputs.version }}.zip -d rendered-k8s" \
-          'kubectl apply -f rendered-k8s/' \
+          'kubectl create secret generic portuguese-learning-secrets \' \
+          '  --namespace=portuguese-learning \' \
+          "  --from-literal=mongodb-uri='<your-atlas-uri>' \\" \
+          "  --from-literal=session-secret='<your-secret-key>'" \
+          '```' \
+          '' \
+          'Then install or upgrade with Helm:' \
+          '```bash' \
+          "helm upgrade --install portuguese-learning \\" \
+          '  oci://ghcr.io/charly37/portuguese-learning \' \
+          "  --version ${{ github.event.inputs.version }} \\" \
+          "  --set image.app.tag=${{ github.event.inputs.version }} \\" \
+          "  --set image.analytics.tag=${{ github.event.inputs.version }}" \
+          '```' \
+          '' \
+          'Or clone the repo and install from the local chart:' \
+          '```bash' \
+          "helm upgrade --install portuguese-learning helm/portuguese-learning \\" \
+          "  --values helm/portuguese-learning/values-prod.yaml \\" \
+          "  --set image.app.tag=${{ github.event.inputs.version }} \\" \
+          "  --set image.analytics.tag=${{ github.event.inputs.version }}" \
           '```')
 
         EXTRA="${{ github.event.inputs.notes }}"
@@ -131,7 +159,7 @@ jobs:
         fi
 
         gh release create "${{ github.event.inputs.version }}" \
-          k8s-manifests-${{ github.event.inputs.version }}.zip \
+          portuguese-learning-*.tgz \
           --title "Release ${{ github.event.inputs.version }}" \
           --notes "$NOTES" \
           --generate-notes \
