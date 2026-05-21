@@ -25512,13 +25512,13 @@
     },
     {
         "id": "537fd1e8-26c1-47fd-8eb8-2cba3532e60c",
-        "port": "dever ought",
+        "port": "dever",
         "fr": {
             "translation": "devoir",
             "note": "Remarque : en français, le mot 'devoir' peut être un nom (obligation) ou un verbe (avoir à faire). Pour exprimer l'idée de 'ought', on emploie souvent 'tu devrais' ou 'il faut que' selon le contexte.",
             "use_exemple": "C'est mon devoir d'aider mes parents.",
             "port_exemple": "É o meu dever ajudar os meus pais.",
-            "last_update": "2026-05-09"
+            "last_update": "2026-05-21"
         },
         "en": {
             "translation": "must (have to)",
@@ -37751,13 +37751,13 @@
     },
     {
         "id": "1cfb3549-d19e-4118-93c1-13fef6263c99",
-        "port": "ténis / tênis",
+        "port": "ténis",
         "fr": {
             "translation": "le tennis",
             "note": "En français, on dit 'le tennis' pour le sport et 'jouer au tennis' pour l'action. On peut aussi dire 'un court de tennis' pour le lieu.",
             "use_exemple": "J'aime jouer au tennis.",
             "port_exemple": "Eu gosto de jogar ténis.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-05-21"
         },
         "en": {
             "translation": "tennis (sport) / tennis shoes (sneakers)",
