@@ -71,6 +71,9 @@
                 },
                 "port_exemple_audio": {
                     "$ref": "#/$defs/audio"
+                },
+                "translation_audio": {
+                    "$ref": "#/$defs/audio"
                 }
             }
         },
@@ -100,6 +103,9 @@
                     "$ref": "#/$defs/audio"
                 },
                 "port_exemple_audio": {
+                    "$ref": "#/$defs/audio"
+                },
+                "translation_audio": {
                     "$ref": "#/$defs/audio"
                 }
             }

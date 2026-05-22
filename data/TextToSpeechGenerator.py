@@ -8,6 +8,11 @@ from elevenlabs.client import ElevenLabs
 from elevenlabs import VoiceSettings
 
 
+class QuotaExceededException(Exception):
+    """Raised when the ElevenLabs API quota is exceeded."""
+    pass
+
+
 def save_challenges_json(json_file_path, challenges):
     """
     Save the updated challenges array back to the JSON file.
@@ -114,6 +119,9 @@ def generate_tts_audio(client, text, language_code, voice_id, output_file, speed
                 f.write(chunk)
         return True
     except Exception as e:
+        error_str = str(e)
+        if 'quota_exceeded' in error_str or ('401' in error_str and 'quota' in error_str.lower()):
+            raise QuotaExceededException(f"ElevenLabs quota exceeded: {e}")
         print(f"❌ Error: {e}")
         return False
 
@@ -184,7 +192,10 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
     print(f"Max conversions per run: {max_conversions}")
     print(f"Generate example sentences: {generate_examples}\n")
     
+    quota_exceeded = False
     for idx, challenge in enumerate(challenges, 1):
+        if quota_exceeded:
+            break
         # Stop if we've reached the maximum number of conversions
         if total_converted >= max_conversions:
             print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
@@ -210,7 +221,14 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
             # Generate audio for main word
             print(f"[{idx}/{total}] 🎙️  Generating audio for '{portuguese_text}'...")
             
-            if generate_tts_audio(client, portuguese_text, 'pt', VOICES['pt'], output_file):
+            try:
+                success = generate_tts_audio(client, portuguese_text, 'pt', VOICES['pt'], output_file)
+            except QuotaExceededException as e:
+                print(f"\n🚫 Quota exceeded — stopping generation. ({e})")
+                quota_exceeded = True
+                continue
+            
+            if success:
                 print(f"[{idx}/{total}] ✅ Saved to {output_file.name}")
                 generated += 1
                 total_converted += 1
@@ -233,11 +251,40 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
         
         # === EXAMPLE SENTENCES AUDIO ===
         if generate_examples:
+          try:
             today_date = datetime.now().strftime("%Y-%m-%d")
             
             # Process French examples
             fr_data = challenge.get('fr', {})
             if fr_data and isinstance(fr_data, dict):
+                # French translation audio
+                fr_translation = fr_data.get('translation')
+                if fr_translation:
+                    audio_dict = fr_data.get('translation_audio', {})
+                    if skip_existing and is_example_audio_recent(audio_dict, months=months):
+                        print(f"[{idx}/{total}]   ⏭️  Skipping FR translation (recent)")
+                        examples_skipped += 1
+                    else:
+                        if total_converted >= max_conversions:
+                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            break
+                        fr_trans_filename = f"{challenge_id}_fr_translation.mp3"
+                        fr_trans_output = output_path / fr_trans_filename
+                        print(f"[{idx}/{total}]   🎙️  FR translation: '{fr_translation[:40]}'")
+
+                        if generate_tts_audio(client, fr_translation, 'fr', VOICES['fr'], fr_trans_output):
+                            print(f"[{idx}/{total}]   ✅ Saved {fr_trans_filename}")
+                            fr_data['translation_audio'] = {
+                                'filename': fr_trans_filename,
+                                'last_update': today_date
+                            }
+                            examples_generated += 1
+                            total_converted += 1
+                            save_challenges_json(json_file_path, challenges)
+                            time.sleep(0.5)
+                        else:
+                            errors += 1
+
                 # French example sentence
                 fr_use_exemple = fr_data.get('use_exemple')
                 if fr_use_exemple:
@@ -297,6 +344,34 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
             # Process English examples (if they exist)
             en_data = challenge.get('en', {})
             if en_data and isinstance(en_data, dict):
+                # English translation audio
+                en_translation = en_data.get('translation')
+                if en_translation:
+                    audio_dict = en_data.get('translation_audio', {})
+                    if skip_existing and is_example_audio_recent(audio_dict, months=months):
+                        print(f"[{idx}/{total}]   ⏭️  Skipping EN translation (recent)")
+                        examples_skipped += 1
+                    else:
+                        if total_converted >= max_conversions:
+                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            break
+                        en_trans_filename = f"{challenge_id}_en_translation.mp3"
+                        en_trans_output = output_path / en_trans_filename
+                        print(f"[{idx}/{total}]   🎙️  EN translation: '{en_translation[:40]}'")
+
+                        if generate_tts_audio(client, en_translation, 'en', VOICES['en'], en_trans_output):
+                            print(f"[{idx}/{total}]   ✅ Saved {en_trans_filename}")
+                            en_data['translation_audio'] = {
+                                'filename': en_trans_filename,
+                                'last_update': today_date
+                            }
+                            examples_generated += 1
+                            total_converted += 1
+                            save_challenges_json(json_file_path, challenges)
+                            time.sleep(0.5)
+                        else:
+                            errors += 1
+
                 # English example sentence
                 en_use_exemple = en_data.get('use_exemple')
                 if en_use_exemple:
@@ -352,6 +427,9 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             time.sleep(0.5)
                         else:
                             errors += 1
+          except QuotaExceededException as e:
+            print(f"\n🚫 Quota exceeded — stopping generation. ({e})")
+            quota_exceeded = True
     
     # Print summary
     print(f"\n{'='*60}")
