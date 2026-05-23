@@ -42,9 +42,9 @@ SOUNDS_DIR = Path(__file__).parent.parent / "sounds"
 OUTPUT_DIR = Path(__file__).parent / "output"
 
 # Milliseconds of silence inserted between clips
-DEFAULT_PAUSE_MS = 800
+DEFAULT_PAUSE_MS = 2000
 # Pause between word and its examples
-INNER_PAUSE_MS = 400
+INNER_PAUSE_MS = 1300
 # Target perceptual loudness (LUFS, ITU-R BS.1770). -16 is standard for voice content.
 TARGET_LUFS = -16.0
 
@@ -98,14 +98,19 @@ def build_word_segment(uid: str, lang: str, include_examples: bool, pause_ms: in
 
     Includes:
       1. Portuguese pronunciation  ({uid}.mp3)
-      2. (optional) {lang} translation example  ({uid}_{lang}_exemple.mp3)
-      3. (optional) {lang}+Portuguese bilingual example  ({uid}_{lang}_pt_exemple.mp3)
+      2. (optional) {lang} word translation  ({uid}_{lang}_translation.mp3)
+      3. (optional) {lang} translation example  ({uid}_{lang}_exemple.mp3)
+      4. (optional) {lang}+Portuguese bilingual example  ({uid}_{lang}_pt_exemple.mp3)
     """
     silence = AudioSegment.silent(duration=pause_ms)
     inner_silence = AudioSegment.silent(duration=INNER_PAUSE_MS)
 
     base = SOUNDS_DIR / f"{uid}.mp3"
     segment = load_mp3(base)
+
+    translation_path = SOUNDS_DIR / f"{uid}_{lang}_translation.mp3"
+    if translation_path.exists():
+        segment = segment + inner_silence + load_mp3(translation_path)
 
     if include_examples:
         ex_path = SOUNDS_DIR / f"{uid}_{lang}_exemple.mp3"
