@@ -21,6 +21,7 @@ Examples:
 import argparse
 import os
 import sys
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -197,7 +198,10 @@ def main():
     args = parser.parse_args()
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    output_path = OUTPUT_DIR / args.output
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    stem = Path(args.output).stem
+    suffix = Path(args.output).suffix or ".mp3"
+    output_path = OUTPUT_DIR / f"{stem}_{timestamp}{suffix}"
 
     print(f"Building lesson -> {output_path}")
 
