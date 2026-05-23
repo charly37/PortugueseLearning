@@ -24,9 +24,16 @@ import sys
 from pathlib import Path
 
 try:
-    from pydub import AudioSegment
+    from pydub import AudioSegment, effects
 except ImportError:
     print("Error: pydub is required. Install it with: pip install pydub")
+    sys.exit(1)
+
+try:
+    import numpy as np
+    import pyloudnorm as pyln
+except ImportError:
+    print("Error: pyloudnorm is required. Install it with: pip install pyloudnorm")
     sys.exit(1)
 
 
@@ -37,13 +44,51 @@ OUTPUT_DIR = Path(__file__).parent / "output"
 DEFAULT_PAUSE_MS = 800
 # Pause between word and its examples
 INNER_PAUSE_MS = 400
+# Target perceptual loudness (LUFS, ITU-R BS.1770). -16 is standard for voice content.
+TARGET_LUFS = -16.0
+
+
+def normalize_lufs(segment: AudioSegment, label: str = "") -> AudioSegment:
+    """Normalize to TARGET_LUFS using perceptual loudness (ITU-R BS.1770).
+
+    Falls back to RMS normalization for clips shorter than 400 ms, which is
+    the minimum duration BS.1770 gating requires for a reliable measurement.
+    """
+    duration_ms = len(segment)
+    samples = np.array(segment.get_array_of_samples(), dtype=np.float32)
+    samples /= 2 ** (segment.sample_width * 8 - 1)  # scale to [-1.0, 1.0]
+    if segment.channels == 2:
+        samples = samples.reshape((-1, 2))
+    else:
+        samples = samples.reshape((-1, 1))
+
+    loudness = float("-inf")
+    if duration_ms >= 400:
+        meter = pyln.Meter(segment.frame_rate)
+        loudness = meter.integrated_loudness(samples)
+
+    if loudness == float("-inf") or np.isnan(loudness):
+        # Clip too short for BS.1770 — fall back to RMS dBFS
+        if segment.dBFS == float("-inf"):
+            print(f"    [norm] {label} ({duration_ms}ms): silent, skipping")
+            return segment
+        gain_db = TARGET_LUFS - segment.dBFS
+        normalized = segment.apply_gain(gain_db)
+        print(f"    [norm] {label} ({duration_ms}ms): {segment.dBFS:.1f} dBFS -> RMS fallback  (gain {gain_db:+.1f} dB)")
+        return normalized
+
+    gain_db = TARGET_LUFS - loudness
+    normalized = segment.apply_gain(gain_db)
+    print(f"    [norm] {label} ({duration_ms}ms): {loudness:.1f} LUFS -> {TARGET_LUFS:.1f} LUFS  (gain {gain_db:+.1f} dB)")
+    return normalized
 
 
 def load_mp3(path: Path) -> AudioSegment:
-    """Load an MP3 file, raising a clear error if it doesn't exist."""
+    """Load and LUFS-normalize an MP3 file, raising a clear error if it doesn't exist."""
     if not path.exists():
         raise FileNotFoundError(f"Audio file not found: {path}")
-    return AudioSegment.from_mp3(str(path))
+    segment = AudioSegment.from_mp3(str(path))
+    return normalize_lufs(segment, label=path.name)
 
 
 def build_word_segment(uid: str, lang: str, include_examples: bool, pause_ms: int) -> AudioSegment:
@@ -201,6 +246,10 @@ def main():
     if len(combined) == 0:
         print("Error: no audio was generated. Check your input.")
         sys.exit(1)
+
+    print(f"  Combined dBFS before final peak normalize: {combined.dBFS:.1f}")
+    combined = effects.normalize(combined, headroom=0.1)
+    print(f"  Combined dBFS after  final peak normalize: {combined.dBFS:.1f}")
 
     duration_s = len(combined) / 1000
     combined.export(str(output_path), format="mp3")
