@@ -1,1 +1,3 @@
 pydub>=0.25.1
+pyloudnorm>=0.1.0
+numpy>=1.21
