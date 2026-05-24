@@ -103,7 +103,10 @@ jobs:
 
     - name: Package Helm chart
       run: |
+        CHART_VERSION="${{ github.event.inputs.version }}"
+        CHART_VERSION="${CHART_VERSION#v}"
         helm package helm/portuguese-learning \
+          --version "$CHART_VERSION" \
           --app-version ${{ github.event.inputs.version }} \
           --destination .
         echo "Helm chart packaged: $(ls portuguese-learning-*.tgz)"
