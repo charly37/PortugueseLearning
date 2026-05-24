@@ -122,6 +122,8 @@ jobs:
 
     - name: Create GitHub Release
       run: |
+        CHART_VERSION="${{ github.event.inputs.version }}"
+        CHART_VERSION="${CHART_VERSION#v}"
         DOCKER_NOTES=$(printf '%s\n' \
           '## Docker Images' \
           '' \
@@ -145,17 +147,13 @@ jobs:
           '```bash' \
           "helm upgrade --install portuguese-learning \\" \
           '  oci://ghcr.io/charly37/portuguese-learning \' \
-          "  --version ${{ github.event.inputs.version }} \\" \
-          "  --set image.app.tag=${{ github.event.inputs.version }} \\" \
-          "  --set image.analytics.tag=${{ github.event.inputs.version }}" \
+          "  --version $CHART_VERSION" \
           '```' \
           '' \
           'Or clone the repo and install from the local chart:' \
           '```bash' \
           "helm upgrade --install portuguese-learning helm/portuguese-learning \\" \
-          "  --values helm/portuguese-learning/values-prod.yaml \\" \
-          "  --set image.app.tag=${{ github.event.inputs.version }} \\" \
-          "  --set image.analytics.tag=${{ github.event.inputs.version }}" \
+          "  --values helm/portuguese-learning/values-prod.yaml" \
           '```')
 
         EXTRA="${{ github.event.inputs.notes }}"
