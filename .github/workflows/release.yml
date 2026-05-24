@@ -101,6 +101,10 @@ jobs:
     - name: Lint Helm chart
       run: helm lint helm/portuguese-learning
 
+    - name: Update Helm chart default image tags
+      run: |
+        sed -i "s/^\(\s*tag:\s*\)latest$/\1${{ github.event.inputs.version }}/" helm/portuguese-learning/values.yaml
+
     - name: Package Helm chart
       run: |
         CHART_VERSION="${{ github.event.inputs.version }}"
