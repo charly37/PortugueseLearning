@@ -147,13 +147,15 @@ jobs:
           '```bash' \
           "helm upgrade --install portuguese-learning \\" \
           '  oci://ghcr.io/charly37/portuguese-learning \' \
-          "  --version $CHART_VERSION" \
+          "  --version $CHART_VERSION \\" \
+          '  --namespace portuguese-learning --create-namespace' \
           '```' \
           '' \
           'Or clone the repo and install from the local chart:' \
           '```bash' \
           "helm upgrade --install portuguese-learning helm/portuguese-learning \\" \
-          "  --values helm/portuguese-learning/values-prod.yaml" \
+          "  --values helm/portuguese-learning/values-prod.yaml \\" \
+          '  --namespace portuguese-learning --create-namespace' \
           '```')
 
         EXTRA="${{ github.event.inputs.notes }}"
