@@ -24,17 +24,17 @@ sudo kubectl wait --namespace cert-manager \
 
 ### Step 2 — Apply the ClusterIssuer
 
-The issuer config is in `k8s/cert-manager-issuer.yaml`. It defines two issuers:
+The issuer config is in `helm/portuguese-learning/templates/` (rendered via `helm template`). It defines two issuers:
 - `letsencrypt-staging` — use first to test without hitting rate limits
 - `letsencrypt-prod` — use for the real certificate
 
 ```bash
-sudo kubectl apply -f rendered-k8s/cert-manager-issuer.yaml
+helm template portuguese-learning helm/portuguese-learning | grep -A20 'ClusterIssuer' | sudo kubectl apply -f -
 ```
 
 ### Step 3 — Apply the Ingress
 
-The ingress at `k8s/ingress.yaml` is already configured with:
+The ingress in `helm/portuguese-learning/templates/ingress.yaml` is already configured with:
 ```yaml
 annotations:
   cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -47,7 +47,7 @@ spec:
 cert-manager automatically issues and stores the certificate in the `dialecthub-tls` secret.
 
 ```bash
-sudo kubectl apply -f rendered-k8s/ingress.yaml
+helm upgrade --install portuguese-learning helm/portuguese-learning
 ```
 
 ### Step 4 — Verify

@@ -23,7 +23,7 @@ Python service that analyzes user challenge attempts to identify learning weakne
 
 The analytics service runs as a Kubernetes CronJob that:
 - Starts a container, runs both analysis jobs, then exits
-- Scheduling is defined in `k8s/analytics-cronjob.yaml`
+- Scheduling is defined in `helm/portuguese-learning/templates/analytics-cronjob.yaml`
 - Shares the MongoDB connection with the main app
 - Logs visible via `kubectl logs`
 
@@ -108,7 +108,7 @@ kubectl get jobs -n portuguese-learning
 ```
 
 ### Adjust Schedule
-To change the run time, edit `k8s/analytics-cronjob.yaml`:
+To change the run time, edit `helm/portuguese-learning/templates/analytics-cronjob.yaml`:
 ```yaml
 schedule: "0 2 * * *"  # Daily at 2 AM
 ```
