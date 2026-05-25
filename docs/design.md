@@ -313,15 +313,6 @@ User Browser
 - Additional complexity (one more container)
 - Slight latency overhead (negligible in practice)
 
-### Why Docker Compose?
-
-**Benefits:**
-1. **Orchestration**: Manage multiple containers as a single application
-2. **Networking**: Automatic service discovery and DNS resolution
-3. **Configuration**: Single file defines entire stack
-4. **Reproducibility**: Same setup in dev, staging, and production
-5. **Scalability**: Easy to add more services (Redis, workers, etc.)
-
 ### Why Separate Containers?
 
 **Benefits:**
@@ -333,11 +324,11 @@ User Browser
 
 ## Configuration Files
 
-### docker-compose.yml
-- Defines all services and their relationships
-- Sets up internal networking
-- Configures environment variables
-- Manages restart policies
+### helm/portuguese-learning/
+- Defines all services, deployments, ingress and their relationships
+- Sets up internal networking and resource limits
+- Configures environment variables via secrets
+- Manages rolling update policies
 
 ### nginx/nginx.conf
 - Main nginx configuration
@@ -380,12 +371,11 @@ User Browser
 # → Builds Docker image
 # → Pushes to Docker Hub
 
-# On production server
-./deploy.sh
-# → Creates .env file
-# → Pulls latest image
-# → Starts containers via docker-compose
-# → Runs health checks
+# On production cluster
+helm upgrade --install portuguese-learning helm/portuguese-learning \
+  --set image.tag=<version>
+# → Updates k8s Deployments with new image
+# → Performs rolling update (zero-downtime)
 ```
 
 ## Monitoring and Logging
@@ -393,19 +383,16 @@ User Browser
 ### Nginx Logs
 ```bash
 # Access logs (all requests)
-docker compose logs -f nginx
-
-# View in real-time
-docker compose exec nginx tail -f /var/log/nginx/access.log
+kubectl logs -n portuguese-learning -l app=nginx
 ```
 
 ### Application Logs
 ```bash
 # App container logs
-docker compose logs -f app
+kubectl logs -n portuguese-learning -l app=portuguese-learning
 
-# All logs together
-docker compose logs -f
+# All pods
+kubectl get pods -n portuguese-learning
 ```
 
 ### Health Checks
@@ -424,42 +411,28 @@ curl http://server-ip/api/health
 
 ## Scaling Considerations
 
-### Horizontal Scaling (Future)
-To handle more traffic, add multiple app instances:
+### Horizontal Scaling
+To handle more traffic, scale the app Deployment:
 
-```yaml
-# docker-compose.yml
-services:
-  app:
-    deploy:
-      replicas: 3  # Run 3 app containers
-  
-  nginx:
-    # Automatically load balances across all app instances
+```bash
+kubectl scale deployment portuguese-learning-app -n portuguese-learning --replicas=3
+# Or set in helm/portuguese-learning/values.yaml: replicaCount: 3
 ```
 
 ### Vertical Scaling
-Adjust resource limits per container:
+Adjust resource limits in `helm/portuguese-learning/values.yaml`:
 
 ```yaml
-services:
-  app:
-    deploy:
-      resources:
-        limits:
-          cpus: '2.0'
-          memory: 2G
+resources:
+  limits:
+    cpu: "2"
+    memory: 2Gi
 ```
 
 ## Future Enhancements
 
 ### Short-term
-1. **HTTPS Support**
-   - Add Let's Encrypt certificates
-   - Enable secure cookies
-   - Force HTTPS redirects
-
-2. **Improved Monitoring**
+1. **Improved Monitoring**
    - Add Prometheus metrics
    - Health check dashboard
    - Error rate monitoring
@@ -475,38 +448,29 @@ services:
    - Reduce server load
    - Improve global performance
 
-3. **Container Orchestration**
-   - Migrate to Kubernetes
-   - Auto-scaling
-   - Rolling updates
-
-4. **Database Caching**
+3. **Database Caching**
    - Add Redis cache layer
    - Reduce MongoDB queries
    - Improve response times
 
 ## Troubleshooting
 
-### Container won't start
+### Pod won't start
 ```bash
-# Check logs
-docker compose logs app
-docker compose logs nginx
+# Check pod status and events
+kubectl describe pod -n portuguese-learning -l app=portuguese-learning
 
-# Verify configuration
-docker compose config
+# Check logs
+kubectl logs -n portuguese-learning -l app=portuguese-learning
 ```
 
 ### Can't reach application
 ```bash
-# Check containers are running
-docker compose ps
+# Check pods are running
+kubectl get pods -n portuguese-learning
 
-# Test internal connectivity
-docker compose exec nginx ping app
-
-# Check nginx config
-docker compose exec nginx nginx -t
+# Check ingress
+kubectl get ingress -n portuguese-learning
 ```
 
 ### Session/auth issues
@@ -519,9 +483,9 @@ docker compose exec nginx nginx -t
 ## References
 
 - [Nginx Documentation](https://nginx.org/en/docs/)
-- [Docker Compose Documentation](https://docs.docker.com/compose/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+- [Helm Documentation](https://helm.sh/docs/)
 - [Express Behind Proxies](https://expressjs.com/en/guide/behind-proxies.html)
-- [Docker Networking](https://docs.docker.com/network/)
 
 ---
 

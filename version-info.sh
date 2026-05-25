@@ -30,7 +30,7 @@ print_version() {
 show_current() {
     print_header "Current Running Version"
     echo ""
-    docker compose ps --format "table {{.Service}}\t{{.Image}}\t{{.Status}}"
+    kubectl get pods -n portuguese-learning -o wide
     echo ""
 }
 
@@ -82,7 +82,7 @@ show_help() {
     echo "Examples:"
     echo "  $0 current              # Show current version"
     echo "  $0 history              # Show deployment history"
-    echo "  IMAGE_TAG=abc1234 ./deploy.sh  # Deploy specific version"
+    echo "  helm upgrade portuguese-learning helm/portuguese-learning --set image.tag=<tag>  # Deploy specific version"
     echo ""
 }
 

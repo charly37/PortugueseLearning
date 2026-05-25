@@ -4,7 +4,7 @@ metadata:
   name: portuguese-learning-analytics
   namespace: portuguese-learning
 spec:
-  schedule: "0 2 * * *"  # Daily at 2 AM (matches docker compose scheduler)
+  schedule: "0 2 * * *"  # Daily at 2 AM
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
