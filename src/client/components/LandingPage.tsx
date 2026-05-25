@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Box, Typography, Button, Grid, Paper, ToggleButton, ToggleButtonGroup, Chip } from '@mui/material';
+import { Container, Box, Typography, Button, Grid, Paper, ToggleButton, ToggleButtonGroup, Chip, LinearProgress } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import TranslateIcon from '@mui/icons-material/Translate';
 import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import LanguageIcon from '@mui/icons-material/Language';
 import StyleIcon from '@mui/icons-material/Style';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import { useTranslation } from 'react-i18next';
 
 interface User {
@@ -13,6 +14,12 @@ interface User {
   email?: string;
   isGuest?: boolean;
   preferredLanguage?: 'fr' | 'en';
+}
+
+interface WeeklySummary {
+  completedCount: number;
+  totalChallenges: number;
+  status: 'active' | 'completed' | 'expired';
 }
 
 interface LandingPageProps {
@@ -28,6 +35,7 @@ interface LandingPageProps {
   onViewWordStats: () => void;
   onViewVerbStats: () => void;
   onViewIdiomStats: () => void;
+  onWeeklyChallenge: () => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ 
@@ -41,9 +49,23 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onViewWordStats,
   onViewVerbStats,
   onViewIdiomStats,
+  onWeeklyChallenge,
 }) => {
   const { t, i18n } = useTranslation();
-  
+  const [weeklySummary, setWeeklySummary] = useState<WeeklySummary | null>(null);
+
+  // Fetch weekly challenge progress for logged-in non-guest users
+  useEffect(() => {
+    if (user && !user.isGuest) {
+      fetch('/api/weekly-challenge', { credentials: 'include' })
+        .then(res => res.ok ? res.json() : null)
+        .then(data => data && setWeeklySummary(data))
+        .catch(() => {});
+    } else {
+      setWeeklySummary(null);
+    }
+  }, [user]);
+
   // Initialize language from user preference, localStorage, or detected language
   const [selectedLanguage, setSelectedLanguage] = useState<'fr' | 'en'>(() => {
     if (user?.preferredLanguage) return user.preferredLanguage;
@@ -311,6 +333,83 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 )}
               </Paper>
             </Grid>
+
+            {/* Weekly Challenge card — full-width row below the three cards */}
+            <Grid size={{ xs: 12 }}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  display: 'flex',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  alignItems: { xs: 'flex-start', sm: 'center' },
+                  gap: 3,
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 4,
+                  },
+                  borderLeft: '4px solid #f59e0b',
+                }}
+              >
+                <EmojiEventsIcon sx={{ fontSize: 48, color: '#f59e0b', flexShrink: 0 }} />
+
+                <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
+                  <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+                    {t('landing.challenges.weekly.title')}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {t('landing.challenges.weekly.description')}
+                  </Typography>
+
+                  {/* Progress bar for logged-in users who have a weekly challenge */}
+                  {user && !user.isGuest && weeklySummary && (
+                    <Box sx={{ mt: 1.5 }}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                        <Typography variant="caption" color="text.secondary">
+                          {t('weeklyChallenge.correct', {
+                            count: weeklySummary.completedCount,
+                            total: weeklySummary.totalChallenges,
+                          })}
+                        </Typography>
+                        <Typography variant="caption" sx={{ fontWeight: 600 }}>
+                          {Math.round((weeklySummary.completedCount / weeklySummary.totalChallenges) * 100)}%
+                        </Typography>
+                      </Box>
+                      <LinearProgress
+                        variant="determinate"
+                        value={Math.round((weeklySummary.completedCount / weeklySummary.totalChallenges) * 100)}
+                        sx={{ height: 8, borderRadius: 4 }}
+                        color={weeklySummary.status === 'completed' ? 'success' : 'warning'}
+                      />
+                    </Box>
+                  )}
+                </Box>
+
+                <Box sx={{ flexShrink: 0 }}>
+                  {!user || user.isGuest ? (
+                    <Typography variant="body2" color="text.secondary" sx={{ fontStyle: 'italic' }}>
+                      {t('weeklyChallenge.loginRequired')}
+                    </Typography>
+                  ) : (
+                    <Button
+                      variant="contained"
+                      size="large"
+                      onClick={onWeeklyChallenge}
+                      sx={{
+                        bgcolor: '#f59e0b',
+                        '&:hover': { bgcolor: '#d97706' },
+                        minWidth: 160,
+                      }}
+                      startIcon={<EmojiEventsIcon />}
+                    >
+                      {t('weeklyChallenge.viewProgress')}
+                    </Button>
+                  )}
+                </Box>
+              </Paper>
+            </Grid>
+
           </Grid>
         </Box>
       </Container>

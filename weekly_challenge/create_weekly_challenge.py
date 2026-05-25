@@ -102,6 +102,8 @@ def build_weekly_challenge_doc(user_id: str, challenges: list) -> dict:
             {
                 'challengeId': c['id'],
                 'portuguese': c.get('port', ''),
+                'translation_fr': c.get('fr', {}).get('translation', ''),
+                'translation_en': c.get('en', {}).get('translation', ''),
                 'completed': False,
                 'correct': None,
                 'attemptedAt': None,

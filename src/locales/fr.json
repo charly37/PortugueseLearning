@@ -99,8 +99,40 @@
       "idiom": {
         "title": "Défi d'Expressions",
         "description": "Apprenez les expressions et idiomes portugais courants"
+      },
+      "weekly": {
+        "title": "Défi de la Semaine",
+        "description": "Votre sélection personnalisée de 20 mots à maîtriser cette semaine"
       }
     }
+  },
+  "weeklyChallenge": {
+    "title": "Défi de la Semaine",
+    "progress": "Progression cette semaine",
+    "correct": "{{count}} / {{total}} mots corrects",
+    "statusActive": "En cours",
+    "statusCompleted": "Terminé",
+    "startChallenge": "Commencer le Défi",
+    "continueChallenge": "Continuer le Défi",
+    "allDone": "Vous avez maîtrisé tous les mots cette semaine !",
+    "wordList": "Vos 20 mots de la semaine",
+    "notFound": "Aucun défi hebdomadaire n'a encore été créé pour vous. Demandez à un administrateur de lancer le générateur.",
+    "error": "Impossible de charger votre défi hebdomadaire. Veuillez réessayer.",
+    "loginRequired": "Connectez-vous pour voir votre défi hebdomadaire",
+    "viewProgress": "Voir la Progression"
+  },
+  "weeklyPlay": {
+    "prompt": "Traduire en portugais :",
+    "wordN": "Mot {{current}} sur {{total}}",
+    "correct": "Correct !",
+    "incorrect": "Incorrect. La réponse est : {{answer}}",
+    "doneTitle": "Session Terminée !",
+    "doneSummary": "Vous avez répondu correctement à {{correct}} mots sur {{total}}.",
+    "previouslyDone": "{{count}} mots étaient déjà complétés avant cette session.",
+    "totalCorrect": "total correct cette semaine",
+    "backToOverview": "Retour au Défi Hebdomadaire",
+    "seeResults": "Voir les Résultats",
+    "thisSession": "correct cette session"
   },
   "auth": {
     "loginTitle": "Connexion",

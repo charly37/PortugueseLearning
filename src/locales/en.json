@@ -99,8 +99,40 @@
       "idiom": {
         "title": "Idiom Challenge",
         "description": "Learn common Portuguese expressions and idioms"
+      },
+      "weekly": {
+        "title": "Weekly Challenge",
+        "description": "Your personalized set of 20 words to master this week"
       }
     }
+  },
+  "weeklyChallenge": {
+    "title": "Weekly Challenge",
+    "progress": "This week's progress",
+    "correct": "{{count}} / {{total}} words correct",
+    "statusActive": "In progress",
+    "statusCompleted": "Completed",
+    "startChallenge": "Start Challenge",
+    "continueChallenge": "Continue Challenge",
+    "allDone": "You've mastered all words this week!",
+    "wordList": "Your 20 words this week",
+    "notFound": "No weekly challenge has been set up for you yet. Ask an admin to run the weekly challenge generator.",
+    "error": "Failed to load your weekly challenge. Please try again.",
+    "loginRequired": "Log in to view your weekly challenge",
+    "viewProgress": "View Progress"
+  },
+  "weeklyPlay": {
+    "prompt": "Translate to Portuguese:",
+    "wordN": "Word {{current}} of {{total}}",
+    "correct": "Correct!",
+    "incorrect": "Incorrect. The answer is: {{answer}}",
+    "doneTitle": "Session Complete!",
+    "doneSummary": "You answered {{correct}} out of {{total}} words correctly.",
+    "previouslyDone": "{{count}} words were already completed before this session.",
+    "totalCorrect": "total correct this week",
+    "backToOverview": "Back to Weekly Overview",
+    "seeResults": "See Results",
+    "thisSession": "correct this session"
   },
   "auth": {
     "loginTitle": "Login",
