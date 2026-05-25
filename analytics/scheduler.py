@@ -1,35 +1,14 @@
 #!/usr/bin/env python3
 """
-Scheduler for analytics jobs.
-Runs weakness analysis and usefulness aggregation daily at 2:00 AM.
+Analytics jobs runner.
+Runs weakness analysis and usefulness aggregation.
+Scheduling is handled externally by the Kubernetes CronJob (daily at 2:00 AM).
 """
 
 import sys
-import time
 import subprocess
-from datetime import datetime, time as dt_time
+from datetime import datetime
 from analyze_weaknesses import WeaknessAnalyzer
-
-def calculate_seconds_until_next_run(target_hour: int = 2, target_minute: int = 0) -> int:
-    """
-    Calculate seconds until next scheduled run.
-    
-    Args:
-        target_hour: Hour to run (0-23), default 2 AM
-        target_minute: Minute to run (0-59), default 0
-        
-    Returns:
-        Seconds until next scheduled time
-    """
-    now = datetime.now()
-    target_time = now.replace(hour=target_hour, minute=target_minute, second=0, microsecond=0)
-    
-    # If target time has passed today, schedule for tomorrow
-    if now >= target_time:
-        target_time = target_time.replace(day=target_time.day + 1)
-    
-    seconds_until = (target_time - now).total_seconds()
-    return int(seconds_until)
 
 
 def run_analysis():
@@ -81,30 +60,13 @@ def run_usefulness_aggregation():
 
 
 def main():
-    """Main scheduler loop."""
-    print(f"[{datetime.now()}] Analytics Scheduler started")
-    print(f"[{datetime.now()}] Will run weakness analysis and usefulness aggregation daily at 2:00 AM")
+    """Run all analytics jobs once and exit."""
+    print(f"[{datetime.now()}] Analytics jobs started")
     
-    # Run immediately on startup (optional - comment out if not desired)
-    print(f"[{datetime.now()}] Running initial jobs...")
     run_analysis()
     run_usefulness_aggregation()
     
-    # Main scheduling loop
-    while True:
-        # Calculate time until next 2 AM
-        seconds_until_next = calculate_seconds_until_next_run(target_hour=2, target_minute=0)
-        hours_until = seconds_until_next / 3600
-        
-        print(f"[{datetime.now()}] Next run in {hours_until:.2f} hours")
-        print(f"[{datetime.now()}] Sleeping until next scheduled time...")
-        
-        # Sleep until next scheduled time
-        time.sleep(seconds_until_next)
-        
-        # Run all jobs
-        run_analysis()
-        run_usefulness_aggregation()
+    print(f"[{datetime.now()}] Analytics jobs completed")
 
 
 if __name__ == '__main__':

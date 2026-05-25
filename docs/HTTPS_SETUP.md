@@ -102,9 +102,9 @@ Then switch back to `letsencrypt-prod` once confirmed working.
 
 ---
 
-## Legacy: Certbot + Nginx (Docker Compose)
+## Legacy: Certbot + Nginx
 
-> The previous HTTPS setup used certbot + nginx via Docker Compose. Kept for reference only.
+> The previous HTTPS setup used certbot + nginx. Kept for reference only.
 
 The `init-letsencrypt.sh` script initialized certificates, and the certbot container handled renewals. Config was in `nginx/conf.d/app.conf` using `fullchain.pem` + `privkey.pem` from the certbot volume.
 

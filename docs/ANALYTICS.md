@@ -16,20 +16,20 @@ Python service that analyzes user challenge attempts to identify learning weakne
 - Updates challenge JSON files with aggregated scores
 
 ### Scheduling
-- Runs as a Docker container with scheduled execution
-- All jobs execute daily at 2:00 AM
+- Runs as a Kubernetes CronJob, daily at 2:00 AM
+- Container starts, runs jobs, then exits cleanly
 
 ## Architecture
 
-The analytics service runs as a separate Docker container that:
-- Runs continuously in the background
-- Executes analysis daily at 2:00 AM
+The analytics service runs as a Kubernetes CronJob that:
+- Starts a container, runs both analysis jobs, then exits
+- Scheduling is defined in `k8s/analytics-cronjob.yaml`
 - Shares the MongoDB connection with the main app
-- Logs output via Docker logs
+- Logs visible via `kubectl logs`
 
 ## Files
 
-- **`scheduler.py`** - Main entry point, handles scheduling with sleep loop
+- **`scheduler.py`** - Main entry point, runs all jobs once and exits
 - **`analyze_weaknesses.py`** - Core weakness analysis logic
 - **`aggregate_usefulness.py`** - Aggregates user usefulness votes
 - **`Dockerfile`** - Container definition
@@ -74,7 +74,7 @@ python aggregate_usefulness.py --min-votes 3 --data-dir ../data
 ### Test Scheduler
 ```bash
 python scheduler.py
-# Runs immediately then waits for next 2 AM
+# Runs all jobs once and exits
 ```
 
 ## Production Deployment
@@ -89,24 +89,28 @@ docker push charly37/portuguese-learning-analytics:latest
 ```
 
 ### Deploy
-The analytics container is automatically deployed via `deploy.sh`:
+The analytics CronJob is managed via Helm/kubectl. It runs automatically on schedule.
 ```bash
-./deploy.sh
+# Check CronJob status
+kubectl get cronjob -n portuguese-learning
+
+# Trigger a manual run
+kubectl create job --from=cronjob/portuguese-learning-analytics manual-run -n portuguese-learning
 ```
 
 ### View Logs
 ```bash
-# View analytics logs
-docker compose logs -f analytics
+# View latest job logs
+kubectl logs -n portuguese-learning -l app=portuguese-learning-analytics --tail=100
 
-# Check if running
-docker compose ps analytics
+# List recent jobs
+kubectl get jobs -n portuguese-learning
 ```
 
 ### Adjust Schedule
-To change the run time, edit `analytics/scheduler.py`:
-```python
-seconds_until_next = calculate_seconds_until_next_run(target_hour=2, target_minute=0)
+To change the run time, edit `k8s/analytics-cronjob.yaml`:
+```yaml
+schedule: "0 2 * * *"  # Daily at 2 AM
 ```
 
 ## Environment Variables
