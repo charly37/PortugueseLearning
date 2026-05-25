@@ -121,19 +121,6 @@
     "loginRequired": "Connectez-vous pour voir votre défi hebdomadaire",
     "viewProgress": "Voir la Progression"
   },
-  "weeklyPlay": {
-    "prompt": "Traduire en portugais :",
-    "wordN": "Mot {{current}} sur {{total}}",
-    "correct": "Correct !",
-    "incorrect": "Incorrect. La réponse est : {{answer}}",
-    "doneTitle": "Session Terminée !",
-    "doneSummary": "Vous avez répondu correctement à {{correct}} mots sur {{total}}.",
-    "previouslyDone": "{{count}} mots étaient déjà complétés avant cette session.",
-    "totalCorrect": "total correct cette semaine",
-    "backToOverview": "Retour au Défi Hebdomadaire",
-    "seeResults": "Voir les Résultats",
-    "thisSession": "correct cette session"
-  },
   "auth": {
     "loginTitle": "Connexion",
     "registerTitle": "Inscription",

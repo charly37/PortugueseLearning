@@ -14,7 +14,6 @@ import ProfilePage from './components/ProfilePage';
 import ChallengeStatsPage from './components/ChallengeStatsPage';
 import FlashcardLearnPage from './components/FlashcardLearnPage';
 import WeeklyChallengePage from './components/WeeklyChallengePage';
-import WeeklyChallengePlayPage from './components/WeeklyChallengePlayPage';
 
 const theme = createTheme({
   palette: {
@@ -65,7 +64,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats' | 'weekly-challenge' | 'weekly-challenge-play';
+type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats' | 'weekly-challenge';
 
 interface User {
   id: string;
@@ -80,7 +79,7 @@ interface User {
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>('landing');
-  const [weeklyPlayChallenges, setWeeklyPlayChallenges] = useState<any[]>([]);
+  const [weeklyContext, setWeeklyContext] = useState<{ active: boolean; challenges: any[] }>({ active: false, challenges: [] });
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const { i18n, t } = useTranslation();
@@ -304,7 +303,30 @@ const App: React.FC = () => {
           <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
         )}
         {currentPage === 'word-challenge' && (
-          <ChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
+          <ChallengePage
+            mode="challenge"
+            onBackHome={() => {
+              if (weeklyContext.active) {
+                setWeeklyContext({ active: false, challenges: [] });
+                setCurrentPage('weekly-challenge');
+              } else {
+                setCurrentPage('landing');
+              }
+            }}
+            user={user}
+            onNavigateToLogin={() => setCurrentPage('login')}
+            onNavigateToRegister={() => setCurrentPage('register')}
+            onCreateGuest={handleCreateGuest}
+            preloadedChallenges={weeklyContext.active ? weeklyContext.challenges : undefined}
+            onAnswerChecked={weeklyContext.active ? (challengeId, correct) => {
+              fetch('/api/weekly-challenge/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                credentials: 'include',
+                body: JSON.stringify({ challengeId, correct }),
+              }).catch(() => {});
+            } : undefined}
+          />
         )}
         {currentPage === 'verb-learn' && (
           <FlashcardLearnPage challengeType="verb" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
@@ -356,16 +378,16 @@ const App: React.FC = () => {
           <WeeklyChallengePage
             onBackHome={() => setCurrentPage('landing')}
             onPlayWeekly={(challenges) => {
-              setWeeklyPlayChallenges(challenges);
-              setCurrentPage('weekly-challenge-play');
+              const mapped = challenges
+                .map((w: any) => ({
+                  id: w.challengeId,
+                  port: w.portuguese,
+                  fr: { translation: w.translation_fr, note: '' },
+                  en: { translation: w.translation_en, note: '' },
+                }));
+              setWeeklyContext({ active: true, challenges: mapped });
+              setCurrentPage('word-challenge');
             }}
-          />
-        )}
-        {currentPage === 'weekly-challenge-play' && (
-          <WeeklyChallengePlayPage
-            challenges={weeklyPlayChallenges}
-            preferredLanguage={(user?.preferredLanguage as 'fr' | 'en') || 'en'}
-            onBackToWeekly={() => setCurrentPage('weekly-challenge')}
           />
         )}
       </Box>

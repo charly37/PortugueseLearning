@@ -46,9 +46,13 @@ interface ChallengePageProps {
   onNavigateToLogin: () => void;
   onNavigateToRegister: () => void;
   onCreateGuest?: () => Promise<User | null>;
+  /** If provided, skip the config screen and start directly with these challenges */
+  preloadedChallenges?: Challenge[];
+  /** Optional callback fired after each answer (e.g. to also track progress in a weekly doc) */
+  onAnswerChecked?: (challengeId: string, correct: boolean) => void;
 }
 
-const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister, onCreateGuest }) => {
+const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, onNavigateToLogin, onNavigateToRegister, onCreateGuest, preloadedChallenges, onAnswerChecked }) => {
   const { t } = useTranslation();
   const [challenge, setChallenge] = useState<Challenge | null>(null);
   const [loading, setLoading] = useState(false);
@@ -66,8 +70,8 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   const [difficulty, setDifficulty] = useState<number>(5);
   const [mobileFriendly, setMobileFriendly] = useState<boolean>(user?.mobileFriendly || false);
   const [minUsefulness, setMinUsefulness] = useState<number>(1);
-  const [challengeStarted, setChallengeStarted] = useState(mode === 'practice');
-  const [generatedChallenges, setGeneratedChallenges] = useState<Challenge[]>([]);
+  const [challengeStarted, setChallengeStarted] = useState(mode === 'practice' || (preloadedChallenges !== undefined && preloadedChallenges.length > 0));
+  const [generatedChallenges, setGeneratedChallenges] = useState<Challenge[]>(preloadedChallenges ?? []);
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const [audioAvailable, setAudioAvailable] = useState<boolean>(false);
   
@@ -320,7 +324,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       }, 300);
     }
 
-    // Submit attempt if user is logged in
+    // Submit attempt to regular stats
     await submitChallengeAttempt(
       challenge.id,
       'word',
@@ -329,6 +333,8 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       challenge.port,
       timeSpent
     );
+    // Notify caller (e.g. weekly challenge) so it can also record in its own store
+    onAnswerChecked?.(challenge.id, isCorrect);
 
     // Increment turn count and check if challenge mode is complete
     if (mode === 'challenge') {
@@ -436,6 +442,19 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
       }
     }
   };
+
+  // Auto-start when preloaded challenges are supplied (weekly challenge mode)
+  useEffect(() => {
+    if (preloadedChallenges && preloadedChallenges.length > 0) {
+      setGeneratedChallenges(preloadedChallenges);
+      setCurrentChallengeIndex(0);
+      setChallenge(preloadedChallenges[0]);
+      setChallengeStarted(true);
+      setMaxTurns(preloadedChallenges.length);
+      setStartTime(Date.now());
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Focus input when new challenge loads
   useEffect(() => {

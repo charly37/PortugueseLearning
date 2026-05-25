@@ -121,19 +121,7 @@
     "loginRequired": "Log in to view your weekly challenge",
     "viewProgress": "View Progress"
   },
-  "weeklyPlay": {
-    "prompt": "Translate to Portuguese:",
-    "wordN": "Word {{current}} of {{total}}",
-    "correct": "Correct!",
-    "incorrect": "Incorrect. The answer is: {{answer}}",
-    "doneTitle": "Session Complete!",
-    "doneSummary": "You answered {{correct}} out of {{total}} words correctly.",
-    "previouslyDone": "{{count}} words were already completed before this session.",
-    "totalCorrect": "total correct this week",
-    "backToOverview": "Back to Weekly Overview",
-    "seeResults": "See Results",
-    "thisSession": "correct this session"
-  },
+
   "auth": {
     "loginTitle": "Login",
     "registerTitle": "Register",
