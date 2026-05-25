@@ -13,6 +13,8 @@ import RegisterPage from './components/RegisterPage';
 import ProfilePage from './components/ProfilePage';
 import ChallengeStatsPage from './components/ChallengeStatsPage';
 import FlashcardLearnPage from './components/FlashcardLearnPage';
+import WeeklyChallengePage from './components/WeeklyChallengePage';
+import WeeklyChallengePlayPage from './components/WeeklyChallengePlayPage';
 
 const theme = createTheme({
   palette: {
@@ -63,7 +65,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats';
+type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats' | 'weekly-challenge' | 'weekly-challenge-play';
 
 interface User {
   id: string;
@@ -78,6 +80,7 @@ interface User {
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>('landing');
+  const [weeklyPlayChallenges, setWeeklyPlayChallenges] = useState<any[]>([]);
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const { i18n, t } = useTranslation();
@@ -291,6 +294,7 @@ const App: React.FC = () => {
             onViewWordStats={() => setCurrentPage('word-stats')}
             onViewVerbStats={() => setCurrentPage('verb-stats')}
             onViewIdiomStats={() => setCurrentPage('idiom-stats')}
+            onWeeklyChallenge={() => setCurrentPage('weekly-challenge')}
           />
         )}
         {currentPage === 'about' && (
@@ -346,6 +350,22 @@ const App: React.FC = () => {
             challengeType="idiom"
             onBackHome={() => setCurrentPage('landing')}
             onStartChallenge={() => setCurrentPage('idiom-challenge')}
+          />
+        )}
+        {currentPage === 'weekly-challenge' && (
+          <WeeklyChallengePage
+            onBackHome={() => setCurrentPage('landing')}
+            onPlayWeekly={(challenges) => {
+              setWeeklyPlayChallenges(challenges);
+              setCurrentPage('weekly-challenge-play');
+            }}
+          />
+        )}
+        {currentPage === 'weekly-challenge-play' && (
+          <WeeklyChallengePlayPage
+            challenges={weeklyPlayChallenges}
+            preferredLanguage={(user?.preferredLanguage as 'fr' | 'en') || 'en'}
+            onBackToWeekly={() => setCurrentPage('weekly-challenge')}
           />
         )}
       </Box>

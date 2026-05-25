@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/database';
 import authRoutes from './routes/auth';
 import challengeRoutes from './routes/challenge';
+import weeklyChallengeRoutes from './routes/weeklyChallenge';
 
 // Load environment variables
 // In test mode, use .env.test; otherwise use .env
@@ -50,6 +51,9 @@ app.use('/api/auth', authRoutes);
 
 // Challenge routes
 app.use('/api/challenge', challengeRoutes);
+
+// Weekly challenge routes
+app.use('/api/weekly-challenge', weeklyChallengeRoutes);
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));
