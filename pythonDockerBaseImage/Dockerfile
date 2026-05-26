@@ -1,4 +1,4 @@
-# Python Services Container (analytics + weekly challenge)
+# Python Services Container (analytics + weekly challenge + vocal lesson creator)
 FROM python:3.14-alpine
 
 # Set working directory
@@ -7,14 +7,19 @@ WORKDIR /app
 # Disable Python output buffering for Docker logs
 ENV PYTHONUNBUFFERED=1
 
-# Copy and install dependencies from both services
+# ffmpeg is required by pydub (combine_mp3.py) for MP3 encoding/decoding
+RUN apk add --no-cache ffmpeg
+
+# Copy and install dependencies from all services
 COPY analytics/requirements.txt analytics-requirements.txt
 COPY weekly_challenge/requirements.txt weekly-requirements.txt
-RUN pip install --no-cache-dir -r analytics-requirements.txt -r weekly-requirements.txt
+COPY vocal_lesson_creator/requirements.txt vocal-requirements.txt
+RUN pip install --no-cache-dir -r analytics-requirements.txt -r weekly-requirements.txt -r vocal-requirements.txt
 
-# Copy scripts from both services
+# Copy scripts from all services
 COPY analytics/*.py .
 COPY weekly_challenge/create_weekly_challenge.py .
+COPY vocal_lesson_creator/combine_mp3.py .
 
 # Copy challenge data files
 COPY data/ /app/data/
