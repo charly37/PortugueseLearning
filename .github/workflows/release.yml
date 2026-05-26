@@ -89,7 +89,7 @@ jobs:
     - name: Build and push Analytics Docker image
       run: |
         docker build -t ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ github.event.inputs.version }} \
-          -f analytics/Dockerfile .
+          -f pythonDockerBaseImage/Dockerfile .
         docker tag ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ github.event.inputs.version }} \
           ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:latest
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning-analytics:${{ github.event.inputs.version }}
