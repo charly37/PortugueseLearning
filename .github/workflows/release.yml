@@ -27,8 +27,8 @@ jobs:
 
     - name: Validate version format
       run: |
-        if [[ ! "${{ github.event.inputs.version }}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-          echo "Invalid version format. Expected format: v1.2.3"
+        if [[ ! "${{ github.event.inputs.version }}" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*)?$ ]]; then
+          echo "Invalid version format. Expected format: v1.2.3 or v1.2.3-beta or v1.2.3-rc.1"
           exit 1
         fi
 
