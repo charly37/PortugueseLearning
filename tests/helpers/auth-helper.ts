@@ -13,6 +13,9 @@ export async function findAuthButton(page: Page, buttonName: string): Promise<Lo
   const isDirectlyVisible = await directButton.isVisible().catch(() => false);
   
   if (isDirectlyVisible) {
+    // Scroll into view so the bounding box is stable before the caller clicks
+    await directButton.scrollIntoViewIfNeeded().catch(() => {});
+    await directButton.waitFor({ state: 'visible' });
     return directButton;
   }
   
