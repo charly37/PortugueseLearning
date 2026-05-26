@@ -13,7 +13,7 @@ test.describe('Idiom Challenge', () => {
     await page.getByRole('button', { name: 'Challenge', exact: true }).nth(2).click();
     
     // Wait for page to load - either guest dialog or config screen
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState('networkidle');
     
     // Handle guest dialog if shown - click "Continue as Guest"
     const guestButton = page.getByRole('button', { name: /start.*guest/i });
@@ -21,8 +21,8 @@ test.describe('Idiom Challenge', () => {
     
     if (isGuestDialogVisible) {
       await guestButton.click();
-      // Wait for guest creation and component re-render
-      await page.waitForTimeout(2000);
+      // Wait for config screen to appear after guest creation instead of arbitrary timeout
+      await page.getByRole('button', { name: /start challenge/i }).waitFor({ state: 'visible' });
     }
     
     // At this point we should be on the configuration screen
