@@ -53,8 +53,22 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  weeklyChallenge:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
 
 analytics:
   schedule: "0 2 * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+# Runs every Monday at 3 AM — after the daily analytics job (2 AM) so
+# weakness data is fresh when challenges are generated.
+weeklyChallenge:
+  schedule: "0 3 * * 1"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
