@@ -100,6 +100,7 @@ kubectl rollout restart deployment/coredns -n kube-system
 
 > Without this, cert-manager will fail to complete the ACME challenge and the certificate will remain in a `False / Issuing` state. Check with `kubectl describe certificate staging-dialecthub-tls -n portuguese-learning-staging`.
 
+
 **Deploy staging** (points to `staging.dialecthub.net`, uses `letsencrypt-prod` issuer):
 
 ```bash
@@ -119,7 +120,10 @@ helm upgrade --install staging \
 
 > `certManager.createIssuers=false` skips re-creating the `ClusterIssuer` resources since they are cluster-scoped and already exist from the prod install.
 
-> **Why `letsencrypt-prod` and not `letsencrypt-staging`?** The production nginx sets `Strict-Transport-Security: includeSubDomains`. Once a browser has visited `dialecthub.net`, it enforces trusted certs on all subdomains. The `letsencrypt-staging` CA is untrusted by browsers and HSTS prevents any bypass — use `letsencrypt-prod` for staging too.
+
+> **Why `letsencrypt-prod` and not `letsencrypt-staging`?**
+> 
+> All browser-facing environments (production and staging) must use `letsencrypt-prod` for SSL certificates. The `letsencrypt-staging` CA is untrusted by browsers, and production sets `Strict-Transport-Security: includeSubDomains`, so browsers will refuse to connect to staging if it uses a staging cert. Always use `letsencrypt-prod` for staging and production. Only use `letsencrypt-staging` for internal, non-browser testing.
 
 **Teardown staging:**
 ```bash
@@ -165,7 +169,7 @@ kubectl get all -n portuguese-learning-staging
 | Production | https://dialecthub.net |
 | Staging (beta) | https://staging.dialecthub.net |
 
-> The staging ingress uses `letsencrypt-staging` which issues certificates from Let's Encrypt's test CA — browsers will show an untrusted certificate warning. This is expected and avoids consuming Let's Encrypt production rate limits during testing.
+> The staging ingress now uses `letsencrypt-prod` so browsers will trust the certificate. Do not use `letsencrypt-staging` for any environment accessed by browsers.
 
 **Step 5 — Check logs if needed:**
 ```bash
