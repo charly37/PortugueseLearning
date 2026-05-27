@@ -24,6 +24,6 @@ COPY vocal_lesson_creator/combine_mp3.py .
 # Copy challenge data files
 COPY data/ /app/data/
 
-# Default: run analytics scheduler
+# Default: run analytics jobs (weakness analysis + usefulness aggregation)
 # Weekly challenge CronJob overrides this via Kubernetes command:
-CMD ["python", "-u", "scheduler.py"]
+CMD ["python", "-u", "analyze_weaknesses.py"]

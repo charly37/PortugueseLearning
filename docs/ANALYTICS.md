@@ -29,8 +29,7 @@ The analytics service runs as a Kubernetes CronJob that:
 
 ## Files
 
-- **`scheduler.py`** - Main entry point, runs all jobs once and exits
-- **`analyze_weaknesses.py`** - Core weakness analysis logic
+- **`analyze_weaknesses.py`** - Main entry point; runs weakness analysis then usefulness aggregation
 - **`aggregate_usefulness.py`** - Aggregates user usefulness votes
 - **`Dockerfile`** - Container definition
 - **`requirements.txt`** - Python dependencies
@@ -71,10 +70,10 @@ python aggregate_usefulness.py --min-votes 3 --data-dir ../data
 - `--min-votes` - Minimum votes required to update a challenge (default: 1)
 - `--data-dir` - Directory containing challenge JSON files (default: ../data)
 
-### Test Scheduler
+### Run All Jobs
 ```bash
-python scheduler.py
-# Runs all jobs once and exits
+python analyze_weaknesses.py
+# Runs weakness analysis then usefulness aggregation, then exits
 ```
 
 ## Production Deployment
