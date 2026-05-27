@@ -15,11 +15,19 @@ Environment variables:
 import os
 import sys
 import json
+import logging
 import random
 import argparse
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from bson import ObjectId
+
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stderr,
+    format="%(levelname)s %(message)s",
+)
+log = logging.getLogger(__name__)
 
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -36,7 +44,7 @@ def load_word_challenges() -> list:
     with open(data_path, 'r', encoding='utf-8') as f:
         challenges = json.load(f)
 
-    print(f"[{datetime.now()}] Loaded {len(challenges)} word challenges from {data_path}")
+    log.info("Loaded %d word challenges from %s", len(challenges), data_path)
     return challenges
 
 
@@ -48,7 +56,7 @@ def connect_db():
 
     client = MongoClient(mongodb_uri)
     db = client.get_default_database()
-    print(f"[{datetime.now()}] Connected to MongoDB")
+    log.info("Connected to MongoDB")
     return client, db
 
 
@@ -151,30 +159,30 @@ def resolve_user(db, args) -> list:
     if args.all_users:
         users = list(users_col.find({}))
         if not users:
-            print("No users found in the database.", file=sys.stderr)
+            log.warning("No users found in the database.")
         return users
 
     if args.user_id:
         try:
             oid = ObjectId(args.user_id)
         except Exception:
-            print(f"Invalid ObjectId: {args.user_id}", file=sys.stderr)
+            log.error("Invalid ObjectId: %s", args.user_id)
             sys.exit(1)
         user = users_col.find_one({'_id': oid})
         if not user:
-            print(f"User with id '{args.user_id}' not found.", file=sys.stderr)
+            log.error("User with id '%s' not found.", args.user_id)
             sys.exit(1)
         return [user]
 
     if args.username:
         user = users_col.find_one({'username': args.username})
         if not user:
-            print(f"User '{args.username}' not found.", file=sys.stderr)
+            log.error("User '%s' not found.", args.username)
             sys.exit(1)
         return [user]
 
     # Should not reach here due to argparse mutual exclusion
-    print("Provide --user-id, --username, or --all-users.", file=sys.stderr)
+    log.error("Provide --user-id, --username, or --all-users.")
     sys.exit(1)
 
 
@@ -191,18 +199,32 @@ def parse_args():
                        help='Create weekly challenges for every user in the DB')
     parser.add_argument('--count', type=int, default=20,
                         help='Number of challenges to include (default: 20)')
+    parser.add_argument(
+        '--log-level',
+        default='INFO',
+        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR'],
+        metavar='LEVEL',
+        help='Logging verbosity: DEBUG, INFO, WARNING, ERROR (default: INFO)',
+    )
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
 
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        stream=sys.stderr,
+        format="%(levelname)s %(message)s",
+        force=True,
+    )
+
     all_challenges = load_word_challenges()
     client, db     = connect_db()
 
     try:
         users = resolve_user(db, args)
-        print(f"[{datetime.now()}] Processing {len(users)} user(s)…")
+        log.info("Processing %d user(s)...", len(users))
 
         for user in users:
             user_id  = str(user['_id'])
@@ -212,14 +234,14 @@ def main():
             doc_id   = upsert_weekly_challenge(db, user_id, selected)
 
             words_preview = ', '.join(c.get('port', '') for c in selected[:5])
-            print(
-                f"  ✓ {username} — weekly challenge created "
-                f"(id={doc_id}, {len(selected)} words: {words_preview}…)"
+            log.info(
+                "%s — weekly challenge created (id=%s, %d words: %s...)",
+                username, doc_id, len(selected), words_preview,
             )
 
     finally:
         client.close()
-        print(f"[{datetime.now()}] Done.")
+        log.info("Done.")
 
 
 if __name__ == '__main__':

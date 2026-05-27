@@ -4,6 +4,7 @@ Aggregate user word usefulness votes and update challenges.json
 This script runs nightly to calculate average usefulness scores.
 """
 
+import logging
 import os
 import json
 import sys
@@ -12,11 +13,18 @@ from datetime import datetime
 from pymongo import MongoClient
 from collections import defaultdict
 
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stderr,
+    format="%(levelname)s %(message)s",
+)
+log = logging.getLogger(__name__)
+
 def load_config():
     """Load MongoDB configuration from environment"""
     mongodb_uri = os.getenv('MONGODB_URI')
     if not mongodb_uri:
-        print("Error: MONGODB_URI environment variable not set", file=sys.stderr)
+        log.error("MONGODB_URI environment variable not set")
         sys.exit(1)
     return mongodb_uri
 
@@ -26,10 +34,10 @@ def connect_to_mongodb(uri):
         client = MongoClient(uri)
         # Test connection
         client.admin.command('ping')
-        print(f"Connected to MongoDB successfully at {datetime.now()}")
+        log.info("Connected to MongoDB successfully at %s", datetime.now())
         return client
     except Exception as e:
-        print(f"Error connecting to MongoDB: {e}", file=sys.stderr)
+        log.error("Error connecting to MongoDB: %s", e)
         sys.exit(1)
 
 def aggregate_votes(db):
@@ -59,11 +67,11 @@ def aggregate_votes(db):
                 'voteCount': vote_count
             }
         
-        print(f"Aggregated votes for {len(vote_aggregates)} challenges")
+        log.info("Aggregated votes for %d challenges", len(vote_aggregates))
         return vote_aggregates
         
     except Exception as e:
-        print(f"Error aggregating votes: {e}", file=sys.stderr)
+        log.error("Error aggregating votes: %s", e)
         return {}
 
 def update_challenge_file(file_path, vote_aggregates, min_votes=1):
@@ -87,11 +95,11 @@ def update_challenge_file(file_path, vote_aggregates, min_votes=1):
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(challenges, f, ensure_ascii=False, indent=4)
         
-        print(f"Updated {updates_count} challenges in {file_path}")
+        log.info("Updated %d challenges in %s", updates_count, file_path)
         return updates_count
         
     except Exception as e:
-        print(f"Error updating challenge file {file_path}: {e}", file=sys.stderr)
+        log.error("Error updating challenge file %s: %s", file_path, e)
         return 0
 
 def main():
@@ -116,11 +124,26 @@ def main():
         default='../data',
         help='Directory containing challenge JSON files (default: ../data)'
     )
+
+    parser.add_argument(
+        '--log-level',
+        default='INFO',
+        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR'],
+        metavar='LEVEL',
+        help='Logging verbosity: DEBUG, INFO, WARNING, ERROR (default: INFO)',
+    )
     
     args = parser.parse_args()
-    
-    print(f"\n=== Starting Usefulness Aggregation at {datetime.now()} ===")
-    print(f"Parameters: min_votes={args.min_votes}, data_dir={args.data_dir}")
+
+    logging.basicConfig(
+        level=getattr(logging, args.log_level),
+        stream=sys.stderr,
+        format="%(levelname)s %(message)s",
+        force=True,
+    )
+
+    log.info("Starting Usefulness Aggregation at %s", datetime.now())
+    log.debug("Parameters: min_votes=%d, data_dir=%s", args.min_votes, args.data_dir)
     
     # Load configuration
     mongodb_uri = load_config()
@@ -133,7 +156,7 @@ def main():
     vote_aggregates = aggregate_votes(db)
     
     if not vote_aggregates:
-        print("No votes found to aggregate")
+        log.warning("No votes found to aggregate")
         client.close()
         return
     
@@ -151,13 +174,14 @@ def main():
             updates = update_challenge_file(file_path, vote_aggregates, min_votes=args.min_votes)
             total_updates += updates
         else:
-            print(f"Warning: File not found: {file_path}")
+            log.warning("File not found: %s", file_path)
     
-    print(f"\nTotal updates across all files: {total_updates}")
-    print(f"=== Usefulness Aggregation Complete at {datetime.now()} ===\n")
+    log.info("Total updates across all files: %d", total_updates)
+    log.info("Usefulness Aggregation complete at %s", datetime.now())
     
     # Close connection
     client.close()
 
 if __name__ == "__main__":
     main()
+
