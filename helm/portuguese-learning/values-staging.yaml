@@ -1,0 +1,22 @@
+# Staging overrides — apply alongside values.yaml:
+#   helm upgrade --install portuguese-learning-staging ./helm/portuguese-learning \
+#     --values helm/portuguese-learning/values.yaml \
+#     --values helm/portuguese-learning/values-staging.yaml \
+#     --set image.app.tag=<version> \
+#     --set image.analytics.tag=<version>
+#
+# IMPORTANT: Use letsencrypt-prod (not letsencrypt-staging) so browsers trust the cert.
+# letsencrypt-staging issues certs signed by a fake CA → ERR_CERT_AUTHORITY_INVALID.
+
+namespace: portuguese-learning-staging
+
+ingress:
+  host: staging.dialecthub.net
+  # Must use letsencrypt-prod — staging ClusterIssuer produces untrusted certs
+  clusterIssuer: letsencrypt-prod
+  # Use a separate secret so the staging cert doesn't overwrite the prod cert
+  tlsSecretName: staging-dialecthub-tls
+
+certManager:
+  # ClusterIssuers already exist from the prod release — don't recreate them
+  createIssuers: false
