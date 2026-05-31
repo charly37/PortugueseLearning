@@ -31350,13 +31350,13 @@
     },
     {
         "id": "1db7bb46-96eb-4fbc-9d22-d1ca264f68e5",
-        "port": "aguaceiro, chuvada /chuvarada",
+        "port": "aguaceiro",
         "fr": {
             "translation": "averse, pluie torrentielle",
             "note": "Une averse est le terme standard pour une pluie soudaine et de courte durée. Pour une pluie plus intense, on dira plutôt pluie battante ou pluie torrentielle selon le contexte.",
             "use_exemple": "Pendant la promenade, une averse est tombée.",
             "port_exemple": "Durante o passeio, caiu um aguaceiro.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "1db7bb46-96eb-4fbc-9d22-d1ca264f68e5_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -32343,7 +32343,7 @@
             "note": "Remarque: 'animal de compagnie' est l'expression courante pour 'pet' en français. 'Animal domestique' est plus neutre et peut décrire n'importe quel animal élevé par l'homme.",
             "use_exemple": "Mon animal de compagnie aime jouer.",
             "port_exemple": "O meu animal de estimação gosta de brincar.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "c0ef6726-32d6-44ec-8217-46d89222092c_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -34029,13 +34029,13 @@
     },
     {
         "id": "4f8c81be-8307-41d0-990c-27fb737e7bfc",
-        "port": "ave, pássaro",
+        "port": "pássaro",
         "fr": {
             "translation": "oiseau",
             "note": "Le mot 'oiseau' est masculin et s'emploie pour les oiseaux en général. Le pluriel est 'oiseaux'.",
             "use_exemple": "L'oiseau est dans le ciel.",
             "port_exemple": "A ave está no céu.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -36667,7 +36667,7 @@
             "note": "Remarque: 'cais' se traduit par 'quais' (bords du port). 'plataforma' se traduit par 'plateforme' (gare ou plateforme informatique).",
             "use_exemple": "Les quais étaient pleins de bateaux. La plateforme est vide.",
             "port_exemple": "Os cais estavam cheios de barcos. A plataforma está vazia.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "fb7ffbdf-341b-4b57-b3c8-1b25040af13f_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -36996,7 +36996,7 @@
             "note": "Remarque: câmara peut signifier une pièce ou une enceinte parlementaire; câmera signifie l'appareil photo. En FR, on dira chambre pour une pièce et caméra pour l'appareil.",
             "use_exemple": "La chambre est vide.",
             "port_exemple": "A câmara está vazia.",
-            "last_update": "2026-05-11",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "89ba8a8a-6f15-40a8-83b7-e3616fd981ac_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -38165,13 +38165,13 @@
     },
     {
         "id": "23bcd739-89aa-4d71-a42d-7344c8dd1b52",
-        "port": "carrinha de entregas /",
+        "port": "carrinha",
         "fr": {
-            "translation": "une camionnette de livraison",
+            "translation": "camionnette",
             "note": "Remarque: 'carrinha' désigne une petite camionnette utilisée pour les livraisons locales. En français, on privilégie 'camionnette de livraison' ou 'fourgonnette de livraison' selon le contexte.",
             "use_exemple": "La camionnette de livraison est stationnée devant l'entrepôt.",
             "port_exemple": "A carrinha de entregas está estacionada em frente ao armazém.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "23bcd739-89aa-4d71-a42d-7344c8dd1b52_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -47471,13 +47471,13 @@
     },
     {
         "id": "ccb2408b-f5af-466c-bc8e-a2a4bcfb948b",
-        "port": "esqui (instrutor de)",
+        "port": "esqui",
         "fr": {
             "translation": "moniteur de ski",
             "note": "Remarque: 'esqui' est le nom du sport; le verbe correspondant est 'esquiar'. En français, on dit le ski et 'moniteur de ski' plutôt que 'instructeur de'.",
             "use_exemple": "Je suis moniteur de ski.",
             "port_exemple": "Sou instrutor de esqui.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "ccb2408b-f5af-466c-bc8e-a2a4bcfb948b_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -53534,13 +53534,13 @@
     },
     {
         "id": "2f0bfee5-d238-4075-a3e7-5110a43f07d7",
-        "port": "intervalo (almoço)",
+        "port": "intervalo",
         "fr": {
             "translation": "pause-déjeuner",
             "note": "Notez que 'pause-déjeuner' est spécifique au repas de midi. 'Pause' peut aussi désigner n'importe quelle pause; le contexte est important.",
             "use_exemple": "La pause-déjeuner est à midi.",
             "port_exemple": "O intervalo para almoço é às 12h.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "2f0bfee5-d238-4075-a3e7-5110a43f07d7_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -54239,13 +54239,13 @@
     },
     {
         "id": "c9aa4964-7449-4ddf-995e-df2a62cd08d8",
-        "port": "jantar dinner",
+        "port": "jantar",
         "fr": {
             "translation": "dîner",
             "note": "Jantar peut être utilisé comme verbe (to dine) ou comme nom (le dîner) en portugais. En pratique, on dira 'Je vais dîner' pour l'action et 'le dîner' pour le repas.",
             "use_exemple": "Nous allons dîner à huit heures.",
             "port_exemple": "Vamos jantar às oito.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-05-31",
             "use_exemple_audio": {
                 "filename": "c9aa4964-7449-4ddf-995e-df2a62cd08d8_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -57247,13 +57247,13 @@
     },
     {
         "id": "1ad10041-c6f2-4cec-aaaf-addf2210938e",
-        "port": "meio, metade",
+        "port": "metade",
         "fr": {
             "translation": "la moitié",
             "note": "Meio peut aussi signifier 'un peu' ou 'un moyen' selon le contexte (ex. 'un moyen de transport'). Pour l'idée de moitié, on dit généralement 'la moitié'.",
             "use_exemple": "La moitié de la pizza a déjà été mangée.",
             "port_exemple": "Metade da pizza já foi comida.",
-            "last_update": "2026-02-19",
+            "last_update": "2026-05-31",
             "translation_audio": {
                 "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_fr_translation.mp3",
                 "last_update": "2026-05-22"
@@ -61806,13 +61806,13 @@
     },
     {
         "id": "9b8e26aa-f13c-4e95-b416-9290d1afb211",
-        "port": "pergunta, questão",
+        "port": "pergunta",
         "fr": {
             "translation": "pergunta: question; questão: problème (ou 'question' selon le contexte)",
             "note": "Remarque : pergunta se traduit par 'question'. 'Questão' porte l'idée d'un problème ou d'un sujet; selon le contexte, on peut aussi utiliser 'question'.",
             "use_exemple": "Cette question et ce problème sont importants.",
             "port_exemple": "Esta pergunta e esta questão são importantes.",
-            "last_update": "2026-02-19",
+            "last_update": "2026-05-31",
             "translation_audio": {
                 "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_fr_translation.mp3",
                 "last_update": "2026-05-22"
@@ -62846,7 +62846,7 @@
             "note": "Por se traduit le plus souvent par 'par' (agent, moyen) ou 'à travers' selon le sens. Para se traduit surtout par 'pour' (finalité, destinataire).",
             "use_exemple": "Cela a été fait par moi et pour vous.",
             "port_exemple": "Isso foi feito por mim e para você.",
-            "last_update": "2026-02-19",
+            "last_update": "2026-05-31",
             "translation_audio": {
                 "filename": "8ad2395b-8bcb-4f47-952c-055d6ad752f5_fr_translation.mp3",
                 "last_update": "2026-05-22"
@@ -63028,13 +63028,13 @@
     },
     {
         "id": "e54e9c18-bead-4d01-a02c-f8eb22d6954f",
-        "port": "porta-chaves//chaveiro",
+        "port": "porta-chaves",
         "fr": {
             "translation": "porte-clés",
             "note": "En français, on dit 'porte-clés' pour cet objet. Le pluriel se forme en 'portes-clés'.",
             "use_exemple": "Ce porte-clés est pratique pour organiser les clés.",
             "port_exemple": "Este porta-chaves é útil para organizar as chaves.",
-            "last_update": "2026-02-19",
+            "last_update": "2026-05-31",
             "translation_audio": {
                 "filename": "e54e9c18-bead-4d01-a02c-f8eb22d6954f_fr_translation.mp3",
                 "last_update": "2026-05-22"
@@ -69003,13 +69003,13 @@
     },
     {
         "id": "3996cbdc-d2f6-4cf9-b721-d0ce9fbc3381",
-        "port": "treinar, ensinar",
+        "port": "ensinar",
         "fr": {
             "translation": "former et enseigner",
             "note": "Le verbe treinar peut se traduire par former ou entraîner selon le contexte. Pour parler de développer des compétences chez quelqu'un, 'former' est généralement plus naturel.",
             "use_exemple": "Il est important de former et d'enseigner les employés.",
             "port_exemple": "É importante treinar e ensinar os funcionários.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-05-31"
         },
         "en": {
             "translation": "to train and to teach",
@@ -69831,13 +69831,13 @@
     },
     {
         "id": "ff17e20f-8ded-4ec7-a10b-512d879c9dcf",
-        "port": "voltar, regressar",
+        "port": "voltar",
         "fr": {
             "translation": "revenir, retourner",
             "note": "Remarque: Revenir s'emploie lorsque l'action revient vers le locuteur, tandis que retourner indique un déplacement vers un endroit différent, souvent l'endroit d'où l'on part. Les deux verbes conviennent pour traduire voltar/regressar selon le contexte.",
             "use_exemple": "Je veux rentrer chez moi.",
             "port_exemple": "Quero voltar para casa.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-05-31"
         },
         "en": {
             "translation": "to return, come/go back",
@@ -74565,13 +74565,13 @@
     },
     {
         "id": "78f0f4f9-cb05-4d5b-ae75-3269d006ae0e",
-        "port": "cerrar",
+        "port": "fechar",
         "fr": {
             "translation": "fermer",
             "note": "Remarque : «cerrar» n’est pas portugais; le verbe correct est «fechar». En portugais on dit «fechar» pour «to close».",
             "use_exemple": "Je vais fermer la porte.",
             "port_exemple": "Vou fechar a porta.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-05-31"
         },
         "en": {
             "translation": "to close",
@@ -93534,7 +93534,7 @@
             "note": "Remarque: En portugais, idiota peut décrire une personne ou être utilisé comme adjectif insultant. En français, idiot/idiote est courant mais plutôt fort; pour adoucir, on peut dire imbécile.",
             "use_exemple": "Il est idiot.",
             "port_exemple": "Ele é idiota.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-05-31"
         },
         "en": {
             "translation": "idiot",
