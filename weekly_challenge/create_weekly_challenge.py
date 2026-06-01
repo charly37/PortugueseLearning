@@ -35,11 +35,19 @@ log = logging.getLogger(__name__)
 def load_word_challenges() -> list:
     """Load word challenges from the JSON file relative to this script."""
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_path = os.path.join(script_dir, '..', 'data', 'challenges.json')
-    data_path = os.path.normpath(data_path)
-
-    if not os.path.exists(data_path):
-        raise FileNotFoundError(f"challenges.json not found at {data_path}")
+    # Try sibling 'data/' directory first (cluster layout), then '../data/' (local dev layout)
+    for candidate in (
+        os.path.join(script_dir, 'data', 'challenges.json'),
+        os.path.join(script_dir, '..', 'data', 'challenges.json'),
+    ):
+        data_path = os.path.normpath(candidate)
+        if os.path.exists(data_path):
+            break
+    else:
+        raise FileNotFoundError(
+            f"challenges.json not found (tried {os.path.normpath(os.path.join(script_dir, 'data', 'challenges.json'))}"
+            f" and {os.path.normpath(os.path.join(script_dir, '..', 'data', 'challenges.json'))})"
+        )
 
     with open(data_path, 'r', encoding='utf-8') as f:
         challenges = json.load(f)
