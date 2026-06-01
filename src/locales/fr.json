@@ -7,6 +7,7 @@
     "login": "Connexion",
     "register": "Inscription",
     "back": "Retour",
+    "cancel": "Annuler",
     "learn": "Apprendre",
     "practice": "Pratique",
     "challenge": "Défi",
@@ -119,7 +120,12 @@
     "notFound": "Aucun défi hebdomadaire n'a encore été créé pour vous. Demandez à un administrateur de lancer le générateur.",
     "error": "Impossible de charger votre défi hebdomadaire. Veuillez réessayer.",
     "loginRequired": "Connectez-vous pour voir votre défi hebdomadaire",
-    "viewProgress": "Voir la Progression"
+    "viewProgress": "Voir la Progression",
+    "resetButton": "Réinitialiser la progression",
+    "resetDialogTitle": "Réinitialiser votre progression ?",
+    "resetDialogBody": "Cela effacera toutes vos réponses de cette semaine et vous permettra de recommencer depuis le début. Les mots maîtrisés seront perdus.",
+    "resetConfirm": "Oui, réinitialiser",
+    "resetError": "Impossible de réinitialiser la progression. Veuillez réessayer."
   },
   "auth": {
     "loginTitle": "Connexion",

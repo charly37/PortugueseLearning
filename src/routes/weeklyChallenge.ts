@@ -46,7 +46,8 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       totalChallenges: doc.totalChallenges,
       completedCount,
       correctCount,
-      status: completedCount === doc.totalChallenges ? 'completed' : doc.status,
+      // Challenge is only complete when every word has been correctly answered
+      status: correctCount === doc.totalChallenges ? 'completed' : doc.status,
       challenges: doc.challenges,
     });
   } catch (error) {
@@ -85,8 +86,9 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'challengeId not part of this weekly challenge' });
     }
 
-    if (doc.challenges[wordIndex].completed) {
-      return res.json({ message: 'Already completed', alreadyDone: true });
+    // Don't overwrite a word the user has already mastered
+    if (doc.challenges[wordIndex].correct === true) {
+      return res.json({ message: 'Already mastered', alreadyDone: true });
     }
 
     const now = new Date();
@@ -106,7 +108,8 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
 
     const completedCount = updated.challenges.filter((c: { completed: boolean }) => c.completed).length;
     const correctCount   = updated.challenges.filter((c: { correct: boolean | null }) => c.correct === true).length;
-    const allDone = completedCount === updated.totalChallenges;
+    // Challenge is only fully complete when every word has been answered correctly
+    const allDone = correctCount === updated.totalChallenges;
 
     if (allDone && updated.status !== 'completed') {
       await collection.updateOne({ _id: doc._id }, { $set: { status: 'completed' } });
@@ -120,6 +123,49 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
     });
   } catch (error) {
     console.error('Error submitting weekly challenge answer:', error);
+    return res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// POST /api/weekly-challenge/reset
+// Resets all per-word progress for the current week so the user can retry from scratch.
+router.post('/reset', requireAuth, async (req: Request, res: Response) => {
+  try {
+    const userId = req.session.userId as string;
+    const db = mongoose.connection.db;
+    if (!db) return res.status(503).json({ message: 'Database not available' });
+
+    const collection = db.collection('weeklychallenges');
+    const weekStart = currentWeekStart(new Date());
+
+    const doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    if (!doc) {
+      return res.status(404).json({ message: 'No active weekly challenge found' });
+    }
+
+    // Reset every word back to its initial state
+    const resetChallenges = doc.challenges.map((c: any) => ({
+      ...c,
+      completed: false,
+      correct: null,
+      attemptedAt: null,
+    }));
+
+    await collection.updateOne(
+      { _id: doc._id },
+      {
+        $set: {
+          challenges: resetChallenges,
+          completedCount: 0,
+          correctCount: 0,
+          status: 'active',
+        },
+      }
+    );
+
+    return res.json({ message: 'Progress reset successfully' });
+  } catch (error) {
+    console.error('Error resetting weekly challenge:', error);
     return res.status(500).json({ message: 'Internal server error' });
   }
 });

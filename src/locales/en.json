@@ -7,6 +7,7 @@
     "login": "Login",
     "register": "Register",
     "back": "Back",
+    "cancel": "Cancel",
     "learn": "Learn",
     "practice": "Practice",
     "challenge": "Challenge",
@@ -119,7 +120,12 @@
     "notFound": "No weekly challenge has been set up for you yet. Ask an admin to run the weekly challenge generator.",
     "error": "Failed to load your weekly challenge. Please try again.",
     "loginRequired": "Log in to view your weekly challenge",
-    "viewProgress": "View Progress"
+    "viewProgress": "View Progress",
+    "resetButton": "Reset progress",
+    "resetDialogTitle": "Reset your progress?",
+    "resetDialogBody": "This will clear all your answers for this week and let you start over from scratch. Your mastered words will be lost.",
+    "resetConfirm": "Yes, reset",
+    "resetError": "Failed to reset progress. Please try again."
   },
 
   "auth": {

@@ -378,7 +378,10 @@ const App: React.FC = () => {
           <WeeklyChallengePage
             onBackHome={() => setCurrentPage('landing')}
             onPlayWeekly={(challenges) => {
+              // Only include words not yet mastered (correct !== true) so the user
+              // retries only what they haven't learned yet
               const mapped = challenges
+                .filter((w: any) => w.correct !== true)
                 .map((w: any) => ({
                   id: w.challengeId,
                   port: w.portuguese,

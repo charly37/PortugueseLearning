@@ -19,6 +19,12 @@ import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
 
 interface WeeklyWord {
   challengeId: string;
@@ -53,6 +59,8 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
   const [weekly, setWeekly] = useState<WeeklyChallenge | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [resetDialogOpen, setResetDialogOpen] = useState(false);
+  const [resetting, setResetting] = useState(false);
 
   useEffect(() => {
     fetchWeeklyChallenge();
@@ -80,11 +88,32 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
     }
   };
 
+  const handleReset = async () => {
+    setResetting(true);
+    try {
+      const res = await fetch('/api/weekly-challenge/reset', {
+        method: 'POST',
+        credentials: 'include',
+      });
+      if (res.ok) {
+        setResetDialogOpen(false);
+        await fetchWeeklyChallenge();
+      } else {
+        setError(t('weeklyChallenge.resetError'));
+      }
+    } catch {
+      setError(t('weeklyChallenge.resetError'));
+    } finally {
+      setResetting(false);
+    }
+  };
+
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
 
+  // Progress reflects mastered (correctly answered) words, not merely attempted ones
   const progressPct = weekly
-    ? Math.round((weekly.completedCount / weekly.totalChallenges) * 100)
+    ? Math.round((weekly.correctCount / weekly.totalChallenges) * 100)
     : 0;
 
   return (
@@ -162,23 +191,58 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
                 color={weekly.status === 'completed' ? 'success' : 'primary'}
               />
 
-              {weekly.status !== 'completed' && (
-                <Button
-                  variant="contained"
-                  startIcon={<PlayArrowIcon />}
-                  onClick={() => onPlayWeekly(weekly.challenges)}
-                  sx={{ mt: 1 }}
-                >
-                  {weekly.completedCount === 0
-                    ? t('weeklyChallenge.startChallenge')
-                    : t('weeklyChallenge.continueChallenge')}
-                </Button>
-              )}
-              {weekly.status === 'completed' && (
-                <Typography variant="body1" color="success.main" sx={{ fontWeight: 600, mt: 1 }}>
-                  🎉 {t('weeklyChallenge.allDone')}
-                </Typography>
-              )}
+              <Box sx={{ display: 'flex', gap: 1, mt: 1, flexWrap: 'wrap', alignItems: 'center' }}>
+                {weekly.status !== 'completed' && (
+                  <Button
+                    variant="contained"
+                    startIcon={<PlayArrowIcon />}
+                    onClick={() => onPlayWeekly(weekly.challenges)}
+                  >
+                    {weekly.completedCount === 0
+                      ? t('weeklyChallenge.startChallenge')
+                      : t('weeklyChallenge.continueChallenge')}
+                  </Button>
+                )}
+                {weekly.status === 'completed' && (
+                  <Typography variant="body1" color="success.main" sx={{ fontWeight: 600 }}>
+                    🎉 {t('weeklyChallenge.allDone')}
+                  </Typography>
+                )}
+                {weekly.completedCount > 0 && (
+                  <Button
+                    variant="outlined"
+                    color="warning"
+                    startIcon={<RestartAltIcon />}
+                    onClick={() => setResetDialogOpen(true)}
+                    size="small"
+                  >
+                    {t('weeklyChallenge.resetButton')}
+                  </Button>
+                )}
+              </Box>
+
+              {/* Reset confirmation dialog */}
+              <Dialog open={resetDialogOpen} onClose={() => setResetDialogOpen(false)}>
+                <DialogTitle>{t('weeklyChallenge.resetDialogTitle')}</DialogTitle>
+                <DialogContent>
+                  <DialogContentText>
+                    {t('weeklyChallenge.resetDialogBody')}
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button onClick={() => setResetDialogOpen(false)} disabled={resetting}>
+                    {t('common.cancel')}
+                  </Button>
+                  <Button
+                    onClick={handleReset}
+                    color="warning"
+                    variant="contained"
+                    disabled={resetting}
+                  >
+                    {t('weeklyChallenge.resetConfirm')}
+                  </Button>
+                </DialogActions>
+              </Dialog>
             </Paper>
 
             {/* Word list */}
