@@ -33042,13 +33042,13 @@
     },
     {
         "id": "6ce12881-c948-427a-a6c4-728b97ddc3e7",
-        "port": "aquecimento / calefação",
+        "port": "aquecimento",
         "fr": {
             "translation": "échauffement (pour 'aquecimento'), chauffage (pour 'calefação')",
             "note": "Remarque: En portugais, « aquecimento » peut signifier le chauffage ou l’échauffement; pour le chauffage domestique, « chauffage » est le mot français le plus courant.",
             "use_exemple": "L'échauffement du moteur prend quelques minutes.",
             "port_exemple": "O aquecimento do motor demora alguns minutos.",
-            "last_update": "2026-05-14",
+            "last_update": "2026-06-02",
             "use_exemple_audio": {
                 "filename": "6ce12881-c948-427a-a6c4-728b97ddc3e7_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -34781,13 +34781,13 @@
     },
     {
         "id": "793e8120-42be-43cd-98a3-381db0b62a44",
-        "port": "batatas cozidas",
+        "port": "batatas",
         "fr": {
             "translation": "pommes de terre bouillies",
             "note": "Le terme 'bouillies' précise la cuisson dans l'eau; on peut aussi dire 'cuites à l'eau'. En portugais européen, 'cozidas' indique plutôt une cuisson générale, mais pour le plat, 'pommes de terre bouillies' est naturel en français.",
             "use_exemple": "J'ai mangé des pommes de terre bouillies au dîner.",
             "port_exemple": "Eu comi batatas cozidas no jantar.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-06-02",
             "use_exemple_audio": {
                 "filename": "793e8120-42be-43cd-98a3-381db0b62a44_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -36802,13 +36802,13 @@
     },
     {
         "id": "fce35f8d-0ac4-452a-8f2f-dc8f986476bd",
-        "port": "calções / shorts",
+        "port": "calções",
         "fr": {
             "translation": "des shorts",
             "note": "Remarque: En français, on dit 'des shorts' au pluriel pour le vêtement. On peut aussi dire 'un short' au singulier lorsqu'on parle d'une seule pièce.",
             "use_exemple": "J'aime porter des shorts en été.",
             "port_exemple": "Eu gosto de usar calções no verão.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-06-02",
             "use_exemple_audio": {
                 "filename": "fce35f8d-0ac4-452a-8f2f-dc8f986476bd_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -47988,13 +47988,13 @@
     },
     {
         "id": "f1bfe685-325d-4a84-8089-0d18832edbbc",
-        "port": "estar interessado em",
+        "port": "interessar-se",
         "fr": {
             "translation": "s'intéresser à",
             "note": "Note : 's'intéresser à' est utilisé pour parler d'un intérêt actif envers quelque chose; 'être intéressé par' est aussi correct mais plus neutre et peut évoquer un intérêt moins soutenu selon le contexte.",
             "use_exemple": "Je m'intéresse à l'apprentissage du portugais.",
             "port_exemple": "Eu estou interessado em aprender português.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-06-02",
             "use_exemple_audio": {
                 "filename": "f1bfe685-325d-4a84-8089-0d18832edbbc_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -52782,13 +52782,13 @@
     },
     {
         "id": "025ab399-1d10-47ee-ac1a-613bc60b1627",
-        "port": "húmido / úmido",
+        "port": "húmido",
         "fr": {
             "translation": "humide",
             "note": "Remarque: húmido et úmido sont des variantes du même mot en portugais; la forme moderne et la plus courante est úmido. En français, 'humide' s'utilise pour décrire l'air ou une surface mouillée.",
             "use_exemple": "L'air est humide.",
             "port_exemple": "O ar está úmido.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-06-02",
             "use_exemple_audio": {
                 "filename": "025ab399-1d10-47ee-ac1a-613bc60b1627_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -76181,7 +76181,7 @@
             "note": "Note: débattre est correct mais peu courant dans le langage quotidien. On préfère dire discuter quand on parle simplement d'un sujet.",
             "use_exemple": "J'aime discuter des idées.",
             "port_exemple": "Eu gosto de debater ideias.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-06-02"
         },
         "en": {
             "translation": "to discuss",
