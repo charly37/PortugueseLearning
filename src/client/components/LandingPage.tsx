@@ -17,6 +17,7 @@ interface User {
 }
 
 interface WeeklySummary {
+  correctCount: number;
   completedCount: number;
   totalChallenges: number;
   status: 'active' | 'completed' | 'expired';
@@ -368,17 +369,17 @@ const LandingPage: React.FC<LandingPageProps> = ({
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                         <Typography variant="caption" color="text.secondary">
                           {t('weeklyChallenge.correct', {
-                            count: weeklySummary.completedCount,
+                            count: weeklySummary.correctCount,
                             total: weeklySummary.totalChallenges,
                           })}
                         </Typography>
                         <Typography variant="caption" sx={{ fontWeight: 600 }}>
-                          {Math.round((weeklySummary.completedCount / weeklySummary.totalChallenges) * 100)}%
+                          {Math.round((weeklySummary.correctCount / weeklySummary.totalChallenges) * 100)}%
                         </Typography>
                       </Box>
                       <LinearProgress
                         variant="determinate"
-                        value={Math.round((weeklySummary.completedCount / weeklySummary.totalChallenges) * 100)}
+                        value={Math.round((weeklySummary.correctCount / weeklySummary.totalChallenges) * 100)}
                         sx={{ height: 8, borderRadius: 4 }}
                         color={weeklySummary.status === 'completed' ? 'success' : 'warning'}
                       />
