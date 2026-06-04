@@ -56,7 +56,7 @@ router.post('/register', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        isGuest: false,
+        isGuest: user.isGuest,
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,        practiceMode: user.practiceMode,        createdAt: user.createdAt,
         totalScore: user.totalScore,
@@ -100,7 +100,7 @@ router.post('/login', async (req: Request, res: Response) => {
         id: user._id,
         username: user.username,
         email: user.email,
-        isGuest: false,
+        isGuest: user.isGuest,
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,        practiceMode: user.practiceMode,        createdAt: user.createdAt,
         totalScore: user.totalScore,
@@ -298,9 +298,9 @@ router.post('/create-guest', async (req: Request, res: Response) => {
     const randomStr = Math.random().toString(36).substring(2, 6);
     const guestUsername = `guest_${timestamp}_${randomStr}`;
 
-    // Set expiration to 7 days from now
+    // Set expiration to 30 days from now
     const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 7);
+    expirationDate.setDate(expirationDate.getDate() + 30);
 
     // Create guest user (don't set email at all - leave it undefined)
     const guestUser = new User({
@@ -437,7 +437,7 @@ router.post('/register-from-guest', async (req: Request, res: Response) => {
     guestUser.email = email;
     guestUser.password = password;
     guestUser.isGuest = false;
-    guestUser.guestExpiresAt = undefined;
+    guestUser.set('guestExpiresAt', undefined);
     if (preferredLanguage) {
       guestUser.preferredLanguage = preferredLanguage;
     }
