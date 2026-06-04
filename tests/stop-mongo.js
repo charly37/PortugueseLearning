@@ -1,4 +1,12 @@
 const fs = require('fs');
+const { execSync } = require('child_process');
+
+// Kill any process holding the MongoDB test port (27017)
+try {
+  execSync('fuser -k 27017/tcp', { stdio: 'ignore' });
+} catch (_) {
+  // fuser returns non-zero if nothing is listening — that's fine
+}
 
 // Cleanup test files
 try {

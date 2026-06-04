@@ -165,9 +165,9 @@ def resolve_user(db, args) -> list:
     users_col = db['users']
 
     if args.all_users:
-        users = list(users_col.find({}))
+        users = list(users_col.find({'isGuest': {'$ne': True}}))
         if not users:
-            log.warning("No users found in the database.")
+            log.warning("No registered users found in the database.")
         return users
 
     if args.user_id:
@@ -180,12 +180,18 @@ def resolve_user(db, args) -> list:
         if not user:
             log.error("User with id '%s' not found.", args.user_id)
             sys.exit(1)
+        if user.get('isGuest'):
+            log.error("User '%s' is a guest account. Weekly challenges are only created for registered users.", args.user_id)
+            sys.exit(1)
         return [user]
 
     if args.username:
         user = users_col.find_one({'username': args.username})
         if not user:
             log.error("User '%s' not found.", args.username)
+            sys.exit(1)
+        if user.get('isGuest'):
+            log.error("User '%s' is a guest account. Weekly challenges are only created for registered users.", args.username)
             sys.exit(1)
         return [user]
 
