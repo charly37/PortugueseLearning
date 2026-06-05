@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-wchal-sounds
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.weeklyChallenge.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.weeklyChallenge.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.weeklyChallenge.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-wchal-sounds
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: weekly-challenge
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command: ["python", "-u", "create_weekly_challenge.py", "--all-users"]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+              resources:
+                {{- toYaml .Values.resources.weeklyChallengeSounds | nindent 16 }}
