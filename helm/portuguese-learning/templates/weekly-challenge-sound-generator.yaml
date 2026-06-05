@@ -6,9 +6,9 @@ metadata:
   labels:
     {{- include "portuguese-learning.labels" . | nindent 4 }}
 spec:
-  schedule: {{ .Values.weeklyChallenge.schedule | quote }}
+  schedule: {{ .Values.weeklyChallengeSounds.schedule | quote }}
   concurrencyPolicy: Forbid
-  successfulJobsHistoryLimit: {{ .Values.weeklyChallenge.successfulJobsHistoryLimit }}
+  successfulJobsHistoryLimit: {{ .Values.weeklyChallengeSounds.successfulJobsHistoryLimit }}
   failedJobsHistoryLimit: {{ .Values.weeklyChallenge.failedJobsHistoryLimit }}
   jobTemplate:
     spec:
@@ -22,7 +22,7 @@ spec:
             - name: weekly-challenge
               image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
               imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
-              command: ["python", "-u", "create_weekly_challenge.py", "--all-users"]
+              command: ["python", "-u", "combine_mp3.py", "--weekly-challenge", "--lang", "fr"]
               env:
                 - name: MONGODB_URI
                   valueFrom:
