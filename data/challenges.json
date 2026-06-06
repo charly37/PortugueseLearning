@@ -30080,53 +30080,6 @@
         }
     },
     {
-        "id": "33051e0c-db7e-42aa-8a84-b29a4846239d",
-        "port": "(à) tarde",
-        "fr": {
-            "translation": "(l')après-midi",
-            "note": "Remarque: En français, 'l'après-midi' est un nom masculin. On peut dire 'dans l'après-midi' ou juste 'l'après-midi' selon le contexte.",
-            "use_exemple": "Je vais travailler dans l'après-midi.",
-            "port_exemple": "Vou trabalhar à tarde.",
-            "last_update": "2026-05-09",
-            "use_exemple_audio": {
-                "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d_fr_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "port_exemple_audio": {
-                "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d_fr_pt_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "translation_audio": {
-                "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "(in the) afternoon",
-            "note": "Used to refer to the afternoon period. It is commonly used with routine verbs, as in 'Eu trabalho à tarde' (I work in the afternoon).",
-            "port_exemple": "Eu trabalho à tarde.",
-            "last_update": "2026-05-07",
-            "use_exemple": "I work in the afternoon.",
-            "use_exemple_audio": {
-                "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d_en_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "port_exemple_audio": {
-                "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d_en_pt_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "translation_audio": {
-                "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d_en_translation.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "33051e0c-db7e-42aa-8a84-b29a4846239d.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "1f1f80f7-4a10-422c-97c1-afd4027c872f",
         "port": "(à) tarde, à tardinha",
         "fr": {
@@ -34028,53 +33981,6 @@
         }
     },
     {
-        "id": "4f8c81be-8307-41d0-990c-27fb737e7bfc",
-        "port": "pássaro",
-        "fr": {
-            "translation": "oiseau",
-            "note": "Le mot 'oiseau' est masculin et s'emploie pour les oiseaux en général. Le pluriel est 'oiseaux'.",
-            "use_exemple": "L'oiseau est dans le ciel.",
-            "port_exemple": "A ave está no céu.",
-            "last_update": "2026-05-31",
-            "use_exemple_audio": {
-                "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_fr_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "port_exemple_audio": {
-                "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_fr_pt_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "translation_audio": {
-                "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "bird",
-            "note": "Ave is more formal or technical. Pá ssaro is more common in everyday speech.",
-            "port_exemple": "Um pássaro está a cantar no jardim.",
-            "last_update": "2026-05-07",
-            "use_exemple": "A bird is singing in the garden.",
-            "use_exemple_audio": {
-                "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_en_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "port_exemple_audio": {
-                "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_en_pt_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "translation_audio": {
-                "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc_en_translation.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "4f8c81be-8307-41d0-990c-27fb737e7bfc.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "97b80979-635f-4fd0-909f-a2d09bf1143f",
         "port": "avenida",
         "fr": {
@@ -34787,7 +34693,7 @@
             "note": "Le terme 'bouillies' précise la cuisson dans l'eau; on peut aussi dire 'cuites à l'eau'. En portugais européen, 'cozidas' indique plutôt une cuisson générale, mais pour le plat, 'pommes de terre bouillies' est naturel en français.",
             "use_exemple": "J'ai mangé des pommes de terre bouillies au dîner.",
             "port_exemple": "Eu comi batatas cozidas no jantar.",
-            "last_update": "2026-06-02",
+            "last_update": "2026-06-06",
             "use_exemple_audio": {
                 "filename": "793e8120-42be-43cd-98a3-381db0b62a44_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -34820,7 +34726,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "793e8120-42be-43cd-98a3-381db0b62a44.mp3",
             "last_update": "2026-02-15"
@@ -38768,7 +38674,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "df6cb076-b02a-42b7-9b75-20f399d078b0.mp3",
             "last_update": "2026-02-15"
@@ -43570,13 +43476,13 @@
     },
     {
         "id": "97aec695-171e-435d-89fe-08009ae96d7a",
-        "port": "deixar de / parar de fazer algo",
+        "port": "parar",
         "fr": {
-            "translation": "arrêter de / cesser de faire quelque chose",
+            "translation": "arrêter de",
             "note": "Le verbe 'arrêter de' est l'expression la plus courante pour parler d'arrêter une action. 'Cesser de' est plus soutenu ou littéraire.",
             "use_exemple": "J'ai décidé d'arrêter de manger des sucreries.",
             "port_exemple": "Eu decidi deixar de comer doces.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-06-06",
             "use_exemple_audio": {
                 "filename": "97aec695-171e-435d-89fe-08009ae96d7a_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -46108,13 +46014,13 @@
     },
     {
         "id": "c0d0c545-55f6-4917-b6e6-755b14564e18",
-        "port": "enjoo / enjoo do mar",
+        "port": "enjoo",
         "fr": {
             "translation": "nausée / mal de mer",
             "note": "Enjoo est le terme générique pour la nausée. 'Mal de mer' désigne spécifiquement la nausée due au mouvement en mer.",
             "use_exemple": "J'ai la nausée lorsque je voyage en bateau.",
             "port_exemple": "Tenho enjoo quando vou de barco.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-06-06",
             "use_exemple_audio": {
                 "filename": "c0d0c545-55f6-4917-b6e6-755b14564e18_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -46147,7 +46053,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "c0d0c545-55f6-4917-b6e6-755b14564e18.mp3",
             "last_update": "2026-02-15"
@@ -47994,7 +47900,7 @@
             "note": "Note : 's'intéresser à' est utilisé pour parler d'un intérêt actif envers quelque chose; 'être intéressé par' est aussi correct mais plus neutre et peut évoquer un intérêt moins soutenu selon le contexte.",
             "use_exemple": "Je m'intéresse à l'apprentissage du portugais.",
             "port_exemple": "Eu estou interessado em aprender português.",
-            "last_update": "2026-06-02",
+            "last_update": "2026-06-06",
             "use_exemple_audio": {
                 "filename": "f1bfe685-325d-4a84-8089-0d18832edbbc_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -57246,53 +57152,6 @@
         }
     },
     {
-        "id": "1ad10041-c6f2-4cec-aaaf-addf2210938e",
-        "port": "metade",
-        "fr": {
-            "translation": "la moitié",
-            "note": "Meio peut aussi signifier 'un peu' ou 'un moyen' selon le contexte (ex. 'un moyen de transport'). Pour l'idée de moitié, on dit généralement 'la moitié'.",
-            "use_exemple": "La moitié de la pizza a déjà été mangée.",
-            "port_exemple": "Metade da pizza já foi comida.",
-            "last_update": "2026-05-31",
-            "translation_audio": {
-                "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_fr_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_fr_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "half",
-            "note": "Meio is often used before a quantity to mean 'half' of something (e.g., meio litro, meio copo). Metade is the standard noun for 'half' of something.",
-            "port_exemple": "Eu bebi meio copo de água.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I drank half a glass of water.",
-            "translation_audio": {
-                "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_en_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_en_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e_en_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 3,
-        "audio": {
-            "filename": "1ad10041-c6f2-4cec-aaaf-addf2210938e.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "1339dadf-769e-43bf-98e7-cad9ccf86d5b",
         "port": "meio-dia",
         "fr": {
@@ -59549,53 +59408,6 @@
         }
     },
     {
-        "id": "29f78c07-7bcb-441f-be9d-16b2757bf3ee",
-        "port": "onde? / aonde? / donde?",
-        "fr": {
-            "translation": "où ?",
-            "note": "Onde indique un lieu sans mouvement; aonde indique une direction ou une destination. En français, on emploie généralement 'où' et on précise le sens avec le contexte (par ex. 'Où vas-tu ?').",
-            "use_exemple": "Où habites-tu ?",
-            "port_exemple": "Onde vives?",
-            "last_update": "2026-05-11",
-            "translation_audio": {
-                "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee_fr_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee_fr_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "onde? = where? (location); aonde? = where to? / where are you going to?; de onde? = where from? (from where?). Note: 'donde?' is Spanish; in Portuguese the equivalents are 'onde?' or 'de onde?'.",
-            "note": "Remark: In European Portuguese, onde = 'where' (location) and aonde = 'where to?' (movement toward a destination; for many speakers in Portugal, 'para onde' is also common). For origin, use 'de onde'. Also, note that 'donde' is Spanish.",
-            "port_exemple": "Onde fica a biblioteca? Aonde você quer ir depois?",
-            "last_update": "2026-05-08",
-            "use_exemple": "Where is the library? Where do you want to go afterward?",
-            "translation_audio": {
-                "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee_en_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee_en_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee_en_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "29f78c07-7bcb-441f-be9d-16b2757bf3ee.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "723d5fbf-c022-456e-a0f0-afd3aa5b991f",
         "port": "ordenado",
         "fr": {
@@ -60344,53 +60156,6 @@
         "user_usefulness": 1,
         "audio": {
             "filename": "4175ed04-d0aa-45f7-8e45-ebd6523cfc31.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "496a2bc9-eb41-44a3-b60e-f3f409fcb654",
-        "port": "parar",
-        "fr": {
-            "translation": "arrêter",
-            "note": "Remarque: 'parar' peut signifier arrêter une action ou mettre fin à quelque chose. En français, utilisez 'arrêter' pour cesser une activité ou arrêter quelque chose, et 'cesser de' pour arrêter de faire quelque chose.",
-            "use_exemple": "Je veux m'arrêter maintenant.",
-            "port_exemple": "Quero parar agora.",
-            "last_update": "2026-02-19",
-            "translation_audio": {
-                "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654_fr_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654_fr_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "to stop",
-            "note": "Parar is the base verb meaning 'to stop.' It covers stopping movement or an action (parar de fazer algo) and appears in phrases like parar o carro (to stop the car) or parar para pensar (to stop to think).",
-            "port_exemple": "Eu vou parar agora.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I will stop now.",
-            "translation_audio": {
-                "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654_en_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654_en_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654_en_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "496a2bc9-eb41-44a3-b60e-f3f409fcb654.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -61801,53 +61566,6 @@
         "user_usefulness": 1,
         "audio": {
             "filename": "1dc4bd1c-2584-4caa-ae85-a21ad10499c8.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "9b8e26aa-f13c-4e95-b416-9290d1afb211",
-        "port": "pergunta",
-        "fr": {
-            "translation": "pergunta: question; questão: problème (ou 'question' selon le contexte)",
-            "note": "Remarque : pergunta se traduit par 'question'. 'Questão' porte l'idée d'un problème ou d'un sujet; selon le contexte, on peut aussi utiliser 'question'.",
-            "use_exemple": "Cette question et ce problème sont importants.",
-            "port_exemple": "Esta pergunta e esta questão são importantes.",
-            "last_update": "2026-05-31",
-            "translation_audio": {
-                "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_fr_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_fr_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "question",
-            "note": "Both 'pergunta' and 'questão' are commonly translated as 'question'. In everyday Portuguese, 'pergunta' is used for asking for information, while 'questão' often refers to an issue or topic in discussions or exams.",
-            "port_exemple": "Na aula, cada pergunta ajuda a esclarecer a questão.",
-            "last_update": "2026-05-08",
-            "use_exemple": "In class, every question helps clarify the issue.",
-            "translation_audio": {
-                "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_en_translation.mp3",
-                "last_update": "2026-05-22"
-            },
-            "use_exemple_audio": {
-                "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_en_exemple.mp3",
-                "last_update": "2026-05-22"
-            },
-            "port_exemple_audio": {
-                "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211_en_pt_exemple.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "9b8e26aa-f13c-4e95-b416-9290d1afb211.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -69002,29 +68720,6 @@
         }
     },
     {
-        "id": "3996cbdc-d2f6-4cf9-b721-d0ce9fbc3381",
-        "port": "ensinar",
-        "fr": {
-            "translation": "former et enseigner",
-            "note": "Le verbe treinar peut se traduire par former ou entraîner selon le contexte. Pour parler de développer des compétences chez quelqu'un, 'former' est généralement plus naturel.",
-            "use_exemple": "Il est important de former et d'enseigner les employés.",
-            "port_exemple": "É importante treinar e ensinar os funcionários.",
-            "last_update": "2026-05-31"
-        },
-        "en": {
-            "translation": "to train and to teach",
-            "note": "In Portuguese, treinar means to practice or prepare, while ensinar means to teach or instruct. They’re commonly used in sports, work, and education contexts.",
-            "port_exemple": "Eu gosto de treinar e ensinar.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I like to train and teach."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "3996cbdc-d2f6-4cf9-b721-d0ce9fbc3381.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "3e18f8ba-308e-432e-9525-00c1ec5d8b33",
         "port": "trocar",
         "fr": {
@@ -72311,13 +72006,13 @@
     },
     {
         "id": "1a79df4d-bb4d-490c-9f4d-371ff481e322",
-        "port": "apaixonar",
+        "port": "apaixonar-se",
         "fr": {
-            "translation": "se passionner (pour quelque chose)",
+            "translation": "tomber amoureux de",
             "note": "À usage général, 'apaixonar' signifie s'attacher fortement, tomber amoureux ou être passionné par quelque chose. En français, on dira plutôt 'tomber amoureux de quelqu'un' pour une passion amoureuse, ou 'se passionner pour quelque chose' pour un intérêt intense.",
             "use_exemple": "Elle est tombée amoureuse de lui.",
             "port_exemple": "Ela se apaixonou por ele.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-06-06"
         },
         "en": {
             "translation": "to fallinlove",
@@ -74560,29 +74255,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "b79bc82d-acf7-40ba-ab16-a325183e4aea.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "78f0f4f9-cb05-4d5b-ae75-3269d006ae0e",
-        "port": "fechar",
-        "fr": {
-            "translation": "fermer",
-            "note": "Remarque : «cerrar» n’est pas portugais; le verbe correct est «fechar». En portugais on dit «fechar» pour «to close».",
-            "use_exemple": "Je vais fermer la porte.",
-            "port_exemple": "Vou fechar a porta.",
-            "last_update": "2026-05-31"
-        },
-        "en": {
-            "translation": "to close",
-            "note": "cerrar is Spanish, not Portuguese. In European Portuguese, the verb for 'to close' is fechar.",
-            "port_exemple": "Vou fechar a porta.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I am going to close the door."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "78f0f4f9-cb05-4d5b-ae75-3269d006ae0e.mp3",
             "last_update": "2026-02-15"
         }
     },
@@ -82131,29 +81803,6 @@
         }
     },
     {
-        "id": "1c2fda15-91c0-43e1-918d-7c7205af8da7",
-        "port": "jantar",
-        "fr": {
-            "translation": "dîner",
-            "note": "Remarque: 'jantar' peut être un nom (o jantar) ou un verbe (jantar). En français, 'dîner' remplit ces deux usages selon le contexte.",
-            "use_exemple": "Allons dîner.",
-            "port_exemple": "Vamos jantar.",
-            "last_update": "2026-02-20"
-        },
-        "en": {
-            "translation": "to have dinner",
-            "note": "Jantar is a verb meaning to have dinner. The noun form is o jantar (the dinner).",
-            "port_exemple": "Vamos jantar às oito.",
-            "last_update": "2026-05-08",
-            "use_exemple": "Let's have dinner at eight."
-        },
-        "user_usefulness": 3,
-        "audio": {
-            "filename": "1c2fda15-91c0-43e1-918d-7c7205af8da7.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "1b9af755-fc1d-4566-8957-cdb768596619",
         "port": "jazer",
         "fr": {
@@ -88678,29 +88327,6 @@
         }
     },
     {
-        "id": "d10a2972-9d08-4298-b176-e8bd8182a1d7",
-        "port": "voltar",
-        "fr": {
-            "translation": "revenir",
-            "note": "Remarque: revenir est le sens le plus courant pour « voltar » quand on parle de revenir vers le locuteur ou le lieu actuel. Retourner est correct mais met l’accent sur l’idée d’aller à un endroit que l’on a quitté.",
-            "use_exemple": "Je vais revenir demain.",
-            "port_exemple": "Vou voltar amanhã.",
-            "last_update": "2026-02-20"
-        },
-        "en": {
-            "translation": "to go back",
-            "note": "Voltar is a common verb meaning to go back or to return. With 'para' it usually means returning to a place (voltar para casa); with 'a + infinitive' it can mean starting again (voltar a estudar).",
-            "port_exemple": "Eu vou voltar amanhã.",
-            "last_update": "2026-05-08",
-            "use_exemple": "I will go back tomorrow."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "d10a2972-9d08-4298-b176-e8bd8182a1d7.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "6ea59b48-c805-4e30-9540-1ab26e2382b4",
         "port": "é",
         "fr": {
@@ -92002,7 +91628,7 @@
             "last_update": "2026-05-09",
             "use_exemple": "If I were you, I would talk to him."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "c2c6c99c-0c96-42b8-9f2d-495756915c32.mp3",
             "last_update": "2026-02-15"
@@ -93267,7 +92893,7 @@
             "last_update": "2026-05-09",
             "use_exemple": "This building is bigger than that one."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "e9cb958f-b88e-44dd-9de7-0254755118f6.mp3",
             "last_update": "2026-02-15"
