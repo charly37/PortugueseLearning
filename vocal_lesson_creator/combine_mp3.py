@@ -26,6 +26,7 @@ import argparse
 import logging
 import os
 import sys
+from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -52,6 +53,42 @@ except ImportError:
 
 SOUNDS_DIR = Path(__file__).parent.parent / "sounds"
 OUTPUT_DIR = Path(__file__).parent / "output"
+
+
+@dataclass
+class GenerationStats:
+    """Counters collected during a lesson generation run."""
+    challenges_requested: int = 0
+    challenges_generated: int = 0
+    challenges_skipped: int = 0       # missing required audio (translation or base PT)
+    missing_examples: int = 0         # optional monolingual example missing
+    missing_bilingual_examples: int = 0  # optional bilingual example missing
+    total_duration_ms: int = 0
+
+    def merge(self, other: "GenerationStats") -> None:
+        self.challenges_requested += other.challenges_requested
+        self.challenges_generated += other.challenges_generated
+        self.challenges_skipped += other.challenges_skipped
+        self.missing_examples += other.missing_examples
+        self.missing_bilingual_examples += other.missing_bilingual_examples
+        self.total_duration_ms += other.total_duration_ms
+
+    def log_summary(self, label: str = "") -> None:
+        prefix = f"[{label}] " if label else ""
+        pct_ok = (
+            100.0 * self.challenges_generated / self.challenges_requested
+            if self.challenges_requested else 0.0
+        )
+        log.info("%s--- Generation Statistics ---", prefix)
+        log.info("%sChallenges requested : %d", prefix, self.challenges_requested)
+        log.info("%sChallenges generated : %d  (%.0f%%)", prefix, self.challenges_generated, pct_ok)
+        if self.challenges_skipped:
+            log.info("%sChallenges skipped   : %d  (missing required audio)", prefix, self.challenges_skipped)
+        if self.missing_examples:
+            log.info("%sMissing examples     : %d", prefix, self.missing_examples)
+        if self.missing_bilingual_examples:
+            log.info("%sMissing bilingual ex.: %d", prefix, self.missing_bilingual_examples)
+        log.info("%sTotal audio duration : %.1fs", prefix, self.total_duration_ms / 1000)
 
 # Milliseconds of silence inserted between clips
 DEFAULT_PAUSE_MS = 2000
@@ -106,7 +143,7 @@ def load_mp3(path: Path) -> AudioSegment:
     return normalize_lufs(segment, label=path.name)
 
 
-def build_word_segment(uid: str, lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR) -> AudioSegment:
+def build_word_segment(uid: str, lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, stats: GenerationStats | None = None) -> AudioSegment:
     """
     Build the audio segment for one challenge UUID.
 
@@ -135,10 +172,14 @@ def build_word_segment(uid: str, lang: str, include_examples: bool, pause_ms: in
             segment = segment + inner_silence + load_mp3(ex_path)
         else:
             log.warning("Missing example audio: %s", ex_path.name)
+            if stats is not None:
+                stats.missing_examples += 1
         if biex_path.exists():
             segment = segment + inner_silence + load_mp3(biex_path)
         else:
             log.warning("Missing bilingual example audio: %s", biex_path.name)
+            if stats is not None:
+                stats.missing_bilingual_examples += 1
 
     return segment + silence
 
@@ -149,8 +190,9 @@ def combine_from_ids(
     include_examples: bool,
     pause_ms: int,
     sounds_dir: Path = SOUNDS_DIR,
-) -> AudioSegment:
+) -> tuple[AudioSegment, GenerationStats]:
     """Combine audio for a list of challenge UUIDs."""
+    stats = GenerationStats(challenges_requested=sum(1 for u in uids if u.strip()))
     combined = AudioSegment.empty()
     for uid in uids:
         uid = uid.strip()
@@ -158,20 +200,30 @@ def combine_from_ids(
             continue
         log.debug("Adding: %s", uid)
         try:
-            combined += build_word_segment(uid, lang, include_examples, pause_ms, sounds_dir)
+            combined += build_word_segment(uid, lang, include_examples, pause_ms, sounds_dir, stats=stats)
+            stats.challenges_generated += 1
         except FileNotFoundError as exc:
             log.error("Skipping %s: %s", uid, exc)
-    return combined
+            stats.challenges_skipped += 1
+    stats.total_duration_ms = len(combined)
+    return combined, stats
 
 
-def combine_from_files(paths: list[Path], pause_ms: int) -> AudioSegment:
+def combine_from_files(paths: list[Path], pause_ms: int) -> tuple[AudioSegment, GenerationStats]:
     """Combine arbitrary MP3 files in order."""
+    stats = GenerationStats(challenges_requested=len(paths))
     silence = AudioSegment.silent(duration=pause_ms)
     combined = AudioSegment.empty()
     for p in paths:
         log.debug("Adding: %s", p)
-        combined += load_mp3(p) + silence
-    return combined
+        try:
+            combined += load_mp3(p) + silence
+            stats.challenges_generated += 1
+        except FileNotFoundError as exc:
+            log.error("Skipping %s: %s", p, exc)
+            stats.challenges_skipped += 1
+    stats.total_duration_ms = len(combined)
+    return combined, stats
 
 
 def current_week_start_utc() -> datetime:
@@ -234,7 +286,8 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             continue
 
         log.info("[user %s] Building lesson from %d challenge(s)...", user_id, len(uids))
-        combined = combine_from_ids(uids, lang=lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
+        combined, user_stats = combine_from_ids(uids, lang=lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
+        user_stats.log_summary(label=f"user {user_id}")
 
         if len(combined) == 0:
             log.warning("[user %s] No audio generated, skipping.", user_id)
@@ -244,7 +297,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
         combined = pydub_effects.normalize(combined, headroom=0.1)
         output_path = OUTPUT_DIR / f"weekly_{user_id}_{timestamp}.mp3"
         combined.export(str(output_path), format="mp3")
-        log.info("[user %s] Done -> %s", user_id, output_path)
+        log.info("[user %s] Lesson duration: %.1fs  ->  %s", user_id, len(combined) / 1000, output_path)
 
 
 def main():
@@ -340,14 +393,17 @@ def main():
 
     log.info("Building lesson -> %s", output_path)
 
+    total_stats = GenerationStats()
+
     if args.ids:
-        combined = combine_from_ids(
+        combined, stats = combine_from_ids(
             args.ids,
             lang=args.lang,
             include_examples=not args.no_examples,
             pause_ms=args.pause,
             sounds_dir=Path(args.sounds_dir),
         )
+        total_stats.merge(stats)
 
     elif args.file:
         list_path = Path(args.file)
@@ -370,19 +426,24 @@ def main():
 
         combined = AudioSegment.empty()
         if uids:
-            combined += combine_from_ids(
+            seg, stats = combine_from_ids(
                 uids,
                 lang=args.lang,
                 include_examples=not args.no_examples,
                 pause_ms=args.pause,
                 sounds_dir=Path(args.sounds_dir),
             )
+            combined += seg
+            total_stats.merge(stats)
         if direct_paths:
-            combined += combine_from_files(direct_paths, pause_ms=args.pause)
+            seg, stats = combine_from_files(direct_paths, pause_ms=args.pause)
+            combined += seg
+            total_stats.merge(stats)
 
     else:  # --files
         paths = [Path(f) for f in args.files]
-        combined = combine_from_files(paths, pause_ms=args.pause)
+        combined, stats = combine_from_files(paths, pause_ms=args.pause)
+        total_stats.merge(stats)
 
     if len(combined) == 0:
         log.error("No audio was generated. Check your input.")
@@ -392,9 +453,10 @@ def main():
     combined = effects.normalize(combined, headroom=0.1)
     log.debug("Combined dBFS after  final peak normalize: %.1f", combined.dBFS)
 
-    duration_s = len(combined) / 1000
+    total_stats.total_duration_ms = len(combined)
+    total_stats.log_summary()
     combined.export(str(output_path), format="mp3")
-    log.info("Done! Lesson duration: %.1fs  ->  %s", duration_s, output_path)
+    log.info("Done! Lesson duration: %.1fs  ->  %s", len(combined) / 1000, output_path)
 
 
 if __name__ == "__main__":
