@@ -18,6 +18,7 @@ import json
 import logging
 import random
 import argparse
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from bson import ObjectId
@@ -28,6 +29,32 @@ logging.basicConfig(
     format="%(levelname)s %(message)s",
 )
 log = logging.getLogger(__name__)
+
+
+@dataclass
+class CreationStats:
+    """Counters collected during a weekly-challenge creation run."""
+    users_found: int = 0
+    users_created: int = 0       # challenge newly inserted
+    users_replaced: int = 0      # existing challenge overwritten
+    users_failed: int = 0        # unexpected error per user
+    total_challenges: int = 0    # sum of challenges across all users
+    users_with_weak_data: int = 0  # users whose selection was weakness-biased
+    total_weak_slots_used: int = 0  # weak words actually injected
+
+    def log_summary(self) -> None:
+        log.info("--- Creation Statistics ---")
+        log.info("Users found          : %d", self.users_found)
+        log.info("Challenges created   : %d (new)", self.users_created)
+        if self.users_replaced:
+            log.info("Challenges replaced  : %d (overwrote existing)", self.users_replaced)
+        if self.users_failed:
+            log.info("Users failed         : %d", self.users_failed)
+        log.info("Total challenges     : %d across %d user(s)",
+                 self.total_challenges, self.users_created + self.users_replaced)
+        if self.users_found:
+            log.info("Weakness-biased      : %d/%d user(s)  (%d weak-word slots used)",
+                     self.users_with_weak_data, self.users_found, self.total_weak_slots_used)
 
 
 # ── helpers ────────────────────────────────────────────────────────────────────
@@ -68,10 +95,12 @@ def connect_db():
     return client, db
 
 
-def pick_challenges(all_challenges: list, user_doc: dict, n: int = 20) -> list:
+def pick_challenges(all_challenges: list, user_doc: dict, n: int = 20) -> tuple[list, int]:
     """
     Select *n* challenges, biasing towards the user's weak words when available.
     Falls back to pure random selection when weakness data is absent.
+
+    Returns (selected_challenges, weak_slots_used).
     """
     if not all_challenges:
         raise ValueError("challenges list is empty")
@@ -98,7 +127,7 @@ def pick_challenges(all_challenges: list, user_doc: dict, n: int = 20) -> list:
 
     # Shuffle final list so weak words aren't always first
     random.shuffle(selected)
-    return selected[:n]
+    return selected[:n], weak_slots
 
 
 def build_weekly_challenge_doc(user_id: str, challenges: list) -> dict:
@@ -133,10 +162,10 @@ def build_weekly_challenge_doc(user_id: str, challenges: list) -> dict:
     }
 
 
-def upsert_weekly_challenge(db, user_id: str, challenges: list) -> str:
+def upsert_weekly_challenge(db, user_id: str, challenges: list) -> tuple[str, bool]:
     """
     Insert or replace the weekly challenge for this user for the current week.
-    Returns the document _id as a string.
+    Returns (document_id, was_new_insert).
     """
     doc = build_weekly_challenge_doc(user_id, challenges)
     collection = db['weeklychallenges']
@@ -151,10 +180,11 @@ def upsert_weekly_challenge(db, user_id: str, challenges: list) -> str:
     )
 
     if result.upserted_id:
-        return str(result.upserted_id)
+        return str(result.upserted_id), True
     # For replaced documents pymongo doesn't return the id directly; query it
     existing = collection.find_one({'userId': user_id, 'weekStart': doc['weekStart']})
-    return str(existing['_id']) if existing else 'unknown'
+    doc_id = str(existing['_id']) if existing else 'unknown'
+    return doc_id, False
 
 
 def resolve_user(db, args) -> list:
@@ -238,20 +268,38 @@ def main():
 
     try:
         users = resolve_user(db, args)
+        stats = CreationStats(users_found=len(users))
         log.info("Processing %d user(s)...", len(users))
 
         for user in users:
             user_id  = str(user['_id'])
             username = user.get('username', user_id)
 
-            selected = pick_challenges(all_challenges, user, n=args.count)
-            doc_id   = upsert_weekly_challenge(db, user_id, selected)
+            try:
+                selected, weak_slots = pick_challenges(all_challenges, user, n=args.count)
+                doc_id, is_new = upsert_weekly_challenge(db, user_id, selected)
+            except Exception as exc:
+                log.error("%s — failed: %s", username, exc)
+                stats.users_failed += 1
+                continue
+
+            if is_new:
+                stats.users_created += 1
+            else:
+                stats.users_replaced += 1
+            stats.total_challenges += len(selected)
+            if weak_slots:
+                stats.users_with_weak_data += 1
+                stats.total_weak_slots_used += weak_slots
 
             words_preview = ', '.join(c.get('port', '') for c in selected[:5])
+            action = "inserted" if is_new else "replaced"
             log.info(
-                "%s — weekly challenge created (id=%s, %d words: %s...)",
-                username, doc_id, len(selected), words_preview,
+                "%s — %s (id=%s, %d words, %d weak: %s...)",
+                username, action, doc_id, len(selected), weak_slots, words_preview,
             )
+
+        stats.log_summary()
 
     finally:
         client.close()
