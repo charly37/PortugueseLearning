@@ -56,7 +56,7 @@ spec:
               mountPath: /app/data
               readOnly: true
             - name: weekly-audio
-              mountPath: /app/data/weekly-audio
+              mountPath: /app/weekly-audio
               readOnly: true
       volumes:
         - name: data
