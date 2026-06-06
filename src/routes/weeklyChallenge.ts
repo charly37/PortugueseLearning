@@ -49,6 +49,7 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       // Challenge is only complete when every word has been correctly answered
       status: correctCount === doc.totalChallenges ? 'completed' : doc.status,
       challenges: doc.challenges,
+      audio: doc.audio ?? null,
     });
   } catch (error) {
     console.error('Error fetching weekly challenge:', error);

@@ -61,6 +61,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 // Serve audio files from the data directory
 app.use('/data', express.static(path.join(__dirname, '../data')));
 
+// Serve weekly lesson MP3 files
+app.use('/weekly-audio', express.static(path.join(__dirname, '../vocal_lesson_creator/output')));
+
 // Load challenges from JSON files
 const challengesPath = path.join(__dirname, '../data/challenges.json');
 const challenges = JSON.parse(fs.readFileSync(challengesPath, 'utf-8'));

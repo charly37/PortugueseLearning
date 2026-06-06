@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Container,
@@ -11,6 +11,8 @@ import {
   Grid,
   Chip,
   Alert,
+  IconButton,
+  Tooltip,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -20,6 +22,8 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import DownloadIcon from '@mui/icons-material/Download';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -44,6 +48,7 @@ interface WeeklyChallenge {
   correctCount: number;
   status: 'active' | 'completed' | 'expired';
   challenges: WeeklyWord[];
+  audio?: { filename: string; last_update: string };
 }
 
 interface WeeklyChallengePageProps {
@@ -61,6 +66,19 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [resetDialogOpen, setResetDialogOpen] = useState(false);
   const [resetting, setResetting] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const playWordAudio = (challengeId: string) => {
+    const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    audioRef.current = new Audio(audioPath);
+    audioRef.current.play().catch(() => {
+      // Silently handle playback errors (file may not exist)
+    });
+  };
 
   useEffect(() => {
     fetchWeeklyChallenge();
@@ -245,6 +263,32 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
               </Dialog>
             </Paper>
 
+            {/* Weekly audio lesson download */}
+            {weekly.audio?.filename && (
+              <Paper elevation={2} sx={{ p: 3, mb: 4 }}>
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+                  <VolumeUpIcon sx={{ mt: 0.5, color: 'primary.main', flexShrink: 0 }} />
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, mb: 0.5 }}>
+                      {t('weeklyChallenge.lessonDownloadTitle')}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                      {t('weeklyChallenge.lessonDownloadDescription')}
+                    </Typography>
+                    <Button
+                      variant="outlined"
+                      startIcon={<DownloadIcon />}
+                      component="a"
+                      href={`/weekly-audio/${weekly.audio.filename}`}
+                      download={weekly.audio.filename}
+                    >
+                      {t('weeklyChallenge.lessonDownloadButton')}
+                    </Button>
+                  </Box>
+                </Box>
+              </Paper>
+            )}
+
             {/* Word list */}
             <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
               {t('weeklyChallenge.wordList')}
@@ -281,7 +325,7 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
                         sx={{ fontSize: 18, color: 'text.disabled', flexShrink: 0 }}
                       />
                     )}
-                    <Box>
+                    <Box sx={{ flexGrow: 1, minWidth: 0 }}>
                       <Typography variant="caption" color="text.disabled" sx={{ display: 'block' }}>
                         #{idx + 1}
                       </Typography>
@@ -289,6 +333,15 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
                         {word.portuguese}
                       </Typography>
                     </Box>
+                    <Tooltip title={word.portuguese}>
+                      <IconButton
+                        size="small"
+                        onClick={() => playWordAudio(word.challengeId)}
+                        sx={{ color: 'text.disabled', flexShrink: 0, p: 0.25, '&:hover': { color: 'primary.main' } }}
+                      >
+                        <VolumeUpIcon sx={{ fontSize: 15 }} />
+                      </IconButton>
+                    </Tooltip>
                   </Paper>
                 </Grid>
               ))}

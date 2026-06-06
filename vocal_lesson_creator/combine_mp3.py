@@ -233,7 +233,7 @@ def current_week_start_utc() -> datetime:
     return now - timedelta(days=day)
 
 
-def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR) -> None:
+def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR) -> None:
     """Fetch current week's challenges from MongoDB and create one MP3 per user."""
     try:
         from pymongo import MongoClient
@@ -260,7 +260,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
         return
 
     log.info("Found %d weekly challenge document(s) since %s", len(docs), cutoff.date())
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    output_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     today = datetime.now().strftime("%Y-%m-%d")
 
@@ -299,7 +299,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             from pydub import effects as pydub_effects
             combined = pydub_effects.normalize(combined, headroom=0.1)
             filename = f"weekly_{doc_id}_{timestamp}.mp3"
-            output_path = OUTPUT_DIR / filename
+            output_path = output_dir / filename
             combined.export(str(output_path), format="mp3")
             log.info("[%s] Lesson duration: %.1fs  ->  %s", doc_id, len(combined) / 1000, output_path)
 
@@ -372,6 +372,12 @@ def main():
         help=f"Directory containing sound files (default: {SOUNDS_DIR})",
     )
     parser.add_argument(
+        "--output-dir",
+        default=str(OUTPUT_DIR),
+        metavar="DIR",
+        help=f"Directory to write output MP3 files into, used with --weekly-challenge (default: {OUTPUT_DIR})",
+    )
+    parser.add_argument(
         "--log-level",
         default="INFO",
         choices=["DEBUG", "INFO", "WARNING", "ERROR"],
@@ -394,6 +400,7 @@ def main():
             include_examples=not args.no_examples,
             pause_ms=args.pause,
             sounds_dir=Path(args.sounds_dir),
+            output_dir=Path(args.output_dir),
         )
         return
 

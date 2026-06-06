@@ -125,7 +125,10 @@
     "resetDialogTitle": "Reset your progress?",
     "resetDialogBody": "This will clear all your answers for this week and let you start over from scratch. Your mastered words will be lost.",
     "resetConfirm": "Yes, reset",
-    "resetError": "Failed to reset progress. Please try again."
+    "resetError": "Failed to reset progress. Please try again.",
+    "lessonDownloadTitle": "Weekly Audio Lesson",
+    "lessonDownloadDescription": "This audio file contains a listening exercise for your 20 words this week, including Portuguese pronunciation and example sentences. Listen on repeat to reinforce your learning.",
+    "lessonDownloadButton": "Download MP3 lesson"
   },
 
   "auth": {

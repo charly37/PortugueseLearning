@@ -125,7 +125,10 @@
     "resetDialogTitle": "Réinitialiser votre progression ?",
     "resetDialogBody": "Cela effacera toutes vos réponses de cette semaine et vous permettra de recommencer depuis le début. Les mots maîtrisés seront perdus.",
     "resetConfirm": "Oui, réinitialiser",
-    "resetError": "Impossible de réinitialiser la progression. Veuillez réessayer."
+    "resetError": "Impossible de réinitialiser la progression. Veuillez réessayer.",
+    "lessonDownloadTitle": "Leçon audio de la semaine",
+    "lessonDownloadDescription": "Ce fichier audio contient un exercice d'écoute pour vos 20 mots de la semaine, avec la prononciation en portugais et des exemples de phrases. Écoutez en boucle pour renforcer votre apprentissage.",
+    "lessonDownloadButton": "Télécharger la leçon MP3"
   },
   "auth": {
     "loginTitle": "Connexion",
