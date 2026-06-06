@@ -62,7 +62,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/data', express.static(path.join(__dirname, '../data')));
 
 // Serve weekly lesson MP3 files
-app.use('/weekly-audio', express.static(path.join(__dirname, '../vocal_lesson_creator/output')));
+app.use('/weekly-audio', express.static(path.join(__dirname, '../data/weekly-audio')));
 
 // Load challenges from JSON files
 const challengesPath = path.join(__dirname, '../data/challenges.json');

@@ -26,6 +26,9 @@ app:
 data:
   hostPath: /home/ubuntu/PortugueseLearning/data
 
+weeklyAudio:
+  hostPath: /home/ubuntu/PortugueseLearning/weekly-audio
+
 ingress:
   host: dialecthub.net
   # Use letsencrypt-staging for first-time testing to avoid rate limits

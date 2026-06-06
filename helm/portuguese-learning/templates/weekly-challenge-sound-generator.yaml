@@ -22,7 +22,7 @@ spec:
             - name: weekly-challenge
               image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
               imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
-              command: ["python", "-u", "combine_mp3.py", "--weekly-challenge", "--lang", "fr"]
+              command: ["python", "-u", "combine_mp3.py", "--weekly-challenge", "--lang", "fr", "--output-dir", "/app/weekly-audio"]
               env:
                 - name: MONGODB_URI
                   valueFrom:
@@ -31,3 +31,11 @@ spec:
                       key: mongodb-uri
               resources:
                 {{- toYaml .Values.resources.weeklyChallengeSounds | nindent 16 }}
+              volumeMounts:
+                - name: weekly-audio
+                  mountPath: /app/weekly-audio
+          volumes:
+            - name: weekly-audio
+              hostPath:
+                path: {{ .Values.weeklyAudio.hostPath }}
+                type: DirectoryOrCreate

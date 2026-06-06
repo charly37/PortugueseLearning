@@ -55,8 +55,15 @@ spec:
             - name: data
               mountPath: /app/data
               readOnly: true
+            - name: weekly-audio
+              mountPath: /app/data/weekly-audio
+              readOnly: true
       volumes:
         - name: data
           hostPath:
             path: {{ .Values.data.hostPath }}
+            type: Directory
+        - name: weekly-audio
+          hostPath:
+            path: {{ .Values.weeklyAudio.hostPath }}
             type: Directory
