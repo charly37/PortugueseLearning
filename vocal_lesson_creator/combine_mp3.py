@@ -253,51 +253,63 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
     week_start = current_week_start_utc()
     cutoff = datetime.now(tz=timezone.utc) - timedelta(weeks=MAX_CHALLENGE_AGE_WEEKS)
     docs = list(collection.find({"weekStart": {"$gte": cutoff}}))
-    client.close()
 
     if not docs:
+        client.close()
         log.warning("No weekly challenge documents found within the last %d weeks.", MAX_CHALLENGE_AGE_WEEKS)
         return
 
     log.info("Found %d weekly challenge document(s) since %s", len(docs), cutoff.date())
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    today = datetime.now().strftime("%Y-%m-%d")
 
-    for doc in docs:
-        user_id = str(doc.get("userId", "unknown"))
+    try:
+        for doc in docs:
+            doc_id = str(doc["_id"])
+            user_id = str(doc.get("userId", "unknown"))
 
-        doc_week = doc.get("weekStart")
-        if doc_week is not None:
-            if doc_week.tzinfo is None:
-                doc_week = doc_week.replace(tzinfo=timezone.utc)
-            age_days = (datetime.now(tz=timezone.utc) - doc_week).days
-            if age_days > MAX_CHALLENGE_AGE_WEEKS * 7:
-                log.warning(
-                    "[user %s] Skipping stale challenge: weekStart %s is %d days old (limit: %d weeks)",
-                    user_id, doc_week.date(), age_days, MAX_CHALLENGE_AGE_WEEKS,
-                )
+            doc_week = doc.get("weekStart")
+            if doc_week is not None:
+                if doc_week.tzinfo is None:
+                    doc_week = doc_week.replace(tzinfo=timezone.utc)
+                age_days = (datetime.now(tz=timezone.utc) - doc_week).days
+                if age_days > MAX_CHALLENGE_AGE_WEEKS * 7:
+                    log.warning(
+                        "[%s] Skipping stale challenge: weekStart %s is %d days old (limit: %d weeks)",
+                        doc_id, doc_week.date(), age_days, MAX_CHALLENGE_AGE_WEEKS,
+                    )
+                    continue
+
+            challenges = doc.get("challenges", [])
+            uids = [c["challengeId"] for c in challenges if c.get("challengeId")]
+
+            if not uids:
+                log.warning("[%s] No challenge IDs found, skipping.", doc_id)
                 continue
 
-        challenges = doc.get("challenges", [])
-        uids = [c["challengeId"] for c in challenges if c.get("challengeId")]
+            log.info("[%s] Building lesson for user %s from %d challenge(s)...", doc_id, user_id, len(uids))
+            combined, user_stats = combine_from_ids(uids, lang=lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
+            user_stats.log_summary(label=doc_id)
 
-        if not uids:
-            log.warning("[user %s] No challenge IDs found, skipping.", user_id)
-            continue
+            if len(combined) == 0:
+                log.warning("[%s] No audio generated, skipping.", doc_id)
+                continue
 
-        log.info("[user %s] Building lesson from %d challenge(s)...", user_id, len(uids))
-        combined, user_stats = combine_from_ids(uids, lang=lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
-        user_stats.log_summary(label=f"user {user_id}")
+            from pydub import effects as pydub_effects
+            combined = pydub_effects.normalize(combined, headroom=0.1)
+            filename = f"weekly_{doc_id}_{timestamp}.mp3"
+            output_path = OUTPUT_DIR / filename
+            combined.export(str(output_path), format="mp3")
+            log.info("[%s] Lesson duration: %.1fs  ->  %s", doc_id, len(combined) / 1000, output_path)
 
-        if len(combined) == 0:
-            log.warning("[user %s] No audio generated, skipping.", user_id)
-            continue
-
-        from pydub import effects as pydub_effects
-        combined = pydub_effects.normalize(combined, headroom=0.1)
-        output_path = OUTPUT_DIR / f"weekly_{user_id}_{timestamp}.mp3"
-        combined.export(str(output_path), format="mp3")
-        log.info("[user %s] Lesson duration: %.1fs  ->  %s", user_id, len(combined) / 1000, output_path)
+            collection.update_one(
+                {"_id": doc["_id"]},
+                {"$set": {"audio": {"filename": filename, "last_update": today}}},
+            )
+            log.info("[%s] Updated MongoDB audio metadata: %s", doc_id, filename)
+    finally:
+        client.close()
 
 
 def main():
