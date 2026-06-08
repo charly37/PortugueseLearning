@@ -421,12 +421,15 @@ def main():
         force=True,
     )
 
+    sounds_dir = Path(args.sounds_dir)
+    log.info("Sounds directory: %s (exists: %s)", sounds_dir, sounds_dir.exists())
+
     if args.weekly_challenge:
         build_weekly_lessons(
             lang=args.lang,
             include_examples=not args.no_examples,
             pause_ms=args.pause,
-            sounds_dir=Path(args.sounds_dir),
+            sounds_dir=sounds_dir,
             output_dir=Path(args.output_dir),
         )
         return
@@ -447,7 +450,7 @@ def main():
             lang=args.lang,
             include_examples=not args.no_examples,
             pause_ms=args.pause,
-            sounds_dir=Path(args.sounds_dir),
+            sounds_dir=sounds_dir,
         )
         total_stats.merge(stats)
 
@@ -477,7 +480,7 @@ def main():
                 lang=args.lang,
                 include_examples=not args.no_examples,
                 pause_ms=args.pause,
-                sounds_dir=Path(args.sounds_dir),
+                sounds_dir=sounds_dir,
             )
             combined += seg
             total_stats.merge(stats)

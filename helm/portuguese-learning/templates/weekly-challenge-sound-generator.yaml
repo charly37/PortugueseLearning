@@ -33,9 +33,9 @@ spec:
                 {{- toYaml .Values.resources.weeklyChallengeSounds | nindent 16 }}
               volumeMounts:
                 - name: weekly-audio
-                  mountPath: /app/weekly-audio
+                  mountPath: /weekly-audio
                 - name: sounds
-                  mountPath: /app/sounds
+                  mountPath: /sounds
                   readOnly: true
           volumes:
             - name: weekly-audio
