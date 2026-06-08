@@ -82,7 +82,9 @@ jobs:
 
     - name: Build and push App Docker image
       run: |
-        docker build -t ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ github.event.inputs.version }} .
+        docker build \
+          --build-arg APP_VERSION=${{ github.event.inputs.version }} \
+          -t ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ github.event.inputs.version }} .
         docker tag ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ github.event.inputs.version }} \
           ${{ vars.DOCKER_USERNAME }}/portuguese-learning:latest
         docker push ${{ vars.DOCKER_USERNAME }}/portuguese-learning:${{ github.event.inputs.version }}

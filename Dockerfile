@@ -13,6 +13,10 @@ RUN npm ci
 # Copy source code
 COPY . .
 
+# Build-time version argument injected by CI
+ARG APP_VERSION=dev
+ENV APP_VERSION=${APP_VERSION}
+
 # Build the application
 RUN npm run build
 
