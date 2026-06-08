@@ -36,6 +36,7 @@ spec:
                   mountPath: /app/weekly-audio
                 - name: sounds
                   mountPath: /app/sounds
+                  readOnly: true
           volumes:
             - name: weekly-audio
               hostPath:
@@ -45,4 +46,3 @@ spec:
               hostPath:
                 path: {{ .Values.sounds.hostPath }}
                 type: DirectoryOrCreate
-                readOnly: true
