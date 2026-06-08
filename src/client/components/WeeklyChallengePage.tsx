@@ -69,7 +69,7 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const playWordAudio = (challengeId: string) => {
-    const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+    const audioPath = `${window.location.origin}/sounds/${challengeId}.mp3`;
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;

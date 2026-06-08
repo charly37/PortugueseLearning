@@ -134,7 +134,7 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
   // Check if audio file exists for the current word
   const checkAudioAvailability = async (challengeId: string) => {
     try {
-      const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+      const audioPath = `${window.location.origin}/sounds/${challengeId}.mp3`;
       const testAudio = new Audio();
       
       const checkPromise = new Promise<boolean>((resolve) => {
@@ -153,7 +153,7 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
   // Play audio pronunciation
   const playAudio = (challengeId: string) => {
     if (audioAvailable) {
-      const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+      const audioPath = `${window.location.origin}/sounds/${challengeId}.mp3`;
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;

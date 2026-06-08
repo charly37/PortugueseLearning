@@ -8,7 +8,10 @@ The application runs on Kubernetes using k3s on a single Ubuntu VM, packaged as 
 - k3s installed (`curl -sfL https://get.k3s.io | sh -`)
 - Helm 3 installed (`curl -sSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`)
 - cert-manager installed (see [HTTPS Setup](HTTPS_SETUP.md))
-- Challenge data files present on the node at the path set in `data.hostPath` (default: `/home/ubuntu/PortugueseLearning/data`)
+- Three data directories present on the k3s node before deploying:
+  - `data.hostPath` (default: `/home/ubuntu/PortugueseLearning/data`) — challenge JSON files (text data)
+  - `sounds.hostPath` (default: `/home/ubuntu/PortugueseLearning/sounds`) — basic word pronunciation MP3s
+  - `weeklyAudio.hostPath` (default: `/home/ubuntu/PortugueseLearning/weekly-audio`) — generated weekly challenge MP3s
 
 ### One-Time Setup (production)
 
@@ -61,9 +64,12 @@ The chart supports running a full second instance (staging) side-by-side with pr
 **One-time setup for staging:**
 
 ```bash
-# Separate data directory — avoids any risk of corrupting prod data
+# Separate data directories — avoids any risk of corrupting prod data
 mkdir -p /home/ubuntu/PortugueseLearning/data-staging
 cp /home/ubuntu/PortugueseLearning/data/*.json /home/ubuntu/PortugueseLearning/data-staging/
+# Sounds and weekly-audio are read-only inputs/outputs; staging can share the prod
+# sounds folder (read-only) but needs its own weekly-audio output directory.
+mkdir -p /home/ubuntu/PortugueseLearning/weekly-audio-staging
 
 # Secret in the staging namespace (same name, different namespace — no collision)
 kubectl create namespace portuguese-learning-staging
@@ -113,6 +119,8 @@ helm upgrade --install staging \
   --set ingress.clusterIssuer=letsencrypt-prod \
   --set ingress.tlsSecretName=staging-dialecthub-tls \
   --set data.hostPath=/home/ubuntu/PortugueseLearning/data-staging \
+  --set sounds.hostPath=/home/ubuntu/PortugueseLearning/sounds \
+  --set weeklyAudio.hostPath=/home/ubuntu/PortugueseLearning/weekly-audio-staging \
   --set certManager.createIssuers=false
 ```
 
@@ -152,6 +160,8 @@ helm upgrade --install staging \
   --set ingress.clusterIssuer=letsencrypt-prod \
   --set ingress.tlsSecretName=staging-dialecthub-tls \
   --set data.hostPath=/home/ubuntu/PortugueseLearning/data-staging \
+  --set sounds.hostPath=/home/ubuntu/PortugueseLearning/sounds \
+  --set weeklyAudio.hostPath=/home/ubuntu/PortugueseLearning/weekly-audio-staging \
   --set certManager.createIssuers=false
 ```
 
@@ -206,7 +216,9 @@ All tuneable values are in `helm/portuguese-learning/values.yaml`. Key overrides
 | `ingress.host` | `dialecthub.net` | Public hostname |
 | `ingress.clusterIssuer` | `letsencrypt-prod` | cert-manager issuer name |
 | `ingress.tlsSecretName` | `dialecthub-tls` | Name of the TLS secret cert-manager will create |
-| `data.hostPath` | `/home/ubuntu/PortugueseLearning/data` | Node path for challenge JSON files |
+| `data.hostPath` | `/home/ubuntu/PortugueseLearning/data` | Node path for challenge JSON files (text data) |
+| `sounds.hostPath` | `/home/ubuntu/PortugueseLearning/sounds` | Node path for basic word pronunciation MP3s (read-only) |
+| `weeklyAudio.hostPath` | `/home/ubuntu/PortugueseLearning/weekly-audio` | Node path for generated weekly challenge MP3s (read-write) |
 | `certManager.email` | `admin@dialecthub.net` | Let's Encrypt registration email |
 | `certManager.createIssuers` | `true` | Create `ClusterIssuer` resources. Set `false` for secondary releases (staging) since ClusterIssuers are cluster-scoped and shared. |
 

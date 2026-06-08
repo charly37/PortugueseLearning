@@ -59,7 +59,12 @@ app.use('/api/weekly-challenge', weeklyChallengeRoutes);
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Serve audio files from the data directory
-app.use('/data', express.static(path.join(__dirname, '../data')));
+//app.use('/data', express.static(path.join(__dirname, '../data')));
+
+// Serve audio files from the sounds directory
+const soundsPath = path.join(__dirname, '../sounds');
+console.log(`Serving basic audio files from: ${soundsPath}`);
+app.use('/sounds', express.static(soundsPath));
 
 // Serve weekly lesson MP3 files - let s make it configurable via environment variable and helm values
 const audioPath = process.env.AUDIO_PATH || path.join(__dirname, '../weekly-audio');

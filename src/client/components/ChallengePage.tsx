@@ -92,7 +92,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   // Check if audio file exists for the current word
   const checkAudioAvailability = async (challengeId: string) => {
     try {
-      const audioPath = `${window.location.origin}/data/${challengeId}.mp3`;
+      const audioPath = `${window.location.origin}/sounds/${challengeId}.mp3`;
       const testAudio = new Audio();
       
       const checkPromise = new Promise<boolean>((resolve) => {
@@ -111,7 +111,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
   // Play audio pronunciation
   const playAudio = () => {
     if (challenge && audioAvailable) {
-      const audioPath = `${window.location.origin}/data/${challenge.id}.mp3`;
+      const audioPath = `${window.location.origin}/sounds/${challenge.id}.mp3`;
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;

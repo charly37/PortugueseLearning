@@ -233,10 +233,19 @@ def current_week_start_utc() -> datetime:
     return now - timedelta(days=day)
 
 
+VALID_LANGS = {"en", "fr"}
+
+
 def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR) -> None:
-    """Fetch current week's challenges from MongoDB and create one MP3 per user."""
+    """Fetch current week's challenges from MongoDB and create one MP3 per user.
+
+    The language used for each lesson is taken from the user's ``preferredLanguage``
+    field in the ``users`` collection.  ``lang`` is used only as a fallback when
+    the profile cannot be found or contains an unsupported value.
+    """
     try:
         from pymongo import MongoClient
+        from bson import ObjectId
     except ImportError:
         log.error("pymongo is required for --weekly-challenge. Install it with: pip install pymongo")
         sys.exit(1)
@@ -249,6 +258,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
     client = MongoClient(mongodb_uri)
     db = client.get_default_database()
     collection = db["weeklychallenges"]
+    users_collection = db["users"]
 
     week_start = current_week_start_utc()
     cutoff = datetime.now(tz=timezone.utc) - timedelta(weeks=MAX_CHALLENGE_AGE_WEEKS)
@@ -288,8 +298,25 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                 log.warning("[%s] No challenge IDs found, skipping.", doc_id)
                 continue
 
+            # Resolve language from the user's profile; fall back to CLI default
+            user_lang = lang
+            raw_uid = doc.get("userId")
+            if raw_uid is not None:
+                try:
+                    user_doc = users_collection.find_one(
+                        {"_id": ObjectId(str(raw_uid))},
+                        {"preferredLanguage": 1},
+                    )
+                    if user_doc and user_doc.get("preferredLanguage") in VALID_LANGS:
+                        user_lang = user_doc["preferredLanguage"]
+                        log.info("[%s] Using user language: %s", doc_id, user_lang)
+                    else:
+                        log.warning("[%s] No valid preferredLanguage for user %s, using default: %s", doc_id, user_id, user_lang)
+                except Exception as exc:
+                    log.warning("[%s] Could not look up user language (%s), using default: %s", doc_id, exc, user_lang)
+
             log.info("[%s] Building lesson for user %s from %d challenge(s)...", doc_id, user_id, len(uids))
-            combined, user_stats = combine_from_ids(uids, lang=lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
+            combined, user_stats = combine_from_ids(uids, lang=user_lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
             user_stats.log_summary(label=doc_id)
 
             if len(combined) == 0:
