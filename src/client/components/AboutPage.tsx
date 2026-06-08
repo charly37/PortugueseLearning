@@ -275,6 +275,13 @@ const AboutPage: React.FC = () => {
               {t('about.getStartedText')}
             </Typography>
           </Box>
+
+          {/* Version */}
+          <Box sx={{ mt: 4, textAlign: 'center' }}>
+            <Typography variant="caption" color="text.disabled">
+              {t('about.versionLabel')}: {APP_VERSION}
+            </Typography>
+          </Box>
         </Box>
       </Container>
     </Box>

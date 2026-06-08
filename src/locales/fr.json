@@ -79,7 +79,8 @@
     "openSourceTitle": "Open Source & Développé avec l'IA",
     "openSourceText": "Ce projet est open source et sert à la fois d'outil d'apprentissage du portugais et d'opportunité pour moi d'explorer la programmation avec l'assistance de l'IA. Le code source complet est disponible sur GitHub.",
     "githubStar": "⭐ Ajoutez une étoile au dépôt pour montrer votre soutien et votre appréciation !",
-    "githubIssues": "🐛 Vous avez trouvé un bug ou avez une idée d'amélioration ? Ouvrez un ticket sur GitHub - vos retours sont précieux !"
+    "githubIssues": "🐛 Vous avez trouvé un bug ou avez une idée d'amélioration ? Ouvrez un ticket sur GitHub - vos retours sont précieux !",
+    "versionLabel": "Version"
   },
   "landing": {
     "welcome": "Bienvenue",
