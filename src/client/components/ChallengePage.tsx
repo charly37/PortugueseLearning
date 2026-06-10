@@ -1038,6 +1038,11 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                     challengeId={challenge.id}
                     currentUsefulness={challenge.user_usefulness}
                     isGuest={user?.isGuest}
+                    onVoteSubmit={(usefulness) => {
+                      if (usefulness === 1) {
+                        handleChallengeFlag(challenge.id);
+                      }
+                    }}
                   />
                 )}
 
