@@ -243,6 +243,8 @@ def parse_args():
                        help='Create weekly challenges for every user in the DB')
     parser.add_argument('--count', type=int, default=20,
                         help='Number of challenges to include (default: 20)')
+    parser.add_argument('--min-usefulness', type=int, default=2,
+                        help='Minimum usefulness value for a challenge to be included (default: 2)')
     parser.add_argument(
         '--log-level',
         default='INFO',
@@ -264,6 +266,11 @@ def main():
     )
 
     all_challenges = load_word_challenges()
+    if args.min_usefulness > 1:
+        before = len(all_challenges)
+        all_challenges = [c for c in all_challenges if c.get('usefulness', 2) >= args.min_usefulness]
+        log.info("Filtered by min_usefulness=%d: %d → %d challenges",
+                 args.min_usefulness, before, len(all_challenges))
     client, db     = connect_db()
 
     try:
