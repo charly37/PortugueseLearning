@@ -1,6 +1,12 @@
 # Python Services Container (analytics + weekly challenge + vocal lesson creator)
 FROM python:3.14-alpine
 
+# let s try non root
+RUN addgroup -g 1000 appuser && \
+    adduser -u 1000 -G appuser -D appuser
+
+USER appuser
+
 # Set working directory
 WORKDIR /app
 
