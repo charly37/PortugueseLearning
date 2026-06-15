@@ -1,45 +1,45 @@
-# Use Node.js LTS version
+# ==================== BUILDER STAGE ====================
 FROM node:26-alpine AS builder
 
-# Set working directory
 WORKDIR /app
 
-# Copy package files
 COPY package*.json ./
-
-# Install dependencies
 RUN npm ci
 
-# Copy source code
 COPY . .
 
-# Build-time version argument injected by CI
 ARG APP_VERSION=dev
 ENV APP_VERSION=${APP_VERSION}
 
-# Build the application
 RUN npm run build
 
-# Production stage
+
+# ==================== PRODUCTION STAGE ====================
 FROM node:26-alpine
 
-# Set working directory
+# Create non-root user
+RUN addgroup -g 1000 appuser && \
+    adduser -u 1000 -G appuser -D appuser
+
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install production dependencies only
+# Install production dependencies (as root)
 RUN npm ci --only=production
 
-# Copy built files from builder stage
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
+# Copy built files from builder stage with correct ownership
+COPY --from=builder --chown=appuser:appuser /app/dist ./dist
+COPY --from=builder --chown=appuser:appuser /app/public ./public
+
+# Switch to non-root user
+USER appuser
 
 # Expose port
 EXPOSE 3000
 
-# Set environment variables
+# Environment variables
 ENV NODE_ENV=production
 ENV PORT=3000
 
