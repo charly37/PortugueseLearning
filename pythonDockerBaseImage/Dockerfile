@@ -1,29 +1,41 @@
 # Python Services Container (analytics + weekly challenge + vocal lesson creator)
 FROM python:3.14-alpine
 
+# Create non-root user
+RUN addgroup -g 1000 appuser && \
+    adduser -u 1000 -G appuser -D appuser
+
 # Set working directory
 WORKDIR /app
 
-# Disable Python output buffering for Docker logs
-ENV PYTHONUNBUFFERED=1
-
-# ffmpeg is required by pydub (combine_mp3.py) for MP3 encoding/decoding
+# Install system dependencies (as root)
 RUN apk add --no-cache ffmpeg
 
-# Copy and install dependencies from all services
+# Create virtual environment (as root) and use it
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Disable Python output buffering
+ENV PYTHONUNBUFFERED=1
+
+# Copy requirements files
 COPY analytics/requirements.txt analytics-requirements.txt
 COPY weekly_challenge/requirements.txt weekly-requirements.txt
 COPY vocal_lesson_creator/requirements.txt vocal-requirements.txt
-RUN pip install --no-cache-dir -r analytics-requirements.txt -r weekly-requirements.txt -r vocal-requirements.txt
 
-# Copy scripts from all services
-COPY analytics/*.py .
-COPY weekly_challenge/create_weekly_challenge.py .
-COPY vocal_lesson_creator/combine_mp3.py .
+# Install Python dependencies into the venv (as root)
+RUN pip install --no-cache-dir -r analytics-requirements.txt \
+    -r weekly-requirements.txt \
+    -r vocal-requirements.txt
 
-# Copy challenge data files
-COPY data/ /app/data/
+# Switch to non-root user
+USER appuser
 
-# Default: run analytics jobs (weakness analysis + usefulness aggregation)
-# Weekly challenge CronJob overrides this via Kubernetes command:
+# Copy application code (with correct ownership)
+COPY --chown=appuser:appuser analytics/*.py .
+COPY --chown=appuser:appuser weekly_challenge/create_weekly_challenge.py .
+COPY --chown=appuser:appuser vocal_lesson_creator/combine_mp3.py .
+COPY --chown=appuser:appuser data/ /app/data/
+
+# Default command
 CMD ["python", "-u", "analyze_weaknesses.py"]

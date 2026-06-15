@@ -66911,6 +66911,14 @@
             "translation_audio": {
                 "filename": "61b2ce0a-8148-45da-9a6a-ad879dfb81da_en_translation.mp3",
                 "last_update": "2026-05-22"
+            },
+            "use_exemple_audio": {
+                "filename": "61b2ce0a-8148-45da-9a6a-ad879dfb81da_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "61b2ce0a-8148-45da-9a6a-ad879dfb81da_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
             }
         },
         "user_usefulness": 2,
@@ -66931,6 +66939,14 @@
             "translation_audio": {
                 "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d_fr_translation.mp3",
                 "last_update": "2026-05-22"
+            },
+            "use_exemple_audio": {
+                "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
             }
         },
         "en": {
@@ -66942,6 +66958,14 @@
             "translation_audio": {
                 "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d_en_translation.mp3",
                 "last_update": "2026-05-22"
+            },
+            "use_exemple_audio": {
+                "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "4488940b-b6d7-4244-a403-a0eedae67a5d_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
             }
         },
         "user_usefulness": 1,
@@ -66958,14 +66982,38 @@
             "note": "En portugais européen, 'scooter' est emprunté à l'anglais et désigne principalement le véhicule motorisé. Pour le patinete non motorisé, on dit plutôt 'patinete'.",
             "use_exemple": "J'ai acheté un scooter.",
             "port_exemple": "Comprei um scooter.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "b41d4ce6-d59c-4e47-8959-57ca88f4c186_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b41d4ce6-d59c-4e47-8959-57ca88f4c186_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b41d4ce6-d59c-4e47-8959-57ca88f4c186_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "scooter",
             "note": "In European Portuguese, 'scooter' is a borrowed term used for both motorized and kick scooters. For non-motorized versions, 'patinete' is more common.",
             "port_exemple": "Eu comprei um scooter elétrico.",
             "last_update": "2026-05-08",
-            "use_exemple": "I bought an electric scooter."
+            "use_exemple": "I bought an electric scooter.",
+            "translation_audio": {
+                "filename": "b41d4ce6-d59c-4e47-8959-57ca88f4c186_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b41d4ce6-d59c-4e47-8959-57ca88f4c186_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b41d4ce6-d59c-4e47-8959-57ca88f4c186_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -66981,14 +67029,38 @@
             "note": "En portugais, 'secar' signifie enlever l'humidité. En français, 'sécher' est correct, mais 'essuyer' est plus courant lorsque l'on parle de laver puis sécher ou essuyer la vaisselle.",
             "use_exemple": "Je sèche la vaisselle.",
             "port_exemple": "Eu seco a louça.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "3b3e39bf-c605-4496-ae20-91a53e5065bb_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3b3e39bf-c605-4496-ae20-91a53e5065bb_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3b3e39bf-c605-4496-ae20-91a53e5065bb_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to dry",
             "note": "Seçar usually means 'to dry' something; 'to dry up' is used for liquids drying out (e.g., a river). The reflexive form 'secar-se' means 'to dry oneself'.",
             "port_exemple": "Eu preciso secar a roupa.",
             "last_update": "2026-05-08",
-            "use_exemple": "I need to dry the clothes."
+            "use_exemple": "I need to dry the clothes.",
+            "translation_audio": {
+                "filename": "3b3e39bf-c605-4496-ae20-91a53e5065bb_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3b3e39bf-c605-4496-ae20-91a53e5065bb_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3b3e39bf-c605-4496-ae20-91a53e5065bb_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67004,14 +67076,38 @@
             "note": "En portugais, 'seco' signifie 'dry' et s’accorde en genre et en nombre (seco, seca, secos, secas). En français, on utilise 'sec' pour décrire quelque chose qui manque d’humidité, comme le pain ou le vin.",
             "use_exemple": "Le pain est sec.",
             "port_exemple": "O pão está seco.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "29681c39-360b-4143-ac35-0344c4649506_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "29681c39-360b-4143-ac35-0344c4649506_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "29681c39-360b-4143-ac35-0344c4649506_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "dry",
             "note": "Seco primarily means 'dry' in European Portuguese. In context, it can refer to weather, foods, or drinks (e.g., vinho seco - dry wine) and may imply stale bread in some cases.",
             "port_exemple": "Este pão está seco.",
             "last_update": "2026-05-08",
-            "use_exemple": "This bread is dry."
+            "use_exemple": "This bread is dry.",
+            "translation_audio": {
+                "filename": "29681c39-360b-4143-ac35-0344c4649506_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "29681c39-360b-4143-ac35-0344c4649506_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "29681c39-360b-4143-ac35-0344c4649506_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -67027,14 +67123,38 @@
             "note": "Le mot 'secrétaire' est invariable en genre. On écrit 'une secrétaire' pour une femme et 'un secrétaire' pour un homme.",
             "use_exemple": "La secrétaire est arrivée tôt.",
             "port_exemple": "A secretária chegou cedo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "3d70d7b9-af51-4792-be5a-24cba4e638b0_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3d70d7b9-af51-4792-be5a-24cba4e638b0_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3d70d7b9-af51-4792-be5a-24cba4e638b0_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "secretary",
             "note": "Usually means 'secretary' (a female secretary). In a furniture context, it can also refer to a 'secretary desk'.",
             "port_exemple": "A secretária chegou às 9h.",
             "last_update": "2026-05-08",
-            "use_exemple": "The secretary arrived at 9 o'clock."
+            "use_exemple": "The secretary arrived at 9 o'clock.",
+            "translation_audio": {
+                "filename": "3d70d7b9-af51-4792-be5a-24cba4e638b0_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3d70d7b9-af51-4792-be5a-24cba4e638b0_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3d70d7b9-af51-4792-be5a-24cba4e638b0_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67050,14 +67170,38 @@
             "note": "Remarque: En français, 'secrétaire' est masculin ou féminin selon l'article ('un secrétaire' ou 'une secrétaire'). C’est un métier courant.",
             "use_exemple": "Le secrétaire est arrivé tôt.",
             "port_exemple": "O secretário chegou cedo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "1d2ec669-8830-467f-a32d-b80059f8ea34_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1d2ec669-8830-467f-a32d-b80059f8ea34_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1d2ec669-8830-467f-a32d-b80059f8ea34_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "secretary",
             "note": "Note that 'secretário' is the standard term for an administrative secretary in European Portuguese. In government contexts, 'secretário de estado' is translated as 'Secretary of State', not just 'secretary'.",
             "port_exemple": "O secretário chegou atrasado à reunião.",
             "last_update": "2026-05-08",
-            "use_exemple": "The secretary arrived late for the meeting."
+            "use_exemple": "The secretary arrived late for the meeting.",
+            "translation_audio": {
+                "filename": "1d2ec669-8830-467f-a32d-b80059f8ea34_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1d2ec669-8830-467f-a32d-b80059f8ea34_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1d2ec669-8830-467f-a32d-b80059f8ea34_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67073,14 +67217,38 @@
             "note": "Remarque : en portugais, 'seda' désigne le matériau; en français on dit 'soie' (la soie). C'est féminin et s'emploie avec des adjectifs comme 'douce'.",
             "use_exemple": "La soie est douce.",
             "port_exemple": "A seda é macia.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "ebb77e91-998d-4302-b905-15ae48461049_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ebb77e91-998d-4302-b905-15ae48461049_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ebb77e91-998d-4302-b905-15ae48461049_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "silk",
             "note": "Seda refers to silk as a material. In everyday Portuguese, you typically say 'tecido de seda' (silk fabric) or 'feito de seda' (made of silk).",
             "port_exemple": "A seda é um tecido suave.",
             "last_update": "2026-05-08",
-            "use_exemple": "Silk is a soft fabric."
+            "use_exemple": "Silk is a soft fabric.",
+            "translation_audio": {
+                "filename": "ebb77e91-998d-4302-b905-15ae48461049_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ebb77e91-998d-4302-b905-15ae48461049_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ebb77e91-998d-4302-b905-15ae48461049_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67096,14 +67264,38 @@
             "note": "Le mot sede a deux sens : soif et siège (quartier général) d'une organisation. Le contexte détermine la bonne traduction.",
             "use_exemple": "J'ai soif.",
             "port_exemple": "Tenho sede.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "thirst (also 'headquarters' in contexts referring to a company/organization)",
             "note": "Sede has two main meanings in Portuguese: thirst and headquarters. Use thirst for the bodily sensation; 'headquarters' is used for the main office of an organization (e.g., 'a sede da empresa').",
             "port_exemple": "Tenho sede.",
             "last_update": "2026-05-08",
-            "use_exemple": "I'm thirsty."
+            "use_exemple": "I'm thirsty.",
+            "translation_audio": {
+                "filename": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "0dd4f0dc-86d3-476c-89f3-57f8292fe53c_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67119,14 +67311,38 @@
             "note": "En portugais, 'seguinte' est un adjectif signifiant 'suivant' ou 'prochain' et s'accorde avec le nom qui le suit. Dans l'usage courant européen, on voit souvent 'suivant' pour des éléments dans une liste et 'prochain' pour un moment dans le temps.",
             "use_exemple": "L'étape suivante est simple.",
             "port_exemple": "O seguinte passo é simples.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "following/next(e.g.day/week)",
             "note": "Seguinte is typically translated as 'following' and is used to refer to something that comes after. It can also mean 'the next' in some contexts, especially in formal or written language.",
             "port_exemple": "No dia seguinte, fomos ao parque.",
             "last_update": "2026-05-08",
-            "use_exemple": "The following day, we went to the park."
+            "use_exemple": "The following day, we went to the park.",
+            "translation_audio": {
+                "filename": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "57d00682-5116-4cf6-9ab6-e7fb15ba02c7_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -67142,14 +67358,38 @@
             "note": "Le mot 'selo' s'emploie surtout pour le timbre postal. Pour parler d'un sceau d'authenticité ou d'un sceau officiel, on utilisera 'sceau'.",
             "use_exemple": "Le timbre a été collé sur l'enveloppe.",
             "port_exemple": "O selo foi colado no envelope.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "stamp (=postage)",
             "note": "In European Portuguese, 'selo' mostly means a postage stamp. It can also mean a seal or official mark on documents, but that sense is less common in everyday speech.",
             "port_exemple": "Coloquei o selo na carta.",
             "last_update": "2026-05-08",
-            "use_exemple": "I put the stamp on the letter."
+            "use_exemple": "I put the stamp on the letter.",
+            "translation_audio": {
+                "filename": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "d0fd1512-d10f-4324-9d91-3939a6f0bdbf_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67165,14 +67405,38 @@
             "note": "Le terme 'sem chumbo' désigne le carburant sans plomb. En français, on dit généralement « essence sans plomb » pour parler de ce carburant.",
             "use_exemple": "Je n'utilise que de l'essence sans plomb.",
             "port_exemple": "Eu só uso gasolina sem chumbo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "unleaded petrol",
             "note": "The natural English term is 'unleaded petrol'. In Portuguese, 'sem chumbo' describes lead-free fuel and is often used with 'gasolina'.",
             "port_exemple": "A gasolina sem chumbo é recomendada para carros modernos.",
             "last_update": "2026-05-08",
-            "use_exemple": "Unleaded petrol is recommended for modern cars."
+            "use_exemple": "Unleaded petrol is recommended for modern cars.",
+            "translation_audio": {
+                "filename": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2a9dfc47-e986-4d8b-bfae-84dfaf40c07a_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67188,14 +67452,38 @@
             "note": "En portugais, 'semáforos' est le pluriel de 'semáforo'. En français, 'feux de circulation' est courant et clair; on peut aussi dire 'feux tricolores'.",
             "use_exemple": "Les feux de circulation sont rouges.",
             "port_exemple": "Os semáforos estão vermelhos.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "3aa7196d-5f50-48dc-8681-48e094f35dad_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3aa7196d-5f50-48dc-8681-48e094f35dad_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3aa7196d-5f50-48dc-8681-48e094f35dad_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "traffic lights",
             "note": "Semáforos is the plural form of semáforo, referring to traffic signals. In European Portuguese, describe their current state with estar (e.g., estão vermelhos).",
             "port_exemple": "Os semáforos estão vermelhos.",
             "last_update": "2026-05-08",
-            "use_exemple": "The traffic lights are red."
+            "use_exemple": "The traffic lights are red.",
+            "translation_audio": {
+                "filename": "3aa7196d-5f50-48dc-8681-48e094f35dad_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3aa7196d-5f50-48dc-8681-48e094f35dad_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3aa7196d-5f50-48dc-8681-48e094f35dad_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -67211,14 +67499,38 @@
             "note": "Remarque : en français, on préfère dire allocation hebdomadaire et allocation mensuelle. ArgENT de poche est plus familier; allocation est plus neutre et couramment utilisée à l’écrit.",
             "use_exemple": "Les parents donnent à leurs enfants une allocation hebdomadaire et une allocation mensuelle.",
             "port_exemple": "Os pais dão aos filhos uma semanada e uma mesada.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "932ed499-73cc-49ef-a8e4-e38fe2f36e48_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "932ed499-73cc-49ef-a8e4-e38fe2f36e48_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "932ed499-73cc-49ef-a8e4-e38fe2f36e48_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "monthly allowance; weekly allowance",
             "note": "In European Portuguese, mesada refers to a fixed monthly amount and semanada to a fixed weekly amount. The natural English translation is 'allowance'; 'pocket money' is informal and less precise.",
             "port_exemple": "Eu recebo a mesada todo mês. Eu recebo a semanada toda semana.",
             "last_update": "2026-05-08",
-            "use_exemple": "I get my monthly allowance on the first of every month. I receive my weekly allowance every Friday."
+            "use_exemple": "I get my monthly allowance on the first of every month. I receive my weekly allowance every Friday.",
+            "translation_audio": {
+                "filename": "932ed499-73cc-49ef-a8e4-e38fe2f36e48_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "932ed499-73cc-49ef-a8e4-e38fe2f36e48_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "932ed499-73cc-49ef-a8e4-e38fe2f36e48_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67234,14 +67546,38 @@
             "note": "Le verbe 'sentar-se' est pronominal. En français, l'infinitif correspondant est 's'asseoir', et on l'utilise avec les pronoms ('me', 'te', 'se').",
             "use_exemple": "Je vais m'asseoir.",
             "port_exemple": "Vou sentar-me.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to sit down",
             "note": "Sentar-se is the reflexive form of sentar and is used when the subject performs the action on themselves. In everyday Portuguese it's mainly used to mean 'to sit down' rather than 'to seat someone'.",
             "port_exemple": "É hora de sentar-se.",
             "last_update": "2026-05-08",
-            "use_exemple": "It's time to sit down."
+            "use_exemple": "It's time to sit down.",
+            "translation_audio": {
+                "filename": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "cff7cc62-4a4f-41f7-8907-1e15569d6c9e_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67257,14 +67593,38 @@
             "note": "Remarque: en portugais, sentar-se peut exprimer l'action ou l'état (estar sentado). En français, on distingue l'action (s'asseoir) et l'état (être assis).",
             "use_exemple": "Il est important de s'asseoir avec le dos bien droit.",
             "port_exemple": "É importante sentar-se com as costas direitas.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "50d7e965-e5aa-415d-9fa0-0eae532973e3_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "50d7e965-e5aa-415d-9fa0-0eae532973e3_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "50d7e965-e5aa-415d-9fa0-0eae532973e3_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to sit down",
             "note": "Sentar-se is a reflexive verb meaning to sit down (to take a seat). It emphasizes the action of seating oneself, whereas estar sentado means to be seated (a state).",
             "port_exemple": "Vou sentar-me no banco.",
             "last_update": "2026-05-08",
-            "use_exemple": "I am going to sit down on the bench."
+            "use_exemple": "I am going to sit down on the bench.",
+            "translation_audio": {
+                "filename": "50d7e965-e5aa-415d-9fa0-0eae532973e3_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "50d7e965-e5aa-415d-9fa0-0eae532973e3_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "50d7e965-e5aa-415d-9fa0-0eae532973e3_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67280,14 +67640,38 @@
             "note": "En portugais, sentir(-se) peut exprimer un état physique ou émotionnel. En français, se sentir est utilisé pour décrire cet état.",
             "use_exemple": "Je me sens fatigué.",
             "port_exemple": "Eu me sinto cansado.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to feel",
             "note": "Note that sentir-se is a reflexive verb used to describe one's own feelings or states of being. In everyday European Portuguese, you commonly pair sentir-se with adjectives (feliz, cansado, mal) to express how you feel.",
             "port_exemple": "Sinto-me feliz.",
             "last_update": "2026-05-08",
-            "use_exemple": "I feel happy."
+            "use_exemple": "I feel happy.",
+            "translation_audio": {
+                "filename": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "86a1a2d4-4a99-4d87-9d74-c95e32cf3618_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67303,14 +67687,38 @@
             "note": "Séparé est l'adjectif et le participe passé du verbe séparer. Il s'accorde en genre et en nombre (séparé, séparée; séparés, séparées).",
             "use_exemple": "Le couple est séparé.",
             "port_exemple": "O casal está separado.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "b650903c-8c0e-406d-bb76-b3d36722cf29_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b650903c-8c0e-406d-bb76-b3d36722cf29_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b650903c-8c0e-406d-bb76-b3d36722cf29_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "separated",
             "note": "Used as an adjective meaning 'separated' or 'apart'. For paying a bill, English would say 'pay separately' or 'split the bill' rather than just 'separate'.",
             "port_exemple": "Estamos separados.",
             "last_update": "2026-05-08",
-            "use_exemple": "We are separated."
+            "use_exemple": "We are separated.",
+            "translation_audio": {
+                "filename": "b650903c-8c0e-406d-bb76-b3d36722cf29_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b650903c-8c0e-406d-bb76-b3d36722cf29_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b650903c-8c0e-406d-bb76-b3d36722cf29_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67326,14 +67734,38 @@
             "note": "En portugais, 'serviço' peut aussi signifier 'travail' ou 'tâche' selon le contexte. En français, 'service' est plutôt utilisé pour une prestation, un service public ou le département d'une organisation.",
             "use_exemple": "Le service est en retard.",
             "port_exemple": "O serviço está atrasado.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "510f600e-fbb1-4c4a-99d7-460978196752_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "510f600e-fbb1-4c4a-99d7-460978196752_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "510f600e-fbb1-4c4a-99d7-460978196752_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "service (=in restaurant)",
             "note": "Note: serviço mainly means 'service'. It can also refer to a work shift or duty in some contexts, so context matters.",
             "port_exemple": "O serviço neste restaurante é excelente.",
             "last_update": "2026-05-08",
-            "use_exemple": "The service at this restaurant is excellent."
+            "use_exemple": "The service at this restaurant is excellent.",
+            "translation_audio": {
+                "filename": "510f600e-fbb1-4c4a-99d7-460978196752_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "510f600e-fbb1-4c4a-99d7-460978196752_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "510f600e-fbb1-4c4a-99d7-460978196752_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67349,14 +67781,38 @@
             "note": "Le verbe 'servir' est polyvalent. En portugais comme en français, il peut signifier \"être utile\" ou \"servir à faire quelque chose\".",
             "use_exemple": "Cette assiette sert pour deux personnes.",
             "port_exemple": "Este prato serve para duas pessoas.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to serve",
             "note": "Servir has multiple uses in European Portuguese. It covers serving food, acting as something, and being useful for a purpose; the meaning depends on the preposition used (e.g., servir para, servir de).",
             "port_exemple": "Eu vou servir as bebidas.",
             "last_update": "2026-05-08",
-            "use_exemple": "I am going to serve the drinks."
+            "use_exemple": "I am going to serve the drinks.",
+            "translation_audio": {
+                "filename": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "7c1b4731-0a18-4faf-9221-0b14ed6d94b5_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67372,14 +67828,38 @@
             "note": "En portugais, 'simpático' décrit quelqu'un de chaleureux et agréable. En français, 'sympathique' est le choix standard; 'sympa' est plus familier.",
             "use_exemple": "Il est très sympathique.",
             "port_exemple": "Ele é muito simpático.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "19d3abb6-3e40-45c2-911a-d2173647f529_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "19d3abb6-3e40-45c2-911a-d2173647f529_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "19d3abb6-3e40-45c2-911a-d2173647f529_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "friendly (person)",
             "note": "The current translation 'friendly (person)' is accurate. In everyday Portuguese, simpático more commonly translates as 'friendly' or 'nice' when describing a person.",
             "port_exemple": "Ele é muito simpático.",
             "last_update": "2026-05-08",
-            "use_exemple": "He is very friendly."
+            "use_exemple": "He is very friendly.",
+            "translation_audio": {
+                "filename": "19d3abb6-3e40-45c2-911a-d2173647f529_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "19d3abb6-3e40-45c2-911a-d2173647f529_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "19d3abb6-3e40-45c2-911a-d2173647f529_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -67395,14 +67875,38 @@
             "note": "Remarque: 'só' est courant et informel en portugais; 'somente' est plus soutenu. En français, 'seulement' convient dans la plupart des contextes; 'uniquement' est plus formel.",
             "use_exemple": "Je veux seulement un café.",
             "port_exemple": "Eu só quero um café.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "only",
             "note": "Note that 'só' can mean 'only' or 'just' in everyday speech. 'Somente' is more formal or literary, while 'só' is more common in conversation.",
             "port_exemple": "Só quero um pouco de água.",
             "last_update": "2026-05-08",
-            "use_exemple": "I only want a little water."
+            "use_exemple": "I only want a little water.",
+            "translation_audio": {
+                "filename": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "77b6e11f-d3e7-4191-a394-04ef3f8cf42c_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67418,14 +67922,38 @@
             "note": "\"só\" est plus adverbial et restrictif ; \"sozinho\" est adjectival et emphase l'isolement physique/émotionnel",
             "use_exemple": "Je veux seulement un café.",
             "port_exemple": "Eu só quero um café.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "only",
             "note": "Só primarily means 'only/just' in European Portuguese and is used before the word it modifies. It can also mean 'alone' in informal speech.",
             "port_exemple": "Eu só quero água.",
             "last_update": "2026-05-08",
-            "use_exemple": "I only want water."
+            "use_exemple": "I only want water.",
+            "translation_audio": {
+                "filename": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "aa348f92-0364-4beb-a7f4-c5d99f2b4e3f_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -67441,14 +67969,38 @@
             "note": "\"só\" est plus adverbial et restrictif ; \"sozinho\" est adjectival et emphase l'isolement physique/émotionnel",
             "use_exemple": "Je reste tout seul à la maison.",
             "port_exemple": "Eu fico sozinho em casa.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "fe2462d5-212b-41dd-874a-78f1ceceb27e_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "fe2462d5-212b-41dd-874a-78f1ceceb27e_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "fe2462d5-212b-41dd-874a-78f1ceceb27e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "alone",
             "note": "The translation 'only, alone; not until' is not accurate. The best translation is 'alone' (by oneself); it's used to describe being by oneself.",
             "port_exemple": "Ele está sozinho em casa.",
             "last_update": "2026-05-08",
-            "use_exemple": "He is alone at home."
+            "use_exemple": "He is alone at home.",
+            "translation_audio": {
+                "filename": "fe2462d5-212b-41dd-874a-78f1ceceb27e_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "fe2462d5-212b-41dd-874a-78f1ceceb27e_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "fe2462d5-212b-41dd-874a-78f1ceceb27e_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67464,14 +68016,38 @@
             "note": "Nuance : 'sobremesa' désigne le dessert après le repas; en français, 'dessert' est le nom du plat final (masculin).",
             "use_exemple": "Allons manger le dessert après le plat principal.",
             "port_exemple": "Vamos comer a sobremesa depois do prato principal.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "dessert",
             "note": "Sobremesa mainly means dessert after a meal. In Portugal, it can also refer to the time spent chatting at the table after eating.",
             "port_exemple": "A sobremesa estava deliciosa.",
             "last_update": "2026-05-08",
-            "use_exemple": "The dessert was delicious."
+            "use_exemple": "The dessert was delicious.",
+            "translation_audio": {
+                "filename": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6dde65c6-7316-4a2d-9bbd-43fe8d91da55_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67487,14 +68063,38 @@
             "note": "Nuance : « nièce » est le mot courant pour « sobrinha ». On peut préciser le lien: « ma nièce » (la fille de ma sœur ou de mon frère).",
             "use_exemple": "Ma nièce est ici.",
             "port_exemple": "A minha sobrinha está aqui.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "af14e3c2-59cd-4f2d-a9ab-77a067022a45_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "af14e3c2-59cd-4f2d-a9ab-77a067022a45_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "af14e3c2-59cd-4f2d-a9ab-77a067022a45_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "niece",
             "note": "Sobrinha is the feminine form of 'sobrinho' and means 'niece'. Use it when talking about your sister's or brother's daughter.",
             "port_exemple": "Minha sobrinha gosta de desenhar.",
             "last_update": "2026-05-08",
-            "use_exemple": "My niece likes drawing."
+            "use_exemple": "My niece likes drawing.",
+            "translation_audio": {
+                "filename": "af14e3c2-59cd-4f2d-a9ab-77a067022a45_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "af14e3c2-59cd-4f2d-a9ab-77a067022a45_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "af14e3c2-59cd-4f2d-a9ab-77a067022a45_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -67510,14 +68110,38 @@
             "note": "Remarque : 'sobrinho' est masculin et se traduit par 'neveu' en français. Pour une fille, on dirait 'nièce'.",
             "use_exemple": "Mon neveu aime jouer au football.",
             "port_exemple": "Meu sobrinho gosta de jogar futebol.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "728d947a-eba9-4b8b-a34a-83c6ce7dc260_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "728d947a-eba9-4b8b-a34a-83c6ce7dc260_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "728d947a-eba9-4b8b-a34a-83c6ce7dc260_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "nephew",
             "note": "Note that sobrinho refers specifically to a male child of your sibling. For a female, use sobrinha; primo/prima means cousin, not nephew.",
             "port_exemple": "O meu sobrinho gosta de futebol.",
             "last_update": "2026-05-08",
-            "use_exemple": "My nephew likes football."
+            "use_exemple": "My nephew likes football.",
+            "translation_audio": {
+                "filename": "728d947a-eba9-4b8b-a34a-83c6ce7dc260_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "728d947a-eba9-4b8b-a34a-83c6ce7dc260_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "728d947a-eba9-4b8b-a34a-83c6ce7dc260_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67533,14 +68157,38 @@
             "note": "Remarque: 'socorro' peut se traduire par 'aide' ou 'secours' selon le sens (aide générale ou secours d’urgence). Notez que 'à l'aide' n'est pas correct comme traduction isolée.",
             "use_exemple": "Au secours!",
             "port_exemple": "Socorro!",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "fa4f7273-773a-41fe-a87a-b042bff222cd_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "fa4f7273-773a-41fe-a87a-b042bff222cd_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "fa4f7273-773a-41fe-a87a-b042bff222cd_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "help",
             "note": "Socorro is commonly used for urgent help or as an exclamation ('Help!'). It can also mean 'aid' or 'assistance' in more formal contexts.",
             "port_exemple": "Socorro! Estou perdido.",
             "last_update": "2026-05-08",
-            "use_exemple": "Help! I am lost."
+            "use_exemple": "Help! I am lost.",
+            "translation_audio": {
+                "filename": "fa4f7273-773a-41fe-a87a-b042bff222cd_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "fa4f7273-773a-41fe-a87a-b042bff222cd_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "fa4f7273-773a-41fe-a87a-b042bff222cd_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67556,14 +68204,38 @@
             "note": "soldado signifie 'soldier' en portugais et se traduit par 'soldat' en français. C'est un nom masculin et on peut préciser les grades avec 'caporal', 'capitaine', etc.",
             "use_exemple": "Le soldat court.",
             "port_exemple": "O soldado corre.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "fccba0eb-d966-42e1-918f-4d81893b080e_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "fccba0eb-d966-42e1-918f-4d81893b080e_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "fccba0eb-d966-42e1-918f-4d81893b080e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "soldier",
             "note": "It's a common, everyday noun for a person in the army. Use the article to indicate gender/number: 'o soldado' (the soldier), 'um soldado' (a soldier).",
             "port_exemple": "O soldado está a treinar no pátio.",
             "last_update": "2026-05-08",
-            "use_exemple": "The soldier is training in the yard."
+            "use_exemple": "The soldier is training in the yard.",
+            "translation_audio": {
+                "filename": "fccba0eb-d966-42e1-918f-4d81893b080e_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "fccba0eb-d966-42e1-918f-4d81893b080e_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "fccba0eb-d966-42e1-918f-4d81893b080e_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -67579,14 +68251,38 @@
             "note": "Épeler est le verbe standard pour dire qu’on prononce les lettres d’un mot. C’est le terme le plus utilisé dans le contexte de l’orthographe.",
             "use_exemple": "Je vais épeler le mot.",
             "port_exemple": "Eu vou soletrar a palavra.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to spell",
             "note": "Note: 'soletrar' means to spell out the letters of a word. It is commonly used in education and in everyday requests to spell a word or name.",
             "port_exemple": "Pode soletrar o seu nome?",
             "last_update": "2026-05-08",
-            "use_exemple": "Can you spell your name?"
+            "use_exemple": "Can you spell your name?",
+            "translation_audio": {
+                "filename": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "5ac8069b-16d7-48a3-a781-5c6a707eb5a2_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67602,14 +68298,38 @@
             "note": "Solteiro est masculin et signifie 'non marié'. En français, on dit 'célibataire' (adjectif ou nom: 'un célibataire').",
             "use_exemple": "Il est célibataire.",
             "port_exemple": "Ele é solteiro.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "de67ca37-e6b1-4515-b93f-1649181a768d_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "de67ca37-e6b1-4515-b93f-1649181a768d_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "de67ca37-e6b1-4515-b93f-1649181a768d_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "single, unmarried",
             "note": "Solteiro mainly describes a man who is not married. When used as a noun, it can mean 'bachelor'; for a woman the form is solteira.",
             "port_exemple": "João é solteiro.",
             "last_update": "2026-05-08",
-            "use_exemple": "João is single."
+            "use_exemple": "João is single.",
+            "translation_audio": {
+                "filename": "de67ca37-e6b1-4515-b93f-1649181a768d_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "de67ca37-e6b1-4515-b93f-1649181a768d_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "de67ca37-e6b1-4515-b93f-1649181a768d_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -67625,7 +68345,19 @@
             "note": "Remarque: 'soupe' est un nom féminin. On dit 'la soupe'.",
             "use_exemple": "J'aime la soupe.",
             "port_exemple": "Eu gosto de sopa.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "825488fc-71eb-4825-bde3-9962e429ffec_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "825488fc-71eb-4825-bde3-9962e429ffec_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "825488fc-71eb-4825-bde3-9962e429ffec_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "soup",
@@ -67726,7 +68458,19 @@
             "note": "Subir is the general verb meaning 'to go up' or 'to rise'. Escalar is used for climbing something vertical (like a wall or mountain).",
             "port_exemple": "Eu tenho que subir as escadas e depois escalar a parede.",
             "last_update": "2026-05-08",
-            "use_exemple": "I have to go up the stairs and then climb the wall."
+            "use_exemple": "I have to go up the stairs and then climb the wall.",
+            "translation_audio": {
+                "filename": "213434a9-285c-4754-bd93-e2956a3b2738_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "213434a9-285c-4754-bd93-e2956a3b2738_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "213434a9-285c-4754-bd93-e2956a3b2738_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67742,14 +68486,38 @@
             "note": "Remarque : en portugais européen, l’orthographe correcte est subúrbio. Le terme suburbia est peu courant et peut être perçu comme un anglicisme.",
             "use_exemple": "La banlieue de la ville compte beaucoup de maisons.",
             "port_exemple": "O subúrbio da cidade tem muitas casas.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "18ef2567-9359-4d78-86e8-6322ad0c7eaa_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "18ef2567-9359-4d78-86e8-6322ad0c7eaa_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "18ef2567-9359-4d78-86e8-6322ad0c7eaa_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "suburb",
             "note": "Note: The word 'suburbia' is not correct in European Portuguese. The standard form is 'subúrbio' (singular) or 'subúrbios' (plural).",
             "port_exemple": "Moro no subúrbio da cidade.",
             "last_update": "2026-05-08",
-            "use_exemple": "I live in the suburb near the city center."
+            "use_exemple": "I live in the suburb near the city center.",
+            "translation_audio": {
+                "filename": "18ef2567-9359-4d78-86e8-6322ad0c7eaa_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "18ef2567-9359-4d78-86e8-6322ad0c7eaa_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "18ef2567-9359-4d78-86e8-6322ad0c7eaa_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67765,14 +68533,38 @@
             "note": "En portugais, 'sujo' peut décrire aussi bien des surfaces sales que des actions malhonnêtes ('manœuvre sale'). En français, 'sale' est polyvalent mais peut paraître familier selon le contexte.",
             "use_exemple": "Le sol est sale.",
             "port_exemple": "O chão está sujo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "dirty",
             "note": "Sujo primarily means physical dirt in everyday use. For metaphorical dirt, use phrases like 'dinheiro sujo' (dirty money).",
             "port_exemple": "O chão está sujo.",
             "last_update": "2026-05-08",
-            "use_exemple": "The floor is dirty."
+            "use_exemple": "The floor is dirty.",
+            "translation_audio": {
+                "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "9a42b86c-eb9b-4fcc-bab5-0fb5ca25fcdf_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -67788,14 +68580,38 @@
             "note": "Le mot 'supermercado' correspond au même concept que 'supermarché'. En France, on emploie aussi 'hypermarché' pour un grand magasin alimentaire, mais 'supermarché' reste le terme le plus courant.",
             "use_exemple": "Je vais au supermarché tous les samedis.",
             "port_exemple": "Vou ao supermercado todos os sábados.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "supermarket",
             "note": "Note: 'supermercado' is the standard term for a large grocery store in European Portuguese. For smaller shops, you might use 'mercearia' or 'loja de conveniência' instead.",
             "port_exemple": "Eu vou ao supermercado todos os sábados.",
             "last_update": "2026-05-08",
-            "use_exemple": "I go to the supermarket every Saturday."
+            "use_exemple": "I go to the supermarket every Saturday.",
+            "translation_audio": {
+                "filename": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3e5feb27-3fb9-4bd2-8c07-2f4509d102f0_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67811,14 +68627,38 @@
             "note": "Remarque: en portugais, 'surpreendente' décrit quelque chose qui impressionne par sa qualité. En français, on dit 'surprenant' (masculin) ou 'surprenante' (féminin) selon le nom.",
             "use_exemple": "Le film était surprenant.",
             "port_exemple": "O filme foi surpreendente.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "47e9fadb-3333-4821-9d72-54fd0cb52444_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "47e9fadb-3333-4821-9d72-54fd0cb52444_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "47e9fadb-3333-4821-9d72-54fd0cb52444_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "surprising",
             "note": "Surpreendente describes something that causes surprise. It is used for both everyday events and notable outcomes in European Portuguese.",
             "port_exemple": "A notícia foi surpreendente.",
             "last_update": "2026-05-08",
-            "use_exemple": "The news was surprising."
+            "use_exemple": "The news was surprising.",
+            "translation_audio": {
+                "filename": "47e9fadb-3333-4821-9d72-54fd0cb52444_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "47e9fadb-3333-4821-9d72-54fd0cb52444_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "47e9fadb-3333-4821-9d72-54fd0cb52444_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67834,14 +68674,38 @@
             "note": "Calhar est polysémique. Le sens le plus courant est 'peut-être' avec 'se calhar', et 'convenir' s'emploie pour dire que quelque chose convient ou va bien.",
             "use_exemple": "Il est peut-être déjà arrivé.",
             "port_exemple": "Se calhar ele já chegou.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "ab36b0fb-5f95-4e1f-ade4-0174dddef403_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ab36b0fb-5f95-4e1f-ade4-0174dddef403_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ab36b0fb-5f95-4e1f-ade4-0174dddef403_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to suit",
             "note": "Calhar is used to express that something fits or is appropriate. In everyday Portuguese, it most often means 'to suit' or 'to fit,' but it can also mean 'to happen to' in other contexts.",
             "port_exemple": "Este casaco calha-lhe bem.",
             "last_update": "2026-05-08",
-            "use_exemple": "This coat suits him well."
+            "use_exemple": "This coat suits him well.",
+            "translation_audio": {
+                "filename": "ab36b0fb-5f95-4e1f-ade4-0174dddef403_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ab36b0fb-5f95-4e1f-ade4-0174dddef403_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ab36b0fb-5f95-4e1f-ade4-0174dddef403_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67857,14 +68721,38 @@
             "note": "En portugais, tanto... como sert à marquer l'égalité entre deux éléments. En français, on utilise généralement 'aussi ... que' pour les adjectifs et 'autant de ... que' pour les noms.",
             "use_exemple": "Le livre et le film sont aussi intéressants.",
             "port_exemple": "Tanto o livro como o filme são interessantes.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "0e47ca9e-be23-469e-a0f1-31a2b844adb9_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "0e47ca9e-be23-469e-a0f1-31a2b844adb9_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "0e47ca9e-be23-469e-a0f1-31a2b844adb9_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "both ... and",
             "note": "Note: 'tanto... como' is typically translated as 'both ... and' when listing two items. For comparing qualities, you would use 'tanto ... quanto' or 'tão ... quanto', depending on the context.",
             "port_exemple": "Tanto o João como a Maria chegaram cedo.",
             "last_update": "2026-05-08",
-            "use_exemple": "Both João and Maria arrived early."
+            "use_exemple": "Both João and Maria arrived early.",
+            "translation_audio": {
+                "filename": "0e47ca9e-be23-469e-a0f1-31a2b844adb9_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "0e47ca9e-be23-469e-a0f1-31a2b844adb9_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "0e47ca9e-be23-469e-a0f1-31a2b844adb9_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67880,14 +68768,38 @@
             "note": "Le mot 'tarifa' en portugais désigne le tarif, le prix ou le taux d'un service. En français, 'tarif' convient généralement, mais selon le contexte on peut aussi dire 'prix' ou 'frais'.",
             "use_exemple": "Le tarif du billet est de 5 euros.",
             "port_exemple": "A tarifa para o bilhete é de 5 euros.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "2f511c4e-c52d-4653-9c49-28f17a9259c1_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2f511c4e-c52d-4653-9c49-28f17a9259c1_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2f511c4e-c52d-4653-9c49-28f17a9259c1_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "price",
             "note": "Tarifa can mean tariff, price, or fare depending on context. For everyday use, 'price' is the most natural translation; 'fare' is common for transport contexts, and 'tariff' is more formal.",
             "port_exemple": "Qual é a tarifa do bilhete de autocarro?",
             "last_update": "2026-05-08",
-            "use_exemple": "What is the price of the bus ticket?"
+            "use_exemple": "What is the price of the bus ticket?",
+            "translation_audio": {
+                "filename": "2f511c4e-c52d-4653-9c49-28f17a9259c1_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2f511c4e-c52d-4653-9c49-28f17a9259c1_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2f511c4e-c52d-4653-9c49-28f17a9259c1_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67903,14 +68815,38 @@
             "note": "Remarque: en portugais, tartaruga peut désigner n'importe quelle tortue; en français, on emploie tortue comme nom commun, avec des variantes comme tortue de mer ou tortue terrestre selon le contexte.",
             "use_exemple": "J'ai vu une tortue dans le lac.",
             "port_exemple": "Eu vi uma tartaruga no lago.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "1b4b1939-b0f9-451e-ba7e-c11810e6c550_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1b4b1939-b0f9-451e-ba7e-c11810e6c550_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1b4b1939-b0f9-451e-ba7e-c11810e6c550_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "turtle",
             "note": "In European Portuguese, tartaruga usually means 'turtle'. 'Tortoise' is used mainly for land-dwelling species and is less common in everyday speech.",
             "port_exemple": "A tartaruga caminha devagar.",
             "last_update": "2026-05-08",
-            "use_exemple": "The turtle walks slowly."
+            "use_exemple": "The turtle walks slowly.",
+            "translation_audio": {
+                "filename": "1b4b1939-b0f9-451e-ba7e-c11810e6c550_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1b4b1939-b0f9-451e-ba7e-c11810e6c550_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1b4b1939-b0f9-451e-ba7e-c11810e6c550_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67926,14 +68862,38 @@
             "note": "Le mot tarte est féminin et désigne une pâtisserie à pâte unique, généralement sucrée (mais parfois salée). En portugais, le sens est équivalent à celui du français.",
             "use_exemple": "J'ai mangé une tarte aux pommes.",
             "port_exemple": "Eu comi uma tarte de maçã.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "751aa4fb-86e2-49be-a75b-1e4b135d3947_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "751aa4fb-86e2-49be-a75b-1e4b135d3947_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "751aa4fb-86e2-49be-a75b-1e4b135d3947_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tart",
             "note": "In European Portuguese, tarte refers to a sweet baked pastry with a crust, usually open on top. In English, 'tart' is the closest everyday term; 'pie' is used when there is a top crust or in American usage.",
             "port_exemple": "Quero uma tarte de maçã.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want an apple tart."
+            "use_exemple": "I want an apple tart.",
+            "translation_audio": {
+                "filename": "751aa4fb-86e2-49be-a75b-1e4b135d3947_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "751aa4fb-86e2-49be-a75b-1e4b135d3947_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "751aa4fb-86e2-49be-a75b-1e4b135d3947_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67949,14 +68909,38 @@
             "note": "Le mot 'teatro' désigne le lieu où l'on voit des pièces ou le domaine du théâtre dans le portugais européen. En français, le mot correspondant est 'théâtre', masculin, et il couvre aussi bien le lieu que le genre.",
             "use_exemple": "Je vais au théâtre.",
             "port_exemple": "Eu vou ao teatro.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "b12f6caf-835d-479a-9227-15c2f3011e1f_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b12f6caf-835d-479a-9227-15c2f3011e1f_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b12f6caf-835d-479a-9227-15c2f3011e1f_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "theatre",
             "note": "Note that in British English it's 'theatre' and in American English it's 'theater'. The Portuguese word 'teatro' refers to the building where performances take place or to theatre as a form of art.",
             "port_exemple": "Vamos ao teatro amanhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "We're going to the theatre tomorrow."
+            "use_exemple": "We're going to the theatre tomorrow.",
+            "translation_audio": {
+                "filename": "b12f6caf-835d-479a-9227-15c2f3011e1f_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b12f6caf-835d-479a-9227-15c2f3011e1f_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b12f6caf-835d-479a-9227-15c2f3011e1f_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -67972,14 +68956,38 @@
             "note": "Remarque: En français, le terme le plus courant pour 'information technology' est 'informatique'. 'Technologie de l'information' est plus formel ou technique et s'utilise surtout dans des contextes spécifiques (TIC). Pour l’usage quotidien, 'informatique' est généralement préféré.",
             "use_exemple": "La technologie de l'information est en constante évolution.",
             "port_exemple": "A tecnologia da informação está em constante evolução.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "information technology",
             "note": "In Portuguese, 'tecnologia da informação' is the standard term for IT. In everyday speech, people often use the acronym TI instead of spelling it out.",
             "port_exemple": "Ela trabalha em tecnologia da informação.",
             "last_update": "2026-05-08",
-            "use_exemple": "She works in information technology."
+            "use_exemple": "She works in information technology.",
+            "translation_audio": {
+                "filename": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1f4fb6be-f6eb-4ad3-8d7d-16448e0eb307_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -67995,14 +69003,38 @@
             "note": "Teto signifie principalement le plafond intérieur d'une pièce. Pour le toit extérieur, on dit 'toit'; et le mot 'plafond' peut aussi désigner une limite, comme un plafond budgétaire.",
             "use_exemple": "Le plafond de la pièce est haut.",
             "port_exemple": "O teto da sala é alto.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "a002591a-4fb2-421f-81d1-428a19284409_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "a002591a-4fb2-421f-81d1-428a19284409_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "a002591a-4fb2-421f-81d1-428a19284409_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "ceiling",
             "note": "Note that teto primarily means the ceiling (inside a room). It can also refer to the roof or a limit/ceiling in contexts like budgets.",
             "port_exemple": "O teto do meu quarto é branco.",
             "last_update": "2026-05-08",
-            "use_exemple": "The ceiling in my room is white."
+            "use_exemple": "The ceiling in my room is white.",
+            "translation_audio": {
+                "filename": "a002591a-4fb2-421f-81d1-428a19284409_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "a002591a-4fb2-421f-81d1-428a19284409_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "a002591a-4fb2-421f-81d1-428a19284409_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68018,14 +69050,38 @@
             "note": "Remarque : En portugais européen, 'telefonar' est courant et neutre; 'ligar' est plus familier à l'oral. En français, 'téléphoner' est neutre et standard; 'appeler' est aussi très courant dans le langage quotidien.",
             "use_exemple": "Je vais téléphoner à ma mère.",
             "port_exemple": "Vou telefonar para a minha mãe.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "66250e4a-906b-4498-9c71-b0b72dd38e5e_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "66250e4a-906b-4498-9c71-b0b72dd38e5e_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "66250e4a-906b-4498-9c71-b0b72dd38e5e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to phone",
             "note": "Not entirely accurate; a more natural translation is 'to phone' (to call by phone). In European Portuguese, 'telefonar' is standard but a bit formal, with 'ligar' used more in casual speech.",
             "port_exemple": "Eu vou telefonar para o meu colega amanhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "I will phone my colleague tomorrow."
+            "use_exemple": "I will phone my colleague tomorrow.",
+            "translation_audio": {
+                "filename": "66250e4a-906b-4498-9c71-b0b72dd38e5e_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "66250e4a-906b-4498-9c71-b0b72dd38e5e_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "66250e4a-906b-4498-9c71-b0b72dd38e5e_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68041,14 +69097,38 @@
             "note": "Remarque : telhado est le mot portugais pour 'toit'. En français, on dit simplement 'toit'.",
             "use_exemple": "Le toit de la maison a besoin de réparations.",
             "port_exemple": "O telhado da casa precisa de reparos.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "95d729af-d772-4e79-982a-6b5bea77a259_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "95d729af-d772-4e79-982a-6b5bea77a259_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "95d729af-d772-4e79-982a-6b5bea77a259_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "roof",
             "note": "Telhado is the standard term for a building's roof in European Portuguese. Use it with possessives like 'telhado da casa' or 'telhado do prédio'.",
             "port_exemple": "O telhado da casa precisa de reparos.",
             "last_update": "2026-05-08",
-            "use_exemple": "The roof of the house needs repairs."
+            "use_exemple": "The roof of the house needs repairs.",
+            "translation_audio": {
+                "filename": "95d729af-d772-4e79-982a-6b5bea77a259_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "95d729af-d772-4e79-982a-6b5bea77a259_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "95d729af-d772-4e79-982a-6b5bea77a259_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68064,14 +69144,38 @@
             "note": "Tempestade est féminin: on dit 'la tempête'. Ce mot recouvre les phénomènes météorologiques forts et peut aussi être utilisé au sens figuré.",
             "use_exemple": "La tempête est arrivée tard dans la nuit.",
             "port_exemple": "A tempestade chegou tarde da noite.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "a9598c73-e328-4d66-95b8-0bdde356f9c9_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "a9598c73-e328-4d66-95b8-0bdde356f9c9_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "a9598c73-e328-4d66-95b8-0bdde356f9c9_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "storm",
             "note": "Tempestade is the standard word for a weather storm. It can also be used metaphorically, such as 'tempestade de críticas' (a storm of criticism).",
             "port_exemple": "Durante a tempestade, ficámos em casa.",
             "last_update": "2026-05-08",
-            "use_exemple": "During the storm, we stayed at home."
+            "use_exemple": "During the storm, we stayed at home.",
+            "translation_audio": {
+                "filename": "a9598c73-e328-4d66-95b8-0bdde356f9c9_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "a9598c73-e328-4d66-95b8-0bdde356f9c9_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "a9598c73-e328-4d66-95b8-0bdde356f9c9_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68087,14 +69191,38 @@
             "note": "C'est un nom féminin: on dit 'la tente'. Utilisé pour décrire un abri temporaire.",
             "use_exemple": "La tente est bleue.",
             "port_exemple": "A tenda é azul.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "e15b0625-d2c8-421f-93e8-c6be8448cbe4_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "e15b0625-d2c8-421f-93e8-c6be8448cbe4_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "e15b0625-d2c8-421f-93e8-c6be8448cbe4_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tent (camping)",
             "note": "Common meaning: tent or shelter. In some contexts it can also mean a market stall or canopy, but for camping use, 'tenda' is the standard word.",
             "port_exemple": "Nós montamos a tenda no parque.",
             "last_update": "2026-05-08",
-            "use_exemple": "We set up the tent in the park."
+            "use_exemple": "We set up the tent in the park.",
+            "translation_audio": {
+                "filename": "e15b0625-d2c8-421f-93e8-c6be8448cbe4_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "e15b0625-d2c8-421f-93e8-c6be8448cbe4_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "e15b0625-d2c8-421f-93e8-c6be8448cbe4_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68110,14 +69238,38 @@
             "note": "En français, on dit 'le tennis' pour le sport et 'jouer au tennis' pour l'action. On peut aussi dire 'un court de tennis' pour le lieu.",
             "use_exemple": "J'aime jouer au tennis.",
             "port_exemple": "Eu gosto de jogar ténis.",
-            "last_update": "2026-05-21"
+            "last_update": "2026-05-21",
+            "translation_audio": {
+                "filename": "1cfb3549-d19e-4118-93c1-13fef6263c99_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1cfb3549-d19e-4118-93c1-13fef6263c99_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1cfb3549-d19e-4118-93c1-13fef6263c99_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tennis (sport) / tennis shoes (sneakers)",
             "note": "In European Portuguese, ténis usually refers to the sport tennis. When referring to footwear, you would say 'tennis shoes' or 'sneakers' in English.",
             "port_exemple": "Ele joga ténis aos fins de semana.",
             "last_update": "2026-05-08",
-            "use_exemple": "He plays tennis on weekends."
+            "use_exemple": "He plays tennis on weekends.",
+            "translation_audio": {
+                "filename": "1cfb3549-d19e-4118-93c1-13fef6263c99_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "1cfb3549-d19e-4118-93c1-13fef6263c99_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "1cfb3549-d19e-4118-93c1-13fef6263c99_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68133,14 +69285,38 @@
             "note": "En général, 'essayer' est le choix le plus courant pour dire 'to try'. 'tenter' existe aussi, mais il est plus soutenu et peut signifier 'to tempt' dans certains contextes.",
             "use_exemple": "Je vais essayer.",
             "port_exemple": "Vou tentar.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "327259f2-81a4-4957-9193-1a50753a7107_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "327259f2-81a4-4957-9193-1a50753a7107_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "327259f2-81a4-4957-9193-1a50753a7107_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to try",
             "note": "Tentar is a common verb meaning 'to try' or 'to attempt.' It is usually followed by another verb in the infinitive, as in tentar falar or tentar fazer.",
             "port_exemple": "Vou tentar falar mais devagar.",
             "last_update": "2026-05-08",
-            "use_exemple": "I'll try to speak more slowly."
+            "use_exemple": "I'll try to speak more slowly.",
+            "translation_audio": {
+                "filename": "327259f2-81a4-4957-9193-1a50753a7107_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "327259f2-81a4-4957-9193-1a50753a7107_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "327259f2-81a4-4957-9193-1a50753a7107_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68156,14 +69332,38 @@
             "note": "Le verbe ter est l'infinitif du verbe 'avoir' en portugais. En français, on emploie l'infinitif 'avoir' pour exprimer la possession et dans des expressions comme 'avoir besoin de'.",
             "use_exemple": "Je veux avoir un chien.",
             "port_exemple": "Quero ter um cão.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "2f459f45-106f-4e71-8cc5-7fce15557891_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2f459f45-106f-4e71-8cc5-7fce15557891_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2f459f45-106f-4e71-8cc5-7fce15557891_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to have",
             "note": "Ter is a versatile verb meaning 'to have.' It is used for possession, age, and forming compound tenses, and appears in phrases like 'ter que' (to have to).",
             "port_exemple": "Eu tenho uma maçã.",
             "last_update": "2026-05-08",
-            "use_exemple": "I have an apple."
+            "use_exemple": "I have an apple.",
+            "translation_audio": {
+                "filename": "2f459f45-106f-4e71-8cc5-7fce15557891_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2f459f45-106f-4e71-8cc5-7fce15557891_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2f459f45-106f-4e71-8cc5-7fce15557891_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68179,14 +69379,38 @@
             "note": "Remarque: 'ter de' et 'ter que' signifient 'avoir à' ou 'devoir'. En portugais européen, 'ter de' est légèrement plus formel ou réservé à une obligation extérieure; 'ter que' est plus courant à l'oral.",
             "use_exemple": "Je dois terminer ce rapport aujourd'hui.",
             "port_exemple": "Tenho de terminar este relatório hoje.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to have to, \"must\"",
             "note": "In European Portuguese, ter de and ter que both express obligation. Ter que is more common in everyday speech; ter de is often a bit more formal or used in writing.",
             "port_exemple": "Tenho de estudar para a prova.",
             "last_update": "2026-05-08",
-            "use_exemple": "I have to study for the test."
+            "use_exemple": "I have to study for the test.",
+            "translation_audio": {
+                "filename": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "a8511d6c-aebc-4324-8b7c-6a79ca2533b1_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68202,14 +69426,38 @@
             "note": "Ter medo exprime une peur générale ou durable, tandis que estar com medo décrit un état temporaire. En pratique, on utilise 'avoir peur' comme traduction générale et 'avoir peur de quelque chose' pour préciser l'objet.",
             "use_exemple": "J'ai peur de parler en public.",
             "port_exemple": "Tenho medo de falar em público.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to be afraid",
             "note": "Both phrases express fear. 'ter medo' is more general, while 'estar com medo' emphasizes a current, temporary feeling.",
             "port_exemple": "Eu tenho medo do escuro.",
             "last_update": "2026-05-08",
-            "use_exemple": "I'm afraid of the dark."
+            "use_exemple": "I'm afraid of the dark.",
+            "translation_audio": {
+                "filename": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "e0bed48a-ac5e-4ebc-9afc-e56f94a82e33_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68225,16 +69473,44 @@
             "note": "'estar certo' peut aussi signifier 'être sûr' ou 'certain', selon le contexte.",
             "use_exemple": "vous êtes sûr.",
             "port_exemple": "você está certo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to be right (correct)",
             "note": "Estar certo has two main uses: to express personal certainty (with de, as in 'Eu estou certo de que...') and, without de, to mean that something is correct or right. In everyday speech, you’ll often see 'A tua resposta está certa' for 'Your answer is right.'",
             "port_exemple": "Eu estou certo de que ele vem hoje.",
             "last_update": "2026-05-08",
-            "use_exemple": "I am sure that he is coming today."
+            "use_exemple": "I am sure that he is coming today.",
+            "translation_audio": {
+                "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
-        "user_usefulness": 2
+        "user_usefulness": 2,
+        "audio": {
+            "filename": "7665043c-5df1-4b92-8b74-971f53a1f51d.mp3",
+            "last_update": "2026-06-15"
+        }
     },
     {
         "id": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3",
@@ -68244,14 +69520,38 @@
             "note": "Le mot portugais 'terrível' signifie 'terrible'. En français, 'terrible' est courant et peut aussi servir d'intensificateur familier.",
             "use_exemple": "La situation est terrible.",
             "port_exemple": "A situação é terrível.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "awful, terrible",
             "note": "Terrível is a strong negative adjective meaning 'terrible' or 'awful' in European Portuguese. It describes something very bad and is not used to mean something good, unless joking or in hyperbole.",
             "port_exemple": "O trânsito hoje foi terrível.",
             "last_update": "2026-05-08",
-            "use_exemple": "The traffic today was terrible."
+            "use_exemple": "The traffic today was terrible.",
+            "translation_audio": {
+                "filename": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "92c3d249-56a2-4cd4-a5d2-36bf4424a0b3_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68267,14 +69567,38 @@
             "note": "Remarque: En portugais, 'tesoura' désigne une seule paire de ciseaux (nom féminin). En français, on utilise généralement 'une paire de ciseaux' pour parler d'un seul outil, et 'des ciseaux' pour plusieurs.",
             "use_exemple": "La paire de ciseaux coupe bien.",
             "port_exemple": "A tesoura corta bem.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "scissors",
             "note": "Remark: In Portuguese, tesoura is a feminine singular noun that refers to the tool as a single item. In English, we normally say 'scissors' (plural) or 'a pair of scissors' when talking about one item.",
             "port_exemple": "Eu usei a tesoura para cortar o papel.",
             "last_update": "2026-05-08",
-            "use_exemple": "I used the scissors to cut the paper."
+            "use_exemple": "I used the scissors to cut the paper.",
+            "translation_audio": {
+                "filename": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "4edb9ebe-5b21-44fe-8b56-a2ed7ed20904_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -68290,14 +69614,38 @@
             "note": "Remarque: 'tia' est l'équivalent direct de 'tante' en portugais, utilisé dans le langage courant. Pour souligner l'affection, on peut dire 'ma tante' ou 'ta tante'.",
             "use_exemple": "Ma tante habite à Lisbonne.",
             "port_exemple": "A minha tia mora em Lisboa.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "aunt",
             "note": "Tia is the standard everyday term for an aunt in European Portuguese. It is used for real aunts in normal family conversation and does not carry a formal connotation.",
             "port_exemple": "Minha tia vive em Lisboa.",
             "last_update": "2026-05-08",
-            "use_exemple": "My aunt lives in Lisbon."
+            "use_exemple": "My aunt lives in Lisbon.",
+            "translation_audio": {
+                "filename": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6a843c3a-6e6d-4c8f-9911-b043c0dd6bbd_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68313,14 +69661,38 @@
             "note": "Remarque: en portugais, 'tigela de fruta' désigne un bol rempli de fruits variés. En français, on dit 'un bol de fruits'.",
             "use_exemple": "Le bol de fruits est sur la table.",
             "port_exemple": "A tigela de fruta está na mesa.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "34288847-a727-45f1-9f7d-9d7d53405966_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "34288847-a727-45f1-9f7d-9d7d53405966_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "34288847-a727-45f1-9f7d-9d7d53405966_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "fruit bowl",
             "note": "The given translation is not accurate. The natural translation is 'fruit bowl' (or 'bowl of fruit').",
             "port_exemple": "A tigela de fruta está na mesa.",
             "last_update": "2026-05-08",
-            "use_exemple": "The fruit bowl is on the table."
+            "use_exemple": "The fruit bowl is on the table.",
+            "translation_audio": {
+                "filename": "34288847-a727-45f1-9f7d-9d7d53405966_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "34288847-a727-45f1-9f7d-9d7d53405966_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "34288847-a727-45f1-9f7d-9d7d53405966_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68336,14 +69708,38 @@
             "note": "Le mot 'tigre' est un nom masculin. En portugais et en français, l'orthographe est identique, mais on le prononce différemment.",
             "use_exemple": "Le tigre est un grand animal.",
             "port_exemple": "O tigre é um animal grande.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "871d1046-ca15-450e-ac9c-0421e2ebf5eb_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "871d1046-ca15-450e-ac9c-0421e2ebf5eb_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "871d1046-ca15-450e-ac9c-0421e2ebf5eb_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tiger",
             "note": "Note: 'tigre' refers to the tiger in general; 'tigresa' is used for a female tiger.",
             "port_exemple": "O tigre está dormindo na floresta.",
             "last_update": "2026-05-08",
-            "use_exemple": "The tiger is sleeping in the forest."
+            "use_exemple": "The tiger is sleeping in the forest.",
+            "translation_audio": {
+                "filename": "871d1046-ca15-450e-ac9c-0421e2ebf5eb_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "871d1046-ca15-450e-ac9c-0421e2ebf5eb_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "871d1046-ca15-450e-ac9c-0421e2ebf5eb_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68359,14 +69755,38 @@
             "note": "Remarque: 'tijolo' signifie une brique en construction. En français, on dit 'brique', et non 'tijolo'.",
             "use_exemple": "Cette brique est lourde.",
             "port_exemple": "Este tijolo é pesado.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "60de36a4-b067-4c3e-9e20-fcea2a890a18_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "60de36a4-b067-4c3e-9e20-fcea2a890a18_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "60de36a4-b067-4c3e-9e20-fcea2a890a18_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "brick",
             "note": "Tijolo is the basic construction unit used to build walls. In English, the natural translation is brick.",
             "port_exemple": "Este tijolo é pesado.",
             "last_update": "2026-05-08",
-            "use_exemple": "This brick is heavy."
+            "use_exemple": "This brick is heavy.",
+            "translation_audio": {
+                "filename": "60de36a4-b067-4c3e-9e20-fcea2a890a18_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "60de36a4-b067-4c3e-9e20-fcea2a890a18_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "60de36a4-b067-4c3e-9e20-fcea2a890a18_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68382,14 +69802,38 @@
             "note": "Remarque : « tio » signifie « oncle » et s’emploie couramment. En portugais européen, il peut aussi être utilisé affectivement pour désigner un homme proche, sans lien familial.",
             "use_exemple": "Mon oncle est arrivé tôt.",
             "port_exemple": "O meu tio chegou cedo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "6aff8232-2ec8-41c4-ba10-9725a6ef278c_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6aff8232-2ec8-41c4-ba10-9725a6ef278c_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6aff8232-2ec8-41c4-ba10-9725a6ef278c_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "uncle",
             "note": "Tio is the standard word for an uncle. In everyday Portuguese, you use it for family; in casual speech, it can also be used humorously as a friendlier address, but that slang usage should be avoided in formal contexts.",
             "port_exemple": "O meu tio gosta de futebol.",
             "last_update": "2026-05-08",
-            "use_exemple": "My uncle likes football."
+            "use_exemple": "My uncle likes football.",
+            "translation_audio": {
+                "filename": "6aff8232-2ec8-41c4-ba10-9725a6ef278c_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6aff8232-2ec8-41c4-ba10-9725a6ef278c_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6aff8232-2ec8-41c4-ba10-9725a6ef278c_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68405,14 +69849,38 @@
             "note": "Remarque: « tocar » en portugais a deux sens: toucher et jouer d’un instrument. En français, on dit « toucher » pour le sens physique et « jouer de X » pour jouer d’un instrument (par exemple « jouer du piano »).",
             "use_exemple": "J'aime jouer du piano.",
             "port_exemple": "Gosto de tocar piano.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "55a80da8-6bba-472c-8261-99f2c943f37f_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "55a80da8-6bba-472c-8261-99f2c943f37f_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "55a80da8-6bba-472c-8261-99f2c943f37f_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to play (e.g.music)",
             "note": "Tocar in Portuguese has multiple meanings. It commonly means to touch something, but it is also used for playing a musical instrument; the intended meaning depends on context.",
             "port_exemple": "Eu gosto de tocar piano.",
             "last_update": "2026-05-08",
-            "use_exemple": "I like to play the piano."
+            "use_exemple": "I like to play the piano.",
+            "translation_audio": {
+                "filename": "55a80da8-6bba-472c-8261-99f2c943f37f_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "55a80da8-6bba-472c-8261-99f2c943f37f_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "55a80da8-6bba-472c-8261-99f2c943f37f_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68428,14 +69896,38 @@
             "note": "Le nom 'tomate' est féminin en français: une tomate. C'est un fruit couramment consommé cru ou cuisiné.",
             "use_exemple": "J'ai acheté une tomate au marché.",
             "port_exemple": "Eu comprei um tomate no mercado.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "2470adce-b2d1-4f83-ac37-90b548f95793_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2470adce-b2d1-4f83-ac37-90b548f95793_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2470adce-b2d1-4f83-ac37-90b548f95793_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tomato",
             "note": "Tomate is a common, everyday noun for the fruit. In Portuguese, it's masculine (o tomate) and forms the plural tomates.",
             "port_exemple": "Eu comi um tomate hoje.",
             "last_update": "2026-05-08",
-            "use_exemple": "I ate a tomato today."
+            "use_exemple": "I ate a tomato today.",
+            "translation_audio": {
+                "filename": "2470adce-b2d1-4f83-ac37-90b548f95793_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2470adce-b2d1-4f83-ac37-90b548f95793_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2470adce-b2d1-4f83-ac37-90b548f95793_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68451,14 +69943,38 @@
             "note": "Note: « toranja » est le terme portugais exact pour le fruit appelé « pamplemousse » en français. En portugais européen, on distingue toranja (grapefruit) et laranja (orange).",
             "use_exemple": "J'aime le pamplemousse au petit-déjeuner.",
             "port_exemple": "Eu gosto de toranja ao pequeno-almoço.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "5187a9bf-aace-4c61-b753-13ec24c14d8c_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "5187a9bf-aace-4c61-b753-13ec24c14d8c_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "5187a9bf-aace-4c61-b753-13ec24c14d8c_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "grapefruit",
             "note": "Toranja refers to grapefruit in European Portuguese. It is a feminine noun: a toranja.",
             "port_exemple": "Esta toranja é doce.",
             "last_update": "2026-05-08",
-            "use_exemple": "This grapefruit is sweet."
+            "use_exemple": "This grapefruit is sweet.",
+            "translation_audio": {
+                "filename": "5187a9bf-aace-4c61-b753-13ec24c14d8c_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "5187a9bf-aace-4c61-b753-13ec24c14d8c_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "5187a9bf-aace-4c61-b753-13ec24c14d8c_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68474,14 +69990,38 @@
             "note": "Remarque: « devenir » est utilisé pour les changements d'état, notamment pour une profession. En portugais, « tornar-se » met l'accent sur le processus de transformation.",
             "use_exemple": "Il veut devenir médecin.",
             "port_exemple": "Ele quer tornar-se médico.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "f1560ff4-1ea9-40e2-90bb-41ccd8823376_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "f1560ff4-1ea9-40e2-90bb-41ccd8823376_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "f1560ff4-1ea9-40e2-90bb-41ccd8823376_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to become",
             "note": "Tip: tornar-se describes a change of state, usually lasting or notable. It is used to talk about becoming something (e.g., a profession, nationality, or status).",
             "port_exemple": "Ele tornou-se médico.",
             "last_update": "2026-05-08",
-            "use_exemple": "He became a doctor."
+            "use_exemple": "He became a doctor.",
+            "translation_audio": {
+                "filename": "f1560ff4-1ea9-40e2-90bb-41ccd8823376_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "f1560ff4-1ea9-40e2-90bb-41ccd8823376_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "f1560ff4-1ea9-40e2-90bb-41ccd8823376_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68497,14 +70037,38 @@
             "note": "Remarque: En portugais, 'torre' est féminin. En français, on dit 'la tour' et on l'emploie pour les tours de bâtiments, clochers et tours d'observation.",
             "use_exemple": "La tour est haute.",
             "port_exemple": "A torre é alta.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "2b8d8bef-9f68-4c84-ba76-ecee32885021_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2b8d8bef-9f68-4c84-ba76-ecee32885021_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2b8d8bef-9f68-4c84-ba76-ecee32885021_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tower",
             "note": "Note: torre primarily means 'tower'. In chess, the same word refers to the rook.",
             "port_exemple": "A torre da igreja é alta.",
             "last_update": "2026-05-08",
-            "use_exemple": "The church tower is tall."
+            "use_exemple": "The church tower is tall.",
+            "translation_audio": {
+                "filename": "2b8d8bef-9f68-4c84-ba76-ecee32885021_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2b8d8bef-9f68-4c84-ba76-ecee32885021_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2b8d8bef-9f68-4c84-ba76-ecee32885021_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68520,14 +70084,38 @@
             "note": "Remarque : 'tossir' est le verbe portugais standard pour l'action de tousser. En français, on dit 'tousser' et on conjugue: je tousse, tu tousses, il tousse, nous toussons, vous toussez, ils toussent.",
             "use_exemple": "Je vais tousser.",
             "port_exemple": "Eu vou tossir.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "d0b06660-8845-4afa-b068-d307fca631c6_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "d0b06660-8845-4afa-b068-d307fca631c6_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "d0b06660-8845-4afa-b068-d307fca631c6_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to cough",
             "note": "Tossir is the standard verb for coughing. The noun for the act is 'tosse'.",
             "port_exemple": "Ela começou a tossir durante a noite.",
             "last_update": "2026-05-08",
-            "use_exemple": "She started coughing during the night."
+            "use_exemple": "She started coughing during the night.",
+            "translation_audio": {
+                "filename": "d0b06660-8845-4afa-b068-d307fca631c6_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "d0b06660-8845-4afa-b068-d307fca631c6_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "d0b06660-8845-4afa-b068-d307fca631c6_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68543,14 +70131,38 @@
             "note": "Remarque: 'travailleur' est masculin et signifie 'un travailleur'. En contexte manuel, 'ouvrier' peut aussi être utilisé.",
             "use_exemple": "Le travailleur est arrivé tôt.",
             "port_exemple": "O trabalhador chegou cedo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "worker",
             "note": "Trabalhador is masculine; the feminine form is trabalhadora. As an adjective, it means 'hard-working'.",
             "port_exemple": "O trabalhador chega cedo ao trabalho.",
             "last_update": "2026-05-08",
-            "use_exemple": "The worker arrives early for work."
+            "use_exemple": "The worker arrives early for work.",
+            "translation_audio": {
+                "filename": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ef7ef842-5b7e-4da0-bc0c-e57b103067a1_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68566,14 +70178,38 @@
             "note": "Le verbe se traduit généralement par 'travailler'. En portugais, 'gosto de' + infinitif exprime une préférence générale; en français, on dira 'j’aime travailler'.",
             "use_exemple": "J'aime travailler tous les jours.",
             "port_exemple": "Eu gosto de trabalhar todos os dias.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "43d37957-9a08-41fe-88c9-972748a058be_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "43d37957-9a08-41fe-88c9-972748a058be_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "43d37957-9a08-41fe-88c9-972748a058be_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to work",
             "note": "This is the basic translation for 'trabalhar'. In European Portuguese, use 'estar a trabalhar' for ongoing action and 'trabalhar em [algo]' when referring to working on something.",
             "port_exemple": "Eu gosto de trabalhar de manhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "I like to work in the morning."
+            "use_exemple": "I like to work in the morning.",
+            "translation_audio": {
+                "filename": "43d37957-9a08-41fe-88c9-972748a058be_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "43d37957-9a08-41fe-88c9-972748a058be_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "43d37957-9a08-41fe-88c9-972748a058be_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68589,14 +70225,38 @@
             "note": "Le mot trajeto en portugais se réfère généralement au parcours ou à la distance à parcourir. En français, trajet est le terme le plus courant pour parler d'un déplacement entre deux points.",
             "use_exemple": "Le trajet pour rentrer chez moi est fatigant.",
             "port_exemple": "O trajeto para casa é cansativo.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "299eda75-9011-420a-bc65-52b21bf83fa0_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "299eda75-9011-420a-bc65-52b21bf83fa0_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "299eda75-9011-420a-bc65-52b21bf83fa0_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "route",
             "note": "Trajeto usually refers to a route or path, not the experience of traveling. In everyday Portuguese, it’s common in transportation contexts (bus routes, road routes) or when describing the course from one place to another.",
             "port_exemple": "O trajeto de casa para o trabalho leva cerca de 20 minutos.",
             "last_update": "2026-05-08",
-            "use_exemple": "The route from home to work takes about 20 minutes."
+            "use_exemple": "The route from home to work takes about 20 minutes.",
+            "translation_audio": {
+                "filename": "299eda75-9011-420a-bc65-52b21bf83fa0_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "299eda75-9011-420a-bc65-52b21bf83fa0_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "299eda75-9011-420a-bc65-52b21bf83fa0_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68612,14 +70272,38 @@
             "note": "Remarque : 'trancar' peut signifier verrouiller ou bloquer. Pour une porte, 'verrouiller' est le choix le plus naturel (ou 'fermer à clé' selon le contexte).",
             "use_exemple": "Je vais verrouiller la porte avant de sortir.",
             "port_exemple": "Vou trancar a porta antes de sair.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "2a13f793-4906-468f-9a7d-55918f04f975_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2a13f793-4906-468f-9a7d-55918f04f975_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2a13f793-4906-468f-9a7d-55918f04f975_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to lock",
             "note": "Trancar is used for locking doors, gates, or containers. It can also mean to lock yourself in or to jam a mechanism.",
             "port_exemple": "Não se esqueça de trancar a porta ao sair.",
             "last_update": "2026-05-08",
-            "use_exemple": "Don't forget to lock the door when you leave."
+            "use_exemple": "Don't forget to lock the door when you leave.",
+            "translation_audio": {
+                "filename": "2a13f793-4906-468f-9a7d-55918f04f975_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "2a13f793-4906-468f-9a7d-55918f04f975_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "2a13f793-4906-468f-9a7d-55918f04f975_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68635,14 +70319,38 @@
             "note": "Dans le portugais européen, 'trânsito' désigne surtout la circulation routière. En français, on préfère 'circulation' pour parler du trafic routier.",
             "use_exemple": "La circulation est bloquée aujourd'hui.",
             "port_exemple": "O trânsito está parado hoje.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "ad362943-009b-48d0-ade8-dca75d5858ce_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ad362943-009b-48d0-ade8-dca75d5858ce_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ad362943-009b-48d0-ade8-dca75d5858ce_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "traffic",
             "note": "Trânsito is the standard term for road traffic in European Portuguese. It refers to the movement of vehicles on the roads and is not used for public transit; that would be 'transporte público' or 'ônibus' depending on context.",
             "port_exemple": "O trânsito está pesado hoje.",
             "last_update": "2026-05-08",
-            "use_exemple": "The traffic is heavy today."
+            "use_exemple": "The traffic is heavy today.",
+            "translation_audio": {
+                "filename": "ad362943-009b-48d0-ade8-dca75d5858ce_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "ad362943-009b-48d0-ade8-dca75d5858ce_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "ad362943-009b-48d0-ade8-dca75d5858ce_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68658,14 +70366,38 @@
             "note": "En français, traiter est polyvalent et couvre les sens de gérer, aborder et soigner selon le contexte. Pour parler d'un sujet, on peut dire aborder ou traiter de ce sujet, et pour les soins médicaux, soigner est plus courant.",
             "use_exemple": "Je vais traiter de ce sujet demain.",
             "port_exemple": "Vou tratar do assunto amanhã.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "6d1ea634-7ced-410f-8263-ee0265a9964e_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6d1ea634-7ced-410f-8263-ee0265a9964e_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6d1ea634-7ced-410f-8263-ee0265a9964e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to deal with",
             "note": "Tratar is a versatile verb. Depending on context, it can mean 'to deal with,' 'to treat,' or 'to handle.'",
             "port_exemple": "Vamos tratar do assunto agora.",
             "last_update": "2026-05-08",
-            "use_exemple": "Let's deal with the matter now."
+            "use_exemple": "Let's deal with the matter now.",
+            "translation_audio": {
+                "filename": "6d1ea634-7ced-410f-8263-ee0265a9964e_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "6d1ea634-7ced-410f-8263-ee0265a9964e_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "6d1ea634-7ced-410f-8263-ee0265a9964e_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68681,14 +70413,38 @@
             "note": "La notion porte sur l'action de traverser quelque chose. Traversée s'emploie pour décrire un trajet à travers une frontière, un fleuve ou une mer.",
             "use_exemple": "La traversée du fleuve a été longue.",
             "port_exemple": "A travessia do rio foi longa.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "b5d748b2-875c-4c18-99ea-7aa02b32770f_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b5d748b2-875c-4c18-99ea-7aa02b32770f_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b5d748b2-875c-4c18-99ea-7aa02b32770f_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "crossing",
             "note": "Travessia is a general noun for the act of crossing something (a river, a border, a channel). In everyday Portuguese, you usually specify what is being crossed (a travessia do rio, da fronteira).",
             "port_exemple": "A travessia do rio foi cansativa.",
             "last_update": "2026-05-08",
-            "use_exemple": "The crossing of the river was tiring."
+            "use_exemple": "The crossing of the river was tiring.",
+            "translation_audio": {
+                "filename": "b5d748b2-875c-4c18-99ea-7aa02b32770f_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "b5d748b2-875c-4c18-99ea-7aa02b32770f_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "b5d748b2-875c-4c18-99ea-7aa02b32770f_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68704,14 +70460,38 @@
             "note": "Note: 'trazer' se traduit essentiellement par 'apporter' pour les objets. Pour les personnes, on dira plutôt 'amener'.",
             "use_exemple": "Je vais apporter le livre.",
             "port_exemple": "Eu vou trazer o livro.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "22ff9a00-779b-4712-a18b-742f4d3fc8ab_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "22ff9a00-779b-4712-a18b-742f4d3fc8ab_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "22ff9a00-779b-4712-a18b-742f4d3fc8ab_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to bring",
             "note": "Note that trazer means to bring something toward the speaker. Use levar for taking something away from the speaker's location.",
             "port_exemple": "Eu vou trazer o livro amanhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "I'll bring the book tomorrow."
+            "use_exemple": "I'll bring the book tomorrow.",
+            "translation_audio": {
+                "filename": "22ff9a00-779b-4712-a18b-742f4d3fc8ab_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "22ff9a00-779b-4712-a18b-742f4d3fc8ab_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "22ff9a00-779b-4712-a18b-742f4d3fc8ab_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68727,14 +70507,38 @@
             "note": "Le sens principal est 'échanger'. Selon le contexte, on peut aussi dire 'changer' ou 'remplacer' en français.",
             "use_exemple": "Je veux échanger ce manteau.",
             "port_exemple": "Quero trocar este casaco.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "3e18f8ba-308e-432e-9525-00c1ec5d8b33_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3e18f8ba-308e-432e-9525-00c1ec5d8b33_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3e18f8ba-308e-432e-9525-00c1ec5d8b33_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "to change; exchange",
             "note": "Trocar is versatile and covers changing, exchanging, or swapping something. In many contexts it implies substitution rather than just modifying it.",
             "port_exemple": "Preciso trocar de roupa.",
             "last_update": "2026-05-08",
-            "use_exemple": "I need to change clothes."
+            "use_exemple": "I need to change clothes.",
+            "translation_audio": {
+                "filename": "3e18f8ba-308e-432e-9525-00c1ec5d8b33_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "3e18f8ba-308e-432e-9525-00c1ec5d8b33_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "3e18f8ba-308e-432e-9525-00c1ec5d8b33_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68750,14 +70554,38 @@
             "note": "Remarque: 'monnaie' désigne l'argent en petites pièces et billets. On dit aussi 'rendre la monnaie' pour l'action de donner le changement.",
             "use_exemple": "Vous avez de la monnaie ?",
             "port_exemple": "Tem troco?",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "change (money returned)",
             "note": "Troco refers to the money you receive back in a transaction. It does not mean 'small'—use change for that sense.",
             "port_exemple": "Preciso de troco.",
             "last_update": "2026-05-08",
-            "use_exemple": "I need some change."
+            "use_exemple": "I need some change.",
+            "translation_audio": {
+                "filename": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "7e0297f1-4cbb-40c7-ab7f-cc4ada579486_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68773,14 +70601,38 @@
             "note": "En français, 'touriste' est invariable par le genre; on dit 'un touriste' ou 'une touriste' selon le sexe de la personne. C'est un mot très courant pour parler de quelqu'un qui voyage.",
             "use_exemple": "Le touriste est sur la place.",
             "port_exemple": "O turista está na praça.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "145a8398-5610-41f8-880f-502b4ac6a430_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "145a8398-5610-41f8-880f-502b4ac6a430_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "145a8398-5610-41f8-880f-502b4ac6a430_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "tourist (inv in gender)",
             "note": "Turista is the common term for 'tourist' in Portuguese. The gender is indicated by the article (o turista / a turista); the plural is turistas.",
             "port_exemple": "O turista tirou muitas fotos da cidade.",
             "last_update": "2026-05-08",
-            "use_exemple": "The tourist took many photos of the city."
+            "use_exemple": "The tourist took many photos of the city.",
+            "translation_audio": {
+                "filename": "145a8398-5610-41f8-880f-502b4ac6a430_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "145a8398-5610-41f8-880f-502b4ac6a430_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "145a8398-5610-41f8-880f-502b4ac6a430_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -68796,14 +70648,38 @@
             "note": "Le mot 'paire' s'emploie surtout pour deux objets semblables, comme une paire de chaussures. Selon le contexte, on peut aussi dire 'un couple' pour deux personnes ou 'un duo' pour deux éléments qui vont ensemble.",
             "use_exemple": "J'ai acheté une paire de chaussures hier.",
             "port_exemple": "Comprei um par de sapatos ontem.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "d6ec1248-f2c8-4597-8c61-3f3e95f68050_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "d6ec1248-f2c8-4597-8c61-3f3e95f68050_fr_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "d6ec1248-f2c8-4597-8c61-3f3e95f68050_fr_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "a pair/ couple",
             "note": "In everyday use, 'um par' means 'a pair' (two items). If you mean two people who are dating, you'd say 'a couple' instead.",
             "port_exemple": "Eu comprei um par de luvas.",
             "last_update": "2026-05-08",
-            "use_exemple": "I bought a pair of gloves."
+            "use_exemple": "I bought a pair of gloves.",
+            "translation_audio": {
+                "filename": "d6ec1248-f2c8-4597-8c61-3f3e95f68050_en_translation.mp3",
+                "last_update": "2026-06-15"
+            },
+            "use_exemple_audio": {
+                "filename": "d6ec1248-f2c8-4597-8c61-3f3e95f68050_en_exemple.mp3",
+                "last_update": "2026-06-15"
+            },
+            "port_exemple_audio": {
+                "filename": "d6ec1248-f2c8-4597-8c61-3f3e95f68050_en_pt_exemple.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -68819,7 +70695,11 @@
             "note": "Remarque: 'un peu' est l'équivalent direct et le plus courant de 'um pouco'. On peut aussi dire 'un petit peu' pour un ton plus familier.",
             "use_exemple": "Je parle un peu portugais.",
             "port_exemple": "Eu falo um pouco de português.",
-            "last_update": "2026-02-19"
+            "last_update": "2026-02-19",
+            "translation_audio": {
+                "filename": "0cce52ee-c4ac-4d3b-914d-1eca2ddb4a79_fr_translation.mp3",
+                "last_update": "2026-06-15"
+            }
         },
         "en": {
             "translation": "a little",
