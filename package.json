@@ -37,7 +37,7 @@
   "devDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^9.0.1",
+    "@mui/icons-material": "^9.1.1",
     "@mui/material": "^9.0.1",
     "@playwright/test": "^1.60.0",
     "@types/bcryptjs": "^3.0.0",
