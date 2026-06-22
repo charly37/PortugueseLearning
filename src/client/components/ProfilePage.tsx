@@ -18,7 +18,8 @@ import {
   Alert,
   Snackbar,
   Switch,
-  FormControlLabel
+  FormControlLabel,
+  TextField
 } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
@@ -40,6 +41,7 @@ interface User {
   createdAt?: string;
   totalScore?: number;
   level?: number;
+  storyTopic?: string;
 }
 
 interface ChallengeProgress {
@@ -72,6 +74,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
   const [preferredLanguage, setPreferredLanguage] = useState<'fr' | 'en'>(user?.preferredLanguage || 'fr');
   const [mobileFriendly, setMobileFriendly] = useState<boolean>(user?.mobileFriendly || false);
   const [practiceMode, setPracticeMode] = useState<boolean>(user?.practiceMode || false);
+  const [storyTopic, setStoryTopic] = useState<string>(user?.storyTopic || '');
   const [updateSuccess, setUpdateSuccess] = useState(false);
 
   useEffect(() => {
@@ -97,6 +100,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
       setPreferredLanguage(user.preferredLanguage || 'fr');
       setMobileFriendly(user.mobileFriendly || false);
       setPracticeMode(user.practiceMode || false);
+      setStoryTopic(user.storyTopic || '');
     }
   }, [user]);
 
@@ -174,6 +178,27 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
       }
     } catch (error) {
       console.error('Failed to update practice mode preference:', error);
+    }
+  };
+
+  const handleStoryTopicSave = async () => {
+    try {
+      const response = await fetch('/api/auth/update-story-topic', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ storyTopic })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setUpdateSuccess(true);
+        if (onUserUpdate && data.user) {
+          onUserUpdate(data.user);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to update story topic:', error);
     }
   };
 
@@ -489,6 +514,36 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ user, onBackHome, onUserUpdat
                   </Box>
                 }
               />
+            </Paper>
+
+            <Paper
+              variant="outlined"
+              sx={{ p: 2 }}
+            >
+              <Typography variant="body1" sx={{ fontWeight: 'medium', mb: 0.5 }}>
+                Story topic
+              </Typography>
+              <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mb: 1.5 }}>
+                Guidelines for the weekly story generator. Describe themes, settings, or vocabulary you want the stories to focus on.
+              </Typography>
+              <TextField
+                fullWidth
+                multiline
+                minRows={2}
+                maxRows={5}
+                value={storyTopic}
+                onChange={(e) => setStoryTopic(e.target.value)}
+                placeholder="e.g. travel in Lisbon, food and cooking, sports..."
+                size="small"
+                sx={{ mb: 1.5 }}
+              />
+              <Button
+                variant="contained"
+                size="small"
+                onClick={handleStoryTopicSave}
+              >
+                Save
+              </Button>
             </Paper>
           </Stack>
 

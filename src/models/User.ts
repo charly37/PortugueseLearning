@@ -50,6 +50,7 @@ export interface IUser extends Document {
   level: number;
   weaknesses?: Weaknesses;
   weaknessesUpdatedAt?: Date;
+  storyTopic?: string;
   comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
@@ -137,6 +138,10 @@ const userSchema = new Schema<IUser>({
   },
   weaknessesUpdatedAt: {
     type: Date
+  },
+  storyTopic: {
+    type: String,
+    default: ''
   }
 });
 
