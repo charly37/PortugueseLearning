@@ -82445,14 +82445,38 @@
             "note": "Remarque: le verbe portugais conceder se traduit le plus souvent par accorder en français, surtout pour des dons, des droits ou des bourses. Concéder est aussi utilisé, mais il exprime davantage une concession ou une admission.",
             "use_exemple": "Je vais accorder une bourse à l'étudiant.",
             "port_exemple": "Vou conceder uma bolsa ao aluno.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "3b075085-f852-4dfd-8b5c-d47be90c2c28_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3b075085-f852-4dfd-8b5c-d47be90c2c28_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3b075085-f852-4dfd-8b5c-d47be90c2c28_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to grant",
             "note": "Conceder is a formal verb used for granting permissions, rights, or benefits; in everyday speech, 'dar' is more common for simple 'give'.",
             "port_exemple": "A universidade pode conceder bolsas aos alunos com melhor desempenho.",
             "last_update": "2026-05-08",
-            "use_exemple": "The university can grant scholarships to the best-performing students."
+            "use_exemple": "The university can grant scholarships to the best-performing students.",
+            "translation_audio": {
+                "filename": "3b075085-f852-4dfd-8b5c-d47be90c2c28_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3b075085-f852-4dfd-8b5c-d47be90c2c28_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3b075085-f852-4dfd-8b5c-d47be90c2c28_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82468,14 +82492,38 @@
             "note": "Notez que concentrer peut signifier aussi « déployer son attention » ou « rassembler des éléments ». En portugais, concentrar est polyvalent; en français, on précise souvent avec des compléments comme « ses efforts » ou « son attention ».",
             "use_exemple": "Je vais concentrer mes efforts sur ce projet.",
             "port_exemple": "Vou concentrar os meus esforços neste projeto.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "fcbefc2b-5ea6-4ef3-8aad-05cd126bc5b1_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "fcbefc2b-5ea6-4ef3-8aad-05cd126bc5b1_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "fcbefc2b-5ea6-4ef3-8aad-05cd126bc5b1_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to focus",
             "note": "Concentrar is used with reflexive forms to emphasize focusing one's attention. In everyday English, focus (or focus on) is usually more natural than concentrate.",
             "port_exemple": "Ela precisa concentrar-se nos estudos.",
             "last_update": "2026-05-08",
-            "use_exemple": "She needs to focus on her studies."
+            "use_exemple": "She needs to focus on her studies.",
+            "translation_audio": {
+                "filename": "fcbefc2b-5ea6-4ef3-8aad-05cd126bc5b1_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "fcbefc2b-5ea6-4ef3-8aad-05cd126bc5b1_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "fcbefc2b-5ea6-4ef3-8aad-05cd126bc5b1_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82491,14 +82539,38 @@
             "note": "En portugais, concluir peut signifier terminer ou tirer une conclusion. En français, conclure convient à la plupart des sens, mais pour parler de terminer une tâche, on dira plutôt terminer ou achever.",
             "use_exemple": "Je dois conclure le rapport aujourd'hui.",
             "port_exemple": "Eu preciso concluir o relatório hoje.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "88907a0d-8b1e-415b-bd21-67f26fb59896_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "88907a0d-8b1e-415b-bd21-67f26fb59896_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "88907a0d-8b1e-415b-bd21-67f26fb59896_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to finish",
             "note": "Concluir is most commonly translated as 'to finish' or 'to complete.' It can also mean 'to conclude' when you are drawing a conclusion (e.g., 'concluir que...').",
             "port_exemple": "Vou concluir o relatório hoje.",
             "last_update": "2026-05-08",
-            "use_exemple": "I will finish the report today."
+            "use_exemple": "I will finish the report today.",
+            "translation_audio": {
+                "filename": "88907a0d-8b1e-415b-bd21-67f26fb59896_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "88907a0d-8b1e-415b-bd21-67f26fb59896_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "88907a0d-8b1e-415b-bd21-67f26fb59896_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82514,14 +82586,38 @@
             "note": "Le verbe 'concorder' est correct mais littéraire et peu utilisé dans le langage courant. Pour un usage quotidien, dites 'être d'accord' avec quelqu'un.",
             "use_exemple": "Je suis d'accord avec vous.",
             "port_exemple": "Eu concordo com você.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "9ee6f24a-80e7-4a3a-b791-83c88d9d4e5a_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "9ee6f24a-80e7-4a3a-b791-83c88d9d4e5a_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "9ee6f24a-80e7-4a3a-b791-83c88d9d4e5a_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to agree",
             "note": "Concordar is used to express agreement with a person or a statement. In Portuguese you usually say 'concordar com' followed by the thing or person you agree with.",
             "port_exemple": "Eu concordo com você.",
             "last_update": "2026-05-08",
-            "use_exemple": "I agree with you."
+            "use_exemple": "I agree with you.",
+            "translation_audio": {
+                "filename": "9ee6f24a-80e7-4a3a-b791-83c88d9d4e5a_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "9ee6f24a-80e7-4a3a-b791-83c88d9d4e5a_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "9ee6f24a-80e7-4a3a-b791-83c88d9d4e5a_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82537,14 +82633,38 @@
             "note": "Le verbe concourir signifie être en compétition. Dans le contexte d'une recherche d'emploi, on dira plutôt 'candidater' ou 'postuler'.",
             "use_exemple": "Elle va concourir pour un poste dans l'entreprise.",
             "port_exemple": "Ela vai concorrer a uma vaga na empresa.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "a56266fb-b14b-41e5-9a78-f6860fad8090_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a56266fb-b14b-41e5-9a78-f6860fad8090_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a56266fb-b14b-41e5-9a78-f6860fad8090_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to compete",
             "note": "Concorrer is often used with 'a' to indicate competing for something (a prize, a position). It can also mean 'to compete with' when used with 'com'.",
             "port_exemple": "Eles concorreram ao primeiro lugar.",
             "last_update": "2026-05-08",
-            "use_exemple": "They competed for first place."
+            "use_exemple": "They competed for first place.",
+            "translation_audio": {
+                "filename": "a56266fb-b14b-41e5-9a78-f6860fad8090_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a56266fb-b14b-41e5-9a78-f6860fad8090_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a56266fb-b14b-41e5-9a78-f6860fad8090_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82560,14 +82680,38 @@
             "note": "Concrétiser peut être correct, mais il est moins fréquent que réaliser. En pratique, on dira plutôt 'réaliser mes projets' ou 'mettre en œuvre mes plans'.",
             "use_exemple": "Je veux réaliser mes projets.",
             "port_exemple": "Quero concretizar os meus planos.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "37c87c03-23d7-4060-af2d-a1a8a7a9b96f_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "37c87c03-23d7-4060-af2d-a1a8a7a9b96f_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "37c87c03-23d7-4060-af2d-a1a8a7a9b96f_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to realize",
             "note": "Concretizar means turning a plan or idea into reality. It is common in everyday language to say 'realize a plan' rather than 'concretize'.",
             "port_exemple": "Precisamos concretizar o projeto este mês.",
             "last_update": "2026-05-08",
-            "use_exemple": "We need to realize the project this month."
+            "use_exemple": "We need to realize the project this month.",
+            "translation_audio": {
+                "filename": "37c87c03-23d7-4060-af2d-a1a8a7a9b96f_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "37c87c03-23d7-4060-af2d-a1a8a7a9b96f_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "37c87c03-23d7-4060-af2d-a1a8a7a9b96f_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82583,14 +82727,38 @@
             "note": "En portugais, 'condenar' peut être utilisé dans un sens moral ou juridique. En français, 'condamner' s’emploie de façon similaire: condamner quelqu'un à une peine ou condamner une action; l’usage est naturel et courant.",
             "use_exemple": "Nous ne devons pas condamner quelqu'un sans preuves.",
             "port_exemple": "Não devemos condenar alguém sem provas.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "76727a44-3fc7-457a-a17d-530a5741d0d3_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "76727a44-3fc7-457a-a17d-530a5741d0d3_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "76727a44-3fc7-457a-a17d-530a5741d0d3_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to condemn",
             "note": "Condenar is a strong verb used for formal judgment or moral disapproval. In everyday language, you’ll often use 'to condemn' for moral contexts and 'to sentence' for legal outcomes.",
             "port_exemple": "O juiz condenou-o a cinco anos de prisão.",
             "last_update": "2026-05-08",
-            "use_exemple": "The judge condemned him to five years in prison."
+            "use_exemple": "The judge condemned him to five years in prison.",
+            "translation_audio": {
+                "filename": "76727a44-3fc7-457a-a17d-530a5741d0d3_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "76727a44-3fc7-457a-a17d-530a5741d0d3_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "76727a44-3fc7-457a-a17d-530a5741d0d3_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -82606,14 +82774,38 @@
             "note": "Conduzir peut signifier conduire (un véhicule) ou diriger. En français, conduire est surtout utilisé pour conduire un véhicule, mais peut aussi signifier mener ou diriger selon le contexte.",
             "use_exemple": "Je vais conduire la voiture.",
             "port_exemple": "Eu vou conduzir o carro.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "6b76d116-71f5-4f57-987d-e4e86a48e1ce_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "6b76d116-71f5-4f57-987d-e4e86a48e1ce_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "6b76d116-71f5-4f57-987d-e4e86a48e1ce_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to drive (most common for operating a vehicle; it can also mean to lead or conduct in other contexts)",
             "note": "Conduzir is versatile. Use 'drive' for vehicles, but 'lead' or 'conduct' for guiding people or managing projects.",
             "port_exemple": "Ela vai conduzir o carro até à cidade.",
             "last_update": "2026-05-08",
-            "use_exemple": "She will drive the car to the city."
+            "use_exemple": "She will drive the car to the city.",
+            "translation_audio": {
+                "filename": "6b76d116-71f5-4f57-987d-e4e86a48e1ce_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "6b76d116-71f5-4f57-987d-e4e86a48e1ce_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "6b76d116-71f5-4f57-987d-e4e86a48e1ce_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82629,14 +82821,38 @@
             "note": "Remarque : 'conférer' en français est plutôt formel et signifie attribuer (un titre, un prix). Pour le sens 'vérifier', on emploie généralement 'vérifier'.",
             "use_exemple": "Je vais vérifier les informations.",
             "port_exemple": "Vou conferir as informações.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "eec5c2f3-69d5-4ce1-ab05-223f602a0804_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "eec5c2f3-69d5-4ce1-ab05-223f602a0804_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "eec5c2f3-69d5-4ce1-ab05-223f602a0804_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to check",
             "note": "Conferir is versatile: it can mean check, verify, or cross-check. In everyday usage, 'to check' is natural; for formal contexts you might say 'verificar.'",
             "port_exemple": "Vou conferir os dados antes de enviar o relatório.",
             "last_update": "2026-05-08",
-            "use_exemple": "I will check the data before sending the report."
+            "use_exemple": "I will check the data before sending the report.",
+            "translation_audio": {
+                "filename": "eec5c2f3-69d5-4ce1-ab05-223f602a0804_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "eec5c2f3-69d5-4ce1-ab05-223f602a0804_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "eec5c2f3-69d5-4ce1-ab05-223f602a0804_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82652,14 +82868,38 @@
             "note": "Avouer est le verbe le plus courant pour admettre quelque chose. Confesser existe mais est moins utilisé au quotidien et peut être perçu comme plus formel ou religieux.",
             "use_exemple": "Je vais avouer la vérité.",
             "port_exemple": "Eu vou confessar a verdade.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "f6e56ca6-d0eb-4b98-baf0-fc5be395e712_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "f6e56ca6-d0eb-4b98-baf0-fc5be395e712_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "f6e56ca6-d0eb-4b98-baf0-fc5be395e712_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to confess",
             "note": "Usage note: Confessar is used for admitting or revealing something, often guilt, faults, secrets, or crimes. In everyday English, 'to confess' is common for sins or crimes, while 'to admit' is used for general acceptance of a fact.",
             "port_exemple": "Ela vai confessar o segredo aos seus amigos amanhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "She is going to confess the secret to her friends tomorrow."
+            "use_exemple": "She is going to confess the secret to her friends tomorrow.",
+            "translation_audio": {
+                "filename": "f6e56ca6-d0eb-4b98-baf0-fc5be395e712_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "f6e56ca6-d0eb-4b98-baf0-fc5be395e712_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "f6e56ca6-d0eb-4b98-baf0-fc5be395e712_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82675,14 +82915,38 @@
             "note": "Confiar se traduit surtout par 'faire confiance' ou 'avoir confiance en' quelqu'un, selon le contexte. Le verbe 'confier' veut dire 'to entrust' ou 'to confide', ce qui est une nuance différente et moins naturel pour le sens général de confiance.",
             "use_exemple": "Je te fais confiance.",
             "port_exemple": "Eu confio em você.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "d2c7a8f5-906a-4c1d-80a8-4b1ef9815f56_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d2c7a8f5-906a-4c1d-80a8-4b1ef9815f56_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d2c7a8f5-906a-4c1d-80a8-4b1ef9815f56_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to trust",
             "note": "Confiar means 'to trust' or 'to have confidence in'. In European Portuguese you typically say 'confiar em alguém' or 'confiar no processo'.",
             "port_exemple": "Eu confio em você.",
             "last_update": "2026-05-08",
-            "use_exemple": "I trust you."
+            "use_exemple": "I trust you.",
+            "translation_audio": {
+                "filename": "d2c7a8f5-906a-4c1d-80a8-4b1ef9815f56_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d2c7a8f5-906a-4c1d-80a8-4b1ef9815f56_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d2c7a8f5-906a-4c1d-80a8-4b1ef9815f56_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82698,14 +82962,38 @@
             "note": "Conformer est utilisé pour aligner quelque chose sur des normes ou un modèle. Pour parler d'une personne qui suit les règles, on dit 'se conformer à'.",
             "use_exemple": "Nous devons conformer l'équipement aux spécifications.",
             "port_exemple": "Precisamos conformar o equipamento às especificações.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "358d5bdb-904c-4349-a20b-04839eb49790_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "358d5bdb-904c-4349-a20b-04839eb49790_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "358d5bdb-904c-4349-a20b-04839eb49790_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to shape",
             "note": "Conformar is commonly used to mean shaping something to fit a model or standard. When used reflexively as conformar-se, it can mean to content oneself or to accept a situation.",
             "port_exemple": "O marceneiro conformou a madeira à forma desejada.",
             "last_update": "2026-05-08",
-            "use_exemple": "The carpenter shaped the wood to the desired shape."
+            "use_exemple": "The carpenter shaped the wood to the desired shape.",
+            "translation_audio": {
+                "filename": "358d5bdb-904c-4349-a20b-04839eb49790_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "358d5bdb-904c-4349-a20b-04839eb49790_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "358d5bdb-904c-4349-a20b-04839eb49790_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82721,14 +83009,38 @@
             "note": "En portugais, confundir peut signifier 'confondre' ou 'mixer' des choses ou des idées. En français, confondre s'emploie surtout pour marquer une confusion entre choses ou personnes et on précise souvent: confondre A avec B.",
             "use_exemple": "Je ne veux pas confondre les choses.",
             "port_exemple": "Não quero confundir as coisas.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "d0cc07be-e060-4795-ba3a-d9e56964d8c4_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d0cc07be-e060-4795-ba3a-d9e56964d8c4_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d0cc07be-e060-4795-ba3a-d9e56964d8c4_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to confuse",
             "note": "Note that confundir can also mean to mix up or to mistake someone for another, depending on the context. The reflexive form confundir-se is common when talking about becoming confused.",
             "port_exemple": "Isso me confunde.",
             "last_update": "2026-05-08",
-            "use_exemple": "That confuses me."
+            "use_exemple": "That confuses me.",
+            "translation_audio": {
+                "filename": "d0cc07be-e060-4795-ba3a-d9e56964d8c4_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d0cc07be-e060-4795-ba3a-d9e56964d8c4_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d0cc07be-e060-4795-ba3a-d9e56964d8c4_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82744,14 +83056,38 @@
             "note": "Remarque : 'conquérir' peut signifier gagner quelque chose (objectifs, succès) ou gagner le cœur de quelqu'un. En portugais, 'conquistar' a le même sens large, mais le contexte détermine si l'accent est sur l'effort ou sur les relations.",
             "use_exemple": "Cette année, je vais conquérir mes objectifs.",
             "port_exemple": "Este ano vou conquistar meus objetivos.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "dff945fc-b649-4fed-b0df-ff797113255e_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "dff945fc-b649-4fed-b0df-ff797113255e_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "dff945fc-b649-4fed-b0df-ff797113255e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to conquer",
             "note": "Conquistar can also mean 'to win over' someone or 'to achieve/overcome' a goal, depending on context. In everyday language, choose the sense that fits the situation.",
             "port_exemple": "Ela quer conquistar o mercado.",
             "last_update": "2026-05-08",
-            "use_exemple": "She wants to conquer the market."
+            "use_exemple": "She wants to conquer the market.",
+            "translation_audio": {
+                "filename": "dff945fc-b649-4fed-b0df-ff797113255e_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "dff945fc-b649-4fed-b0df-ff797113255e_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "dff945fc-b649-4fed-b0df-ff797113255e_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82767,14 +83103,38 @@
             "note": "Remarque : Consacrer est polyvalent : il peut signifier dédier une vie ou une carrière, ou consacrer un lieu dans un cadre religieux. En portugais, se consagrar se traduit le plus souvent par se dedicar (ou se dedicar à), mais en français on dit plutôt se consacrer ou consacrer selon le contexte.",
             "use_exemple": "Il veut consacrer sa carrière au service de la communauté.",
             "port_exemple": "Ele quer consagrar a sua carreira ao serviço da comunidade.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "f45fa5aa-494e-4bff-b775-3c1d50d1e0e6_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "f45fa5aa-494e-4bff-b775-3c1d50d1e0e6_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "f45fa5aa-494e-4bff-b775-3c1d50d1e0e6_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to dedicate",
             "note": "Consagrar is commonly used in religious or formal contexts to mean sanctify or dedicate. In everyday usage, dedicar is more natural when talking about devoting time or effort.",
             "port_exemple": "Ela decidiu consagrar o seu tempo à música.",
             "last_update": "2026-05-08",
-            "use_exemple": "She decided to dedicate her time to music."
+            "use_exemple": "She decided to dedicate her time to music.",
+            "translation_audio": {
+                "filename": "f45fa5aa-494e-4bff-b775-3c1d50d1e0e6_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "f45fa5aa-494e-4bff-b775-3c1d50d1e0e6_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "f45fa5aa-494e-4bff-b775-3c1d50d1e0e6_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -82790,14 +83150,38 @@
             "note": "Conseguir est polyvalent: il peut signifier obtenir quelque chose ou réussir à faire quelque chose selon le contexte. En usage courant, on dira 'obtenir' pour obtenir un objet, et 'réussir à' ou 'parvenir à' pour accomplir une action.",
             "use_exemple": "J'ai réussi à terminer le rapport à temps.",
             "port_exemple": "Eu consegui terminar o relatório a tempo.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to obtain",
             "note": "Conseguir also means 'to manage to' or 'to be able to' depending on context. In everyday Portuguese, it is used for obtaining something or achieving success.",
             "port_exemple": "Quero conseguir um emprego.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want to get a job."
+            "use_exemple": "I want to get a job.",
+            "translation_audio": {
+                "filename": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "0b4c2b64-e694-4662-ba73-a1ed35c42c3b_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82813,14 +83197,38 @@
             "note": "Le verbe portugais consentir se traduit le plus naturellement par donner son accord ou autoriser en français. Le verbe consentir existe en français mais est moins courant et plutôt soutenu; on dira plutôt donner son accord ou autoriser selon le contexte.",
             "use_exemple": "Je ne vais pas donner mon accord pour cela.",
             "port_exemple": "Não vou consentir com isso.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "2350ec87-8a29-40e5-bef1-5148682401d0_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "2350ec87-8a29-40e5-bef1-5148682401d0_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "2350ec87-8a29-40e5-bef1-5148682401d0_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to allow",
             "note": "Consentir in Portuguese is fairly formal. In everyday English, it's best rendered as 'to allow' or 'to permit' rather than 'to consent'.",
             "port_exemple": "Ela consentiu que eu ficasse mais um dia.",
             "last_update": "2026-05-08",
-            "use_exemple": "She allowed me to stay one more day."
+            "use_exemple": "She allowed me to stay one more day.",
+            "translation_audio": {
+                "filename": "2350ec87-8a29-40e5-bef1-5148682401d0_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "2350ec87-8a29-40e5-bef1-5148682401d0_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "2350ec87-8a29-40e5-bef1-5148682401d0_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82836,14 +83244,38 @@
             "note": "Convoquer est utilisé pour appeler des personnes à se présenter ou pour organiser une réunion. Dans un contexte officiel, il peut aussi signifier convoquer des élections.",
             "use_exemple": "Je vais convoquer mes collègues pour la réunion.",
             "port_exemple": "Vou convocar os meus colegas para a reunião.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "a446fdbe-9a59-4fa3-8eb2-c059248d649d_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a446fdbe-9a59-4fa3-8eb2-c059248d649d_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a446fdbe-9a59-4fa3-8eb2-c059248d649d_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to summon",
             "note": "Convocar is formal and often used for official meetings or events. In everyday Portuguese, people commonly use 'chamar' or 'organizar uma reunião' depending on the context.",
             "port_exemple": "Vamos convocar uma reunião amanhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "We will summon a meeting tomorrow."
+            "use_exemple": "We will summon a meeting tomorrow.",
+            "translation_audio": {
+                "filename": "a446fdbe-9a59-4fa3-8eb2-c059248d649d_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a446fdbe-9a59-4fa3-8eb2-c059248d649d_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a446fdbe-9a59-4fa3-8eb2-c059248d649d_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82859,14 +83291,38 @@
             "note": "Notez que 'coordonner' implique d'harmoniser et de mettre en relation des éléments. Parfois 'organiser' est plus courant pour parler des tâches pratiques.",
             "use_exemple": "Je vais coordonner les activités du groupe.",
             "port_exemple": "Vou coordenar as atividades do grupo.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "fb2ac679-1e91-4c80-8c2d-2a948ecc6177_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "fb2ac679-1e91-4c80-8c2d-2a948ecc6177_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "fb2ac679-1e91-4c80-8c2d-2a948ecc6177_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to coordinate",
             "note": "Coordenar is used for planning and aligning people or activities. It is commonly used with 'com' to indicate coordination with someone.",
             "port_exemple": "Eu posso coordenar o projeto.",
             "last_update": "2026-05-08",
-            "use_exemple": "I can coordinate the project."
+            "use_exemple": "I can coordinate the project.",
+            "translation_audio": {
+                "filename": "fb2ac679-1e91-4c80-8c2d-2a948ecc6177_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "fb2ac679-1e91-4c80-8c2d-2a948ecc6177_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "fb2ac679-1e91-4c80-8c2d-2a948ecc6177_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82882,14 +83338,38 @@
             "note": "Note: en portugais, copiar signifie principalement 'copier'. En français, on emploie 'copier' pour l'action ordinaire; pour parler de plagiat, on dira 'plagier'.",
             "use_exemple": "Je vais copier le texte.",
             "port_exemple": "Vou copiar o texto.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "3c398b70-4a95-45d9-af99-b88036b1cc25_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3c398b70-4a95-45d9-af99-b88036b1cc25_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3c398b70-4a95-45d9-af99-b88036b1cc25_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to copy",
             "note": "Copiar is the standard verb meaning 'to copy' for text, files, and other items. In everyday Portuguese, it's used for literal copying as well as in tech contexts (e.g., copy-paste).",
             "port_exemple": "Vou copiar o texto.",
             "last_update": "2026-05-08",
-            "use_exemple": "I am going to copy the text."
+            "use_exemple": "I am going to copy the text.",
+            "translation_audio": {
+                "filename": "3c398b70-4a95-45d9-af99-b88036b1cc25_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3c398b70-4a95-45d9-af99-b88036b1cc25_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3c398b70-4a95-45d9-af99-b88036b1cc25_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82905,14 +83385,38 @@
             "note": "Remarque: En portugais, 'corresponder' est souvent suivi de 'a' (ou 'à') pour marquer l'adéquation avec quelque chose. En français, cela se traduit le plus souvent par 'correspondre à'.",
             "use_exemple": "Cette carte correspond au territoire réel.",
             "port_exemple": "Este mapa corresponde ao território real.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "7edbb94e-448f-4ff7-94c6-ada404a23562_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "7edbb94e-448f-4ff7-94c6-ada404a23562_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "7edbb94e-448f-4ff7-94c6-ada404a23562_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to correspond",
             "note": "Corresponder is used for things that align or relate to each other (e.g., data, colors). It can also mean to correspond with someone, i.e., to write letters.",
             "port_exemple": "As cores não correspondem ao que está no catálogo.",
             "last_update": "2026-05-08",
-            "use_exemple": "The colors do not correspond to what is in the catalog."
+            "use_exemple": "The colors do not correspond to what is in the catalog.",
+            "translation_audio": {
+                "filename": "7edbb94e-448f-4ff7-94c6-ada404a23562_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "7edbb94e-448f-4ff7-94c6-ada404a23562_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "7edbb94e-448f-4ff7-94c6-ada404a23562_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82928,14 +83432,38 @@
             "note": "Remarque : 'corriger' est un verbe du premier groupe signifiant 'faire des corrections' ou 'réparer une erreur'. On l'utilise avec des fautes, un texte, un exercice, etc.",
             "use_exemple": "Je vais corriger l'erreur.",
             "port_exemple": "Eu vou corrigir o erro.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "17b4dd47-23e6-4e2a-b107-6169df623944_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "17b4dd47-23e6-4e2a-b107-6169df623944_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "17b4dd47-23e6-4e2a-b107-6169df623944_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to correct",
             "note": "Corrigir is mainly used for fixing mistakes in texts, tasks, or behavior. In everyday Portuguese, it's common to say 'corrigir o erro' or 'corrigir o texto'.",
             "port_exemple": "Eu preciso corrigir o erro no meu texto.",
             "last_update": "2026-05-08",
-            "use_exemple": "I need to correct the error in my text."
+            "use_exemple": "I need to correct the error in my text.",
+            "translation_audio": {
+                "filename": "17b4dd47-23e6-4e2a-b107-6169df623944_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "17b4dd47-23e6-4e2a-b107-6169df623944_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "17b4dd47-23e6-4e2a-b107-6169df623944_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82951,14 +83479,38 @@
             "note": "Costumar signifie 'avoir l'habitude de faire quelque chose'. On emploie 'avoir l'habitude de' suivi d'un infinitif.",
             "use_exemple": "J'ai l'habitude de me lever tôt le week-end.",
             "port_exemple": "Eu costumo acordar cedo nos fins de semana.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "242c7613-4648-4bc9-9ab8-69aea745b190_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "242c7613-4648-4bc9-9ab8-69aea745b190_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "242c7613-4648-4bc9-9ab8-69aea745b190_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to be in the habit of",
             "note": "Costumar expresses habitual actions, not a one-time event. It is usually translated as 'to be in the habit of' or 'to usually do'.",
             "port_exemple": "Eu costumo acordar cedo.",
             "last_update": "2026-05-08",
-            "use_exemple": "I am in the habit of waking up early."
+            "use_exemple": "I am in the habit of waking up early.",
+            "translation_audio": {
+                "filename": "242c7613-4648-4bc9-9ab8-69aea745b190_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "242c7613-4648-4bc9-9ab8-69aea745b190_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "242c7613-4648-4bc9-9ab8-69aea745b190_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82974,14 +83526,38 @@
             "note": "Remarque: 'crer' est littéraire ou archaïque en portugais; on le voit surtout dans des textes religieux ou soutenus. En français, 'croire' est le verbe courant.",
             "use_exemple": "Croire que tout va bien se passer nécessite de la foi.",
             "port_exemple": "Crer que tudo vai dar certo exige fé.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "6792e0d5-ca9a-412a-8f34-d6527c144304_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "6792e0d5-ca9a-412a-8f34-d6527c144304_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "6792e0d5-ca9a-412a-8f34-d6527c144304_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to believe",
             "note": "Crer is somewhat formal or literary in European Portuguese. In everyday speech, people often prefer acreditar; crer is mostly used with crer que (that) or crer em (in) for religious or literary contexts.",
             "port_exemple": "Quero crer que tudo vai melhorar.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want to believe that everything will get better."
+            "use_exemple": "I want to believe that everything will get better.",
+            "translation_audio": {
+                "filename": "6792e0d5-ca9a-412a-8f34-d6527c144304_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "6792e0d5-ca9a-412a-8f34-d6527c144304_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "6792e0d5-ca9a-412a-8f34-d6527c144304_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -82997,14 +83573,38 @@
             "note": "Remarque : « criar » peut aussi signifier élever (des enfants, des animaux). Quand on parle de créer quelque chose, on emploie « créer ». Pour élever, on dira « élever ».",
             "use_exemple": "Je vais créer un nouveau compte.",
             "port_exemple": "Vou criar uma nova conta.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "3a5d35d1-ade2-4458-ba31-1c9fafd4d618_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3a5d35d1-ade2-4458-ba31-1c9fafd4d618_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3a5d35d1-ade2-4458-ba31-1c9fafd4d618_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to create",
             "note": "Criar has several senses. In addition to creating something, it also means to raise or bring up children or animals, so context matters.",
             "port_exemple": "Ela gosta de criar histórias.",
             "last_update": "2026-05-08",
-            "use_exemple": "She likes to create stories."
+            "use_exemple": "She likes to create stories.",
+            "translation_audio": {
+                "filename": "3a5d35d1-ade2-4458-ba31-1c9fafd4d618_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3a5d35d1-ade2-4458-ba31-1c9fafd4d618_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3a5d35d1-ade2-4458-ba31-1c9fafd4d618_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83020,14 +83620,38 @@
             "note": "Remarque: en portugais, 'criticar' peut viser une personne ou une chose. En français, 'critiquer' peut avoir une nuance légère ou plus sévère selon le contexte.",
             "use_exemple": "Je vais critiquer le rapport.",
             "port_exemple": "Eu vou criticar o relatório.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "4d559f71-9c67-417f-8f20-852a11880211_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "4d559f71-9c67-417f-8f20-852a11880211_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "4d559f71-9c67-417f-8f20-852a11880211_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to criticize",
             "note": "Criticar is the basic verb for criticizing; it can also mean to critique. In everyday Portuguese, tone matters and context determines whether the critique is harsh or constructive.",
             "port_exemple": "Ela costuma criticar as decisões dos outros.",
             "last_update": "2026-05-08",
-            "use_exemple": "She tends to criticize other people's decisions."
+            "use_exemple": "She tends to criticize other people's decisions.",
+            "translation_audio": {
+                "filename": "4d559f71-9c67-417f-8f20-852a11880211_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "4d559f71-9c67-417f-8f20-852a11880211_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "4d559f71-9c67-417f-8f20-852a11880211_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83043,14 +83667,38 @@
             "note": "Le sens varie: 'cruzar' peut signifier traverser physiquement ou croiser quelqu'un par hasard. En français, on dira 'traverser' pour traverser un lieu, et 'croiser' ou 'se croiser' pour rencontrer quelqu'un par hasard.",
             "use_exemple": "Je vais traverser la rue.",
             "port_exemple": "Vou cruzar a rua.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "e97dff59-2a47-481f-b0c7-5d4c0826bb22_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e97dff59-2a47-481f-b0c7-5d4c0826bb22_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e97dff59-2a47-481f-b0c7-5d4c0826bb22_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to cross",
             "note": "cruzar is the basic verb for crossing something, like a street or a border. Common phrases include cruzar os braços (to fold one's arms) or cruzar-se com alguém (to run into someone).",
             "port_exemple": "Eu vou cruzar a rua.",
             "last_update": "2026-05-08",
-            "use_exemple": "I'm going to cross the street."
+            "use_exemple": "I'm going to cross the street.",
+            "translation_audio": {
+                "filename": "e97dff59-2a47-481f-b0c7-5d4c0826bb22_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e97dff59-2a47-481f-b0c7-5d4c0826bb22_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e97dff59-2a47-481f-b0c7-5d4c0826bb22_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83066,14 +83714,38 @@
             "note": "Remarque: «prendre soin de» est l'expression standard pour dire «to take care of» quelqu'un ou quelque chose. Pour des soins médicaux ou un traitement, on dira plutôt «soigner».",
             "use_exemple": "J'aime prendre soin des plantes.",
             "port_exemple": "Eu gosto de cuidar das plantas.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to take care of",
             "note": "Cuidar is usually used with 'de' (cuidar de alguém/algo). The natural English equivalents are 'to take care of' or 'to look after'; 'to care' alone is not commonly used in this sense.",
             "port_exemple": "Eu cuido do meu cachorro.",
             "last_update": "2026-05-08",
-            "use_exemple": "I take care of my dog."
+            "use_exemple": "I take care of my dog.",
+            "translation_audio": {
+                "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "bd731ead-77af-4d86-8d86-d4321cd701fe_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -83089,14 +83761,38 @@
             "note": "Culminer est un verbe plutôt soutenu. On l'emploie pour décrire quelque chose qui atteint son point culminant, souvent dans des contextes formels.",
             "use_exemple": "Le projet a culminé en un accord.",
             "port_exemple": "O projeto culminou num acordo.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "d1d31346-5596-4012-9d14-19606268d7b7_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d1d31346-5596-4012-9d14-19606268d7b7_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d1d31346-5596-4012-9d14-19606268d7b7_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to culminate",
             "note": "Culminar is a formal, written word. In everyday speech, people often use 'concluir' or 'terminar' depending on the context.",
             "port_exemple": "O estudo culminou num relatório detalhado.",
             "last_update": "2026-05-08",
-            "use_exemple": "The study culminated in a detailed report."
+            "use_exemple": "The study culminated in a detailed report.",
+            "translation_audio": {
+                "filename": "d1d31346-5596-4012-9d14-19606268d7b7_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d1d31346-5596-4012-9d14-19606268d7b7_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d1d31346-5596-4012-9d14-19606268d7b7_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83112,14 +83808,38 @@
             "note": "Remarque: Culpar est un verbe courant pour attribuer la faute. En portugais, on dit 'culpar alguém de algo' ou simplement 'culpar alguém'; en français, on dira plutôt 'blâmer quelqu'un de quelque chose' ou 'blâmer quelqu'un pour quelque chose' selon le contexte.",
             "use_exemple": "Nous ne devons pas blâmer les autres sans écouter l'histoire.",
             "port_exemple": "Não devemos culpar os outros sem ouvir a história.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "677ed1ab-0ed2-4d02-a5f3-c5e6fd9f2ca7_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "677ed1ab-0ed2-4d02-a5f3-c5e6fd9f2ca7_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "677ed1ab-0ed2-4d02-a5f3-c5e6fd9f2ca7_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to blame",
             "note": "Culpar is a common, everyday verb meaning 'to blame'. In European Portuguese you typically pair it with 'por' to indicate the reason (culpar alguém por algo).",
             "port_exemple": "Não quero culpar-te pelo erro.",
             "last_update": "2026-05-08",
-            "use_exemple": "I don't want to blame you for the mistake."
+            "use_exemple": "I don't want to blame you for the mistake.",
+            "translation_audio": {
+                "filename": "677ed1ab-0ed2-4d02-a5f3-c5e6fd9f2ca7_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "677ed1ab-0ed2-4d02-a5f3-c5e6fd9f2ca7_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "677ed1ab-0ed2-4d02-a5f3-c5e6fd9f2ca7_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83135,14 +83855,38 @@
             "note": "Cultivar peut aussi signifier développer ses compétences, ses relations ou sa culture personnelle, pas seulement les plantes. C'est un verbe d'action qui insiste sur l'entretien et la croissance.",
             "use_exemple": "J'aime cultiver des plantes dans mon jardin.",
             "port_exemple": "Eu gosto de cultivar plantas no meu jardim.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "bf936d51-aa87-4c82-8a90-a201d55fdf4d_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "bf936d51-aa87-4c82-8a90-a201d55fdf4d_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "bf936d51-aa87-4c82-8a90-a201d55fdf4d_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to cultivate",
             "note": "Cultivar is a versatile verb. It can mean growing plants or developing habits.",
             "port_exemple": "Eu gosto de cultivar plantas.",
             "last_update": "2026-05-08",
-            "use_exemple": "I like to cultivate plants."
+            "use_exemple": "I like to cultivate plants.",
+            "translation_audio": {
+                "filename": "bf936d51-aa87-4c82-8a90-a201d55fdf4d_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "bf936d51-aa87-4c82-8a90-a201d55fdf4d_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "bf936d51-aa87-4c82-8a90-a201d55fdf4d_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83158,14 +83902,38 @@
             "note": "Cumprir se traduit surtout par « accomplir » dans le sens de réaliser une tâche ou un objectif. Pour les promesses, on emploie plutôt « tenir sa promesse », et pour les règles, « respecter » ou « se conformer à ».",
             "use_exemple": "Je vais tenir ma promesse.",
             "port_exemple": "Eu vou cumprir a minha promessa.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "5ef0e2be-89c5-4dcb-a927-d6bc48c7f864_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "5ef0e2be-89c5-4dcb-a927-d6bc48c7f864_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "5ef0e2be-89c5-4dcb-a927-d6bc48c7f864_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to fulfill",
             "note": "Cumprir means to carry out or fulfill an obligation. In everyday Portuguese, it's used with promises, duties, and rules; translations vary by context (fulfill, carry out, or comply with).",
             "port_exemple": "Eu quero cumprir a minha promessa.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want to fulfill my promise."
+            "use_exemple": "I want to fulfill my promise.",
+            "translation_audio": {
+                "filename": "5ef0e2be-89c5-4dcb-a927-d6bc48c7f864_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "5ef0e2be-89c5-4dcb-a927-d6bc48c7f864_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "5ef0e2be-89c5-4dcb-a927-d6bc48c7f864_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83181,14 +83949,38 @@
             "note": "Remarque: 'curar' s'emploie pour guérir une maladie ou une blessure, et en français on utilise principalement 'guérir' pour le résultat de la guérison. 'Soigner' peut décrire l'action de traiter quelqu'un.",
             "use_exemple": "Le médecin peut guérir la blessure.",
             "port_exemple": "O médico pode curar a ferida.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "5003c0f3-57e0-46b0-9419-a2c201dd2bbd_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "5003c0f3-57e0-46b0-9419-a2c201dd2bbd_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "5003c0f3-57e0-46b0-9419-a2c201dd2bbd_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to cure",
             "note": "curar is used for curing a disease or healing a wound. For personal recovery, recuperar-se is more common than curar-se.",
             "port_exemple": "Os médicos tentam curar o paciente.",
             "last_update": "2026-05-08",
-            "use_exemple": "The doctors are trying to cure the patient."
+            "use_exemple": "The doctors are trying to cure the patient.",
+            "translation_audio": {
+                "filename": "5003c0f3-57e0-46b0-9419-a2c201dd2bbd_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "5003c0f3-57e0-46b0-9419-a2c201dd2bbd_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "5003c0f3-57e0-46b0-9419-a2c201dd2bbd_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83204,14 +83996,38 @@
             "note": "En français, 'plier' est le choix le plus naturel pour 'curvar' (plier un métal, plier une pièce). 'Courber' existe mais est moins fréquent et peut aussi signifier se pencher ou donner une courbure.",
             "use_exemple": "Je peux plier ce métal.",
             "port_exemple": "Eu posso curvar este metal.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "e397f153-ff04-40ad-9c3b-8294ecd98a8a_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e397f153-ff04-40ad-9c3b-8294ecd98a8a_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e397f153-ff04-40ad-9c3b-8294ecd98a8a_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to bend",
             "note": "Note: curvar means 'to bend' or 'to curve'. In everyday use, you bend yourself by saying 'se curvar', and you can specify what is bent (e.g., curvar o corpo, curvar a cabeça).",
             "port_exemple": "Ela precisa se curvar para pegar o objeto.",
             "last_update": "2026-05-08",
-            "use_exemple": "She needs to bend down to pick up the object."
+            "use_exemple": "She needs to bend down to pick up the object.",
+            "translation_audio": {
+                "filename": "e397f153-ff04-40ad-9c3b-8294ecd98a8a_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e397f153-ff04-40ad-9c3b-8294ecd98a8a_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e397f153-ff04-40ad-9c3b-8294ecd98a8a_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83227,14 +84043,38 @@
             "note": "Remarque : custar est le verbe portugais standard pour exprimer le coût. En portugais européen, on peut aussi l’employer avec les pronoms clitiques, par exemple 'custar-me', pour dire 'cela va me coûter'.",
             "use_exemple": "Cela va me coûter beaucoup.",
             "port_exemple": "Isso vai custar-me muito.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "2925648e-e844-40d6-95fd-86908152079c_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "2925648e-e844-40d6-95fd-86908152079c_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "2925648e-e844-40d6-95fd-86908152079c_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to cost",
             "note": "In European Portuguese, custar is used to talk about price. It is conjugated to agree with the subject (custa, custam).",
             "port_exemple": "Quanto custa este livro?",
             "last_update": "2026-05-08",
-            "use_exemple": "How much does this book cost?"
+            "use_exemple": "How much does this book cost?",
+            "translation_audio": {
+                "filename": "2925648e-e844-40d6-95fd-86908152079c_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "2925648e-e844-40d6-95fd-86908152079c_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "2925648e-e844-40d6-95fd-86908152079c_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83250,14 +84090,38 @@
             "note": "En portugais, 'consistir em' indique ce dont quelque chose est composé ou ce qui est impliqué. En français, on emploie souvent 'consister en' pour signifier cela, ou 'être composé de' selon le contexte.",
             "use_exemple": "Consister em três etapas est utile pour comprendre la méthode.",
             "port_exemple": "Consistir em três etapas é útil para entender o método.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "6b724137-8b6b-40b7-90f3-77a5b2e662ea_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "6b724137-8b6b-40b7-90f3-77a5b2e662ea_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "6b724137-8b6b-40b7-90f3-77a5b2e662ea_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to consist of",
             "note": "In Portuguese, 'consistir' is used with 'em' (and sometimes 'de' depending on meaning). For listing components, the natural English is 'to consist of' (or 'to be made up of').",
             "port_exemple": "Este prato consiste em arroz, feijão e carne.",
             "last_update": "2026-05-08",
-            "use_exemple": "This dish consists of rice, beans, and meat."
+            "use_exemple": "This dish consists of rice, beans, and meat.",
+            "translation_audio": {
+                "filename": "6b724137-8b6b-40b7-90f3-77a5b2e662ea_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "6b724137-8b6b-40b7-90f3-77a5b2e662ea_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "6b724137-8b6b-40b7-90f3-77a5b2e662ea_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83273,14 +84137,38 @@
             "note": "Consolider est un verbe courant pour parler du renforcement ou de la stabilité. En portugais, consolidar peut s’employer dans divers contextes; en français, consolider est tout à fait approprié.",
             "use_exemple": "Consolidons notre partenariat.",
             "port_exemple": "Vamos consolidar a parceria.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "ca310c56-6460-4bd1-9c2c-40df4b7442f7_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "ca310c56-6460-4bd1-9c2c-40df4b7442f7_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "ca310c56-6460-4bd1-9c2c-40df4b7442f7_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to consolidate",
             "note": "The translation 'to consolidate' is accurate. Depending on context, it can also mean 'to strengthen' or 'to merge/unify'.",
             "port_exemple": "É importante consolidar a posição da empresa no mercado.",
             "last_update": "2026-05-08",
-            "use_exemple": "It's important to consolidate the company's position in the market."
+            "use_exemple": "It's important to consolidate the company's position in the market.",
+            "translation_audio": {
+                "filename": "ca310c56-6460-4bd1-9c2c-40df4b7442f7_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "ca310c56-6460-4bd1-9c2c-40df4b7442f7_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "ca310c56-6460-4bd1-9c2c-40df4b7442f7_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83296,14 +84184,38 @@
             "note": "Constar est surtout utilisé dans des contextes administratifs et documentaires. En français, l'équivalent le plus courant est figurer.",
             "use_exemple": "Votre nom doit figurer sur le formulaire.",
             "port_exemple": "É obrigatório constar o seu nome no formulário.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "2d089e7b-6f09-4d2c-bc8c-565005ae8d69_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "2d089e7b-6f09-4d2c-bc8c-565005ae8d69_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "2d089e7b-6f09-4d2c-bc8c-565005ae8d69_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to appear",
             "note": "Constar is used to indicate something appears in or is listed in a document. In general, the most natural translation is 'to appear' (in the document), though 'to be listed' or 'to be stated' fit different contexts.",
             "port_exemple": "Consta no relatório que as metas foram atingidas.",
             "last_update": "2026-05-08",
-            "use_exemple": "The report states that the goals were achieved."
+            "use_exemple": "The report states that the goals were achieved.",
+            "translation_audio": {
+                "filename": "2d089e7b-6f09-4d2c-bc8c-565005ae8d69_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "2d089e7b-6f09-4d2c-bc8c-565005ae8d69_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "2d089e7b-6f09-4d2c-bc8c-565005ae8d69_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83319,14 +84231,38 @@
             "note": "Constater est un verbe plutôt formel qui signifie observer ou vérifier et en tirer un constat. Selon le contexte, on peut préférer 'vérifier' ou 'confirmer'.",
             "use_exemple": "Nous devons constater les faits.",
             "port_exemple": "Precisamos constatar os factos.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "90d09b65-4017-44e5-b18c-49aee2d3790e_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "90d09b65-4017-44e5-b18c-49aee2d3790e_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "90d09b65-4017-44e5-b18c-49aee2d3790e_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to verify",
             "note": "Constatar is a formal verb; in everyday speech you’ll often hear 'verificar' instead. It means to verify or ascertain something based on evidence.",
             "port_exemple": "Constataram que o relatório estava correto.",
             "last_update": "2026-05-08",
-            "use_exemple": "They verified that the report was correct."
+            "use_exemple": "They verified that the report was correct.",
+            "translation_audio": {
+                "filename": "90d09b65-4017-44e5-b18c-49aee2d3790e_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "90d09b65-4017-44e5-b18c-49aee2d3790e_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "90d09b65-4017-44e5-b18c-49aee2d3790e_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83342,14 +84278,38 @@
             "note": "Constituer s'emploie pour dire que quelque chose forme ou compose un tout. En portugais, le verbe peut aussi signifier établir ou mettre en place selon le contexte.",
             "use_exemple": "Ces pièces constituent l'ensemble.",
             "port_exemple": "Essas peças constituem o conjunto.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "c66e8f36-d624-4f2e-9d62-053bf237ebb7_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "c66e8f36-d624-4f2e-9d62-053bf237ebb7_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "c66e8f36-d624-4f2e-9d62-053bf237ebb7_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to constitute",
             "note": "Constituir is a formal verb that means 'to form' or 'to make up' something. In everyday speech you might use 'formar' or 'compor' depending on the context.",
             "port_exemple": "Isso constitui um problema.",
             "last_update": "2026-05-08",
-            "use_exemple": "That constitutes a problem."
+            "use_exemple": "That constitutes a problem.",
+            "translation_audio": {
+                "filename": "c66e8f36-d624-4f2e-9d62-053bf237ebb7_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "c66e8f36-d624-4f2e-9d62-053bf237ebb7_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "c66e8f36-d624-4f2e-9d62-053bf237ebb7_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83365,14 +84325,38 @@
             "note": "Remarque : 'construir' est transitif et s'emploie avec un complément direct (par exemple, une maison). En usage courant, on privilégie 'construire' et on peut aussi dire 'bâtir' dans un registre légèrement plus soutenu.",
             "use_exemple": "Je veux construire une maison.",
             "port_exemple": "Eu quero construir uma casa.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "0a87b250-75a8-414e-936a-ec5af507bfc5_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "0a87b250-75a8-414e-936a-ec5af507bfc5_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "0a87b250-75a8-414e-936a-ec5af507bfc5_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to build",
             "note": "Construir is a regular -ir verb meaning 'to build' or 'to construct.' It can be used for physical objects as well as abstract things (e.g., a career, a relationship).",
             "port_exemple": "Eu quero construir uma casa.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want to build a house."
+            "use_exemple": "I want to build a house.",
+            "translation_audio": {
+                "filename": "0a87b250-75a8-414e-936a-ec5af507bfc5_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "0a87b250-75a8-414e-936a-ec5af507bfc5_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "0a87b250-75a8-414e-936a-ec5af507bfc5_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83388,14 +84372,38 @@
             "note": "En portugais, consumir est polyvalent: on peut parler de consommer des aliments, des ressources ou du temps. En français, consommer est courant pour les aliments et les ressources, mais pour parler d'achat ou de dépenser de l'argent, on utilisera aussi 'acheter' ou 'dépenser' selon le contexte.",
             "use_exemple": "Je veux consommer moins de plastique.",
             "port_exemple": "Eu quero consumir menos plástico.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "fea86988-c52e-4291-987b-e378a3586a71_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "fea86988-c52e-4291-987b-e378a3586a71_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "fea86988-c52e-4291-987b-e378a3586a71_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to consume",
             "note": "Consumir is versatile and used for using up resources, time, or food in a general sense. For eating, however, Portuguese speakers usually say comer rather than consumir.",
             "port_exemple": "O país consome muita energia.",
             "last_update": "2026-05-08",
-            "use_exemple": "The country consumes a lot of energy."
+            "use_exemple": "The country consumes a lot of energy.",
+            "translation_audio": {
+                "filename": "fea86988-c52e-4291-987b-e378a3586a71_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "fea86988-c52e-4291-987b-e378a3586a71_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "fea86988-c52e-4291-987b-e378a3586a71_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83411,14 +84419,38 @@
             "note": "En portugais, 'contactar' est un verbe courant. En français, on dit 'contacter' pour joindre quelqu'un; l'expression 'entrer en contact avec quelqu'un' est plus générale et formelle.",
             "use_exemple": "Je vais contacter l'entreprise demain.",
             "port_exemple": "Vou contactar a empresa amanhã.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "70d1295f-2173-4d48-8c9e-16ee96767f4b_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "70d1295f-2173-4d48-8c9e-16ee96767f4b_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "70d1295f-2173-4d48-8c9e-16ee96767f4b_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to contact",
             "note": "Note: In European Portuguese, contactar is a common, neutral verb meaning 'to contact' or 'to get in touch with.' In casual speech, people might say 'ligar para' (to call) or 'falar com' (to talk to) depending on the context.",
             "port_exemple": "Vou contactar o João amanhã.",
             "last_update": "2026-05-08",
-            "use_exemple": "I will contact João tomorrow."
+            "use_exemple": "I will contact João tomorrow.",
+            "translation_audio": {
+                "filename": "70d1295f-2173-4d48-8c9e-16ee96767f4b_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "70d1295f-2173-4d48-8c9e-16ee96767f4b_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "70d1295f-2173-4d48-8c9e-16ee96767f4b_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83434,14 +84466,38 @@
             "note": "Remarque: 'contar' est un verbe polysemique en portugais. Selon le sens, utilisez 'compter' pour les chiffres et 'raconter' pour raconter une histoire.",
             "use_exemple": "Je peux compter jusqu'à dix.",
             "port_exemple": "Eu posso contar até dez.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to count",
             "note": "Contar has several senses. The primary meaning is 'to count', but it can also mean 'to tell (a story)' or 'to rely on' in other phrases.",
             "port_exemple": "Vamos contar até dez.",
             "last_update": "2026-05-08",
-            "use_exemple": "Let's count to ten."
+            "use_exemple": "Let's count to ten.",
+            "translation_audio": {
+                "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e9044f36-44a4-44f8-8c7c-2663cd615def_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 3,
         "audio": {
@@ -83457,14 +84513,38 @@
             "note": "Contempler évoque l'observation attentive et admirative, souvent pendant un moment. En portugais, contemplar peut aussi signifier réfléchir ou envisager, mais en français on privilégie contempler pour l'observer avec dévotion ou contemplation.",
             "use_exemple": "J'aime contempler la nature.",
             "port_exemple": "Gosto de contemplar a natureza.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "3a15e6bc-3ae7-4b5b-abeb-c31b08828a6a_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3a15e6bc-3ae7-4b5b-abeb-c31b08828a6a_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3a15e6bc-3ae7-4b5b-abeb-c31b08828a6a_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to consider",
             "note": "Contemplar is a somewhat formal or literary verb. In everyday Portuguese, you would often use 'considerar' for possibilities or 'olhar' for simply looking.",
             "port_exemple": "Contemplar o pôr do sol é uma experiência calma.",
             "last_update": "2026-05-08",
-            "use_exemple": "Contemplating the sunset is a calming experience."
+            "use_exemple": "Contemplating the sunset is a calming experience.",
+            "translation_audio": {
+                "filename": "3a15e6bc-3ae7-4b5b-abeb-c31b08828a6a_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "3a15e6bc-3ae7-4b5b-abeb-c31b08828a6a_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "3a15e6bc-3ae7-4b5b-abeb-c31b08828a6a_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83480,14 +84560,38 @@
             "note": "Conter peut signifier à la fois contenir quelque chose physiquement et maîtriser une émotion ou un désir. En français, on privilégiera 'contenir' pour le sens général, et on utilisera 'retenir' pour parler de l'émotion ou de l'envie.",
             "use_exemple": "Je ne peux pas contenir le rire.",
             "port_exemple": "Não consigo conter o riso.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "93ec87f3-b519-4d4e-ba05-d5ec6b5a15a1_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "93ec87f3-b519-4d4e-ba05-d5ec6b5a15a1_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "93ec87f3-b519-4d4e-ba05-d5ec6b5a15a1_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to contain",
             "note": "The basic meaning of conter is 'to contain' as in a container holding something. In other contexts, it can also mean 'to restrain' or 'to curb' (e.g., conter gastos, conter as emoções).",
             "port_exemple": "Este recipiente pode conter dois litros de água.",
             "last_update": "2026-05-08",
-            "use_exemple": "This container can contain two liters of water."
+            "use_exemple": "This container can contain two liters of water.",
+            "translation_audio": {
+                "filename": "93ec87f3-b519-4d4e-ba05-d5ec6b5a15a1_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "93ec87f3-b519-4d4e-ba05-d5ec6b5a15a1_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "93ec87f3-b519-4d4e-ba05-d5ec6b5a15a1_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83503,14 +84607,38 @@
             "note": "Contester sert à exprimer un doute ou une opposition. En portugais, ce verbe est utilisé dans des contextes juridiques ou administratifs; en français, on emploie aussi 'remettre en cause' pour des remarques moins formelles.",
             "use_exemple": "Je vais contester la décision.",
             "port_exemple": "Vou contestar a decisão.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "a146ed8c-76ad-44ea-a408-23b695780816_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a146ed8c-76ad-44ea-a408-23b695780816_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a146ed8c-76ad-44ea-a408-23b695780816_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to dispute",
             "note": "Contestar is used to oppose or challenge a decision or claim. In everyday language it can also mean to retort, but for formal contexts 'dispute' is the more natural choice.",
             "port_exemple": "Ela decidiu contestar a decisão do tribunal.",
             "last_update": "2026-05-08",
-            "use_exemple": "She decided to dispute the court's decision."
+            "use_exemple": "She decided to dispute the court's decision.",
+            "translation_audio": {
+                "filename": "a146ed8c-76ad-44ea-a408-23b695780816_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a146ed8c-76ad-44ea-a408-23b695780816_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a146ed8c-76ad-44ea-a408-23b695780816_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83526,14 +84654,38 @@
             "note": "En portugais, contrair peut aussi signifier 'incur' des dettes ou 'attraper' une maladie. En français, on dit généralement 'contracter une maladie' ou 'contracter des dettes'.",
             "use_exemple": "Il peut contracter une maladie s'il ne se fait pas vacciner.",
             "port_exemple": "Ele pode contrair uma doença se não se vacinar.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "e67a95a6-bee2-455e-b28b-f260858a8d65_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e67a95a6-bee2-455e-b28b-f260858a8d65_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e67a95a6-bee2-455e-b28b-f260858a8d65_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to contract",
             "note": "The translation 'to contract' is accurate and commonly used for diseases, debts, or muscles. In everyday speech, people often say 'to catch' a disease instead of 'to contract.'",
             "port_exemple": "Ele contraiu uma doença.",
             "last_update": "2026-05-08",
-            "use_exemple": "He contracted a disease."
+            "use_exemple": "He contracted a disease.",
+            "translation_audio": {
+                "filename": "e67a95a6-bee2-455e-b28b-f260858a8d65_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e67a95a6-bee2-455e-b28b-f260858a8d65_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e67a95a6-bee2-455e-b28b-f260858a8d65_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83549,14 +84701,38 @@
             "note": "Notez que contrarier peut signifier 'fâcher, déplaire' et aussi 'aller à l'encontre de' quelqu'un ou de ses plans. En français, on dirait plutôt 'contrarier' pour fâcher et 'aller à l'encontre de' pour aller contre une décision ou un plan.",
             "use_exemple": "Je ne veux pas aller à l'encontre de ta décision.",
             "port_exemple": "Não quero contrariar a tua decisão.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "90e8158a-3099-4624-a9c7-8a1677babb70_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "90e8158a-3099-4624-a9c7-8a1677babb70_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "90e8158a-3099-4624-a9c7-8a1677babb70_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to go against",
             "note": "Contrariar is used for actively opposing or defying rules, wishes, or expectations. It often implies upsetting or thwarting someone’s plans.",
             "port_exemple": "Ele contraria as regras da escola.",
             "last_update": "2026-05-08",
-            "use_exemple": "He goes against the school's rules."
+            "use_exemple": "He goes against the school's rules.",
+            "translation_audio": {
+                "filename": "90e8158a-3099-4624-a9c7-8a1677babb70_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "90e8158a-3099-4624-a9c7-8a1677babb70_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "90e8158a-3099-4624-a9c7-8a1677babb70_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83572,14 +84748,38 @@
             "note": "Remarque: En portugais, contratar signifie principalement embaucher. En français, le verbe le plus courant est embaucher ou recruter; contracter s'emploie surtout pour contracter une maladie ou un prêt, et pas pour l'emploi.",
             "use_exemple": "Nous allons embaucher plus d'employés.",
             "port_exemple": "Vamos contratar mais funcionários.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "27552e9a-e337-49dc-a68a-4d3df1d72465_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "27552e9a-e337-49dc-a68a-4d3df1d72465_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "27552e9a-e337-49dc-a68a-4d3df1d72465_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to hire",
             "note": "In Portuguese, contratar is used for hiring people and for contracting services. Do not confuse it with contrair, which means 'to contract' a disease.",
             "port_exemple": "A empresa vai contratar mais funcionários este ano.",
             "last_update": "2026-05-08",
-            "use_exemple": "The company will hire more employees this year."
+            "use_exemple": "The company will hire more employees this year.",
+            "translation_audio": {
+                "filename": "27552e9a-e337-49dc-a68a-4d3df1d72465_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "27552e9a-e337-49dc-a68a-4d3df1d72465_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "27552e9a-e337-49dc-a68a-4d3df1d72465_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83595,14 +84795,38 @@
             "note": "Contribuir est un verbe courant pour parler d'apporter une aide ou une contribution. En portugais européen, on dit souvent 'contribuir para' quelque chose, et en français on emploie 'contribuer à'.",
             "use_exemple": "Je veux contribuer au succès du projet.",
             "port_exemple": "Quero contribuir para o sucesso do projeto.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "e65e7103-99c1-4fd3-b5d0-7555fd38b0e5_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e65e7103-99c1-4fd3-b5d0-7555fd38b0e5_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e65e7103-99c1-4fd3-b5d0-7555fd38b0e5_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to contribute",
             "note": "Contribuir is a regular -ir verb meaning 'to contribute.' It is usually followed by 'para' to indicate the goal ('contribuir para o projeto') and by 'com' to indicate what you contribute ('contribuir com ideias').",
             "port_exemple": "Ela quer contribuir para o projeto.",
             "last_update": "2026-05-08",
-            "use_exemple": "She wants to contribute to the project."
+            "use_exemple": "She wants to contribute to the project.",
+            "translation_audio": {
+                "filename": "e65e7103-99c1-4fd3-b5d0-7555fd38b0e5_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e65e7103-99c1-4fd3-b5d0-7555fd38b0e5_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e65e7103-99c1-4fd3-b5d0-7555fd38b0e5_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83618,14 +84842,38 @@
             "note": "Contrôler signifie exercer un contrôle actif sur quelque chose (surveiller, limiter, diriger). Selon le contexte, on peut aussi dire gérer ou maîtriser.",
             "use_exemple": "Je veux contrôler mes finances.",
             "port_exemple": "Eu quero controlar minhas finanças.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "7bdae6d4-f86f-4648-8f35-55d04a3ad59d_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "7bdae6d4-f86f-4648-8f35-55d04a3ad59d_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "7bdae6d4-f86f-4648-8f35-55d04a3ad59d_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to control",
             "note": "Note: 'controlar' is versatile and used for both physical control and managing abstract things (emotions, expenses, a situation). The exact sense depends on the object being controlled.",
             "port_exemple": "É importante aprender a controlar as suas emoções.",
             "last_update": "2026-05-08",
-            "use_exemple": "It's important to learn to control your emotions."
+            "use_exemple": "It's important to learn to control your emotions.",
+            "translation_audio": {
+                "filename": "7bdae6d4-f86f-4648-8f35-55d04a3ad59d_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "7bdae6d4-f86f-4648-8f35-55d04a3ad59d_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "7bdae6d4-f86f-4648-8f35-55d04a3ad59d_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83641,14 +84889,38 @@
             "note": "Remarque: 'convaincre' met l'accent sur la persuasion par des arguments ou des preuves. On dit \"convaincre quelqu'un de quelque chose\".",
             "use_exemple": "Je peux convaincre mon ami.",
             "port_exemple": "Eu posso convencer o meu amigo.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "f7283fc4-40d6-4dea-a88f-1b3440d483c9_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "f7283fc4-40d6-4dea-a88f-1b3440d483c9_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "f7283fc4-40d6-4dea-a88f-1b3440d483c9_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to convince",
             "note": "Convencer is commonly translated as 'to persuade' or 'to convince'. The choice depends on whether you emphasize belief (convince) or action (persuade).",
             "port_exemple": "Eu quero convencer o meu amigo a vir à festa.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want to persuade my friend to come to the party."
+            "use_exemple": "I want to persuade my friend to come to the party.",
+            "translation_audio": {
+                "filename": "f7283fc4-40d6-4dea-a88f-1b3440d483c9_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "f7283fc4-40d6-4dea-a88f-1b3440d483c9_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "f7283fc4-40d6-4dea-a88f-1b3440d483c9_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83664,14 +84936,38 @@
             "note": "Remarque: 'convertir' s'emploie pour transformer quelque chose (unités, devises, données). Pour parler de conversion religieuse, on dit 'se convertir à' une religion.",
             "use_exemple": "Je veux convertir des dollars en euros.",
             "port_exemple": "Quero converter dólares em euros.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "d9a9de34-0d5f-4b42-9f5b-ba39dba218c4_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d9a9de34-0d5f-4b42-9f5b-ba39dba218c4_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d9a9de34-0d5f-4b42-9f5b-ba39dba218c4_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to convert",
             "note": "Converter is a versatile verb used for changing something into another form, amount, or state. In European Portuguese, you often say 'converter X em Y' or 'converter de X para Y' depending on the direction.",
             "port_exemple": "Vou converter dólares para euros.",
             "last_update": "2026-05-08",
-            "use_exemple": "I will convert dollars to euros."
+            "use_exemple": "I will convert dollars to euros.",
+            "translation_audio": {
+                "filename": "d9a9de34-0d5f-4b42-9f5b-ba39dba218c4_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d9a9de34-0d5f-4b42-9f5b-ba39dba218c4_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d9a9de34-0d5f-4b42-9f5b-ba39dba218c4_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83687,14 +84983,38 @@
             "note": "En portugais, 'convidar' signifie inviter quelqu'un à venir ou à faire quelque chose. En français, on emploie surtout 'inviter' avec 'à' + infinitif ou sans préposition selon le contexte.",
             "use_exemple": "Je vais inviter mes amis au cinéma.",
             "port_exemple": "Vou convidar os meus amigos para o cinema.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "0a1ea7c6-ea38-4c7d-8718-d13c3ecb46a6_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "0a1ea7c6-ea38-4c7d-8718-d13c3ecb46a6_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "0a1ea7c6-ea38-4c7d-8718-d13c3ecb46a6_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to invite",
             "note": "Convidar is the standard verb for inviting someone in European Portuguese. It is used with 'para' to indicate the event (convidar alguém para jantar) and pronouns can attach to the verb (convidar-te, convidar-me) in informal speech.",
             "port_exemple": "Quero convidar os meus amigos para jantar.",
             "last_update": "2026-05-08",
-            "use_exemple": "I want to invite my friends to dinner."
+            "use_exemple": "I want to invite my friends to dinner.",
+            "translation_audio": {
+                "filename": "0a1ea7c6-ea38-4c7d-8718-d13c3ecb46a6_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "0a1ea7c6-ea38-4c7d-8718-d13c3ecb46a6_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "0a1ea7c6-ea38-4c7d-8718-d13c3ecb46a6_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83710,14 +85030,38 @@
             "note": "Convir est un verbe plutôt soutenu en français. Il signifie 'être approprié' ou 'être avantageux', et on dira souvent 'Cela me convient'.",
             "use_exemple": "Il conviendrait que vous arriviez tôt.",
             "port_exemple": "Conviria que você chegasse cedo.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "687e7fd1-9ba2-429f-a71a-14a8a89e657b_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "687e7fd1-9ba2-429f-a71a-14a8a89e657b_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "687e7fd1-9ba2-429f-a71a-14a8a89e657b_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "it is advisable",
             "note": "Convém is used to indicate something is appropriate or advisable in a situation. It is often impersonal and common in both spoken and written European Portuguese.",
             "port_exemple": "Convém chegar cedo para não perder o início.",
             "last_update": "2026-05-08",
-            "use_exemple": "It is advisable to arrive early so you don't miss the start."
+            "use_exemple": "It is advisable to arrive early so you don't miss the start.",
+            "translation_audio": {
+                "filename": "687e7fd1-9ba2-429f-a71a-14a8a89e657b_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "687e7fd1-9ba2-429f-a71a-14a8a89e657b_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "687e7fd1-9ba2-429f-a71a-14a8a89e657b_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83733,14 +85077,38 @@
             "note": "Note: débattre est correct mais peu courant dans le langage quotidien. On préfère dire discuter quand on parle simplement d'un sujet.",
             "use_exemple": "J'aime discuter des idées.",
             "port_exemple": "Eu gosto de debater ideias.",
-            "last_update": "2026-06-02"
+            "last_update": "2026-06-02",
+            "translation_audio": {
+                "filename": "eddbea9a-1e8c-49dd-a3dd-2c753c26b1de_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "eddbea9a-1e8c-49dd-a3dd-2c753c26b1de_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "eddbea9a-1e8c-49dd-a3dd-2c753c26b1de_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to discuss",
             "note": "Debater is commonly used for discussing or debating a topic. In everyday Portuguese, it usually means 'to discuss', but with a person it can imply arguing.",
             "port_exemple": "Vamos debater este assunto.",
             "last_update": "2026-05-08",
-            "use_exemple": "Let's discuss this topic."
+            "use_exemple": "Let's discuss this topic.",
+            "translation_audio": {
+                "filename": "eddbea9a-1e8c-49dd-a3dd-2c753c26b1de_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "eddbea9a-1e8c-49dd-a3dd-2c753c26b1de_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "eddbea9a-1e8c-49dd-a3dd-2c753c26b1de_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 1,
         "audio": {
@@ -83756,14 +85124,38 @@
             "note": "Le verbe 'debruçar' s’utilise essentiellement avec le pronom réfléchi pour indiquer l’action d’incliner le corps ou d’examiner minutieusement un sujet. En pratique, on emploie aussi 'se pencher sur' quelque chose pour signifier qu’on l’étudie en détail.",
             "use_exemple": "Elle se penche sur le cahier pour résoudre les exercices.",
             "port_exemple": "Ela se debruça sobre o caderno para resolver os exercícios.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "bbadabca-6b34-414d-9c89-53110ce39073_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "bbadabca-6b34-414d-9c89-53110ce39073_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "bbadabca-6b34-414d-9c89-53110ce39073_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to lean over",
             "note": "Note: 'debruçar-se' is normally used with 'sobre' to indicate bending over something, especially to look at or read; figuratively, it can mean to pore over or study something in detail.",
             "port_exemple": "Ela se debruçou sobre o livro para ver as letras com mais clareza.",
             "last_update": "2026-05-08",
-            "use_exemple": "She leaned over the book to see the letters more clearly."
+            "use_exemple": "She leaned over the book to see the letters more clearly.",
+            "translation_audio": {
+                "filename": "bbadabca-6b34-414d-9c89-53110ce39073_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "bbadabca-6b34-414d-9c89-53110ce39073_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "bbadabca-6b34-414d-9c89-53110ce39073_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83779,14 +85171,38 @@
             "note": "Décider est un verbe régulier en -er. On l'emploie avec 'décider de' + infinitif pour exprimer qu'on va faire quelque chose.",
             "use_exemple": "J'ai besoin de décider aujourd'hui.",
             "port_exemple": "Eu preciso decidir hoje.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "d2c1fd5b-ec8b-4bf1-9a34-5449edb4786f_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d2c1fd5b-ec8b-4bf1-9a34-5449edb4786f_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d2c1fd5b-ec8b-4bf1-9a34-5449edb4786f_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to decide",
             "note": "Decidir is used for making a choice. In everyday European Portuguese, you often say 'decidir o que fazer' to specify what you will choose.",
             "port_exemple": "Preciso decidir o que vou fazer.",
             "last_update": "2026-05-08",
-            "use_exemple": "I need to decide what I'm going to do."
+            "use_exemple": "I need to decide what I'm going to do.",
+            "translation_audio": {
+                "filename": "d2c1fd5b-ec8b-4bf1-9a34-5449edb4786f_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "d2c1fd5b-ec8b-4bf1-9a34-5449edb4786f_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "d2c1fd5b-ec8b-4bf1-9a34-5449edb4786f_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83802,14 +85218,38 @@
             "note": "Remarque : déclarer s’emploie pour annoncer une intention ou révéler quelque chose. En portugais, declarar est un verbe régulier et s’utilise souvent avec un complément direct.",
             "use_exemple": "Je vais déclarer mon intention.",
             "port_exemple": "Vou declarar a minha intenção.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "a4e821bb-d17c-4a88-a1ce-48aa0e927346_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a4e821bb-d17c-4a88-a1ce-48aa0e927346_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a4e821bb-d17c-4a88-a1ce-48aa0e927346_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to declare",
             "note": "Declarar is formal and commonly used in official or legal contexts. In everyday speech, people more often use 'dizer' or 'afirmar' to express a statement.",
             "port_exemple": "Ele quer declarar a verdade.",
             "last_update": "2026-05-08",
-            "use_exemple": "He wants to declare the truth."
+            "use_exemple": "He wants to declare the truth.",
+            "translation_audio": {
+                "filename": "a4e821bb-d17c-4a88-a1ce-48aa0e927346_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "a4e821bb-d17c-4a88-a1ce-48aa0e927346_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "a4e821bb-d17c-4a88-a1ce-48aa0e927346_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83825,14 +85265,38 @@
             "note": "En portugais européen, decorar peut aussi signifier mémoriser quelque chose. En français, on dirait plutôt 'apprendre par cœur' ou 'réciter par cœur'.",
             "use_exemple": "Je vais décorer ma maison pour Noël.",
             "port_exemple": "Vou decorar a casa para o Natal.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "e75634f7-1113-4d3a-b6fa-6123a96cee56_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e75634f7-1113-4d3a-b6fa-6123a96cee56_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e75634f7-1113-4d3a-b6fa-6123a96cee56_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to decorate (also 'to memorize' in the sense of learning by heart)",
             "note": "Note: decorar has two main senses. It usually means to decorate a space, but in educational contexts it also means to memorize.",
             "port_exemple": "Ela vai decorar a casa para a festa.",
             "last_update": "2026-05-08",
-            "use_exemple": "She is going to decorate the house for the party."
+            "use_exemple": "She is going to decorate the house for the party.",
+            "translation_audio": {
+                "filename": "e75634f7-1113-4d3a-b6fa-6123a96cee56_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "e75634f7-1113-4d3a-b6fa-6123a96cee56_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "e75634f7-1113-4d3a-b6fa-6123a96cee56_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83848,14 +85312,38 @@
             "note": "En portugais, 'decorrer' peut signifier que quelque chose se passe ou a lieu, ou que le temps passe. En français, l'expression naturelle pour un événement est « se dérouler » (par exemple: l'événement s'est déroulé).",
             "use_exemple": "Une réunion s'est déroulée samedi.",
             "port_exemple": "Decorreu uma reunião no sábado.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "969c3d83-43a7-47d0-a5cc-74496fe60de4_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "969c3d83-43a7-47d0-a5cc-74496fe60de4_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "969c3d83-43a7-47d0-a5cc-74496fe60de4_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to pass (time)",
             "note": "In everyday Portuguese, decorre is used to talk about time passing (or that something took place). For events, you’d usually translate as 'took place' or 'occurred' rather than 'elapse'.",
             "port_exemple": "O tempo decorreu rapidamente.",
             "last_update": "2026-05-08",
-            "use_exemple": "Time passed quickly."
+            "use_exemple": "Time passed quickly.",
+            "translation_audio": {
+                "filename": "969c3d83-43a7-47d0-a5cc-74496fe60de4_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "969c3d83-43a7-47d0-a5cc-74496fe60de4_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "969c3d83-43a7-47d0-a5cc-74496fe60de4_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83871,14 +85359,38 @@
             "note": "C’est un verbe formel, utilisé surtout dans des contextes juridiques ou administratifs. Dans le langage courant, on parlera plutôt d’adopter un décret ou d’émettre un décret.",
             "use_exemple": "Le gouvernement a décidé de décréter l'état d'urgence.",
             "port_exemple": "O governo decidiu decretar o estado de emergência.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "4eeebcd5-18af-4068-a979-b64ea62e305b_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "4eeebcd5-18af-4068-a979-b64ea62e305b_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "4eeebcd5-18af-4068-a979-b64ea62e305b_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to decree",
             "note": "Decretar means to issue an official decree by an authority. It is used in formal government or legal contexts; in everyday language you might use 'anunciar' or 'declarar' depending on the nuance.",
             "port_exemple": "O governo decretou novas medidas.",
             "last_update": "2026-05-08",
-            "use_exemple": "The government decreed new measures."
+            "use_exemple": "The government decreed new measures.",
+            "translation_audio": {
+                "filename": "4eeebcd5-18af-4068-a979-b64ea62e305b_en_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "4eeebcd5-18af-4068-a979-b64ea62e305b_en_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "4eeebcd5-18af-4068-a979-b64ea62e305b_en_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
@@ -83894,14 +85406,30 @@
             "note": "Le verbe 'dédier' s’emploie surtout pour dédier une œuvre à quelqu’un. Dans le sens général de 'dedicar', on utilise plutôt 'consacrer' ou 'se consacrer à quelque chose'.",
             "use_exemple": "Je vais consacrer mon temps à l'étude.",
             "port_exemple": "Vou dedicar meu tempo ao estudo.",
-            "last_update": "2026-02-20"
+            "last_update": "2026-02-20",
+            "translation_audio": {
+                "filename": "9ccb2d83-12f3-4f64-aeab-810ad55363d0_fr_translation.mp3",
+                "last_update": "2026-06-22"
+            },
+            "use_exemple_audio": {
+                "filename": "9ccb2d83-12f3-4f64-aeab-810ad55363d0_fr_exemple.mp3",
+                "last_update": "2026-06-22"
+            },
+            "port_exemple_audio": {
+                "filename": "9ccb2d83-12f3-4f64-aeab-810ad55363d0_fr_pt_exemple.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "en": {
             "translation": "to devote",
             "note": "Dedicar is used with time, effort, attention, or activities (dedicar tempo, esforço ou atenção a algo). When you mean a formal dedication, use 'dedicar (algo) a alguém' (e.g., 'dedicar um livro a alguém').",
             "port_exemple": "Ela dedica tempo aos seus estudos.",
             "last_update": "2026-05-08",
-            "use_exemple": "She devotes time to her studies."
+            "use_exemple": "She devotes time to her studies.",
+            "translation_audio": {
+                "filename": "9ccb2d83-12f3-4f64-aeab-810ad55363d0_en_translation.mp3",
+                "last_update": "2026-06-22"
+            }
         },
         "user_usefulness": 2,
         "audio": {
