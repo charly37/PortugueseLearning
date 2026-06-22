@@ -205,6 +205,9 @@ def combine_from_ids(
         except FileNotFoundError as exc:
             log.error("Skipping %s: %s", uid, exc)
             stats.challenges_skipped += 1
+        except Exception as exc:
+            log.error("Skipping %s: corrupted audio file (%s)", uid, exc)
+            stats.challenges_skipped += 1
     stats.total_duration_ms = len(combined)
     return combined, stats
 
