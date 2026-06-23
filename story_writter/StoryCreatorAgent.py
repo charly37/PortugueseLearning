@@ -30,7 +30,8 @@ import re
 import sys
 import uuid
 import asyncio
-from datetime import datetime
+from dataclasses import dataclass
+from datetime import datetime, timedelta
 from typing import Any
 
 from agents import Agent, Runner, function_tool
@@ -49,10 +50,31 @@ log = logging.getLogger(__name__)
 _stories_path: str = "stories.json"
 _level: str = "beginner"
 _topic: str = ""
+_db = None          # MongoDB database connection (set before running the agent)
+_user_id: str | None = None  # current user being processed
 
 # ---------------------------------------------------------------------------
 # MongoDB helpers (mirrors create_weekly_challenge.py pattern)
 # ---------------------------------------------------------------------------
+
+@dataclass
+class CreationStats:
+    """Counters collected during a weekly-story creation run."""
+    users_found: int = 0
+    users_created: int = 0    # story newly inserted
+    users_replaced: int = 0   # existing story overwritten
+    users_failed: int = 0     # unexpected error per user
+
+    def log_summary(self) -> None:
+        log.info("--- Creation Statistics ---")
+        log.info("Users found          : %d", self.users_found)
+        log.info("Stories created      : %d (new)", self.users_created)
+        if self.users_replaced:
+            log.info("Stories replaced     : %d (overwrote existing)", self.users_replaced)
+        if self.users_failed:
+            log.info("Users failed         : %d", self.users_failed)
+        log.info("Total processed      : %d", self.users_created + self.users_replaced)
+
 
 def connect_db():
     """Return (client, db) using MONGODB_URI from environment."""
@@ -63,6 +85,44 @@ def connect_db():
     db = client.get_default_database()
     log.info("Connected to MongoDB")
     return client, db
+
+
+def build_weekly_story_doc(user_id: str | None, story: dict) -> dict:
+    """Build the document to insert into the weeklystories collection."""
+    now = datetime.utcnow()
+    week_start = now - timedelta(days=now.weekday())
+    week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
+    week_end = week_start + timedelta(days=7)
+
+    return {
+        "userId": user_id,
+        "weekStart": week_start,
+        "weekEnd": week_end,
+        "createdAt": now,
+        "story": story,
+        "status": "active",   # active | completed | expired
+    }
+
+
+def upsert_weekly_story(db, user_id: str | None, story: dict) -> tuple[str, bool]:
+    """
+    Insert or replace the weekly story for this user for the current week.
+    Returns (document_id, was_new_insert).
+    """
+    doc = build_weekly_story_doc(user_id, story)
+    collection = db["weeklystories"]
+
+    filter_query: dict = {"weekStart": doc["weekStart"]}
+    if user_id is not None:
+        filter_query["userId"] = user_id
+
+    result = collection.replace_one(filter_query, doc, upsert=True)
+
+    if result.upserted_id:
+        return str(result.upserted_id), True
+    existing = collection.find_one(filter_query)
+    doc_id = str(existing["_id"]) if existing else "unknown"
+    return doc_id, False
 
 
 def resolve_users(db, args) -> list:
@@ -120,8 +180,25 @@ def get_existing_story_titles() -> str:
 
     Returns a JSON array of title strings.
     """
-    stories = _load_stories()
-    titles = [s.get("title_pt", "") for s in stories]
+    titles: list[str] = []
+
+    # Query MongoDB first (primary source when connected)
+    if _db is not None:
+        col = _db["weeklystories"]
+        query: dict = {}
+        if _user_id is not None:
+            query["userId"] = _user_id
+        for doc in col.find(query, {"story.title_pt": 1}):
+            title = doc.get("story", {}).get("title_pt", "")
+            if title and title not in titles:
+                titles.append(title)
+
+    # Also check local JSON file as a fallback / complement
+    for s in _load_stories():
+        title = s.get("title_pt", "")
+        if title and title not in titles:
+            titles.append(title)
+
     return json.dumps(titles, ensure_ascii=False)
 
 
@@ -159,10 +236,11 @@ def _save_story_data(
     topic: str,
     sentences: list[dict],
     user_id: str | None = None,
-) -> str:
-    """Persist a story to stories.json and return its ID."""
+) -> tuple[str, bool]:
+    """Persist a story to MongoDB (weeklystories collection) and return (story_id, is_new).
+    Falls back to stories.json when no DB connection is available."""
     story_id = str(uuid.uuid4())
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.utcnow().strftime("%Y-%m-%d")
 
     story: dict[str, Any] = {
         "id": story_id,
@@ -170,20 +248,26 @@ def _save_story_data(
         "title_fr": title_fr,
         "level": level,
         "topic": topic,
-        "user_id": user_id,
         "sentences": sentences,
         "created_at": today,
     }
 
+    if _db is not None:
+        doc_id, is_new = upsert_weekly_story(_db, user_id, story)
+        action = "inserted" if is_new else "replaced"
+        print(f"\n   ✅ Story {action} in MongoDB (weeklystories): '{title_pt}' "
+              f"(doc_id={doc_id}, {len(sentences)} sentences)")
+        return story_id, is_new
+
+    # Fallback: persist to JSON file when running without a DB connection
     stories = _load_stories()
-    stories.append(story)
+    stories.append({**story, "user_id": user_id})
     _save_stories(stories)
+    print(f"\n   ✅ Story saved to {_stories_path}: '{title_pt}' (id={story_id}, {len(sentences)} sentences)")
+    return story_id, True
 
-    print(f"\n   ✅ Story saved: '{title_pt}' (id={story_id}, {len(sentences)} sentences)")
-    return story_id
 
-
-def _parse_and_save(draft: str, level: str, topic: str, user_id: str | None = None) -> None:
+def _parse_and_save(draft: str, level: str, topic: str, user_id: str | None = None) -> tuple[str, bool] | None:
     """Extract the JSON story from the writer's final output and save it."""
     # Prefer a fenced JSON code block; fall back to the first bare JSON object.
     match = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", draft, re.DOTALL)
@@ -196,16 +280,16 @@ def _parse_and_save(draft: str, level: str, topic: str, user_id: str | None = No
             print("    Raw draft written to draft.txt for inspection.")
             with open("draft.txt", "w", encoding="utf-8") as f:
                 f.write(draft)
-            return
+            return None
         json_str = bare.group(0)
 
     try:
         data: dict = json.loads(json_str)
     except json.JSONDecodeError as e:
         print(f"\n❌  JSON parse error: {e}")
-        return
+        return None
 
-    _save_story_data(
+    return _save_story_data(
         title_pt=data.get("title_pt", "Unknown"),
         title_fr=data.get("title_fr", "Unknown"),
         level=data.get("level", level),
@@ -317,7 +401,7 @@ async def _run_with_review_loop(
     topic: str,
     max_iterations: int,
     user_id: str | None = None,
-) -> None:
+) -> tuple[str, bool] | None:
     """Run the writer, then alternate reviewer → writer until approved or max iterations."""
     print("✍️  Writer creating initial draft...")
     writer_result = await Runner.run(writer, initial_message)
@@ -350,7 +434,7 @@ async def _run_with_review_loop(
         else:
             print(f"\n⚠️  Max iterations ({max_iterations}) reached — saving best effort.")
 
-    _parse_and_save(draft, level, topic, user_id=user_id)
+    return _parse_and_save(draft, level, topic, user_id=user_id)
 
 
 async def _run_agent(
@@ -359,11 +443,14 @@ async def _run_agent(
     model: str,
     max_iterations: int,
     user_id: str | None = None,
-) -> None:
-    global _level, _topic
+    db=None,
+) -> tuple[str, bool] | None:
+    global _level, _topic, _db, _user_id
 
     _level = level
     _topic = topic
+    _db = db
+    _user_id = user_id
 
     existing = _load_stories()
     print(f"Existing stories: {len(existing)}")
@@ -378,7 +465,7 @@ async def _run_agent(
         f"{topic_part} at {level} level."
     )
 
-    await _run_with_review_loop(writer, reviewer, user_message, level, topic, max_iterations, user_id=user_id)
+    return await _run_with_review_loop(writer, reviewer, user_message, level, topic, max_iterations, user_id=user_id)
 
 
 def main() -> None:
@@ -464,7 +551,9 @@ def main() -> None:
                 log.error("No users found — nothing to do.")
                 sys.exit(1)
 
+            stats = CreationStats(users_found=len(users))
             log.info("Generating stories for %d user(s)...", len(users))
+
             for user_doc in users:
                 user_id = str(user_doc["_id"])
                 username = user_doc.get("username", user_id)
@@ -478,27 +567,47 @@ def main() -> None:
                 print(f"\n{'=' * 60}")
                 print(f"Generating story for user: {username}")
                 print(f"{'=' * 60}")
-                asyncio.run(
-                    _run_agent(
-                        level=args.level,
-                        topic=topic,
-                        model=args.model,
-                        max_iterations=args.max_iterations,
-                        user_id=user_id,
+                try:
+                    result = asyncio.run(
+                        _run_agent(
+                            level=args.level,
+                            topic=topic,
+                            model=args.model,
+                            max_iterations=args.max_iterations,
+                            user_id=user_id,
+                            db=db,
+                        )
                     )
-                )
+                    if result is not None:
+                        _, is_new = result
+                        if is_new:
+                            stats.users_created += 1
+                        else:
+                            stats.users_replaced += 1
+                    else:
+                        stats.users_failed += 1
+                except Exception as exc:
+                    log.error("%s — failed: %s", username, exc)
+                    stats.users_failed += 1
+
+            stats.log_summary()
         finally:
             client.close()
     else:
-        # Standalone mode (no user targeting) — original behaviour
-        asyncio.run(
-            _run_agent(
-                level=args.level,
-                topic=fallback_topic,
-                model=args.model,
-                max_iterations=args.max_iterations,
+        # Standalone mode (no user targeting) — writes to weeklystories with userId=null
+        client, db = connect_db()
+        try:
+            asyncio.run(
+                _run_agent(
+                    level=args.level,
+                    topic=fallback_topic,
+                    model=args.model,
+                    max_iterations=args.max_iterations,
+                    db=db,
+                )
             )
-        )
+        finally:
+            client.close()
 
 
 if __name__ == "__main__":
