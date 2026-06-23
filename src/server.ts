@@ -8,6 +8,7 @@ import connectDB from './config/database';
 import authRoutes from './routes/auth';
 import challengeRoutes from './routes/challenge';
 import weeklyChallengeRoutes from './routes/weeklyChallenge';
+import weeklyStoryRoutes from './routes/weeklyStory';
 
 // Load environment variables
 // In test mode, use .env.test; otherwise use .env
@@ -54,6 +55,9 @@ app.use('/api/challenge', challengeRoutes);
 
 // Weekly challenge routes
 app.use('/api/weekly-challenge', weeklyChallengeRoutes);
+
+// Weekly story routes
+app.use('/api/weekly-story', weeklyStoryRoutes);
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));

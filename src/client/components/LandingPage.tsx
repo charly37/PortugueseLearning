@@ -6,6 +6,7 @@ import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import LanguageIcon from '@mui/icons-material/Language';
 import StyleIcon from '@mui/icons-material/Style';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import { useTranslation } from 'react-i18next';
 
 interface User {
@@ -23,6 +24,13 @@ interface WeeklySummary {
   status: 'active' | 'completed' | 'expired';
 }
 
+interface StorySummary {
+  title_pt: string;
+  title_fr: string;
+  topic: string;
+  level: string;
+}
+
 interface LandingPageProps {
   user: User | null;
   onWordChallenge: () => void;
@@ -37,6 +45,7 @@ interface LandingPageProps {
   onViewVerbStats: () => void;
   onViewIdiomStats: () => void;
   onWeeklyChallenge: () => void;
+  onWeeklyStory: () => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ 
@@ -51,9 +60,11 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onViewVerbStats,
   onViewIdiomStats,
   onWeeklyChallenge,
+  onWeeklyStory,
 }) => {
   const { t, i18n } = useTranslation();
   const [weeklySummary, setWeeklySummary] = useState<WeeklySummary | null>(null);
+  const [storySummary, setStorySummary] = useState<StorySummary | null>(null);
 
   // Fetch weekly challenge progress for logged-in non-guest users
   useEffect(() => {
@@ -64,6 +75,27 @@ const LandingPage: React.FC<LandingPageProps> = ({
         .catch(() => {});
     } else {
       setWeeklySummary(null);
+    }
+  }, [user]);
+
+  // Fetch weekly story summary for logged-in non-guest users
+  useEffect(() => {
+    if (user && !user.isGuest) {
+      fetch('/api/weekly-story', { credentials: 'include' })
+        .then(res => res.ok ? res.json() : null)
+        .then(data => {
+          if (data?.story) {
+            setStorySummary({
+              title_pt: data.story.title_pt,
+              title_fr: data.story.title_fr,
+              topic: data.story.topic,
+              level: data.story.level,
+            });
+          }
+        })
+        .catch(() => {});
+    } else {
+      setStorySummary(null);
     }
   }, [user]);
 
@@ -154,6 +186,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   flexDirection: 'column',
                   alignItems: 'center',
                   transition: 'transform 0.2s, box-shadow 0.2s',
+                  borderLeft: '4px solid #1976d2',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: 4,
@@ -212,6 +245,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   flexDirection: 'column',
                   alignItems: 'center',
                   transition: 'transform 0.2s, box-shadow 0.2s',
+                  borderLeft: '4px solid #9c27b0',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: 4,
@@ -270,6 +304,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   flexDirection: 'column',
                   alignItems: 'center',
                   transition: 'transform 0.2s, box-shadow 0.2s',
+                  borderLeft: '4px solid #ff9800',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: 4,
@@ -350,10 +385,10 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     transform: 'translateY(-4px)',
                     boxShadow: 4,
                   },
-                  borderLeft: '4px solid #f59e0b',
+                  borderLeft: '4px solid #e91e63',
                 }}
               >
-                <EmojiEventsIcon sx={{ fontSize: 48, color: '#f59e0b', flexShrink: 0 }} />
+                <EmojiEventsIcon sx={{ fontSize: 48, color: '#e91e63', flexShrink: 0 }} />
 
                 <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
                   <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
@@ -381,7 +416,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                         variant="determinate"
                         value={Math.round((weeklySummary.correctCount / weeklySummary.totalChallenges) * 100)}
                         sx={{ height: 8, borderRadius: 4 }}
-                        color={weeklySummary.status === 'completed' ? 'success' : 'warning'}
+                        color={weeklySummary.status === 'completed' ? 'success' : 'error'}
                       />
                     </Box>
                   )}
@@ -398,13 +433,77 @@ const LandingPage: React.FC<LandingPageProps> = ({
                       size="large"
                       onClick={onWeeklyChallenge}
                       sx={{
-                        bgcolor: '#f59e0b',
-                        '&:hover': { bgcolor: '#d97706' },
+                        bgcolor: '#e91e63',
+                        '&:hover': { bgcolor: '#c2185b' },
                         minWidth: 160,
                       }}
                       startIcon={<EmojiEventsIcon />}
                     >
                       {t('weeklyChallenge.viewProgress')}
+                    </Button>
+                  )}
+                </Box>
+              </Paper>
+            </Grid>
+
+            {/* Story of the Week card — full-width row below the weekly challenge card */}
+            <Grid size={{ xs: 12 }}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  display: 'flex',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  alignItems: { xs: 'flex-start', sm: 'center' },
+                  gap: 3,
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 4,
+                  },
+                  borderLeft: '4px solid #10b981',
+                }}
+              >
+                <AutoStoriesIcon sx={{ fontSize: 48, color: '#10b981', flexShrink: 0 }} />
+
+                <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
+                  <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+                    {t('weeklyStory.title')}
+                  </Typography>
+                  {storySummary ? (
+                    <>
+                      <Typography variant="body2" color="text.secondary">
+                        {storySummary.title_pt}
+                      </Typography>
+                      <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
+                        {storySummary.title_fr}
+                      </Typography>
+                    </>
+                  ) : (
+                    <Typography variant="body2" color="text.secondary">
+                      {t('weeklyStory.description')}
+                    </Typography>
+                  )}
+                </Box>
+
+                <Box sx={{ flexShrink: 0 }}>
+                  {!user || user.isGuest ? (
+                    <Typography variant="body2" color="text.secondary" sx={{ fontStyle: 'italic' }}>
+                      {t('weeklyStory.loginRequired')}
+                    </Typography>
+                  ) : (
+                    <Button
+                      variant="contained"
+                      size="large"
+                      onClick={onWeeklyStory}
+                      sx={{
+                        bgcolor: '#10b981',
+                        '&:hover': { bgcolor: '#059669' },
+                        minWidth: 160,
+                      }}
+                      startIcon={<AutoStoriesIcon />}
+                    >
+                      {t('weeklyStory.readButton')}
                     </Button>
                   )}
                 </Box>

@@ -131,6 +131,20 @@
     "lessonDownloadDescription": "Ce fichier audio contient un exercice d'écoute pour vos 20 mots de la semaine, avec la prononciation en portugais et des exemples de phrases. Écoutez en boucle pour renforcer votre apprentissage.",
     "lessonDownloadButton": "Télécharger la leçon MP3"
   },
+  "weeklyStory": {
+    "title": "Histoire de la Semaine",
+    "description": "Lisez l'histoire bilingue portugais–français de cette semaine, une phrase à la fois.",
+    "readButton": "Lire l'Histoire",
+    "loginRequired": "Connectez-vous pour lire l'histoire de la semaine",
+    "notFound": "Aucune histoire n'a encore été publiée cette semaine. Revenez bientôt !",
+    "error": "Impossible de charger l'histoire de la semaine. Veuillez réessayer.",
+    "sentenceCount": "{{count}} phrases",
+    "level": {
+      "beginner": "Débutant",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé"
+    }
+  },
   "auth": {
     "loginTitle": "Connexion",
     "registerTitle": "Inscription",

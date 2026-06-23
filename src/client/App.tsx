@@ -14,6 +14,7 @@ import ProfilePage from './components/ProfilePage';
 import ChallengeStatsPage from './components/ChallengeStatsPage';
 import FlashcardLearnPage from './components/FlashcardLearnPage';
 import WeeklyChallengePage from './components/WeeklyChallengePage';
+import WeeklyStoryPage from './components/WeeklyStoryPage';
 
 const theme = createTheme({
   palette: {
@@ -64,7 +65,7 @@ const theme = createTheme({
   },
 });
 
-type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats' | 'weekly-challenge';
+type PageType = 'landing' | 'about' | 'word-challenge' | 'word-learn' | 'verb-challenge' | 'verb-learn' | 'idiom-challenge' | 'idiom-learn' | 'login' | 'register' | 'profile' | 'word-stats' | 'verb-stats' | 'idiom-stats' | 'weekly-challenge' | 'weekly-story';
 
 interface User {
   id: string;
@@ -294,6 +295,7 @@ const App: React.FC = () => {
             onViewVerbStats={() => setCurrentPage('verb-stats')}
             onViewIdiomStats={() => setCurrentPage('idiom-stats')}
             onWeeklyChallenge={() => setCurrentPage('weekly-challenge')}
+            onWeeklyStory={() => setCurrentPage('weekly-story')}
           />
         )}
         {currentPage === 'about' && (
@@ -392,6 +394,9 @@ const App: React.FC = () => {
               setCurrentPage('word-challenge');
             }}
           />
+        )}
+        {currentPage === 'weekly-story' && (
+          <WeeklyStoryPage onBackHome={() => setCurrentPage('landing')} />
         )}
       </Box>
     </ThemeProvider>

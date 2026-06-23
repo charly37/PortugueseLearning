@@ -132,6 +132,21 @@
     "lessonDownloadButton": "Download MP3 lesson"
   },
 
+  "weeklyStory": {
+    "title": "Story of the Week",
+    "description": "Read this week's bilingual Portuguese–French story, one sentence at a time.",
+    "readButton": "Read Story",
+    "loginRequired": "Log in to read this week's story",
+    "notFound": "No story has been published for this week yet. Check back soon!",
+    "error": "Failed to load this week's story. Please try again.",
+    "sentenceCount": "{{count}} sentences",
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
+
   "auth": {
     "loginTitle": "Login",
     "registerTitle": "Register",
