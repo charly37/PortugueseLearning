@@ -1,5 +1,5 @@
 pydub>=0.25.1
-pyloudnorm>=0.1.0
+pyloudnorm>=0.2.0
 numpy>=1.21
 pymongo>=4.0  # required for --weekly-challenge
 audioop-lts #needed for pydub in python +3.14 see pydub GitHub issue #839
