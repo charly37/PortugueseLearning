@@ -32,6 +32,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  weeklyStory:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
   weeklyChallengeSounds:
     requests:
       memory: "64Mi"

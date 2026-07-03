@@ -66,6 +66,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  weeklyStory:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
   weeklyChallengeSounds:
     requests:
       memory: "64Mi"
@@ -90,5 +97,12 @@ weeklyChallenge:
 # data is fresh when challenges sounds are generated.
 weeklyChallengeSounds:
   schedule: "0 4 * * 1"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+# Runs every Monday at 5 AM — after the weekly challenge sounds job (4 AM) so
+# data is fresh when stories are generated.
+weeklyStory:
+  schedule: "0 5 * * 1"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1

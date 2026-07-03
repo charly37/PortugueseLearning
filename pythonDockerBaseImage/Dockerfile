@@ -21,11 +21,13 @@ ENV PYTHONUNBUFFERED=1
 # Copy requirements files
 COPY analytics/requirements.txt analytics-requirements.txt
 COPY weekly_challenge/requirements.txt weekly-requirements.txt
+COPY story_writter/requirements.txt story_writter-requirements.txt
 COPY vocal_lesson_creator/requirements.txt vocal-requirements.txt
 
 # Install Python dependencies into the venv (as root)
 RUN pip install --no-cache-dir -r analytics-requirements.txt \
     -r weekly-requirements.txt \
+    -r story_writter-requirements.txt \
     -r vocal-requirements.txt
 
 # Switch to non-root user
@@ -34,6 +36,7 @@ USER appuser
 # Copy application code (with correct ownership)
 COPY --chown=appuser:appuser analytics/*.py .
 COPY --chown=appuser:appuser weekly_challenge/create_weekly_challenge.py .
+COPY --chown=appuser:appuser story_writter/StoryCreatorAgent.py .
 COPY --chown=appuser:appuser vocal_lesson_creator/combine_mp3.py .
 COPY --chown=appuser:appuser data/ /app/data/
 

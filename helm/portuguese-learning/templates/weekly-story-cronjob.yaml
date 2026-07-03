@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-weekly-story
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.weeklyStory.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.weeklyStory.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.weeklyStory.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-weekly-story
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: weekly-story
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command: ["python", "StoryCreatorAgent.py", "--level", "beginner", "--all-users"]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+                - name: OPEN_AI_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: open-ai-key
+              resources:
+                {{- toYaml .Values.resources.weeklyStory | nindent 16 }}
