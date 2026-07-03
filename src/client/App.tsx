@@ -387,8 +387,8 @@ const App: React.FC = () => {
                 .map((w: any) => ({
                   id: w.challengeId,
                   port: w.portuguese,
-                  fr: { translation: w.translation_fr, note: '' },
-                  en: { translation: w.translation_en, note: '' },
+                  fr: { translation: w.translation_fr, note: w.fr_note ?? '', use_exemple: w.fr_use_exemple ?? undefined, port_exemple: w.fr_port_exemple ?? undefined },
+                  en: { translation: w.translation_en, note: w.en_note ?? '', use_exemple: w.en_use_exemple ?? undefined, port_exemple: w.en_port_exemple ?? undefined },
                 }));
               setWeeklyContext({ active: true, challenges: mapped });
               setCurrentPage('word-challenge');

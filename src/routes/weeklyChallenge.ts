@@ -1,7 +1,21 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
+
+// Load word challenges for enrichment (use_exemple / port_exemple)
+const challengeEnrichmentMap: Record<string, any> = {};
+try {
+  const raw = fs.readFileSync(path.join(__dirname, '../../data/challenges.json'), 'utf-8');
+  const arr: any[] = JSON.parse(raw);
+  for (const c of arr) {
+    if (c.id) challengeEnrichmentMap[c.id] = c;
+  }
+} catch {
+  // Non-fatal: enrichment will simply be skipped if file is unavailable
+}
 
 function requireAuth(req: Request, res: Response, next: express.NextFunction) {
   if (!req.session.userId) {
@@ -48,7 +62,18 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       correctCount,
       // Challenge is only complete when every word has been correctly answered
       status: correctCount === doc.totalChallenges ? 'completed' : doc.status,
-      challenges: doc.challenges,
+      challenges: doc.challenges.map((c: any) => {
+        const enriched = challengeEnrichmentMap[c.challengeId];
+        return {
+          ...c,
+          fr_note: enriched?.fr?.note ?? null,
+          fr_use_exemple: enriched?.fr?.use_exemple ?? null,
+          fr_port_exemple: enriched?.fr?.port_exemple ?? null,
+          en_note: enriched?.en?.note ?? null,
+          en_use_exemple: enriched?.en?.use_exemple ?? null,
+          en_port_exemple: enriched?.en?.port_exemple ?? null,
+        };
+      }),
       audio: doc.audio ?? null,
     });
   } catch (error) {
