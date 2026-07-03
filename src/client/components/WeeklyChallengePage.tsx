@@ -35,6 +35,12 @@ interface WeeklyWord {
   portuguese: string;
   translation_fr: string;
   translation_en: string;
+  fr_note?: string | null;
+  fr_use_exemple?: string | null;
+  fr_port_exemple?: string | null;
+  en_note?: string | null;
+  en_use_exemple?: string | null;
+  en_port_exemple?: string | null;
   completed: boolean;
   correct: boolean | null;
 }
