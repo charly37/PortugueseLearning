@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline, CircularProgress, Box, Alert, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -78,9 +79,14 @@ interface User {
   createdAt?: string;
 }
 
-const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<PageType>('landing');
-  const [weeklyContext, setWeeklyContext] = useState<{ active: boolean; challenges: any[] }>({ active: false, challenges: [] });
+interface WeeklyRouteState {
+  active: boolean;
+  challenges: any[];
+}
+
+// Inner component: needs router context for useNavigate / useLocation
+const AppContent: React.FC = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const { i18n, t } = useTranslation();
@@ -99,18 +105,15 @@ const App: React.FC = () => {
 
   const checkAuth = async () => {
     try {
-      // First check if there's an active session
       const response = await fetch('/api/auth/check-auth');
       const data = await response.json();
-      
+
       if (data.authenticated && data.user) {
         setUser(data.user);
-        // If this is a guest, store their ID in localStorage
         if (data.user.isGuest) {
           localStorage.setItem('guestUserId', data.user.id);
         }
       } else {
-        // If no active session, try to restore guest from localStorage
         const guestUserId = localStorage.getItem('guestUserId');
         if (guestUserId) {
           await restoreGuestSession(guestUserId);
@@ -130,12 +133,11 @@ const App: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ guestUserId }),
       });
-      
+
       if (response.ok) {
         const data = await response.json();
         setUser(data.user);
       } else {
-        // If restore failed (expired or deleted), remove from localStorage
         localStorage.removeItem('guestUserId');
       }
     } catch (error) {
@@ -156,7 +158,6 @@ const App: React.FC = () => {
         const data = await response.json();
         const guestUser = data.user;
         setUser(guestUser);
-        // Store guest ID in localStorage
         localStorage.setItem('guestUserId', guestUser.id);
         return guestUser;
       } else {
@@ -171,21 +172,20 @@ const App: React.FC = () => {
 
   const handleLoginSuccess = (userData: User) => {
     setUser(userData);
-    setCurrentPage('landing');
+    navigate('/');
   };
 
   const handleRegisterSuccess = (userData: User) => {
     setUser(userData);
-    setCurrentPage('landing');
+    navigate('/');
   };
 
   const handleLogout = async () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
-      // Clear guest ID from localStorage on logout
       localStorage.removeItem('guestUserId');
       setUser(null);
-      setCurrentPage('landing');
+      navigate('/');
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -193,214 +193,194 @@ const App: React.FC = () => {
 
   if (loading) {
     return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            minHeight: '100vh',
-          }}
-        >
-          <CircularProgress />
-        </Box>
-      </ThemeProvider>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <CircularProgress />
+      </Box>
     );
   }
 
-  const showHeader = true;
+  // Guest banner — rendered outside Routes so it appears on every page
+  const guestBanner = user?.isGuest ? (() => {
+    const daysRemaining = user.guestExpiresAt
+      ? Math.ceil((new Date(user.guestExpiresAt).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
+      : null;
+    const isExpiringSoon = daysRemaining !== null && daysRemaining <= 2;
+
+    return (
+      <Alert
+        severity={isExpiringSoon ? 'warning' : 'info'}
+        sx={{
+          borderRadius: 0,
+          justifyContent: 'center',
+          '& .MuiAlert-message': {
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1,
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          },
+        }}
+        action={
+          <Button color="inherit" size="small" onClick={() => navigate('/register')} sx={{ fontWeight: 600 }}>
+            {t('guest.createAccount')}
+          </Button>
+        }
+      >
+        {isExpiringSoon ? (
+          <>⚠️ {t('guest.expiresInDays', { days: daysRemaining })} {t('guest.createAccountToKeep')}</>
+        ) : (
+          <>🎯 {t('guest.banner')} {t('guest.toSavePermanently')}</>
+        )}
+      </Alert>
+    );
+  })() : null;
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {showHeader && (
-        <Header
-          user={user}
-          currentPage={currentPage}
-          onNavigateHome={() => setCurrentPage('landing')}
-          onNavigateAbout={() => setCurrentPage('about')}
-          onNavigateProfile={() => setCurrentPage('profile')}
-          onLogout={handleLogout}
-          onNavigateLogin={() => setCurrentPage('login')}
-          onNavigateRegister={() => setCurrentPage('register')}
-        />
-      )}
-      {/* Guest Mode Banner */}
-      {user?.isGuest && showHeader && (() => {
-        const daysRemaining = user.guestExpiresAt 
-          ? Math.ceil((new Date(user.guestExpiresAt).getTime() - Date.now()) / (1000 * 60 * 60 * 24))
-          : null;
-        const isExpiringSoon = daysRemaining !== null && daysRemaining <= 2;
-        
-        return (
-          <Alert 
-            severity={isExpiringSoon ? "warning" : "info"}
-            sx={{ 
-              borderRadius: 0,
-              justifyContent: 'center',
-              '& .MuiAlert-message': {
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                flexWrap: 'wrap',
-                justifyContent: 'center'
-              }
-            }}
-            action={
-              <Button 
-                color="inherit" 
-                size="small" 
-                onClick={() => setCurrentPage('register')}
-                sx={{ fontWeight: 600 }}
-              >
-                {t('guest.createAccount')}
-              </Button>
-            }
-          >
-            {isExpiringSoon ? (
-              <>⚠️ {t('guest.expiresInDays', { days: daysRemaining })} {t('guest.createAccountToKeep')}</>
-            ) : (
-              <>🎯 {t('guest.banner')} {t('guest.toSavePermanently')}</>
-            )}
-          </Alert>
-        );
-      })()}
+    <>
+      <Header
+        user={user}
+        onNavigateHome={() => navigate('/')}
+        onNavigateAbout={() => navigate('/about')}
+        onNavigateProfile={() => navigate('/profile')}
+        onLogout={handleLogout}
+        onNavigateLogin={() => navigate('/login')}
+        onNavigateRegister={() => navigate('/register')}
+      />
+      {guestBanner}
       <Box sx={{ minHeight: '100vh' }}>
-        {currentPage === 'login' && (
-          <LoginPage
-            onLoginSuccess={handleLoginSuccess}
-            onNavigateToRegister={() => setCurrentPage('register')}
-          />
-        )}
-        {currentPage === 'register' && (
-          <RegisterPage
-            user={user}
-            onRegisterSuccess={handleRegisterSuccess}
-            onNavigateToLogin={() => setCurrentPage('login')}
-          />
-        )}
-        {currentPage === 'landing' && (
-          <LandingPage
-            user={user}
-            onWordChallenge={() => setCurrentPage('word-challenge')}
-            onWordLearn={() => setCurrentPage('word-learn')}
-            onVerbChallenge={() => setCurrentPage('verb-challenge')}
-            onVerbLearn={() => setCurrentPage('verb-learn')}
-            onIdiomChallenge={() => setCurrentPage('idiom-challenge')}
-            onIdiomLearn={() => setCurrentPage('idiom-learn')}
-            onViewProfile={() => setCurrentPage('profile')}
-            onLogout={handleLogout}
-            onViewWordStats={() => setCurrentPage('word-stats')}
-            onViewVerbStats={() => setCurrentPage('verb-stats')}
-            onViewIdiomStats={() => setCurrentPage('idiom-stats')}
-            onWeeklyChallenge={() => setCurrentPage('weekly-challenge')}
-            onWeeklyStory={() => setCurrentPage('weekly-story')}
-          />
-        )}
-        {currentPage === 'about' && (
-          <AboutPage />
-        )}
-        {currentPage === 'word-learn' && (
-          <FlashcardLearnPage challengeType="word" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
-        )}
-        {currentPage === 'word-challenge' && (
-          <ChallengePage
-            mode="challenge"
-            onBackHome={() => {
-              if (weeklyContext.active) {
-                setWeeklyContext({ active: false, challenges: [] });
-                setCurrentPage('weekly-challenge');
-              } else {
-                setCurrentPage('landing');
-              }
-            }}
-            user={user}
-            onNavigateToLogin={() => setCurrentPage('login')}
-            onNavigateToRegister={() => setCurrentPage('register')}
-            onCreateGuest={handleCreateGuest}
-            preloadedChallenges={weeklyContext.active ? weeklyContext.challenges : undefined}
-            onAnswerChecked={weeklyContext.active ? (challengeId, correct) => {
-              fetch('/api/weekly-challenge/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include',
-                body: JSON.stringify({ challengeId, correct }),
-              }).catch(() => {});
-            } : undefined}
-          />
-        )}
-        {currentPage === 'verb-learn' && (
-          <FlashcardLearnPage challengeType="verb" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
-        )}
-        {currentPage === 'verb-challenge' && (
-          <VerbChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
-        )}
-        {currentPage === 'idiom-learn' && (
-          <FlashcardLearnPage challengeType="idiom" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
-        )}
-        {currentPage === 'idiom-challenge' && (
-          <IdiomChallengePage mode="challenge" onBackHome={() => setCurrentPage('landing')} user={user} onNavigateToLogin={() => setCurrentPage('login')} onNavigateToRegister={() => setCurrentPage('register')} onCreateGuest={handleCreateGuest} />
-        )}
-        {currentPage === 'profile' && user && (
-          <ProfilePage 
-            user={user} 
-            onBackHome={() => setCurrentPage('landing')} 
-            onUserUpdate={(updatedUser) => setUser(updatedUser)}
-          />
-        )}
-        {currentPage === 'profile' && !user && (
-          <LoginPage
-            onLoginSuccess={handleLoginSuccess}
-            onNavigateToRegister={() => setCurrentPage('register')}
-          />
-        )}
-        {currentPage === 'word-stats' && (
-          <ChallengeStatsPage 
-            challengeType="word"
-            onBackHome={() => setCurrentPage('landing')}
-            onStartChallenge={() => setCurrentPage('word-challenge')}
-          />
-        )}
-        {currentPage === 'verb-stats' && (
-          <ChallengeStatsPage 
-            challengeType="verb"
-            onBackHome={() => setCurrentPage('landing')}
-            onStartChallenge={() => setCurrentPage('verb-challenge')}
-          />
-        )}
-        {currentPage === 'idiom-stats' && (
-          <ChallengeStatsPage 
-            challengeType="idiom"
-            onBackHome={() => setCurrentPage('landing')}
-            onStartChallenge={() => setCurrentPage('idiom-challenge')}
-          />
-        )}
-        {currentPage === 'weekly-challenge' && (
-          <WeeklyChallengePage
-            onBackHome={() => setCurrentPage('landing')}
-            onPlayWeekly={(challenges) => {
-              // Only include words not yet mastered (correct !== true) so the user
-              // retries only what they haven't learned yet
-              const mapped = challenges
-                .filter((w: any) => w.correct !== true)
-                .map((w: any) => ({
-                  id: w.challengeId,
-                  port: w.portuguese,
-                  fr: { translation: w.translation_fr, note: w.fr_note ?? '', use_exemple: w.fr_use_exemple ?? undefined, port_exemple: w.fr_port_exemple ?? undefined },
-                  en: { translation: w.translation_en, note: w.en_note ?? '', use_exemple: w.en_use_exemple ?? undefined, port_exemple: w.en_port_exemple ?? undefined },
-                }));
-              setWeeklyContext({ active: true, challenges: mapped });
-              setCurrentPage('word-challenge');
-            }}
-          />
-        )}
-        {currentPage === 'weekly-story' && (
-          <WeeklyStoryPage onBackHome={() => setCurrentPage('landing')} />
-        )}
+        <Routes>
+          <Route path="/" element={
+            <LandingPage
+              user={user}
+              onWordChallenge={() => navigate('/word-challenge')}
+              onWordLearn={() => navigate('/word-learn')}
+              onVerbChallenge={() => navigate('/verb-challenge')}
+              onVerbLearn={() => navigate('/verb-learn')}
+              onIdiomChallenge={() => navigate('/idiom-challenge')}
+              onIdiomLearn={() => navigate('/idiom-learn')}
+              onViewProfile={() => navigate('/profile')}
+              onLogout={handleLogout}
+              onViewWordStats={() => navigate('/word-stats')}
+              onViewVerbStats={() => navigate('/verb-stats')}
+              onViewIdiomStats={() => navigate('/idiom-stats')}
+              onWeeklyChallenge={() => navigate('/weekly-challenge')}
+              onWeeklyStory={() => navigate('/weekly-story')}
+            />
+          } />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/login" element={
+            <LoginPage
+              onLoginSuccess={handleLoginSuccess}
+              onNavigateToRegister={() => navigate('/register')}
+            />
+          } />
+          <Route path="/register" element={
+            <RegisterPage
+              user={user}
+              onRegisterSuccess={handleRegisterSuccess}
+              onNavigateToLogin={() => navigate('/login')}
+            />
+          } />
+          <Route path="/profile" element={
+            user
+              ? <ProfilePage user={user} onBackHome={() => navigate('/')} onUserUpdate={(u) => setUser(u)} />
+              : <Navigate to="/login" replace />
+          } />
+          <Route path="/word-challenge" element={
+            <WordChallengeRoute user={user} onCreateGuest={handleCreateGuest} navigate={navigate} />
+          } />
+          <Route path="/word-learn" element={
+            <FlashcardLearnPage challengeType="word" onBackHome={() => navigate('/')} user={user} onNavigateToLogin={() => navigate('/login')} onNavigateToRegister={() => navigate('/register')} onCreateGuest={handleCreateGuest} />
+          } />
+          <Route path="/verb-challenge" element={
+            <VerbChallengePage mode="challenge" onBackHome={() => navigate('/')} user={user} onNavigateToLogin={() => navigate('/login')} onNavigateToRegister={() => navigate('/register')} onCreateGuest={handleCreateGuest} />
+          } />
+          <Route path="/verb-learn" element={
+            <FlashcardLearnPage challengeType="verb" onBackHome={() => navigate('/')} user={user} onNavigateToLogin={() => navigate('/login')} onNavigateToRegister={() => navigate('/register')} onCreateGuest={handleCreateGuest} />
+          } />
+          <Route path="/idiom-challenge" element={
+            <IdiomChallengePage mode="challenge" onBackHome={() => navigate('/')} user={user} onNavigateToLogin={() => navigate('/login')} onNavigateToRegister={() => navigate('/register')} onCreateGuest={handleCreateGuest} />
+          } />
+          <Route path="/idiom-learn" element={
+            <FlashcardLearnPage challengeType="idiom" onBackHome={() => navigate('/')} user={user} onNavigateToLogin={() => navigate('/login')} onNavigateToRegister={() => navigate('/register')} onCreateGuest={handleCreateGuest} />
+          } />
+          <Route path="/word-stats" element={
+            <ChallengeStatsPage challengeType="word" onBackHome={() => navigate('/')} onStartChallenge={() => navigate('/word-challenge')} />
+          } />
+          <Route path="/verb-stats" element={
+            <ChallengeStatsPage challengeType="verb" onBackHome={() => navigate('/')} onStartChallenge={() => navigate('/verb-challenge')} />
+          } />
+          <Route path="/idiom-stats" element={
+            <ChallengeStatsPage challengeType="idiom" onBackHome={() => navigate('/')} onStartChallenge={() => navigate('/idiom-challenge')} />
+          } />
+          <Route path="/weekly-challenge" element={
+            <WeeklyChallengePage
+              onBackHome={() => navigate('/')}
+              onPlayWeekly={(challenges) => {
+                const mapped = challenges
+                  .filter((w: any) => w.correct !== true)
+                  .map((w: any) => ({
+                    id: w.challengeId,
+                    port: w.portuguese,
+                    fr: { translation: w.translation_fr, note: w.fr_note ?? '', use_exemple: w.fr_use_exemple ?? undefined, port_exemple: w.fr_port_exemple ?? undefined },
+                    en: { translation: w.translation_en, note: w.en_note ?? '', use_exemple: w.en_use_exemple ?? undefined, port_exemple: w.en_port_exemple ?? undefined },
+                  }));
+                navigate('/word-challenge', { state: { active: true, challenges: mapped } as WeeklyRouteState });
+              }}
+            />
+          } />
+          <Route path="/weekly-story" element={<WeeklyStoryPage onBackHome={() => navigate('/')} />} />
+          {/* Catch-all: redirect unknown paths to home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </Box>
-    </ThemeProvider>
+    </>
   );
 };
+
+// Separate component so it can read location.state for weekly challenge context
+const WordChallengeRoute: React.FC<{
+  user: User | null;
+  onCreateGuest: () => Promise<User | null>;
+  navigate: ReturnType<typeof useNavigate>;
+}> = ({ user, onCreateGuest, navigate }) => {
+  const location = useLocation();
+  const weeklyState = location.state as WeeklyRouteState | null;
+
+  return (
+    <ChallengePage
+      mode="challenge"
+      onBackHome={() => {
+        if (weeklyState?.active) {
+          navigate('/weekly-challenge', { replace: true });
+        } else {
+          navigate('/');
+        }
+      }}
+      user={user}
+      onNavigateToLogin={() => navigate('/login')}
+      onNavigateToRegister={() => navigate('/register')}
+      onCreateGuest={onCreateGuest}
+      preloadedChallenges={weeklyState?.active ? weeklyState.challenges : undefined}
+      onAnswerChecked={weeklyState?.active ? (challengeId, correct) => {
+        fetch('/api/weekly-challenge/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ challengeId, correct }),
+        }).catch(() => {});
+      } : undefined}
+    />
+  );
+};
+
+const App: React.FC = () => (
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppContent />
+    </ThemeProvider>
+  </BrowserRouter>
+);
 
 export default App;

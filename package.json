@@ -32,6 +32,7 @@
     "i18next-browser-languagedetector": "^8.2.1",
     "mongoose": "^9.7.1",
     "react-i18next": "^17.0.8",
+    "react-router-dom": "^7.18.1",
     "uuid": "^14.0.0"
   },
   "devDependencies": {
