@@ -2,7 +2,7 @@
 
 ## Architecture Overview
 
-The Portuguese Learning application uses a multi-container Docker architecture with nginx as a reverse proxy in front of a Node.js/Express application.
+The Portuguese Learning application runs on Kubernetes (k3s) with Traefik as the ingress controller and cert-manager for TLS. The Node.js/Express application is containerised as a single image and deployed via Helm.
 
 ## Key Features
 
@@ -123,7 +123,6 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 ├── analytics/             # Python analytics service
 ├── data/                  # Challenge data (JSON files)
 ├── docs/                  # Documentation
-├── nginx/                 # Nginx configuration
 ├── tests/                 # Playwright E2E tests
 ├── dist/                  # Compiled server code
 ├── public/                # Built client assets
@@ -135,39 +134,38 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 └── webpack.config.js      # Webpack configuration
 ```
 
-## Container Architecture
+## Kubernetes Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                        Internet                              │
 └─────────────────────┬───────────────────────────────────────┘
                       │
-                      │ HTTP (Port 80)
+                      │ HTTPS (443) / HTTP (80 → redirect)
                       │
          ┌────────────▼───────────┐
          │                        │
-         │    Nginx Container     │
-         │   (nginx:alpine)       │
+         │  Traefik Ingress        │
+         │  (bundled with k3s)    │
          │                        │
-         │  - Reverse Proxy       │
-         │  - Static File Serving │
-         │  - Compression         │
-         │  - Request Routing     │
+         │  - TLS termination     │
+         │  - HTTP→HTTPS redirect │
+         │  - www→apex redirect   │
+         │  - Routes to Service   │
          │                        │
          └────────────┬───────────┘
                       │
-                      │ HTTP (Port 3000)
-                      │ Internal Network
+                      │ HTTP (Port 80, ClusterIP)
                       │
          ┌────────────▼───────────┐
          │                        │
-         │   App Container        │
+         │   App Pod              │
          │   (Node.js/Express)    │
          │                        │
          │  - REST API            │
          │  - Session Management  │
          │  - Business Logic      │
-         │  - Authentication      │
+         │  - Serves React SPA    │
          │                        │
          └────────────┬───────────┘
                       │
@@ -184,19 +182,7 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 
 ## Container Architecture
 
-### 1. **Nginx Container**
-- **Image**: `nginx:alpine`
-- **Purpose**: Reverse proxy and web server
-- **Exposed Ports**: 80 (HTTP), 443 (HTTPS - future)
-- **Responsibilities**:
-  - Route incoming requests to the app container
-  - Handle SSL/TLS termination (when HTTPS is added)
-  - Compress responses (gzip)
-  - Serve static files efficiently
-  - Add security headers
-  - Load balancing capability (future scaling)
-
-### 2. **App Container**
+### 1. **App Container**
 - **Image**: `charly37/portuguese-learning:latest`
 - **Purpose**: Main application logic
 - **Exposed Ports**: None (only accessible via internal network)
@@ -220,21 +206,17 @@ The Portuguese Learning application uses a multi-container Docker architecture w
 
 ## Network Architecture
 
-### Docker Network: `app-network`
-- **Type**: Bridge network
-- **Purpose**: Isolated internal communication between containers
-- **Members**: nginx, app
-- **Benefits**:
-  - Containers can communicate using service names (e.g., `http://app:3000`)
-  - Isolated from host network
-  - Security through network isolation
-  - DNS resolution built-in
+### Kubernetes Networking
+- Traefik (k3s built-in) handles all external traffic on ports 80 and 443
+- The app is exposed internally via a `ClusterIP` Service on port 80
+- cert-manager issues and renews Let's Encrypt certificates automatically
+- The `app-network` bridge network no longer exists — pods communicate via k8s DNS
 
 ### Port Mapping
 ```
 External → Internal
-Port 80  → nginx:80    → app:3000
-Port 443 → nginx:443   → app:3000 (future HTTPS)
+Port 80  → Traefik (301 → HTTPS)
+Port 443 → Traefik TLS termination → app Service:80 → app Pod:3000
 ```
 
 ## Request Flow
@@ -243,17 +225,17 @@ Port 443 → nginx:443   → app:3000 (future HTTPS)
 ```
 User Browser
     ↓
-    │ http://server-ip/api/challenge/progress
+    │ https://dialecthub.net/api/challenge/progress
     ↓
-Nginx (Port 80)
+Traefik (TLS termination, Port 443)
     ↓
     │ Adds headers:
     │ - X-Forwarded-For: client_ip
-    │ - X-Forwarded-Proto: http
+    │ - X-Forwarded-Proto: https
     │ - X-Real-IP: client_ip
     │ - Host: original_host
     ↓
-App Container (Port 3000)
+App Pod (Port 3000)
     ↓
     │ Express processes request
     │ - app.set('trust proxy', 1) interprets headers
@@ -281,13 +263,13 @@ User Browser
 ```
 User Browser
     ↓
-    │ http://server-ip/bundle.js
+    │ https://dialecthub.net/bundle.js
     ↓
-Nginx (Port 80)
+Traefik (Port 443)
     ↓
-    │ Proxy to app
+    │ Proxy to app Service
     ↓
-App Container (Express Static)
+App Pod (Express Static)
     ↓
     │ Serve from /public directory
     ↓
@@ -300,27 +282,14 @@ User Browser
 
 ## Design Decisions
 
-### Why Nginx Reverse Proxy?
+### Why Traefik + k3s?
 
 **Benefits:**
-1. **Performance**: Nginx is highly optimized for serving static content and handling concurrent connections
-2. **Security**: Extra layer between public internet and application
-3. **Flexibility**: Easy to add SSL/TLS, load balancing, or multiple backends
-4. **Zero-downtime deploys**: Nginx stays up while app container restarts
-5. **Industry standard**: Battle-tested pattern used by major companies
-
-**Trade-offs:**
-- Additional complexity (one more container)
-- Slight latency overhead (negligible in practice)
-
-### Why Separate Containers?
-
-**Benefits:**
-1. **Separation of concerns**: Each container has one responsibility
-2. **Independent scaling**: Can run multiple app containers behind one nginx
-3. **Security isolation**: Compromised app container doesn't affect nginx
-4. **Resource management**: Different resource limits per container
-5. **Update independence**: Update nginx without touching app (and vice versa)
+1. **Bundled with k3s**: No extra setup — Traefik is the default k3s ingress controller
+2. **Automatic TLS**: Works natively with cert-manager for Let's Encrypt certificates
+3. **Middleware support**: Redirects (www → apex, HTTP → HTTPS) via `Middleware` CRDs
+4. **Zero-downtime deploys**: Kubernetes rolling updates keep the app available
+5. **Observability**: Built-in dashboard and metrics
 
 ## Configuration Files
 
@@ -329,18 +298,6 @@ User Browser
 - Sets up internal networking and resource limits
 - Configures environment variables via secrets
 - Manages rolling update policies
-
-### nginx/nginx.conf
-- Main nginx configuration
-- Worker processes and connections
-- HTTP settings (gzip, logs, etc.)
-- Includes site-specific configs
-
-### nginx/conf.d/app.conf
-- Application-specific routing
-- Upstream definition (backend servers)
-- Proxy settings and headers
-- Health check endpoint
 
 ### src/server.ts
 - `app.set('trust proxy', 1)` - Critical for proxy compatibility
@@ -380,12 +337,6 @@ helm upgrade --install portuguese-learning helm/portuguese-learning \
 
 ## Monitoring and Logging
 
-### Nginx Logs
-```bash
-# Access logs (all requests)
-kubectl logs -n portuguese-learning -l app=nginx
-```
-
 ### Application Logs
 ```bash
 # App container logs
@@ -396,12 +347,6 @@ kubectl get pods -n portuguese-learning
 ```
 
 ### Health Checks
-
-**Nginx Health:**
-```bash
-curl http://server-ip/nginx-health
-# Returns: "nginx OK"
-```
 
 **App Health:**
 ```bash

@@ -100,11 +100,4 @@ Then switch back to `letsencrypt-prod` once confirmed working.
 2. **Check cert**: `echo | openssl s_client -connect dialecthub.net:443 2>/dev/null | openssl x509 -noout -dates`
 3. **Verify redirect**: `curl -I http://dialecthub.net`
 
----
-
-## Legacy: Certbot + Nginx
-
-> The previous HTTPS setup used certbot + nginx. Kept for reference only.
-
-The `init-letsencrypt.sh` script initialized certificates, and the certbot container handled renewals. Config was in `nginx/conf.d/app.conf` using `fullchain.pem` + `privkey.pem` from the certbot volume.
 

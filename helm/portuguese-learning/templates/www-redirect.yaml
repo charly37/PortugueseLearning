@@ -1,0 +1,44 @@
+{{- if .Values.ingress.redirectWww }}
+# Traefik Middleware: permanent redirect www.host → host
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ .Release.Name }}-www-redirect
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  redirectRegex:
+    regex: '^https://www\.{{ .Values.ingress.host | replace "." "\\." }}/(.*)'
+    replacement: "https://{{ .Values.ingress.host }}/${1}"
+    permanent: true
+---
+# Separate Ingress for www that applies the redirect middleware
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-www-ingress
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: {{ .Values.namespace }}-{{ .Release.Name }}-www-redirect@kubernetescrd
+    cert-manager.io/cluster-issuer: {{ .Values.ingress.clusterIssuer }}
+spec:
+  tls:
+    - hosts:
+        - www.{{ .Values.ingress.host }}
+      secretName: {{ .Values.ingress.tlsSecretName }}-www
+  rules:
+    - host: www.{{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ .Release.Name }}-app
+                port:
+                  number: 80
+{{- end }}

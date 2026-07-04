@@ -135,6 +135,29 @@ app.get('/api/idiom-challenges-all', (req: Request, res: Response) => {
   res.json(idiomChallenges);
 });
 
+// XML Sitemap
+app.get('/sitemap.xml', (req: Request, res: Response) => {
+  const baseUrl = process.env.BASE_URL || 'https://dialecthub.net';
+  const pages = [
+    { path: '/',                 changefreq: 'weekly',  priority: '1.0' },
+    { path: '/about',            changefreq: 'monthly', priority: '0.7' },
+    { path: '/word-challenge',   changefreq: 'weekly',  priority: '0.9' },
+    { path: '/word-learn',       changefreq: 'weekly',  priority: '0.8' },
+    { path: '/verb-challenge',   changefreq: 'weekly',  priority: '0.9' },
+    { path: '/verb-learn',       changefreq: 'weekly',  priority: '0.8' },
+    { path: '/idiom-challenge',  changefreq: 'weekly',  priority: '0.9' },
+    { path: '/idiom-learn',      changefreq: 'weekly',  priority: '0.8' },
+    { path: '/weekly-challenge', changefreq: 'weekly',  priority: '0.8' },
+    { path: '/weekly-story',     changefreq: 'weekly',  priority: '0.8' },
+  ];
+  const urls = pages
+    .map(p => `  <url>\n    <loc>${baseUrl}${p.path}</loc>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`)
+    .join('\n');
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
+  res.header('Content-Type', 'application/xml');
+  res.send(sitemap);
+});
+
 // Serve the React app for all other routes
 app.get('/{*path}', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
