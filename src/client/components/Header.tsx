@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button, Box, Chip, SwipeableDrawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, IconButton, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
@@ -22,7 +23,6 @@ interface User {
 
 interface HeaderProps {
   user: User | null;
-  currentPage: string;
   onNavigateHome?: () => void;
   onNavigateAbout?: () => void;
   onNavigateProfile?: () => void;
@@ -34,7 +34,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({
   user,
-  currentPage,
   onNavigateHome,
   onNavigateAbout,
   onNavigateProfile,
@@ -44,6 +43,8 @@ const Header: React.FC<HeaderProps> = ({
   showNavigation = true,
 }) => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+  const currentPath = location.pathname;
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleLanguageChange = async (_: React.MouseEvent<HTMLElement>, newLanguage: 'fr' | 'en' | null) => {
@@ -99,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({
 
       <List sx={{ pt: 2 }}>
         {/* Navigation Items */}
-        {currentPage !== 'landing' && (
+        {currentPath !== '/' && (
           <ListItem disablePadding>
             <ListItemButton 
               onClick={() => handleNavigation(onNavigateHome)}
@@ -113,7 +114,7 @@ const Header: React.FC<HeaderProps> = ({
           </ListItem>
         )}
 
-        {currentPage !== 'about' && (
+        {currentPath !== '/about' && (
           <ListItem disablePadding>
             <ListItemButton 
               onClick={() => handleNavigation(onNavigateAbout)}
@@ -259,7 +260,7 @@ const Header: React.FC<HeaderProps> = ({
               gap: 2,
               flexShrink: 0,
             }}>
-              {currentPage !== 'landing' && (
+              {currentPath !== '/' && (
                 <Button
                   color="inherit"
                   startIcon={<HomeIcon />}
@@ -270,7 +271,7 @@ const Header: React.FC<HeaderProps> = ({
                 </Button>
               )}
               
-              {currentPage !== 'about' && (
+              {currentPath !== '/about' && (
                 <Button
                   color="inherit"
                   startIcon={<InfoIcon />}
