@@ -9,7 +9,7 @@ metadata:
     {{- include "portuguese-learning.labels" . | nindent 4 }}
 spec:
   redirectRegex:
-    regex: "^https://www\\.{{ .Values.ingress.host | replace "." "\\." }}/(.*)"
+    regex: '^https://www\.{{ .Values.ingress.host | replace "." "\\." }}/(.*)'
     replacement: "https://{{ .Values.ingress.host }}/${1}"
     permanent: true
 ---
