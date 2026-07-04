@@ -23,7 +23,7 @@ Full-stack Portuguese language learning application with **separated build syste
 - **Backend**: Express.js + TypeScript (compiled with `tsc` to `dist/`)
 - **Frontend**: React + TypeScript (bundled with webpack to `public/`)
 - **Database**: MongoDB Atlas (cloud-hosted, connection via `MONGODB_URI`)
-- **Deployment**: Multi-container Docker (nginx reverse proxy + Node.js app + Python analytics)
+- **Deployment**: Kubernetes/k3s via Helm (Traefik ingress + Node.js app pod + Python analytics CronJob)
 
 Key architectural pattern: Backend serves static frontend from `public/` directory after both are built.
 
@@ -77,7 +77,7 @@ Challenge structure:
 - Uses `express-session` with MongoDB store (`connect-mongo`)
 - Session stored in `req.session.userId` (not JWT)
 - Auth middleware: `requireAuth` checks `req.session.userId` existence
-- Cookie config: `httpOnly: true`, `secure: false` (nginx handles HTTPS termination)
+- Cookie config: `httpOnly: true`, `secure: false` (Traefik handles HTTPS termination at ingress level)
 
 ### Internationalization (i18n)
 - Client-side only, using `react-i18next`
@@ -176,10 +176,10 @@ Playwright tests in `tests/*.spec.ts`:
 - Selectors: Prefer `getByRole()` over `getByTestId()`
 - Tag smoke tests with `test('name @smoke', ...)` for CI runs
 
-## Nginx Configuration
+## Ingress / TLS
 
-[nginx/conf.d/app.conf](nginx/conf.d/app.conf):
-- Proxies `/api/*` to `http://app:3000`
-- Serves static files from app container's `/app/public`
-- Gzip compression enabled
-- HTTPS redirect when certificates present
+Handled by Traefik (bundled with k3s) + cert-manager (Let's Encrypt).
+Config in `helm/portuguese-learning/templates/ingress.yaml` and `www-redirect.yaml`.
+- HTTP → HTTPS redirect handled by Traefik
+- `www.dialecthub.net` → `dialecthub.net` 301 redirect via Traefik `Middleware`
+- Certificates auto-issued and renewed by cert-manager

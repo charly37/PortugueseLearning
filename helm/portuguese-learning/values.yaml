@@ -37,6 +37,8 @@ ingress:
   # Use letsencrypt-staging for first-time testing to avoid rate limits
   clusterIssuer: letsencrypt-prod
   tlsSecretName: dialecthub-tls
+  # Redirect www.host → host with a 301
+  redirectWww: true
 
 certManager:
   email: admin@dialecthub.net
