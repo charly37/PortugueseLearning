@@ -94,10 +94,25 @@ cert-manager.io/cluster-issuer: letsencrypt-staging
 ```
 Then switch back to `letsencrypt-prod` once confirmed working.
 
+## www → non-www Redirect
+
+The `www.dialecthub.net` → `dialecthub.net` redirect is implemented in `helm/portuguese-learning/templates/www-redirect.yaml` using a **Traefik `Middleware` CRD** (`traefik.io/v1alpha1`). This is Traefik-specific and requires Traefik v3+ (bundled with k3s).
+
+> **Note**: The `Middleware` CRD changed API group in Traefik v3. Use `traefik.io/v1alpha1` (not the old `traefik.containo.us/v1alpha1` which was removed in v3). If deployment fails with `no matches for kind "Middleware"`, check your Traefik version.
+
+### Alternatives if Traefik CRDs are unavailable
+
+1. **DNS A record**: Point `www.dialecthub.net` directly to the server IP (same as `dialecthub.net`). No 301 redirect — both URLs serve the same content. Simplest, but has duplicate content implications for SEO and requires a TLS cert for `www` too.
+
+2. **nginx redirect pod**: Replace the `Middleware` + `Ingress` with a small nginx Deployment + Service + standard Kubernetes Ingress. The nginx container issues a `301` redirect. Fully K8s-native, no CRDs, works with any ingress controller.
+
+3. **Remove www entirely**: Drop the `www` DNS record and set `redirectWww: false` in Helm values. Users hitting `www.` get an NXDOMAIN. Only viable if `www` traffic is negligible.
+
 ## Testing
 
 1. **SSL Labs**: https://www.ssllabs.com/ssltest/analyze.html?d=dialecthub.net
 2. **Check cert**: `echo | openssl s_client -connect dialecthub.net:443 2>/dev/null | openssl x509 -noout -dates`
 3. **Verify redirect**: `curl -I http://dialecthub.net`
+4. **Verify www redirect**: `curl -I https://www.dialecthub.net`
 
 
