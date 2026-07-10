@@ -151,31 +151,22 @@ spec:
 
 > **Note**: `NetworkPolicy` enforcement requires a CNI plugin that supports it (e.g., Calico, Cilium, Flannel with NetworkPolicy support). The default k3s bundled CNI (Flannel) does **not** enforce NetworkPolicy by default — install Calico or Cilium if you need policy enforcement.
 
-### Traefik ingress exclusion
+### Traefik ingress exclusion (implemented)
 
-Make sure `/metrics` is not routed through the public ingress. The current ingress in `helm/portuguese-learning/templates/ingress.yaml` only routes to the app service — but if you ever add path-based rules, explicitly exclude `/metrics`:
+`/metrics` is blocked at the Traefik ingress level via `helm/portuguese-learning/templates/ingress-metrics-block.yaml`. This file creates:
 
-```yaml
-# In ingress rules, do NOT add a rule for /metrics
-# If using Traefik Middleware for path filtering, block /metrics at the ingress level:
-apiVersion: traefik.io/v1alpha1
-kind: Middleware
-metadata:
-  name: block-metrics
-  namespace: {{ .Values.namespace }}
-spec:
-  ipAllowList:
-    sourceRange:
-      - "10.0.0.0/8"      # internal cluster CIDR only
-      - "172.16.0.0/12"
-      - "192.168.0.0/16"
-```
+1. A `Middleware` resource (`block-metrics`) of type `ipAllowList` that only permits RFC-1918 private IP ranges (cluster-internal traffic).
+2. A dedicated `Ingress` resource for `path: /metrics` (Exact) with priority 100, referencing the middleware. This rule takes precedence over the catch-all `path: /` (Prefix) rule in the main ingress.
+
+External requests to `dialecthub.net/metrics` will receive **403 Forbidden** from Traefik before the request even reaches the app. Internal Prometheus pods are unaffected because they scrape via the Service ClusterIP directly, bypassing Traefik entirely.
+
+> **Traefik version note**: The middleware uses `ipAllowList` (Traefik v3, k3s ≥ 1.30). If you are running an older k3s version with Traefik v2, rename the spec key to `ipWhiteList` in `ingress-metrics-block.yaml`.
 
 ### Summary of security layers
 
 | Layer | Mechanism | Status |
 |---|---|---|
-| No public ingress rule for `/metrics` | Traefik ingress config | Verify manually |
-| Restrict scrape to Prometheus pod only | Kubernetes `NetworkPolicy` | Recommended — add `networkpolicy-metrics.yaml` |
+| Block `/metrics` at ingress level | Traefik `ipAllowList` Middleware | ✅ Implemented — `ingress-metrics-block.yaml` |
+| Restrict scrape to Prometheus pod only | Kubernetes `NetworkPolicy` | Recommended — add `networkpolicy-metrics.yaml` (see above) |
 | CNI policy enforcement | Calico / Cilium | Required for NetworkPolicy to take effect |
 | Optional token auth | `METRICS_TOKEN` env var + middleware | Not implemented — add if needed |
