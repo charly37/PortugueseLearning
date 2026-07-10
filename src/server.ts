@@ -9,6 +9,7 @@ import authRoutes from './routes/auth';
 import challengeRoutes from './routes/challenge';
 import weeklyChallengeRoutes from './routes/weeklyChallenge';
 import weeklyStoryRoutes from './routes/weeklyStory';
+import { metricsHandler } from './routes/metrics';
 
 // Load environment variables
 // In test mode, use .env.test; otherwise use .env
@@ -157,6 +158,9 @@ app.get('/sitemap.xml', (req: Request, res: Response) => {
   res.header('Content-Type', 'application/xml');
   res.send(sitemap);
 });
+
+// Prometheus metrics endpoint
+app.get('/metrics', metricsHandler);
 
 // Serve the React app for all other routes
 app.get('/{*path}', (req: Request, res: Response) => {

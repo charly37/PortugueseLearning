@@ -354,6 +354,17 @@ curl http://server-ip/api/health
 # Returns: {"status":"ok","message":"Server is running"}
 ```
 
+### Prometheus Metrics
+
+The app exposes a Prometheus scrape endpoint:
+```bash
+curl http://server-ip/metrics
+# Returns Prometheus text format with Node.js runtime metrics
+# and app_users_registered_total / app_users_guest_total gauges
+```
+
+See [docs/MONITORING.md](MONITORING.md) for full metric reference, Prometheus Operator integration, and security hardening (NetworkPolicy, Traefik exclusion).
+
 ## Scaling Considerations
 
 ### Horizontal Scaling
@@ -378,7 +389,7 @@ resources:
 
 ### Short-term
 1. **Improved Monitoring**
-   - Add Prometheus metrics
+   - ~~Add Prometheus metrics~~ ✅ Done — see [docs/MONITORING.md](MONITORING.md)
    - Health check dashboard
    - Error rate monitoring
 
