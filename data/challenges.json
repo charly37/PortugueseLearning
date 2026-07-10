@@ -32055,13 +32055,13 @@
     },
     {
         "id": "12af8621-db69-4888-b915-1b69948e34bb",
-        "port": "altura height",
+        "port": "altura",
         "fr": {
             "translation": "hauteur",
             "note": "Remarque: 'hauteur' est la traduction générale pour la dimension verticale d’un objet. Pour parler de la taille d’une personne, on emploie plutôt 'taille'.",
             "use_exemple": "La hauteur de la porte est de deux mètres.",
             "port_exemple": "A altura da porta é de dois metros.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-07-10",
             "use_exemple_audio": {
                 "filename": "12af8621-db69-4888-b915-1b69948e34bb_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -33794,13 +33794,13 @@
     },
     {
         "id": "8b5aeb2a-6c9c-4968-9862-2d504e71e8b3",
-        "port": "autocarro / ônibus",
+        "port": "autocarro",
         "fr": {
             "translation": "autobus / bus",
             "note": "Le portugais européen utilise autocarro pour dire bus. En français, le terme standard est autobus, mais bus est aussi très utilisé à l'oral.",
             "use_exemple": "L'autobus arrive.",
             "port_exemple": "O autocarro está a chegar.",
-            "last_update": "2026-05-11",
+            "last_update": "2026-07-10",
             "use_exemple_audio": {
                 "filename": "8b5aeb2a-6c9c-4968-9862-2d504e71e8b3_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -36613,53 +36613,6 @@
         }
     },
     {
-        "id": "2e159e30-199a-4a4f-9c73-ae7336d414d2",
-        "port": "caixa",
-        "fr": {
-            "translation": "boîte (de chocolats)",
-            "note": "Notez que 'caixa' peut aussi signifier une caisse ou un guichet selon le contexte; ici il s'agit du contenant. En français, on dit généralement 'boîte de chocolats' (ou 'une boîte de chocolats assortis').",
-            "use_exemple": "J'ai acheté une boîte de chocolats pour la fête.",
-            "port_exemple": "Comprei uma caixa de chocolates para a festa.",
-            "last_update": "2026-06-21",
-            "use_exemple_audio": {
-                "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2_fr_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "port_exemple_audio": {
-                "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2_fr_pt_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "translation_audio": {
-                "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2_fr_translation.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "en": {
-            "translation": "box of chocolates",
-            "note": "Note that 'caixa' in Portuguese can mean many things (box, cash register, etc.). The natural English expression for this usage is 'box of chocolates'.",
-            "port_exemple": "Ela comprou uma caixa de chocolates.",
-            "last_update": "2026-05-07",
-            "use_exemple": "She bought a box of chocolates.",
-            "use_exemple_audio": {
-                "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2_en_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "port_exemple_audio": {
-                "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2_en_pt_exemple.mp3",
-                "last_update": "2026-05-21"
-            },
-            "translation_audio": {
-                "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2_en_translation.mp3",
-                "last_update": "2026-05-22"
-            }
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "2e159e30-199a-4a4f-9c73-ae7336d414d2.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
         "id": "d9331b0a-2be7-4448-a15f-7cb9b783a739",
         "port": "caixa de correio",
         "fr": {
@@ -39332,7 +39285,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "0079bfd9-8f51-4b86-a149-af0e9a5d2c41.mp3",
             "last_update": "2026-02-15"
@@ -44510,13 +44463,13 @@
     },
     {
         "id": "bcfabca8-81d7-4210-b554-3e99fc5d2cf6",
-        "port": "direita (à)",
+        "port": "direita",
         "fr": {
             "translation": "à droite",
             "note": "En contexte de direction, on dit 'à droite'. 'Droite' peut aussi désigner le côté droit, comme nom 'la droite'.",
             "use_exemple": "Tournez à droite au prochain coin.",
             "port_exemple": "Vire à direita na próxima esquina.",
-            "last_update": "2026-05-09",
+            "last_update": "2026-07-10",
             "use_exemple_audio": {
                 "filename": "bcfabca8-81d7-4210-b554-3e99fc5d2cf6_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -47283,13 +47236,13 @@
     },
     {
         "id": "a6d6c87c-46d8-4e64-8f8c-706178d6e5e3",
-        "port": "esquadra / delegacia de polícia",
+        "port": "esquadra",
         "fr": {
             "translation": "commissariat de police",
             "note": "En portugais, esquadra et delegacia de polícia désignent un lieu ou une unité de police. En français, le terme le plus courant pour le lieu est « commissariat de police », tandis que « poste de police » peut être utilisé dans certaines régions ou contextes.",
             "use_exemple": "Je vais au commissariat de police.",
             "port_exemple": "Eu vou à delegacia de polícia.",
-            "last_update": "2026-05-17",
+            "last_update": "2026-07-10",
             "use_exemple_audio": {
                 "filename": "a6d6c87c-46d8-4e64-8f8c-706178d6e5e3_fr_exemple.mp3",
                 "last_update": "2026-05-21"
@@ -58132,7 +58085,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 3,
         "audio": {
             "filename": "97be7eca-f0c0-4389-80ba-fad57f352afe.mp3",
             "last_update": "2026-02-15"
@@ -58422,13 +58375,13 @@
     },
     {
         "id": "c0877451-0911-4962-b35b-62500b6de30e",
-        "port": "navegar, velejar",
+        "port": "navegar",
         "fr": {
             "translation": "naviguer, faire de la voile",
             "note": "Notez que le verbe portugais navegar peut aussi signifier naviguer sur Internet; en français on distingue naviguer (mer ou Internet) et faire de la voile pour l'activité nautique.",
             "use_exemple": "J'aime naviguer sur Internet et faire de la voile les week-ends.",
             "port_exemple": "Eu gosto de navegar pela internet e velejar nos fins de semana.",
-            "last_update": "2026-02-19",
+            "last_update": "2026-07-10",
             "translation_audio": {
                 "filename": "c0877451-0911-4962-b35b-62500b6de30e_fr_translation.mp3",
                 "last_update": "2026-05-22"
@@ -58696,7 +58649,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "fd74ae17-f9e6-487c-9e38-729ed045445b.mp3",
             "last_update": "2026-02-15"
@@ -63067,7 +63020,7 @@
                 "last_update": "2026-05-22"
             }
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "d395b50f-3d29-45b2-a6d3-82a1d5a3fac8.mp3",
             "last_update": "2026-02-15"
@@ -88329,7 +88282,7 @@
             "last_update": "2026-05-08",
             "use_exemple": "She peeks through the window to see who is coming."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "d836ff63-c00f-4a33-995e-8562b5c248b9.mp3",
             "last_update": "2026-02-15"
@@ -88743,7 +88696,7 @@
             "last_update": "2026-05-08",
             "use_exemple": "Grandma taught me how to spin."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "a5d84a69-e916-4e57-9483-8bcded1f36d1.mp3",
             "last_update": "2026-02-15"
@@ -89410,7 +89363,7 @@
             "last_update": "2026-05-08",
             "use_exemple": "The teacher expelled the student from the classroom."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "f40401cc-7b88-445b-9ea9-544fe5d8fd00.mp3",
             "last_update": "2026-02-15"
@@ -90905,7 +90858,7 @@
             "last_update": "2026-05-08",
             "use_exemple": "I need to interpret the results of the experiment."
         },
-        "user_usefulness": 2,
+        "user_usefulness": 1,
         "audio": {
             "filename": "017a7379-4e98-49aa-b702-ab4192f77f57.mp3",
             "last_update": "2026-02-15"
@@ -102649,29 +102602,6 @@
         "user_usefulness": 2,
         "audio": {
             "filename": "e071f720-e49b-4293-9743-d6abb1e0850d.mp3",
-            "last_update": "2026-02-15"
-        }
-    },
-    {
-        "id": "b84855e0-272e-4f97-af71-d8edcf646d60",
-        "port": "altura",
-        "fr": {
-            "translation": "hauteur",
-            "note": "En portugais, 'altura' signifie hauteur ou altitude. En français, 'hauteur' est utilisé pour la hauteur d'objets ou de lieux; pour parler de la taille d'une personne, on dira plutôt 'taille'.",
-            "use_exemple": "Quelle est ta hauteur ?",
-            "port_exemple": "Qual é a tua altura?",
-            "last_update": "2026-02-20"
-        },
-        "en": {
-            "translation": "height",
-            "note": "Height is the primary meaning of altura in everyday Portuguese. In geographic contexts, it can mean altitude or elevation; for elevation use elevação.",
-            "port_exemple": "A altura da torre é impressionante.",
-            "last_update": "2026-05-09",
-            "use_exemple": "The height of the tower is impressive."
-        },
-        "user_usefulness": 2,
-        "audio": {
-            "filename": "b84855e0-272e-4f97-af71-d8edcf646d60.mp3",
             "last_update": "2026-02-15"
         }
     },
