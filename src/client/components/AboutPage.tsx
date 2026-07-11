@@ -107,6 +107,29 @@ const AboutPage: React.FC = () => {
             </Box>
           </Paper>
 
+          {/* Monitoring Section */}
+          <Paper elevation={2} sx={{ p: 4, mb: 4 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <InfoIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 600 }}>
+                {t('about.monitoringTitle')}
+              </Typography>
+            </Box>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+              {t('about.monitoringText')}
+            </Typography>
+            <Box sx={{ mt: 2, p: 2, bgcolor: 'background.paper', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+              <Link
+                href="https://grafana.dialecthub.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ fontSize: '1.1rem', wordBreak: 'break-all' }}
+              >
+                https://grafana.dialecthub.net/
+              </Link>
+            </Box>
+          </Paper>
+
           {/* Language Options */}
           <Paper elevation={2} sx={{ p: 4, mb: 4 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>

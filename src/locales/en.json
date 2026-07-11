@@ -80,6 +80,8 @@
     "openSourceText": "This project is open source and serves as both a learning tool for Portuguese and an opportunity for me to explore coding with AI assistance. The entire source code is available on GitHub.",
     "githubStar": "⭐ Star the repository to show your support and appreciation!",
     "githubIssues": "🐛 Found a bug or have an improvement idea? Open an issue on GitHub - your feedback is valuable!",
+    "monitoringTitle": "Monitoring",
+    "monitoringText": "The website includes a monitoring setup with Grafana and Prometheus to track performance and availability. You can access the Grafana dashboard at the link below.",
     "versionLabel": "Version"
   },
   "landing": {
