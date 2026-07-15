@@ -475,6 +475,14 @@ def main() -> None:
         exit(1)
     os.environ["OPENAI_API_KEY"] = api_key  # openai-agents reads OPENAI_API_KEY
 
+    # Log package versions upfront to simplify future debugging
+    import importlib.metadata
+    for pkg in ("openai-agents", "openai", "pydantic", "pymongo"):
+        try:
+            log.info("Package version: %s==%s", pkg, importlib.metadata.version(pkg))
+        except importlib.metadata.PackageNotFoundError:
+            log.warning("Package version: %s not found", pkg)
+
     parser = argparse.ArgumentParser(
         description="Generate bilingual Portuguese/French learning stories using an AI agent"
     )
@@ -591,13 +599,15 @@ def main() -> None:
                     stats.users_failed += 1
 
             stats.log_summary()
+            if stats.users_failed > 0:
+                sys.exit(1)
         finally:
             client.close()
     else:
         # Standalone mode (no user targeting) — writes to weeklystories with userId=null
         client, db = connect_db()
         try:
-            asyncio.run(
+            result = asyncio.run(
                 _run_agent(
                     level=args.level,
                     topic=fallback_topic,
@@ -606,6 +616,9 @@ def main() -> None:
                     db=db,
                 )
             )
+            if result is None:
+                log.error("Story generation failed — no story was saved.")
+                sys.exit(1)
         finally:
             client.close()
 
