@@ -1,2 +1,6 @@
 pymongo==4.17.0
 openai-agents==0.18.0
+# openai 2.45.0 (2026-07-09) introduced InputTokensDetails.cache_write_tokens as a
+# required field, but the API doesn't return it when prompt caching is inactive.
+# Pin to the last known-good version until a patch is released.
+openai==2.44.0
