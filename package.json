@@ -53,7 +53,7 @@
     "html-webpack-plugin": "^5.6.7",
     "mongodb-memory-server": "^11.2.0",
     "react": "^19.2.6",
-    "react-dom": "^19.2.7",
+    "react-dom": "^19.2.8",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.6.2",
     "ts-node-dev": "^2.0.0",
