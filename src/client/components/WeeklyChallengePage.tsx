@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   Container,
@@ -13,6 +14,9 @@ import {
   Alert,
   IconButton,
   Tooltip,
+  Card,
+  CardContent,
+  Divider,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -60,19 +64,33 @@ interface WeeklyChallenge {
 interface WeeklyChallengePageProps {
   onBackHome: () => void;
   onPlayWeekly: (challenges: WeeklyWord[]) => void;
+  user: { id: string; username: string; isGuest?: boolean } | null;
+  onCreateGuest: () => Promise<{ id: string; username: string; isGuest?: boolean } | null>;
 }
 
 const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
   onBackHome,
   onPlayWeekly,
+  user,
+  onCreateGuest,
 }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [weekly, setWeekly] = useState<WeeklyChallenge | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [resetDialogOpen, setResetDialogOpen] = useState(false);
   const [resetting, setResetting] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const handleStartAsGuest = async () => {
+    setLoading(true);
+    const guestUser = await onCreateGuest();
+    setLoading(false);
+    if (guestUser) {
+      fetchWeeklyChallenge();
+    }
+  };
 
   const playWordAudio = (challengeId: string) => {
     const audioPath = `${window.location.origin}/sounds/${challengeId}.mp3`;
@@ -87,7 +105,8 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
   };
 
   useEffect(() => {
-    fetchWeeklyChallenge();
+    if (user) fetchWeeklyChallenge();
+    else setLoading(false);
   }, []);
 
   const fetchWeeklyChallenge = async () => {
@@ -171,6 +190,39 @@ const WeeklyChallengePage: React.FC<WeeklyChallengePageProps> = ({
         {loading && (
           <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
             <CircularProgress />
+          </Box>
+        )}
+
+        {!user && !loading && (
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <Card sx={{ width: '100%', maxWidth: 500 }} elevation={3}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                  {t('auth.startChallenge')}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
+                  {t('auth.guestWelcome')}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
+                  {t('auth.guestExplanation')}
+                </Typography>
+                <Button variant="contained" color="primary" size="large" onClick={handleStartAsGuest} fullWidth sx={{ mb: 2 }}>
+                  {t('auth.startAsGuestWeekly')}
+                </Button>
+                <Divider sx={{ my: 2 }}>{t('common.or')}</Divider>
+                <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+                  <Button variant="outlined" color="primary" size="medium" onClick={() => navigate('/register')} fullWidth>
+                    {t('common.register')}
+                  </Button>
+                  <Button variant="outlined" color="primary" size="medium" onClick={() => navigate('/login')} fullWidth>
+                    {t('common.login')}
+                  </Button>
+                </Box>
+                <Button variant="text" color="primary" size="small" onClick={onBackHome} fullWidth>
+                  {t('common.back')}
+                </Button>
+              </CardContent>
+            </Card>
           </Box>
         )}
 

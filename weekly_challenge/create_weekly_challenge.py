@@ -130,7 +130,7 @@ def pick_challenges(all_challenges: list, user_doc: dict, n: int = 20) -> tuple[
     return selected[:n], weak_slots
 
 
-def build_weekly_challenge_doc(user_id: str, challenges: list) -> dict:
+def build_weekly_challenge_doc(user_id: str | None, challenges: list) -> dict:
     """Build the document to insert into the weeklychallenges collection."""
     now = datetime.utcnow()
     # Week starts on Monday of the current week
@@ -162,7 +162,7 @@ def build_weekly_challenge_doc(user_id: str, challenges: list) -> dict:
     }
 
 
-def upsert_weekly_challenge(db, user_id: str, challenges: list) -> tuple[str, bool]:
+def upsert_weekly_challenge(db, user_id: str | None, challenges: list) -> tuple[str, bool]:
     """
     Insert or replace the weekly challenge for this user for the current week.
     Returns (document_id, was_new_insert).
@@ -307,6 +307,11 @@ def main():
             )
 
         stats.log_summary()
+
+        # Upsert a global fallback challenge (userId=None) for guest users
+        global_selected, _ = pick_challenges(all_challenges, {}, n=args.count)
+        upsert_weekly_challenge(db, None, global_selected)
+        log.info("Global fallback challenge (userId=null) upserted with %d words.", len(global_selected))
 
     finally:
         client.close()

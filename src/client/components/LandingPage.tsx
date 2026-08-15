@@ -423,25 +423,19 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 </Box>
 
                 <Box sx={{ flexShrink: 0 }}>
-                  {!user || user.isGuest ? (
-                    <Typography variant="body2" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-                      {t('weeklyChallenge.loginRequired')}
-                    </Typography>
-                  ) : (
-                    <Button
-                      variant="contained"
-                      size="large"
-                      onClick={onWeeklyChallenge}
-                      sx={{
-                        bgcolor: '#e91e63',
-                        '&:hover': { bgcolor: '#c2185b' },
-                        minWidth: 160,
-                      }}
-                      startIcon={<EmojiEventsIcon />}
-                    >
-                      {t('weeklyChallenge.viewProgress')}
-                    </Button>
-                  )}
+                  <Button
+                    variant="contained"
+                    size="large"
+                    onClick={onWeeklyChallenge}
+                    sx={{
+                      bgcolor: '#e91e63',
+                      '&:hover': { bgcolor: '#c2185b' },
+                      minWidth: 160,
+                    }}
+                    startIcon={<EmojiEventsIcon />}
+                  >
+                    {t('weeklyChallenge.viewProgress')}
+                  </Button>
                 </Box>
               </Paper>
             </Grid>
@@ -487,25 +481,19 @@ const LandingPage: React.FC<LandingPageProps> = ({
                 </Box>
 
                 <Box sx={{ flexShrink: 0 }}>
-                  {!user || user.isGuest ? (
-                    <Typography variant="body2" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-                      {t('weeklyStory.loginRequired')}
-                    </Typography>
-                  ) : (
-                    <Button
-                      variant="contained"
-                      size="large"
-                      onClick={onWeeklyStory}
-                      sx={{
-                        bgcolor: '#10b981',
-                        '&:hover': { bgcolor: '#059669' },
-                        minWidth: 160,
-                      }}
-                      startIcon={<AutoStoriesIcon />}
-                    >
-                      {t('weeklyStory.readButton')}
-                    </Button>
-                  )}
+                  <Button
+                    variant="contained"
+                    size="large"
+                    onClick={onWeeklyStory}
+                    sx={{
+                      bgcolor: '#10b981',
+                      '&:hover': { bgcolor: '#059669' },
+                      minWidth: 160,
+                    }}
+                    startIcon={<AutoStoriesIcon />}
+                  >
+                    {t('weeklyStory.readButton')}
+                  </Button>
                 </Box>
               </Paper>
             </Grid>

@@ -295,6 +295,19 @@ def main() -> None:
             stats.log_summary()
             if stats.users_failed > 0:
                 sys.exit(1)
+
+            # Upsert a global fallback story (userId=None) for guest users
+            log.info("Creating global fallback story (userId=null)...")
+            asyncio.run(
+                generate_and_store(
+                    db=db,
+                    user_id=None,
+                    level=args.level,
+                    topic=fallback_topic,
+                    model=args.model,
+                    max_iterations=args.max_iterations,
+                )
+            )
         else:
             # Standalone mode — userId=null in weeklystories
             result = asyncio.run(

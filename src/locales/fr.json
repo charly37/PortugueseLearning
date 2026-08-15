@@ -167,6 +167,8 @@
     "guestWelcome": "Essayez les défis sans créer de compte ! Nous allons créer un compte invité temporaire pour vous.",
     "guestExplanation": "Vos progrès seront sauvegardés pendant 7 jours. Créez un vrai compte à tout moment pour les garder pour toujours.",
     "startAsGuest": "Commencer le Défi en tant qu'Invité",
+    "startAsGuestWeekly": "Commencer le Défi Hebdomadaire en tant qu'Invité",
+    "startAsGuestStory": "Lire l'Histoire en tant qu'Invité",
     "accountBenefits": {
       "title": "Créez un compte gratuit pour :",
       "trackProgress": "Suivre vos progrès et statistiques",
