@@ -315,6 +315,8 @@ const AppContent: React.FC = () => {
           } />
           <Route path="/weekly-challenge" element={
             <WeeklyChallengePage
+              user={user}
+              onCreateGuest={handleCreateGuest}
               onBackHome={() => navigate('/')}
               onPlayWeekly={(challenges) => {
                 const mapped = challenges
@@ -329,7 +331,7 @@ const AppContent: React.FC = () => {
               }}
             />
           } />
-          <Route path="/weekly-story" element={<WeeklyStoryPage onBackHome={() => navigate('/')} />} />
+          <Route path="/weekly-story" element={<WeeklyStoryPage user={user} onCreateGuest={handleCreateGuest} onBackHome={() => navigate('/')} />} />
           {/* Catch-all: redirect unknown paths to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

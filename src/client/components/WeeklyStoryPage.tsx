@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import {
   Container,
@@ -9,6 +10,9 @@ import {
   CircularProgress,
   Alert,
   Chip,
+  Card,
+  CardContent,
+  Divider,
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
@@ -37,6 +41,8 @@ interface WeeklyStoryData {
 
 interface WeeklyStoryPageProps {
   onBackHome: () => void;
+  user: { id: string; username: string; isGuest?: boolean } | null;
+  onCreateGuest: () => Promise<{ id: string; username: string; isGuest?: boolean } | null>;
 }
 
 const LEVEL_COLOR: Record<string, 'success' | 'warning' | 'error'> = {
@@ -45,22 +51,35 @@ const LEVEL_COLOR: Record<string, 'success' | 'warning' | 'error'> = {
   advanced: 'error',
 };
 
-const WeeklyStoryPage: React.FC<WeeklyStoryPageProps> = ({ onBackHome }) => {
+const WeeklyStoryPage: React.FC<WeeklyStoryPageProps> = ({ onBackHome, user, onCreateGuest }) => {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [data, setData] = useState<WeeklyStoryData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<'notFound' | 'error' | null>(null);
 
-  useEffect(() => {
+  const fetchStory = () => {
     fetch('/api/weekly-story', { credentials: 'include' })
       .then(res => {
         if (res.status === 404) { setError('notFound'); return null; }
-        if (!res.ok) { setError('error'); return null; }
+        if (!res.ok)            { setError('error');    return null; }
         return res.json();
       })
       .then(json => json && setData(json))
       .catch(() => setError('error'))
       .finally(() => setLoading(false));
+  };
+
+  const handleStartAsGuest = async () => {
+    setLoading(true);
+    const guestUser = await onCreateGuest();
+    setLoading(false);
+    if (guestUser) fetchStory();
+  };
+
+  useEffect(() => {
+    if (user) fetchStory();
+    else setLoading(false);
   }, []);
 
   const formatDate = (iso: string) =>
@@ -84,6 +103,39 @@ const WeeklyStoryPage: React.FC<WeeklyStoryPageProps> = ({ onBackHome }) => {
         {loading && (
           <Box sx={{ display: 'flex', justifyContent: 'center', mt: 8 }}>
             <CircularProgress />
+          </Box>
+        )}
+
+        {!user && !loading && (
+          <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+            <Card sx={{ width: '100%', maxWidth: 500 }} elevation={3}>
+              <CardContent sx={{ p: 4 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 600, mb: 3, textAlign: 'center' }}>
+                  {t('auth.startChallenge')}
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, textAlign: 'center' }}>
+                  {t('auth.guestWelcome')}
+                </Typography>
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 3, textAlign: 'center' }}>
+                  {t('auth.guestExplanation')}
+                </Typography>
+                <Button variant="contained" color="primary" size="large" onClick={handleStartAsGuest} fullWidth sx={{ mb: 2 }}>
+                  {t('auth.startAsGuestStory')}
+                </Button>
+                <Divider sx={{ my: 2 }}>{t('common.or')}</Divider>
+                <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
+                  <Button variant="outlined" color="primary" size="medium" onClick={() => navigate('/register')} fullWidth>
+                    {t('common.register')}
+                  </Button>
+                  <Button variant="outlined" color="primary" size="medium" onClick={() => navigate('/login')} fullWidth>
+                    {t('common.login')}
+                  </Button>
+                </Box>
+                <Button variant="text" color="primary" size="small" onClick={onBackHome} fullWidth>
+                  {t('common.back')}
+                </Button>
+              </CardContent>
+            </Card>
           </Box>
         )}
 

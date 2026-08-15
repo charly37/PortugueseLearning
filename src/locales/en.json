@@ -169,6 +169,8 @@
     "guestWelcome": "Try challenges without creating an account! We'll create a temporary guest account for you.",
     "guestExplanation": "Your progress will be saved for 7 days. Create a real account anytime to keep it forever.",
     "startAsGuest": "Start Challenge as Guest",
+    "startAsGuestWeekly": "Start Weekly Challenge as Guest",
+    "startAsGuestStory": "Start Story as Guest",
     "accountBenefits": {
       "title": "Create a free account to:",
       "trackProgress": "Track your progress and statistics",

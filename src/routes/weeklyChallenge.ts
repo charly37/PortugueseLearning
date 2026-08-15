@@ -5,13 +5,17 @@ import path from 'path';
 
 const router = express.Router();
 
-// Load word challenges for enrichment (use_exemple / port_exemple)
+// Load word challenges for enrichment and global-doc auto-creation
 const challengeEnrichmentMap: Record<string, any> = {};
+const challengeList: any[] = [];
 try {
   const raw = fs.readFileSync(path.join(__dirname, '../../data/challenges.json'), 'utf-8');
   const arr: any[] = JSON.parse(raw);
   for (const c of arr) {
-    if (c.id) challengeEnrichmentMap[c.id] = c;
+    if (c.id) {
+      challengeEnrichmentMap[c.id] = c;
+      challengeList.push(c);
+    }
   }
 } catch {
   // Non-fatal: enrichment will simply be skipped if file is unavailable
@@ -45,7 +49,42 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
     const collection = db.collection('weeklychallenges');
     const weekStart = currentWeekStart(new Date());
 
-    const doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    let doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    if (!doc) {
+      doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
+    }
+    if (!doc && challengeList.length > 0) {
+      console.warn('[weekly-challenge] No global fallback doc found for week %s — auto-creating from challenges.json. Run create_weekly_challenge.py --all-users to fix this.', weekStart.toISOString());
+      const weekEnd = new Date(weekStart);
+      weekEnd.setUTCDate(weekEnd.getUTCDate() + 7);
+      const shuffled = [...challengeList].sort(() => Math.random() - 0.5);
+      const selected = shuffled.slice(0, 20);
+      const globalDoc = {
+        userId: null,
+        weekStart,
+        weekEnd,
+        createdAt: new Date(),
+        challenges: selected.map((c: any) => ({
+          challengeId: c.id,
+          portuguese: c.port ?? '',
+          translation_fr: c.fr?.translation ?? '',
+          translation_en: c.en?.translation ?? '',
+          completed: false,
+          correct: null,
+          attemptedAt: null,
+        })),
+        totalChallenges: selected.length,
+        completedCount: 0,
+        correctCount: 0,
+        status: 'active',
+      };
+      try {
+        await collection.insertOne(globalDoc);
+      } catch {
+        // Another concurrent request may have inserted first
+      }
+      doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
+    }
     if (!doc) {
       return res.status(404).json({ message: 'No weekly challenge found for this week' });
     }
@@ -100,9 +139,37 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
     const collection = db.collection('weeklychallenges');
     const weekStart = currentWeekStart(new Date());
 
-    const doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    let doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
     if (!doc) {
-      return res.status(404).json({ message: 'No active weekly challenge found' });
+      // Lazy clone: on first submit by a guest, copy the global doc into a personal one
+      const globalDoc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
+      if (!globalDoc) {
+        return res.status(404).json({ message: 'No active weekly challenge found' });
+      }
+      const { _id: _ignored, ...templateFields } = globalDoc;
+      const cloned = {
+        ...templateFields,
+        userId,
+        challenges: globalDoc.challenges.map((c: any) => ({
+          ...c,
+          completed: false,
+          correct: null,
+          attemptedAt: null,
+        })),
+        completedCount: 0,
+        correctCount: 0,
+        status: 'active',
+        createdAt: new Date(),
+      };
+      try {
+        await collection.insertOne(cloned);
+      } catch {
+        // Another concurrent request may have already inserted — proceed to re-fetch
+      }
+      doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+      if (!doc) {
+        return res.status(500).json({ message: 'Failed to initialize weekly challenge' });
+      }
     }
 
     const wordIndex = doc.challenges.findIndex(
