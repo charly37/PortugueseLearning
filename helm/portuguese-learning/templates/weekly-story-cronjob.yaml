@@ -22,7 +22,7 @@ spec:
             - name: weekly-story
               image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
               imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
-              command: ["python", "StoryCreatorAgent.py", "--level", "beginner", "--all-users"]
+              command: ["python", "StoryCreatorWrapper.py", "--level", "beginner", "--all-users"]
               env:
                 - name: MONGODB_URI
                   valueFrom:

@@ -1,6 +1,6 @@
+# StoryCreatorWrapper.py only
 pymongo==4.17.0
+
+# StoryCreatorAgent.py and StoryCreatorWrapper.py
 openai-agents==0.19.4
-# openai 2.45.0 (2026-07-09) introduced InputTokensDetails.cache_write_tokens as a
-# required field, but the API doesn't return it when prompt caching is inactive.
-# Pin to the last known-good version until a patch is released.
 openai==2.53.0
