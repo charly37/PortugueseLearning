@@ -54,7 +54,7 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
     }
     if (!doc && challengeList.length > 0) {
-      // Auto-create global fallback doc when none exists (e.g. script hasn't run yet)
+      console.warn('[weekly-challenge] No global fallback doc found for week %s — auto-creating from challenges.json. Run create_weekly_challenge.py --all-users to fix this.', weekStart.toISOString());
       const weekEnd = new Date(weekStart);
       weekEnd.setUTCDate(weekEnd.getUTCDate() + 7);
       const shuffled = [...challengeList].sort(() => Math.random() - 0.5);
