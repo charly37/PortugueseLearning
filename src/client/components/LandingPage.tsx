@@ -245,7 +245,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                   flexDirection: 'column',
                   alignItems: 'center',
                   transition: 'transform 0.2s, box-shadow 0.2s',
-                  borderLeft: '4px solid #9c27b0',
+                  borderLeft: '4px solid #dc004e',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: 4,
