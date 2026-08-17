@@ -182,7 +182,7 @@ def _build_reviewer_agent(level: str, model: str = "gpt-4.1-mini") -> Agent:
 Evaluate the story draft against ALL of these criteria:
 1. **European Portuguese**: Uses Portugal vocabulary and spelling
    (e.g. "autocarro" not "ônibus", "casa de banho" not "banheiro", "comboio" not "trem").
-2. **Sentence count**: Between 10 and 20 sentences.
+2. **Sentence count**: around 200 sentences.
 3. **Difficulty level — {level}**:
    - beginner:     present tense only; high-frequency vocabulary; short, simple sentences.
    - intermediate: past and future tenses allowed; varied sentence structure.
