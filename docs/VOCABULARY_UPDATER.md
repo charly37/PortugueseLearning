@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `VocabularyUpdater.py` script improves the quality of word challenges in `challenges.json` by calling the OpenAI API to:
+The `VocabularyUpdaterAgent.py` script improves the quality of word challenges by calling the OpenAI API to:
 
 - **Verify** whether the current translation for a word is accurate
 - **Correct** inaccurate translations automatically
@@ -11,6 +11,8 @@ The `VocabularyUpdater.py` script improves the quality of word challenges in `ch
 - **Stamp** a `last_update` date on each processed entry to avoid redundant re-processing
 
 The script supports multiple target languages (`fr` for French, `en` for English) and processes challenges in batches to control API costs.
+
+> **Data source:** The script reads word challenges from and writes updates directly to the MongoDB `challenges` collection. The `challenges.json` file is no longer used at runtime.
 
 ## JSON Structure Updated
 
@@ -85,7 +87,7 @@ python VocabularyUpdater.py --months 3
 
 | Argument | Values | Default | Description |
 |---|---|---|---|
-| `--language` | `fr`, `en` | `fr` | Language section to update in `challenges.json` |
+| `--language` | `fr`, `en` | `fr` | Language section to update in the `challenges` MongoDB collection |
 | `--max-words` | integer | `300` | Maximum number of challenges to process per run |
 | `--months` | integer | `6` | Number of months before a translation is considered stale and eligible for refresh |
 
@@ -100,8 +102,8 @@ The script skips any challenge whose `last_update` in the target language sectio
 ### Expected Output
 
 ```
-Loading challenges.json...
-Loaded 2803 challenges
+Loading challenges from MongoDB...
+Loaded 2645 challenges
 Language: fr
 Max words to process in this batch: 300
 

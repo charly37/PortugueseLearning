@@ -21,11 +21,8 @@ app:
   nodeEnv: production
   port: 3000
 
-# Path on the host node where challenge data JSON files live.
+# Path on the host node where sounds data files live.
 # Must exist on the k3s node before deploying.
-data:
-  hostPath: /home/ubuntu/PortugueseLearning/data
-
 weeklyAudio:
   hostPath: /home/ubuntu/PortugueseLearning/weekly-audio
 

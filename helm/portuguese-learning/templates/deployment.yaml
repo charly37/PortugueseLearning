@@ -52,9 +52,6 @@ spec:
           resources:
             {{- toYaml .Values.resources.app | nindent 12 }}
           volumeMounts:
-            - name: data
-              mountPath: /app/data
-              readOnly: true
             - name: weekly-audio
               mountPath: /app/weekly-audio
               readOnly: true
@@ -62,10 +59,6 @@ spec:
               mountPath: /app/sounds
               readOnly: true
       volumes:
-        - name: data
-          hostPath:
-            path: {{ .Values.data.hostPath }}
-            type: Directory
         - name: weekly-audio
           hostPath:
             path: {{ .Values.weeklyAudio.hostPath }}
