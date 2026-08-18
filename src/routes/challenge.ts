@@ -3,15 +3,9 @@ import User from '../models/User';
 import ChallengeAttempt from '../models/ChallengeAttempt';
 import UserWordVote from '../models/UserWordVote';
 import ChallengeQualityFlag from '../models/ChallengeQualityFlag';
-import fs from 'fs';
-import path from 'path';
+import { getWordChallenges, getVerbChallenges, getIdiomChallenges, getAllChallenges } from '../challengeCache';
 
 const router = express.Router();
-
-// Load challenge data
-const wordChallenges = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/challenges.json'), 'utf-8'));
-const idiomChallenges = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/idiom-challenges.json'), 'utf-8'));
-const verbChallenges = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/verb-challenges.json'), 'utf-8'));
 
 // Middleware to check if user is authenticated
 const requireAuth = (req: Request, res: Response, next: express.NextFunction) => {
@@ -81,15 +75,9 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
     // Get all challenges for the type
     let allChallenges: any[];
     switch (challengeType) {
-      case 'word':
-        allChallenges = wordChallenges;
-        break;
-      case 'idiom':
-        allChallenges = idiomChallenges;
-        break;
-      case 'verb':
-        allChallenges = verbChallenges;
-        break;
+      case 'word':  allChallenges = getWordChallenges();  break;
+      case 'idiom': allChallenges = getIdiomChallenges(); break;
+      case 'verb':  allChallenges = getVerbChallenges();  break;
       default:
         return res.status(400).json({ message: 'Invalid challenge type' });
     }
@@ -100,8 +88,6 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
 
     // Ensure we don't request more challenges than available
     const actualCards = Math.min(totalCards, filteredByUsefulness.length);
-
-    // Get user's pre-computed weaknesses from User model
     const user = await User.findById(userId);
     let weakChallengeIds = new Set<string>();
 
@@ -237,15 +223,9 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
     // Get all challenges for the type
     let allChallenges: any[];
     switch (challengeType) {
-      case 'word':
-        allChallenges = wordChallenges;
-        break;
-      case 'idiom':
-        allChallenges = idiomChallenges;
-        break;
-      case 'verb':
-        allChallenges = verbChallenges;
-        break;
+      case 'word':  allChallenges = getWordChallenges();  break;
+      case 'idiom': allChallenges = getIdiomChallenges(); break;
+      case 'verb':  allChallenges = getVerbChallenges();  break;
       default:
         return res.status(400).json({ message: 'Invalid challenge type' });
     }
@@ -556,7 +536,7 @@ router.get('/progress', requireAuth, async (req: Request, res: Response) => {
     // Enrich weaknesses with translations if they exist
     let enrichedWeaknesses = user.weaknesses;
     if (enrichedWeaknesses?.weakWords && enrichedWeaknesses.weakWords.length > 0) {
-      const allChallenges = [...wordChallenges, ...idiomChallenges, ...verbChallenges];
+      const allChallenges = getAllChallenges();
       enrichedWeaknesses = {
         ...enrichedWeaknesses,
         weakWords: enrichWeakWords(enrichedWeaknesses.weakWords, allChallenges)

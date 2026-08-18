@@ -7,6 +7,7 @@
     "build": "npm run build:server && npm run build:client",
     "build:server": "tsc -p tsconfig.server.json",
     "build:client": "webpack --mode production",
+    "seed": "python3 data/seed-mongodb.py",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "ts-node-dev --respawn --transpile-only --project tsconfig.server.json src/server.ts",
     "dev:client": "webpack serve --mode development",

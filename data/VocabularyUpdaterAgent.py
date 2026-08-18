@@ -10,12 +10,17 @@
 import argparse
 import json
 import os
+import sys
 import asyncio
 from datetime import datetime, timedelta
 from typing import Any
 
 from agents import Agent, Runner, function_tool
 from pymongo import MongoClient
+
+# Allow importing from the repo-level scripts/ directory
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+from db_utils import get_challenges_collection, update_challenge_fields
 
 # ---------------------------------------------------------------------------
 # Globals (set once in main, read by tool functions)
@@ -30,13 +35,25 @@ _mongodb_uri: str = ""
 # ---------------------------------------------------------------------------
 
 def _load_challenges() -> list[dict]:
-    with open("challenges.json", "r", encoding="utf-8") as f:
-        return json.load(f)
+    client, collection = get_challenges_collection()
+    docs = list(collection.find({"type": "word"}))
+    client.close()
+    for doc in docs:
+        doc["id"] = str(doc.pop("_id"))
+        doc.pop("type", None)
+        doc.pop("schemaVersion", None)
+    return docs
 
 
 def _save_challenges(challenges: list[dict]) -> None:
-    with open("challenges.json", "w", encoding="utf-8") as f:
-        json.dump(challenges, f, ensure_ascii=False, indent=4)
+    client, collection = get_challenges_collection()
+    for c in challenges:
+        cid = c.get("id")
+        if not cid:
+            continue
+        fields = {k: v for k, v in c.items() if k != "id"}
+        collection.update_one({"_id": cid}, {"$set": fields})
+    client.close()
 
 
 def _is_translation_recent(challenge: dict, language: str, months: int) -> bool:
@@ -374,7 +391,7 @@ async def _run_agent(
         print("ERROR: MONGODB_URI environment variable not set!")
         exit(1)
 
-    print("Loading challenges.json...")
+    print("Loading challenges from MongoDB...")
     _challenges = _load_challenges()
     print(f"Loaded {len(_challenges)} challenges")
     print(f"Language: {language}  |  Max words: {max_words}  |  Refresh period: {months} months\n")

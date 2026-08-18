@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """
-Aggregate user word usefulness votes and update challenges.json
+Aggregate user word usefulness votes and update the challenges MongoDB collection.
 This script runs nightly to calculate average usefulness scores.
 """
 
 import logging
 import os
-import json
 import sys
 import argparse
 from datetime import datetime
 from pymongo import MongoClient
-from collections import defaultdict
 
 logging.basicConfig(
     level=logging.INFO,
@@ -74,39 +72,27 @@ def aggregate_votes(db):
         log.error("Error aggregating votes: %s", e)
         return {}
 
-def update_challenge_file(file_path, vote_aggregates, min_votes=1):
-    """Update a challenge JSON file with aggregated usefulness scores"""
-    try:
-        # Read the challenge file
-        with open(file_path, 'r', encoding='utf-8') as f:
-            challenges = json.load(f)
-        
-        updates_count = 0
-        for challenge in challenges:
-            challenge_id = challenge.get('id')
-            if challenge_id in vote_aggregates:
-                vote_data = vote_aggregates[challenge_id]
-                # Only update if we have minimum votes threshold
-                if vote_data['voteCount'] >= min_votes:
-                    challenge['user_usefulness'] = vote_data['usefulness']
-                    updates_count += 1
-        
-        # Write back to file
-        with open(file_path, 'w', encoding='utf-8') as f:
-            json.dump(challenges, f, ensure_ascii=False, indent=4)
-        
-        log.info("Updated %d challenges in %s", updates_count, file_path)
-        return updates_count
-        
-    except Exception as e:
-        log.error("Error updating challenge file %s: %s", file_path, e)
-        return 0
+def update_challenges_in_db(challenges_collection, vote_aggregates, min_votes=1):
+    """Update user_usefulness on challenge documents that have enough votes."""
+    updates_count = 0
+    for challenge_id, vote_data in vote_aggregates.items():
+        if vote_data['voteCount'] >= min_votes:
+            result = challenges_collection.update_one(
+                {'_id': challenge_id},
+                {'$set': {'user_usefulness': vote_data['usefulness']}}
+            )
+            if result.matched_count:
+                updates_count += 1
+            else:
+                log.debug("Challenge %s not found in collection", challenge_id)
+    log.info("Updated %d challenge documents", updates_count)
+    return updates_count
 
 def main():
     """Main execution function"""
     # Parse command line arguments
     parser = argparse.ArgumentParser(
-        description='Aggregate user word usefulness votes and update challenge JSON files.',
+        description='Aggregate user word usefulness votes and update the challenges MongoDB collection.',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog='Example: python aggregate_usefulness.py --min-votes 3'
     )
@@ -116,13 +102,6 @@ def main():
         type=int,
         default=1,
         help='Minimum number of votes required to update a challenge (default: 1)'
-    )
-    
-    parser.add_argument(
-        '--data-dir',
-        type=str,
-        default='../data',
-        help='Directory containing challenge JSON files (default: ../data)'
     )
 
     parser.add_argument(
@@ -143,7 +122,7 @@ def main():
     )
 
     log.info("Starting Usefulness Aggregation at %s", datetime.now())
-    log.debug("Parameters: min_votes=%d, data_dir=%s", args.min_votes, args.data_dir)
+    log.debug("Parameters: min_votes=%d", args.min_votes)
     
     # Load configuration
     mongodb_uri = load_config()
@@ -160,23 +139,10 @@ def main():
         client.close()
         return
     
-    # Update challenge files
-    data_dir = os.path.join(os.path.dirname(__file__), args.data_dir)
-    challenge_files = [
-        os.path.join(data_dir, 'challenges.json'),
-        os.path.join(data_dir, 'verb-challenges.json'),
-        os.path.join(data_dir, 'idiom-challenges.json')
-    ]
+    # Update challenge documents in MongoDB
+    total_updates = update_challenges_in_db(db['challenges'], vote_aggregates, min_votes=args.min_votes)
     
-    total_updates = 0
-    for file_path in challenge_files:
-        if os.path.exists(file_path):
-            updates = update_challenge_file(file_path, vote_aggregates, min_votes=args.min_votes)
-            total_updates += updates
-        else:
-            log.warning("File not found: %s", file_path)
-    
-    log.info("Total updates across all files: %d", total_updates)
+    log.info("Total updates: %d", total_updates)
     log.info("Usefulness Aggregation complete at %s", datetime.now())
     
     # Close connection

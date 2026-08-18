@@ -12,6 +12,7 @@ try {
 try {
   if (fs.existsSync('.env.test')) fs.unlinkSync('.env.test');
   if (fs.existsSync('.mongo-pid.json')) fs.unlinkSync('.mongo-pid.json');
+  if (fs.existsSync('.seed-complete')) fs.unlinkSync('.seed-complete');
   console.log('Cleaned up test files');
 } catch (err) {
   console.error('Cleanup error:', err);

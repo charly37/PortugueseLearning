@@ -14,7 +14,6 @@ Environment variables:
 
 import os
 import sys
-import json
 import logging
 import random
 import argparse
@@ -59,28 +58,15 @@ class CreationStats:
 
 # ── helpers ────────────────────────────────────────────────────────────────────
 
-def load_word_challenges() -> list:
-    """Load word challenges from the JSON file relative to this script."""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    # Try sibling 'data/' directory first (cluster layout), then '../data/' (local dev layout)
-    for candidate in (
-        os.path.join(script_dir, 'data', 'challenges.json'),
-        os.path.join(script_dir, '..', 'data', 'challenges.json'),
-    ):
-        data_path = os.path.normpath(candidate)
-        if os.path.exists(data_path):
-            break
-    else:
-        raise FileNotFoundError(
-            f"challenges.json not found (tried {os.path.normpath(os.path.join(script_dir, 'data', 'challenges.json'))}"
-            f" and {os.path.normpath(os.path.join(script_dir, '..', 'data', 'challenges.json'))})"
-        )
-
-    with open(data_path, 'r', encoding='utf-8') as f:
-        challenges = json.load(f)
-
-    log.info("Loaded %d word challenges from %s", len(challenges), data_path)
-    return challenges
+def load_word_challenges(db) -> list:
+    """Load word challenges from the MongoDB challenges collection."""
+    docs = list(db['challenges'].find({'type': 'word'}))
+    for doc in docs:
+        doc['id'] = str(doc.pop('_id'))
+        doc.pop('type', None)
+        doc.pop('schemaVersion', None)
+    log.info("Loaded %d word challenges from MongoDB", len(docs))
+    return docs
 
 
 def connect_db():
@@ -265,13 +251,13 @@ def main():
         force=True,
     )
 
-    all_challenges = load_word_challenges()
+    client, db = connect_db()
+    all_challenges = load_word_challenges(db)
     if args.min_usefulness > 1:
         before = len(all_challenges)
         all_challenges = [c for c in all_challenges if c.get('usefulness', 2) >= args.min_usefulness]
         log.info("Filtered by min_usefulness=%d: %d → %d challenges",
                  args.min_usefulness, before, len(all_challenges))
-    client, db     = connect_db()
 
     try:
         users = resolve_user(db, args)

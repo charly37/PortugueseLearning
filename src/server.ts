@@ -5,6 +5,7 @@ import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import dotenv from 'dotenv';
 import connectDB from './config/database';
+import { initCache, startCacheRefresh, getWordChallenges, getVerbChallenges, getIdiomChallenges } from './challengeCache';
 import authRoutes from './routes/auth';
 import challengeRoutes from './routes/challenge';
 import weeklyChallengeRoutes from './routes/weeklyChallenge';
@@ -19,8 +20,18 @@ dotenv.config({ path: envFile });
 const app = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
-// Connect to MongoDB
-connectDB();
+// Connect to MongoDB, warm the challenge cache, then start listening
+connectDB().then(async () => {
+  await initCache();
+  startCacheRefresh();
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+  });
+}).catch(err => {
+  console.error('[server] Failed to initialise:', err);
+  process.exit(1);
+});
 
 // Trust proxy - important for nginx reverse proxy
 app.set('trust proxy', 1);
@@ -77,15 +88,7 @@ const audioPath = process.env.AUDIO_PATH || path.join(__dirname, '../weekly-audi
 console.log(`Serving weekly audio files from: ${audioPath}`);
 app.use('/weekly-audio', express.static(audioPath));
 
-// Load challenges from JSON files
-const challengesPath = path.join(__dirname, '../data/challenges.json');
-const challenges = JSON.parse(fs.readFileSync(challengesPath, 'utf-8'));
 
-const verbChallengesPath = path.join(__dirname, '../data/verb-challenges.json');
-const verbChallenges = JSON.parse(fs.readFileSync(verbChallengesPath, 'utf-8'));
-
-const idiomChallengesPath = path.join(__dirname, '../data/idiom-challenges.json');
-const idiomChallenges = JSON.parse(fs.readFileSync(idiomChallengesPath, 'utf-8'));
 
 // API routes
 app.get('/api/health', (req: Request, res: Response) => {
@@ -93,48 +96,40 @@ app.get('/api/health', (req: Request, res: Response) => {
 });
 
 app.get('/api/challenges/word', (req: Request, res: Response) => {
-  const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
-  res.json(randomChallenge);
+  const c = getWordChallenges();
+  res.json(c[Math.floor(Math.random() * c.length)]);
 });
 
 app.get('/api/challenges/verb', (req: Request, res: Response) => {
-  const randomChallenge = verbChallenges[Math.floor(Math.random() * verbChallenges.length)];
-  res.json(randomChallenge);
+  const c = getVerbChallenges();
+  res.json(c[Math.floor(Math.random() * c.length)]);
 });
 
 app.get('/api/challenges/idiom', (req: Request, res: Response) => {
-  const randomChallenge = idiomChallenges[Math.floor(Math.random() * idiomChallenges.length)];
-  res.json(randomChallenge);
+  const c = getIdiomChallenges();
+  res.json(c[Math.floor(Math.random() * c.length)]);
 });
 
 // Legacy routes for backward compatibility
 app.get('/api/challenge', (req: Request, res: Response) => {
-  const randomChallenge = challenges[Math.floor(Math.random() * challenges.length)];
-  res.json(randomChallenge);
+  const c = getWordChallenges();
+  res.json(c[Math.floor(Math.random() * c.length)]);
 });
 
 app.get('/api/verb-challenge', (req: Request, res: Response) => {
-  const randomChallenge = verbChallenges[Math.floor(Math.random() * verbChallenges.length)];
-  res.json(randomChallenge);
+  const c = getVerbChallenges();
+  res.json(c[Math.floor(Math.random() * c.length)]);
 });
 
 app.get('/api/idiom-challenge', (req: Request, res: Response) => {
-  const randomChallenge = idiomChallenges[Math.floor(Math.random() * idiomChallenges.length)];
-  res.json(randomChallenge);
+  const c = getIdiomChallenges();
+  res.json(c[Math.floor(Math.random() * c.length)]);
 });
 
 // Get all challenges for learn/flashcard mode
-app.get('/api/word-challenges-all', (req: Request, res: Response) => {
-  res.json(challenges);
-});
-
-app.get('/api/verb-challenges-all', (req: Request, res: Response) => {
-  res.json(verbChallenges);
-});
-
-app.get('/api/idiom-challenges-all', (req: Request, res: Response) => {
-  res.json(idiomChallenges);
-});
+app.get('/api/word-challenges-all',  (req: Request, res: Response) => res.json(getWordChallenges()));
+app.get('/api/verb-challenges-all',  (req: Request, res: Response) => res.json(getVerbChallenges()));
+app.get('/api/idiom-challenges-all', (req: Request, res: Response) => res.json(getIdiomChallenges()));
 
 // XML Sitemap
 app.get('/sitemap.xml', (req: Request, res: Response) => {
@@ -165,8 +160,4 @@ app.get('/metrics', metricsHandler);
 // Serve the React app for all other routes
 app.get('/{*path}', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });
