@@ -20,12 +20,17 @@ dotenv.config({ path: envFile });
 const app = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
-// Connect to MongoDB then warm the challenge cache
+// Connect to MongoDB, warm the challenge cache, then start listening
 connectDB().then(async () => {
   await initCache();
   startCacheRefresh();
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+  });
 }).catch(err => {
-  console.error('[server] Failed to initialise challenge cache:', err);
+  console.error('[server] Failed to initialise:', err);
+  process.exit(1);
 });
 
 // Trust proxy - important for nginx reverse proxy
@@ -155,8 +160,4 @@ app.get('/metrics', metricsHandler);
 // Serve the React app for all other routes
 app.get('/{*path}', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });
