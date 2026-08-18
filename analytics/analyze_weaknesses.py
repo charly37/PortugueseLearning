@@ -7,7 +7,6 @@ Also runs usefulness aggregation. Invoked directly by the Kubernetes CronJob.
 import logging
 import os
 import sys
-import json
 import re
 import argparse
 import subprocess
@@ -38,36 +37,24 @@ class WeaknessAnalyzer:
         self.users_collection = self.db['users']
         self.attempts_collection = self.db['challengeattempts']
 
-        # Load valid challenge UUIDs from JSON files
+        # Load valid challenge UUIDs from MongoDB instead of JSON files
         self.valid_challenge_ids = self._load_valid_challenge_ids()
         log.info("Connected to MongoDB")
         log.info("Loaded %d valid challenge UUIDs", len(self.valid_challenge_ids))
 
     def _load_valid_challenge_ids(self) -> Set[str]:
-        """Load all valid challenge IDs from JSON files."""
+        """Load all valid challenge IDs from the challenges collection."""
         valid_ids = set()
-        script_dir = os.path.dirname(__file__)
-        data_dir = (
-            os.path.join(script_dir, 'data')
-            if os.path.exists(os.path.join(script_dir, 'data'))
-            else os.path.join(script_dir, '..', 'data')
-        )
-
-        challenge_files = ['challenges.json', 'idiom-challenges.json', 'verb-challenges.json']
-
-        for filename in challenge_files:
-            filepath = os.path.join(data_dir, filename)
-            try:
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    challenges = json.load(f)
-                    for challenge in challenges:
-                        if 'id' in challenge and UUID_PATTERN.match(challenge['id']):
-                            valid_ids.add(challenge['id'])
-                    log.debug("Loaded %d IDs from %s", len([c for c in challenges if 'id' in c]), filename)
-            except FileNotFoundError:
-                log.warning("%s not found", filename)
-            except json.JSONDecodeError as e:
-                log.error("Error parsing %s: %s", filename, e)
+        try:
+            docs = self.db['challenges'].find({}, {'_id': 1})
+            for doc in docs:
+                cid = str(doc['_id'])
+                if UUID_PATTERN.match(cid):
+                    valid_ids.add(cid)
+            log.debug("Loaded %d IDs from challenges collection", len(valid_ids))
+        except Exception as e:
+            log.error("Error loading challenge IDs from MongoDB: %s", e)
+        return valid_ids
 
         return valid_ids
 

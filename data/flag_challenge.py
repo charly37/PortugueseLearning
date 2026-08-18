@@ -17,7 +17,6 @@ Usage:
 """
 
 import argparse
-import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -30,15 +29,6 @@ from bson import ObjectId
 # Config / helpers
 # ---------------------------------------------------------------------------
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = REPO_ROOT / "data"
-
-CHALLENGE_FILES = {
-    "word":  DATA_DIR / "challenges.json",
-    "verb":  DATA_DIR / "verb-challenges.json",
-    "idiom": DATA_DIR / "idiom-challenges.json",
-}
-
 
 def load_env() -> str:
     """Return MONGODB_URI from environment."""
@@ -48,19 +38,13 @@ def load_env() -> str:
     return uri
 
 
-def load_all_challenges() -> list[dict]:
-    """Load and tag all challenges from the three JSON files."""
-    all_challenges: list[dict] = []
-    for ctype, path in CHALLENGE_FILES.items():
-        if not path.exists():
-            print(f"  [warn] {path.name} not found, skipping.")
-            continue
-        with open(path, "r", encoding="utf-8") as f:
-            items = json.load(f)
-        for item in items:
-            item["_type"] = ctype
-        all_challenges.extend(items)
-    return all_challenges
+def load_all_challenges(db) -> list[dict]:
+    """Load and tag all challenges from the MongoDB collection."""
+    docs = list(db["challenges"].find({}, {"_id": 1, "type": 1, "port": 1, "en": 1}))
+    for doc in docs:
+        doc["id"] = str(doc.pop("_id"))
+        doc["_type"] = doc.pop("type", "word")
+    return docs
 
 
 def find_challenges(challenges: list[dict], challenge_id: str | None, word: str | None) -> list[dict]:
@@ -110,8 +94,13 @@ def main() -> None:
                         help="Preview what would be flagged without writing to DB")
     args = parser.parse_args()
 
-    # 1. Find matching challenges in JSON files
-    challenges = load_all_challenges()
+    # 1. Connect to MongoDB first to load challenges
+    uri = load_env()
+    client = MongoClient(uri)
+    db = client.get_default_database()
+
+    # 2. Find matching challenges from MongoDB
+    challenges = load_all_challenges(db)
     matches = find_challenges(challenges, args.challenge_id, args.word)
 
     if not matches:
@@ -124,12 +113,8 @@ def main() -> None:
 
     if args.dry_run:
         print("\n[dry-run] No changes written.")
+        client.close()
         return
-
-    # 2. Connect to MongoDB
-    uri = load_env()
-    client = MongoClient(uri)
-    db = client.get_default_database()
 
     # 3. Resolve the user
     user = get_system_user(db, args.username)

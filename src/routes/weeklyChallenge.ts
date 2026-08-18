@@ -1,25 +1,8 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
-import fs from 'fs';
-import path from 'path';
+import { getWordChallenges } from '../challengeCache';
 
 const router = express.Router();
-
-// Load word challenges for enrichment and global-doc auto-creation
-const challengeEnrichmentMap: Record<string, any> = {};
-const challengeList: any[] = [];
-try {
-  const raw = fs.readFileSync(path.join(__dirname, '../../data/challenges.json'), 'utf-8');
-  const arr: any[] = JSON.parse(raw);
-  for (const c of arr) {
-    if (c.id) {
-      challengeEnrichmentMap[c.id] = c;
-      challengeList.push(c);
-    }
-  }
-} catch {
-  // Non-fatal: enrichment will simply be skipped if file is unavailable
-}
 
 function requireAuth(req: Request, res: Response, next: express.NextFunction) {
   if (!req.session.userId) {
@@ -53,11 +36,11 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
     if (!doc) {
       doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
     }
-    if (!doc && challengeList.length > 0) {
-      console.warn('[weekly-challenge] No global fallback doc found for week %s — auto-creating from challenges.json. Run create_weekly_challenge.py --all-users to fix this.', weekStart.toISOString());
+    if (!doc && getWordChallenges().length > 0) {
+      console.warn('[weekly-challenge] No global fallback doc found for week %s — auto-creating from cache. Run create_weekly_challenge.py --all-users to fix this.', weekStart.toISOString());
       const weekEnd = new Date(weekStart);
       weekEnd.setUTCDate(weekEnd.getUTCDate() + 7);
-      const shuffled = [...challengeList].sort(() => Math.random() - 0.5);
+      const shuffled = [...getWordChallenges()].sort(() => Math.random() - 0.5);
       const selected = shuffled.slice(0, 20);
       const globalDoc = {
         userId: null,
@@ -102,7 +85,7 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       // Challenge is only complete when every word has been correctly answered
       status: correctCount === doc.totalChallenges ? 'completed' : doc.status,
       challenges: doc.challenges.map((c: any) => {
-        const enriched = challengeEnrichmentMap[c.challengeId];
+      const enriched = getWordChallenges().find((w: any) => w.id === c.challengeId);
         return {
           ...c,
           fr_note: enriched?.fr?.note ?? null,

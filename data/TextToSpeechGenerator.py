@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 import json
 import time
 from pathlib import Path
@@ -7,26 +8,23 @@ from datetime import datetime, timedelta
 from elevenlabs.client import ElevenLabs
 from elevenlabs import VoiceSettings
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
+from db_utils import get_challenges_collection, challenges_as_list, update_challenge_fields
+
 
 class QuotaExceededException(Exception):
     """Raised when the ElevenLabs API quota is exceeded."""
     pass
 
 
-def save_challenges_json(json_file_path, challenges):
-    """
-    Save the updated challenges array back to the JSON file.
-    
-    Args:
-        json_file_path: Path to the challenges JSON file
-        challenges: Updated challenges array
-    """
+def save_challenges_json(collection, challenge_id: str, challenge: dict) -> bool:
+    """Persist updated audio metadata for one challenge to MongoDB."""
     try:
-        with open(json_file_path, 'w', encoding='utf-8') as f:
-            json.dump(challenges, f, ensure_ascii=False, indent=4)
+        fields = {k: v for k, v in challenge.items() if k != 'id'}
+        update_challenge_fields(collection, challenge_id, fields)
         return True
     except Exception as e:
-        print(f"❌ Error saving JSON file: {e}")
+        print(f"❌ Error saving challenge {challenge_id}: {e}")
         return False
 
 
@@ -126,23 +124,9 @@ def generate_tts_audio(client, text, language_code, voice_id, output_file, speed
         return False
 
 
-def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=True, max_conversions=50, generate_examples=False, months=6):
+def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True, max_conversions=50, generate_examples=False, months=6):
     """
-    Generate audio files for all challenges in a JSON file.
-    
-    Args:
-        json_file_path: Path to the challenges JSON file
-        output_dir: Directory where MP3 files will be saved (default: current directory)
-        skip_existing: If True, skip challenges with audio generated within the last 'months' months
-        max_conversions: Maximum number of audio files to generate in this run (default: 50)
-        generate_examples: If True, also generate audio for example sentences in each language
-        months: Number of months to consider audio as "recent" (default: 6)
-        
-    Notes:
-        - Audio is considered "recent" if generated within the last 'months' months
-        - The generation date is tracked in challenges.json under challenge['audio']['last_update']
-        - This allows periodic refresh of audio files for quality improvements
-        - When generate_examples=True, also generates audio for fr.use_exemple, fr.port_exemple, etc.
+    Generate audio files for all word challenges stored in MongoDB.
     """
     # Initialize ElevenLabs client
     api_key = os.environ.get('TEXT_TO_SPEECH_API_KEY')
@@ -152,17 +136,9 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
     
     client = ElevenLabs(api_key=api_key)
     
-    # Load challenges from JSON file
-    try:
-        with open(json_file_path, 'r', encoding='utf-8') as f:
-            challenges = json.load(f)
-        print(f"Loaded {len(challenges)} challenges from {json_file_path}")
-    except FileNotFoundError:
-        print(f"ERROR: File '{json_file_path}' not found!")
-        return
-    except json.JSONDecodeError as e:
-        print(f"ERROR: Invalid JSON in '{json_file_path}': {e}")
-        return
+    # Load challenges from MongoDB
+    challenges = challenges_as_list(collection, challenge_type='word')
+    print(f"Loaded {len(challenges)} challenges from MongoDB")
     
     # Create output directory if it doesn't exist
     output_path = Path(output_dir)
@@ -241,7 +217,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                 }
                 
                 # Save updated JSON back to file
-                if save_challenges_json(json_file_path, challenges):
+                if save_challenges_json(collection, challenge_id, challenge):
                     print(f"[{idx}/{total}] 📝 Updated JSON entry for '{portuguese_text}'")
                 
                 # Small delay to avoid rate limiting
@@ -280,7 +256,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(json_file_path, challenges)
+                            save_challenges_json(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -308,7 +284,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(json_file_path, challenges)
+                            save_challenges_json(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -336,7 +312,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(json_file_path, challenges)
+                            save_challenges_json(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -367,7 +343,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(json_file_path, challenges)
+                            save_challenges_json(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -395,7 +371,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(json_file_path, challenges)
+                            save_challenges_json(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -423,7 +399,7 @@ def generate_audio_for_challenges(json_file_path, output_dir=".", skip_existing=
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(json_file_path, challenges)
+                            save_challenges_json(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -483,19 +459,22 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    # Path to challenges.json relative to this script
     script_dir = Path(__file__).parent
-    challenges_json = script_dir / "challenges.json"
     output_directory = Path(args.output_dir) if args.output_dir else script_dir
-    
+
+    mongo_client, collection = get_challenges_collection()
+
     print(f"Text-to-Speech Audio Generator for Portuguese Challenges")
     print(f"{'='*60}\n")
-    
-    generate_audio_for_challenges(
-        json_file_path=challenges_json,
-        output_dir=output_directory,
-        skip_existing=not args.no_skip,
-        max_conversions=args.max_conversions,
-        generate_examples=args.examples,
-        months=args.months,
-    )
+
+    try:
+        generate_audio_for_challenges(
+            collection=collection,
+            output_dir=output_directory,
+            skip_existing=not args.no_skip,
+            max_conversions=args.max_conversions,
+            generate_examples=args.examples,
+            months=args.months,
+        )
+    finally:
+        mongo_client.close()
