@@ -4,6 +4,8 @@
 
 The `TextToSpeechGenerator.py` script has been updated to generate audio files not only for the main Portuguese words, but also for example sentences in each language (French, Portuguese, English).
 
+> **Data source:** The script now reads from and writes to the MongoDB `challenges` collection directly. The `challenges.json` file is no longer used at runtime — audio metadata fields (`audio`, `fr.translation_audio`, etc.) are updated in MongoDB via targeted `$set` operations per challenge.
+
 ## What's New
 
 ### Updated JSON Structure
@@ -152,11 +154,12 @@ If running with `max_conversions=300`, you would need approximately:
 - Only regenerates outdated audio files
 - Saves on API costs and time
 
-### Automatic JSON Updates
+### Automatic MongoDB Updates
 
-- Updates `challenges.json` after each audio generation
-- Adds `use_exemple_audio` and `port_exemple_audio` fields
+- Updates the `challenges` MongoDB collection after each audio generation
+- Adds `use_exemple_audio` and `port_exemple_audio` fields on the challenge document
 - Tracks generation date in `last_update` field
+- Changes are immediately visible to the app server at the next cache refresh (default: 5 min)
 
 ### Rate Limiting
 
@@ -190,9 +193,9 @@ time.sleep(1.0)  # Increase from 0.5 to 1.0 seconds
 
 ### Invalid JSON
 
-If the script reports JSON errors, validate your `challenges.json` file:
+If the JSON seed files need validating:
 ```bash
-python -m json.tool challenges.json > /dev/null
+python3 -m json.tool data/challenges.json > /dev/null
 ```
 
 ## Next Steps

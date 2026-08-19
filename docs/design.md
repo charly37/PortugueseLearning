@@ -121,7 +121,7 @@ The Portuguese Learning application runs on Kubernetes (k3s) with Traefik as the
 │       │   └── ChallengeQualityFlag.tsx # Quality issue flagging
 │       └── index.html     # HTML template
 ├── analytics/             # Python analytics service
-├── data/                  # Challenge data (JSON files)
+├── data/                  # Challenge seed files (JSON) + data tooling scripts
 ├── docs/                  # Documentation
 ├── tests/                 # Playwright E2E tests
 ├── dist/                  # Compiled server code

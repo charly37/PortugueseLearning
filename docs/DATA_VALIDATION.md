@@ -4,7 +4,15 @@ This document describes the data validation and maintenance scripts located in t
 
 ## Overview
 
-The Portuguese Learning app relies on data files (`challenges.json`, `verb-challenges.json`, `idiom-challenges.json`) that must maintain data integrity. These scripts help ensure the data quality and catch issues before they reach production.
+Challenge data (`challenges.json`, `verb-challenges.json`, `idiom-challenges.json`) has been migrated to MongoDB. The JSON files in `data/` are now **seed/backup sources only** — the live app reads from the `challenges` MongoDB collection.
+
+**MongoDB collection:** `challenges` — one document per challenge, with a `type` field (`"word"`, `"verb"`, `"idiom"`) and `schemaVersion: 1`.
+
+The JSON files are still validated (they remain the canonical source for seeding) but the app no longer reads them at startup. To re-seed or update MongoDB from the JSON files, please run:
+
+```bash
+python3 data/seed-mongodb.py
+```
 
 ## Scripts
 
@@ -32,7 +40,7 @@ python3 check-duplicate-ids.py fix
    - Groups challenges by UUID
    - Reports duplicate UUIDs with detailed information
    - Exits with code 1 if duplicates found, 0 if clean
-   - Used in CI/CD pipeline to prevent builds with invalid data
+   - Used in CI/CD pipeline to prevent seeding invalid data into MongoDB
 
 2. **Fix Mode** (`fix` argument):
    - Performs same checks as check mode
@@ -40,6 +48,8 @@ python3 check-duplicate-ids.py fix
    - Regenerates new UUIDs for subsequent duplicates
    - Saves updated `challenges.json` automatically
    - Displays all changes made
+   - After fixing, re-run `python3 data/seed-mongodb.py` to sync changes to MongoDB
+   - After fixing, re-run `python3 data/seed-mongodb.py` to sync changes to MongoDB
 
 **Output Example:**
 
@@ -77,7 +87,7 @@ Run: python3 check-duplicate-ids.py fix
 
 **CI/CD Integration:**
 
-This script is automatically run in the GitHub Actions workflow (`.github/workflows/ci-cd.yml`) before building the application. If duplicate UUIDs are detected, the build fails with instructions on how to fix them.
+This script is automatically run in the GitHub Actions workflow (`.github/workflows/ci-cd.yml`) before building the application. If duplicate UUIDs are detected, the build fails — fix and re-seed before deploying.
 
 ```yaml
 - name: Validate challenge data
@@ -184,15 +194,9 @@ python3 find-duplicates.py
 
 ### Adding New Challenges
 
-When adding new challenges to `challenges.json`:
+When adding new challenges, the JSON files remain the authoritative editing source. After editing, sync to MongoDB:
 
-1. Generate a unique UUID using Python:
-   ```python
-   import uuid
-   print(str(uuid.uuid4()))
-   ```
-
-2. Follow the standard format:
+1. Add the new entry to the appropriate JSON file following the format below:
    ```json
    {
        "id": "unique-uuid-here",
@@ -208,7 +212,20 @@ When adding new challenges to `challenges.json`:
    }
    ```
 
-3. Run validation scripts to ensure no duplicates were introduced
+2. Generate a unique UUID:
+   ```python
+   import uuid; print(str(uuid.uuid4()))
+   ```
+
+3. Validate no duplicates were introduced:
+   ```bash
+   python3 data/check-duplicate-ids.py
+   ```
+
+4. Seed the new entry into MongoDB (idempotent — safe to re-run):
+   ```bash
+   python3 data/seed-mongodb.py
+   ```
 
 ### Fixing Duplicate UUIDs
 
@@ -219,6 +236,8 @@ cd data
 python3 check-duplicate-ids.py fix
 git add challenges.json
 git commit -m "fix: regenerate duplicate UUIDs in challenges.json"
+# Then re-seed MongoDB to apply the fix
+python3 data/seed-mongodb.py
 ```
 
 ### Managing Duplicate Words
@@ -234,6 +253,8 @@ When `find-duplicates.py` reports duplicate Portuguese words:
 ---
 
 ## Data File Structure
+
+> **Note:** The JSON files below are seed/backup sources. The live application reads from the MongoDB `challenges` collection. Each document has the same fields plus `type` (`"word"`, `"verb"`, or `"idiom"`) and `schemaVersion: 1`.
 
 ### challenges.json
 

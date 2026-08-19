@@ -1,7 +1,6 @@
 import argparse
 import os
 import sys
-import json
 import time
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -17,7 +16,7 @@ class QuotaExceededException(Exception):
     pass
 
 
-def save_challenges_json(collection, challenge_id: str, challenge: dict) -> bool:
+def save_challenge_to_db(collection, challenge_id: str, challenge: dict) -> bool:
     """Persist updated audio metadata for one challenge to MongoDB."""
     try:
         fields = {k: v for k, v in challenge.items() if k != 'id'}
@@ -209,16 +208,14 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 generated += 1
                 total_converted += 1
                 
-                # Update the challenge entry in the JSON
                 today_date = datetime.now().strftime("%Y-%m-%d")
                 challenge['audio'] = {
                     'filename': output_file.name,
                     'last_update': today_date
                 }
                 
-                # Save updated JSON back to file
-                if save_challenges_json(collection, challenge_id, challenge):
-                    print(f"[{idx}/{total}] 📝 Updated JSON entry for '{portuguese_text}'")
+                if save_challenge_to_db(collection, challenge_id, challenge):
+                    print(f"[{idx}/{total}] 📝 Updated DB entry for '{portuguese_text}'")
                 
                 # Small delay to avoid rate limiting
                 time.sleep(0.5)
@@ -256,7 +253,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(collection, challenge_id, challenge)
+                            save_challenge_to_db(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -284,7 +281,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(collection, challenge_id, challenge)
+                            save_challenge_to_db(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -312,7 +309,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(collection, challenge_id, challenge)
+                            save_challenge_to_db(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -343,7 +340,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(collection, challenge_id, challenge)
+                            save_challenge_to_db(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -371,7 +368,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(collection, challenge_id, challenge)
+                            save_challenge_to_db(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -399,7 +396,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                             }
                             examples_generated += 1
                             total_converted += 1
-                            save_challenges_json(collection, challenge_id, challenge)
+                            save_challenge_to_db(collection, challenge_id, challenge)
                             time.sleep(0.5)
                         else:
                             errors += 1
@@ -455,7 +452,7 @@ if __name__ == "__main__":
         "--output-dir",
         type=str,
         default=None,
-        help="Directory where MP3 files will be saved (default: same directory as challenges.json)"
+        help="Directory where MP3 files will be saved (default: script directory)"
     )
     args = parser.parse_args()
 
