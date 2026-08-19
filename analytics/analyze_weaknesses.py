@@ -201,34 +201,6 @@ class WeaknessAnalyzer:
         log.debug("MongoDB connection closed")
 
 
-def run_usefulness_aggregation() -> bool:
-    """Run the usefulness aggregation script as a subprocess."""
-    log.info("Starting usefulness aggregation")
-    try:
-        result = subprocess.run(
-            ['python3', '/app/aggregate_usefulness.py'],
-            capture_output=True,
-            text=True,
-            timeout=300,
-        )
-        if result.returncode == 0:
-            log.info("Usefulness aggregation completed successfully")
-            if result.stdout:
-                log.debug("aggregate_usefulness output: %s", result.stdout.strip())
-            return True
-        else:
-            log.error("Usefulness aggregation failed (exit %d)", result.returncode)
-            if result.stderr:
-                log.error("aggregate_usefulness stderr: %s", result.stderr.strip())
-            return False
-    except subprocess.TimeoutExpired:
-        log.error("Usefulness aggregation timed out after 300s")
-        return False
-    except Exception as e:
-        log.error("Usefulness aggregation error: %s", e)
-        return False
-
-
 def main():
     parser = argparse.ArgumentParser(
         description='Analyze user weaknesses and aggregate usefulness votes.',
@@ -253,8 +225,6 @@ def main():
     )
 
     log.info("Analytics jobs started")
-
-    # Job 1: weakness analysis
     try:
         analyzer = WeaknessAnalyzer()
         analyzer.analyze_all_users(days_back=args.days_back, min_attempts=args.min_attempts)
@@ -262,10 +232,6 @@ def main():
         log.info("Weakness analysis completed successfully")
     except Exception as e:
         log.error("Weakness analysis failed: %s", e)
-
-    # Job 2: usefulness aggregation
-    run_usefulness_aggregation()
-
     log.info("Analytics jobs completed")
 
 
