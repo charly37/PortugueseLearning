@@ -20,7 +20,7 @@ ENV PYTHONUNBUFFERED=1
 
 # Copy requirements files
 COPY analytics/requirements.txt analytics-requirements.txt
-COPY usefulness/requirements.txt usefulness-requirements.txt
+COPY usefulness_aggregator/requirements.txt usefulness-requirements.txt
 COPY weekly_challenge/requirements.txt weekly-requirements.txt
 COPY story_writter/requirements.txt story_writter-requirements.txt
 COPY vocal_lesson_creator/requirements.txt vocal-requirements.txt
