@@ -37,7 +37,7 @@ USER appuser
 
 # Copy application code (with correct ownership)
 COPY --chown=appuser:appuser analytics/*.py .
-COPY --chown=appuser:appuser usefulness/*.py .
+COPY --chown=appuser:appuser usefulness_aggregator/*.py .
 COPY --chown=appuser:appuser weekly_challenge/create_weekly_challenge.py .
 COPY --chown=appuser:appuser story_writter/StoryCreatorAgent.py .
 COPY --chown=appuser:appuser story_writter/StoryCreatorWrapper.py .
