@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-usefulness
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.usefulness.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.usefulness.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.usefulness.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-usefulness
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: usefulness
+              image: "{{ .Values.image.usefulness.repository }}:{{ .Values.image.usefulness.tag }}"
+              imagePullPolicy: {{ .Values.image.usefulness.pullPolicy }}
+              command: ["python", "-u", "aggregate_usefulness.py"]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+              resources:
+                {{- toYaml .Values.resources.usefulness | nindent 16 }}
