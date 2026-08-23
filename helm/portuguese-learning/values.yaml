@@ -79,6 +79,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  vocabularyUpdaterAgent:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
   weeklyChallengeSounds:
     requests:
       memory: "64Mi"
@@ -115,5 +122,10 @@ weeklyChallengeSounds:
 # data is fresh when stories are generated.
 weeklyStory:
   schedule: "0 5 * * 1"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+vocabularyUpdaterAgent:
+  schedule: "0 6 * * 1"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1

@@ -264,11 +264,11 @@ def update_translation(
 @function_tool
 def save_all_changes() -> str:
     """
-    Write the in-memory challenges list back to challenges.json.
+    Persist all in-memory challenge changes back to MongoDB.
     Call this once after all individual updates are done.
     """
     _save_challenges(_challenges)
-    return "challenges.json saved successfully."
+    return "MongoDB updated successfully."
 
 
 @function_tool
@@ -437,7 +437,7 @@ def main() -> None:
     os.environ["OPENAI_API_KEY"] = api_key  # openai-agents reads OPENAI_API_KEY
 
     parser = argparse.ArgumentParser(
-        description="Update vocabulary translations in challenges.json using an AI agent"
+        description="Update vocabulary translations in the MongoDB challenges collection using an AI agent"
     )
     parser.add_argument(
         "--language",

@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-vocabulary-updater-agent
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.vocabularyUpdaterAgent.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.vocabularyUpdaterAgent.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.vocabularyUpdaterAgent.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-vocabulary-updater-agent
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: vocabulary-updater-agent
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command: ["python", "VocabularyUpdaterAgent.py", "--max-words", "50", "--validator-model", "gpt-4.1", "--model", "gpt-4.1-mini"]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+                - name: OPEN_AI_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: open-ai-key
+              resources:
+                {{- toYaml .Values.resources.vocabularyUpdaterAgent | nindent 16 }}
