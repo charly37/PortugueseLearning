@@ -20,8 +20,8 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: usefulness
-              image: "{{ .Values.image.usefulness.repository }}:{{ .Values.image.usefulness.tag }}"
-              imagePullPolicy: {{ .Values.image.usefulness.pullPolicy }}
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
               command: ["python", "-u", "aggregate_usefulness.py"]
               env:
                 - name: MONGODB_URI

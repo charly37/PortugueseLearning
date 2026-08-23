@@ -14,10 +14,6 @@ image:
     repository: charly37/portuguese-learning-analytics
     tag: latest
     pullPolicy: IfNotPresent
-  usefulness:
-    repository: charly37/portuguese-learning-usefulness
-    tag: latest
-    pullPolicy: IfNotPresent
 
 replicaCount: 1
 
