@@ -407,6 +407,7 @@ async def _run_agent(
     validator_result = await Runner.run(
         validator,
         f"Review up to {max_words} Portuguese vocabulary words for correctness.",
+        max_turns=max_words * 3 + 20,
     )
     print("\nValidator Report:")
     print(validator_result.final_output)
@@ -423,6 +424,7 @@ async def _run_agent(
         translator,
         f"Process up to {max_words} Portuguese vocabulary challenges "
         f"and update their {language.upper()} translations.",
+        max_turns=max_words * 5 + 20,
     )
     print("\nTranslation Agent Report:")
     print(translation_result.final_output)
