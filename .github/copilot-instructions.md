@@ -87,13 +87,18 @@ Challenge structure:
 - Initialize in [src/i18n.ts](src/i18n.ts), consumed via `useTranslation()` hook
 
 ### Frontend Routing
-**No React Router**: Single-page app with state-based navigation:
-```typescript
-// src/client/App.tsx
-const [currentPage, setCurrentPage] = useState<PageType>('landing');
-// Pages: 'landing' | 'word-challenge' | 'word-learn' | 'verb-challenge' | etc.
-```
-All pages are React components conditionally rendered in `App.tsx`.
+Uses **React Router v7** (`react-router-dom`). `BrowserRouter` wraps the app in `App.tsx`; all routes are declared with `<Routes>/<Route>`. Navigation uses `useNavigate()` and `<Navigate>`.
+
+Key routes:
+- `/` — LandingPage
+- `/login`, `/register`, `/profile`, `/about`
+- `/word-challenge`, `/word-learn`, `/verb-challenge`, `/verb-learn`
+- `/idiom-challenge`, `/idiom-learn`
+- `/word-stats`, `/verb-stats`, `/idiom-stats`
+- `/weekly-challenge`, `/weekly-story`
+- `*` → redirects to `/`
+
+The `PageType` union type still exists in `App.tsx` but routing is URL-based, not state-based.
 
 ### Challenge Generation Algorithm
 **Personalized challenge sets** ([src/routes/challenge.ts](src/routes/challenge.ts)):
