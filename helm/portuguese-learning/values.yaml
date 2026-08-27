@@ -137,9 +137,8 @@ vocabularyUpdaterAgent:
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
 
-# Runs every Monday at 7 AM — after the updater (6 AM) so existing words are
-# current before the creator decides which gaps to fill.
+# Runs every Friday at 7 AM 
 vocabularyCreatorAgent:
-  schedule: "0 7 * * 1"
+  schedule: "0 7 * * 5"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
