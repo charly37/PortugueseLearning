@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-vocabulary-creator-agent
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.vocabularyCreatorAgent.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.vocabularyCreatorAgent.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.vocabularyCreatorAgent.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-vocabulary-creator-agent
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: vocabulary-creator-agent
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command: ["python", "-u", "VocabularyCreatorAgent.py", "--count", "20", "--planner-model", "gpt-4.1", "--model", "gpt-4.1-mini"]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+                - name: OPEN_AI_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: open-ai-key
+              resources:
+                {{- toYaml .Values.resources.vocabularyCreatorAgent | nindent 16 }}

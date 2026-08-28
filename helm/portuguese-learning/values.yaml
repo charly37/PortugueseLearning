@@ -86,6 +86,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  vocabularyCreatorAgent:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
   weeklyChallengeSounds:
     requests:
       memory: "64Mi"
@@ -127,5 +134,11 @@ weeklyStory:
 
 vocabularyUpdaterAgent:
   schedule: "0 6 * * 1"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+# Runs every Friday at 7 AM 
+vocabularyCreatorAgent:
+  schedule: "0 7 * * 5"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
