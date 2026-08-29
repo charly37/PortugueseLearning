@@ -4,6 +4,7 @@ public/
 .env
 .env.test
 *.log
+backups/
 .DS_Store
 __pycache__/
 *.pyc

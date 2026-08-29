@@ -83,3 +83,42 @@ npm start
 - `npm run test:headed` - Run tests with visible browser
 - `npm run test:ui` - Open Playwright UI for interactive testing
 - `npm run test:report` - View the latest test report
+
+## Database Backup & Restore
+
+Two Python scripts in `scripts/` handle full BSON backups via the [MongoDB Database Tools](https://www.mongodb.com/docs/database-tools/installation/) (`mongodump` / `mongorestore`). These must be installed separately and available on your PATH.
+
+**Collections covered:** `users`, `challengeattempts`, `challenges`, `challengequalityflags`, `userwordvotes`, `weeklychallenges`, `weeklystories` (sessions are excluded — ephemeral data).
+
+### Backup
+
+```bash
+MONGODB_URI=<uri> python scripts/backup_mongodb.py
+```
+
+Creates `backups/<YYYY-MM-DD_HH-MM-SS>/` with BSON files and a `backup_metadata.json` summary. A `backups/latest` symlink always points to the most recent backup.
+
+```bash
+# Preview without writing anything
+MONGODB_URI=<uri> python scripts/backup_mongodb.py --dry-run
+
+# Write backups to a custom directory
+MONGODB_URI=<uri> python scripts/backup_mongodb.py --output-dir /mnt/backups
+```
+
+### Restore
+
+```bash
+# Restore from the latest backup (prompts for confirmation)
+MONGODB_URI=<uri> python scripts/restore_mongodb.py
+
+# Restore a specific snapshot
+MONGODB_URI=<uri> python scripts/restore_mongodb.py backups/2026-08-29_14-30-00
+
+# Skip confirmation (useful in automation / cron jobs)
+MONGODB_URI=<uri> python scripts/restore_mongodb.py --yes
+```
+
+> **Warning:** Restore is a DROP-and-replace operation. Every covered collection is wiped before the backup data is inserted. Do not run against a live production database unless you intend to overwrite it.
+
+The `backups/` directory is listed in `.gitignore` — it can contain user PII and should never be committed.
