@@ -1,0 +1,48 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-backup
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.backup.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.backup.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.backup.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-backup
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: backup
+              image: "{{ .Values.image.backup.repository }}:{{ .Values.image.backup.tag }}"
+              imagePullPolicy: {{ .Values.image.backup.pullPolicy }}
+              command:
+                - /bin/sh
+                - -c
+                - >-
+                  mongodump
+                  --uri="$MONGODB_URI"
+                  --excludeCollection=sessions
+                  --out="/backup/$(date +%Y-%m-%d_%H-%M-%S)"
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+              resources:
+                {{- toYaml .Values.resources.backup | nindent 16 }}
+              volumeMounts:
+                - name: backup
+                  mountPath: /backup
+          volumes:
+            - name: backup
+              hostPath:
+                path: {{ .Values.backup.hostPath }}
+                type: DirectoryOrCreate
