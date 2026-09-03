@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-youtube-uploader
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.youtubeUploader.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.youtubeUploader.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.youtubeUploader.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-youtube-uploader
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: youtube-uploader
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command: ["python", "-u", "upload_to_youtube.py", "--weekly-audio-dir", "/weekly-audio"]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+                - name: YOUTUBE_CLIENT_ID
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: youtube-client-id
+                - name: YOUTUBE_CLIENT_SECRET
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: youtube-client-secret
+                - name: YOUTUBE_REFRESH_TOKEN
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: youtube-refresh-token
+              resources:
+                {{- toYaml .Values.resources.youtubeUploader | nindent 16 }}
+              volumeMounts:
+                - name: weekly-audio
+                  mountPath: /weekly-audio
+                  readOnly: true
+          volumes:
+            - name: weekly-audio
+              hostPath:
+                path: {{ .Values.weeklyAudio.hostPath }}
+                type: DirectoryOrCreate

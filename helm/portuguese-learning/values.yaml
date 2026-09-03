@@ -104,6 +104,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  youtubeUploader:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
   weeklyChallengeSounds:
     requests:
       memory: "64Mi"
@@ -158,5 +165,11 @@ vocabularyUpdaterAgent:
 # Runs every Friday at 7 AM 
 vocabularyCreatorAgent:
   schedule: "0 7 * * 5"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 1
+
+# Runs every Monday at 6:30 AM — after sound generation (4 AM) and story (5 AM)
+youtubeUploader:
+  schedule: "30 6 * * 1"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1

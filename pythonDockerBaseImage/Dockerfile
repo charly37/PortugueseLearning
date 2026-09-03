@@ -26,6 +26,7 @@ COPY story_writter/requirements.txt story_writter-requirements.txt
 COPY VocabularyUpdaterAgent/requirements.txt vocabulary-updater-agent-requirements.txt
 COPY VocabularyCreatorAgent/requirements.txt vocabulary-creator-agent-requirements.txt
 COPY vocal_lesson_creator/requirements.txt vocal-requirements.txt
+COPY youtube-uploader/requirements.txt youtube-uploader-requirements.txt
 
 # Install Python dependencies into the venv (as root)
 RUN pip install --no-cache-dir -r analytics-requirements.txt \
@@ -35,7 +36,8 @@ RUN pip install --no-cache-dir -r analytics-requirements.txt \
     -r story_writter-requirements.txt \
     -r vocabulary-updater-agent-requirements.txt \
     -r vocabulary-creator-agent-requirements.txt \
-    -r vocal-requirements.txt
+    -r vocal-requirements.txt \
+    -r youtube-uploader-requirements.txt
 # Switch to non-root user
 USER appuser
 
@@ -49,6 +51,7 @@ COPY --chown=appuser:appuser VocabularyUpdaterAgent/VocabularyUpdaterAgent.py .
 COPY --chown=appuser:appuser VocabularyCreatorAgent/VocabularyCreatorAgent.py .
 COPY --chown=appuser:appuser scripts/db_utils.py .
 COPY --chown=appuser:appuser vocal_lesson_creator/combine_mp3.py .
+COPY --chown=appuser:appuser youtube-uploader/upload_to_youtube.py .
 COPY --chown=appuser:appuser data/ /app/data/
 
 # Default command
