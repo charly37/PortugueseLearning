@@ -25,6 +25,7 @@ Examples:
 import argparse
 import logging
 import os
+import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
@@ -98,6 +99,48 @@ INNER_PAUSE_MS = 1300
 MAX_CHALLENGE_AGE_WEEKS = 2
 # Target perceptual loudness (LUFS, ITU-R BS.1770). -16 is standard for voice content.
 TARGET_LUFS = -16.0
+
+
+# Background colour used in generated MP4 videos (YouTube-compatible)
+_MP4_BG_COLOR = "0x1a1a2e"  # dark navy
+_MP4_RESOLUTION = "1920x1080"
+
+
+def export_mp4(mp3_path: Path) -> Path:
+    """Wrap an MP3 in a YouTube-compatible MP4 (H.264 + AAC, solid colour background).
+
+    Returns the path of the generated MP4 file.
+    Requires ffmpeg with libx264 on PATH.
+    """
+    mp4_path = mp3_path.with_suffix(".mp4")
+    cmd = [
+        "ffmpeg", "-y",
+        # static colour video source
+        "-f", "lavfi",
+        "-i", f"color=c={_MP4_BG_COLOR}:size={_MP4_RESOLUTION}:rate=1",
+        # audio source
+        "-i", str(mp3_path),
+        "-c:v", "libx264",
+        "-tune", "stillimage",
+        "-preset", "fast",
+        "-crf", "23",
+        "-pix_fmt", "yuv420p",   # required for broad YouTube compatibility
+        "-c:a", "aac",
+        "-b:a", "192k",
+        "-shortest",             # stop when audio ends
+        str(mp4_path),
+    ]
+    log.info("Generating MP4: %s", mp4_path)
+    try:
+        subprocess.run(cmd, check=True, capture_output=True)
+    except FileNotFoundError:
+        log.error("ffmpeg not found on PATH. Install it to generate MP4 files.")
+        return mp4_path
+    except subprocess.CalledProcessError as exc:
+        log.error("ffmpeg failed: %s", exc.stderr.decode(errors="replace").strip())
+        return mp4_path
+    log.info("Done! MP4 -> %s", mp4_path)
+    return mp4_path
 
 
 def normalize_lufs(segment: AudioSegment, label: str = "") -> AudioSegment:
@@ -239,7 +282,7 @@ def current_week_start_utc() -> datetime:
 VALID_LANGS = {"en", "fr"}
 
 
-def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR) -> None:
+def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR, generate_mp4: bool = False) -> None:
     """Fetch current week's challenges from MongoDB and create one MP3 per user.
 
     The language used for each lesson is taken from the user's ``preferredLanguage``
@@ -333,6 +376,9 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             combined.export(str(output_path), format="mp3")
             log.info("[%s] Lesson duration: %.1fs  ->  %s", doc_id, len(combined) / 1000, output_path)
 
+            if generate_mp4:
+                export_mp4(output_path)
+
             collection.update_one(
                 {"_id": doc["_id"]},
                 {"$set": {"audio": {"filename": filename, "last_update": today}}},
@@ -408,6 +454,11 @@ def main():
         help=f"Directory to write output MP3 files into, used with --weekly-challenge (default: {OUTPUT_DIR})",
     )
     parser.add_argument(
+        "--no-mp4",
+        action="store_true",
+        help="Skip MP4 generation (MP4 is produced by default alongside the MP3)",
+    )
+    parser.add_argument(
         "--log-level",
         default="INFO",
         choices=["DEBUG", "INFO", "WARNING", "ERROR"],
@@ -434,6 +485,7 @@ def main():
             pause_ms=args.pause,
             sounds_dir=sounds_dir,
             output_dir=Path(args.output_dir),
+            generate_mp4=not args.no_mp4,
         )
         return
 
@@ -509,6 +561,9 @@ def main():
     total_stats.log_summary()
     combined.export(str(output_path), format="mp3")
     log.info("Done! Lesson duration: %.1fs  ->  %s", len(combined) / 1000, output_path)
+
+    if not args.no_mp4:
+        export_mp4(output_path)
 
 
 if __name__ == "__main__":
