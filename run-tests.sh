@@ -21,15 +21,36 @@ echo "🚀 Starting MongoDB Memory Server..."
 node tests/start-mongo.js &
 MONGO_PID=$!
 
-# Wait for seeding to complete (start-mongo.js writes .seed-complete when done)
-for i in {1..120}; do
-  if [ -f ".seed-complete" ]; then
-    echo "✅ MongoDB Memory Server ready and seeded!"
-    cat .env.test
-    break
+# Poll until start-mongo.js signals readiness (writes .seed-complete) or timeout
+echo "⏳ Waiting for MongoDB Memory Server to be ready..."
+MAX_WAIT=60  # seconds
+ELAPSED=0
+until [ -f ".seed-complete" ]; do
+  if [ $ELAPSED -ge $MAX_WAIT ]; then
+    echo "❌ Timed out waiting for MongoDB Memory Server after ${MAX_WAIT}s. Aborting."
+    kill $MONGO_PID 2>/dev/null || true
+    exit 1
   fi
-  sleep 0.5
+  sleep 1
+  ELAPSED=$((ELAPSED + 1))
 done
+
+# Guard: ensure .env.test exists and its MONGODB_URI points to localhost (not Atlas)
+if [ ! -f ".env.test" ]; then
+  echo "❌ .env.test was not created. Aborting to avoid hitting production database."
+  kill $MONGO_PID 2>/dev/null || true
+  exit 1
+fi
+MONGO_URI=$(grep '^MONGODB_URI=' .env.test | cut -d= -f2-)
+if [[ "$MONGO_URI" != *"127.0.0.1"* && "$MONGO_URI" != *"localhost"* ]]; then
+  echo "❌ MONGODB_URI in .env.test does not look like a local instance: $MONGO_URI"
+  echo "   Aborting to avoid hitting production database."
+  kill $MONGO_PID 2>/dev/null || true
+  exit 1
+fi
+
+echo "✅ MongoDB Memory Server ready and seeded! (${ELAPSED}s)"
+cat .env.test
 
 # Run Playwright tests
 npx playwright test "$@"
