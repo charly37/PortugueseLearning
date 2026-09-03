@@ -91,6 +91,43 @@ class GenerationStats:
             log.info("%sMissing bilingual ex.: %d", prefix, self.missing_bilingual_examples)
         log.info("%sTotal audio duration : %.1fs", prefix, self.total_duration_ms / 1000)
 
+@dataclass
+class UserSummary:
+    user_id: str
+    challenges: int
+    duration_s: float
+    status: str  # generated | skipped-not-found | skipped-guest | skipped-no-challenges | skipped-no-audio | skipped-error | skipped-stale
+
+
+def log_weekly_summary(summaries: list["UserSummary"]) -> None:
+    col_uid = max((len(s.user_id) for s in summaries), default=7)
+    col_uid = max(col_uid, 7)
+    header = f"{'USER ID':<{col_uid}}  {'CHALLENGES':>10}  {'DURATION':>10}  STATUS"
+    sep = "-" * len(header)
+    log.info("")
+    log.info("=== Weekly Lesson Generation Summary ===")
+    log.info(header)
+    log.info(sep)
+    for s in summaries:
+        dur = f"{s.duration_s:.1f}s" if s.duration_s else "-"
+        chall = str(s.challenges) if s.challenges else "-"
+        log.info(f"{s.user_id:<{col_uid}}  {chall:>10}  {dur:>10}  {s.status}")
+    log.info(sep)
+    generated   = [s for s in summaries if s.status == "generated"]
+    not_found   = [s for s in summaries if s.status == "skipped-not-found"]
+    guests      = [s for s in summaries if s.status == "skipped-guest"]
+    other_skip  = [s for s in summaries if s.status not in {"generated", "skipped-not-found", "skipped-guest"}]
+    total_dur   = sum(s.duration_s for s in generated)
+    log.info("Users processed  : %d", len(summaries))
+    log.info("Generated        : %d", len(generated))
+    log.info("Skipped (missing): %d", len(not_found))
+    log.info("Skipped (guest)  : %d", len(guests))
+    if other_skip:
+        log.info("Skipped (other)  : %d", len(other_skip))
+    log.info("Total audio      : %.1fs", total_dur)
+    log.info("")
+
+
 # Milliseconds of silence inserted between clips
 DEFAULT_PAUSE_MS = 2000
 # Pause between word and its examples
@@ -319,6 +356,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
     output_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     today = datetime.now().strftime("%Y-%m-%d")
+    summaries: list[UserSummary] = []
 
     try:
         for doc in docs:
@@ -335,6 +373,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                         "[%s] Skipping stale challenge: weekStart %s is %d days old (limit: %d weeks)",
                         doc_id, doc_week.date(), age_days, MAX_CHALLENGE_AGE_WEEKS,
                     )
+                    summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-stale"))
                     continue
 
             challenges = doc.get("challenges", [])
@@ -342,24 +381,35 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
 
             if not uids:
                 log.warning("[%s] No challenge IDs found, skipping.", doc_id)
+                summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-no-challenges"))
                 continue
 
-            # Resolve language from the user's profile; fall back to CLI default
+            # Resolve language and validate user exists and is not a guest
             user_lang = lang
             raw_uid = doc.get("userId")
             if raw_uid is not None:
                 try:
                     user_doc = users_collection.find_one(
                         {"_id": ObjectId(str(raw_uid))},
-                        {"preferredLanguage": 1},
+                        {"preferredLanguage": 1, "isGuest": 1},
                     )
-                    if user_doc and user_doc.get("preferredLanguage") in VALID_LANGS:
+                    if user_doc is None:
+                        log.warning("[%s] User %s not found in users collection, skipping.", doc_id, user_id)
+                        summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-not-found"))
+                        continue
+                    if user_doc.get("isGuest"):
+                        log.warning("[%s] User %s is a guest account, skipping.", doc_id, user_id)
+                        summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-guest"))
+                        continue
+                    if user_doc.get("preferredLanguage") in VALID_LANGS:
                         user_lang = user_doc["preferredLanguage"]
                         log.info("[%s] Using user language: %s", doc_id, user_lang)
                     else:
                         log.warning("[%s] No valid preferredLanguage for user %s, using default: %s", doc_id, user_id, user_lang)
                 except Exception as exc:
-                    log.warning("[%s] Could not look up user language (%s), using default: %s", doc_id, exc, user_lang)
+                    log.warning("[%s] Could not look up user (%s), skipping.", doc_id, exc)
+                    summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-error"))
+                    continue
 
             log.info("[%s] Building lesson for user %s from %d challenge(s)...", doc_id, user_id, len(uids))
             combined, user_stats = combine_from_ids(uids, lang=user_lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
@@ -367,6 +417,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
 
             if len(combined) == 0:
                 log.warning("[%s] No audio generated, skipping.", doc_id)
+                summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-no-audio"))
                 continue
 
             from pydub import effects as pydub_effects
@@ -384,8 +435,17 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                 {"$set": {"audio": {"filename": filename, "last_update": today}}},
             )
             log.info("[%s] Updated MongoDB audio metadata: %s", doc_id, filename)
+            summaries.append(UserSummary(
+                user_id=user_id,
+                challenges=user_stats.challenges_generated,
+                duration_s=len(combined) / 1000,
+                status="generated",
+            ))
     finally:
         client.close()
+
+    if summaries:
+        log_weekly_summary(summaries)
 
 
 def main():
