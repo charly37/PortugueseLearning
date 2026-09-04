@@ -169,7 +169,7 @@ def main():
     collection = db["weeklychallenges"]
     youtube = _build_youtube_client()
 
-    scanned = uploaded = skipped_already = skipped_no_doc = failed = 0
+    scanned = uploaded = skipped_already = skipped_no_doc = skipped_private = failed = 0
 
     try:
         for mp4_path in mp4_files:
@@ -182,15 +182,22 @@ def main():
 
             try:
                 from bson import ObjectId
-                doc = collection.find_one({"_id": ObjectId(doc_id)})
+                doc = collection.find_one({"_id": ObjectId(doc_id), "userId": None})
             except Exception as exc:
                 log.warning("Invalid doc_id '%s' from %s (%s) — skipping", doc_id, mp4_path.name, exc)
                 failed += 1
                 continue
 
             if doc is None:
-                log.warning("No MongoDB doc for %s — skipping orphan file", mp4_path.name)
-                skipped_no_doc += 1
+                # Could be a private (user-owned) challenge or a genuinely missing doc
+                from bson import ObjectId
+                exists = collection.find_one({"_id": ObjectId(doc_id)}, {"_id": 1})
+                if exists:
+                    log.info("%s belongs to a private challenge (userId set) — skipping", mp4_path.name)
+                    skipped_private += 1
+                else:
+                    log.warning("No MongoDB doc for %s — skipping orphan file", mp4_path.name)
+                    skipped_no_doc += 1
                 continue
 
             if doc.get("youtube", {}).get("videoId"):
@@ -226,6 +233,7 @@ def main():
     log.info("Uploaded        : %d", uploaded)
     log.info("Already uploaded: %d", skipped_already)
     log.info("No doc found    : %d", skipped_no_doc)
+    log.info("Private (skipped): %d", skipped_private)
     if failed:
         log.info("Errors          : %d", failed)
     log.info("")
