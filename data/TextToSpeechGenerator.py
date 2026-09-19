@@ -1,4 +1,5 @@
 import argparse
+import logging
 import os
 import sys
 import time
@@ -9,6 +10,13 @@ from elevenlabs import VoiceSettings
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 from db_utils import get_challenges_collection, challenges_as_list, update_challenge_fields
+
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout,
+    format="%(levelname)s %(message)s",
+)
+log = logging.getLogger(__name__)
 
 
 class QuotaExceededException(Exception):
@@ -23,7 +31,7 @@ def save_challenge_to_db(collection, challenge_id: str, challenge: dict) -> bool
         update_challenge_fields(collection, challenge_id, fields)
         return True
     except Exception as e:
-        print(f"❌ Error saving challenge {challenge_id}: {e}")
+        log.error("Error saving challenge %s: %s", challenge_id, e)
         return False
 
 
@@ -119,7 +127,7 @@ def generate_tts_audio(client, text, language_code, voice_id, output_file, speed
         error_str = str(e)
         if 'quota_exceeded' in error_str or ('401' in error_str and 'quota' in error_str.lower()):
             raise QuotaExceededException(f"ElevenLabs quota exceeded: {e}")
-        print(f"❌ Error: {e}")
+        log.error("TTS error: %s", e)
         return False
 
 
@@ -130,14 +138,14 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
     # Initialize ElevenLabs client
     api_key = os.environ.get('TEXT_TO_SPEECH_API_KEY')
     if not api_key:
-        print("ERROR: TEXT_TO_SPEECH_API_KEY environment variable not set!")
+        log.error("TEXT_TO_SPEECH_API_KEY environment variable not set!")
         return
     
     client = ElevenLabs(api_key=api_key)
     
     # Load challenges from MongoDB
     challenges = challenges_as_list(collection, challenge_type='word')
-    print(f"Loaded {len(challenges)} challenges from MongoDB")
+    log.info("Loaded %d challenges from MongoDB", len(challenges))
     
     # Create output directory if it doesn't exist
     output_path = Path(output_dir)
@@ -159,13 +167,13 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
         'en': 'pNInz6obpgDQGcFmaJgB',  # English (Adam)
     }
     
-    print(f"\nStarting audio generation...")
-    print(f"Output directory: {output_path.absolute()}")
-    print(f"Skip existing files: {skip_existing}")
+    log.info("Starting audio generation...")
+    log.info("Output directory: %s", output_path.absolute())
+    log.info("Skip existing files: %s", skip_existing)
     if skip_existing:
-        print(f"Audio refresh policy: Regenerate if older than {months} months")
-    print(f"Max conversions per run: {max_conversions}")
-    print(f"Generate example sentences: {generate_examples}\n")
+        log.info("Audio refresh policy: Regenerate if older than %d months", months)
+    log.info("Max conversions per run: %d", max_conversions)
+    log.info("Generate example sentences: %s", generate_examples)
     
     quota_exceeded = False
     for idx, challenge in enumerate(challenges, 1):
@@ -173,14 +181,14 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
             break
         # Stop if we've reached the maximum number of conversions
         if total_converted >= max_conversions:
-            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
             break
         
         challenge_id = challenge.get('id')
         portuguese_text = challenge.get('port')
         
         if not challenge_id or not portuguese_text:
-            print(f"[{idx}/{total}] ⚠️  Skipping invalid challenge (missing id or port field)")
+            log.warning("[%d/%d] Skipping invalid challenge (missing id or port field)", idx, total)
             errors += 1
             continue
         
@@ -190,21 +198,20 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
         # Skip if audio was recently generated (within last 6 months)
         if skip_existing and is_audio_recent(challenge, months=months):
             last_update = challenge.get('audio', {}).get('last_update', 'unknown')
-            print(f"[{idx}/{total}] ⏭️  Skipping '{portuguese_text}' (audio generated on {last_update})")
+            log.info("[%d/%d] Skipping '%s' (audio generated on %s)", idx, total, portuguese_text, last_update)
             skipped += 1
         else:
-            # Generate audio for main word
-            print(f"[{idx}/{total}] 🎙️  Generating audio for '{portuguese_text}'...")
+            log.info("[%d/%d] Generating audio for '%s'...", idx, total, portuguese_text)
             
             try:
                 success = generate_tts_audio(client, portuguese_text, 'pt', VOICES['pt'], output_file)
             except QuotaExceededException as e:
-                print(f"\n🚫 Quota exceeded — stopping generation. ({e})")
+                log.warning("Quota exceeded — stopping generation. (%s)", e)
                 quota_exceeded = True
                 continue
             
             if success:
-                print(f"[{idx}/{total}] ✅ Saved to {output_file.name}")
+                log.info("[%d/%d] Saved to %s", idx, total, output_file.name)
                 generated += 1
                 total_converted += 1
                 
@@ -215,7 +222,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 }
                 
                 if save_challenge_to_db(collection, challenge_id, challenge):
-                    print(f"[{idx}/{total}] 📝 Updated DB entry for '{portuguese_text}'")
+                    log.info("[%d/%d] Updated DB entry for '%s'", idx, total, portuguese_text)
                 
                 # Small delay to avoid rate limiting
                 time.sleep(0.5)
@@ -235,18 +242,18 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if fr_translation:
                     audio_dict = fr_data.get('translation_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        print(f"[{idx}/{total}]   ⏭️  Skipping FR translation (recent)")
+                        log.info("[%d/%d] Skipping FR translation (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
-                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
                             break
                         fr_trans_filename = f"{challenge_id}_fr_translation.mp3"
                         fr_trans_output = output_path / fr_trans_filename
-                        print(f"[{idx}/{total}]   🎙️  FR translation: '{fr_translation[:40]}'")
+                        log.info("[%d/%d] FR translation: '%s'", idx, total, fr_translation[:40])
 
                         if generate_tts_audio(client, fr_translation, 'fr', VOICES['fr'], fr_trans_output):
-                            print(f"[{idx}/{total}]   ✅ Saved {fr_trans_filename}")
+                            log.info("[%d/%d] Saved %s", idx, total, fr_trans_filename)
                             fr_data['translation_audio'] = {
                                 'filename': fr_trans_filename,
                                 'last_update': today_date
@@ -263,18 +270,18 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if fr_use_exemple:
                     audio_dict = fr_data.get('use_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        print(f"[{idx}/{total}]   ⏭️  Skipping FR example (recent)")
+                        log.info("[%d/%d] Skipping FR example (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
-                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
                             break
                         fr_filename = f"{challenge_id}_fr_exemple.mp3"
                         fr_output = output_path / fr_filename
-                        print(f"[{idx}/{total}]   🎙️  FR: '{fr_use_exemple[:40]}...'")
+                        log.info("[%d/%d] FR example: '%s...'", idx, total, fr_use_exemple[:40])
                         
                         if generate_tts_audio(client, fr_use_exemple, 'fr', VOICES['fr'], fr_output):
-                            print(f"[{idx}/{total}]   ✅ Saved {fr_filename}")
+                            log.info("[%d/%d] Saved %s", idx, total, fr_filename)
                             fr_data['use_exemple_audio'] = {
                                 'filename': fr_filename,
                                 'last_update': today_date
@@ -291,18 +298,18 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if fr_port_exemple:
                     audio_dict = fr_data.get('port_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        print(f"[{idx}/{total}]   ⏭️  Skipping PT example (recent)")
+                        log.info("[%d/%d] Skipping PT example in FR section (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
-                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
                             break
                         pt_filename = f"{challenge_id}_fr_pt_exemple.mp3"
                         pt_output = output_path / pt_filename
-                        print(f"[{idx}/{total}]   🎙️  PT: '{fr_port_exemple[:40]}...'")
+                        log.info("[%d/%d] PT example (FR section): '%s...'", idx, total, fr_port_exemple[:40])
                         
                         if generate_tts_audio(client, fr_port_exemple, 'pt', VOICES['pt'], pt_output):
-                            print(f"[{idx}/{total}]   ✅ Saved {pt_filename}")
+                            log.info("[%d/%d] Saved %s", idx, total, pt_filename)
                             fr_data['port_exemple_audio'] = {
                                 'filename': pt_filename,
                                 'last_update': today_date
@@ -322,18 +329,18 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if en_translation:
                     audio_dict = en_data.get('translation_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        print(f"[{idx}/{total}]   ⏭️  Skipping EN translation (recent)")
+                        log.info("[%d/%d] Skipping EN translation (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
-                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
                             break
                         en_trans_filename = f"{challenge_id}_en_translation.mp3"
                         en_trans_output = output_path / en_trans_filename
-                        print(f"[{idx}/{total}]   🎙️  EN translation: '{en_translation[:40]}'")
+                        log.info("[%d/%d] EN translation: '%s'", idx, total, en_translation[:40])
 
                         if generate_tts_audio(client, en_translation, 'en', VOICES['en'], en_trans_output):
-                            print(f"[{idx}/{total}]   ✅ Saved {en_trans_filename}")
+                            log.info("[%d/%d] Saved %s", idx, total, en_trans_filename)
                             en_data['translation_audio'] = {
                                 'filename': en_trans_filename,
                                 'last_update': today_date
@@ -350,18 +357,18 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if en_use_exemple:
                     audio_dict = en_data.get('use_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        print(f"[{idx}/{total}]   ⏭️  Skipping EN example (recent)")
+                        log.info("[%d/%d] Skipping EN example (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
-                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
                             break
                         en_filename = f"{challenge_id}_en_exemple.mp3"
                         en_output = output_path / en_filename
-                        print(f"[{idx}/{total}]   🎙️  EN: '{en_use_exemple[:40]}...'")
+                        log.info("[%d/%d] EN example: '%s...'", idx, total, en_use_exemple[:40])
                         
                         if generate_tts_audio(client, en_use_exemple, 'en', VOICES['en'], en_output):
-                            print(f"[{idx}/{total}]   ✅ Saved {en_filename}")
+                            log.info("[%d/%d] Saved %s", idx, total, en_filename)
                             en_data['use_exemple_audio'] = {
                                 'filename': en_filename,
                                 'last_update': today_date
@@ -378,18 +385,18 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if en_port_exemple:
                     audio_dict = en_data.get('port_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        print(f"[{idx}/{total}]   ⏭️  Skipping PT example (recent)")
+                        log.info("[%d/%d] Skipping PT example in EN section (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
-                            print(f"\n⚠️  Reached maximum conversions limit ({max_conversions}). Stopping.")
+                            log.warning("Reached maximum conversions limit (%d). Stopping.", max_conversions)
                             break
                         pt_filename = f"{challenge_id}_en_pt_exemple.mp3"
                         pt_output = output_path / pt_filename
-                        print(f"[{idx}/{total}]   🎙️  PT: '{en_port_exemple[:40]}...'")
+                        log.info("[%d/%d] PT example (EN section): '%s...'", idx, total, en_port_exemple[:40])
                         
                         if generate_tts_audio(client, en_port_exemple, 'pt', VOICES['pt'], pt_output):
-                            print(f"[{idx}/{total}]   ✅ Saved {pt_filename}")
+                            log.info("[%d/%d] Saved %s", idx, total, pt_filename)
                             en_data['port_exemple_audio'] = {
                                 'filename': pt_filename,
                                 'last_update': today_date
@@ -401,26 +408,25 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                         else:
                             errors += 1
           except QuotaExceededException as e:
-            print(f"\n🚫 Quota exceeded — stopping generation. ({e})")
+            log.warning("Quota exceeded — stopping generation. (%s)", e)
             quota_exceeded = True
     
-    # Print summary
-    print(f"\n{'='*60}")
-    print(f"Audio Generation Complete!")
-    print(f"{'='*60}")
-    print(f"Total challenges: {total}")
-    print(f"Total TTS conversions made: {total_converted} / {max_conversions}")
-    print(f"Main word audio generated: {generated}")
-    print(f"Main word audio skipped (recent < {months} months): {skipped}")
+    log.info("%s", "=" * 60)
+    log.info("Audio Generation Complete!")
+    log.info("%s", "=" * 60)
+    log.info("Total challenges: %d", total)
+    log.info("Total TTS conversions made: %d / %d", total_converted, max_conversions)
+    log.info("Main word audio generated: %d", generated)
+    log.info("Main word audio skipped (recent < %d months): %d", months, skipped)
     if generate_examples:
-        print(f"Example sentences generated: {examples_generated}")
-        print(f"Example sentences skipped (recent < {months} months): {examples_skipped}")
-    print(f"Errors: {errors}")
+        log.info("Example sentences generated: %d", examples_generated)
+        log.info("Example sentences skipped (recent < %d months): %d", months, examples_skipped)
+    log.info("Errors: %d", errors)
     remaining = total - generated - skipped
     if remaining > 0 and not generate_examples:
-        print(f"Remaining (not processed): {remaining}")
-        print(f"\n💡 Run the script again to generate more (up to {max_conversions} per run)")
-    print(f"{'='*60}")
+        log.info("Remaining (not processed): %d", remaining)
+        log.info("Run the script again to generate more (up to %d per run)", max_conversions)
+    log.info("%s", "=" * 60)
 
 
 if __name__ == "__main__":
@@ -461,8 +467,8 @@ if __name__ == "__main__":
 
     mongo_client, collection = get_challenges_collection()
 
-    print(f"Text-to-Speech Audio Generator for Portuguese Challenges")
-    print(f"{'='*60}\n")
+    log.info("Text-to-Speech Audio Generator for Portuguese Challenges")
+    log.info("%s", "=" * 60)
 
     try:
         generate_audio_for_challenges(

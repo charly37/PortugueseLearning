@@ -1,5 +1,6 @@
 import argparse
 import json
+import logging
 import os
 import sys
 import uuid
@@ -8,6 +9,13 @@ from datetime import datetime
 
 from agents import Agent, Runner, function_tool
 from pymongo import MongoClient
+
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout,
+    format="%(levelname)s %(message)s",
+)
+log = logging.getLogger(__name__)
 
 # Allow importing from the repo-level scripts/ directory
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
@@ -60,8 +68,7 @@ def log_creation(
     - fr_translation: the French translation you plan to store.
     - en_translation: the English translation you plan to store.
     """
-    print(f"\n➕ Creating: '{portuguese_word}'")
-    print(f"   FR: {fr_translation}  |  EN: {en_translation}")
+    log.info("Creating: '%s' | FR: %s  |  EN: %s", portuguese_word, fr_translation, en_translation)
     return "logged"
 
 
@@ -123,7 +130,7 @@ def add_new_challenge(
 
     _new_challenges.append(challenge)
     _existing_words.add(normalized)
-    print(f"   ✅ Staged '{portuguese_word}' (id: {challenge_id})")
+    log.info("Staged '%s' (id: %s)", portuguese_word, challenge_id)
     return f"Staged '{portuguese_word}' with id {challenge_id}."
 
 
@@ -149,7 +156,7 @@ def save_all_new_challenges() -> str:
             collection.insert_one(doc)
             inserted += 1
         except Exception as e:
-            print(f"   ⚠️  Failed to insert '{c.get('port', '?')}': {e}")
+            log.warning("Failed to insert '%s': %s", c.get('port', '?'), e)
             skipped += 1
     client.close()
 
@@ -239,23 +246,23 @@ async def _run_agent(
 
     _mongodb_uri = os.environ.get("MONGODB_URI", "")
     if not _mongodb_uri:
-        print("ERROR: MONGODB_URI environment variable not set!")
-        exit(1)
+        log.error("MONGODB_URI environment variable not set!")
+        sys.exit(1)
 
-    print("Loading existing vocabulary from MongoDB...")
+    log.info("Loading existing vocabulary from MongoDB...")
     _existing_words = _load_existing_words()
-    print(f"Found {len(_existing_words)} existing word(s) in the database")
+    log.info("Found %d existing word(s) in the database", len(_existing_words))
 
     theme_display = f"'{theme}'" if theme else "general vocabulary"
-    print(f"Target: {count} new word(s)  |  Theme: {theme_display}\n")
+    log.info("Target: %d new word(s)  |  Theme: %s", count, theme_display)
 
     # ------------------------------------------------------------------
     # Phase 1: Word planning
     # ------------------------------------------------------------------
-    print("=" * 60)
-    print("PHASE 1: Word Planning")
-    print(f"Model: {planner_model}")
-    print("=" * 60)
+    log.info("%s", "=" * 60)
+    log.info("PHASE 1: Word Planning")
+    log.info("Model: %s", planner_model)
+    log.info("%s", "=" * 60)
 
     planner_prompt = f"Propose {count} new Portuguese vocabulary word(s)"
     if theme:
@@ -269,16 +276,15 @@ async def _run_agent(
         planner_prompt,
         max_turns=10,
     )
-    print("\nPlanned words:")
-    print(planner_result.final_output)
+    log.info("Planned words:\n%s", planner_result.final_output)
 
     # ------------------------------------------------------------------
     # Phase 2: Content creation
     # ------------------------------------------------------------------
-    print("\n" + "=" * 60)
-    print("PHASE 2: Content Creation")
-    print(f"Model: {model}")
-    print("=" * 60)
+    log.info("%s", "=" * 60)
+    log.info("PHASE 2: Content Creation")
+    log.info("Model: %s", model)
+    log.info("%s", "=" * 60)
 
     creator = _build_creator_agent(model)
     creator_result = await Runner.run(
@@ -286,16 +292,15 @@ async def _run_agent(
         f"Create vocabulary entries for the following Portuguese words:\n\n{planner_result.final_output}",
         max_turns=count * 5 + 20,
     )
-    print("\nCreator Report:")
-    print(creator_result.final_output)
-    print("=" * 60)
+    log.info("Creator Report:\n%s", creator_result.final_output)
+    log.info("%s", "=" * 60)
 
 
 def main() -> None:
     api_key = os.environ.get("OPEN_AI_KEY")
     if not api_key:
-        print("ERROR: OPEN_AI_KEY environment variable not set!")
-        exit(1)
+        log.error("OPEN_AI_KEY environment variable not set!")
+        sys.exit(1)
     os.environ["OPENAI_API_KEY"] = api_key  # openai-agents reads OPENAI_API_KEY
 
     parser = argparse.ArgumentParser(

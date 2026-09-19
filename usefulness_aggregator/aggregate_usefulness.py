@@ -13,7 +13,7 @@ from pymongo import MongoClient
 
 logging.basicConfig(
     level=logging.INFO,
-    stream=sys.stderr,
+    stream=sys.stdout,
     format="%(levelname)s %(message)s",
 )
 log = logging.getLogger(__name__)
@@ -116,7 +116,7 @@ def main():
 
     logging.basicConfig(
         level=getattr(logging, args.log_level),
-        stream=sys.stderr,
+        stream=sys.stdout,
         format="%(levelname)s %(message)s",
         force=True,
     )
