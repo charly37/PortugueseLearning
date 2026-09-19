@@ -19,7 +19,7 @@ spec:
         spec:
           restartPolicy: OnFailure
           containers:
-            - name: weekly-challenge
+            - name: wchal-sounds
               image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
               imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
               command: ["python", "-u", "combine_mp3.py", "--weekly-challenge", "--lang", "fr", "--output-dir", "/weekly-audio"]
