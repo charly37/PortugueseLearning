@@ -337,6 +337,25 @@ helm upgrade --install portuguese-learning helm/portuguese-learning \
 
 ## Monitoring and Logging
 
+### Python Script Logging Convention
+
+All Python scripts (AI agents, analytics, cron jobs) **must use the `logging` framework instead of `print`**. This ensures log lines carry a level prefix (`INFO`, `WARNING`, `ERROR`) that monitoring tools (e.g. Loki, Kubernetes log aggregators) can parse, filter, and alert on.
+
+**Required setup in every Python script:**
+```python
+import logging
+import sys
+
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout,   # stdout so container log drivers capture it uniformly
+    format="%(levelname)s %(message)s",
+)
+log = logging.getLogger(__name__)
+```
+
+Use `log.info`, `log.warning`, and `log.error` throughout — never `print`. The only acceptable exception is when a script intentionally writes machine-readable data (e.g. raw JSON) to stdout for piping; that case must be commented explaining why `print` is used.
+
 ### Application Logs
 ```bash
 # App container logs

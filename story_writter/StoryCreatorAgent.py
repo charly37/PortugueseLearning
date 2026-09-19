@@ -37,7 +37,7 @@ from agents import Agent, Runner, function_tool
 
 logging.basicConfig(
     level=logging.INFO,
-    stream=sys.stderr,
+    stream=sys.stdout,
     format="%(levelname)s %(message)s",
 )
 log = logging.getLogger(__name__)
@@ -71,12 +71,8 @@ def log_story_plan(
     - level: "beginner", "intermediate", or "advanced".
     - summary: 1–2 sentence description of the plot.
     """
-    print(f"\n📖 Story plan")
-    print(f"   Title (PT)  : {title_pt}")
-    print(f"   Title (FR)  : {title_fr}")
-    print(f"   Topic       : {topic}")
-    print(f"   Level       : {level}")
-    print(f"   Plot        : {summary}")
+    log.info("Story plan | title_pt=%s | title_fr=%s | topic=%s | level=%s | plot=%s",
+             title_pt, title_fr, topic, level, summary)
     return "plan logged"
 
 
@@ -88,8 +84,7 @@ def _parse_story(draft: str, level: str, topic: str) -> dict | None:
     else:
         bare = re.search(r"\{.*\}", draft, re.DOTALL)
         if not bare:
-            print("\n❌  Could not extract story JSON from writer output.")
-            print("    Raw draft written to draft.txt for inspection.")
+            log.error("Could not extract story JSON from writer output — raw draft written to draft.txt")
             with open("draft.txt", "w", encoding="utf-8") as f:
                 f.write(draft)
             return None
@@ -98,7 +93,7 @@ def _parse_story(draft: str, level: str, topic: str) -> dict | None:
     try:
         data: dict = json.loads(json_str)
     except json.JSONDecodeError as e:
-        print(f"\n❌  JSON parse error: {e}")
+        log.error("JSON parse error: %s", e)
         return None
 
     return {
@@ -212,28 +207,26 @@ async def _run_with_review_loop(
     max_iterations: int,
 ) -> dict | None:
     """Run the writer, then alternate reviewer → writer until approved or max iterations."""
-    print("✍️  Writer creating initial draft...")
+    log.info("Writer creating initial draft...")
     writer_result = await Runner.run(writer, initial_message)
     draft = writer_result.final_output
 
     for iteration in range(max_iterations):
-        print(f"\n{'=' * 60}")
-        print(f"REVIEW ITERATION {iteration + 1}/{max_iterations}")
-        print(f"{'=' * 60}")
+        log.info("Review iteration %d/%d", iteration + 1, max_iterations)
 
         review_result = await Runner.run(
             reviewer,
             f"Review this story draft:\n\n{draft}",
         )
         verdict = review_result.final_output.strip()
-        print(f"\n📋 Reviewer verdict:\n{verdict}")
+        log.info("Reviewer verdict: %s", verdict)
 
         if verdict.upper().startswith("APPROVED"):
-            print("\n✅ Story approved.")
+            log.info("Story approved.")
             break
 
         if iteration < max_iterations - 1:
-            print(f"\n✍️  Writer revising (attempt {iteration + 2}/{max_iterations})...")
+            log.info("Writer revising (attempt %d/%d)...", iteration + 2, max_iterations)
             writer_result = await Runner.run(
                 writer,
                 f"Revise your story based on this reviewer feedback:\n{verdict}\n\n"
@@ -241,7 +234,7 @@ async def _run_with_review_loop(
             )
             draft = writer_result.final_output
         else:
-            print(f"\n⚠️  Max iterations ({max_iterations}) reached — using best effort.")
+            log.warning("Max iterations (%d) reached — using best effort.", max_iterations)
 
     return _parse_story(draft, level, topic)
 
@@ -258,7 +251,7 @@ async def run_story(
     _level = level
     _topic = topic
 
-    print(f"Level: {level}\n")
+    log.info("Level: %s", level)
 
     writer = _build_writer_agent(level, topic, model)
     reviewer = _build_reviewer_agent(level, model)
@@ -275,7 +268,7 @@ async def run_story(
 def main() -> None:
     api_key = os.environ.get("OPEN_AI_KEY")
     if not api_key:
-        print("ERROR: OPEN_AI_KEY environment variable not set!", file=sys.stderr)
+        log.error("OPEN_AI_KEY environment variable not set!")
         sys.exit(1)
     os.environ["OPENAI_API_KEY"] = api_key
 
@@ -339,9 +332,9 @@ def main() -> None:
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             f.write(output)
-        print(f"\n✅ Story written to {args.output}", file=sys.stderr)
+        log.info("Story written to %s", args.output)
     else:
-        print(output)
+        log.info("Story JSON:\n%s", output)
 
 
 if __name__ == "__main__":

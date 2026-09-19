@@ -24,7 +24,7 @@ from StoryCreatorAgent import run_story
 
 logging.basicConfig(
     level=logging.INFO,
-    stream=sys.stderr,
+    stream=sys.stdout,
     format="%(levelname)s %(message)s",
 )
 log = logging.getLogger(__name__)
@@ -157,8 +157,8 @@ async def generate_and_store(
 
     doc_id, is_new = upsert_weekly_story(db, user_id, story)
     action = "inserted" if is_new else "replaced"
-    print(f"\n   ✅ Story {action} in MongoDB (weeklystories): '{story['title_pt']}' "
-          f"(doc_id={doc_id}, {len(story['sentences'])} sentences)")
+    log.info("Story %s in MongoDB (weeklystories): '%s' (doc_id=%s, %d sentences)",
+             action, story['title_pt'], doc_id, len(story['sentences']))
     return doc_id, is_new
 
 
@@ -169,7 +169,7 @@ async def generate_and_store(
 def main() -> None:
     api_key = os.environ.get("OPEN_AI_KEY")
     if not api_key:
-        print("ERROR: OPEN_AI_KEY environment variable not set!", file=sys.stderr)
+        log.error("OPEN_AI_KEY environment variable not set!")
         sys.exit(1)
     os.environ["OPENAI_API_KEY"] = api_key
 
@@ -237,11 +237,11 @@ def main() -> None:
         with open(topic_file, "r", encoding="utf-8") as f:
             fallback_topic = f.read().strip()
         if fallback_topic:
-            print(f"Fallback topic loaded from '{topic_file}': {fallback_topic}")
+            log.info("Fallback topic loaded from '%s': %s", topic_file, fallback_topic)
         else:
-            print(f"Topic file '{topic_file}' is empty — agent will pick a topic when needed.")
+            log.info("Topic file '%s' is empty — agent will pick a topic when needed.", topic_file)
     else:
-        print(f"Topic file '{topic_file}' not found — agent will pick a topic when needed.")
+        log.info("Topic file '%s' not found — agent will pick a topic when needed.", topic_file)
 
     client, db = connect_db()
     try:
@@ -266,9 +266,7 @@ def main() -> None:
                 else:
                     log.info("User '%s': no topic set — agent will pick one", username)
 
-                print(f"\n{'=' * 60}")
-                print(f"Generating story for user: {username}")
-                print(f"{'=' * 60}")
+                log.info("\n%s\nGenerating story for user: %s\n%s", '=' * 60, username, '=' * 60)
                 try:
                     result = asyncio.run(
                         generate_and_store(

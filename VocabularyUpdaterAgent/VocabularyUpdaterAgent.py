@@ -9,6 +9,7 @@
 
 import argparse
 import json
+import logging
 import os
 import sys
 import asyncio
@@ -17,6 +18,13 @@ from typing import Any
 
 from agents import Agent, Runner, function_tool
 from pymongo import MongoClient
+
+logging.basicConfig(
+    level=logging.INFO,
+    stream=sys.stdout,
+    format="%(levelname)s %(message)s",
+)
+log = logging.getLogger(__name__)
 
 # Allow importing from the repo-level scripts/ directory
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
@@ -103,9 +111,9 @@ def get_pending_challenges(max_words: int) -> str:
             for i, r in enumerate(results):
                 flagged_ids.add(r["_id"])
                 flagged_order[r["_id"]] = i
-            print(f"Found {len(flagged_ids)} flagged challenge(s) in DB")
+            log.info("Found %d flagged challenge(s) in DB", len(flagged_ids))
         except Exception as e:
-            print(f"⚠️  Could not fetch flagged challenges from MongoDB: {e}")
+            log.warning("Could not fetch flagged challenges from MongoDB: %s", e)
 
     # Sort: flagged first (by flag count), then by natural order
     ordered = sorted(
@@ -160,11 +168,9 @@ def log_review(
       changing.
     - flagged_by_users: whether this challenge was flagged by users in the app.
     """
-    flag_marker = " 🚩 [USER FLAGGED]" if flagged_by_users else ""
-    print(f"\n🔍 Reviewing: '{portuguese_word}'{flag_marker}")
-    print(f"   Current translation : {current_translation}")
-    print(f"   Assessment          : {assessment}")
-    print(f"   Planned changes     : {planned_changes}")
+    flag_marker = " [USER FLAGGED]" if flagged_by_users else ""
+    log.info("Reviewing: '%s'%s | translation=%s | assessment=%s | changes=%s",
+             portuguese_word, flag_marker, current_translation, assessment, planned_changes)
     return "logged"
 
 
@@ -196,7 +202,7 @@ def apply_portuguese_corrections(corrections_json: str) -> str:
             if challenge.get("id") == c.get("challenge_id"):
                 old = challenge.get("port", "")
                 challenge["port"] = corrected
-                print(f"   ✅ Corrected '{old}' → '{corrected}' (reason: {c.get('reason', '')})")
+                log.info("Corrected '%s' -> '%s' (reason: %s)", old, corrected, c.get('reason', ''))
                 applied += 1
                 break
 
@@ -255,7 +261,7 @@ def update_translation(
         updated_fields.append("last_update")
 
         msg = f"Updated challenge {challenge_id}: {', '.join(updated_fields)}"
-        print(f"   ✅ {msg}")
+        log.info("%s", msg)
         return msg
 
     return f"Challenge {challenge_id} not found."
@@ -388,37 +394,37 @@ async def _run_agent(
     _months = months
     _mongodb_uri = os.environ.get("MONGODB_URI", "")
     if not _mongodb_uri:
-        print("ERROR: MONGODB_URI environment variable not set!")
-        exit(1)
+        log.error("MONGODB_URI environment variable not set!")
+        sys.exit(1)
 
-    print("Loading challenges from MongoDB...")
+    log.info("Loading challenges from MongoDB...")
     _challenges = _load_challenges()
-    print(f"Loaded {len(_challenges)} challenges")
-    print(f"Language: {language}  |  Max words: {max_words}  |  Refresh period: {months} months\n")
+    log.info("Loaded %d challenges", len(_challenges))
+    log.info("Language: %s  |  Max words: %d  |  Refresh period: %d months",
+             language, max_words, months)
 
     # ------------------------------------------------------------------
     # Phase 1: Portuguese word validation
     # ------------------------------------------------------------------
-    print("=" * 60)
-    print("PHASE 1: Portuguese Word Validation")
-    print(f"Model: {validator_model}")
-    print("=" * 60)
+    log.info("%s", "=" * 60)
+    log.info("PHASE 1: Portuguese Word Validation")
+    log.info("Model: %s", validator_model)
+    log.info("%s", "=" * 60)
     validator = _build_validator_agent(validator_model)
     validator_result = await Runner.run(
         validator,
         f"Review up to {max_words} Portuguese vocabulary words for correctness.",
         max_turns=max_words * 3 + 20,
     )
-    print("\nValidator Report:")
-    print(validator_result.final_output)
+    log.info("Validator Report:\n%s", validator_result.final_output)
 
     # ------------------------------------------------------------------
     # Phase 2: Translation updates
     # ------------------------------------------------------------------
-    print("\n" + "=" * 60)
-    print("PHASE 2: Translation Updates")
-    print(f"Model: {model}")
-    print("=" * 60)
+    log.info("%s", "=" * 60)
+    log.info("PHASE 2: Translation Updates")
+    log.info("Model: %s", model)
+    log.info("%s", "=" * 60)
     translator = _build_translation_agent(language, model)
     translation_result = await Runner.run(
         translator,
@@ -426,16 +432,15 @@ async def _run_agent(
         f"and update their {language.upper()} translations.",
         max_turns=max_words * 5 + 20,
     )
-    print("\nTranslation Agent Report:")
-    print(translation_result.final_output)
-    print("=" * 60)
+    log.info("Translation Agent Report:\n%s", translation_result.final_output)
+    log.info("%s", "=" * 60)
 
 
 def main() -> None:
     api_key = os.environ.get("OPEN_AI_KEY")
     if not api_key:
-        print("ERROR: OPEN_AI_KEY environment variable not set!")
-        exit(1)
+        log.error("OPEN_AI_KEY environment variable not set!")
+        sys.exit(1)
     os.environ["OPENAI_API_KEY"] = api_key  # openai-agents reads OPENAI_API_KEY
 
     parser = argparse.ArgumentParser(
