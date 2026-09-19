@@ -56,6 +56,9 @@ python youtube-uploader/upload_to_youtube.py --weekly-audio-dir /path/to/videos
 
 # Increase verbosity
 python youtube-uploader/upload_to_youtube.py --log-level DEBUG
+
+# To test upload only with a file - for access validation for exedmple
+python upload_to_youtube.py --testfile /path/to/video.mp4
 ```
 
 ## Environment Variables

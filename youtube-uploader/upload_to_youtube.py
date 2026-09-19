@@ -4,9 +4,10 @@ upload_to_youtube.py - Upload weekly MP4 lesson files to a YouTube channel.
 
 Usage:
     python upload_to_youtube.py [--weekly-audio-dir DIR]
+    python upload_to_youtube.py --testfile PATH
 
 Environment variables:
-    MONGODB_URI             - MongoDB connection string
+    MONGODB_URI             - MongoDB connection string (not required with --testfile)
     YOUTUBE_CLIENT_ID       - OAuth2 client ID
     YOUTUBE_CLIENT_SECRET   - OAuth2 client secret
     YOUTUBE_REFRESH_TOKEN   - OAuth2 refresh token (obtained via get_refresh_token.py)
@@ -144,6 +145,11 @@ def main():
         metavar="LEVEL",
         help="Logging verbosity (default: INFO)",
     )
+    parser.add_argument(
+        "--testfile",
+        metavar="FILE",
+        help="Upload a single MP4 file without touching the database (for local testing)",
+    )
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -152,6 +158,18 @@ def main():
         format="%(levelname)s %(message)s",
         force=True,
     )
+
+    if args.testfile:
+        mp4_path = Path(args.testfile)
+        if not mp4_path.exists():
+            log.error("File not found: %s", mp4_path)
+            sys.exit(1)
+        youtube = _build_youtube_client()
+        title = f"Portuguese Lesson – {mp4_path.stem} [TEST]"
+        log.info("Test upload: %s  →  '%s'", mp4_path.name, title)
+        video_id = _upload_video(youtube, mp4_path, title)
+        log.info("Done: https://www.youtube.com/watch?v=%s", video_id)
+        return
 
     audio_dir = Path(args.weekly_audio_dir)
     if not audio_dir.exists():
