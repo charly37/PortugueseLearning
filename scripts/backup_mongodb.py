@@ -110,7 +110,7 @@ def run_backup(uri: str, output_dir: Path, dry_run: bool) -> None:
     print("[backup] Running mongodump...")
     result = subprocess.run(cmd, capture_output=True, text=True)
     if result.returncode != 0:
-        print(result.stderr, file=sys.stderr)
+        print(result.stderr, file=sys.stdout)
         sys.exit(f"ERROR: mongodump failed with exit code {result.returncode}")
 
     metadata = {

@@ -25,7 +25,7 @@ def main():
     try:
         from google_auth_oauthlib.flow import InstalledAppFlow
     except ImportError:
-        print("ERROR: pip install google-auth-oauthlib", file=sys.stderr)
+        print("ERROR: pip install google-auth-oauthlib", file=sys.stdout)
         sys.exit(1)
 
     client_config = {
