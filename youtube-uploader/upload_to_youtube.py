@@ -110,12 +110,12 @@ def _upload_video(youtube, mp4_path: Path, title: str) -> str:
             "title": title,
             "description": (
                 "Weekly Portuguese vocabulary lesson. "
-                "Practice your vocabulary with native audio pronunciation examples."
+                "Practice your vocabulary with native audio pronunciation examples. More on https://dialecthub.net/about and https://github.com/charly37/PortugueseLearning"
             ),
             "tags": ["portuguese", "language learning", "vocabulary", "lesson"],
             "categoryId": "27",  # Education
         },
-        "status": {"privacyStatus": "public"},
+        "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False},
     }
 
     media = MediaFileUpload(str(mp4_path), mimetype="video/mp4", resumable=True, chunksize=_CHUNK_SIZE)
@@ -128,6 +128,20 @@ def _upload_video(youtube, mp4_path: Path, title: str) -> str:
             log.info("  Upload progress: %d%%", int(status.progress() * 100))
 
     return response["id"]
+
+
+_PLAYLIST_ID = "PLWDVnM4i4aNg"
+
+
+def _add_to_playlist(youtube, video_id: str, playlist_id: str) -> None:
+    body = {
+        "snippet": {
+            "playlistId": playlist_id,
+            "resourceId": {"kind": "youtube#video", "videoId": video_id},
+        }
+    }
+    youtube.playlistItems().insert(part="snippet", body=body).execute()
+    log.info("Added to playlist %s", playlist_id)
 
 
 def main():
@@ -169,6 +183,10 @@ def main():
         log.info("Test upload: %s  →  '%s'", mp4_path.name, title)
         video_id = _upload_video(youtube, mp4_path, title)
         log.info("Done: https://www.youtube.com/watch?v=%s", video_id)
+        try:
+            _add_to_playlist(youtube, video_id, _PLAYLIST_ID)
+        except Exception as exc:
+            log.warning("Playlist insert failed (video was uploaded): %s", exc)
         return
 
     audio_dir = Path(args.weekly_audio_dir)
@@ -228,20 +246,27 @@ def main():
 
             try:
                 video_id = _upload_video(youtube, mp4_path, title)
-                url = f"https://www.youtube.com/watch?v={video_id}"
-                collection.update_one(
-                    {"_id": doc["_id"]},
-                    {"$set": {"youtube": {
-                        "videoId": video_id,
-                        "url": url,
-                        "uploadedAt": datetime.now(tz=timezone.utc).strftime("%Y-%m-%d"),
-                    }}},
-                )
-                log.info("Done: %s  →  %s", mp4_path.name, url)
-                uploaded += 1
             except Exception as exc:
                 log.error("Failed to upload %s: %s", mp4_path.name, exc)
                 failed += 1
+                continue
+
+            url = f"https://www.youtube.com/watch?v={video_id}"
+            collection.update_one(
+                {"_id": doc["_id"]},
+                {"$set": {"youtube": {
+                    "videoId": video_id,
+                    "url": url,
+                    "uploadedAt": datetime.now(tz=timezone.utc).strftime("%Y-%m-%d"),
+                }}},
+            )
+            log.info("Done: %s  →  %s", mp4_path.name, url)
+            uploaded += 1
+
+            try:
+                _add_to_playlist(youtube, video_id, _PLAYLIST_ID)
+            except Exception as exc:
+                log.warning("Playlist insert failed for %s (video was uploaded): %s", mp4_path.name, exc)
     finally:
         mongo_client.close()
 
