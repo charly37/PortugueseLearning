@@ -12,6 +12,9 @@ spec:
   failedJobsHistoryLimit: {{ .Values.weeklyChallenge.failedJobsHistoryLimit }}
   jobTemplate:
     spec:
+      backoffLimit: 2
+      ttlSecondsAfterFinished: 86400 # keep pod logs/state 24h after finish for debugging
+      activeDeadlineSeconds: 3600 # kill job if still running after 1h
       template:
         metadata:
           labels:
