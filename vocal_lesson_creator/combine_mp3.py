@@ -146,9 +146,11 @@ MAX_CHALLENGE_AGE_WEEKS = 2
 TARGET_LUFS = -16.0
 
 
-# Background colour used in generated MP4 videos (YouTube-compatible)
+# Static frame used as the video track (audio is the real payload).
+# 320x180 = 16:9, even dims for yuv420p, ~36x fewer pixels than 1080p.
 _MP4_BG_COLOR = "0x1a1a2e"  # dark navy
-_MP4_RESOLUTION = "1920x1080"
+_MP4_RESOLUTION = "320x180"
+_MP4_STILL_NAME = ".weekly_still.png"
 # Extra seconds allowed on top of the audio duration before ffmpeg is killed
 _MP4_TIMEOUT_SLACK_S = 120
 _MP4_FFMPEG_LOG_TAIL = 30
@@ -189,50 +191,82 @@ def _ffprobe_duration_s(path: Path) -> float | None:
         return None
 
 
-def export_mp4(mp3_path: Path) -> Path | None:
-    """Wrap an MP3 in a YouTube-compatible MP4 (H.264 + AAC, solid colour background).
+def _ensure_still_png(directory: Path) -> Path | None:
+    """Create (or reuse) a single tiny PNG used as the looping video frame."""
+    still = directory / _MP4_STILL_NAME
+    if still.exists() and still.stat().st_size > 0:
+        return still
+    try:
+        subprocess.run(
+            [
+                "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
+                "-f", "lavfi",
+                "-i", f"color=c={_MP4_BG_COLOR}:s={_MP4_RESOLUTION}:r=1",
+                "-frames:v", "1",
+                str(still),
+            ],
+            check=True,
+            capture_output=True,
+            timeout=30,
+        )
+        return still
+    except Exception as exc:
+        log.warning("Could not create still frame (%s); falling back to lavfi", exc)
+        return None
 
-    Returns the MP4 path on success, otherwise None.
-    Never raises: a failed or killed encode must not prevent the caller from
-    persisting MP3 metadata or continuing with the next user.
+
+def export_mp4(mp3_path: Path) -> Path | None:
+    """Mux the MP3 under a looping 320x180 still (H.264 + AAC 192k stereo).
+
+    Video exists only so players/YouTube accept the file; quality is irrelevant.
+    Tuned for a small Kubernetes memory limit: one cached PNG, 1 fps, 1 thread,
+    ultrafast x264. Never raises.
 
     ffmpeg stderr is written to a sidecar ``*.ffmpeg.log`` instead of being
-    buffered in the Python process (``capture_output=True`` can OOM a small
-    Kubernetes Job).
+    buffered in the Python process.
     """
     mp4_path = mp3_path.with_suffix(".mp4")
     log_path = mp3_path.with_suffix(".ffmpeg.log")
 
     duration_s = _ffprobe_duration_s(mp3_path)
     timeout_s = (duration_s + _MP4_TIMEOUT_SLACK_S) if duration_s else 600.0
+    still = _ensure_still_png(mp3_path.parent)
 
     cmd = [
         "ffmpeg", "-y",
         "-hide_banner",
         "-loglevel", "error",
-        "-f", "lavfi",
+        "-threads", "1",
+        "-filter_threads", "1",
     ]
+    if still is not None:
+        cmd.extend(["-loop", "1", "-framerate", "1", "-i", str(still)])
+    else:
+        if duration_s:
+            cmd.extend(["-t", f"{duration_s:.3f}"])
+        cmd.extend([
+            "-f", "lavfi",
+            "-i", f"color=c={_MP4_BG_COLOR}:s={_MP4_RESOLUTION}:r=1",
+        ])
+    cmd.extend(["-i", str(mp3_path)])
     if duration_s:
-        # Bound the lavfi colour source so it cannot run forever if -shortest fails
         cmd.extend(["-t", f"{duration_s:.3f}"])
     cmd.extend([
-        "-i", f"color=c={_MP4_BG_COLOR}:size={_MP4_RESOLUTION}:rate=1",
-        "-i", str(mp3_path),
         "-c:v", "libx264",
         "-tune", "stillimage",
-        "-preset", "fast",
-        "-threads", "1",
-        "-crf", "23",
-        "-pix_fmt", "yuv420p",   # required for broad YouTube compatibility
+        "-preset", "ultrafast",
+        "-crf", "40",
+        "-pix_fmt", "yuv420p",
+        "-x264-params", "frame-threads=1:sliced-threads=0:scenecut=0:keyint=infinite",
         "-c:a", "aac",
         "-b:a", "192k",
-        "-shortest",             # stop when audio ends
+        "-shortest",
+        "-max_muxing_queue_size", "16",
+        "-movflags", "+faststart",
+        str(mp4_path),
     ])
-    if duration_s:
-        cmd.extend(["-t", f"{duration_s:.3f}"])
-    cmd.append(str(mp4_path))
 
-    log.info("Generating MP4: %s", mp4_path)
+    log.info("Generating MP4: %s (%s still @ 1fps, aac 192k)", mp4_path, _MP4_RESOLUTION)
     _flush_logs()
     try:
         with open(log_path, "w", encoding="utf-8") as ffmpeg_log:
