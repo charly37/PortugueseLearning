@@ -129,47 +129,47 @@ resources:
 analytics:
   schedule: "0 2 * * *"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 usefulness:
   schedule: "30 2 * * 1"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 # Runs every Monday at 3 AM — after the daily usefulness job (2 AM) so
 # weakness data is fresh when challenges are generated.
 weeklyChallenge:
   schedule: "0 3 * * 1"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 # Runs every Monday at 4 AM — after the weekly challenge job (3 AM) so
 # data is fresh when challenges sounds are generated.
 weeklyChallengeSounds:
   schedule: "0 4 * * 1"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 # Runs every Monday at 5 AM — after the weekly challenge sounds job (4 AM) so
 # data is fresh when stories are generated.
 weeklyStory:
   schedule: "0 5 * * 1"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 vocabularyUpdaterAgent:
   schedule: "0 6 * * 1"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 # Runs every Friday at 7 AM 
 vocabularyCreatorAgent:
   schedule: "0 7 * * 5"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
 
 # Runs every Monday at 6:30 AM — after sound generation (4 AM) and story (5 AM)
 youtubeUploader:
   schedule: "30 6 * * 1"
   successfulJobsHistoryLimit: 3
-  failedJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 3
