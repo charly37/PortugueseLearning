@@ -90,15 +90,15 @@ def _extract_doc_id(mp4_path: Path) -> str | None:
 def _build_title(doc: dict, mp4_path: Path) -> str:
     week_start = doc.get("weekStart")
     if week_start and hasattr(week_start, "strftime"):
-        return f"European Portuguese Lesson \u2013 Week of {week_start.strftime('%Y-%m-%d')}"
+        return f"European Portuguese Vocabulary Lesson \u2013 Week of {week_start.strftime('%Y-%m-%d')}"
     # fall back to date embedded in filename
     parts = mp4_path.stem.split("_")
     if len(parts) >= 3:
         try:
-            return f"European Portuguese Lesson \u2013 Week of {datetime.strptime(parts[2], '%Y%m%d').strftime('%Y-%m-%d')}"
+            return f"European Portuguese Vocabulary Lesson \u2013 Week of {datetime.strptime(parts[2], '%Y%m%d').strftime('%Y-%m-%d')}"
         except ValueError:
             pass
-    return f"European Portuguese Lesson \u2013 {mp4_path.stem}"
+    return f"European Portuguese Vocabulary Lesson \u2013 {mp4_path.stem}"
 
 
 def _upload_video(youtube, mp4_path: Path, title: str) -> str:
@@ -182,7 +182,7 @@ def main():
             log.error("File not found: %s", mp4_path)
             sys.exit(1)
         youtube = _build_youtube_client()
-        title = f"European Portuguese Lesson – {mp4_path.stem} [TEST]"
+        title = f"European Portuguese Vocabulary Lesson – {mp4_path.stem} [TEST]"
         log.info("Test upload: %s  →  '%s'", mp4_path.name, title)
         video_id = _upload_video(youtube, mp4_path, title)
         log.info("Done: https://www.youtube.com/watch?v=%s", video_id)
