@@ -38,9 +38,21 @@ def main():
         }
     }
 
-    scopes = ["https://www.googleapis.com/auth/youtube.upload"]
+    scopes = ["https://www.googleapis.com/auth/youtube.upload",
+    #Next 2 needed for playlist modification to add the video to the playlist
+    "https://www.googleapis.com/auth/youtube",
+    # optional but commonly used together:
+    "https://www.googleapis.com/auth/youtube.force-ssl"]
     flow = InstalledAppFlow.from_client_config(client_config, scopes)
-    creds = flow.run_local_server(port=0)
+
+    # Use manual copy-paste flow — avoids localhost redirect issues in dev containers / SSH sessions.
+    flow.redirect_uri = "urn:ietf:wg:oauth:2.0:oob"
+    auth_url, _ = flow.authorization_url(prompt="consent", access_type="offline")
+    print("\nOpen this URL in your browser:\n")
+    print(auth_url)
+    code = input("\nAfter approving, paste the authorization code here: ").strip()
+    flow.fetch_token(code=code)
+    creds = flow.credentials
 
     token = creds.refresh_token
     encoded_id = base64.b64encode(args.client_id.encode()).decode()

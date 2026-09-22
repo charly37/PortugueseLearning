@@ -25,8 +25,11 @@ log = logging.getLogger(__name__)
 
 WEEKLY_AUDIO_DIR = Path(__file__).parent.parent / "weekly-audio"
 _YOUTUBE_TOKEN_URI = "https://oauth2.googleapis.com/token"
-_YOUTUBE_SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
-# 10 MB chunks for resumable uploads
+_YOUTUBE_SCOPES = [
+    "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/youtube",
+    "https://www.googleapis.com/auth/youtube.force-ssl",
+]# 10 MB chunks for resumable uploads
 _CHUNK_SIZE = 10 * 1024 * 1024
 
 
