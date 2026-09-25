@@ -59,7 +59,7 @@
     "style-loader": "^4.0.0",
     "tsx": "^4.19.2",
     "typescript": "^7.0.2",
-    "webpack": "^5.109.0",
+    "webpack": "^5.111.1",
     "webpack-cli": "^7.2.3",
     "webpack-dev-server": "^6.0.0"
   }
