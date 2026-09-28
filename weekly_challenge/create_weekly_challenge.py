@@ -18,7 +18,7 @@ import logging
 import random
 import argparse
 from dataclasses import dataclass, field
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pymongo import MongoClient
 from bson import ObjectId
 
@@ -118,7 +118,7 @@ def pick_challenges(all_challenges: list, user_doc: dict, n: int = 20) -> tuple[
 
 def build_weekly_challenge_doc(user_id: str | None, challenges: list) -> dict:
     """Build the document to insert into the weeklychallenges collection."""
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     # Week starts on Monday of the current week
     week_start = now - timedelta(days=now.weekday())
     week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
