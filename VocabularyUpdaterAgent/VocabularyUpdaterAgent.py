@@ -26,6 +26,21 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
+
+def _one_line(text: Any, limit: int = 4000) -> str:
+    """Collapse multi-line/whitespace-heavy text into a single log-safe line.
+
+    Log collectors (e.g. VictoriaLogs) treat each newline as a separate record,
+    so any embedded newline produces orphan lines without a message field.
+    """
+    if text is None:
+        return ""
+    s = str(text)
+    if len(s) > limit:
+        s = s[:limit] + f"... [truncated {len(s) - limit} chars]"
+    return " ".join(s.split())
+
+
 # Allow importing from the repo-level scripts/ directory
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 from db_utils import get_challenges_collection, update_challenge_fields
@@ -170,7 +185,8 @@ def log_review(
     """
     flag_marker = " [USER FLAGGED]" if flagged_by_users else ""
     log.info("Reviewing: '%s'%s | translation=%s | assessment=%s | changes=%s",
-             portuguese_word, flag_marker, current_translation, assessment, planned_changes)
+             _one_line(portuguese_word), flag_marker, _one_line(current_translation),
+             _one_line(assessment), _one_line(planned_changes))
     return "logged"
 
 
@@ -202,7 +218,7 @@ def apply_portuguese_corrections(corrections_json: str) -> str:
             if challenge.get("id") == c.get("challenge_id"):
                 old = challenge.get("port", "")
                 challenge["port"] = corrected
-                log.info("Corrected '%s' -> '%s' (reason: %s)", old, corrected, c.get('reason', ''))
+                log.info("Corrected '%s' -> '%s' (reason: %s)", old, corrected, _one_line(c.get('reason', '')))
                 applied += 1
                 break
 
@@ -323,6 +339,8 @@ Workflow:
 4. Call apply_portuguese_corrections once with that array.
 5. Call save_all_changes to persist any corrections.
 6. Report a concise summary: how many words were reviewed and how many were corrected.
+   The summary MUST be a single line of plain text — no line breaks, no bullet points,
+   no numbered lists, no markdown headings (e.g. "Reviewed 50 words, corrected 2: 'bem vindo' -> 'bem-vindo', 'ver, assistir' -> 'ver'.").
 
 Rules:
 - Multi-word phrases (e.g. "ir embora") are acceptable when no single-word equivalent exists.
@@ -361,6 +379,8 @@ Workflow:
    clear_quality_flags with those IDs.
 5. Report a concise summary: how many challenges were processed, how many translations
    were corrected, how many example sets were added, and how many notes were written.
+   The summary MUST be a single line of plain text — no line breaks, no bullet points,
+   no numbered lists, no markdown headings.
 
 Guidelines:
 - Prefer common, everyday vocabulary over obscure alternatives.
@@ -416,7 +436,7 @@ async def _run_agent(
         f"Review up to {max_words} Portuguese vocabulary words for correctness.",
         max_turns=max_words * 3 + 20,
     )
-    log.info("Validator Report:\n%s", validator_result.final_output)
+    log.info("Validator Report: %s", _one_line(validator_result.final_output))
 
     # ------------------------------------------------------------------
     # Phase 2: Translation updates
@@ -432,7 +452,7 @@ async def _run_agent(
         f"and update their {language.upper()} translations.",
         max_turns=max_words * 5 + 20,
     )
-    log.info("Translation Agent Report:\n%s", translation_result.final_output)
+    log.info("Translation Agent Report: %s", _one_line(translation_result.final_output))
     log.info("%s", "=" * 60)
 
 
