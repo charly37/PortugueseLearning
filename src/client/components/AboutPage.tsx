@@ -11,6 +11,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useTranslation } from 'react-i18next';
 
 const AboutPage: React.FC = () => {
@@ -104,6 +105,32 @@ const AboutPage: React.FC = () => {
                   </Typography>
                 </Box>
               </Box>
+            </Box>
+          </Paper>
+
+          {/* Story-generation learning website */}
+          <Paper elevation={2} sx={{ p: 4, mb: 4, bgcolor: 'secondary.lighter' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+              <MenuBookIcon sx={{ fontSize: 32, color: 'secondary.main', mr: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 600 }}>
+                {t('about.storySiteTitle')}
+              </Typography>
+            </Box>
+            <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+              {t('about.storySiteText')}
+            </Typography>
+            <Box sx={{ mt: 2, p: 2, bgcolor: 'background.paper', borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+              <Link
+                href="https://bilingualstory.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ fontSize: '1.1rem', wordBreak: 'break-all', fontWeight: 600 }}
+              >
+                https://bilingualstory.net/
+              </Link>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                {t('about.storySiteCTA')}
+              </Typography>
             </Box>
           </Paper>
 
