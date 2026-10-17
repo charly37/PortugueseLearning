@@ -1,0 +1,2 @@
+#This is used by all scripts so i put it here for better MW updates
+pymongo==4.18.2
