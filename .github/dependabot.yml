@@ -4,7 +4,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      github-actions-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -12,7 +16,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      docker-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -20,7 +28,11 @@ updates:
     directory: "/pythonDockerBaseImage"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      docker-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -28,7 +40,11 @@ updates:
     directory: "/analytics"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -36,7 +52,11 @@ updates:
     directory: "/vocal_lesson_creator"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -44,7 +64,11 @@ updates:
     directory: "/weekly_challenge"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -52,7 +76,11 @@ updates:
     directory: "/story_writter"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -60,7 +88,11 @@ updates:
     directory: "/data"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      python-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
@@ -68,7 +100,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 10
+    groups:
+      npm-dependencies:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
 
