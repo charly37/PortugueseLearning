@@ -1,6 +1,6 @@
 # StoryCreatorWrapper.py only
-pymongo==4.18.2
+pymongo==4.18.3
 
 # StoryCreatorAgent.py and StoryCreatorWrapper.py
 openai-agents==0.23.1
-openai==3.29.0
+openai==3.31.0
