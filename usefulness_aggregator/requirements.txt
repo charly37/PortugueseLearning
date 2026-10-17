@@ -1,1 +1,2 @@
-pymongo==4.18.2
+# pymongo moved to share lib in image build
+#pymongo==4.18.2

@@ -19,6 +19,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 ENV PYTHONUNBUFFERED=1
 
 # Copy requirements files
+COPY pythonDockerBaseImage/requirements.txt base-requirements.txt
 COPY analytics/requirements.txt analytics-requirements.txt
 COPY usefulness_aggregator/requirements.txt usefulness-requirements.txt
 COPY weekly_challenge/requirements.txt weekly-requirements.txt
@@ -29,7 +30,8 @@ COPY vocal_lesson_creator/requirements.txt vocal-requirements.txt
 COPY youtube-uploader/requirements.txt youtube-uploader-requirements.txt
 
 # Install Python dependencies into the venv (as root)
-RUN pip install --no-cache-dir -r analytics-requirements.txt \
+RUN pip install --no-cache-dir -r base-requirements.txt \
+    -r analytics-requirements.txt \
     -r usefulness-requirements.txt \
     -r weekly-requirements.txt \
     -r story_writter-requirements.txt \
