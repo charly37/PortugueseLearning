@@ -2,38 +2,36 @@
 
 ## Overview
 
-The story creator generates bilingual Portuguese/French short stories for language learners.
-Each story is written sentence-by-sentence in European Portuguese, with a French translation
-alongside each sentence so that French-speaking learners can read both versions side by side.
-
-The feature is split into two files to keep the generation logic independent of the website's
-database infrastructure:
+The weekly bilingual Portuguese/French story is no longer written locally by an OpenAI
+agent. `StoryCreatorGetter.py` calls the external **StoryCreator public API**
+(`https://bilingualstory.net`), which generates the story, then stores it in the same
+`weeklystories` MongoDB collection the website already reads.
 
 | File | Purpose | DB required? |
 |------|---------|--------------|
-| `story_writter/StoryCreatorAgent.py` | Core generation logic. Runs the writer + reviewer agent loop and returns a story dict. | ❌ No |
-| `story_writter/StoryCreatorWrapper.py` | Website orchestrator. Fetches user info and existing titles from MongoDB, calls the core, persists to the `weeklystories` collection. | ✅ Yes |
+| `story_writter/StoryCreatorGetter.py` | Creates/fetches a story through the StoryCreator API, converts it to the website schema, upserts into `weeklystories`. | ✅ for storage |
+| `story_writter/StoryCreatorAgent.py` | **Legacy** local OpenAI writer/reviewer loop. No longer used. | ❌ |
+| `story_writter/StoryCreatorWrapper.py` | **Legacy** orchestrator for the local agent. No longer used. | ✅ |
 
 ## Architecture
 
 ```
-StoryCreatorWrapper.py
+StoryCreatorGetter.py
   ├── resolve_users(db, args)          ← finds target users in MongoDB
-  ├── get_user_existing_titles(db, id) ← fetches past titles to avoid repeats
-  ├── run_story(...)                   ← imported from StoryCreatorAgent.py
+  ├── create_story(...)                ← POST /api/v1/stories (AI generation)
+  ├── wait_for_story(...)              ← polls GET /api/v1/stories/:id until ready
+  ├── to_app_story(...)                ← converts lang1/lang2 → pt/fr schema
   └── upsert_weekly_story(db, ...)     ← persists result to weeklystories
 ```
 
-The core (`StoryCreatorAgent.py`) uses a writer → reviewer loop:
-
-1. **StoryWriterAgent** writes an initial 40–50 sentence draft in JSON.
-2. **StoryReviewerAgent** checks European Portuguese usage, sentence count, level, translation quality, and structure.
-3. If `REVISE`, the writer revises up to `--max-iterations` times.
-4. Final story is returned as a Python dict (no I/O in the core).
+The StoryCreator service performs the AI generation. `POST /api/v1/stories` returns a
+draft with a `status.state` of `generating`; the script polls until the story is ready
+(or `failed`), then stores it. A write-scoped key is therefore required for generation;
+`stories:read` is enough to fetch an already published story.
 
 ## Setup
 
-**Requirements:** Python 3.10+, `openai-agents`, `pymongo`.
+**Requirements:** Python 3.10+, `httpx`, `pymongo`.
 
 ```bash
 pip install -r story_writter/requirements.txt
@@ -43,80 +41,91 @@ pip install -r story_writter/requirements.txt
 
 | Variable | Required by | Description |
 |----------|------------|-------------|
-| `OPEN_AI_KEY` | both files | OpenAI API key (mapped to `OPENAI_API_KEY` internally) |
-| `MONGODB_URI` | wrapper only | MongoDB Atlas connection string |
+| `STORYCREATOR_API_KEY` | all runs | API key; needs `stories:write` to generate, `stories:read` to fetch |
+| `STORYCREATOR_API_URL` | all runs | Base URL (default `http://localhost:3000`) |
+| `MONGODB_URI` | storage | MongoDB Atlas connection string |
+| `STORYCREATOR_STORY_ID` | fetch mode | Default story id when none is passed |
 
-## Local Development (no DB)
-
-Use `StoryCreatorAgent.py` directly. Results print as JSON to stdout.
-
-```bash
-cd story_writter
-export OPEN_AI_KEY="sk-..."
-
-# Print to stdout
-python StoryCreatorAgent.py --level beginner --topic "food"
-
-# Save to a file instead
-python StoryCreatorAgent.py --level intermediate --topic "travel" --output story.json
-```
-
-### Core CLI flags
-
-| Flag | Default | Description |
-|------|---------|-------------|
-| `--level` | `beginner` | `beginner` \| `intermediate` \| `advanced` |
-| `--topic` | _(agent picks)_ | Story topic; omit to let the agent choose |
-| `--model` | `gpt-4.1-mini` | OpenAI model |
-| `--max-iterations` | `3` | Max write/review cycles |
-| `--output` | _(stdout)_ | Write JSON to this file instead of stdout |
-
-## Production / Website (with DB)
-
-Use `StoryCreatorWrapper.py`. Stories are upserted to the `weeklystories` MongoDB collection
-(one document per user per week).
+## Local Development
 
 ```bash
 cd story_writter
-export OPEN_AI_KEY="sk-..."
-export MONGODB_URI="mongodb+srv://..."
+export STORYCREATOR_API_KEY="stc_live_..."
+export STORYCREATOR_API_URL="https://bilingualstory.net"
 
-# All registered (non-guest) users
-python StoryCreatorWrapper.py --level beginner --all-users
+# Generate a story and print it (no DB write)
+python StoryCreatorGetter.py --create --topic "food" --level beginner
 
-# Single user by username
-python StoryCreatorWrapper.py --level intermediate --username alice
+# Generate and store as the global (userId=null) fallback
+python StoryCreatorGetter.py --create --topic "food" --save-to-mongo
 
-# Single user by MongoDB _id
-python StoryCreatorWrapper.py --user-id 64a1b2c3d4e5f60000000001
+# Read an existing story
+python StoryCreatorGetter.py 6ad3da2d233a762967c9e718
 
-# Topic fallback file (used when user has no storyTopic set in their profile)
-python StoryCreatorWrapper.py --all-users --topic-file story_topic.txt
+# Save an existing story into MongoDB
+python StoryCreatorGetter.py 6ad3da2d233a762967c9e718 --save-to-mongo
 ```
 
-### Wrapper CLI flags
+### CLI flags
 
 | Flag | Default | Description |
 |------|---------|-------------|
+| `story_id` | _(generate/fetch default)_ | Existing story id to fetch instead of generating |
+| `--create` | `False` | Generate a new story (requires `stories:write`) |
 | `--level` | `beginner` | `beginner` \| `intermediate` \| `advanced` |
-| `--topic-file` | `story_topic.txt` | Fallback topic when user has no `storyTopic` in profile |
-| `--model` | `gpt-4.1-mini` | OpenAI model |
-| `--max-iterations` | `3` | Max write/review cycles |
-| `--all-users` | — | Generate for every registered (non-guest) user |
+| `--topic` | _(empty)_ | Topic/seed for the generated story |
+| `--topic-file` | `story_topic.txt` | Fallback topic when `--topic` is empty and a user has no `storyTopic` |
+| `--title` | _(empty)_ | Optional title hint; the provider translates/fills it |
+| `--model` | `gpt-4o-mini` | StoryCreator AI model |
+| `--native-language` | `fr` | Translation language (`lang1`) |
+| `--learning-language` | `pt` | Story language (`lang2`) |
+| `--chapters` | `3` | Chapters to generate |
+| `--sentences-per-chapter` | `8` | Target sentences per chapter |
+| `--guideline` | _(empty)_ | Extra `aiGuideline` sent to the provider |
+| `--generation-timeout` | `900` | Max seconds to wait for generation |
+| `--poll-interval` | `5` | Seconds between status polls |
+| `--save-to-mongo` | `False` | Upsert the result into `weeklystories` |
+| `--all-users` | — | Generate and store one story per registered (non-guest) user, plus a global fallback |
 | `--user-id` | — | MongoDB `_id` of a specific user |
 | `--username` | — | Username of a specific user |
+| `--format` | `text` | `text` (parallel text) or `json` printout |
+| `--output` | _(empty)_ | Write the raw API story as JSON to this file |
+| `--timeout` | `60` | HTTP request timeout in seconds |
+
+## Production / Website
+
+Generation is upserted to the `weeklystories` MongoDB collection (one document per user
+per week). `--all-users` also creates the global story (`userId: null`) used for guests.
+
+```bash
+cd story_writter
+export STORYCREATOR_API_KEY="stc_live_..."
+export STORYCREATOR_API_URL="https://bilingualstory.net"
+export MONGODB_URI="mongodb+srv://..."
+
+# All registered (non-guest) users + global fallback
+python StoryCreatorGetter.py --level beginner --all-users
+
+# Single user by username
+python StoryCreatorGetter.py --level intermediate --username alice
+
+# Single user by MongoDB _id
+python StoryCreatorGetter.py --user-id 64a1b2c3d4e5f60000000001
+```
 
 ## User Profile Integration
 
-The wrapper reads `user.storyTopic` from the `users` collection to personalise the story
-topic per user. If unset, it falls back to the `--topic-file` content, then lets the agent
-pick a topic.
+The script reads `user.storyTopic` from the `users` collection to personalise the story
+topic per user. If unset, it falls back to `--topic` / the `--topic-file` content; if
+that is also empty, the provider picks a topic.
 
 ## Story Object Schema
 
+Stories are stored under `weeklystories.story`:
+
 ```json
 {
-    "id":         "<uuid>",
+    "id":         "<StoryCreator story id>",
     "title_pt":   "<Portuguese title>",
     "title_fr":   "<French title>",
     "level":      "beginner | intermediate | advanced",
@@ -125,15 +134,23 @@ pick a topic.
         {"pt": "<European Portuguese sentence>", "fr": "<French translation>"},
         "..."
     ],
-    "created_at": "YYYY-MM-DD"
+    "created_at": "YYYY-MM-DD",
+    "source":     "storycreator-api"
 }
 ```
+
+API fields are mapped as follows: the API's `learningLanguage` side becomes `pt`, the
+`nativeLanguage` side becomes `fr`, and every chapter's sentences are flattened in order.
 
 ## Kubernetes CronJob
 
 The weekly story generation is scheduled via a Helm-managed CronJob
 (`helm/portuguese-learning/templates/weekly-story-cronjob.yaml`).
-It runs `StoryCreatorWrapper.py` inside the analytics image and injects
-`MONGODB_URI` and `OPEN_AI_KEY` from the `portuguese-learning-secrets` Kubernetes Secret.
+It runs `StoryCreatorGetter.py` inside the analytics image and injects `MONGODB_URI` and
+`STORYCREATOR_API_KEY` from the `portuguese-learning-secrets` Kubernetes Secret, plus
+`STORYCREATOR_API_URL` from `weeklyStory.apiUrl` in `values.yaml`.
+
+> **Required secret:** add a `storycreator-api-key` entry (write scope) to
+> `portuguese-learning-secrets` before deploying.
 
 Schedule and resource limits are configured in `values.yaml` under `weeklyStory`.

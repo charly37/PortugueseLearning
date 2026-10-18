@@ -154,6 +154,7 @@ weeklyChallengeSounds:
 # data is fresh when stories are generated.
 weeklyStory:
   schedule: "0 5 * * 1"
+  apiUrl: "https://bilingualstory.net"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
 

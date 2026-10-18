@@ -1,6 +1,3 @@
-# StoryCreatorWrapper.py only
+# StoryCreatorGetter.py
+httpx==0.28.1
 pymongo==4.18.3
-
-# StoryCreatorAgent.py and StoryCreatorWrapper.py
-openai-agents==0.23.1
-openai==3.31.0

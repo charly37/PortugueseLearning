@@ -22,17 +22,19 @@ spec:
             - name: weekly-story
               image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
               imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
-              command: ["python", "StoryCreatorWrapper.py", "--level", "beginner", "--all-users"]
+              command: ["python", "StoryCreatorGetter.py", "--level", "beginner", "--all-users"]
               env:
                 - name: MONGODB_URI
                   valueFrom:
                     secretKeyRef:
                       name: portuguese-learning-secrets
                       key: mongodb-uri
-                - name: OPEN_AI_KEY
+                - name: STORYCREATOR_API_KEY
                   valueFrom:
                     secretKeyRef:
                       name: portuguese-learning-secrets
-                      key: open-ai-key
+                      key: storycreator-api-key
+                - name: STORYCREATOR_API_URL
+                  value: {{ .Values.weeklyStory.apiUrl | quote }}
               resources:
                 {{- toYaml .Values.resources.weeklyStory | nindent 16 }}
