@@ -12,6 +12,13 @@ Modes:
      `GET /api/v1/stories/{id}` is polled until generation finishes.
      Requires an API key with the `stories:write` scope (paid AI call).
   2. Fetch: `GET /api/v1/stories/{id}` reads an existing story.
+     When no id is passed, the newest story created through the API key
+     named `DialectHubWrite` (`creationSource=api`) is looked up via
+     `GET /api/v1/stories` and used instead of a hardcoded id.
+     Only the `stories:read` scope is needed.
+  3. List: `GET /api/v1/stories?limit=20&page=1` shows the paginated story
+     catalogue (ids, titles, status) without generating anything; add
+     `author=<name>` (CLI: `--author`) to list only that user's stories.
      Only the `stories:read` scope is needed.
 
 Stories are converted to the website schema (`title_pt`, `title_fr`,
@@ -27,8 +34,9 @@ Environment:
                          (`stories:read` is enough for fetch-only runs)
   STORYCREATOR_API_URL   Base URL of the StoryCreator server
                          (default: http://localhost:3000)
-  STORYCREATOR_STORY_ID  Story id used when the positional argument is omitted
-                         (default: 6ad3da2d233a762967c9e718)
+  STORYCREATOR_AUTHOR    Default author filter for --list (optional)
+  STORYCREATOR_STORY_ID  Explicit story id; when unset, the newest story
+                         created via the DialectHubWrite API key is fetched
   MONGODB_URI            MongoDB connection string (required to store stories)
 """
 
@@ -47,15 +55,30 @@ from typing import Any
 
 import httpx
 
-logging.basicConfig(
-    level=logging.INFO,
-    stream=sys.stdout,
-    format="%(levelname)s %(message)s",
-)
+
+def _configure_logging() -> None:
+    """Send every log record (ours and httpx's) to stdout."""
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(logging.Formatter("%(levelname)s %(message)s"))
+
+    root = logging.getLogger()
+    root.handlers.clear()
+    root.setLevel(logging.INFO)
+    root.addHandler(handler)
+
+    # httpx/httpcore log each request at INFO; keep them on the same stdout
+    # handler instead of letting logging fall back to stderr.
+    for name in ("httpx", "httpcore"):
+        logger = logging.getLogger(name)
+        logger.handlers = [handler]
+        logger.propagate = False
+        logger.setLevel(logging.INFO)
+
+
+_configure_logging()
 log = logging.getLogger("storycreator-getter")
 
 DEFAULT_API_URL = "http://localhost:3000"
-DEFAULT_STORY_ID = "6ad3da2d233a762967c9e718"
 DEFAULT_MODEL = "gpt-4o-mini"
 DEFAULT_NATIVE_LANGUAGE = "fr"
 DEFAULT_LEARNING_LANGUAGE = "pt"
@@ -63,6 +86,13 @@ DEFAULT_CHAPTERS = 3
 DEFAULT_SENTENCES_PER_CHAPTER = 8
 DEFAULT_POLL_INTERVAL = 5.0
 DEFAULT_GENERATION_TIMEOUT = 900.0
+DEFAULT_LIST_LIMIT = 20
+DEFAULT_LIST_PAGE = 1
+# How the website's stories are identified in the StoryCreator catalogue.
+DEFAULT_CREATION_SOURCE = "api"
+DEFAULT_CREATED_VIA_KEY_NAME = "DialectHubWrite"
+DEFAULT_SCAN_LIMIT = 50
+MAX_SCAN_PAGES = 5
 EXIT_API_ERROR = 1
 EXIT_NOT_FOUND = 2
 
@@ -140,6 +170,303 @@ def fetch_story(
     if not isinstance(data, dict):
         raise StoryCreatorError(f"Unexpected story response: {response.text[:300]}")
     return data
+
+
+_LIST_CONTENT_KEYS = ("stories", "items", "results", "docs")
+_PAGINATION_KEYS = ("pagination", "meta", "pageInfo", "page_info")
+_PAGINATION_FIELDS = (
+    "page",
+    "limit",
+    "total",
+    "totalPages",
+    "total_pages",
+    "hasNextPage",
+    "has_next_page",
+)
+
+
+def _extract_story_list(body: Any) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Extracts the stories array and pagination info from a list response.
+
+    Tolerates the shapes the public API may use: `{"data": [...]}`,
+    `{"data": {"stories": [...], "pagination": {...}}}` and
+    `{"stories": [...], "meta": {...}}`.
+    """
+    pagination: dict[str, Any] = {}
+
+    if isinstance(body, list):
+        return [item for item in body if isinstance(item, dict)], pagination
+    if not isinstance(body, dict):
+        raise StoryCreatorError(
+            f"Unexpected story list response: {str(body)[:300]}"
+        )
+
+    containers: list[dict[str, Any]] = [body]
+    data = body.get("data")
+    if isinstance(data, dict):
+        containers.append(data)
+
+    for container in containers:
+        if not pagination:
+            for key in _PAGINATION_KEYS:
+                value = container.get(key)
+                if isinstance(value, dict) and value:
+                    pagination = dict(value)
+                    break
+        for key in _PAGINATION_FIELDS:
+            if key in container and key not in pagination:
+                pagination[key] = container[key]
+
+    if isinstance(data, list):
+        return [item for item in data if isinstance(item, dict)], pagination
+
+    for container in containers:
+        for key in _LIST_CONTENT_KEYS:
+            value = container.get(key)
+            if isinstance(value, list):
+                return [item for item in value if isinstance(item, dict)], pagination
+
+    raise StoryCreatorError(
+        "Unexpected story list response: "
+        + json.dumps(body, ensure_ascii=False, default=str)[:300]
+    )
+
+
+def list_stories(
+    *,
+    api_url: str,
+    api_key: str,
+    limit: int,
+    page: int,
+    timeout: float,
+    author: str = "",
+) -> dict[str, Any]:
+    """Returns one page of `GET /api/v1/stories` as {stories, pagination}.
+
+    When `author` is set, only that user's stories are returned (the API
+    filters on the story author).
+    """
+    params: dict[str, Any] = {"limit": limit, "page": page}
+    author = (author or "").strip()
+    if author:
+        params["author"] = author
+
+    try:
+        with _client(api_url=api_url, api_key=api_key, timeout=timeout) as client:
+            response = client.get("/api/v1/stories", params=params)
+    except httpx.HTTPError as exc:
+        raise StoryCreatorError(f"Could not reach {api_url}: {exc}") from exc
+
+    if response.status_code == 401:
+        raise StoryCreatorError(
+            "The StoryCreator API key was rejected — check STORYCREATOR_API_KEY",
+            status_code=401,
+        )
+    if response.status_code != 200:
+        raise StoryCreatorError(
+            f"Could not list stories — {_format_api_error(response)}",
+            status_code=response.status_code,
+        )
+
+    log.info("Raw API reply: %s", response.text)
+
+    try:
+        body = response.json()
+    except ValueError as exc:
+        raise StoryCreatorError(
+            f"Unexpected story list response: {response.text[:300]}"
+        ) from exc
+
+    stories, pagination = _extract_story_list(body)
+    pagination.setdefault("page", page)
+    pagination.setdefault("limit", limit)
+    log.info(
+        "Fetched %d story/stories (page=%d, limit=%d%s)",
+        len(stories),
+        page,
+        limit,
+        f", author={author}" if author else "",
+    )
+
+    result: dict[str, Any] = {"stories": stories, "pagination": pagination}
+    if author:
+        result["filter"] = {"author": author}
+    return result
+
+
+def _creation_source(story: dict[str, Any]) -> str:
+    value = story.get("creationSource") or story.get("creation_source")
+    return value.strip().casefold() if isinstance(value, str) else ""
+
+
+def _created_via_key_name(story: dict[str, Any]) -> str:
+    value = story.get("createdViaApiKeyName") or story.get("created_via_api_key_name")
+    return value.strip().casefold() if isinstance(value, str) else ""
+
+
+def _story_label(story: dict[str, Any]) -> str:
+    """Returns 'lang1 / lang2' (or whichever title text exists)."""
+    title = story.get("title") if isinstance(story.get("title"), dict) else {}
+    lang1 = (title.get("lang1") or "").strip()
+    lang2 = (title.get("lang2") or "").strip()
+    if lang1 and lang2 and lang1 != lang2:
+        return f"{lang1} / {lang2}"
+    return lang1 or lang2 or "(untitled)"
+
+
+def _story_timestamp(story: dict[str, Any]) -> datetime:
+    """Returns the story's creation time (falls back to updatedAt)."""
+    for key in ("createdAt", "updatedAt"):
+        raw = story.get(key)
+        if isinstance(raw, str) and raw.strip():
+            try:
+                parsed = datetime.fromisoformat(raw.strip().replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if parsed.tzinfo is None:
+                parsed = parsed.replace(tzinfo=timezone.utc)
+            return parsed
+    return datetime.min.replace(tzinfo=timezone.utc)
+
+
+def find_latest_story(
+    *,
+    api_url: str,
+    api_key: str,
+    timeout: float,
+    source: str = DEFAULT_CREATION_SOURCE,
+    api_key_name: str = DEFAULT_CREATED_VIA_KEY_NAME,
+    author: str = "",
+    limit: int = DEFAULT_SCAN_LIMIT,
+    max_pages: int = MAX_SCAN_PAGES,
+) -> dict[str, Any] | None:
+    """Returns the most recent story matching the website's provenance.
+
+    Keeps only stories whose `creationSource` matches `source` and whose
+    `createdViaApiKeyName` matches `api_key_name`, then returns the newest of
+    those (or None when nothing matches).
+    """
+    wanted_source = (source or "").strip().casefold()
+    wanted_key = (api_key_name or "").strip().casefold()
+
+    newest: dict[str, Any] | None = None
+    newest_at = datetime.min.replace(tzinfo=timezone.utc)
+    scanned = 0
+    matched = 0
+
+    for page in range(1, max_pages + 1):
+        log.info(
+            "Scanning story catalogue: page=%d, limit=%d, creationSource=%r, "
+            "createdViaApiKeyName=%r%s",
+            page,
+            limit,
+            source,
+            api_key_name,
+            f", author={author}" if author else "",
+        )
+        result = list_stories(
+            api_url=api_url,
+            api_key=api_key,
+            limit=limit,
+            page=page,
+            timeout=timeout,
+            author=author,
+        )
+        stories = result.get("stories") or []
+        page_matches = 0
+        scanned += len(stories)
+
+        for position, story in enumerate(stories, start=1):
+            story_id = story.get("id") or story.get("_id") or "?"
+            story_source = story.get("creationSource") or ""
+            story_key = story.get("createdViaApiKeyName") or ""
+            created_raw = story.get("createdAt") or story.get("updatedAt") or "unknown"
+
+            reason = ""
+            if wanted_source and _creation_source(story) != wanted_source:
+                reason = f"creationSource {story_source!r} != {source!r}"
+            elif wanted_key and _created_via_key_name(story) != wanted_key:
+                reason = f"createdViaApiKeyName {story_key!r} != {api_key_name!r}"
+
+            if reason:
+                log.info(
+                    "Candidate %d/%d: id=%s | title=%r | createdAt=%s | "
+                    "creationSource=%r | createdViaApiKeyName=%r -> SKIPPED (%s)",
+                    position,
+                    len(stories),
+                    story_id,
+                    _story_label(story),
+                    created_raw,
+                    story_source,
+                    story_key,
+                    reason,
+                )
+                continue
+
+            page_matches += 1
+            matched += 1
+            created_at = _story_timestamp(story)
+            is_newest = newest is None or created_at > newest_at
+            log.info(
+                "Candidate %d/%d: id=%s | title=%r | createdAt=%s | "
+                "creationSource=%r | createdViaApiKeyName=%r -> MATCH (%s)",
+                position,
+                len(stories),
+                story_id,
+                _story_label(story),
+                created_raw,
+                story_source,
+                story_key,
+                "newest so far" if is_newest else "older than current selection",
+            )
+            if is_newest:
+                newest = story
+                newest_at = created_at
+
+        log.info(
+            "Page %d: %d story/stories returned, %d match the filter",
+            page,
+            len(stories),
+            page_matches,
+        )
+
+        if newest is not None:
+            # The catalogue is returned newest-first, so the first page with a
+            # match contains the most recent story.
+            break
+
+        pagination = result.get("pagination") or {}
+        total_pages = pagination.get("totalPages") or pagination.get("total_pages")
+        if isinstance(total_pages, int) and page >= total_pages:
+            break
+        if len(stories) < limit:
+            break
+
+    if newest is None:
+        log.warning(
+            "No story matched the filter (scanned %d story/stories with "
+            "creationSource=%r, createdViaApiKeyName=%r)",
+            scanned,
+            source,
+            api_key_name,
+        )
+        return None
+
+    status = newest.get("status") if isinstance(newest.get("status"), dict) else {}
+    log.info("--- Story selection summary ---")
+    log.info("Stories scanned     : %d", scanned)
+    log.info("Stories matched     : %d", matched)
+    log.info("Selected story id   : %s", newest.get("id") or newest.get("_id") or "?")
+    log.info("Selected story title: %s", _story_label(newest))
+    log.info(
+        "Selected story date : %s",
+        newest.get("createdAt") or newest.get("updatedAt") or "unknown",
+    )
+    log.info("creationSource      : %s", newest.get("creationSource") or "?")
+    log.info("createdViaApiKeyName: %s", newest.get("createdViaApiKeyName") or "?")
+    log.info("Generation state    : %s", status.get("state") or "unknown")
+    log.info("Sentences           : %d", newest.get("sentenceCount", 0))
+    return newest
 
 
 def build_create_payload(
@@ -527,6 +854,78 @@ def _language_label(story: dict[str, Any]) -> str:
     return f"lang1: {native} (native) | lang2: {learning} (learning)"
 
 
+def render_story_list(result: dict[str, Any]) -> str:
+    """Renders one page of `GET /api/v1/stories` as a compact listing."""
+    stories = result.get("stories") or []
+    pagination = result.get("pagination") or {}
+
+    lines: list[str] = []
+    if not stories:
+        lines.append("No stories found.")
+
+    for index, story in enumerate(stories, start=1):
+        title = story.get("title") if isinstance(story.get("title"), dict) else {}
+        title_lang1 = (title.get("lang1") or "").strip()
+        title_lang2 = (title.get("lang2") or "").strip()
+        heading = title_lang1 or "(untitled)"
+        if title_lang2 and title_lang2 != title_lang1:
+            heading = f"{heading} / {title_lang2}"
+
+        status = story.get("status") if isinstance(story.get("status"), dict) else {}
+        native = story.get("nativeLanguage") or "?"
+        learning = story.get("learningLanguage") or "?"
+        details = [
+            f"id: {story.get('id') or story.get('_id') or '?'}",
+            f"level: {story.get('level') or '?'}",
+            f"{native}/{learning}",
+        ]
+        state = status.get("state")
+        if state:
+            details.append(f"state: {state}")
+        if status.get("published") is not None:
+            details.append(f"published: {status.get('published')}")
+        if story.get("sentenceCount") is not None:
+            details.append(f"{story['sentenceCount']} sentences")
+        author = story.get("authorName") or story.get("author")
+        if isinstance(author, str) and author:
+            details.append(f"author: {author}")
+        creation_source = (
+            story.get("creationSource")
+            or story.get("creation_source")
+            or story.get("source")
+        )
+        if isinstance(creation_source, str) and creation_source:
+            details.append(f"created via: {creation_source}")
+        labels = story.get("labels")
+        if isinstance(labels, list) and labels:
+            details.append("labels: " + ", ".join(str(label) for label in labels))
+        if story.get("updatedAt"):
+            details.append(f"updated {str(story['updatedAt'])[:10]}")
+
+        lines.append(f"{index:>3}. {heading}")
+        lines.append(f"     {' | '.join(details)}")
+
+    summary: list[str] = []
+    author_filter = (result.get("filter") or {}).get("author")
+    if author_filter:
+        summary.append(f"author: {author_filter}")
+    page = pagination.get("page")
+    limit = pagination.get("limit")
+    total = pagination.get("total")
+    total_pages = pagination.get("totalPages") or pagination.get("total_pages")
+    if page is not None:
+        summary.append(f"page {page}" + (f" (limit {limit})" if limit is not None else ""))
+    if total is not None:
+        summary.append(f"{total} stories total")
+    if total_pages is not None:
+        summary.append(f"{total_pages} pages")
+    if summary:
+        lines.append("")
+        lines.append(" | ".join(summary))
+
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def render_story(story: dict[str, Any]) -> str:
     """Renders a fetched story as readable parallel text."""
     title = story.get("title") if isinstance(story.get("title"), dict) else {}
@@ -548,6 +947,13 @@ def render_story(story: dict[str, Any]) -> str:
         f"topic: {story.get('topic') or '(none)'}",
         f"author: {story.get('authorName') or '(unknown)'}",
     ]
+    creation_source = (
+        story.get("creationSource")
+        or story.get("creation_source")
+        or story.get("source")
+    )
+    if isinstance(creation_source, str) and creation_source:
+        meta.append(f"created via: {creation_source}")
     lines.append(" | ".join(meta))
 
     counts = [
@@ -608,9 +1014,9 @@ def render_story(story: dict[str, Any]) -> str:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Generate (POST /api/v1/stories) or read (GET /api/v1/stories/:id) "
-            "a StoryCreator story and optionally upsert it into the website's "
-            "weeklystories MongoDB collection."
+            "List (GET /api/v1/stories), generate (POST /api/v1/stories) or read "
+            "(GET /api/v1/stories/:id) StoryCreator stories and optionally upsert "
+            "one into the website's weeklystories MongoDB collection."
         )
     )
     parser.add_argument(
@@ -618,8 +1024,9 @@ def build_parser() -> argparse.ArgumentParser:
         nargs="?",
         default=None,
         help=(
-            "Existing story id to fetch instead of generating one "
-            f"(default: $STORYCREATOR_STORY_ID or {DEFAULT_STORY_ID})"
+            "Existing story id to fetch. When omitted, $STORYCREATOR_STORY_ID is "
+            "used if set, otherwise the newest story created via the "
+            f"{DEFAULT_CREATED_VIA_KEY_NAME} API key (creationSource=api)"
         ),
     )
     parser.add_argument(
@@ -628,6 +1035,50 @@ def build_parser() -> argparse.ArgumentParser:
         help=(
             "Generate a new story through the StoryCreator API "
             "(requires an API key with the stories:write scope)"
+        ),
+    )
+    parser.add_argument(
+        "--list",
+        action="store_true",
+        help=(
+            "List stories via GET /api/v1/stories (uses --limit/--page/--author); "
+            "only the stories:read scope is needed"
+        ),
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=DEFAULT_LIST_LIMIT,
+        help=f"Stories per page for --list (default: {DEFAULT_LIST_LIMIT})",
+    )
+    parser.add_argument(
+        "--page",
+        type=int,
+        default=DEFAULT_LIST_PAGE,
+        help=f"Page number for --list (default: {DEFAULT_LIST_PAGE})",
+    )
+    parser.add_argument(
+        "--author",
+        default=os.environ.get("STORYCREATOR_AUTHOR", ""),
+        help=(
+            "Only list stories by this author for --list "
+            "(default: $STORYCREATOR_AUTHOR, otherwise all authors)"
+        ),
+    )
+    parser.add_argument(
+        "--source",
+        default=DEFAULT_CREATION_SOURCE,
+        help=(
+            "creationSource used to pick the newest story when no story id is "
+            f"given (default: {DEFAULT_CREATION_SOURCE})"
+        ),
+    )
+    parser.add_argument(
+        "--api-key-name",
+        default=DEFAULT_CREATED_VIA_KEY_NAME,
+        help=(
+            "createdViaApiKeyName used to pick the newest story when no story id "
+            f"is given (default: {DEFAULT_CREATED_VIA_KEY_NAME})"
         ),
     )
     parser.add_argument(
@@ -794,7 +1245,8 @@ def validate_args(args: argparse.Namespace) -> str | None:
     if not args.api_key:
         return (
             "STORYCREATOR_API_KEY is not set (or pass --api-key). "
-            "Story generation requires the stories:write scope."
+            "Listing/fetching needs the stories:read scope; generation needs "
+            "stories:write."
         )
     if args.timeout <= 0:
         return "--timeout must be greater than 0"
@@ -815,6 +1267,15 @@ def validate_args(args: argparse.Namespace) -> str | None:
         )
     if args.create and args.story_id:
         return "Pass either --create or a story id, not both"
+    if args.list:
+        if args.create or args.story_id:
+            return "--list cannot be combined with --create or a story id"
+        if per_user or args.save_to_mongo:
+            return "--list only reads stories; do not combine it with --all-users/--user-id/--username/--save-to-mongo"
+        if args.limit < 1:
+            return "--limit must be at least 1"
+        if args.page < 1:
+            return "--page must be at least 1"
     return None
 
 
@@ -841,6 +1302,26 @@ def _emit_story(story: dict[str, Any], args: argparse.Namespace) -> None:
                 {
                     "fetched_at": datetime.now(timezone.utc).isoformat(),
                     "story": story,
+                },
+                handle,
+                ensure_ascii=False,
+                indent=2,
+            )
+        log.info("Wrote %s", args.output)
+
+
+def _emit_story_list(result: dict[str, Any], args: argparse.Namespace) -> None:
+    if args.format == "json":
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+    else:
+        print(render_story_list(result), end="")
+
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as handle:
+            json.dump(
+                {
+                    "fetched_at": datetime.now(timezone.utc).isoformat(),
+                    **result,
                 },
                 handle,
                 ensure_ascii=False,
@@ -894,6 +1375,15 @@ def _store_story(
         raise StoryCreatorError(
             f"Story {app_story['id']} contains no sentences — refusing to store it"
         )
+
+    log.info(
+        "Saving to MongoDB (weeklystories): story %s '%s' — %d sentences, "
+        "userId=%s",
+        app_story["id"],
+        _story_label(provider_story),
+        len(app_story["sentences"]),
+        user_id if user_id is not None else "null (global fallback)",
+    )
 
     doc_id, is_new = upsert_weekly_story(db, user_id, app_story)
     action = "inserted" if is_new else "replaced"
@@ -982,15 +1472,69 @@ def run_create(args: argparse.Namespace, topic: str) -> int:
     return 0
 
 
-def run_fetch(args: argparse.Namespace) -> int:
-    story_id = (
-        args.story_id
-        or os.environ.get("STORYCREATOR_STORY_ID")
-        or DEFAULT_STORY_ID
+def run_list(args: argparse.Namespace) -> int:
+    try:
+        result = list_stories(
+            api_url=args.api_url,
+            api_key=args.api_key,
+            limit=args.limit,
+            page=args.page,
+            timeout=args.timeout,
+            author=args.author,
+        )
+    except StoryCreatorError as exc:
+        log.error("%s", exc)
+        return EXIT_NOT_FOUND if exc.status_code == 404 else EXIT_API_ERROR
+
+    _emit_story_list(result, args)
+    return 0
+
+
+def _resolve_story_id(args: argparse.Namespace) -> str:
+    """Returns the story id to fetch: explicit id, env var, or newest API story."""
+    explicit = (
+        args.story_id or os.environ.get("STORYCREATOR_STORY_ID") or ""
     ).strip()
+    if explicit:
+        log.info("Using explicit story id: %s", explicit)
+        return explicit
+
+    log.info(
+        "No story id given — looking up the newest story "
+        "(creationSource=%s, createdViaApiKeyName=%s)",
+        args.source,
+        args.api_key_name,
+    )
+    story = find_latest_story(
+        api_url=args.api_url,
+        api_key=args.api_key,
+        timeout=args.timeout,
+        source=args.source,
+        api_key_name=args.api_key_name,
+        author=args.author,
+    )
+    if story is None:
+        raise StoryCreatorError(
+            "No story id was given and no story matching "
+            f"creationSource={args.source!r} / "
+            f"createdViaApiKeyName={args.api_key_name!r} was found"
+        )
+
+    story_id = str(story.get("id") or story.get("_id") or "").strip()
     if not story_id:
-        log.error("A story id is required (positional argument or $STORYCREATOR_STORY_ID)")
-        return EXIT_API_ERROR
+        raise StoryCreatorError(
+            "The newest matching story has no id in the list response"
+        )
+    log.info("Using newest %s story: %s", args.api_key_name, story_id)
+    return story_id
+
+
+def run_fetch(args: argparse.Namespace) -> int:
+    try:
+        story_id = _resolve_story_id(args)
+    except StoryCreatorError as exc:
+        log.error("%s", exc)
+        return EXIT_NOT_FOUND if exc.status_code == 404 else EXIT_API_ERROR
 
     try:
         story = fetch_story(
@@ -1003,12 +1547,27 @@ def run_fetch(args: argparse.Namespace) -> int:
         log.error("%s", exc)
         return EXIT_NOT_FOUND if exc.status_code == 404 else EXIT_API_ERROR
 
+    status = story.get("status") if isinstance(story.get("status"), dict) else {}
+    log.info(
+        "Story detail: id=%s | title=%r | state=%s | createdVia=%s/%s | "
+        "%d sentences",
+        story_id,
+        _story_label(story),
+        status.get("state") or "unknown",
+        story.get("creationSource") or "?",
+        story.get("createdViaApiKeyName") or "?",
+        _sentence_count(story),
+    )
+
     if args.save_to_mongo:
+        log.info("Storing story %s in MongoDB (--save-to-mongo)", story_id)
         client, db = connect_db()
         try:
             _store_story(args, db, None, story, args.topic)
         finally:
             client.close()
+    else:
+        log.info("Not saving to MongoDB (--save-to-mongo not set)")
 
     _emit_story(story, args)
     return 0
@@ -1023,6 +1582,9 @@ def main() -> int:
         return EXIT_API_ERROR
 
     try:
+        if args.list:
+            return run_list(args)
+
         fallback_topic = _load_fallback_topic(args)
 
         if args.all_users or args.user_id or args.username:

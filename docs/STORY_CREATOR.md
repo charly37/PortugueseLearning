@@ -18,6 +18,8 @@ agent. `StoryCreatorGetter.py` calls the external **StoryCreator public API**
 ```
 StoryCreatorGetter.py
   ├── resolve_users(db, args)          ← finds target users in MongoDB
+  ├── list_stories(...)                ← GET /api/v1/stories?author=&limit=20&page=1
+  ├── find_latest_story(...)           ← newest creationSource=api + createdViaApiKeyName=DialectHubWrite
   ├── create_story(...)                ← POST /api/v1/stories (AI generation)
   ├── wait_for_story(...)              ← polls GET /api/v1/stories/:id until ready
   ├── to_app_story(...)                ← converts lang1/lang2 → pt/fr schema
@@ -44,7 +46,8 @@ pip install -r story_writter/requirements.txt
 | `STORYCREATOR_API_KEY` | all runs | API key; needs `stories:write` to generate, `stories:read` to fetch |
 | `STORYCREATOR_API_URL` | all runs | Base URL (default `http://localhost:3000`) |
 | `MONGODB_URI` | storage | MongoDB Atlas connection string |
-| `STORYCREATOR_STORY_ID` | fetch mode | Default story id when none is passed |
+| `STORYCREATOR_STORY_ID` | fetch mode | Explicit story id; overrides the automatic lookup |
+| `STORYCREATOR_AUTHOR` | list mode | Default `--author` filter when none is passed |
 
 ## Local Development
 
@@ -59,8 +62,20 @@ python StoryCreatorGetter.py --create --topic "food" --level beginner
 # Generate and store as the global (userId=null) fallback
 python StoryCreatorGetter.py --create --topic "food" --save-to-mongo
 
-# Read an existing story
+# Read the newest story created through the DialectHubWrite API key
+python StoryCreatorGetter.py
+
+# Read a specific story
 python StoryCreatorGetter.py 6ad3da2d233a762967c9e718
+
+# List the 20 most recent stories (read-only)
+python StoryCreatorGetter.py --list
+
+# List only your own stories
+python StoryCreatorGetter.py --list --author charly --limit 50
+
+# List page 2 with 50 stories per page, as JSON
+python StoryCreatorGetter.py --list --limit 50 --page 2 --format json
 
 # Save an existing story into MongoDB
 python StoryCreatorGetter.py 6ad3da2d233a762967c9e718 --save-to-mongo
@@ -70,8 +85,14 @@ python StoryCreatorGetter.py 6ad3da2d233a762967c9e718 --save-to-mongo
 
 | Flag | Default | Description |
 |------|---------|-------------|
-| `story_id` | _(generate/fetch default)_ | Existing story id to fetch instead of generating |
+| `story_id` | _newest API story_ | Existing story id to fetch. When omitted, `$STORYCREATOR_STORY_ID` is used if set, otherwise the newest story with `creationSource=api` and `createdViaApiKeyName=DialectHubWrite` |
 | `--create` | `False` | Generate a new story (requires `stories:write`) |
+| `--list` | `False` | List stories via `GET /api/v1/stories?limit=&page=&author=` |
+| `--limit` | `20` | Stories per page for `--list` |
+| `--page` | `1` | Page number for `--list` |
+| `--author` | `$STORYCREATOR_AUTHOR` | Only list stories by this author |
+| `--source` | `api` | `creationSource` used to pick the newest story for fetching |
+| `--api-key-name` | `DialectHubWrite` | `createdViaApiKeyName` used to pick the newest story for fetching |
 | `--level` | `beginner` | `beginner` \| `intermediate` \| `advanced` |
 | `--topic` | _(empty)_ | Topic/seed for the generated story |
 | `--topic-file` | `story_topic.txt` | Fallback topic when `--topic` is empty and a user has no `storyTopic` |
@@ -141,6 +162,51 @@ Stories are stored under `weeklystories.story`:
 
 API fields are mapped as follows: the API's `learningLanguage` side becomes `pt`, the
 `nativeLanguage` side becomes `fr`, and every chapter's sentences are flattened in order.
+
+## Automatic story selection (fetch mode)
+
+When no story id is passed, the script lists the catalogue
+(`GET /api/v1/stories?limit=50&page=1`) and keeps only stories with:
+
+```json
+{"creationSource": "api", "createdViaApiKeyName": "DialectHubWrite"}
+```
+
+It then picks the most recent one (by `createdAt`) and fetches its full detail with
+`GET /api/v1/stories/{id}`. Override the filters with `--source` / `--api-key-name`, or
+skip the lookup entirely by passing an id (`python StoryCreatorGetter.py <id>` or
+`STORYCREATOR_STORY_ID`).
+
+### Execution log
+
+A fetch logs every candidate story and the final choice, so the selection is auditable:
+
+```
+INFO No story id given — looking up the newest story (creationSource=api, createdViaApiKeyName=DialectHubWrite)
+INFO Scanning story catalogue: page=1, limit=50, creationSource='api', createdViaApiKeyName='DialectHubWrite'
+INFO Fetched 4 story/stories (page=1, limit=50)
+INFO Candidate 1/4: id=web-1 | title='Web' | createdAt=2026-10-18T10:00:00Z | creationSource='website' | createdViaApiKeyName='DialectHubWrite' -> SKIPPED (creationSource 'website' != 'api')
+INFO Candidate 2/4: id=old-api | title='Old' | createdAt=2026-10-01T10:00:00Z | creationSource='api' | createdViaApiKeyName='DialectHubWrite' -> MATCH (newest so far)
+INFO Candidate 3/4: id=other-key | title='K' | createdAt=2026-10-17T10:00:00Z | creationSource='api' | createdViaApiKeyName='SomeoneElse' -> SKIPPED (createdViaApiKeyName 'SomeoneElse' != 'DialectHubWrite')
+INFO Candidate 4/4: id=new-api | title='New / Nouveau' | createdAt=2026-10-15T10:00:00Z | creationSource='api' | createdViaApiKeyName='DialectHubWrite' -> MATCH (newest so far)
+INFO Page 1: 4 story/stories returned, 2 match the filter
+INFO --- Story selection summary ---
+INFO Stories scanned     : 4
+INFO Stories matched     : 2
+INFO Selected story id   : new-api
+INFO Selected story title: New / Nouveau
+INFO Selected story date : 2026-10-15T10:00:00Z
+INFO creationSource      : api
+INFO createdViaApiKeyName: DialectHubWrite
+INFO Generation state    : ready
+INFO Sentences           : 24
+INFO Using newest DialectHubWrite story: new-api
+INFO Story detail: id=new-api | title='New / Nouveau' | state=ready | createdVia=api/DialectHubWrite | 24 sentences
+INFO Not saving to MongoDB (--save-to-mongo not set)
+```
+
+With `--save-to-mongo` it instead logs `Storing story <id> in MongoDB` and then the
+`weeklystories` document id, title, sentence count, and target `userId`.
 
 ## Kubernetes CronJob
 
