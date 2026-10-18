@@ -1,5 +1,8 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
+import logger from '../logger';
+
+const log = logger.child({ module: 'weekly-story' });
 
 const router = express.Router();
 
@@ -56,7 +59,7 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       story: doc.story,
     });
   } catch (error) {
-    console.error('Error fetching weekly story:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'fetch weekly story failed');
     return res.status(500).json({ message: 'Internal server error' });
   }
 });

@@ -1,9 +1,12 @@
-import express, { Request, Response } from 'express';
+// Must stay first: loads .env/.env.test before any module reads process.env.
+import './config/env';
+
+import express, { NextFunction, Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
-import dotenv from 'dotenv';
+import logger from './logger';
 import connectDB from './config/database';
 import { initCache, startCacheRefresh, getWordChallenges, getVerbChallenges, getIdiomChallenges } from './challengeCache';
 import authRoutes from './routes/auth';
@@ -12,10 +15,7 @@ import weeklyChallengeRoutes from './routes/weeklyChallenge';
 import weeklyStoryRoutes from './routes/weeklyStory';
 import { metricsHandler } from './routes/metrics';
 
-// Load environment variables
-// In test mode, use .env.test; otherwise use .env
-const envFile = process.env.NODE_ENV === 'test' ? '.env.test' : '.env';
-dotenv.config({ path: envFile });
+const log = logger.child({ module: 'server' });
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3000', 10);
@@ -26,10 +26,10 @@ connectDB().then(async () => {
   startCacheRefresh();
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on http://0.0.0.0:${PORT}`);
+    log.info({ port: PORT }, 'server listening');
   });
 }).catch(err => {
-  console.error('[server] Failed to initialise:', err);
+  log.fatal({ err }, 'failed to initialise');
   process.exit(1);
 });
 
@@ -79,13 +79,12 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Serve audio files from the sounds directory
 const soundsPath = path.join(__dirname, '../sounds');
-console.log(`Serving basic audio files from: ${soundsPath}`);
+log.info({ path: soundsPath }, 'serving basic audio files');
 app.use('/sounds', express.static(soundsPath));
 
 // Serve weekly lesson MP3 files - let s make it configurable via environment variable and helm values
 const audioPath = process.env.AUDIO_PATH || path.join(__dirname, '../weekly-audio');
-//print a log message on startup to confirm the audio path being used
-console.log(`Serving weekly audio files from: ${audioPath}`);
+log.info({ path: audioPath }, 'serving weekly audio files');
 app.use('/weekly-audio', express.static(audioPath));
 
 
@@ -160,4 +159,24 @@ app.get('/metrics', metricsHandler);
 // Serve the React app for all other routes
 app.get('/{*path}', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+// Central error handler - must be registered after all routes.
+// Logs the error once as structured JSON and never leaks internals to the client.
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  log.error(
+    {
+      err,
+      method: req.method,
+      url: req.originalUrl,
+      userId: req.session?.userId,
+    },
+    'unhandled route error'
+  );
+
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  res.status(500).json({ message: 'Internal server error' });
 });

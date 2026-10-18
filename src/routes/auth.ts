@@ -1,5 +1,8 @@
 import express, { Request, Response } from 'express';
 import User from '../models/User';
+import logger from '../logger';
+
+const log = logger.child({ module: 'auth' });
 
 const router = express.Router();
 
@@ -65,7 +68,7 @@ router.post('/register', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Registration error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'registration failed');
     res.status(500).json({ message: 'Server error during registration' });
   }
 });
@@ -110,7 +113,7 @@ router.post('/login', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Login error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'login failed');
     res.status(500).json({ message: 'Server error during login' });
   }
 });
@@ -156,7 +159,7 @@ router.get('/check-auth', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Check auth error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'check auth failed');
     res.status(500).json({ message: 'Server error checking authentication' });
   }
 });
@@ -201,7 +204,7 @@ router.post('/update-language', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Update language error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'update language preference failed');
     res.status(500).json({ message: 'Server error updating language' });
   }
 });
@@ -246,7 +249,7 @@ router.post('/update-mobile-friendly', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Update mobile-friendly error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'update mobile-friendly preference failed');
     res.status(500).json({ message: 'Server error updating mobile-friendly preference' });
   }
 });
@@ -291,7 +294,7 @@ router.post('/update-practice-mode', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Update practice mode error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'update practice mode preference failed');
     res.status(500).json({ message: 'Server error updating practice mode preference' });
   }
 });
@@ -339,7 +342,7 @@ router.post('/create-guest', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Create guest error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'create guest failed');
     res.status(500).json({ message: 'Server error creating guest account' });
   }
 });
@@ -389,7 +392,7 @@ router.post('/restore-guest', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Restore guest error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'restore guest failed');
     res.status(500).json({ message: 'Server error restoring guest session' });
   }
 });
@@ -466,7 +469,7 @@ router.post('/register-from-guest', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Register from guest error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'register from guest failed');
     res.status(500).json({ message: 'Server error during registration' });
   }
 });
@@ -511,7 +514,7 @@ router.post('/update-story-topic', async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Update story topic error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'update story topic failed');
     res.status(500).json({ message: 'Server error updating story topic' });
   }
 });

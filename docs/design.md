@@ -356,6 +356,47 @@ log = logging.getLogger(__name__)
 
 Use `log.info`, `log.warning`, and `log.error` throughout — never `print`. The only acceptable exception is when a script intentionally writes machine-readable data (e.g. raw JSON) to stdout for piping; that case must be commented explaining why `print` is used.
 
+### Node.js Backend Logging Convention (pino)
+
+The Express backend (`src/`) logs with [`pino`](https://getpino.io) and writes **one JSON object per line to stdout**. Docker and Kubernetes capture that stream, and the cluster log collector forwards it to VictoriaLogs. The application writes no log files, and the Helm chart does not deploy VictoriaLogs or a log collector.
+
+**Rules:**
+
+- Never use `console.log` / `console.error` in backend code — use the shared logger in `src/logger.ts`.
+- Create a module-scoped child logger: `const log = logger.child({ module: 'auth' });`
+- Pass errors as `{ err }` so the serializer expands them:
+
+  ```ts
+  log.error({ err: error, userId: req.session?.userId }, 'login failed');
+  ```
+
+- Log context as structured fields, not interpolated into the message. This keeps messages stable and lets LogsQL filter or aggregate on fields.
+- Never log secrets or request bodies (passwords, cookies, connection strings).
+
+**Output shape:**
+
+```json
+{"level":"info","time":"2026-10-18T12:34:56.789Z","service":"portuguese-learning","env":"production","module":"database","host":"cluster0.mongodb.net","db":"portuguese","msg":"MongoDB connected"}
+```
+
+| Field | Meaning |
+|---|---|
+| `time` | ISO 8601 timestamp |
+| `level` | `fatal`, `error`, `warn`, `info`, `debug` or `trace` (string, not numeric) |
+| `msg` | Message; pino's default key matches the collector's `_msg_field=msg` |
+| `service` / `env` / `version` | Base fields added to every line (`version` only when `APP_VERSION` is set) |
+| `err.type`, `err.message`, `err.stack` | VictoriaLogs flattens nested JSON into separate fields |
+
+**Levels:**
+
+| Environment | Default |
+|---|---|
+| production | `info` |
+| development | `info` |
+| test | `silent` |
+
+Override with `LOG_LEVEL` (e.g. `LOG_LEVEL=debug npm run dev`, or `LOG_LEVEL=warn ./run-tests.sh` when debugging tests). In Kubernetes the value comes from `app.logLevel` in `helm/portuguese-learning/values.yaml`. Invalid values fall back to the environment default and emit a warning.
+
 ### Application Logs
 ```bash
 # App container logs

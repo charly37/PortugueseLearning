@@ -1,6 +1,9 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { getWordChallenges } from '../challengeCache';
+import logger from '../logger';
+
+const log = logger.child({ module: 'weekly-challenge' });
 
 const router = express.Router();
 
@@ -37,7 +40,10 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
     }
     if (!doc && getWordChallenges().length > 0) {
-      console.warn('[weekly-challenge] No global fallback doc found for week %s — auto-creating from cache. Run create_weekly_challenge.py --all-users to fix this.', weekStart.toISOString());
+      log.warn(
+        { weekStart: weekStart.toISOString() },
+        'no global fallback weekly challenge found; auto-creating from cache — run create_weekly_challenge.py --all-users to fix this'
+      );
       const weekEnd = new Date(weekStart);
       weekEnd.setUTCDate(weekEnd.getUTCDate() + 7);
       const shuffled = [...getWordChallenges()].sort(() => Math.random() - 0.5);
@@ -99,7 +105,7 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       audio: doc.audio ?? null,
     });
   } catch (error) {
-    console.error('Error fetching weekly challenge:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'fetch weekly challenge failed');
     return res.status(500).json({ message: 'Internal server error' });
   }
 });
@@ -198,7 +204,7 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
       status: allDone ? 'completed' : updated.status,
     });
   } catch (error) {
-    console.error('Error submitting weekly challenge answer:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'submit weekly challenge answer failed');
     return res.status(500).json({ message: 'Internal server error' });
   }
 });
@@ -241,7 +247,7 @@ router.post('/reset', requireAuth, async (req: Request, res: Response) => {
 
     return res.json({ message: 'Progress reset successfully' });
   } catch (error) {
-    console.error('Error resetting weekly challenge:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'reset weekly challenge failed');
     return res.status(500).json({ message: 'Internal server error' });
   }
 });

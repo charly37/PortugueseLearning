@@ -25,6 +25,8 @@ replicaCount: 1
 app:
   nodeEnv: production
   port: 3000
+  # pino log level: fatal | error | warn | info | debug | trace | silent
+  logLevel: info
 
 # Path on the host node where sounds data files live.
 # Must exist on the k3s node before deploying.

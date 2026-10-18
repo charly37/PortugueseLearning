@@ -1,4 +1,7 @@
 import Challenge, { IChallenge } from './models/Challenge';
+import logger from './logger';
+
+const log = logger.child({ module: 'challenge-cache' });
 
 // Typed cache arrays — replaced atomically on each refresh
 let _wordChallenges: IChallenge[] = [];
@@ -27,10 +30,13 @@ async function loadFromDB(): Promise<void> {
 
 export async function initCache(): Promise<void> {
   await loadFromDB();
-  console.log(
-    `[cache] Loaded ${_wordChallenges.length} word, ` +
-    `${_verbChallenges.length} verb, ` +
-    `${_idiomChallenges.length} idiom challenges from MongoDB`
+  log.info(
+    {
+      word: _wordChallenges.length,
+      verb: _verbChallenges.length,
+      idiom: _idiomChallenges.length,
+    },
+    'challenge cache loaded'
   );
 }
 
@@ -39,9 +45,9 @@ export function startCacheRefresh(intervalMs?: number): void {
   setInterval(async () => {
     try {
       await loadFromDB();
-      console.log(`[cache] Refreshed at ${new Date().toISOString()}`);
+      log.debug('challenge cache refreshed');
     } catch (err) {
-      console.error('[cache] Refresh failed:', err);
+      log.error({ err }, 'challenge cache refresh failed');
     }
   }, ms);
 }

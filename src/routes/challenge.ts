@@ -4,6 +4,9 @@ import ChallengeAttempt from '../models/ChallengeAttempt';
 import UserWordVote from '../models/UserWordVote';
 import ChallengeQualityFlag from '../models/ChallengeQualityFlag';
 import { getWordChallenges, getVerbChallenges, getIdiomChallenges, getAllChallenges } from '../challengeCache';
+import logger from '../logger';
+
+const log = logger.child({ module: 'challenge' });
 
 const router = express.Router();
 
@@ -103,11 +106,17 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
         }
       });
       
-      console.log(`Using ${weakChallengeIds.size} pre-computed weaknesses for user ${userId}, challenge type ${challengeType}`);
+      log.debug(
+        { userId, challengeType, weakCount: weakChallengeIds.size, precomputed: true },
+        'using pre-computed weaknesses'
+      );
     } else {
       // Fallback: Calculate weaknesses on-the-fly if not yet computed by analytics service
       // This uses stricter criteria to match analytics: >=3 attempts, <50% accuracy
-      console.log(`No pre-computed weaknesses found for user ${userId}, calculating on-the-fly...`);
+      log.debug(
+        { userId, challengeType, precomputed: false },
+        'no pre-computed weaknesses; calculating on the fly'
+      );
       
       const weakAreas = await ChallengeAttempt.aggregate([
         { $match: { userId: userId, challengeType: challengeType } },
@@ -188,7 +197,7 @@ router.post('/generate-learn', requireAuth, async (req: Request, res: Response) 
       }
     });
   } catch (error) {
-    console.error('Generate learn set error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'generate learn set failed');
     res.status(500).json({ message: 'Server error generating learn set' });
   }
 });
@@ -256,11 +265,17 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
         }
       });
       
-      console.log(`Using ${weakChallengeIds.size} pre-computed weaknesses for user ${userId}, challenge type ${challengeType}`);
+      log.debug(
+        { userId, challengeType, weakCount: weakChallengeIds.size, precomputed: true },
+        'using pre-computed weaknesses'
+      );
     } else {
       // Fallback: Calculate weaknesses on-the-fly if not yet computed by analytics service
       // This uses stricter criteria to match analytics: >=3 attempts, <50% accuracy
-      console.log(`No pre-computed weaknesses found for user ${userId}, calculating on-the-fly...`);
+      log.debug(
+        { userId, challengeType, precomputed: false },
+        'no pre-computed weaknesses; calculating on the fly'
+      );
       
       const weakAreas = await ChallengeAttempt.aggregate([
         { $match: { userId: userId, challengeType: challengeType } },
@@ -359,7 +374,10 @@ router.post('/generate', requireAuth, async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Generate challenge set error:', error);
+    log.error(
+      { err: error, userId: req.session?.userId, challengeType: req.body?.challengeType },
+      'generate challenge set failed'
+    );
     res.status(500).json({ message: 'Server error generating challenge set' });
   }
 });
@@ -473,7 +491,7 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
       }
     });
   } catch (error) {
-    console.error('Submit challenge error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'submit challenge attempt failed');
     res.status(500).json({ message: 'Server error recording challenge attempt' });
   }
 });
@@ -553,7 +571,7 @@ router.get('/progress', requireAuth, async (req: Request, res: Response) => {
       weaknessesUpdatedAt: user.weaknessesUpdatedAt || null
     });
   } catch (error) {
-    console.error('Get progress error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'get progress failed');
     res.status(500).json({ message: 'Server error retrieving progress' });
   }
 });
@@ -575,7 +593,7 @@ router.get('/history', requireAuth, async (req: Request, res: Response) => {
 
     res.json(attempts);
   } catch (error) {
-    console.error('Get history error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'get history failed');
     res.status(500).json({ message: 'Server error retrieving history' });
   }
 });
@@ -619,7 +637,7 @@ router.get('/weak-areas', requireAuth, async (req: Request, res: Response) => {
 
     res.json(attempts);
   } catch (error) {
-    console.error('Get weak areas error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'get weak areas failed');
     res.status(500).json({ message: 'Server error retrieving weak areas' });
   }
 });
@@ -663,7 +681,10 @@ router.post('/vote-usefulness', requireAuth, async (req: Request, res: Response)
       }
     });
   } catch (error) {
-    console.error('Vote usefulness error:', error);
+    log.error(
+      { err: error, userId: req.session?.userId, challengeId: req.body?.challengeId },
+      'record usefulness vote failed'
+    );
     res.status(500).json({ message: 'Server error recording vote' });
   }
 });
@@ -691,7 +712,7 @@ router.post('/get-votes', requireAuth, async (req: Request, res: Response) => {
 
     res.json({ votes: voteMap });
   } catch (error) {
-    console.error('Get votes error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'get votes failed');
     res.status(500).json({ message: 'Server error retrieving votes' });
   }
 });
@@ -731,7 +752,10 @@ router.post('/flag-quality', requireAuth, async (req: Request, res: Response) =>
       }
     });
   } catch (error) {
-    console.error('Flag quality error:', error);
+    log.error(
+      { err: error, userId: req.session?.userId, challengeId: req.body?.challengeId },
+      'flag challenge quality failed'
+    );
     res.status(500).json({ message: 'Server error recording flag' });
   }
 });
@@ -759,7 +783,7 @@ router.post('/get-quality-flags', requireAuth, async (req: Request, res: Respons
 
     res.json({ flags: flagMap });
   } catch (error) {
-    console.error('Get quality flags error:', error);
+    log.error({ err: error, userId: req.session?.userId }, 'get quality flags failed');
     res.status(500).json({ message: 'Server error retrieving flags' });
   }
 });
