@@ -1,37 +1,35 @@
 #!/usr/bin/env python3
 """
-StoryCreatorGetter.py — create/read a story through the StoryCreator public API
-and persist it to MongoDB for the website.
+StoryCreatorGetter.py — read stories through the StoryCreator public API and
+persist them to MongoDB for the website.
 
-This replaces the local OpenAI generation that used to live in
-StoryCreatorAgent.py / StoryCreatorWrapper.py.
+This script never writes to the StoryCreator API: story generation is handled
+by a separate service/job. Here we only GET the newest existing story and
+distribute it to users.
 
 Modes:
-  1. Generate (default for website runs): `POST /api/v1/stories` asks the
-     StoryCreator service to write the bilingual story, then
-     `GET /api/v1/stories/{id}` is polled until generation finishes.
-     Requires an API key with the `stories:write` scope (paid AI call).
-  2. Fetch: `GET /api/v1/stories/{id}` reads an existing story.
+  1. Fetch: `GET /api/v1/stories/{id}` reads an existing story.
      When no id is passed, the newest story created through the API key
      named `DialectHubWrite` (`creationSource=api`) is looked up via
      `GET /api/v1/stories` and used instead of a hardcoded id.
      Only the `stories:read` scope is needed.
-  3. List: `GET /api/v1/stories?limit=20&page=1` shows the paginated story
-     catalogue (ids, titles, status) without generating anything; add
+  2. List: `GET /api/v1/stories?limit=20&page=1` shows the paginated story
+     catalogue (ids, titles, status) without storing anything; add
      `author=<name>` (CLI: `--author`) to list only that user's stories.
+     Only the `stories:read` scope is needed.
+  3. Per-user batch (`--all-users` / `--user-id` / `--username`): fetches the
+     newest story once (same lookup as mode 1, or an explicit id) and stores
+     a copy for every selected user, plus the `userId=null` global fallback.
      Only the `stories:read` scope is needed.
 
 Stories are converted to the website schema (`title_pt`, `title_fr`,
-`sentences[].pt/.fr`) and upserted into the `weeklystories` MongoDB collection —
-the same place StoryCreatorWrapper.py used, so the website needs no change.
+`sentences[].pt/.fr`) and upserted into the `weeklystories` MongoDB collection.
 
-A write-scoped key receives a `status` block (`generating` / `ready` /
-`failed`) while a story is being generated; published stories are readable by
-any key.
+A story that is still generating is polled via `GET /api/v1/stories/{id}`
+until it is ready; nothing is ever created from this script.
 
 Environment:
-  STORYCREATOR_API_KEY   API key with the `stories:write` scope for generation
-                         (`stories:read` is enough for fetch-only runs)
+  STORYCREATOR_API_KEY   API key with the `stories:read` scope
   STORYCREATOR_API_URL   Base URL of the StoryCreator server
                          (default: http://localhost:3000)
   STORYCREATOR_AUTHOR    Default author filter for --list (optional)
@@ -79,11 +77,7 @@ _configure_logging()
 log = logging.getLogger("storycreator-getter")
 
 DEFAULT_API_URL = "http://localhost:3000"
-DEFAULT_MODEL = "gpt-4o-mini"
-DEFAULT_NATIVE_LANGUAGE = "fr"
 DEFAULT_LEARNING_LANGUAGE = "pt"
-DEFAULT_CHAPTERS = 3
-DEFAULT_SENTENCES_PER_CHAPTER = 8
 DEFAULT_POLL_INTERVAL = 5.0
 DEFAULT_GENERATION_TIMEOUT = 900.0
 DEFAULT_LIST_LIMIT = 20
@@ -469,114 +463,6 @@ def find_latest_story(
     return newest
 
 
-def build_create_payload(
-    *,
-    title: str,
-    native_language: str,
-    learning_language: str,
-    level: str,
-    topic: str,
-    model: str,
-    chapters: int,
-    sentences_per_chapter: int,
-    guideline: str,
-) -> dict[str, Any]:
-    """Builds the body for `POST /api/v1/stories` (mirrors the website editor)."""
-    chapter_specs = [
-        {
-            "title": {"lang1": "", "lang2": ""},
-            "seed": "",
-            "targetSentences": sentences_per_chapter,
-        }
-        for _ in range(chapters)
-    ]
-
-    return {
-        # The StoryCreator AI fills any missing title/translation.
-        "title": {"lang1": title, "lang2": ""},
-        "nativeLanguage": native_language,
-        "learningLanguage": learning_language,
-        "level": level,
-        "labels": [topic] if topic else [],
-        "seed": topic,
-        "aiModel": model,
-        "aiGuideline": guideline,
-        "characters": [],
-        "targetChapters": chapters,
-        "chapters": chapter_specs,
-    }
-
-
-def create_story(
-    *,
-    api_url: str,
-    api_key: str,
-    native_language: str,
-    learning_language: str,
-    level: str,
-    topic: str,
-    title: str,
-    model: str,
-    chapters: int,
-    sentences_per_chapter: int,
-    guideline: str,
-    timeout: float,
-) -> dict[str, Any]:
-    """Creates and generates a story; returns the `data` object (with an id)."""
-    payload = build_create_payload(
-        title=title,
-        native_language=native_language,
-        learning_language=learning_language,
-        level=level,
-        topic=topic,
-        model=model,
-        chapters=chapters,
-        sentences_per_chapter=sentences_per_chapter,
-        guideline=guideline,
-    )
-
-    try:
-        with _client(api_url=api_url, api_key=api_key, timeout=timeout) as client:
-            response = client.post("/api/v1/stories", json=payload)
-    except httpx.HTTPError as exc:
-        raise StoryCreatorError(f"Could not reach {api_url}: {exc}") from exc
-
-    if response.status_code == 401:
-        raise StoryCreatorError(
-            "The StoryCreator API key was rejected — check STORYCREATOR_API_KEY",
-            status_code=401,
-        )
-    if response.status_code not in (200, 201, 202):
-        raise StoryCreatorError(
-            f"Could not create story — {_format_api_error(response)}",
-            status_code=response.status_code,
-        )
-
-    try:
-        body = response.json()
-    except ValueError as exc:
-        raise StoryCreatorError(
-            f"Unexpected create response: {response.text[:300]}"
-        ) from exc
-
-    data = body.get("data") if isinstance(body, dict) else None
-    if not isinstance(data, dict):
-        data = body if isinstance(body, dict) else None
-    if not isinstance(data, dict):
-        raise StoryCreatorError(f"Unexpected create response: {response.text[:300]}")
-
-    story_id = data.get("id") or data.get("_id")
-    if not story_id:
-        raise StoryCreatorError(
-            f"Create response contains no story id: {response.text[:300]}"
-        )
-
-    data.setdefault("id", story_id)
-    state = _story_state(data) or "unknown"
-    log.info("Story %s created (state=%s)", story_id, state)
-    return data
-
-
 def _story_state(story: dict[str, Any]) -> str:
     status = story.get("status")
     if isinstance(status, dict):
@@ -608,7 +494,7 @@ def wait_for_story(
     generation_timeout: float,
     poll_interval: float,
 ) -> dict[str, Any]:
-    """Polls until generation finishes and returns the complete story."""
+    """Polls until the story is ready and returns the complete story."""
     deadline = time.monotonic() + generation_timeout
     attempt = 0
 
@@ -676,7 +562,6 @@ def _pair_texts(entry: dict[str, Any], learning_language: str) -> tuple[str, str
 def to_app_story(
     story: dict[str, Any],
     *,
-    topic: str = "",
     level: str = "beginner",
 ) -> dict[str, Any]:
     """Converts a StoryCreator API story to the `weeklystories.story` schema."""
@@ -712,7 +597,7 @@ def to_app_story(
                 sentences.append({"pt": pt, "fr": fr})
 
     labels = story.get("labels") if isinstance(story.get("labels"), list) else []
-    resolved_topic = topic.strip() or ", ".join(str(label) for label in labels)
+    resolved_topic = ", ".join(str(label) for label in labels)
 
     created_at = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     raw_created = story.get("createdAt")
@@ -1014,9 +899,9 @@ def render_story(story: dict[str, Any]) -> str:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "List (GET /api/v1/stories), generate (POST /api/v1/stories) or read "
-            "(GET /api/v1/stories/:id) StoryCreator stories and optionally upsert "
-            "one into the website's weeklystories MongoDB collection."
+            "List (GET /api/v1/stories) or read (GET /api/v1/stories/:id) "
+            "StoryCreator stories and optionally upsert one into the website's "
+            "weeklystories MongoDB collection. Stories are never created here."
         )
     )
     parser.add_argument(
@@ -1027,14 +912,6 @@ def build_parser() -> argparse.ArgumentParser:
             "Existing story id to fetch. When omitted, $STORYCREATOR_STORY_ID is "
             "used if set, otherwise the newest story created via the "
             f"{DEFAULT_CREATED_VIA_KEY_NAME} API key (creationSource=api)"
-        ),
-    )
-    parser.add_argument(
-        "--create",
-        action="store_true",
-        help=(
-            "Generate a new story through the StoryCreator API "
-            "(requires an API key with the stories:write scope)"
         ),
     )
     parser.add_argument(
@@ -1090,8 +967,8 @@ def build_parser() -> argparse.ArgumentParser:
         "--api-key",
         default=os.environ.get("STORYCREATOR_API_KEY", ""),
         help=(
-            "API key with the stories:write (generation) or stories:read (fetch) "
-            "scope (default: $STORYCREATOR_API_KEY)"
+            "API key with the stories:read scope "
+            "(default: $STORYCREATOR_API_KEY)"
         ),
     )
     parser.add_argument(
@@ -1112,77 +989,30 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional path to write the full API story as JSON",
     )
 
-    # Story generation options -------------------------------------------------
+    # Story metadata + waiting options -------------------------------------------
     parser.add_argument(
         "--level",
         choices=["beginner", "intermediate", "advanced"],
         default="beginner",
-        help="Difficulty level of the generated story (default: beginner)",
-    )
-    parser.add_argument(
-        "--topic",
-        default="",
-        help="Topic/seed for the generated story (overrides --topic-file)",
-    )
-    parser.add_argument(
-        "--topic-file",
-        default="story_topic.txt",
         help=(
-            "Fallback topic file used when a user has no storyTopic and --topic "
-            "is empty (default: story_topic.txt)"
+            "Level stored with the story when the API story has none "
+            "(default: beginner)"
         ),
-    )
-    parser.add_argument(
-        "--title",
-        default="",
-        help="Optional title hint; the provider translates/fills it when empty",
-    )
-    parser.add_argument(
-        "--model",
-        default=DEFAULT_MODEL,
-        help=f"StoryCreator AI model (default: {DEFAULT_MODEL})",
-    )
-    parser.add_argument(
-        "--native-language",
-        default=DEFAULT_NATIVE_LANGUAGE,
-        help=f"Native language, i.e. the translation language (default: {DEFAULT_NATIVE_LANGUAGE})",
-    )
-    parser.add_argument(
-        "--learning-language",
-        default=DEFAULT_LEARNING_LANGUAGE,
-        help=f"Learning language, i.e. the story language (default: {DEFAULT_LEARNING_LANGUAGE})",
-    )
-    parser.add_argument(
-        "--chapters",
-        type=int,
-        default=DEFAULT_CHAPTERS,
-        help=f"Number of chapters to generate (default: {DEFAULT_CHAPTERS})",
-    )
-    parser.add_argument(
-        "--sentences-per-chapter",
-        type=int,
-        default=DEFAULT_SENTENCES_PER_CHAPTER,
-        help=(
-            "Target sentences per chapter "
-            f"(default: {DEFAULT_SENTENCES_PER_CHAPTER})"
-        ),
-    )
-    parser.add_argument(
-        "--guideline",
-        default="",
-        help="Optional writing guideline sent to the AI (aiGuideline)",
     )
     parser.add_argument(
         "--generation-timeout",
         type=float,
         default=DEFAULT_GENERATION_TIMEOUT,
-        help=f"Max seconds to wait for generation (default: {DEFAULT_GENERATION_TIMEOUT:.0f})",
+        help=(
+            "Max seconds to wait for a story that is still generating "
+            f"(default: {DEFAULT_GENERATION_TIMEOUT:.0f})"
+        ),
     )
     parser.add_argument(
         "--poll-interval",
         type=float,
         default=DEFAULT_POLL_INTERVAL,
-        help=f"Seconds between generation status polls (default: {DEFAULT_POLL_INTERVAL:.0f})",
+        help=f"Seconds between status polls (default: {DEFAULT_POLL_INTERVAL:.0f})",
     )
 
     # Persistence / target users ----------------------------------------------
@@ -1200,53 +1030,30 @@ def build_parser() -> argparse.ArgumentParser:
     user_group.add_argument(
         "--all-users",
         action="store_true",
-        help="Generate and store one story per registered (non-guest) user",
+        help=(
+            "Fetch the most recent existing story and store it for every "
+            "registered (non-guest) user"
+        ),
     )
     user_group.add_argument(
         "--user-id",
         default=None,
-        help="MongoDB _id of a specific user to generate and store a story for",
+        help="MongoDB _id of a specific user to store the most recent story for",
     )
     user_group.add_argument(
         "--username",
         default=None,
-        help="Username of a specific user to generate and store a story for",
+        help="Username of a specific user to store the most recent story for",
     )
 
     return parser
-
-
-def _load_fallback_topic(args: argparse.Namespace) -> str:
-    """Return --topic, else the contents of --topic-file, else an empty string."""
-    if args.topic:
-        topic = args.topic.strip()
-        log.info("Using topic from --topic: %s", topic)
-        return topic
-
-    topic_file = args.topic_file
-    if not topic_file or not os.path.exists(topic_file):
-        log.info(
-            "Topic file '%s' not found — the provider will choose a topic.",
-            topic_file,
-        )
-        return ""
-
-    with open(topic_file, "r", encoding="utf-8") as handle:
-        topic = handle.read().strip()
-
-    if topic:
-        log.info("Fallback topic loaded from '%s': %s", topic_file, topic)
-    else:
-        log.info("Topic file '%s' is empty — provider chooses the topic.", topic_file)
-    return topic
 
 
 def validate_args(args: argparse.Namespace) -> str | None:
     if not args.api_key:
         return (
             "STORYCREATOR_API_KEY is not set (or pass --api-key). "
-            "Listing/fetching needs the stories:read scope; generation needs "
-            "stories:write."
+            "Listing and fetching need the stories:read scope."
         )
     if args.timeout <= 0:
         return "--timeout must be greater than 0"
@@ -1254,22 +1061,11 @@ def validate_args(args: argparse.Namespace) -> str | None:
         return "--generation-timeout must be greater than 0"
     if args.poll_interval <= 0:
         return "--poll-interval must be greater than 0"
-    if args.chapters < 1:
-        return "--chapters must be at least 1"
-    if args.sentences_per_chapter < 1:
-        return "--sentences-per-chapter must be at least 1"
 
     per_user = args.all_users or args.user_id or args.username
-    if per_user and args.story_id:
-        return (
-            "--all-users/--user-id/--username generate new stories; "
-            "do not also pass a story id"
-        )
-    if args.create and args.story_id:
-        return "Pass either --create or a story id, not both"
     if args.list:
-        if args.create or args.story_id:
-            return "--list cannot be combined with --create or a story id"
+        if args.story_id:
+            return "--list cannot be combined with a story id"
         if per_user or args.save_to_mongo:
             return "--list only reads stories; do not combine it with --all-users/--user-id/--username/--save-to-mongo"
         if args.limit < 1:
@@ -1330,47 +1126,17 @@ def _emit_story_list(result: dict[str, Any], args: argparse.Namespace) -> None:
         log.info("Wrote %s", args.output)
 
 
-def _generate_provider_story(args: argparse.Namespace, topic: str) -> dict[str, Any]:
-    """Ask the external service to write a story and wait until it is ready."""
-    created = create_story(
-        api_url=args.api_url,
-        api_key=args.api_key,
-        native_language=args.native_language,
-        learning_language=args.learning_language,
-        level=args.level,
-        topic=topic,
-        title=args.title,
-        model=args.model,
-        chapters=args.chapters,
-        sentences_per_chapter=args.sentences_per_chapter,
-        guideline=args.guideline,
-        timeout=args.timeout,
-    )
-
-    story_id = str(created.get("id") or created.get("_id"))
-    log.info("Waiting for story %s to finish generating...", story_id)
-    return wait_for_story(
-        api_url=args.api_url,
-        api_key=args.api_key,
-        story_id=story_id,
-        timeout=args.timeout,
-        generation_timeout=args.generation_timeout,
-        poll_interval=args.poll_interval,
-    )
-
-
 def _store_story(
     args: argparse.Namespace,
     db,
     user_id: str | None,
     provider_story: dict[str, Any],
-    topic: str,
 ) -> tuple[dict[str, Any], bool]:
     """Convert to the website schema and upsert into weeklystories.
 
     Returns (story, was_new_insert).
     """
-    app_story = to_app_story(provider_story, topic=topic, level=args.level)
+    app_story = to_app_story(provider_story, level=args.level)
     if not app_story["sentences"]:
         raise StoryCreatorError(
             f"Story {app_story['id']} contains no sentences — refusing to store it"
@@ -1398,17 +1164,46 @@ def _store_story(
     return app_story, is_new
 
 
-def _generate_and_store(
-    args: argparse.Namespace,
-    db,
-    user_id: str | None,
-    topic: str,
-) -> tuple[dict[str, Any], bool]:
-    provider_story = _generate_provider_story(args, topic)
-    return _store_story(args, db, user_id, provider_story, topic)
+def _fetch_latest_story(args: argparse.Namespace) -> dict[str, Any]:
+    """Fetches the most recent story (explicit id, env var, or newest match)."""
+    story_id = _resolve_story_id(args)
+    story = fetch_story(
+        api_url=args.api_url,
+        api_key=args.api_key,
+        story_id=story_id,
+        timeout=args.timeout,
+    )
+
+    state = _story_state(story)
+    if state in FAILED_STATES:
+        status = story.get("status") if isinstance(story.get("status"), dict) else {}
+        raise StoryCreatorError(
+            f"Story {story_id} failed generation: "
+            f"{status.get('generationError') or 'unknown error'}"
+        )
+    if state in PENDING_STATES:
+        log.info(
+            "Story %s is still %s — waiting for generation to finish",
+            story_id,
+            state,
+        )
+        story = wait_for_story(
+            api_url=args.api_url,
+            api_key=args.api_key,
+            story_id=story_id,
+            timeout=args.timeout,
+            generation_timeout=args.generation_timeout,
+            poll_interval=args.poll_interval,
+        )
+    return story
 
 
-def run_per_users(args: argparse.Namespace, fallback_topic: str) -> int:
+def run_per_users(args: argparse.Namespace) -> int:
+    """Store the most recent existing story for each selected user.
+
+    Nothing is generated: the newest story is fetched once and copied into
+    every user's `weeklystories` document, plus the userId=null fallback.
+    """
     client, db = connect_db()
     stats = CreationStats()
 
@@ -1419,20 +1214,26 @@ def run_per_users(args: argparse.Namespace, fallback_topic: str) -> int:
             log.error("No users found — nothing to do.")
             return EXIT_API_ERROR
 
-        log.info("Generating stories for %d user(s)...", len(users))
+        try:
+            provider_story = _fetch_latest_story(args)
+        except StoryCreatorError as exc:
+            log.error("Could not fetch the most recent story: %s", exc)
+            return EXIT_NOT_FOUND if exc.status_code == 404 else EXIT_API_ERROR
+
+        log.info(
+            "Using most recent story %s ('%s') for %d user(s)",
+            provider_story.get("id") or "?",
+            _story_label(provider_story),
+            len(users),
+        )
+
         for user_doc in users:
             user_id = str(user_doc["_id"])
             username = user_doc.get("username", user_id)
-            topic = (user_doc.get("storyTopic") or "").strip() or fallback_topic
 
-            if topic:
-                log.info("User '%s': topic = %s", username, topic)
-            else:
-                log.info("User '%s': no topic set — provider will pick one", username)
-
-            log.info("\n%s\nGenerating story for user: %s\n%s", "=" * 60, username, "=" * 60)
+            log.info("\n%s\nStoring story for user: %s\n%s", "=" * 60, username, "=" * 60)
             try:
-                _, is_new = _generate_and_store(args, db, user_id, topic)
+                _, is_new = _store_story(args, db, user_id, provider_story)
                 if is_new:
                     stats.users_created += 1
                 else:
@@ -1441,9 +1242,9 @@ def run_per_users(args: argparse.Namespace, fallback_topic: str) -> int:
                 stats.users_failed += 1
                 log.error("%s — failed: %s: %s", username, type(exc).__name__, exc)
 
-        log.info("Creating global fallback story (userId=null)...")
+        log.info("Storing global fallback story (userId=null)...")
         try:
-            _generate_and_store(args, db, None, fallback_topic)
+            _store_story(args, db, None, provider_story)
             stats.fallback_ok = True
         except Exception:
             stats.fallback_failed = True
@@ -1456,20 +1257,6 @@ def run_per_users(args: argparse.Namespace, fallback_topic: str) -> int:
         client.close()
 
     return EXIT_API_ERROR if stats.users_failed else 0
-
-
-def run_create(args: argparse.Namespace, topic: str) -> int:
-    provider_story = _generate_provider_story(args, topic)
-
-    if args.save_to_mongo:
-        client, db = connect_db()
-        try:
-            _store_story(args, db, None, provider_story, topic)
-        finally:
-            client.close()
-
-    _emit_story(provider_story, args)
-    return 0
 
 
 def run_list(args: argparse.Namespace) -> int:
@@ -1531,22 +1318,12 @@ def _resolve_story_id(args: argparse.Namespace) -> str:
 
 def run_fetch(args: argparse.Namespace) -> int:
     try:
-        story_id = _resolve_story_id(args)
+        story = _fetch_latest_story(args)
     except StoryCreatorError as exc:
         log.error("%s", exc)
         return EXIT_NOT_FOUND if exc.status_code == 404 else EXIT_API_ERROR
 
-    try:
-        story = fetch_story(
-            api_url=args.api_url,
-            api_key=args.api_key,
-            story_id=story_id,
-            timeout=args.timeout,
-        )
-    except StoryCreatorError as exc:
-        log.error("%s", exc)
-        return EXIT_NOT_FOUND if exc.status_code == 404 else EXIT_API_ERROR
-
+    story_id = story.get("id") or "?"
     status = story.get("status") if isinstance(story.get("status"), dict) else {}
     log.info(
         "Story detail: id=%s | title=%r | state=%s | createdVia=%s/%s | "
@@ -1563,7 +1340,7 @@ def run_fetch(args: argparse.Namespace) -> int:
         log.info("Storing story %s in MongoDB (--save-to-mongo)", story_id)
         client, db = connect_db()
         try:
-            _store_story(args, db, None, story, args.topic)
+            _store_story(args, db, None, story)
         finally:
             client.close()
     else:
@@ -1585,12 +1362,9 @@ def main() -> int:
         if args.list:
             return run_list(args)
 
-        fallback_topic = _load_fallback_topic(args)
-
+        # Per-user mode copies the newest existing story to every selected user.
         if args.all_users or args.user_id or args.username:
-            return run_per_users(args, fallback_topic)
-        if args.create:
-            return run_create(args, fallback_topic)
+            return run_per_users(args)
         return run_fetch(args)
 
     except StoryCreatorError as exc:

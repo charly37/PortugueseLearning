@@ -153,7 +153,7 @@ weeklyChallengeSounds:
   failedJobsHistoryLimit: 3
 
 # Runs every Monday at 5 AM — after the weekly challenge sounds job (4 AM) so
-# data is fresh when stories are generated.
+# data is fresh when the latest story is distributed to users.
 weeklyStory:
   schedule: "0 5 * * 1"
   apiUrl: "https://bilingualstory.net"

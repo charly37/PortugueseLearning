@@ -63,8 +63,7 @@ router.post('/register', async (req: Request, res: Response) => {
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,        practiceMode: user.practiceMode,        createdAt: user.createdAt,
         totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
+        level: user.level
       }
     });
   } catch (error) {
@@ -108,8 +107,7 @@ router.post('/login', async (req: Request, res: Response) => {
         preferredLanguage: user.preferredLanguage,
         mobileFriendly: user.mobileFriendly,        practiceMode: user.practiceMode,        createdAt: user.createdAt,
         totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
+        level: user.level
       }
     });
   } catch (error) {
@@ -154,8 +152,7 @@ router.get('/check-auth', async (req: Request, res: Response) => {
         practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
+        level: user.level
       }
     });
   } catch (error) {
@@ -199,8 +196,7 @@ router.post('/update-language', async (req: Request, res: Response) => {
         practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
+        level: user.level
       }
     });
   } catch (error) {
@@ -244,8 +240,7 @@ router.post('/update-mobile-friendly', async (req: Request, res: Response) => {
         practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
+        level: user.level
       }
     });
   } catch (error) {
@@ -289,8 +284,7 @@ router.post('/update-practice-mode', async (req: Request, res: Response) => {
         practiceMode: user.practiceMode,
         createdAt: user.createdAt,
         totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
+        level: user.level
       }
     });
   } catch (error) {
@@ -471,51 +465,6 @@ router.post('/register-from-guest', async (req: Request, res: Response) => {
   } catch (error) {
     log.error({ err: error, userId: req.session?.userId }, 'register from guest failed');
     res.status(500).json({ message: 'Server error during registration' });
-  }
-});
-
-// Update story topic
-router.post('/update-story-topic', async (req: Request, res: Response) => {
-  try {
-    if (!req.session.userId) {
-      return res.status(401).json({ message: 'Not authenticated' });
-    }
-
-    const { storyTopic } = req.body;
-
-    if (typeof storyTopic !== 'string') {
-      return res.status(400).json({ message: 'Invalid story topic' });
-    }
-
-    const user = await User.findByIdAndUpdate(
-      req.session.userId,
-      { storyTopic: storyTopic.trim() },
-      { new: true }
-    ).select('-password');
-
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    res.json({
-      message: 'Story topic updated',
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email,
-        isGuest: user.isGuest,
-        preferredLanguage: user.preferredLanguage,
-        mobileFriendly: user.mobileFriendly,
-        practiceMode: user.practiceMode,
-        createdAt: user.createdAt,
-        totalScore: user.totalScore,
-        level: user.level,
-        storyTopic: user.storyTopic
-      }
-    });
-  } catch (error) {
-    log.error({ err: error, userId: req.session?.userId }, 'update story topic failed');
-    res.status(500).json({ message: 'Server error updating story topic' });
   }
 });
 
