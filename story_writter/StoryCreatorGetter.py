@@ -559,11 +559,7 @@ def _pair_texts(entry: dict[str, Any], learning_language: str) -> tuple[str, str
     return lang2, lang1
 
 
-def to_app_story(
-    story: dict[str, Any],
-    *,
-    level: str = "beginner",
-) -> dict[str, Any]:
+def to_app_story(story: dict[str, Any]) -> dict[str, Any]:
     """Converts a StoryCreator API story to the `weeklystories.story` schema."""
     learning_language = str(
         story.get("learningLanguage") or DEFAULT_LEARNING_LANGUAGE
@@ -604,11 +600,21 @@ def to_app_story(
     if isinstance(raw_created, str) and len(raw_created) >= 10:
         created_at = raw_created[:10]
 
+    level = story.get("level")
+    if level:
+        level = str(level)
+    else:
+        log.error(
+            "Story %s has no level — hardcoding 'beginner'",
+            story.get("id") or story.get("_id") or "?",
+        )
+        level = "beginner"
+
     return {
         "id": str(story.get("id") or story.get("_id") or uuid.uuid4()),
         "title_pt": title_pt or "Sem título",
         "title_fr": title_fr or title_pt or "Sans titre",
-        "level": str(story.get("level") or level),
+        "level": level,
         "topic": resolved_topic,
         "sentences": sentences,
         "created_at": created_at,
@@ -989,16 +995,7 @@ def build_parser() -> argparse.ArgumentParser:
         help="Optional path to write the full API story as JSON",
     )
 
-    # Story metadata + waiting options -------------------------------------------
-    parser.add_argument(
-        "--level",
-        choices=["beginner", "intermediate", "advanced"],
-        default="beginner",
-        help=(
-            "Level stored with the story when the API story has none "
-            "(default: beginner)"
-        ),
-    )
+    # Waiting options ---------------------------------------------------------
     parser.add_argument(
         "--generation-timeout",
         type=float,
@@ -1136,7 +1133,7 @@ def _store_story(
 
     Returns (story, was_new_insert).
     """
-    app_story = to_app_story(provider_story, level=args.level)
+    app_story = to_app_story(provider_story)
     if not app_story["sentences"]:
         raise StoryCreatorError(
             f"Story {app_story['id']} contains no sentences — refusing to store it"

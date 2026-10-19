@@ -88,7 +88,6 @@ python StoryCreatorGetter.py 6ad3da2d233a762967c9e718 --save-to-mongo
 | `--author` | `$STORYCREATOR_AUTHOR` | Only list stories by this author |
 | `--source` | `api` | `creationSource` used to pick the newest story for fetching |
 | `--api-key-name` | `DialectHubWrite` | `createdViaApiKeyName` used to pick the newest story for fetching |
-| `--level` | `beginner` | `beginner` \| `intermediate` \| `advanced` (fallback when the API story has no level) |
 | `--generation-timeout` | `900` | Max seconds to wait for a story that is still generating |
 | `--poll-interval` | `5` | Seconds between status polls |
 | `--save-to-mongo` | `False` | Upsert the result into `weeklystories` |
@@ -114,10 +113,10 @@ export STORYCREATOR_API_URL="https://bilingualstory.net"
 export MONGODB_URI="mongodb+srv://..."
 
 # All registered (non-guest) users + global fallback: copies the newest story
-python StoryCreatorGetter.py --level beginner --all-users
+python StoryCreatorGetter.py --all-users
 
 # Same newest story, for a single user by username
-python StoryCreatorGetter.py --level intermediate --username alice
+python StoryCreatorGetter.py --username alice
 
 # Same newest story, for a single user by MongoDB _id
 python StoryCreatorGetter.py --user-id 64a1b2c3d4e5f60000000001
@@ -151,6 +150,7 @@ Stories are stored under `weeklystories.story`:
 
 API fields are mapped as follows: the API's `learningLanguage` side becomes `pt`, the
 `nativeLanguage` side becomes `fr`, and every chapter's sentences are flattened in order.
+If the API story has no `level`, the script logs an error and stores `beginner`.
 
 ## Automatic story selection
 
@@ -204,7 +204,7 @@ With `--save-to-mongo` it instead logs `Storing story <id> in MongoDB` and then 
 
 The weekly story distribution is scheduled via a Helm-managed CronJob
 (`helm/portuguese-learning/templates/weekly-story-cronjob.yaml`).
-It runs `StoryCreatorGetter.py --level beginner --all-users` inside the analytics image,
+It runs `StoryCreatorGetter.py --all-users` inside the analytics image,
 which fetches the newest story from the StoryCreator API and stores it for every user
 (no generation). It injects `MONGODB_URI` and `STORYCREATOR_API_KEY` from the
 `portuguese-learning-secrets` Kubernetes Secret, plus `STORYCREATOR_API_URL` from
