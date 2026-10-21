@@ -8,10 +8,19 @@ The application runs on Kubernetes using k3s on a single Ubuntu VM, packaged as 
 - k3s installed (`curl -sfL https://get.k3s.io | sh -`)
 - Helm 3 installed (`curl -sSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash`)
 - cert-manager installed (see [HTTPS Setup](HTTPS_SETUP.md))
-- Three data directories present on the k3s node before deploying:
+- Four data directories present on the k3s node before deploying:
   - `data.hostPath` (default: `/home/ubuntu/PortugueseLearning/data`) — challenge JSON files (text data)
   - `sounds.hostPath` (default: `/home/ubuntu/PortugueseLearning/sounds`) — basic word pronunciation MP3s
   - `weeklyAudio.hostPath` (default: `/home/ubuntu/PortugueseLearning/weekly-audio`) — generated weekly challenge MP3s
+  - `podcast.hostPath` (default: `/home/ubuntu/PortugueseLearning/podcast`) — generated podcast `feed.xml` + `cover.jpg`
+
+> `weekly-audio` and `podcast` are mounted with `hostPath: type: Directory`, so the directory must exist **before** `helm upgrade` — otherwise the pod stays in `ContainerCreating`.
+> The `podcast` directory must be writable by uid **1000** (the Python CronJob user):
+>
+> ```bash
+> sudo mkdir -p /home/ubuntu/PortugueseLearning/podcast
+> sudo chown 1000:1000 /home/ubuntu/PortugueseLearning/podcast
+> ```
 
 ### One-Time Setup (production)
 
@@ -57,6 +66,31 @@ helm rollback prod
 
 ---
 
+### Weekly Publishing Pipeline
+
+A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) produces content every week. They share the `weekly-audio` hostPath and run in this order:
+
+| CronJob | Schedule | Command | Output |
+|---|---|---|---|
+| `<release>-weekly-challenge` | Mon 03:00 | `create_weekly_challenge.py --all-users` | `weeklychallenges` documents |
+| `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_*.mp3` (+ `.mp4`) |
+| `<release>-weekly-story` | Mon 05:00 | `StoryCreatorGetter.py` | `weeklystories` documents |
+| `<release>-youtube-uploader` | Mon 06:30 | `upload_to_youtube.py --weekly-audio-dir /weekly-audio` | `youtube.videoId` on the document |
+| `<release>-podcast-feed` | Mon 07:00 | `generate_podcast_feed.py --audio-dir /weekly-audio --output-dir /podcast` | `/podcast/feed.xml` → served at `/podcast/feed.xml` |
+
+Only global lessons (`userId: null`) are published — per-user lessons stay private. See [PODCAST.md](PODCAST.md) for the feed format, cover-art requirements and platform submission steps.
+
+```bash
+# Inspect the last runs
+kubectl get cronjob,job -n portuguese-learning
+kubectl logs -n portuguese-learning job/prod-podcast-feed-<suffix>
+
+# Run the podcast feed immediately instead of waiting for Monday
+kubectl create job --from=cronjob/prod-podcast-feed -n portuguese-learning podcast-feed-manual-1
+```
+
+---
+
 ### Staging Deployment
 
 The chart supports running a full second instance (staging) side-by-side with production on the same k3s node. Each release gets its own namespace, resources, and subdomain — nothing is shared except the cluster-wide cert-manager `ClusterIssuer` resources (created once by prod).
@@ -70,6 +104,10 @@ cp /home/ubuntu/PortugueseLearning/data/*.json /home/ubuntu/PortugueseLearning/d
 # Sounds and weekly-audio are read-only inputs/outputs; staging can share the prod
 # sounds folder (read-only) but needs its own weekly-audio output directory.
 mkdir -p /home/ubuntu/PortugueseLearning/weekly-audio-staging
+# Podcast feed must be separate too: the staging CronJob regenerates feed.xml and
+# uses the staging hostname in every URL, which would overwrite the prod feed.
+mkdir -p /home/ubuntu/PortugueseLearning/podcast-staging
+sudo chown 1000:1000 /home/ubuntu/PortugueseLearning/podcast-staging
 
 # Secret in the staging namespace (same name, different namespace — no collision)
 kubectl create namespace portuguese-learning-staging
@@ -121,6 +159,7 @@ helm upgrade --install staging \
   --set data.hostPath=/home/ubuntu/PortugueseLearning/data-staging \
   --set sounds.hostPath=/home/ubuntu/PortugueseLearning/sounds \
   --set weeklyAudio.hostPath=/home/ubuntu/PortugueseLearning/weekly-audio-staging \
+  --set podcast.hostPath=/home/ubuntu/PortugueseLearning/podcast-staging \
   --set certManager.createIssuers=false
 ```
 
@@ -162,6 +201,7 @@ helm upgrade --install staging \
   --set data.hostPath=/home/ubuntu/PortugueseLearning/data-staging \
   --set sounds.hostPath=/home/ubuntu/PortugueseLearning/sounds \
   --set weeklyAudio.hostPath=/home/ubuntu/PortugueseLearning/weekly-audio-staging \
+  --set podcast.hostPath=/home/ubuntu/PortugueseLearning/podcast-staging \
   --set certManager.createIssuers=false
 ```
 
@@ -219,6 +259,13 @@ All tuneable values are in `helm/portuguese-learning/values.yaml`. Key overrides
 | `data.hostPath` | `/home/ubuntu/PortugueseLearning/data` | Node path for challenge JSON files (text data) |
 | `sounds.hostPath` | `/home/ubuntu/PortugueseLearning/sounds` | Node path for basic word pronunciation MP3s (read-only) |
 | `weeklyAudio.hostPath` | `/home/ubuntu/PortugueseLearning/weekly-audio` | Node path for generated weekly challenge MP3s (read-write) |
+| `podcast.hostPath` | `/home/ubuntu/PortugueseLearning/podcast` | Node path for the generated podcast `feed.xml` + cover art (read-write for the CronJob, read-only for the app) |
+| `podcast.firstWeek` | `2026-10-26` | Earliest `weekStart` published in the feed (no backfill before this date) |
+| `podcast.baseUrl` | `""` | Public site URL used in the feed (empty → `https://<ingress.host>`) |
+| `podcast.audioBaseUrl` | `""` | Base URL for MP3 enclosures (empty → same as `baseUrl`); change it to move audio to a CDN |
+| `podcast.coverFile` | `cover.jpg` | Cover art filename inside `podcast.hostPath` |
+| `podcast.episodeType` | `episodic` | iTunes ordering hint (`episodic` or `serial`) |
+| `podcastFeed.schedule` | `0 7 * * 1` | Podcast RSS feed CronJob schedule |
 | `certManager.email` | `admin@dialecthub.net` | Let's Encrypt registration email |
 | `certManager.createIssuers` | `true` | Create `ClusterIssuer` resources. Set `false` for secondary releases (staging) since ClusterIssuers are cluster-scoped and shared. |
 

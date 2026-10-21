@@ -94,3 +94,9 @@ Already uploaded: 2
 No doc found    : 0
 Errors          : 0
 ```
+
+## Related
+
+The same weekly MP3 is also published as a podcast RSS feed — see
+[PODCAST.md](PODCAST.md). YouTube does **not** ingest RSS for regular videos, which is why the
+two pipelines coexist.

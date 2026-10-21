@@ -12,6 +12,7 @@ This project follows a **lean README + detailed docs** pattern:
   - `DEPLOYMENT.md` - Docker, CI/CD, deployment scripts
   - `AUTHENTICATION_SETUP.md` - User auth implementation
   - `HTTPS_SETUP.md` - SSL certificate setup
+  - `PODCAST.md` - Podcast RSS feed (weekly lesson → Apple Podcasts/Spotify)
   - `PROGRESS_TRACKING.md` - Development milestones
   - `TODO.md` - Planned improvements and known issues
 

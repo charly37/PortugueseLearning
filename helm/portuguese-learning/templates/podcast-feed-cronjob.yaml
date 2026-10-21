@@ -1,0 +1,68 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-podcast-feed
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.podcastFeed.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.podcastFeed.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.podcastFeed.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      ttlSecondsAfterFinished: 86400 # keep pod logs/state 24h after finish for debugging
+      activeDeadlineSeconds: 900 # feed generation is a light Mongo read + HTTP-less XML write
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-podcast-feed
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: podcast-feed
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command:
+                - python
+                - -u
+                - generate_podcast_feed.py
+                - --audio-dir
+                - /weekly-audio
+                - --output-dir
+                - /podcast
+                - --first-week
+                - {{ .Values.podcast.firstWeek | quote }}
+                - --base-url
+                - {{ .Values.podcast.baseUrl | default (printf "https://%s" .Values.ingress.host) | quote }}
+                - --audio-base-url
+                - {{ .Values.podcast.audioBaseUrl | default (printf "https://%s" .Values.ingress.host) | quote }}
+                - --cover
+                - {{ printf "/podcast/%s" .Values.podcast.coverFile | quote }}
+                - --episode-type
+                - {{ .Values.podcast.episodeType | default "episodic" | quote }}
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+              resources:
+                {{- toYaml .Values.resources.podcastFeed | nindent 16 }}
+              volumeMounts:
+                - name: weekly-audio
+                  mountPath: /weekly-audio
+                  readOnly: true
+                - name: podcast
+                  mountPath: /podcast
+          volumes:
+            - name: weekly-audio
+              hostPath:
+                path: {{ .Values.weeklyAudio.hostPath }}
+                type: Directory
+            - name: podcast
+              hostPath:
+                path: {{ .Values.podcast.hostPath }}
+                type: Directory

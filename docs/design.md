@@ -121,6 +121,10 @@ The Portuguese Learning application runs on Kubernetes (k3s) with Traefik as the
 │       │   └── ChallengeQualityFlag.tsx # Quality issue flagging
 │       └── index.html     # HTML template
 ├── analytics/             # Python analytics service
+├── weekly_challenge/      # Weekly challenge generator (CronJob, Mondays 03:00)
+├── vocal_lesson_creator/   # Weekly MP3/MP4 lesson builder (CronJob, Mondays 04:00)
+├── youtube-uploader/       # Publishes the weekly MP4 to YouTube (CronJob, Mondays 06:30)
+├── podcast/               # Generates the podcast RSS feed (CronJob, Mondays 07:00)
 ├── data/                  # Challenge seed files (JSON) + data tooling scripts
 ├── docs/                  # Documentation
 ├── tests/                 # Playwright E2E tests
@@ -179,6 +183,34 @@ The Portuguese Learning application runs on Kubernetes (k3s) with Traefik as the
          │                        │
          └────────────────────────┘
 ```
+
+## Publishing Pipelines
+
+The weekly lesson is published to two channels with different delivery models:
+
+```mermaid
+flowchart TD
+    A["CronJob Mon 03:00<br/>create_weekly_challenge.py"] --> B["CronJob Mon 04:00<br/>combine_mp3.py"]
+    B --> C["weekly-audio/weekly_{id}_{ts}.mp3"]
+    B --> D["weekly-audio/weekly_{id}_{ts}.mp4"]
+    D --> E["CronJob Mon 06:30<br/>upload_to_youtube.py"]
+    C --> F["CronJob Mon 07:00<br/>generate_podcast_feed.py"]
+    E --> G[(YouTube)]
+    F --> H["podcast/feed.xml<br/>served by Express"]
+    H --> I[(Apple Podcasts / Spotify)]
+```
+
+| Pipeline | Source | Delivery model | Docs |
+|---|---|---|---|
+| YouTube | `weekly_*.mp4` | Uploaded with the YouTube Data API; YouTube rehosts and serves the file | [YOUTUBE_UPLOADER.md](YOUTUBE_UPLOADER.md) |
+| Podcast | `weekly_*.mp3` | RSS `feed.xml` whose `<enclosure>` URLs point at `/weekly-audio/*.mp3`; directories stream from this site on every play | [PODCAST.md](PODCAST.md) |
+
+Only the **global** weekly challenge (`userId: null`) is published — per-user lessons are private.
+Both pipelines are idempotent: MongoDB records the result (`youtube.videoId`, `podcast.episodeNumber`)
+so a CronJob retry never duplicates work.
+
+Storage is `hostPath` on the k3s node (`weeklyAudio.hostPath`, `podcast.hostPath`): no object storage
+and no PVC. Audio files accumulate and must not be deleted while the feed references them.
 
 ## Container Architecture
 

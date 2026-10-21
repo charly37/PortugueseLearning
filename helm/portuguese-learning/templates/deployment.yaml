@@ -60,6 +60,9 @@ spec:
             - name: sounds
               mountPath: /app/sounds
               readOnly: true
+            - name: podcast
+              mountPath: /app/podcast
+              readOnly: true
       volumes:
         - name: weekly-audio
           hostPath:
@@ -68,4 +71,8 @@ spec:
         - name: sounds
           hostPath:
             path: {{ .Values.sounds.hostPath }}
+            type: Directory
+        - name: podcast
+          hostPath:
+            path: {{ .Values.podcast.hostPath }}
             type: Directory

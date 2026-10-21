@@ -36,6 +36,22 @@ weeklyAudio:
 sounds:
   hostPath: /home/ubuntu/PortugueseLearning/sounds
 
+# Podcast RSS feed (hostPath is read by the app at /app/podcast and written by
+# the podcast-feed CronJob at /podcast). Create the directory on the node with
+# owner 1000:1000 BEFORE deploying - both manifests use hostPath type: Directory.
+podcast:
+  hostPath: /home/ubuntu/PortugueseLearning/podcast
+  # Lessons with weekStart before this date are never published. Bump it only
+  # if you intend to publish older episodes (they keep their guid either way).
+  firstWeek: "2026-10-26"
+  # Empty → https://<ingress.host>. Set audioBaseUrl to move MP3 delivery to a
+  # CDN later without changing the code.
+  baseUrl: ""
+  audioBaseUrl: ""
+  # Cover art must be a square 1400x1400-3000x3000 JPEG/PNG under 512 KB.
+  coverFile: cover.jpg
+  episodeType: episodic
+
 backup:
   schedule: "0 1 * * 4"
   hostPath: /home/ubuntu/PortugueseLearning/backup
@@ -113,6 +129,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  podcastFeed:
+    requests:
+      memory: "64Mi"
+      cpu: "50m"
+    limits:
+      memory: "256Mi"
+      cpu: "200m"
   weeklyChallengeSounds:
     requests:
       memory: "128Mi"
@@ -174,5 +197,12 @@ vocabularyCreatorAgent:
 # Runs every Monday at 6:30 AM — after sound generation (4 AM) and story (5 AM)
 youtubeUploader:
   schedule: "30 6 * * 1"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+
+# Runs every Monday at 7 AM — after sound generation (4 AM) so the new MP3
+# exists, and after the YouTube upload so the feed is the last step.
+podcastFeed:
+  schedule: "0 7 * * 1"
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3

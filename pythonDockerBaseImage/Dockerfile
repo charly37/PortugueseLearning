@@ -53,6 +53,7 @@ COPY --chown=appuser:appuser VocabularyCreatorAgent/VocabularyCreatorAgent.py .
 COPY --chown=appuser:appuser scripts/db_utils.py .
 COPY --chown=appuser:appuser vocal_lesson_creator/combine_mp3.py .
 COPY --chown=appuser:appuser youtube-uploader/upload_to_youtube.py .
+COPY --chown=appuser:appuser podcast/generate_podcast_feed.py .
 COPY --chown=appuser:appuser data/ /app/data/
 
 # Default command

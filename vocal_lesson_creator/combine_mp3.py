@@ -443,13 +443,42 @@ def current_week_start_utc() -> datetime:
 VALID_LANGS = {"en", "fr"}
 
 
-def _persist_weekly_audio(collection, doc, filename: str, today: str, mp4_ok: bool | None) -> None:
-    """Record that today's MP3 exists so a Job retry will not rebuild it."""
+def _persist_weekly_audio(
+    collection,
+    doc,
+    filename: str,
+    today: str,
+    mp4_ok: bool | None,
+    duration_s: float | None = None,
+    size_bytes: int | None = None,
+) -> None:
+    """Record that today's MP3 exists so a Job retry will not rebuild it.
+
+    ``duration_s`` and ``size_bytes`` feed the podcast RSS generator
+    (``<itunes:duration>`` and the enclosure ``length`` attribute).  When they
+    are not supplied the existing values are preserved, so a retry that only
+    re-encodes the MP4 does not wipe them.
+    """
+    previous = doc.get("audio") or {}
+
     payload = {"filename": filename, "last_update": today}
+
+    resolved_duration = duration_s if duration_s is not None else previous.get("duration_s")
+    if resolved_duration is not None:
+        payload["duration_s"] = round(float(resolved_duration), 1)
+
+    resolved_size = size_bytes if size_bytes is not None else previous.get("size_bytes")
+    if resolved_size is not None:
+        payload["size_bytes"] = int(resolved_size)
+
     if mp4_ok is not None:
         payload["mp4"] = mp4_ok
+
     collection.update_one({"_id": doc["_id"]}, {"$set": {"audio": payload}})
-    log.info("[%s] Updated MongoDB audio metadata: %s (mp4=%s)", doc["_id"], filename, mp4_ok)
+    log.info(
+        "[%s] Updated MongoDB audio metadata: %s (mp4=%s, duration=%ss, size=%sB)",
+        doc["_id"], filename, mp4_ok, payload.get("duration_s"), payload.get("size_bytes"),
+    )
 
 
 def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR, generate_mp4: bool = False, force: bool = False) -> None:
@@ -533,7 +562,11 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                     mp4_path = existing_path.with_suffix(".mp4")
                     if not mp4_path.exists() or mp4_path.stat().st_size == 0:
                         mp4_ok = export_mp4(existing_path) is not None
-                        _persist_weekly_audio(collection, doc, existing_name, today, mp4_ok)
+                        _persist_weekly_audio(
+                            collection, doc, existing_name, today, mp4_ok,
+                            duration_s=_ffprobe_duration_s(existing_path),
+                            size_bytes=existing_path.stat().st_size,
+                        )
                         status = "generated" if mp4_ok else "generated-no-mp4"
                 summaries.append(UserSummary(
                     user_id=user_id,
@@ -584,16 +617,24 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             filename = f"weekly_{doc_id}_{timestamp}.mp3"
             output_path = output_dir / filename
             combined.export(str(output_path), format="mp3")
-            log.info("[%s] Lesson duration: %.1fs  ->  %s", doc_id, len(combined) / 1000, output_path)
+            duration_s = len(combined) / 1000
+            size_bytes = output_path.stat().st_size
+            log.info("[%s] Lesson duration: %.1fs  ->  %s", doc_id, duration_s, output_path)
 
             # Persist MP3 metadata BEFORE ffmpeg. If the Job is OOM-killed during
             # MP4 encoding, the next retry will skip this user instead of looping.
-            _persist_weekly_audio(collection, doc, filename, today, mp4_ok=None)
+            _persist_weekly_audio(
+                collection, doc, filename, today, mp4_ok=None,
+                duration_s=duration_s, size_bytes=size_bytes,
+            )
 
             mp4_ok: bool | None = None
             if generate_mp4:
                 mp4_ok = export_mp4(output_path) is not None
-                _persist_weekly_audio(collection, doc, filename, today, mp4_ok)
+                _persist_weekly_audio(
+                    collection, doc, filename, today, mp4_ok,
+                    duration_s=duration_s, size_bytes=size_bytes,
+                )
                 if not mp4_ok:
                     log.warning("[%s] MP3 saved but MP4 generation failed; continuing.", doc_id)
 

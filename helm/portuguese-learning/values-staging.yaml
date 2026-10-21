@@ -20,3 +20,9 @@ ingress:
 certManager:
   # ClusterIssuers already exist from the prod release — don't recreate them
   createIssuers: false
+
+# Keep the staging feed in its own directory. The podcast-feed CronJob rewrites
+# feed.xml with URLs built from ingress.host, so sharing the prod directory
+# would replace the production feed with staging links.
+podcast:
+  hostPath: /home/ubuntu/PortugueseLearning/podcast-staging

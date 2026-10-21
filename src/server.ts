@@ -4,6 +4,7 @@ import './config/env';
 import express, { NextFunction, Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
+import type { ServerResponse } from 'http';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import logger from './logger';
@@ -86,6 +87,21 @@ app.use('/sounds', express.static(soundsPath));
 const audioPath = process.env.AUDIO_PATH || path.join(__dirname, '../weekly-audio');
 log.info({ path: audioPath }, 'serving weekly audio files');
 app.use('/weekly-audio', express.static(audioPath));
+
+// Serve the podcast RSS feed (feed.xml) and cover art. These files are produced by the
+// podcast-feed CronJob (podcast/generate_podcast_feed.py) into a hostPath volume, so
+// they are not part of the Docker image.
+const podcastPath = process.env.PODCAST_PATH || path.join(__dirname, '../podcast');
+log.info({ path: podcastPath }, 'serving podcast feed files');
+app.use('/podcast', express.static(podcastPath, {
+  // Podcast directories poll the feed; keep it fresh but honour conditional requests.
+  maxAge: '5m',
+  setHeaders: (res: ServerResponse, filePath: string) => {
+    if (filePath.endsWith('.xml')) {
+      res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8');
+    }
+  }
+}));
 
 
 
