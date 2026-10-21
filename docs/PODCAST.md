@@ -82,16 +82,28 @@ Apple Podcasts and Spotify both require:
 - Under **512 KB**
 - No transparency, no rounded corners, no explicit content
 
-Copy your 3000 × 3000 file to the node:
+The cover is committed with the source and shipped with the web app, exactly like the favicons:
 
-```bash
-scp cover.jpg ubuntu@<node>:/tmp/cover.jpg
-ssh ubuntu@<node> 'sudo install -o 1000 -g 1000 -m 644 /tmp/cover.jpg \
-  /home/ubuntu/PortugueseLearning/podcast/cover.jpg'
+```
+src/images/podcast-cover.jpg      (source — commit this)
+        │  webpack CopyPlugin
+        ▼
+public/podcast/cover.jpg          (build output, served by Express)
+        │
+        ▼
+https://dialecthub.net/podcast/cover.jpg
 ```
 
-The generator validates dimensions with `ffprobe` and logs a warning (it never fails the job), so a
-missing or malformed cover shows up in the CronJob logs before Apple rejects the submission.
+- Add or replace the file at `src/images/podcast-cover.jpg`, then rebuild (`npm run build`). The
+  rule in `webpack.config.js` copies it to `public/podcast/cover.jpg`, which `express.static` serves
+  before the `/podcast` feed mount — nothing is copied to the node, so updating the artwork is just
+  a commit + image build + `helm upgrade`.
+- The copy is `noErrorOnMissing`, so a build never fails before the artwork is added. Until the file
+  exists the URL returns 404 and Apple/Spotify will reject the feed; the app logs
+  `podcast cover art missing` at startup when the built file is absent.
+- The generator does not validate the image (the CronJob cannot read `public/`). To check the
+  committed file locally:
+  `python3 podcast/generate_podcast_feed.py --cover src/images/podcast-cover.jpg …`
 
 ## Configuration
 
@@ -103,7 +115,7 @@ podcast:
   firstWeek: "2026-10-26"   # no earlier lesson is published
   baseUrl: ""               # empty → https://<ingress.host>
   audioBaseUrl: ""          # empty → same as baseUrl
-  coverFile: cover.jpg
+  coverUrl: ""              # empty → https://<ingress.host>/podcast/cover.jpg
   episodeType: episodic
 
 podcastFeed:
@@ -129,7 +141,7 @@ sudo mkdir -p /home/ubuntu/PortugueseLearning/podcast
 sudo chown 1000:1000 /home/ubuntu/PortugueseLearning/podcast   # the job runs as appuser (uid 1000)
 ```
 
-Copy the cover art (see above), then deploy:
+Then deploy:
 
 ```bash
 helm upgrade --install prod helm/portuguese-learning \
@@ -218,7 +230,7 @@ must not get one without excluding the published episodes.
 | Pod stuck `ContainerCreating`, `hostPath type check failed` | Create the host directory before `helm upgrade` |
 | Feed returns the React `index.html` | A route was registered after the `/{*path}` catch-all in `src/server.ts` |
 | Feed has no `<item>` | No global lesson with `weekStart >= firstWeek`, or the MP3 was missing — check job logs |
-| Apple rejects the feed | Missing/invalid `cover.jpg`, or the feed URL redirects (must be plain HTTPS 200) |
+| Apple rejects the feed | Missing/invalid cover art at `/podcast/cover.jpg` (check `src/images/podcast-cover.jpg` was committed and the client rebuilt), or the feed URL redirects (must be plain HTTPS 200) |
 | Episode order looks wrong in Apple | `episodic` shows newest first by `pubDate`; verify the container clock is UTC |
 | Numbering jumps after editing `firstWeek` | Expected for newly included lessons; existing episodes keep their numbers |
 

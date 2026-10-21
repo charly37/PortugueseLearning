@@ -12,7 +12,7 @@ The application runs on Kubernetes using k3s on a single Ubuntu VM, packaged as 
   - `data.hostPath` (default: `/home/ubuntu/PortugueseLearning/data`) — challenge JSON files (text data)
   - `sounds.hostPath` (default: `/home/ubuntu/PortugueseLearning/sounds`) — basic word pronunciation MP3s
   - `weeklyAudio.hostPath` (default: `/home/ubuntu/PortugueseLearning/weekly-audio`) — generated weekly challenge MP3s
-  - `podcast.hostPath` (default: `/home/ubuntu/PortugueseLearning/podcast`) — generated podcast `feed.xml` + `cover.jpg`
+  - `podcast.hostPath` (default: `/home/ubuntu/PortugueseLearning/podcast`) — generated podcast `feed.xml`
 
 > `weekly-audio` and `podcast` are mounted with `hostPath: type: Directory`, so the directory must exist **before** `helm upgrade` — otherwise the pod stays in `ContainerCreating`.
 > The `podcast` directory must be writable by uid **1000** (the Python CronJob user):
@@ -263,7 +263,7 @@ All tuneable values are in `helm/portuguese-learning/values.yaml`. Key overrides
 | `podcast.firstWeek` | `2026-10-26` | Earliest `weekStart` published in the feed (no backfill before this date) |
 | `podcast.baseUrl` | `""` | Public site URL used in the feed (empty → `https://<ingress.host>`) |
 | `podcast.audioBaseUrl` | `""` | Base URL for MP3 enclosures (empty → same as `baseUrl`); change it to move audio to a CDN |
-| `podcast.coverFile` | `cover.jpg` | Cover art filename inside `podcast.hostPath` |
+| `podcast.coverUrl` | `""` | Public cover art URL (empty → `https://<ingress.host>/podcast/cover.jpg`, shipped with the web app) |
 | `podcast.episodeType` | `episodic` | iTunes ordering hint (`episodic` or `serial`) |
 | `podcastFeed.schedule` | `0 7 * * 1` | Podcast RSS feed CronJob schedule |
 | `certManager.email` | `admin@dialecthub.net` | Let's Encrypt registration email |

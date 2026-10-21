@@ -48,8 +48,10 @@ podcast:
   # CDN later without changing the code.
   baseUrl: ""
   audioBaseUrl: ""
-  # Cover art must be a square 1400x1400-3000x3000 JPEG/PNG under 512 KB.
-  coverFile: cover.jpg
+  # Cover art ships with the web app (src/images/podcast-cover.jpg, copied to
+  # public/podcast/cover.jpg by webpack) and is served at /podcast/cover.jpg.
+  # Override only if the artwork is hosted somewhere else.
+  coverUrl: ""
   episodeType: episodic
 
 backup:

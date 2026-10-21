@@ -39,8 +39,8 @@ spec:
                 - {{ .Values.podcast.baseUrl | default (printf "https://%s" .Values.ingress.host) | quote }}
                 - --audio-base-url
                 - {{ .Values.podcast.audioBaseUrl | default (printf "https://%s" .Values.ingress.host) | quote }}
-                - --cover
-                - {{ printf "/podcast/%s" .Values.podcast.coverFile | quote }}
+                - --cover-url
+                - {{ .Values.podcast.coverUrl | default (printf "https://%s/podcast/cover.jpg" .Values.ingress.host) | quote }}
                 - --episode-type
                 - {{ .Values.podcast.episodeType | default "episodic" | quote }}
               env:

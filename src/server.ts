@@ -88,9 +88,9 @@ const audioPath = process.env.AUDIO_PATH || path.join(__dirname, '../weekly-audi
 log.info({ path: audioPath }, 'serving weekly audio files');
 app.use('/weekly-audio', express.static(audioPath));
 
-// Serve the podcast RSS feed (feed.xml) and cover art. These files are produced by the
-// podcast-feed CronJob (podcast/generate_podcast_feed.py) into a hostPath volume, so
-// they are not part of the Docker image.
+// Serve the podcast RSS feed (feed.xml). The feed itself is produced by the podcast-feed
+// CronJob into a hostPath volume, so it is not part of the Docker image; the cover art is
+// (see the startup check below).
 const podcastPath = process.env.PODCAST_PATH || path.join(__dirname, '../podcast');
 log.info({ path: podcastPath }, 'serving podcast feed files');
 app.use('/podcast', express.static(podcastPath, {
@@ -102,6 +102,17 @@ app.use('/podcast', express.static(podcastPath, {
     }
   }
 }));
+
+// The podcast cover ships with the client bundle (webpack copies src/images/podcast-cover.jpg
+// to public/podcast/cover.jpg). Apple/Spotify reject the feed without it, so make the
+// omission visible in the app logs instead of failing silently at submission time.
+const podcastCoverPath = path.join(__dirname, '../public/podcast/cover.jpg');
+if (!fs.existsSync(podcastCoverPath)) {
+  log.warn(
+    { path: podcastCoverPath },
+    'podcast cover art missing - add src/images/podcast-cover.jpg and rebuild the client'
+  );
+}
 
 
 

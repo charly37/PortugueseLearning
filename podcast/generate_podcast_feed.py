@@ -45,7 +45,9 @@ DEFAULT_BASE_URL = "https://dialecthub.net"
 DEFAULT_EPISODE_TYPE = "episodic"
 FEED_FILENAME = "feed.xml"
 EPISODES_FILENAME = "episodes.json"
-DEFAULT_COVER_FILENAME = "cover.jpg"
+# The cover ships with the web app (src/images/podcast-cover.jpg → public/podcast/cover.jpg
+# via webpack), so it is served by the app image and not written by this job.
+DEFAULT_COVER_PATH = "/podcast/cover.jpg"
 
 # Apple requires the official (English) category names regardless of the feed
 # language, so these are deliberately not translated.
@@ -520,8 +522,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Public base URL for MP3 enclosures (default: same as --base-url)",
     )
     parser.add_argument(
+        "--cover-url", default=None,
+        help=(
+            "Public cover art URL baked into the feed "
+            f"(default: <base-url>{DEFAULT_COVER_PATH})"
+        ),
+    )
+    parser.add_argument(
         "--cover", default=None,
-        help="Cover art path (default: <output-dir>/cover.jpg)",
+        help=(
+            "Optional local cover file to validate before publishing "
+            "(dimensions / size). The cover itself is served by the web app."
+        ),
     )
     parser.add_argument(
         "--lang", default="fr", choices=sorted(CHANNELS),
@@ -560,15 +572,15 @@ def main(argv: list[str] | None = None) -> int:
     channel = CHANNELS[args.lang]
     audio_dir = Path(args.audio_dir)
     output_dir = Path(args.output_dir)
-    cover_path = Path(args.cover) if args.cover else output_dir / DEFAULT_COVER_FILENAME
     base_url = args.base_url.rstrip("/")
     audio_base_url = (args.audio_base_url or args.base_url).rstrip("/")
     feed_url = f"{base_url}/podcast/{FEED_FILENAME}"
-    cover_url = f"{base_url}/podcast/{cover_path.name}"
+    cover_url = args.cover_url or f"{base_url}{DEFAULT_COVER_PATH}"
 
     first_week = parse_first_week(args.first_week)
     log.info("Publishing lessons with weekStart >= %s", first_week.date())
     log.info("Feed URL: %s", feed_url)
+    log.info("Cover art URL: %s", cover_url)
 
     client, db = connect_mongodb()
     collection = db["weeklychallenges"]
@@ -610,7 +622,8 @@ def main(argv: list[str] | None = None) -> int:
         output_dir.mkdir(parents=True, exist_ok=True)
         write_atomic(output_dir / FEED_FILENAME, xml)
         write_atomic(output_dir / EPISODES_FILENAME, _episodes_json(episodes))
-        validate_cover(cover_path)
+        if args.cover:
+            validate_cover(Path(args.cover))
         log.info("Wrote %s (%d episode(s))", output_dir / FEED_FILENAME, len(episodes))
     else:
         log.info("Dry run: %d episode(s) would be written to %s", len(episodes), output_dir)
