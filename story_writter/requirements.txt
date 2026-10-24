@@ -1,3 +1,4 @@
 # StoryCreatorGetter.py
 httpx==0.28.1
-pymongo==4.18.3
+#moved in image as shared MW
+#pymongo==4.18.3
