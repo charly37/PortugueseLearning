@@ -1,4 +1,4 @@
 #moved in image as shared MW
 #pymongo==4.19.0
-elevenlabs==2.73.1
+elevenlabs==2.74.1
 openai-agents>=0.24.0
