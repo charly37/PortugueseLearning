@@ -12,7 +12,7 @@ The application runs on Kubernetes using k3s on a single Ubuntu VM, packaged as 
   - `data.hostPath` (default: `/home/ubuntu/PortugueseLearning/data`) — challenge JSON files (text data)
   - `sounds.hostPath` (default: `/home/ubuntu/PortugueseLearning/sounds`) — basic word pronunciation MP3s
   - `weeklyAudio.hostPath` (default: `/home/ubuntu/PortugueseLearning/weekly-audio`) — generated weekly challenge MP3s
-  - `podcast.hostPath` (default: `/home/ubuntu/PortugueseLearning/podcast`) — generated podcast `feed.xml`
+  - `podcast.hostPath` (default: `/home/ubuntu/PortugueseLearning/podcast`) — generated podcast feeds, one subdirectory per show/pair
 
 > `weekly-audio` and `podcast` are mounted with `hostPath: type: Directory`, so the directory must exist **before** `helm upgrade` — otherwise the pod stays in `ContainerCreating`.
 > The `podcast` directory must be writable by uid **1000** (the Python CronJob user):
@@ -76,17 +76,17 @@ A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) prod
 | `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_*.mp3` (+ `.mp4`) |
 | `<release>-weekly-story` | Mon 05:00 | `StoryCreatorGetter.py` | `weeklystories` documents |
 | `<release>-youtube-uploader` | Mon 06:30 | `upload_to_youtube.py --weekly-audio-dir /weekly-audio` | `youtube.videoId` on the document |
-| `<release>-podcast-feed` | Mon 07:00 | `generate_podcast_feed.py --audio-dir /weekly-audio --output-dir /podcast` | `/podcast/feed.xml` → served at `/podcast/feed.xml` |
+| `<release>-podcast-feed-<pair>` | Mon 07:00 | `generate_podcast_feed.py --show vocabulary --pair fr-pt --output-root /podcast` | `/podcast/vocabulary/fr-pt/feed.xml` |
 
 Only global lessons (`userId: null`) are published — per-user lessons stay private. See [PODCAST.md](PODCAST.md) for the feed format, cover-art requirements and platform submission steps.
 
 ```bash
 # Inspect the last runs
 kubectl get cronjob,job -n portuguese-learning
-kubectl logs -n portuguese-learning job/prod-podcast-feed-<suffix>
+kubectl logs -n portuguese-learning job/prod-podcast-feed-fr-pt-<suffix>
 
 # Run the podcast feed immediately instead of waiting for Monday
-kubectl create job --from=cronjob/prod-podcast-feed -n portuguese-learning podcast-feed-manual-1
+kubectl create job --from=cronjob/prod-podcast-feed-fr-pt -n portuguese-learning podcast-feed-manual-1
 ```
 
 ---
@@ -259,11 +259,12 @@ All tuneable values are in `helm/portuguese-learning/values.yaml`. Key overrides
 | `data.hostPath` | `/home/ubuntu/PortugueseLearning/data` | Node path for challenge JSON files (text data) |
 | `sounds.hostPath` | `/home/ubuntu/PortugueseLearning/sounds` | Node path for basic word pronunciation MP3s (read-only) |
 | `weeklyAudio.hostPath` | `/home/ubuntu/PortugueseLearning/weekly-audio` | Node path for generated weekly challenge MP3s (read-write) |
-| `podcast.hostPath` | `/home/ubuntu/PortugueseLearning/podcast` | Node path for the generated podcast `feed.xml` + cover art (read-write for the CronJob, read-only for the app) |
+| `podcast.hostPath` | `/home/ubuntu/PortugueseLearning/podcast` | Node path for the generated feeds, one `<show>/<pair>/` subdirectory each (read-write for the CronJob, read-only for the app) |
+| `podcast.show` | `vocabulary` | Show slug used in the feed URL (`/podcast/<show>/<pair>/feed.xml`) |
+| `podcast.pairs` | `[fr-pt]` | Language pairs to publish, `{native}-{learning}`; one CronJob per entry |
 | `podcast.firstWeek` | `2026-10-26` | Earliest `weekStart` published in the feed (no backfill before this date) |
 | `podcast.baseUrl` | `""` | Public site URL used in the feed (empty → `https://<ingress.host>`) |
 | `podcast.audioBaseUrl` | `""` | Base URL for MP3 enclosures (empty → same as `baseUrl`); change it to move audio to a CDN |
-| `podcast.coverUrl` | `""` | Public cover art URL (empty → `https://<ingress.host>/podcast/cover.jpg`, shipped with the web app) |
 | `podcast.episodeType` | `episodic` | iTunes ordering hint (`episodic` or `serial`) |
 | `podcastFeed.schedule` | `0 7 * * 1` | Podcast RSS feed CronJob schedule |
 | `certManager.email` | `admin@dialecthub.net` | Let's Encrypt registration email |

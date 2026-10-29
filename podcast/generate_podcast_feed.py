@@ -40,14 +40,13 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 DEFAULT_AUDIO_DIR = Path("/weekly-audio")
-DEFAULT_OUTPUT_DIR = Path("/podcast")
+DEFAULT_OUTPUT_ROOT = Path("/podcast")
 DEFAULT_BASE_URL = "https://dialecthub.net"
 DEFAULT_EPISODE_TYPE = "episodic"
+DEFAULT_SHOW = "vocabulary"
+DEFAULT_PAIR = "fr-pt"
 FEED_FILENAME = "feed.xml"
 EPISODES_FILENAME = "episodes.json"
-# The cover ships with the web app (src/images/podcast-cover.jpg → public/podcast/cover.jpg
-# via webpack), so it is served by the app image and not written by this job.
-DEFAULT_COVER_PATH = "/podcast/cover.jpg"
 
 # Apple requires the official (English) category names regardless of the feed
 # language, so these are deliberately not translated.
@@ -59,10 +58,12 @@ FRENCH_MONTHS = (
     "juillet", "août", "septembre", "octobre", "novembre", "décembre",
 )
 
-# Channel metadata per feed language.  Add an "en" entry to publish an English
-# feed later (see docs/PODCAST.md).
-CHANNELS = {
-    "fr": {
+# Channel metadata keyed by language pair `{native}-{learning}`.  The key is also
+# the last URL segment: /podcast/<show>/<pair>/feed.xml.  Adding a pair means adding
+# an entry here plus the artwork in src/images/podcast/<pair>/cover.jpg.
+SHOWS = {
+    "fr-pt": {
+        "pair": "fr-pt",
         "language": "fr",
         "title": "DialectHub – Leçon de vocabulaire portugais européen",
         "subtitle": "Une leçon hebdomadaire de vocabulaire en portugais européen",
@@ -128,6 +129,28 @@ def as_utc(value: datetime | None) -> datetime | None:
     if value.tzinfo is None:
         return value.replace(tzinfo=timezone.utc)
     return value.astimezone(timezone.utc)
+
+
+def resolve_paths(
+    show: str,
+    pair: str,
+    output_root: Path | str,
+    base_url: str,
+    cover_url: str | None = None,
+) -> tuple[Path, str, str]:
+    """Return (output_dir, feed_url, cover_url) for one show/language pair.
+
+    Feed:      {base}/podcast/{show}/{pair}/feed.xml
+    Cover art: {base}/podcast/{pair}/cover.jpg   (ships with the web app)
+
+    The cover is pair-scoped rather than show-scoped so every show for the same
+    language pair can share the artwork unless an explicit URL is passed.
+    """
+    base = base_url.rstrip("/")
+    output_dir = Path(output_root) / show / pair
+    feed_url = f"{base}/podcast/{show}/{pair}/{FEED_FILENAME}"
+    resolved_cover = (cover_url or f"{base}/podcast/{pair}/cover.jpg").rstrip("/")
+    return output_dir, feed_url, resolved_cover
 
 
 def format_french_date(value: datetime) -> str:
@@ -503,8 +526,22 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Directory holding the weekly lesson MP3 files (default: /weekly-audio)",
     )
     parser.add_argument(
-        "--output-dir", default=str(DEFAULT_OUTPUT_DIR),
-        help="Directory where feed.xml is written, served at /podcast (default: /podcast)",
+        "--output-root", default=str(DEFAULT_OUTPUT_ROOT),
+        help=(
+            "Root directory holding every feed; the job writes to "
+            f"<output-root>/<show>/<pair> (default: {DEFAULT_OUTPUT_ROOT})"
+        ),
+    )
+    parser.add_argument(
+        "--show", default=DEFAULT_SHOW,
+        help=f"Show slug used in the feed URL (default: {DEFAULT_SHOW})",
+    )
+    parser.add_argument(
+        "--pair", default=DEFAULT_PAIR, choices=sorted(SHOWS),
+        help=(
+            "Language pair {native}-{learning}; selects the channel metadata "
+            f"and the URL segment (default: {DEFAULT_PAIR})"
+        ),
     )
     parser.add_argument(
         "--first-week", default=None,
@@ -525,7 +562,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--cover-url", default=None,
         help=(
             "Public cover art URL baked into the feed "
-            f"(default: <base-url>{DEFAULT_COVER_PATH})"
+            "(default: <base-url>/podcast/<pair>/cover.jpg)"
         ),
     )
     parser.add_argument(
@@ -534,10 +571,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "Optional local cover file to validate before publishing "
             "(dimensions / size). The cover itself is served by the web app."
         ),
-    )
-    parser.add_argument(
-        "--lang", default="fr", choices=sorted(CHANNELS),
-        help="Feed language / channel metadata (default: fr)",
     )
     parser.add_argument(
         "--episode-type", default=DEFAULT_EPISODE_TYPE,
@@ -569,15 +602,20 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     logging.getLogger().setLevel(args.log_level)
 
-    channel = CHANNELS[args.lang]
+    channel = SHOWS[args.pair]
     audio_dir = Path(args.audio_dir)
-    output_dir = Path(args.output_dir)
     base_url = args.base_url.rstrip("/")
     audio_base_url = (args.audio_base_url or args.base_url).rstrip("/")
-    feed_url = f"{base_url}/podcast/{FEED_FILENAME}"
-    cover_url = args.cover_url or f"{base_url}{DEFAULT_COVER_PATH}"
+    output_dir, feed_url, cover_url = resolve_paths(
+        show=args.show,
+        pair=args.pair,
+        output_root=args.output_root,
+        base_url=base_url,
+        cover_url=args.cover_url,
+    )
 
     first_week = parse_first_week(args.first_week)
+    log.info("Show %s / pair %s", args.show, args.pair)
     log.info("Publishing lessons with weekStart >= %s", first_week.date())
     log.info("Feed URL: %s", feed_url)
     log.info("Cover art URL: %s", cover_url)

@@ -770,6 +770,7 @@ const IdiomChallengePage: React.FC<IdiomChallengePageProps> = ({ mode, onBackHom
                 {showAnswer && (
                   <ChallengeQualityFlag
                     challengeId={challenge.id}
+                    language={preferredLanguage}
                     isGuest={user?.isGuest}
                   />
                 )}

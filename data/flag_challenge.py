@@ -9,6 +9,9 @@ Usage:
   # By Portuguese word (partial match, case-insensitive)
   python data/flag_challenge.py --word roupa
 
+  # Flag the English wording instead of the French one (default: fr)
+  python data/flag_challenge.py --word roupa --language en
+
   # Specify which user's name appears in the flag (optional)
   python data/flag_challenge.py --word roupa --username admin
 
@@ -40,7 +43,7 @@ def load_env() -> str:
 
 def load_all_challenges(db) -> list[dict]:
     """Load and tag all challenges from the MongoDB collection."""
-    docs = list(db["challenges"].find({}, {"_id": 1, "type": 1, "port": 1, "en": 1}))
+    docs = list(db["challenges"].find({}, {"_id": 1, "type": 1, "port": 1, "fr": 1, "en": 1}))
     for doc in docs:
         doc["id"] = str(doc.pop("_id"))
         doc["_type"] = doc.pop("type", "word")
@@ -90,6 +93,8 @@ def main() -> None:
     group.add_argument("--word", dest="word",         help="Portuguese word (partial, case-insensitive)")
     parser.add_argument("--username", default=None,
                         help="Username to attach the flag to (defaults to first user)")
+    parser.add_argument("--language", choices=["fr", "en"], default="fr",
+                        help="Native language the flag applies to (default: fr)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Preview what would be flagged without writing to DB")
     args = parser.parse_args()
@@ -108,8 +113,8 @@ def main() -> None:
 
     print(f"\nFound {len(matches)} challenge(s):\n")
     for c in matches:
-        en_info = c.get("en") or {}
-        print(f"  [{c['_type']}] id={c['id']}  port='{c['port']}'  en='{en_info.get('translation', '')}'")
+        lang_info = c.get(args.language) or {}
+        print(f"  [{c['_type']}] id={c['id']}  port='{c['port']}'  {args.language}='{lang_info.get('translation', '')}'")
 
     if args.dry_run:
         print("\n[dry-run] No changes written.")
@@ -128,10 +133,11 @@ def main() -> None:
 
     for c in matches:
         result = flags_col.update_one(
-            {"userId": user["_id"], "challengeId": c["id"]},
+            {"userId": user["_id"], "challengeId": c["id"], "language": args.language},
             {"$set": {
                 "userId":      user["_id"],
                 "challengeId": c["id"],
+                "language":    args.language,
                 "flaggedAt":   now,
                 "updatedAt":   now,
             }},

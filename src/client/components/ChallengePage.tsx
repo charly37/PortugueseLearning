@@ -1049,6 +1049,7 @@ const ChallengePage: React.FC<ChallengePageProps> = ({ mode, onBackHome, user, o
                 {showAnswer && (
                   <ChallengeQualityFlag
                     challengeId={challenge.id}
+                    language={preferredLanguage}
                     isGuest={user?.isGuest}
                     onFlagSubmit={() => handleChallengeFlag(challenge.id)}
                   />

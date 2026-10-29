@@ -196,7 +196,7 @@ flowchart TD
     D --> E["CronJob Mon 06:30<br/>upload_to_youtube.py"]
     C --> F["CronJob Mon 07:00<br/>generate_podcast_feed.py"]
     E --> G[(YouTube)]
-    F --> H["podcast/feed.xml<br/>served by Express"]
+    F --> H["podcast/vocabulary/fr-pt/feed.xml<br/>served by Express"]
     H --> I[(Apple Podcasts / Spotify)]
 ```
 

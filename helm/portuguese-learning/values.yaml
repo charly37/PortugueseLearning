@@ -36,11 +36,21 @@ weeklyAudio:
 sounds:
   hostPath: /home/ubuntu/PortugueseLearning/sounds
 
-# Podcast RSS feed (hostPath is read by the app at /app/podcast and written by
-# the podcast-feed CronJob at /podcast). Create the directory on the node with
-# owner 1000:1000 BEFORE deploying - both manifests use hostPath type: Directory.
+# Podcast RSS feeds (hostPath is read by the app at /app/podcast and written by the
+# podcast-feed CronJob at /podcast). Create the directory on the node with owner
+# 1000:1000 BEFORE deploying - both manifests use hostPath type: Directory.
+#
+# One feed is generated per entry in `pairs`, written to
+# <hostPath>/<show>/<pair>/feed.xml and served at /podcast/<show>/<pair>/feed.xml.
+# Each pair also needs its own artwork at src/images/podcast/<pair>/cover.jpg.
 podcast:
   hostPath: /home/ubuntu/PortugueseLearning/podcast
+  # Show slug (URL segment and directory): /podcast/vocabulary/fr-pt/feed.xml
+  show: vocabulary
+  # Language pairs {native}-{learning}. Only pairs backed by real per-language
+  # lessons should be listed - the generator publishes the global weekly lesson.
+  pairs:
+    - fr-pt
   # Lessons with weekStart before this date are never published. Bump it only
   # if you intend to publish older episodes (they keep their guid either way).
   firstWeek: "2026-10-26"
@@ -48,10 +58,6 @@ podcast:
   # CDN later without changing the code.
   baseUrl: ""
   audioBaseUrl: ""
-  # Cover art ships with the web app (src/images/podcast-cover.jpg, copied to
-  # public/podcast/cover.jpg by webpack) and is served at /podcast/cover.jpg.
-  # Override only if the artwork is hosted somewhere else.
-  coverUrl: ""
   episodeType: episodic
 
 backup:

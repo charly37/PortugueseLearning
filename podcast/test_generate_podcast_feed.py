@@ -100,7 +100,7 @@ class BuildEpisodeTest(unittest.TestCase):
             "weekStart": datetime(2026, 10, 26, tzinfo=UTC),
             "totalChallenges": 20,
         }
-        channel = feed.CHANNELS["fr"]
+        channel = feed.SHOWS["fr-pt"]
         episode = feed.build_episode(
             doc=doc,
             episode_number=3,
@@ -123,15 +123,52 @@ class BuildEpisodeTest(unittest.TestCase):
         self.assertEqual(episode.pub_date, datetime(2026, 10, 26, 4, 15, tzinfo=UTC))
 
 
+class ResolvePathsTest(unittest.TestCase):
+    def test_derives_feed_and_cover_urls(self):
+        output_dir, feed_url, cover_url = feed.resolve_paths(
+            show="vocabulary",
+            pair="fr-pt",
+            output_root="/podcast",
+            base_url="https://dialecthub.net",
+        )
+        self.assertEqual(output_dir, Path("/podcast/vocabulary/fr-pt"))
+        self.assertEqual(
+            feed_url, "https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml"
+        )
+        self.assertEqual(cover_url, "https://dialecthub.net/podcast/fr-pt/cover.jpg")
+
+    def test_tolerates_trailing_slash_in_base_url(self):
+        _, feed_url, cover_url = feed.resolve_paths(
+            show="vocabulary",
+            pair="en-pt",
+            output_root="/tmp/out",
+            base_url="https://dialecthub.net/",
+        )
+        self.assertEqual(
+            feed_url, "https://dialecthub.net/podcast/vocabulary/en-pt/feed.xml"
+        )
+        self.assertEqual(cover_url, "https://dialecthub.net/podcast/en-pt/cover.jpg")
+
+    def test_explicit_cover_url_wins(self):
+        _, _, cover_url = feed.resolve_paths(
+            show="vocabulary",
+            pair="fr-pt",
+            output_root="/podcast",
+            base_url="https://dialecthub.net",
+            cover_url="https://cdn.example.org/cover.jpg",
+        )
+        self.assertEqual(cover_url, "https://cdn.example.org/cover.jpg")
+
+
 class RenderFeedTest(unittest.TestCase):
     def setUp(self):
-        self.channel = feed.CHANNELS["fr"]
+        self.channel = feed.SHOWS["fr-pt"]
         self.xml = feed.render_feed(
             channel=self.channel,
             episodes=[_episode(1, 5, "aaaa"), _episode(2, 12, "bbbb")],
-            feed_url="https://dialecthub.net/podcast/feed.xml",
+            feed_url="https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml",
             base_url="https://dialecthub.net",
-            cover_url="https://dialecthub.net/podcast/cover.jpg",
+            cover_url="https://dialecthub.net/podcast/fr-pt/cover.jpg",
             episode_type="episodic",
             build_time=datetime(2026, 10, 12, 7, 0, tzinfo=UTC),
         )
@@ -148,7 +185,7 @@ class RenderFeedTest(unittest.TestCase):
         self.assertIn("<itunes:type>episodic</itunes:type>", self.xml)
         self.assertIn("<itunes:email>admin@dialecthub.net</itunes:email>", self.xml)
         self.assertIn(
-            '<atom:link href="https://dialecthub.net/podcast/feed.xml" rel="self" '
+            '<atom:link href="https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml" rel="self" '
             'type="application/rss+xml"/>',
             self.xml,
         )
@@ -175,9 +212,9 @@ class RenderFeedTest(unittest.TestCase):
         xml = feed.render_feed(
             channel=self.channel,
             episodes=[],
-            feed_url="https://dialecthub.net/podcast/feed.xml",
+            feed_url="https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml",
             base_url="https://dialecthub.net",
-            cover_url="https://dialecthub.net/podcast/cover.jpg",
+            cover_url="https://dialecthub.net/podcast/fr-pt/cover.jpg",
             episode_type="episodic",
             build_time=datetime(2026, 10, 12, 7, 0, tzinfo=UTC),
         )

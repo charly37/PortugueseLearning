@@ -6,15 +6,17 @@ Music, Pocket Casts and any other podcast directory.
 
 | | |
 |---|---|
-| Feed URL | `https://dialecthub.net/podcast/feed.xml` |
-| Cover art | `https://dialecthub.net/podcast/cover.jpg` |
+| Feed URL | `https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml` |
+| Cover art | `https://dialecthub.net/podcast/fr-pt/cover.jpg` |
 | Source audio | `https://dialecthub.net/weekly-audio/weekly_{docId}_{YYYYmmdd}_{HHmmss}.mp3` |
-| Generator | `podcast/generate_podcast_feed.py` (weekly CronJob) |
+| Generator | `podcast/generate_podcast_feed.py` (weekly CronJob — one per language pair) |
 | Show type | `episodic` (newest episode first) |
-| Language | French (`fr`) — an English feed is a later addition |
+| URL scheme | `/podcast/{show}/{pair}/feed.xml` — `show` = `vocabulary`, `pair` = `{native}-{learning}` |
 
-> ⚠️ **The feed URL is permanent.** Once submitted to Apple/Spotify, changing it means creating a
-> new show. Treat `https://dialecthub.net/podcast/feed.xml` as an API contract.
+> ⚠️ **Each feed URL is permanent.** Once submitted to Apple/Spotify, changing it means creating a
+> new show. Treat `https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml` as an API contract —
+> the `{show}` and `{pair}` segments exist so a second pair or a second show gets its own URL
+> without ever touching the first one.
 
 ## How It Works
 
@@ -24,7 +26,7 @@ flowchart LR
     B --> C["weekly-audio/weekly_{id}_{ts}.mp3<br/>+ Mongo audio.duration_s / size_bytes"]
     C --> D["Mon 06:30<br/>upload_to_youtube.py"]
     C --> E["Mon 07:00<br/>generate_podcast_feed.py"]
-    E --> F["podcast/feed.xml<br/>served at /podcast/feed.xml"]
+    E --> F["podcast/vocabulary/fr-pt/feed.xml<br/>served at /podcast/vocabulary/fr-pt/feed.xml"]
 ```
 
 1. The **global** lesson is the `weeklychallenges` document with `userId: null` (per-user lessons
@@ -35,14 +37,28 @@ flowchart LR
    MP3 (falling back to `stat`/`ffprobe` and backfilling Mongo when the metadata is missing), and
    writes `feed.xml` **atomically** (`feed.xml.tmp` → `os.replace`).
 4. Express serves that directory at `/podcast` (`PODCAST_PATH` env var, default `/app/podcast`) with
-   `Content-Type: application/rss+xml; charset=utf-8` and a 5-minute cache.
+   `Content-Type: application/rss+xml; charset=utf-8` and a 5-minute cache. The job writes to
+   `<hostPath>/<show>/<pair>/`, so a single hostPath holds every show and pair.
 
 Because the feed is regenerated weekly, it always reflects the current MongoDB state — there is no
 incremental publishing step and no "publish" button.
 
+## URL Layout
+
+```
+/podcast/{show}/{pair}/feed.xml     the RSS feed   (hostPath volume)
+/podcast/{pair}/cover.jpg           show artwork   (ships with the app image)
+```
+
+- `{show}` — content type. Today `vocabulary`; a future *stories* or *verbs* podcast gets its own
+  segment and therefore its own show entry.
+- `{pair}` — `{native}-{learning}`, e.g. `fr-pt` (French speaker learning Portuguese) or, later,
+  `en-pt`. Native **first**: do not read it as "Portuguese speaker learning French".
+- Artwork is pair-scoped, not show-scoped, so every show for the same pair can share it.
+
 ## Feed Structure
 
-Channel level (French):
+Channel level (pair `fr-pt`):
 
 - `title` — *DialectHub – Leçon de vocabulaire portugais européen*
 - `itunes:author` / `itunes:owner` — DialectHub, `admin@dialecthub.net`
@@ -85,25 +101,26 @@ Apple Podcasts and Spotify both require:
 The cover is committed with the source and shipped with the web app, exactly like the favicons:
 
 ```
-src/images/podcast-cover.jpg      (source — commit this)
+src/images/podcast/{pair}/cover.jpg    (source — commit this)
         │  webpack CopyPlugin
         ▼
-public/podcast/cover.jpg          (build output, served by Express)
+public/podcast/{pair}/cover.jpg        (build output, served by Express)
         │
         ▼
-https://dialecthub.net/podcast/cover.jpg
+https://dialecthub.net/podcast/{pair}/cover.jpg
 ```
 
-- Add or replace the file at `src/images/podcast-cover.jpg`, then rebuild (`npm run build`). The
-  rule in `webpack.config.js` copies it to `public/podcast/cover.jpg`, which `express.static` serves
-  before the `/podcast` feed mount — nothing is copied to the node, so updating the artwork is just
-  a commit + image build + `helm upgrade`.
+- Add or replace `src/images/podcast/fr-pt/cover.jpg`, then rebuild (`npm run build`). The rule in
+  `webpack.config.js` copies the whole `src/images/podcast/` tree, so adding `en-pt/cover.jpg`
+  needs no config change. Nothing is copied to the node — updating artwork is a commit + image
+  build + `helm upgrade`.
 - The copy is `noErrorOnMissing`, so a build never fails before the artwork is added. Until the file
-  exists the URL returns 404 and Apple/Spotify will reject the feed; the app logs
-  `podcast cover art missing` at startup when the built file is absent.
-- The generator does not validate the image (the CronJob cannot read `public/`). To check the
+  exists the URL returns 404 and Apple/Spotify will reject that feed; the app logs
+  `podcast cover art missing for <pair>` at startup (`PODCAST_PAIRS` env var lists the pairs to
+  check).
+- The generator does not validate the image (the CronJob cannot read `public/`). To check a
   committed file locally:
-  `python3 podcast/generate_podcast_feed.py --cover src/images/podcast-cover.jpg …`
+  `python3 podcast/generate_podcast_feed.py --pair fr-pt --cover src/images/podcast/fr-pt/cover.jpg …`
 
 ## Configuration
 
@@ -112,10 +129,11 @@ https://dialecthub.net/podcast/cover.jpg
 ```yaml
 podcast:
   hostPath: /home/ubuntu/PortugueseLearning/podcast
+  show: vocabulary          # URL segment and directory: /podcast/vocabulary/fr-pt
+  pairs: [fr-pt]            # one CronJob per pair; each needs its own cover art
   firstWeek: "2026-10-26"   # no earlier lesson is published
   baseUrl: ""               # empty → https://<ingress.host>
   audioBaseUrl: ""          # empty → same as baseUrl
-  coverUrl: ""              # empty → https://<ingress.host>/podcast/cover.jpg
   episodeType: episodic
 
 podcastFeed:
@@ -126,6 +144,21 @@ podcastFeed:
 
 `audioBaseUrl` exists so the MP3 delivery host can be changed later (Cloudflare proxy, R2 bucket)
 without touching code — see *Moving the audio to a CDN* below.
+
+## Adding a language pair
+
+1. Add the channel metadata in `podcast/generate_podcast_feed.py` → `SHOWS` (keyed by pair, e.g.
+   `"en-pt"`), with the copy in the learner's language.
+2. Add the artwork at `src/images/podcast/en-pt/cover.jpg` (3000×3000, under 512 KB).
+3. Append the pair to `podcast.pairs` in `values.yaml`, commit, and let CI build the images.
+4. Deploy. Helm renders one CronJob per pair: `<release>-podcast-feed-en-pt`.
+5. Run it manually, validate the feed, then submit it as a **separate show** to Apple/Spotify.
+
+> ⚠️ **Current limitation.** Every pair publishes the same global weekly lesson, because
+> `weeklychallenges` still stores a single `userId: null` document rendered with `--lang fr`.
+> Listing a second pair before per-language lessons exist would publish the French audio under the
+> new URL. The fix is one global document per language (`userId: null, language: "xx"`), selected
+> by the generator — planned as the next step, not part of the URL change.
 
 ## Deployment
 
@@ -156,7 +189,7 @@ helm upgrade --install prod helm/portuguese-learning \
 The CronJob only fires on Monday 07:00. To publish now:
 
 ```bash
-kubectl create job --from=cronjob/prod-podcast-feed -n portuguese-learning podcast-feed-manual-1
+kubectl create job --from=cronjob/prod-podcast-feed-fr-pt -n portuguese-learning podcast-feed-manual-1
 kubectl logs -n portuguese-learning job/podcast-feed-manual-1 -f
 ```
 
@@ -172,12 +205,14 @@ container — the shared analytics image already installs `pymongo` through
 set -a && . ./.env && set +a
 
 python3 podcast/generate_podcast_feed.py \
+  --pair fr-pt \
+  --show vocabulary \
   --audio-dir ./weekly-audio \
-  --output-dir /tmp/podcast \
+  --output-root /tmp/podcast \
   --first-week 2000-01-01 \
   --base-url https://dialecthub.net
 
-xmllint --noout /tmp/podcast/feed.xml
+xmllint --noout /tmp/podcast/vocabulary/fr-pt/feed.xml
 ```
 
 `--dry-run` prints the XML to stdout without writing files or touching MongoDB.
@@ -193,7 +228,7 @@ python3 -m unittest podcast/test_generate_podcast_feed.py -v
 Do this once, after the feed contains **at least one episode** and returns HTTP 200:
 
 1. Verify the feed is publicly reachable and well formed:
-   `curl -sI https://dialecthub.net/podcast/feed.xml` → `200`, `application/rss+xml`.
+   `curl -sI https://dialecthub.net/podcast/vocabulary/fr-pt/feed.xml` → `200`, `application/rss+xml`.
 2. Validate with a cast-feed validator (e.g. Cast Feed Validator or Podcast Validator) — fix any
    errors before submitting. Most rejections are a missing `itunes:image` or a bad enclosure length.
 3. **Apple Podcasts** — [Podcasts Connect](https://podcastsconnect.apple.com): *New Show* → paste
@@ -230,7 +265,8 @@ must not get one without excluding the published episodes.
 | Pod stuck `ContainerCreating`, `hostPath type check failed` | Create the host directory before `helm upgrade` |
 | Feed returns the React `index.html` | A route was registered after the `/{*path}` catch-all in `src/server.ts` |
 | Feed has no `<item>` | No global lesson with `weekStart >= firstWeek`, or the MP3 was missing — check job logs |
-| Apple rejects the feed | Missing/invalid cover art at `/podcast/cover.jpg` (check `src/images/podcast-cover.jpg` was committed and the client rebuilt), or the feed URL redirects (must be plain HTTPS 200) |
+| `/podcast/feed.xml` returns HTML | Expected: the feed moved to `/podcast/<show>/<pair>/feed.xml` |
+| Apple rejects the feed | Missing/invalid cover art at `/podcast/<pair>/cover.jpg` (check `src/images/podcast/<pair>/cover.jpg` was committed and the client rebuilt), or the feed URL redirects (must be plain HTTPS 200) |
 | Episode order looks wrong in Apple | `episodic` shows newest first by `pubDate`; verify the container clock is UTC |
 | Numbering jumps after editing `firstWeek` | Expected for newly included lessons; existing episodes keep their numbers |
 

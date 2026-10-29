@@ -43,10 +43,11 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: 'src/favicon', to: '.' },
-        // Podcast cover art: src/images/podcast-cover.jpg → public/podcast/cover.jpg,
-        // served at https://<host>/podcast/cover.jpg and referenced by feed.xml.
+        // Podcast cover art: src/images/podcast/<pair>/cover.jpg
+        //   → public/podcast/<pair>/cover.jpg
+        // served at https://<host>/podcast/<pair>/cover.jpg and referenced by the feed.
         // Optional so a build never fails before the artwork is added.
-        { from: 'src/images/podcast-cover.jpg', to: 'podcast/cover.jpg', noErrorOnMissing: true },
+        { from: 'src/images/podcast', to: 'podcast', noErrorOnMissing: true },
       ],
     }),
     new webpack.DefinePlugin({

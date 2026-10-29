@@ -1,15 +1,18 @@
+{{- $root := . -}}
+{{- range $pair := .Values.podcast.pairs }}
+---
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ .Release.Name }}-podcast-feed
-  namespace: {{ .Values.namespace }}
+  name: {{ $root.Release.Name }}-podcast-feed-{{ $pair }}
+  namespace: {{ $root.Values.namespace }}
   labels:
-    {{- include "portuguese-learning.labels" . | nindent 4 }}
+    {{- include "portuguese-learning.labels" $root | nindent 4 }}
 spec:
-  schedule: {{ .Values.podcastFeed.schedule | quote }}
+  schedule: {{ $root.Values.podcastFeed.schedule | quote }}
   concurrencyPolicy: Forbid
-  successfulJobsHistoryLimit: {{ .Values.podcastFeed.successfulJobsHistoryLimit }}
-  failedJobsHistoryLimit: {{ .Values.podcastFeed.failedJobsHistoryLimit }}
+  successfulJobsHistoryLimit: {{ $root.Values.podcastFeed.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ $root.Values.podcastFeed.failedJobsHistoryLimit }}
   jobTemplate:
     spec:
       backoffLimit: 2
@@ -23,26 +26,28 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: podcast-feed
-              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
-              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              image: "{{ $root.Values.image.analytics.repository }}:{{ $root.Values.image.analytics.tag }}"
+              imagePullPolicy: {{ $root.Values.image.analytics.pullPolicy }}
               command:
                 - python
                 - -u
                 - generate_podcast_feed.py
                 - --audio-dir
                 - /weekly-audio
-                - --output-dir
+                - --output-root
                 - /podcast
+                - --show
+                - {{ $root.Values.podcast.show | quote }}
+                - --pair
+                - {{ $pair | quote }}
                 - --first-week
-                - {{ .Values.podcast.firstWeek | quote }}
+                - {{ $root.Values.podcast.firstWeek | quote }}
                 - --base-url
-                - {{ .Values.podcast.baseUrl | default (printf "https://%s" .Values.ingress.host) | quote }}
+                - {{ $root.Values.podcast.baseUrl | default (printf "https://%s" $root.Values.ingress.host) | quote }}
                 - --audio-base-url
-                - {{ .Values.podcast.audioBaseUrl | default (printf "https://%s" .Values.ingress.host) | quote }}
-                - --cover-url
-                - {{ .Values.podcast.coverUrl | default (printf "https://%s/podcast/cover.jpg" .Values.ingress.host) | quote }}
+                - {{ $root.Values.podcast.audioBaseUrl | default (printf "https://%s" $root.Values.ingress.host) | quote }}
                 - --episode-type
-                - {{ .Values.podcast.episodeType | default "episodic" | quote }}
+                - {{ $root.Values.podcast.episodeType | default "episodic" | quote }}
               env:
                 - name: MONGODB_URI
                   valueFrom:
@@ -50,7 +55,7 @@ spec:
                       name: portuguese-learning-secrets
                       key: mongodb-uri
               resources:
-                {{- toYaml .Values.resources.podcastFeed | nindent 16 }}
+                {{- toYaml $root.Values.resources.podcastFeed | nindent 16 }}
               volumeMounts:
                 - name: weekly-audio
                   mountPath: /weekly-audio
@@ -60,9 +65,10 @@ spec:
           volumes:
             - name: weekly-audio
               hostPath:
-                path: {{ .Values.weeklyAudio.hostPath }}
+                path: {{ $root.Values.weeklyAudio.hostPath }}
                 type: Directory
             - name: podcast
               hostPath:
-                path: {{ .Values.podcast.hostPath }}
+                path: {{ $root.Values.podcast.hostPath }}
                 type: Directory
+{{- end }}

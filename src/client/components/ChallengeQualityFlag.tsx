@@ -6,12 +6,15 @@ import { useTranslation } from 'react-i18next';
 
 interface ChallengeQualityFlagProps {
   challengeId: string;
+  // Native language currently being practised; the flag is scoped to it.
+  language?: string;
   isGuest?: boolean;
   onFlagSubmit?: () => void;
 }
 
 const ChallengeQualityFlag: React.FC<ChallengeQualityFlagProps> = ({ 
   challengeId, 
+  language = 'fr',
   isGuest = false,
   onFlagSubmit
 }) => {
@@ -29,7 +32,7 @@ const ChallengeQualityFlag: React.FC<ChallengeQualityFlagProps> = ({
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
-          body: JSON.stringify({ challengeIds: [challengeId] })
+          body: JSON.stringify({ challengeIds: [challengeId], language })
         });
         
         if (response.ok) {
@@ -44,7 +47,7 @@ const ChallengeQualityFlag: React.FC<ChallengeQualityFlagProps> = ({
     };
 
     fetchUserFlag();
-  }, [challengeId, isGuest]);
+  }, [challengeId, language, isGuest]);
 
   const handleFlag = async () => {
     if (isGuest || isSubmitting || isFlagged) return;
@@ -55,7 +58,7 @@ const ChallengeQualityFlag: React.FC<ChallengeQualityFlagProps> = ({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ challengeId })
+        body: JSON.stringify({ challengeId, language })
       });
 
       if (response.ok) {

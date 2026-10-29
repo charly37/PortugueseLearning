@@ -1,11 +1,7 @@
-# TODO: Language awareness for DB flags
-#   Currently, quality flags stored in MongoDB have no language field — they only record
-#   the challengeId. This means that when a user flags a challenge (e.g. because the French
-#   translation is wrong), running the script with --language en will still prioritize and
-#   process that challenge in English, then clear the flag without fixing French.
-#   Fix: store the user's active language in the flag document at flag creation time
-#   (in the app), then filter prioritized flags by the current --language argument here,
-#   and only clear flags matching that language.
+# Quality flags are language-scoped: each document in `challengequalityflags` records the
+# native language the user was practising when they raised it. This script only considers
+# flags for the active --language and only clears flags for that same language, so a French
+# report cannot be "fixed" and cleared by an English run.
 
 import argparse
 import json
@@ -117,6 +113,7 @@ def get_pending_challenges(max_words: int) -> str:
             mongo_client.admin.command("ping")
             db = mongo_client.get_database()
             pipeline = [
+                {"$match": {"language": _language}},
                 {"$group": {"_id": "$challengeId", "flagCount": {"$sum": 1}}},
                 {"$match": {"flagCount": {"$gte": 1}}},
                 {"$sort": {"flagCount": -1}},
@@ -296,7 +293,7 @@ def save_all_changes() -> str:
 @function_tool
 def clear_quality_flags(challenge_ids_json: str) -> str:
     """
-    Delete quality flags from MongoDB for the given challenge IDs.
+    Delete quality flags for the given challenge IDs, restricted to the active language.
     challenge_ids_json must be a JSON array of challenge ID strings.
     Call this after processing flagged challenges to avoid re-processing them.
     """
@@ -308,9 +305,13 @@ def clear_quality_flags(challenge_ids_json: str) -> str:
             return "No IDs to clear."
         mongo_client = MongoClient(_mongodb_uri)
         db = mongo_client.get_database()
-        result = db.challengequalityflags.delete_many({"challengeId": {"$in": ids}})
+        result = db.challengequalityflags.delete_many(
+            {"challengeId": {"$in": ids}, "language": _language}
+        )
         mongo_client.close()
-        return f"Cleared {result.deleted_count} flag(s) for {len(ids)} challenge(s)."
+        return (
+            f"Cleared {result.deleted_count} {_language} flag(s) for {len(ids)} challenge(s)."
+        )
     except Exception as e:
         return f"Error clearing flags: {e}"
 

@@ -103,15 +103,29 @@ app.use('/podcast', express.static(podcastPath, {
   }
 }));
 
-// The podcast cover ships with the client bundle (webpack copies src/images/podcast-cover.jpg
-// to public/podcast/cover.jpg). Apple/Spotify reject the feed without it, so make the
-// omission visible in the app logs instead of failing silently at submission time.
-const podcastCoverPath = path.join(__dirname, '../public/podcast/cover.jpg');
-if (!fs.existsSync(podcastCoverPath)) {
+// The podcast cover ships with the client bundle (webpack copies
+// src/images/podcast/<pair>/cover.jpg to public/podcast/<pair>/cover.jpg).
+// Apple/Spotify reject a feed without it, so make a missing pair visible in the app
+// logs instead of failing silently at submission time. PODCAST_PAIRS lists the
+// language pairs rendered by the podcast-feed CronJob (e.g. "fr-pt,en-pt").
+const podcastPairs = (process.env.PODCAST_PAIRS || '')
+  .split(',')
+  .map(pair => pair.trim())
+  .filter(Boolean);
+if (podcastPairs.length === 0) {
   log.warn(
-    { path: podcastCoverPath },
-    'podcast cover art missing - add src/images/podcast-cover.jpg and rebuild the client'
+    { path: path.join(__dirname, '../public/podcast') },
+    'PODCAST_PAIRS is empty - no podcast cover art will be checked'
   );
+}
+for (const pair of podcastPairs) {
+  const coverPath = path.join(__dirname, '../public/podcast', pair, 'cover.jpg');
+  if (!fs.existsSync(coverPath)) {
+    log.warn(
+      { path: coverPath },
+      `podcast cover art missing for ${pair} - add src/images/podcast/${pair}/cover.jpg and rebuild the client`
+    );
+  }
 }
 
 

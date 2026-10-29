@@ -790,6 +790,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                 {showAnswer && (
                   <ChallengeQualityFlag
                     challengeId={challenge.id}
+                    language={preferredLanguage}
                     isGuest={user?.isGuest}
                   />
                 )}

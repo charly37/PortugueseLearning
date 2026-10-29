@@ -29,6 +29,9 @@ spec:
               value: {{ .Values.app.logLevel | quote }}
             - name: PORT
               value: {{ .Values.app.port | quote }}
+            # Language pairs whose podcast cover art must be present in public/podcast/<pair>/
+            - name: PODCAST_PAIRS
+              value: {{ join "," .Values.podcast.pairs | quote }}
             - name: MONGODB_URI
               valueFrom:
                 secretKeyRef:

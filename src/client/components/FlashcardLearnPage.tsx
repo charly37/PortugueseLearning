@@ -558,6 +558,7 @@ const FlashcardLearnPage: React.FC<FlashcardLearnPageProps> = ({
                 <Box sx={{ width: '100%', maxWidth: '500px', mt: 2 }}>
                   <ChallengeQualityFlag
                     challengeId={currentChallenge.id}
+                    language={preferredLanguage}
                     isGuest={user?.isGuest}
                   />
                 </Box>

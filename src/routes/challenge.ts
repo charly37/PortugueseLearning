@@ -18,6 +18,24 @@ const requireAuth = (req: Request, res: Response, next: express.NextFunction) =>
   next();
 };
 
+// Native languages a quality flag can be raised against. Portuguese is always the
+// target, so only the native side needs to be tracked here.
+const SUPPORTED_FLAG_LANGUAGES = ['fr', 'en'];
+
+/**
+ * Resolve the language a flag applies to. Falls back to the user's stored
+ * preference (and then 'fr') so a stale client cannot mislabel a flag.
+ */
+async function resolveFlagLanguage(userId: string, requested: unknown): Promise<string> {
+  const candidate = typeof requested === 'string' ? requested.trim().toLowerCase() : '';
+  if (candidate && SUPPORTED_FLAG_LANGUAGES.includes(candidate)) {
+    return candidate;
+  }
+  const user = await User.findById(userId).select('preferredLanguage').lean();
+  const preferred = (user?.preferredLanguage || '').toLowerCase();
+  return SUPPORTED_FLAG_LANGUAGES.includes(preferred) ? preferred : 'fr';
+}
+
 // Helper function to shuffle array
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -728,12 +746,15 @@ router.post('/flag-quality', requireAuth, async (req: Request, res: Response) =>
       return res.status(400).json({ message: 'Invalid challenge ID' });
     }
 
+    const language = await resolveFlagLanguage(userId as string, req.body?.language);
+
     // Upsert the flag (update if exists, create if not)
     const flag = await ChallengeQualityFlag.findOneAndUpdate(
-      { userId, challengeId },
+      { userId, challengeId, language },
       { 
         userId, 
         challengeId,
+        language,
         flaggedAt: new Date(),
         updatedAt: new Date()
       },
@@ -748,6 +769,7 @@ router.post('/flag-quality', requireAuth, async (req: Request, res: Response) =>
       message: 'Challenge flagged successfully',
       flag: {
         challengeId: flag.challengeId,
+        language: flag.language,
         flaggedAt: flag.flaggedAt
       }
     });
@@ -770,10 +792,13 @@ router.post('/get-quality-flags', requireAuth, async (req: Request, res: Respons
       return res.status(400).json({ message: 'Challenge IDs must be an array' });
     }
 
+    const language = await resolveFlagLanguage(userId as string, req.body?.language);
+
     const flags = await ChallengeQualityFlag.find({
       userId,
-      challengeId: { $in: challengeIds }
-    }).select('challengeId flaggedAt');
+      challengeId: { $in: challengeIds },
+      language
+    }).select('challengeId language flaggedAt');
 
     // Create a map for easy lookup
     const flagMap: { [key: string]: boolean } = {};
