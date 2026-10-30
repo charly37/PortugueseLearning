@@ -155,3 +155,65 @@ pair listed in `podcast.pairs`. Publishing an `es-pt` feed before the data model
 French audio under a Spanish URL. Both changes should land together — see [PODCAST.md](PODCAST.md).
 
 **Priority:** Low — only when a third native language is decided.
+
+## Vocabulary Updater: incremental saves, then split the Portuguese validation phase
+
+**Status:** Partially done (2026-10-30). Item 1 (incremental saves + `--dry-run`) is implemented; item 2
+(validation selection) and the CronJob split are still pending. Current setup: two CronJobs,
+`prod-vocabulary-updater-agent-fr` (Mon 06:00, both phases) and `prod-vocabulary-updater-agent-en`
+(Mon 08:00, `--skip-validator`).
+
+### Two things to fix before adding any more updater jobs
+
+**1. ~~`save_all_changes()` rewrites every document.~~ Done (2026-10-30).**
+`_save_challenges()` used to iterate all ~2 781 word challenges and issue one `update_one` with `$set` of
+*every* field from the in-memory copy — even when only 1–2 documents changed. Each job called it once
+per phase, so a job performed ~5 500 writes and held a wide clobber window.
+
+- Now: the two mutating tools (`apply_portuguese_corrections`, `update_translation`) add their id to a
+  module-level `_dirty_ids` set, and `save_all_changes()` flushes only those documents in a single
+  `bulk_write(..., ordered=False)`. Writes per job drop from ~5 500 to ~50.
+- `--dry-run` was added at the same time: it runs both agents but skips every MongoDB write and flag
+  deletion, logging what would have changed (useful to verify without touching data).
+- Caveat: writes are still **whole-document** `$set`. Do not run `TextToSpeechGenerator.py` (which writes
+  `audio` metadata) while an updater job is in flight, or those fields can be reverted for the 1–2 docs
+  touched by the run.
+
+**2. Phase 1's queue is decided by the translation language.**
+The validator calls `get_pending_challenges()`, whose staleness filter is driven by `_language`
+(`_is_translation_recent(challenge, _language, _months)`). So "which Portuguese words get validated"
+depends on French translation freshness — accidental coupling, and the reason `--skip-validator`
+exists as a workaround.
+
+- Fix: give validation its own criterion, e.g. a `port_checked` date on the document, or "words
+  inserted since the last validation run" (the creator agent inserts new words every Friday).
+
+### Then (optional) split validation into its own CronJob
+
+Make it a **mode on the same script** (`--validate-only`, keeping `--skip-validator`), not a new file —
+it shares `get_pending_challenges`, `_load_challenges`, `_save_challenges` and the in-memory model.
+
+| Job | Schedule | Command |
+|---|---|---|
+| `<release>-vocabulary-updater-agent-validate` | Mon 05:30 | `VocabularyUpdaterAgent.py --validate-only --max-words 50` |
+| `<release>-vocabulary-updater-agent-fr` | Mon 06:00 | `… --language fr --skip-validator` |
+| `<release>-vocabulary-updater-agent-en` | Mon 08:00 | `… --language en --skip-validator` |
+
+Constraints:
+- All three rewrite whole documents, so they must stay **strictly sequential** (`concurrencyPolicy: Forbid`
+  only serialises a job with itself). 05:00 is taken by the weekly story, hence 05:30.
+- Ordering matters: validate before translating, so a correction like `"ver, assistir"` → `"ver"` is in
+  place before the translations are reviewed.
+- Add `activeDeadlineSeconds` and `ttlSecondsAfterFinished` to the updater CronJob(s) — currently missing,
+  and each run makes 100+ LLM calls.
+- Note: quality flags are cleared by the *translation* phase, not by the validator, so a flag raised
+  against a Portuguese word is cleared by the language run regardless — unchanged by the split.
+
+### Triggers to actually do the split
+
+- A third native language is added ("the French job owns Portuguese validation" stops making sense).
+- A one-off backfill (e.g. validating 500 newly imported words) needs its own `--max-words` and timeout.
+- Validation needs a different cadence (monthly) or model than translations (weekly, `gpt-4.1-mini`).
+- Independent failure/retry is wanted — today a phase-1 crash fails the whole FR job and phase 2 never runs.
+
+**Priority:** Low — item 1 is done; do item 2 opportunistically, the CronJob split only with a third language.

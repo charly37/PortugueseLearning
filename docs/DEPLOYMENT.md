@@ -75,8 +75,15 @@ A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) prod
 | `<release>-weekly-challenge` | Mon 03:00 | `create_weekly_challenge.py --all-users` | `weeklychallenges` documents |
 | `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_*.mp3` (+ `.mp4`) |
 | `<release>-weekly-story` | Mon 05:00 | `StoryCreatorGetter.py` | `weeklystories` documents |
+| `<release>-vocabulary-updater-agent-fr` | Mon 06:00 | `VocabularyUpdaterAgent.py --language fr --max-words 50` | `challenges` FR translations + clears FR flags |
 | `<release>-youtube-uploader` | Mon 06:30 | `upload_to_youtube.py --weekly-audio-dir /weekly-audio` | `youtube.videoId` on the document |
 | `<release>-podcast-feed-<pair>` | Mon 07:00 | `generate_podcast_feed.py --show vocabulary --pair fr-pt --output-root /podcast` | `/podcast/vocabulary/fr-pt/feed.xml` |
+| `<release>-vocabulary-updater-agent-en` | Mon 08:00 | `VocabularyUpdaterAgent.py --language en --max-words 50 --skip-validator` | `challenges` EN translations + clears EN flags |
+
+> The two `vocabulary-updater-agent-*` jobs **must not overlap**: the script reloads every
+> challenge and rewrites whole documents with `$set`, so a concurrent run would clobber the
+> other language's changes. `--skip-validator` keeps the language-independent Portuguese-word
+> validation (phase 1) to a single run per week.
 
 Only global lessons (`userId: null`) are published — per-user lessons stay private. See [PODCAST.md](PODCAST.md) for the feed format, cover-art requirements and platform submission steps.
 
@@ -267,6 +274,7 @@ All tuneable values are in `helm/portuguese-learning/values.yaml`. Key overrides
 | `podcast.audioBaseUrl` | `""` | Base URL for MP3 enclosures (empty → same as `baseUrl`); change it to move audio to a CDN |
 | `podcast.episodeType` | `episodic` | iTunes ordering hint (`episodic` or `serial`) |
 | `podcastFeed.schedule` | `0 7 * * 1` | Podcast RSS feed CronJob schedule |
+| `vocabularyUpdaterAgent.languages` | `{fr: 06:00, en: 08:00}` | One CronJob per language (`schedule` + `skipValidator`), scheduled sequentially |
 | `certManager.email` | `admin@dialecthub.net` | Let's Encrypt registration email |
 | `certManager.createIssuers` | `true` | Create `ClusterIssuer` resources. Set `false` for secondary releases (staging) since ClusterIssuers are cluster-scoped and shared. |
 

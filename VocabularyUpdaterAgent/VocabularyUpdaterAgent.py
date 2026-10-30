@@ -13,7 +13,7 @@ from datetime import datetime, timedelta
 from typing import Any
 
 from agents import Agent, Runner, function_tool
-from pymongo import MongoClient
+from pymongo import MongoClient, UpdateOne
 
 logging.basicConfig(
     level=logging.INFO,
@@ -39,7 +39,7 @@ def _one_line(text: Any, limit: int = 4000) -> str:
 
 # Allow importing from the repo-level scripts/ directory
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
-from db_utils import get_challenges_collection, update_challenge_fields
+from db_utils import get_challenges_collection
 
 # ---------------------------------------------------------------------------
 # Globals (set once in main, read by tool functions)
@@ -48,6 +48,10 @@ _challenges: list[dict] = []
 _language: str = "fr"
 _months: int = 6
 _mongodb_uri: str = ""
+# Ids of the documents modified during this run. Anything that mutates _challenges must
+# add its id here, otherwise the change will not be persisted by save_all_changes().
+_dirty_ids: set[str] = set()
+_dry_run: bool = False
 
 # ---------------------------------------------------------------------------
 # Helper utilities (not tools — pure Python helpers)
@@ -64,15 +68,42 @@ def _load_challenges() -> list[dict]:
     return docs
 
 
-def _save_challenges(challenges: list[dict]) -> None:
+def _save_challenges(challenge_ids: set[str]) -> str:
+    """Persist only the given documents (whole-document $set, as before).
+
+    Keeps the historic behaviour of writing every field except `id`, but scoped to the
+    documents modified in this run instead of the whole collection.
+    """
+    ids = sorted(challenge_ids)
+    if not ids:
+        return "Nothing to save (no changes)."
+
+    for cid in ids:
+        log.debug("Dirty document: %s", cid)
+
+    if _dry_run:
+        log.info("DRY RUN: would update %d document(s)", len(ids))
+        return f"DRY RUN: would update {len(ids)} document(s)."
+
+    by_id = {c.get("id"): c for c in _challenges if c.get("id") in challenge_ids}
+    operations = [
+        UpdateOne({"_id": cid}, {"$set": {k: v for k, v in by_id[cid].items() if k != "id"}})
+        for cid in ids
+        if cid in by_id
+    ]
+    if not operations:
+        challenge_ids.clear()
+        return "Nothing to save (no changes)."
+
     client, collection = get_challenges_collection()
-    for c in challenges:
-        cid = c.get("id")
-        if not cid:
-            continue
-        fields = {k: v for k, v in c.items() if k != "id"}
-        collection.update_one({"_id": cid}, {"$set": fields})
-    client.close()
+    try:
+        result = collection.bulk_write(operations, ordered=False)
+    finally:
+        client.close()
+
+    challenge_ids.clear()
+    log.info("Saved %d document(s) (%d modified)", len(operations), result.modified_count)
+    return f"Updated {len(operations)} document(s)."
 
 
 def _is_translation_recent(challenge: dict, language: str, months: int) -> bool:
@@ -212,12 +243,17 @@ def apply_portuguese_corrections(corrections_json: str) -> str:
             skipped += 1
             continue
         for challenge in _challenges:
-            if challenge.get("id") == c.get("challenge_id"):
-                old = challenge.get("port", "")
-                challenge["port"] = corrected
-                log.info("Corrected '%s' -> '%s' (reason: %s)", old, corrected, _one_line(c.get('reason', '')))
-                applied += 1
+            if challenge.get("id") != c.get("challenge_id"):
+                continue
+            old = challenge.get("port", "")
+            if corrected == old:
+                skipped += 1
                 break
+            challenge["port"] = corrected
+            _dirty_ids.add(challenge["id"])
+            log.info("Corrected '%s' -> '%s' (reason: %s)", old, corrected, _one_line(c.get('reason', '')))
+            applied += 1
+            break
 
     return f"Applied {applied} correction(s), {skipped} word(s) unchanged."
 
@@ -272,6 +308,7 @@ def update_translation(
 
         section["last_update"] = today
         updated_fields.append("last_update")
+        _dirty_ids.add(challenge_id)
 
         msg = f"Updated challenge {challenge_id}: {', '.join(updated_fields)}"
         log.info("%s", msg)
@@ -283,11 +320,11 @@ def update_translation(
 @function_tool
 def save_all_changes() -> str:
     """
-    Persist all in-memory challenge changes back to MongoDB.
+    Persist the challenges modified during this run.  Only documents that were actually
+    changed are written (not the whole collection).
     Call this once after all individual updates are done.
     """
-    _save_challenges(_challenges)
-    return "MongoDB updated successfully."
+    return _save_challenges(_dirty_ids)
 
 
 @function_tool
@@ -303,6 +340,9 @@ def clear_quality_flags(challenge_ids_json: str) -> str:
         ids: list[str] = json.loads(challenge_ids_json)
         if not ids:
             return "No IDs to clear."
+        if _dry_run:
+            log.info("DRY RUN: would clear %d %s flag(s)", len(ids), _language)
+            return f"DRY RUN: would clear {len(ids)} {_language} flag(s)."
         mongo_client = MongoClient(_mongodb_uri)
         db = mongo_client.get_database()
         result = db.challengequalityflags.delete_many(
@@ -408,12 +448,16 @@ async def _run_agent(
     months: int,
     model: str = "gpt-4.1-mini",
     validator_model: str = "gpt-4.1",
+    skip_validator: bool = False,
+    dry_run: bool = False,
 ) -> None:
-    global _challenges, _language, _months, _mongodb_uri
+    global _challenges, _language, _months, _mongodb_uri, _dry_run
 
     _language = language
     _months = months
     _mongodb_uri = os.environ.get("MONGODB_URI", "")
+    _dry_run = dry_run
+    _dirty_ids.clear()
     if not _mongodb_uri:
         log.error("MONGODB_URI environment variable not set!")
         sys.exit(1)
@@ -423,21 +467,27 @@ async def _run_agent(
     log.info("Loaded %d challenges", len(_challenges))
     log.info("Language: %s  |  Max words: %d  |  Refresh period: %d months",
              language, max_words, months)
+    if dry_run:
+        log.info("DRY RUN: no MongoDB writes and no flag deletion will happen.")
 
     # ------------------------------------------------------------------
     # Phase 1: Portuguese word validation
     # ------------------------------------------------------------------
-    log.info("%s", "=" * 60)
-    log.info("PHASE 1: Portuguese Word Validation")
-    log.info("Model: %s", validator_model)
-    log.info("%s", "=" * 60)
-    validator = _build_validator_agent(validator_model)
-    validator_result = await Runner.run(
-        validator,
-        f"Review up to {max_words} Portuguese vocabulary words for correctness.",
-        max_turns=max_words * 3 + 20,
-    )
-    log.info("Validator Report: %s", _one_line(validator_result.final_output))
+    if skip_validator:
+        log.info("Skipping PHASE 1 (--skip-validator): Portuguese word validation is "
+                 "language-independent and already ran for another language.")
+    else:
+        log.info("%s", "=" * 60)
+        log.info("PHASE 1: Portuguese Word Validation")
+        log.info("Model: %s", validator_model)
+        log.info("%s", "=" * 60)
+        validator = _build_validator_agent(validator_model)
+        validator_result = await Runner.run(
+            validator,
+            f"Review up to {max_words} Portuguese vocabulary words for correctness.",
+            max_turns=max_words * 3 + 20,
+        )
+        log.info("Validator Report: %s", _one_line(validator_result.final_output))
 
     # ------------------------------------------------------------------
     # Phase 2: Translation updates
@@ -497,6 +547,22 @@ def main() -> None:
         default="gpt-4.1",
         help="OpenAI model for the Portuguese word validator agent (default: gpt-4.1)",
     )
+    parser.add_argument(
+        "--skip-validator",
+        action="store_true",
+        help=(
+            "Skip the Portuguese word validation phase. Phase 1 is language-independent, "
+            "so schedule it once per week (e.g. on the fr run) instead of once per language."
+        ),
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help=(
+            "Run the agents but skip every MongoDB write and flag deletion, logging what "
+            "would have changed. Useful to verify the pipeline without touching data."
+        ),
+    )
     args = parser.parse_args()
 
     asyncio.run(_run_agent(
@@ -505,6 +571,8 @@ def main() -> None:
         months=args.months,
         model=args.model,
         validator_model=args.validator_model,
+        skip_validator=args.skip_validator,
+        dry_run=args.dry_run,
     ))
 
 

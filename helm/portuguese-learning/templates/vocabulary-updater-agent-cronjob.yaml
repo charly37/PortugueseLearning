@@ -1,15 +1,18 @@
+{{- $root := . -}}
+{{- range $lang, $cfg := .Values.vocabularyUpdaterAgent.languages }}
+---
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ .Release.Name }}-vocabulary-updater-agent
-  namespace: {{ .Values.namespace }}
+  name: {{ $root.Release.Name }}-vocabulary-updater-agent-{{ $lang }}
+  namespace: {{ $root.Values.namespace }}
   labels:
-    {{- include "portuguese-learning.labels" . | nindent 4 }}
+    {{- include "portuguese-learning.labels" $root | nindent 4 }}
 spec:
-  schedule: {{ .Values.vocabularyUpdaterAgent.schedule | quote }}
+  schedule: {{ $cfg.schedule | quote }}
   concurrencyPolicy: Forbid
-  successfulJobsHistoryLimit: {{ .Values.vocabularyUpdaterAgent.successfulJobsHistoryLimit }}
-  failedJobsHistoryLimit: {{ .Values.vocabularyUpdaterAgent.failedJobsHistoryLimit }}
+  successfulJobsHistoryLimit: {{ $root.Values.vocabularyUpdaterAgent.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ $root.Values.vocabularyUpdaterAgent.failedJobsHistoryLimit }}
   jobTemplate:
     spec:
       template:
@@ -20,9 +23,22 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: vocabulary-updater-agent
-              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
-              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
-              command: ["python", "VocabularyUpdaterAgent.py", "--max-words", "50", "--validator-model", "gpt-4.1", "--model", "gpt-4.1-mini"]
+              image: "{{ $root.Values.image.analytics.repository }}:{{ $root.Values.image.analytics.tag }}"
+              imagePullPolicy: {{ $root.Values.image.analytics.pullPolicy }}
+              command:
+                - python
+                - VocabularyUpdaterAgent.py
+                - --language
+                - {{ $lang | quote }}
+                - --max-words
+                - "50"
+                - --validator-model
+                - gpt-4.1
+                - --model
+                - gpt-4.1-mini
+                {{- if $cfg.skipValidator }}
+                - --skip-validator
+                {{- end }}
               env:
                 - name: MONGODB_URI
                   valueFrom:
@@ -35,4 +51,5 @@ spec:
                       name: portuguese-learning-secrets
                       key: open-ai-key
               resources:
-                {{- toYaml .Values.resources.vocabularyUpdaterAgent | nindent 16 }}
+                {{- toYaml $root.Values.resources.vocabularyUpdaterAgent | nindent 16 }}
+{{- end }}

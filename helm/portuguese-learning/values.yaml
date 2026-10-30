@@ -191,8 +191,18 @@ weeklyStory:
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
 
+# One CronJob per language. The schedule matters: the updater reloads every challenge
+# and rewrites whole documents with $set, so two runs must never overlap.
+# Phase 1 (Portuguese word validation) is language-independent — keep skipValidator
+# false only on the first run of the week so the same words are not reviewed twice.
 vocabularyUpdaterAgent:
-  schedule: "0 6 * * 1"
+  languages:
+    fr:
+      schedule: "0 6 * * 1"
+      skipValidator: false
+    en:
+      schedule: "0 8 * * 1"
+      skipValidator: true
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
 
