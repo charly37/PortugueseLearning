@@ -1,0 +1,22 @@
+[
+  {
+    "episodeNumber": 1,
+    "docId": "65f1a2b3c4d5e6f7a8b9c0e1",
+    "title": "Vocabulary Lesson – Week of 19 October 2026",
+    "pubDate": "2026-10-19T04:15:00+00:00",
+    "filename": "weekly_template_65f1a2b3c4d5e6f7a8b9c0e1_20261019_041500.mp3",
+    "audioUrl": "https://dialecthub.net/weekly-audio/weekly_template_65f1a2b3c4d5e6f7a8b9c0e1_20261019_041500.mp3",
+    "sizeBytes": 1572864,
+    "durationSeconds": 92.4
+  },
+  {
+    "episodeNumber": 2,
+    "docId": "65f1a2b3c4d5e6f7a8b9c0e2",
+    "title": "Vocabulary Lesson – Week of 26 October 2026",
+    "pubDate": "2026-10-26T04:15:00+00:00",
+    "filename": "weekly_template_65f1a2b3c4d5e6f7a8b9c0e2_20261026_041500.mp3",
+    "audioUrl": "https://dialecthub.net/weekly-audio/weekly_template_65f1a2b3c4d5e6f7a8b9c0e2_20261026_041500.mp3",
+    "sizeBytes": 2097152,
+    "durationSeconds": 3725
+  }
+]
