@@ -7,13 +7,17 @@ already published to YouTube.  This script turns the same audio into a standard
 RSS 2.0 + iTunes feed so Apple Podcasts, Spotify and other podcast directories
 can ingest it.
 
-Only global weekly challenges (``userId: null``) are published, matching the
-YouTube uploader.  Episodes start at ``--first-week`` so the show does not
-backfill lessons recorded before podcasting was enabled.
+One feed is produced per language pair.  Episodes come from the language's
+``weeklychallenge_templates`` document (one per ``weekStart`` + ``language``),
+which is the only *public* lesson left after the template migration - per-user
+``weeklychallenges`` documents are private and are never published.  Episodes
+start at ``--first-week`` so the show does not backfill lessons recorded before
+podcasting was enabled.
 
 Usage:
     python generate_podcast_feed.py
     python generate_podcast_feed.py --first-week 2026-10-26 --base-url https://dialecthub.net
+    python generate_podcast_feed.py --pair en-pt
     python generate_podcast_feed.py --dry-run
 
 Environment variables:
@@ -47,6 +51,12 @@ DEFAULT_SHOW = "vocabulary"
 DEFAULT_PAIR = "fr-pt"
 FEED_FILENAME = "feed.xml"
 EPISODES_FILENAME = "episodes.json"
+# Public lesson documents (one per weekStart + language) - the feed's data source.
+TEMPLATES_COLLECTION = "weeklychallenge_templates"
+# Stable episode numbers keyed by (pair, docId).  They live outside the lesson
+# document because create_weekly_challenge.py replaces whole template documents
+# every week, which would silently reset the numbering.
+EPISODES_COLLECTION = "podcast_episodes"
 
 # Apple requires the official (English) category names regardless of the feed
 # language, so these are deliberately not translated.
@@ -57,6 +67,16 @@ FRENCH_MONTHS = (
     "janvier", "février", "mars", "avril", "mai", "juin",
     "juillet", "août", "septembre", "octobre", "novembre", "décembre",
 )
+
+ENGLISH_MONTHS = (
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+)
+
+MONTHS = {
+    "fr": FRENCH_MONTHS,
+    "en": ENGLISH_MONTHS,
+}
 
 # Channel metadata keyed by language pair `{native}-{learning}`.  The key is also
 # the last URL segment: /podcast/<show>/<pair>/feed.xml.  Adding a pair means adding
@@ -92,12 +112,42 @@ SHOWS = {
         ),
         "lesson_path": "/weekly-challenge",
     },
+    "en-pt": {
+        "pair": "en-pt",
+        "language": "en",
+        "title": "DialectHub – European Portuguese Vocabulary Lesson",
+        "subtitle": "A weekly European Portuguese vocabulary lesson for English speakers",
+        "description": (
+            "Every week, a European Portuguese vocabulary lesson for English "
+            "speakers: the essential words with native pronunciation, their "
+            "translation and example sentences in context."
+        ),
+        "summary": (
+            "Weekly European Portuguese vocabulary lesson for English speakers, "
+            "with native pronunciation, translations and example sentences."
+        ),
+        "author": "DialectHub",
+        "owner_name": "DialectHub",
+        "owner_email": "admin@dialecthub.net",
+        "copyright": "(c) DialectHub - https://dialecthub.net",
+        "episode_title": "Vocabulary Lesson – Week of {date}",
+        "episode_description": (
+            "<p>Weekly European Portuguese vocabulary lesson: "
+            "{count} words with native pronunciation, their translation and "
+            "example sentences in context.</p>"
+            "<p>Practise with the interactive lesson: "
+            '<a href="{lesson_url}">{lesson_url}</a></p>'
+            "<p>All lessons are available on "
+            '<a href="{site_url}">{site_url}</a></p>'
+        ),
+        "lesson_path": "/weekly-challenge",
+    },
 }
 
 
 @dataclass
 class Episode:
-    """One published podcast episode, resolved from a weeklychallenges document."""
+    """One published podcast episode, resolved from a weekly template document."""
 
     doc_id: str
     episode_number: int
@@ -153,9 +203,19 @@ def resolve_paths(
     return output_dir, feed_url, resolved_cover
 
 
+def format_date(value: datetime, language: str = "fr") -> str:
+    """Format a date as ``26 octobre 2026`` / ``26 October 2026``.
+
+    Month names are inlined instead of pulling in ``babel``: one table per
+    supported feed language.
+    """
+    months = MONTHS.get(language, FRENCH_MONTHS)
+    return f"{value.day} {months[value.month - 1]} {value.year}"
+
+
 def format_french_date(value: datetime) -> str:
-    """Format a date as ``26 octobre 2026`` (no ``babel`` dependency)."""
-    return f"{value.day} {FRENCH_MONTHS[value.month - 1]} {value.year}"
+    """Backwards-compatible wrapper around :func:`format_date`."""
+    return format_date(value, "fr")
 
 
 def format_duration(seconds: float | None) -> str | None:
@@ -181,16 +241,18 @@ def cdata(text: str) -> str:
 
 
 def parse_publish_time(filename: str, week_start: datetime | None = None) -> datetime:
-    """Derive the publish time from ``weekly_{docId}_{YYYYmmdd}_{HHmmss}.mp3``.
+    """Derive the publish time from the ``<YYYYmmdd>_<HHmmss>`` filename suffix.
 
-    The generation timestamp embeds the container clock, which is UTC.  Falls
-    back to ``weekStart + 4h`` (the sound-generation cron runs at 04:00) and
-    finally to "now".
+    Handles both ``weekly_{docId}_{YYYYmmdd}_{HHmmss}.mp3`` and the template
+    naming ``weekly_template_{templateId}_{YYYYmmdd}_{HHmmss}.mp3``.  The
+    generation timestamp embeds the container clock, which is UTC.  Falls back
+    to ``weekStart + 4h`` (the sound-generation cron runs at 04:00) and finally
+    to "now".
     """
     parts = Path(filename).stem.split("_")
-    if len(parts) >= 4 and parts[0] == "weekly":
+    if len(parts) >= 3:
         try:
-            parsed = datetime.strptime(f"{parts[2]}_{parts[3]}", "%Y%m%d_%H%M%S")
+            parsed = datetime.strptime(f"{parts[-2]}_{parts[-1]}", "%Y%m%d_%H%M%S")
             return parsed.replace(tzinfo=timezone.utc)
         except ValueError:
             pass
@@ -263,52 +325,97 @@ def connect_mongodb():
     return client, client.get_default_database()
 
 
-def fetch_episodes(collection, first_week: datetime) -> list[dict]:
-    """Global weekly lessons that already have an MP3, oldest first."""
-    query = {
-        "userId": None,  # global lesson only (per-user lessons stay private)
+def build_selection_query(language: str, first_week: datetime) -> dict:
+    """MongoDB query selecting the templates that become episodes for one language.
+
+    Only the language-specific template is published: per-user ``weeklychallenges``
+    documents hold each learner's weak words and must never leave the server.
+    """
+    return {
+        "language": language,
         "weekStart": {"$gte": first_week},
         "audio.filename": {"$exists": True, "$ne": None},
     }
-    docs = list(collection.find(query).sort("weekStart", 1))
+
+
+def fetch_episodes(collection, first_week: datetime, language: str) -> list[dict]:
+    """Language-specific templates that already have an MP3, oldest first."""
+    docs = list(
+        collection.find(build_selection_query(language, first_week)).sort("weekStart", 1)
+    )
     log.info(
-        "Found %d candidate episode(s) with weekStart >= %s",
-        len(docs), first_week.date(),
+        "Found %d candidate episode(s) for language %s with weekStart >= %s",
+        len(docs), language, first_week.date(),
     )
     return docs
 
 
-def assign_episode_numbers(collection, docs: list[dict], persist: bool) -> dict[str, int]:
-    """Give every document a stable, monotonically increasing episode number.
+def ensure_episode_indexes(collection) -> None:
+    """Create the indexes that keep episode numbers stable per language pair."""
+    collection.create_index(
+        [("pair", 1), ("docId", 1)],
+        unique=True,
+        name="podcast_episodes_pair_doc_unique",
+    )
+    collection.create_index(
+        [("pair", 1), ("episodeNumber", 1)],
+        name="podcast_episodes_pair_number",
+    )
 
-    Numbers are stored in ``podcast.episodeNumber`` so a later change to
-    ``--first-week`` or a skipped week never renumbers already-published episodes.
+
+def highest_episode_number(collection, pair: str) -> int:
+    """Highest number already assigned to this pair (0 when the show is new)."""
+    latest = collection.find_one(
+        {"pair": pair, "episodeNumber": {"$exists": True}},
+        {"episodeNumber": 1},
+        sort=[("episodeNumber", -1)],
+    )
+    return int((latest or {}).get("episodeNumber") or 0)
+
+
+def assign_episode_numbers(
+    collection, pair: str, docs: list[dict], persist: bool
+) -> dict[str, int]:
+    """Give every template a stable, monotonically increasing episode number.
+
+    Numbers live in their own ``podcast_episodes`` collection, keyed by
+    ``(pair, docId)``: ``create_weekly_challenge.py`` replaces whole template
+    documents every week, so a number stored on the template itself would be
+    wiped before the feed runs and every episode would be renumbered.
+
+    Each language pair has its own sequence, so the two shows number
+    independently and a skipped week never renumbers published episodes.
     """
-    latest = collection.find(
-        {"podcast.episodeNumber": {"$exists": True}},
-        {"podcast.episodeNumber": 1},
-    )
-    highest = max(
-        ((doc.get("podcast") or {}).get("episodeNumber") or 0 for doc in latest),
-        default=0,
-    )
-
+    highest = highest_episode_number(collection, pair)
     numbers: dict[str, int] = {}
+
     for doc in docs:
-        number = (doc.get("podcast") or {}).get("episodeNumber")
-        if number is None:
-            highest += 1
-            number = highest
-            if persist:
-                collection.update_one(
-                    {"_id": doc["_id"]},
-                    {"$set": {
-                        "podcast.episodeNumber": number,
-                        "podcast.firstPublishedAt": datetime.now(tz=timezone.utc),
-                    }},
-                )
-            log.info("[%s] Assigned episode number %d", doc["_id"], number)
-        numbers[str(doc["_id"])] = number
+        doc_id = str(doc["_id"])
+        existing = collection.find_one(
+            {"pair": pair, "docId": doc_id},
+            {"episodeNumber": 1},
+        )
+        if existing and existing.get("episodeNumber") is not None:
+            numbers[doc_id] = int(existing["episodeNumber"])
+            continue
+
+        highest += 1
+        numbers[doc_id] = highest
+        if persist:
+            collection.update_one(
+                {"pair": pair, "docId": doc_id},
+                {"$setOnInsert": {
+                    "pair": pair,
+                    "docId": doc_id,
+                    "guid": doc_id,
+                    "weekStart": as_utc(doc.get("weekStart")),
+                    "episodeNumber": highest,
+                    "firstPublishedAt": datetime.now(tz=timezone.utc),
+                }},
+                upsert=True,
+            )
+        log.info("[%s] Assigned episode number %d (pair %s)", doc_id, highest, pair)
+
     return numbers
 
 
@@ -371,7 +478,9 @@ def build_episode(
     return Episode(
         doc_id=str(doc["_id"]),
         episode_number=episode_number,
-        title=channel["episode_title"].format(date=format_french_date(display_date)),
+        title=channel["episode_title"].format(
+            date=format_date(display_date, channel.get("language", "fr"))
+        ),
         description_html=channel["episode_description"].format(
             count=count,
             lesson_url=lesson_url,
@@ -621,10 +730,15 @@ def main(argv: list[str] | None = None) -> int:
     log.info("Cover art URL: %s", cover_url)
 
     client, db = connect_mongodb()
-    collection = db["weeklychallenges"]
+    collection = db[TEMPLATES_COLLECTION]
+    episodes_collection = db[EPISODES_COLLECTION]
     try:
-        docs = fetch_episodes(collection, first_week)
-        numbers = assign_episode_numbers(collection, docs, persist=not args.dry_run)
+        docs = fetch_episodes(collection, first_week, channel["language"])
+        if not args.dry_run:
+            ensure_episode_indexes(episodes_collection)
+        numbers = assign_episode_numbers(
+            episodes_collection, args.pair, docs, persist=not args.dry_run
+        )
 
         episodes: list[Episode] = []
         for doc in docs:

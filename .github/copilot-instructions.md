@@ -135,7 +135,7 @@ Separate Python container (`analytics/`) running on cron-like scheduler:
 
 ### Podcasts (`/api/podcasts`) — public, no auth
 - `GET /` - shows + episodes, read from the `episodes.json` manifest the podcast-feed CronJob writes next to `feed.xml` (parity with the RSS feed by construction)
-- `GET /:pair/episodes/:docId/words` - vocabulary of one episode; docId must be in that pair's published manifest and the lesson must be global (`userId: null`)
+- `GET /:pair/episodes/:docId/words` - vocabulary of one episode; docId must be in that pair's published manifest and the lesson is read from `weeklychallenge_templates` (per-user `weeklychallenges` is never queried)
 
 ### Legacy Endpoints (backward compatibility)
 - `GET /api/challenge` → Random word challenge

@@ -29,13 +29,16 @@ flowchart LR
     E --> F["podcast/vocabulary/fr-pt/feed.xml<br/>served at /podcast/vocabulary/fr-pt/feed.xml"]
 ```
 
-1. The **global** lesson is the `weeklychallenges` document with `userId: null` (per-user lessons
-   stay private — they are never published to YouTube or the podcast).
-2. `combine_mp3.py` writes `weekly_{docId}_{YYYYmmdd}_{HHmmss}.mp3` into `/weekly-audio` and stores
-   `audio.filename`, `audio.last_update`, `audio.duration_s` and `audio.size_bytes` in MongoDB.
-3. `generate_podcast_feed.py` selects global lessons whose `weekStart >= --first-week`, resolves each
-   MP3 (falling back to `stat`/`ffprobe` and backfilling Mongo when the metadata is missing), and
-   writes `feed.xml` **atomically** (`feed.xml.tmp` → `os.replace`).
+1. The published lesson is the **language template** in `weeklychallenge_templates` (one document
+   per `{weekStart, language}`). Per-user `weeklychallenges` documents are private — they are never
+   published to YouTube or the podcast.
+2. `combine_mp3.py` writes `weekly_template_{templateId}_{YYYYmmdd}_{HHmmss}.mp3` into
+   `/weekly-audio` and stores `audio.filename`, `audio.last_update`, `audio.duration_s`,
+   `audio.size_bytes` and `audio.language` on the template document.
+3. `generate_podcast_feed.py` selects the templates matching the pair's language whose
+   `weekStart >= --first-week`, resolves each MP3 (falling back to `stat`/`ffprobe` and backfilling
+   Mongo when the metadata is missing), and writes `feed.xml` **atomically** (`feed.xml.tmp` →
+   `os.replace`). It also writes `episodes.json`, which the website reads.
 4. Express serves that directory at `/podcast` (`PODCAST_PATH` env var, default `/app/podcast`) with
    `Content-Type: application/rss+xml; charset=utf-8` and a 5-minute cache. The job writes to
    `<hostPath>/<show>/<pair>/`, so a single hostPath holds every show and pair.
@@ -71,23 +74,30 @@ Episode level:
 | Element | Value |
 |---|---|
 | `title` | `Leçon de vocabulaire – Semaine du 26 octobre 2026` |
-| `guid` (`isPermaLink="false"`) | the raw `weeklychallenges._id` — **must never change** |
-| `pubDate` | RFC 822, parsed from the `YYYYmmdd_HHmmss` timestamp in the filename (UTC) |
+| `guid` (`isPermaLink="false"`) | the raw `weeklychallenge_templates._id` — **must never change** |
+| `pubDate` | RFC 822, parsed from the `YYYYmmdd_HHmmss` suffix of the filename (UTC) |
 | `enclosure` | `/weekly-audio/<filename>`, exact `length` in bytes, `type="audio/mpeg"` |
 | `itunes:duration` | `M:SS` or `H:MM:SS`, from `audio.duration_s` or ffprobe |
-| `itunes:episode` | stable sequence number stored as `podcast.episodeNumber` |
+| `itunes:episode` | stable sequence number from the `podcast_episodes` collection |
 | `itunes:image` | the cover art URL |
 
-Episode numbers are assigned **once** and persisted, so changing `--first-week` or skipping a week
-never renumbers already-published episodes.
+Episode numbers are assigned **once** and stored in the **`podcast_episodes`** collection, keyed by
+`(pair, docId)` with a unique index — not on the lesson document. `create_weekly_challenge.py`
+replaces whole template documents every Monday at 03:00, four hours before the feed runs, so a
+number kept on the template would be wiped and every episode renumbered. Each pair has its own
+sequence (`fr-pt` and `en-pt` both start at 1), and changing `--first-week` or skipping a week never
+renumbers already-published episodes.
 
 ## Why some lessons are not in the feed
 
-- **Per-user lessons** (documents with a `userId`) are excluded: they are built from each learner's
-  weak words.
+- **Per-user lessons** (`weeklychallenges` documents with a `userId`) are never read: they are built
+  from each learner's weak words.
+- **Templates without audio** are ignored until `combine_mp3.py` has written the MP3.
 - **Lessons older than `podcast.firstWeek`** are excluded on purpose — the show does not backfill
   the archive that existed before podcasting was enabled.
 - **Lessons whose MP3 is missing** are skipped with a warning in the CronJob log.
+- A pair whose language has no template (e.g. `en-pt` before English lessons exist) simply
+  produces an empty feed for that week.
 
 ## Cover Art
 
@@ -130,7 +140,7 @@ https://dialecthub.net/podcast/{pair}/cover.jpg
 podcast:
   hostPath: /home/ubuntu/PortugueseLearning/podcast
   show: vocabulary          # URL segment and directory: /podcast/vocabulary/fr-pt
-  pairs: [fr-pt]            # one CronJob per pair; each needs its own cover art
+  pairs: [fr-pt, en-pt]     # one CronJob per pair; each needs its own cover art
   firstWeek: "2026-10-26"   # no earlier lesson is published
   baseUrl: ""               # empty → https://<ingress.host>
   audioBaseUrl: ""          # empty → same as baseUrl
@@ -154,11 +164,8 @@ without touching code — see *Moving the audio to a CDN* below.
 4. Deploy. Helm renders one CronJob per pair: `<release>-podcast-feed-en-pt`.
 5. Run it manually, validate the feed, then submit it as a **separate show** to Apple/Spotify.
 
-> ⚠️ **Current limitation.** Every pair publishes the same global weekly lesson, because the feed
-> reads `weeklychallenges` documents and those are now per-user; the generator no longer writes a
-> `userId: null` document. Per-language audio *does* exist — `weeklychallenge_templates` holds one
-> document (and one MP3) per `{weekStart, language}` — so the fix is to point the feed at the
-> language-matched template for each pair. That migration is not part of this change.
+> ℹ️ `en-pt` is already configured this way. Its cover art is currently a placeholder copy of the
+> `fr-pt` artwork — replace `src/images/podcast/en-pt/cover.jpg` before submitting the show.
 
 ## Deployment
 
@@ -237,8 +244,8 @@ without an account.
 
 **Parity is structural, not synchronised.** The manifest and the feed are produced together from
 the same query, so the page cannot drift from the RSS: whatever the job publishes is what the page
-lists. When the job switches to `weeklychallenge_templates` (see [TODO](TODO.md)), the page follows
-with no code change — it reads the manifest, not the database.
+lists. The job reads `weeklychallenge_templates`; the page reads the manifest it writes, so the two
+can never disagree.
 
 The API never queries MongoDB to list episodes, and it rewrites each enclosure URL to a relative
 `/weekly-audio/<filename>` so the player and the `download` attribute work on any host (dev,
@@ -249,10 +256,11 @@ staging, production) without CORS.
 `GET /api/podcasts/:pair/episodes/:docId/words` returns the vocabulary of one episode, but only if
 
 - the `docId` appears in the published manifest for that pair, **and**
-- the `weeklychallenges` document is a global lesson (`userId: null`).
+- the document exists in `weeklychallenge_templates`.
 
-Both checks form the allow-list that keeps private per-user lessons unreadable through a public
-route — do not relax them.
+The manifest allow-list is what keeps the route public-safe: the only documents it can reach are the
+template lessons the feed already publishes. `weeklychallenges` (per-user lessons) is never queried
+by this route.
 
 ### When the page is empty
 
@@ -311,13 +319,14 @@ must not get one without excluding the published episodes.
 | `permission denied` writing `/podcast` | Host directory not owned by uid 1000 — `sudo chown 1000:1000` |
 | Pod stuck `ContainerCreating`, `hostPath type check failed` | Create the host directory before `helm upgrade` |
 | Feed returns the React `index.html` | A route was registered after the `/{*path}` catch-all in `src/server.ts` |
-| Feed has no `<item>` | No global lesson with `weekStart >= firstWeek`, or the MP3 was missing — check job logs |
+| Feed has no `<item>` | No language template with `weekStart >= firstWeek` and an `audio.filename`, or the MP3 was missing — check job logs |
 | `/podcast/feed.xml` returns HTML | Expected: the feed moved to `/podcast/<show>/<pair>/feed.xml` |
 | Apple rejects the feed | Missing/invalid cover art at `/podcast/<pair>/cover.jpg` (check `src/images/podcast/<pair>/cover.jpg` was committed and the client rebuilt), or the feed URL redirects (must be plain HTTPS 200) |
 | Episode order looks wrong in Apple | `episodic` shows newest first by `pubDate`; verify the container clock is UTC |
 | Numbering jumps after editing `firstWeek` | Expected for newly included lessons; existing episodes keep their numbers |
+| Episode numbers restart at 1 | Rows missing from `podcast_episodes` (the collection was dropped) — restore it before the next run |
 | `/podcasts` says "No episodes published yet" | `episodes.json` missing — run the feed job (`kubectl create job --from=cronjob/<release>-podcast-feed-fr-pt -n portuguese-learning <name>`) |
-| Word list fails on `/podcasts` | The `weeklychallenges` document is gone, or it is a per-user lesson (only global `userId: null` lessons are exposed) |
+| Word list fails on `/podcasts` | The template document referenced by the manifest is gone from `weeklychallenge_templates` |
 
 ## Related Documentation
 

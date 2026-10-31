@@ -172,9 +172,22 @@ def build_template_doc(language: str, challenges: list, week_start, week_end) ->
 
 
 def upsert_template(db, language: str, challenges: list, week_start, week_end) -> tuple:
-    """Insert or replace the template for (weekStart, language)."""
+    """Insert or replace the template for (weekStart, language).
+
+    The generated audio block is preserved when the word list is unchanged:
+    ``combine_mp3.py`` writes it later in the week, and replacing the document
+    wholesale would drop the reference to an MP3 that is already published as a
+    podcast episode.
+    """
     doc = build_template_doc(language, challenges, week_start, week_end)
     collection = db[TEMPLATES_COLLECTION]
+
+    existing = collection.find_one({'weekStart': week_start, 'language': language})
+    if existing:
+        old_ids = [c.get('challengeId') for c in existing.get('challenges', [])]
+        new_ids = [c['challengeId'] for c in doc['challenges']]
+        if old_ids == new_ids and existing.get('audio'):
+            doc['audio'] = existing['audio']
 
     result = collection.replace_one(
         {'weekStart': week_start, 'language': language},
@@ -184,8 +197,8 @@ def upsert_template(db, language: str, challenges: list, week_start, week_end) -
 
     if result.upserted_id:
         return str(result.upserted_id), True
-    existing = collection.find_one({'weekStart': week_start, 'language': language})
-    return (str(existing['_id']) if existing else 'unknown'), False
+    replaced = collection.find_one({'weekStart': week_start, 'language': language})
+    return (str(replaced['_id']) if replaced else 'unknown'), False
 
 
 def build_weekly_challenge_doc(

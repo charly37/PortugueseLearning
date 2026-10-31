@@ -43,42 +43,55 @@ async function seedChallenges(uri) {
  * manifest fixtures, so /api/podcasts/:pair/episodes/:docId/words has data.
  */
 async function seedPodcastLessons(uri) {
-  const manifestPath = path.join(__dirname, 'fixtures', 'podcast', 'vocabulary', 'fr-pt', 'episodes.json');
-  if (!fs.existsSync(manifestPath)) {
-    console.warn('WARN: podcast manifest fixture not found, skipping podcast seed');
-    return;
-  }
+  // One template document per (weekStart, language) is what the feed publishes,
+  // so the fixtures are seeded into weeklychallenge_templates with the manifest
+  // docId as _id (that id is the episode guid).
+  const podcasts = [
+    { pair: 'fr-pt', language: 'fr' },
+    { pair: 'en-pt', language: 'en' },
+  ];
 
-  const episodes = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
   const client = new MongoClient(uri);
   await client.connect();
-  const col = client.db().collection('weeklychallenges');
+  const col = client.db().collection('weeklychallenge_templates');
 
-  for (const episode of episodes) {
-    await col.replaceOne(
-      { _id: new ObjectId(episode.docId) },
-      {
-        userId: null,
-        weekStart: new Date(episode.pubDate),
-        language: 'fr',
-        totalChallenges: 2,
-        challenges: [
-          { challengeId: 'seed-podcast-1', portuguese: 'obrigado', translation_fr: 'merci', translation_en: 'thank you' },
-          { challengeId: 'seed-podcast-2', portuguese: 'bom dia', translation_fr: 'bonjour', translation_en: 'good morning' },
-        ],
-        audio: {
-          filename: episode.filename,
-          last_update: '2026-10-26',
-          duration_s: episode.durationSeconds,
-          size_bytes: episode.sizeBytes,
+  let seeded = 0;
+  for (const { pair, language } of podcasts) {
+    const manifestPath = path.join(__dirname, 'fixtures', 'podcast', 'vocabulary', pair, 'episodes.json');
+    if (!fs.existsSync(manifestPath)) {
+      console.warn(`WARN: podcast manifest fixture not found for ${pair}, skipping`);
+      continue;
+    }
+
+    const episodes = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+    for (const episode of episodes) {
+      await col.replaceOne(
+        { _id: new ObjectId(episode.docId) },
+        {
+          weekStart: new Date(episode.pubDate),
+          weekEnd: new Date(new Date(episode.pubDate).getTime() + 7 * 24 * 3600 * 1000),
+          language,
+          totalChallenges: 2,
+          challenges: [
+            { challengeId: 'seed-podcast-1', portuguese: 'obrigado', translation_fr: 'merci', translation_en: 'thank you' },
+            { challengeId: 'seed-podcast-2', portuguese: 'bom dia', translation_fr: 'bonjour', translation_en: 'good morning' },
+          ],
+          audio: {
+            filename: episode.filename,
+            last_update: '2026-10-26',
+            duration_s: episode.durationSeconds,
+            size_bytes: episode.sizeBytes,
+            language,
+          },
         },
-      },
-      { upsert: true }
-    );
+        { upsert: true }
+      );
+      seeded += 1;
+    }
   }
 
   await client.close();
-  console.log(`  [podcasts] seeded ${episodes.length} episode lesson(s)`);
+  console.log(`  [podcasts] seeded ${seeded} episode lesson(s)`);
 }
 
 async function startMongo() {
@@ -105,7 +118,7 @@ SESSION_SECRET=test-secret-key
 NODE_ENV=test
 PORT=8080
 # Public podcast page reads the manifest fixtures instead of the production hostPath
-PODCAST_PAIRS=fr-pt
+PODCAST_PAIRS=fr-pt,en-pt
 PODCAST_SHOW=vocabulary
 PODCAST_PATH=${podcastFixtures}
 ${audioEnv}`;

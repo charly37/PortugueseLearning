@@ -42,6 +42,18 @@ test.describe('Podcasts Page', () => {
     await expect(page.getByText('merci')).toBeVisible();
   });
 
+  test('switches between the French and English shows @smoke', async ({ page }) => {
+    await page.goto('/podcasts');
+
+    await expect(page.getByRole('tab')).toHaveCount(2);
+    await expect(page.getByText('Leçon de vocabulaire – Semaine du 26 octobre 2026')).toBeVisible();
+
+    await page.getByRole('tab', { name: 'English speakers' }).click();
+
+    await expect(page.getByText('Vocabulary Lesson – Week of 26 October 2026')).toBeVisible();
+    await expect(page.getByText('Leçon de vocabulaire – Semaine du 26 octobre 2026')).toHaveCount(0);
+  });
+
   test('is linked from the landing page @smoke', async ({ page }) => {
     await page.goto('/');
 
@@ -80,11 +92,14 @@ test.describe('Podcasts API', () => {
     expect(response.headers()['cache-control']).toContain('max-age=300');
 
     const body = await response.json();
-    expect(body.shows).toHaveLength(1);
+    expect(body.shows).toHaveLength(2);
 
-    const [show] = body.shows;
+    const [show, englishShow] = body.shows;
     expect(show.pair).toBe('fr-pt');
     expect(show.feedUrl).toBe('/podcast/vocabulary/fr-pt/feed.xml');
+    expect(englishShow.pair).toBe('en-pt');
+    expect(englishShow.feedUrl).toBe('/podcast/vocabulary/en-pt/feed.xml');
+    expect(englishShow.coverUrl).toBe('/podcast/en-pt/cover.jpg');
     // Newest episode first, mirroring the episodic RSS feed.
     expect(show.episodes.map((episode: { episodeNumber: number }) => episode.episodeNumber)).toEqual([2, 1]);
     expect(show.episodes[0].audioUrl).toMatch(/^\/weekly-audio\/weekly_.+\.mp3$/);

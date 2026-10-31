@@ -47,10 +47,13 @@ podcast:
   hostPath: /home/ubuntu/PortugueseLearning/podcast
   # Show slug (URL segment and directory): /podcast/vocabulary/fr-pt/feed.xml
   show: vocabulary
-  # Language pairs {native}-{learning}. Only pairs backed by real per-language
-  # lessons should be listed - the generator publishes the global weekly lesson.
+  # Language pairs {native}-{learning}. Each pair gets its own CronJob, its own
+  # feed URL (/podcast/<show>/<pair>/feed.xml) and its own cover art. The feed
+  # publishes the language-matched weekly template, so only add a pair once that
+  # language's lesson is being generated (weeklyChallenge.templateLanguages).
   pairs:
     - fr-pt
+    - en-pt
   # Lessons with weekStart before this date are never published. Bump it only
   # if you intend to publish older episodes (they keep their guid either way).
   firstWeek: "2026-10-26"

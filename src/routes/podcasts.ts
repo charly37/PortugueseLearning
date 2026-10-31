@@ -15,21 +15,21 @@ import {
 const router = express.Router();
 const log = logger.child({ module: 'podcasts' });
 
-const WEEKLY_COLLECTION = 'weeklychallenges';
+const WEEKLY_COLLECTION = 'weeklychallenge_templates';
 const OBJECT_ID_PATTERN = /^[a-f0-9]{24}$/i;
 const CACHE_HEADER = 'public, max-age=300';
 
-interface WeeklyChallengeWord {
+interface LessonWord {
   portuguese?: string;
   translation_fr?: string;
   translation_en?: string;
 }
 
-interface WeeklyChallengeDoc {
+interface WeeklyLessonDoc {
   weekStart?: Date;
   language?: string;
   totalChallenges?: number;
-  challenges?: WeeklyChallengeWord[];
+  challenges?: LessonWord[];
 }
 
 /**
@@ -50,9 +50,10 @@ router.get('/', (_req: Request, res: Response) => {
  *
  * Vocabulary of one published episode, for the expandable word list.
  *
- * The docId must appear in that pair's published manifest and the document must
- * be a global lesson (`userId: null`). Both checks matter: per-user weekly
- * challenges are private and must never be readable through a public route.
+ * The docId must appear in that pair's published manifest; that allow-list is
+ * what keeps the route public, because the only documents it can reach are the
+ * template lessons the feed already publishes. Per-user weekly challenges
+ * (`weeklychallenges`) are never queried here.
  */
 router.get('/:pair/episodes/:docId/words', async (req: Request, res: Response) => {
   // Express 5 types params as string | string[]; a repeated segment is not a
@@ -78,24 +79,22 @@ router.get('/:pair/episodes/:docId/words', async (req: Request, res: Response) =
     return;
   }
 
-  let doc: WeeklyChallengeDoc | null;
+  let doc: WeeklyLessonDoc | null;
   try {
-    doc = await db.collection<WeeklyChallengeDoc>(WEEKLY_COLLECTION).findOne(
-      // `userId: null` matches both an explicit null and a missing field, which
-      // covers legacy global lessons written before the templates refactor.
-      { _id: new mongoose.Types.ObjectId(docId), userId: null },
+    doc = await db.collection<WeeklyLessonDoc>(WEEKLY_COLLECTION).findOne(
+      { _id: new mongoose.Types.ObjectId(docId) },
       { projection: { weekStart: 1, language: 1, totalChallenges: 1, challenges: 1 } }
     );
   } catch (err) {
-    log.error({ err, pair, docId }, 'failed to load weekly challenge words');
+    log.error({ err, pair, docId }, 'failed to load weekly template words');
     res.status(500).json({ error: 'Failed to load episode' });
     return;
   }
 
   if (!doc) {
-    // Published in the feed but no longer in the database (or not a global
-    // lesson): treat as gone rather than leaking anything.
-    log.warn({ pair, docId }, 'published episode has no global weekly lesson document');
+    // Published in the feed but the lesson document is gone: treat it as gone
+    // rather than falling back to any other collection.
+    log.warn({ pair, docId }, 'published episode has no weekly template document');
     res.status(404).json({ error: 'Episode not found' });
     return;
   }

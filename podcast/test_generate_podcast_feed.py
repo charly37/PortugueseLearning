@@ -35,6 +35,39 @@ def _episode(number: int, day: int, doc_id: str = "64f1a2b3c4d5e6f7a8b9c0d1") ->
     )
 
 
+class _FakeCollection:
+    """Minimal stand-in for a pymongo collection (find_one / update_one only)."""
+
+    def __init__(self, rows: list[dict] | None = None):
+        self.rows: list[dict] = list(rows or [])
+
+    def find_one(self, query, projection=None, sort=None):
+        matches = [row for row in self.rows if _matches(row, query)]
+        if sort:
+            field, direction = sort[0]
+            matches.sort(key=lambda row: row.get(field) or 0, reverse=direction < 0)
+        return matches[0] if matches else None
+
+    def update_one(self, query, update, upsert: bool = False):
+        if any(_matches(row, query) for row in self.rows):
+            return
+        if upsert:
+            self.rows.append(dict(update.get("$setOnInsert", {})))
+
+
+def _matches(row: dict, query: dict) -> bool:
+    for key, expected in query.items():
+        if isinstance(expected, dict):
+            if "$exists" in expected:
+                if (key in row) != bool(expected["$exists"]):
+                    return False
+                continue
+            return False
+        if row.get(key) != expected:
+            return False
+    return True
+
+
 class DateHelpersTest(unittest.TestCase):
     def test_french_date(self):
         self.assertEqual(feed.format_french_date(datetime(2026, 10, 26)), "26 octobre 2026")
@@ -81,6 +114,88 @@ class PublishTimeTest(unittest.TestCase):
             feed.parse_publish_time("bad_name.mp3", week_start),
             datetime(2026, 10, 26, 4, 0, tzinfo=UTC),
         )
+
+    def test_parses_template_filename_suffix(self):
+        value = feed.parse_publish_time(
+            "weekly_template_64f1a2b3c4d5e6f7a8b9c0d1_20261026_041500.mp3"
+        )
+        self.assertEqual(value, datetime(2026, 10, 26, 4, 15, tzinfo=UTC))
+
+
+class LocalisedDateTest(unittest.TestCase):
+    def test_english_date(self):
+        self.assertEqual(feed.format_date(datetime(2026, 10, 26), "en"), "26 October 2026")
+        self.assertEqual(feed.format_date(datetime(2026, 8, 3), "en"), "3 August 2026")
+
+    def test_defaults_to_french(self):
+        self.assertEqual(feed.format_date(datetime(2026, 10, 26)), "26 octobre 2026")
+
+
+class SelectionQueryTest(unittest.TestCase):
+    def test_targets_language_templates_only(self):
+        first_week = datetime(2026, 10, 26, tzinfo=UTC)
+        query = feed.build_selection_query("en", first_week)
+
+        self.assertEqual(query["language"], "en")
+        self.assertEqual(query["weekStart"], {"$gte": first_week})
+        self.assertEqual(query["audio.filename"], {"$exists": True, "$ne": None})
+        # Per-user lessons are private and must never be selected by the feed.
+        self.assertNotIn("userId", query)
+
+    def test_collection_names(self):
+        self.assertEqual(feed.TEMPLATES_COLLECTION, "weeklychallenge_templates")
+        self.assertEqual(feed.EPISODES_COLLECTION, "podcast_episodes")
+
+
+class EpisodeNumberingTest(unittest.TestCase):
+    def setUp(self):
+        self.collection = _FakeCollection()
+        self.week1 = {"_id": "tpl1", "weekStart": datetime(2026, 10, 19, tzinfo=UTC)}
+        self.week2 = {"_id": "tpl2", "weekStart": datetime(2026, 10, 26, tzinfo=UTC)}
+
+    def test_allocates_sequential_numbers(self):
+        numbers = feed.assign_episode_numbers(
+            self.collection, "fr-pt", [self.week1, self.week2], persist=True
+        )
+        self.assertEqual(numbers, {"tpl1": 1, "tpl2": 2})
+        self.assertEqual(len(self.collection.rows), 2)
+
+    def test_reuses_existing_numbers(self):
+        feed.assign_episode_numbers(self.collection, "fr-pt", [self.week1], persist=True)
+        numbers = feed.assign_episode_numbers(
+            self.collection, "fr-pt", [self.week1], persist=True
+        )
+        self.assertEqual(numbers, {"tpl1": 1})
+        self.assertEqual(len(self.collection.rows), 1)
+
+    def test_new_week_continues_the_sequence(self):
+        feed.assign_episode_numbers(self.collection, "fr-pt", [self.week1], persist=True)
+        numbers = feed.assign_episode_numbers(
+            self.collection, "fr-pt", [self.week1, self.week2], persist=True
+        )
+        self.assertEqual(numbers, {"tpl1": 1, "tpl2": 2})
+
+    def test_sequences_are_per_pair(self):
+        feed.assign_episode_numbers(self.collection, "fr-pt", [self.week1], persist=True)
+        numbers = feed.assign_episode_numbers(
+            self.collection, "en-pt", [self.week1], persist=True
+        )
+        self.assertEqual(numbers, {"tpl1": 1})
+
+    def test_dry_run_does_not_write(self):
+        numbers = feed.assign_episode_numbers(
+            self.collection, "fr-pt", [self.week1], persist=False
+        )
+        self.assertEqual(numbers, {"tpl1": 1})
+        self.assertEqual(self.collection.rows, [])
+
+    def test_stores_guid_and_pair(self):
+        feed.assign_episode_numbers(self.collection, "fr-pt", [self.week1], persist=True)
+        row = self.collection.rows[0]
+        self.assertEqual(row["pair"], "fr-pt")
+        self.assertEqual(row["docId"], "tpl1")
+        self.assertEqual(row["guid"], "tpl1")
+        self.assertEqual(row["episodeNumber"], 1)
 
 
 class CdataTest(unittest.TestCase):
@@ -220,6 +335,48 @@ class RenderFeedTest(unittest.TestCase):
         )
         ElementTree.fromstring(xml)
         self.assertNotIn("<item>", xml)
+
+
+class EnglishShowTest(unittest.TestCase):
+    def test_episode_title_and_language(self):
+        doc = {
+            "_id": "tpl1",
+            "weekStart": datetime(2026, 10, 26, tzinfo=UTC),
+            "totalChallenges": 20,
+        }
+        episode = feed.build_episode(
+            doc=doc,
+            episode_number=1,
+            channel=feed.SHOWS["en-pt"],
+            base_url="https://dialecthub.net",
+            audio_base_url="https://dialecthub.net",
+            size_bytes=1000,
+            duration_s=60.0,
+            filename="weekly_template_tpl1_20261026_041500.mp3",
+        )
+        self.assertEqual(episode.title, "Vocabulary Lesson – Week of 26 October 2026")
+        self.assertIn("20 words", episode.description_html)
+        self.assertEqual(
+            episode.audio_url,
+            "https://dialecthub.net/weekly-audio/weekly_template_tpl1_20261026_041500.mp3",
+        )
+
+    def test_channel_language_is_english(self):
+        xml = feed.render_feed(
+            channel=feed.SHOWS["en-pt"],
+            episodes=[_episode(1, 5, "tpl1")],
+            feed_url="https://dialecthub.net/podcast/vocabulary/en-pt/feed.xml",
+            base_url="https://dialecthub.net",
+            cover_url="https://dialecthub.net/podcast/en-pt/cover.jpg",
+            episode_type="episodic",
+            build_time=datetime(2026, 10, 26, 7, 0, tzinfo=UTC),
+        )
+        ElementTree.fromstring(xml)
+        self.assertIn("<language>en</language>", xml)
+        self.assertIn(
+            "<title>DialectHub – European Portuguese Vocabulary Lesson</title>", xml
+        )
+        self.assertIn('<itunes:image href="https://dialecthub.net/podcast/en-pt/cover.jpg"/>', xml)
 
 
 if __name__ == "__main__":
