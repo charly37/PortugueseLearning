@@ -47,7 +47,8 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const currentPath = location.pathname;
+  // Normalize trailing slashes so '/about/' still matches '/about'
+  const currentPath = location.pathname.replace(/\/+$/, '') || '/';
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleLanguageChange = async (_: React.MouseEvent<HTMLElement>, newLanguage: 'fr' | 'en' | null) => {
@@ -86,6 +87,14 @@ const Header: React.FC<HeaderProps> = ({
     if (callback) callback();
   };
 
+  // Single source of truth for the page links shown in the header and the drawer.
+  // All links are always visible; the current page is highlighted instead of hidden.
+  const navItems: { label: string; icon: React.ReactNode; path: string; onClick?: () => void }[] = [
+    { label: t('common.home'), icon: <HomeIcon />, path: '/', onClick: onNavigateHome },
+    { label: t('common.about'), icon: <InfoIcon />, path: '/about', onClick: onNavigateAbout },
+    { label: t('common.podcasts'), icon: <PodcastsIcon />, path: '/podcasts', onClick: onNavigatePodcasts },
+  ];
+
   const drawerContent = (
     <Box
       sx={{ width: 280 }}
@@ -102,48 +111,37 @@ const Header: React.FC<HeaderProps> = ({
       <Divider />
 
       <List sx={{ pt: 2 }}>
-        {/* Navigation Items */}
-        {currentPath !== '/' && (
-          <ListItem disablePadding>
-            <ListItemButton 
-              onClick={() => handleNavigation(onNavigateHome)}
-              sx={{ minHeight: 48, px: 2.5 }}
-            >
-              <ListItemIcon sx={{ minWidth: 40 }}>
-                <HomeIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText primary={t('common.home')} />
-            </ListItemButton>
-          </ListItem>
-        )}
-
-        {currentPath !== '/about' && (
-          <ListItem disablePadding>
-            <ListItemButton 
-              onClick={() => handleNavigation(onNavigateAbout)}
-              sx={{ minHeight: 48, px: 2.5 }}
-            >
-              <ListItemIcon sx={{ minWidth: 40 }}>
-                <InfoIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText primary={t('common.about')} />
-            </ListItemButton>
-          </ListItem>
-        )}
-
-        {currentPath !== '/podcasts' && (
-          <ListItem disablePadding>
-            <ListItemButton 
-              onClick={() => handleNavigation(onNavigatePodcasts)}
-              sx={{ minHeight: 48, px: 2.5 }}
-            >
-              <ListItemIcon sx={{ minWidth: 40 }}>
-                <PodcastsIcon color="primary" />
-              </ListItemIcon>
-              <ListItemText primary={t('common.podcasts')} />
-            </ListItemButton>
-          </ListItem>
-        )}
+        {/* Navigation Items - always visible, current page highlighted */}
+        {navItems.map((item) => {
+          const isActive = currentPath === item.path;
+          return (
+            <ListItem key={item.path} disablePadding>
+              <ListItemButton
+                onClick={() => handleNavigation(item.onClick)}
+                selected={isActive}
+                aria-current={isActive ? 'page' : undefined}
+                sx={{
+                  minHeight: 48,
+                  px: 2.5,
+                  mx: 1,
+                  borderRadius: 1,
+                  bgcolor: isActive ? 'rgba(0, 0, 0, 0.10)' : 'transparent',
+                  '&.Mui-selected, &.Mui-selected:hover': {
+                    bgcolor: 'rgba(0, 0, 0, 0.10)',
+                  },
+                  '& .MuiListItemText-primary': {
+                    fontWeight: isActive ? 600 : 400,
+                  },
+                }}
+              >
+                <ListItemIcon sx={{ minWidth: 40, color: isActive ? 'primary.main' : 'text.secondary' }}>
+                  {item.icon}
+                </ListItemIcon>
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
 
         <Divider sx={{ my: 2 }} />
 
@@ -277,38 +275,28 @@ const Header: React.FC<HeaderProps> = ({
               gap: 2,
               flexShrink: 0,
             }}>
-              {currentPath !== '/' && (
-                <Button
-                  color="inherit"
-                  startIcon={<HomeIcon />}
-                  onClick={onNavigateHome}
-                  aria-label={t('common.home')}
-                >
-                  {t('common.home')}
-                </Button>
-              )}
-              
-              {currentPath !== '/about' && (
-                <Button
-                  color="inherit"
-                  startIcon={<InfoIcon />}
-                  onClick={onNavigateAbout}
-                  aria-label={t('common.about')}
-                >
-                  {t('common.about')}
-                </Button>
-              )}
-
-              {currentPath !== '/podcasts' && (
-                <Button
-                  color="inherit"
-                  startIcon={<PodcastsIcon />}
-                  onClick={onNavigatePodcasts}
-                  aria-label={t('common.podcasts')}
-                >
-                  {t('common.podcasts')}
-                </Button>
-              )}
+              {navItems.map((item) => {
+                const isActive = currentPath === item.path;
+                return (
+                  <Button
+                    key={item.path}
+                    color="inherit"
+                    startIcon={item.icon}
+                    onClick={item.onClick}
+                    aria-label={item.label}
+                    aria-current={isActive ? 'page' : undefined}
+                    sx={{
+                      fontWeight: isActive ? 700 : 500,
+                      bgcolor: isActive ? 'rgba(0, 0, 0, 0.18)' : 'transparent',
+                      '&:hover': {
+                        bgcolor: isActive ? 'rgba(0, 0, 0, 0.26)' : 'rgba(255, 255, 255, 0.1)',
+                      },
+                    }}
+                  >
+                    {item.label}
+                  </Button>
+                );
+              })}
 
               {/* Desktop Language Selector */}
               <ToggleButtonGroup
