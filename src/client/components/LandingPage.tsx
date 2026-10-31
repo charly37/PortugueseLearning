@@ -27,7 +27,8 @@ interface WeeklySummary {
 
 interface StorySummary {
   title_pt: string;
-  title_fr: string;
+  title_fr?: string;
+  title_native?: string;
   topic: string;
   level: string;
 }
@@ -90,7 +91,8 @@ const LandingPage: React.FC<LandingPageProps> = ({
           if (data?.story) {
             setStorySummary({
               title_pt: data.story.title_pt,
-              title_fr: data.story.title_fr,
+              title_fr: data.story.title_fr ?? data.story.title_native,
+              title_native: data.story.title_native,
               topic: data.story.topic,
               level: data.story.level,
             });
@@ -473,7 +475,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
                         {storySummary.title_pt}
                       </Typography>
                       <Typography variant="caption" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-                        {storySummary.title_fr}
+                        {storySummary.title_fr ?? storySummary.title_native}
                       </Typography>
                     </>
                   ) : (

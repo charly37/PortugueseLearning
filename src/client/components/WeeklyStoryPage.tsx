@@ -21,11 +21,16 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 interface Sentence {
   pt: string;
   fr: string;
+  /** Language-neutral translation key written by StoryCreatorGetter.py. */
+  native?: string;
 }
 
 interface Story {
   title_pt: string;
-  title_fr: string;
+  /** Native-language title. `title_fr` is the legacy key kept for old documents. */
+  title_fr?: string;
+  title_native?: string;
+  language?: 'fr' | 'en';
   level: 'beginner' | 'intermediate' | 'advanced';
   topic: string;
   sentences: Sentence[];
@@ -183,7 +188,7 @@ const WeeklyStoryPage: React.FC<WeeklyStoryPageProps> = ({ onBackHome, user, onC
                   {data.story.title_pt}
                 </Typography>
                 <Typography variant="subtitle1" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-                  {data.story.title_fr}
+                  {data.story.title_fr ?? data.story.title_native}
                 </Typography>
                 <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
                   {t('weeklyStory.sentenceCount', { count: data.story.sentences.length })}
@@ -234,13 +239,13 @@ const WeeklyStoryPage: React.FC<WeeklyStoryPageProps> = ({ onBackHome, user, onC
                   >
                     {sentence.pt}
                   </Typography>
-                  {/* Translation */}
+                  {/* Translation (native language) */}
                   <Typography
                     variant="body2"
                     color="text.secondary"
                     sx={{ mt: 0.5, fontStyle: 'italic', lineHeight: 1.5 }}
                   >
-                    {sentence.fr}
+                    {sentence.fr ?? sentence.native}
                   </Typography>
                 </Box>
               </Paper>

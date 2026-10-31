@@ -1,16 +1,18 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { getWordChallenges } from '../challengeCache';
-import User from '../models/User';
 import logger from '../logger';
+import {
+  currentWeekStart,
+  normalizeLanguage,
+  resolveUserLanguage,
+  type SupportedLanguage,
+} from '../services/weeklyPeriod';
 
 const log = logger.child({ module: 'weekly-challenge' });
 
 const WEEKLY_COLLECTION = 'weeklychallenges';
 const TEMPLATES_COLLECTION = 'weeklychallenge_templates';
-const SUPPORTED_LANGUAGES = ['fr', 'en'] as const;
-type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
-const DEFAULT_LANGUAGE: SupportedLanguage = 'fr';
 
 const router = express.Router();
 
@@ -21,32 +23,6 @@ function requireAuth(req: Request, res: Response, next: express.NextFunction) {
   next();
 }
 
-function currentWeekStart(now: Date): Date {
-  const d = new Date(now);
-  d.setUTCHours(0, 0, 0, 0);
-  const day = d.getUTCDay();
-  const diff = day === 0 ? -6 : 1 - day;
-  d.setUTCDate(d.getUTCDate() + diff);
-  return d;
-}
-
-function normalizeLanguage(value: unknown): SupportedLanguage | null {
-  const normalized = typeof value === 'string' ? value.toLowerCase() : '';
-  return (SUPPORTED_LANGUAGES as readonly string[]).includes(normalized)
-    ? (normalized as SupportedLanguage)
-    : null;
-}
-
-async function resolveUserLanguage(userId: string): Promise<SupportedLanguage> {
-  try {
-    const user = await User.findById(userId)
-      .select('preferredLanguage')
-      .lean<{ preferredLanguage?: string }>();
-    return normalizeLanguage(user?.preferredLanguage) ?? DEFAULT_LANGUAGE;
-  } catch {
-    return DEFAULT_LANGUAGE;
-  }
-}
 
 async function findWeekTemplate(
   db: mongoose.mongo.Db,

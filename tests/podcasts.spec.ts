@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { setLanguageToEnglish } from './helpers/language-helper';
 
-// The fixtures seeded by tests/global-setup.ts:
-//   tests/fixtures/podcast/vocabulary/fr-pt/episodes.json -> two episodes
-//   one global (userId: null) weeklychallenges doc per episode -> word lists
+// The fixtures seeded by tests/start-mongo.js:
+//   tests/fixtures/podcast/vocabulary/{fr,en}-pt/episodes.json -> two episodes
+//   one weeklychallenge_templates doc per episode -> word lists
 test.describe('Podcasts Page', () => {
   test.beforeEach(async ({ page }) => {
     await setLanguageToEnglish(page);

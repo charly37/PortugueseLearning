@@ -202,12 +202,28 @@ Weekly challenges are generated from **language templates** plus **per-user copi
   language-matched template on first access if the CronJob did not create one.
 - Audio is produced per template **and** per user; a user document whose challenge list is an exact
   copy of its template reuses the template MP3 instead of rebuilding it.
-- Legacy `userId: null` documents are read-only during the transition: the API clones them for users
-  whose template is missing, and the generator no longer writes new ones.
+- Legacy `userId: null` documents created before the template migration are never written anymore;
+  the API only reads templates (`findWeekTemplate`) and clones them into per-user documents.
 
 Unique indexes (`weeklychallenges_user_week_unique`, `templates_week_language_unique`) keep the
-cron job and API from creating duplicates; create them with
-`python scripts/ensure_weekly_indexes.py` (see [DEPLOYMENT.md](DEPLOYMENT.md)).
+cron job and API from creating duplicates. They are created by the scripts themselves
+(`ensure_template_index()` / `ensure_story_indexes()`), not by a separate migration script.
+
+### Weekly Story Content Model
+
+Stories use the same template pattern:
+
+| Collection | Document | Purpose |
+|---|---|---|
+| `weeklystory_templates` | one per `{weekStart, language}` (`fr`, `en`) | The generated story for the week (native FR or EN, learning PT) |
+| `weeklystories` | one per `{userId, weekStart}`, with `templateId` + `language` | Per-user link; no story body is copied |
+
+- `StoryCreatorGetter.py --generate` creates both templates through `POST /api/v1/stories`
+  (one idea per language, OpenAI agent) and polls until each story is ready.
+- `GET /api/weekly-story` resolves the caller's document, lazily cloning the language-matched
+  template on first access. Guests get the same treatment, so no `userId: null` document exists.
+- Document shape: `title_pt` + `title_native` (learning / native) with legacy `title_fr` aliases, and
+  `sentences[].pt` / `.native` (plus legacy `.fr`). The client reads the `native` fallback.
 
 The weekly lesson is published to two channels with different delivery models:
 
@@ -228,11 +244,10 @@ flowchart TD
 | YouTube | `weekly_*.mp4` | Uploaded with the YouTube Data API; YouTube rehosts and serves the file | [YOUTUBE_UPLOADER.md](YOUTUBE_UPLOADER.md) |
 | Podcast | `weekly_*.mp3` | RSS `feed.xml` whose `<enclosure>` URLs point at `/weekly-audio/*.mp3`; directories stream from this site on every play | [PODCAST.md](PODCAST.md) |
 
-Only the **global** weekly challenge (`userId: null`, legacy) is published — per-user lessons are
-private. The template migration stops writing new global documents, so the podcast and YouTube jobs
-produce no new episodes until they are migrated to read templates (see [TODO.md](TODO.md)).
-Both pipelines are idempotent: MongoDB records the result (`youtube.videoId`, `podcast.episodeNumber`)
-so a CronJob retry never duplicates work.
+The podcast feed publishes the language templates (per-user lessons are private). The YouTube uploader
+still reads the old `weeklychallenges` model and produces no new videos until it is migrated
+(see [TODO.md](TODO.md)). Both pipelines are idempotent: MongoDB records the result
+(`youtube.videoId`, `podcast_episode` numbering) so a CronJob retry never duplicates work.
 
 Storage is `hostPath` on the k3s node (`weeklyAudio.hostPath`, `podcast.hostPath`): no object storage
 and no PVC. Audio files accumulate and must not be deleted while the feed references them.

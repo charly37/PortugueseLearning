@@ -39,8 +39,8 @@ async function seedChallenges(uri) {
 }
 
 /**
- * Seeds one global (`userId: null`) weekly lesson per episode listed in the podcast
- * manifest fixtures, so /api/podcasts/:pair/episodes/:docId/words has data.
+ * Seeds one language template per episode listed in the podcast manifest
+ * fixtures, so /api/podcasts/:pair/episodes/:docId/words has data.
  */
 async function seedPodcastLessons(uri) {
   // One template document per (weekStart, language) is what the feed publishes,
@@ -94,6 +94,57 @@ async function seedPodcastLessons(uri) {
   console.log(`  [podcasts] seeded ${seeded} episode lesson(s)`);
 }
 
+/**
+ * Seeds one story template per language for the current week, so
+ * GET /api/weekly-story can clone a personal document for any user.
+ */
+async function seedWeeklyStories(uri) {
+  const now = new Date();
+  const weekStart = new Date(now);
+  weekStart.setUTCHours(0, 0, 0, 0);
+  const day = weekStart.getUTCDay();
+  weekStart.setUTCDate(weekStart.getUTCDate() + (day === 0 ? -6 : 1 - day));
+  const weekEnd = new Date(weekStart.getTime() + 7 * 24 * 3600 * 1000);
+
+  const stories = {
+    fr: { titleNative: 'Le marché', titlePt: 'O mercado', native: 'Le pain', pt: 'O pão' },
+    en: { titleNative: 'The market', titlePt: 'O mercado', native: 'Bread', pt: 'O pão' },
+  };
+
+  const client = new MongoClient(uri);
+  await client.connect();
+  const col = client.db().collection('weeklystory_templates');
+
+  for (const [language, text] of Object.entries(stories)) {
+    await col.replaceOne(
+      { weekStart, language },
+      {
+        weekStart,
+        weekEnd,
+        language,
+        createdAt: new Date(),
+        totalSentences: 1,
+        story: {
+          id: `test-story-${language}`,
+          language,
+          title_pt: text.titlePt,
+          title_native: text.titleNative,
+          title_fr: text.titleNative,
+          level: 'beginner',
+          topic: 'food',
+          sentences: [{ pt: text.pt, fr: text.native, native: text.native }],
+          created_at: weekStart.toISOString().slice(0, 10),
+          source: 'storycreator-api',
+        },
+      },
+      { upsert: true }
+    );
+  }
+
+  await client.close();
+  console.log('  [weekly-story] seeded 2 template(s)');
+}
+
 async function startMongo() {
   console.log('Starting MongoDB Memory Server...');
   
@@ -129,6 +180,7 @@ ${audioEnv}`;
   console.log('Seeding challenge data...');
   await seedChallenges(uri);
   await seedPodcastLessons(uri);
+  await seedWeeklyStories(uri);
   console.log('Challenge seed complete');
 
   // Signal to run-tests.sh that seeding is done and tests can safely start

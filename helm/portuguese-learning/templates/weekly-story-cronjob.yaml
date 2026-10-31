@@ -22,7 +22,15 @@ spec:
             - name: weekly-story
               image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
               imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
-              command: ["python", "StoryCreatorGetter.py", "--all-users"]
+              command:
+                - python
+                - StoryCreatorGetter.py
+                - --generate
+                - --all-users
+                - --languages
+                {{- range .Values.weeklyStory.languages }}
+                - {{ . | quote }}
+                {{- end }}
               env:
                 - name: MONGODB_URI
                   valueFrom:
@@ -36,5 +44,16 @@ spec:
                       key: storycreator-api-key
                 - name: STORYCREATOR_API_URL
                   value: {{ .Values.weeklyStory.apiUrl | quote }}
+                - name: OPEN_AI_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: open-ai-key
+                # Stable per Job, so a pod retry replays the same story instead of
+                # generating (and paying for) a second one.
+                - name: STORYCREATOR_IDEMPOTENCY_KEY
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.labels['job-name']
               resources:
                 {{- toYaml .Values.resources.weeklyStory | nindent 16 }}

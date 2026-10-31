@@ -35,7 +35,6 @@ RUN pip install --no-cache-dir -r base-requirements.txt \
     -r usefulness-requirements.txt \
     -r weekly-requirements.txt \
     -r story_writter-requirements.txt \
-    -r story_writter-requirements.txt \
     -r vocabulary-updater-agent-requirements.txt \
     -r vocabulary-creator-agent-requirements.txt \
     -r vocal-requirements.txt \
