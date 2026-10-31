@@ -10,6 +10,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import LoginIcon from '@mui/icons-material/Login';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import LanguageIcon from '@mui/icons-material/Language';
+import PodcastsIcon from '@mui/icons-material/Podcasts';
 import { useTranslation } from 'react-i18next';
 
 interface User {
@@ -25,6 +26,7 @@ interface HeaderProps {
   user: User | null;
   onNavigateHome?: () => void;
   onNavigateAbout?: () => void;
+  onNavigatePodcasts?: () => void;
   onNavigateProfile?: () => void;
   onLogout?: () => void;
   onNavigateLogin?: () => void;
@@ -36,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({
   user,
   onNavigateHome,
   onNavigateAbout,
+  onNavigatePodcasts,
   onNavigateProfile,
   onLogout,
   onNavigateLogin,
@@ -124,6 +127,20 @@ const Header: React.FC<HeaderProps> = ({
                 <InfoIcon color="primary" />
               </ListItemIcon>
               <ListItemText primary={t('common.about')} />
+            </ListItemButton>
+          </ListItem>
+        )}
+
+        {currentPath !== '/podcasts' && (
+          <ListItem disablePadding>
+            <ListItemButton 
+              onClick={() => handleNavigation(onNavigatePodcasts)}
+              sx={{ minHeight: 48, px: 2.5 }}
+            >
+              <ListItemIcon sx={{ minWidth: 40 }}>
+                <PodcastsIcon color="primary" />
+              </ListItemIcon>
+              <ListItemText primary={t('common.podcasts')} />
             </ListItemButton>
           </ListItem>
         )}
@@ -279,6 +296,17 @@ const Header: React.FC<HeaderProps> = ({
                   aria-label={t('common.about')}
                 >
                   {t('common.about')}
+                </Button>
+              )}
+
+              {currentPath !== '/podcasts' && (
+                <Button
+                  color="inherit"
+                  startIcon={<PodcastsIcon />}
+                  onClick={onNavigatePodcasts}
+                  aria-label={t('common.podcasts')}
+                >
+                  {t('common.podcasts')}
                 </Button>
               )}
 

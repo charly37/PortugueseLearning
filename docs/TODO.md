@@ -16,6 +16,8 @@ uploader read, so both pipelines stop producing new episodes once the migration 
 2. `youtube-uploader/upload_to_youtube.py`: resolve the `<mongoId>` in filenames against
    `weeklychallenge_templates` (filenames are now `weekly_template_<id>_<timestamp>.mp4`).
 3. Keep episode numbering / `youtube.videoId` idempotency keys working across the change.
+4. Nothing to change on the website: `/podcasts` reads the `episodes.json` manifest the job writes,
+   so the page picks up the new source automatically once the feed does.
 
 **Why it matters:** without this, `fr-pt` and `en-pt` feeds go silent and no new MP4 is uploaded
 even though per-language audio is already generated every Monday.

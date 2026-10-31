@@ -14,3 +14,5 @@ playwright/.cache/
 
 #MP# are rsync'ing the data folder, but we don't want to ignore it in the builder stage, so we have to ignore it here
 *.mp3
+.mongo-pid.json
+.seed-complete

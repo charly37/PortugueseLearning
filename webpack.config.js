@@ -63,7 +63,7 @@ module.exports = {
     historyApiFallback: true,
     proxy: [
       {
-        context: ['/api', '/data'],
+        context: ['/api', '/data', '/weekly-audio', '/podcast', '/sounds'],
         target: 'http://localhost:3000',
         secure: false,
         changeOrigin: true,

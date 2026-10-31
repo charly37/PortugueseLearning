@@ -33,6 +33,7 @@
     "practiceModeHelper": "Les mauvaises réponses sont redemandées jusqu'à ce que vous les réussissiez toutes. Le défi se termine uniquement lorsque 100% sont maîtrisés.",
     "language": "Langue",
     "guestAccount": "Compte Invité",
+    "podcasts": "Podcasts",
     "usefulnessFilter": "Filtre d'Utilité des Mots",
     "usefulness1Plus": "Tous les mots (1+)",
     "usefulness2Plus": "Utiles+ (2+)",
@@ -148,6 +149,37 @@
       "beginner": "Débutant",
       "intermediate": "Intermédiaire",
       "advanced": "Avancé"
+    }
+  },
+  "podcasts": {
+    "title": "Podcast hebdomadaire",
+    "description": "Écoutez notre leçon de portugais européen hebdomadaire, gratuite pour tous. Écoutez chaque épisode dans votre navigateur ou téléchargez le MP3.",
+    "landingDescription": "Écoutez ou téléchargez l'audio de chaque leçon hebdomadaire, gratuitement et sans compte.",
+    "listenButton": "Écouter les épisodes",
+    "showTitle": "DialectHub – Leçon de vocabulaire portugais européen",
+    "showSubtitle": "Une leçon de vocabulaire hebdomadaire avec la prononciation native, les traductions et des exemples en contexte.",
+    "coverAlt": "Pochette du podcast",
+    "subscribe": "S'abonner",
+    "copyRss": "Copier le flux RSS",
+    "copied": "URL du flux RSS copiée dans le presse-papiers",
+    "applePodcasts": "Apple Podcasts",
+    "spotify": "Spotify",
+    "episodeNumber": "Épisode {{number}}",
+    "episodeFallback": "Épisode {{number}}",
+    "duration": "{{duration}}",
+    "fileSize": "{{size}}",
+    "download": "Télécharger le MP3",
+    "wordList": "Mots de cette leçon",
+    "wordCount": "{{count}} mots",
+    "wordListError": "Impossible de charger la liste des mots de cet épisode.",
+    "wordListEmpty": "Aucune liste de mots n'est disponible pour cet épisode.",
+    "audioUnsupported": "Votre navigateur ne prend pas en charge la lecture audio.",
+    "emptyTitle": "Aucun épisode publié pour l'instant",
+    "emptyBody": "Une nouvelle leçon est publiée chaque lundi. Revenez bientôt !",
+    "error": "Impossible de charger les épisodes. Veuillez réessayer.",
+    "pairLabel": {
+      "fr": "Francophones",
+      "en": "Anglophones"
     }
   },
   "auth": {

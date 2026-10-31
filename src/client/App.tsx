@@ -16,6 +16,7 @@ import ChallengeStatsPage from './components/ChallengeStatsPage';
 import FlashcardLearnPage from './components/FlashcardLearnPage';
 import WeeklyChallengePage from './components/WeeklyChallengePage';
 import WeeklyStoryPage from './components/WeeklyStoryPage';
+import PodcastsPage from './components/PodcastsPage';
 
 const theme = createTheme({
   palette: {
@@ -241,6 +242,7 @@ const AppContent: React.FC = () => {
         user={user}
         onNavigateHome={() => navigate('/')}
         onNavigateAbout={() => navigate('/about')}
+        onNavigatePodcasts={() => navigate('/podcasts')}
         onNavigateProfile={() => navigate('/profile')}
         onLogout={handleLogout}
         onNavigateLogin={() => navigate('/login')}
@@ -265,6 +267,7 @@ const AppContent: React.FC = () => {
               onViewIdiomStats={() => navigate('/idiom-stats')}
               onWeeklyChallenge={() => navigate('/weekly-challenge')}
               onWeeklyStory={() => navigate('/weekly-story')}
+              onPodcasts={() => navigate('/podcasts')}
             />
           } />
           <Route path="/about" element={<AboutPage />} />
@@ -332,6 +335,8 @@ const AppContent: React.FC = () => {
             />
           } />
           <Route path="/weekly-story" element={<WeeklyStoryPage user={user} onCreateGuest={handleCreateGuest} onBackHome={() => navigate('/')} />} />
+          {/* Public podcast page: same free episodes as the RSS feed */}
+          <Route path="/podcasts" element={<PodcastsPage />} />
           {/* Catch-all: redirect unknown paths to home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

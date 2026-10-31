@@ -7,6 +7,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 import StyleIcon from '@mui/icons-material/Style';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
+import PodcastsIcon from '@mui/icons-material/Podcasts';
 import { useTranslation } from 'react-i18next';
 
 interface User {
@@ -46,6 +47,7 @@ interface LandingPageProps {
   onViewIdiomStats: () => void;
   onWeeklyChallenge: () => void;
   onWeeklyStory: () => void;
+  onPodcasts: () => void;
 }
 
 const LandingPage: React.FC<LandingPageProps> = ({ 
@@ -61,6 +63,7 @@ const LandingPage: React.FC<LandingPageProps> = ({
   onViewIdiomStats,
   onWeeklyChallenge,
   onWeeklyStory,
+  onPodcasts,
 }) => {
   const { t, i18n } = useTranslation();
   const [weeklySummary, setWeeklySummary] = useState<WeeklySummary | null>(null);
@@ -493,6 +496,53 @@ const LandingPage: React.FC<LandingPageProps> = ({
                     startIcon={<AutoStoriesIcon />}
                   >
                     {t('weeklyStory.readButton')}
+                  </Button>
+                </Box>
+              </Paper>
+            </Grid>
+
+            {/* Podcasts card — public page with the weekly lesson episodes */}
+            <Grid size={{ xs: 12 }}>
+              <Paper
+                elevation={2}
+                sx={{
+                  p: 4,
+                  display: 'flex',
+                  flexDirection: { xs: 'column', sm: 'row' },
+                  alignItems: { xs: 'flex-start', sm: 'center' },
+                  gap: 3,
+                  transition: 'transform 0.2s, box-shadow 0.2s',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: 4,
+                  },
+                  borderLeft: '4px solid #7c3aed',
+                }}
+              >
+                <PodcastsIcon sx={{ fontSize: 48, color: '#7c3aed', flexShrink: 0 }} />
+
+                <Box sx={{ flexGrow: 1, textAlign: 'left' }}>
+                  <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
+                    {t('podcasts.title')}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {t('podcasts.landingDescription')}
+                  </Typography>
+                </Box>
+
+                <Box sx={{ flexShrink: 0 }}>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    onClick={onPodcasts}
+                    sx={{
+                      bgcolor: '#7c3aed',
+                      '&:hover': { bgcolor: '#6d28d9' },
+                      minWidth: 160,
+                    }}
+                    startIcon={<PodcastsIcon />}
+                  >
+                    {t('podcasts.listenButton')}
                   </Button>
                 </Box>
               </Paper>

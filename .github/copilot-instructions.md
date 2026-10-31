@@ -97,6 +97,7 @@ Key routes:
 - `/idiom-challenge`, `/idiom-learn`
 - `/word-stats`, `/verb-stats`, `/idiom-stats`
 - `/weekly-challenge`, `/weekly-story`
+- `/podcasts` — public episode list (same episodes as the RSS feed, no login)
 - `*` → redirects to `/`
 
 The `PageType` union type still exists in `App.tsx` but routing is URL-based, not state-based.
@@ -131,6 +132,10 @@ Separate Python container (`analytics/`) running on cron-like scheduler:
 - `GET /progress` - User statistics (word/verb/idiom accuracy)
 - `GET /history` - Recent attempts (last 20)
 - `GET /weak-areas` - Challenges with < 50% accuracy
+
+### Podcasts (`/api/podcasts`) — public, no auth
+- `GET /` - shows + episodes, read from the `episodes.json` manifest the podcast-feed CronJob writes next to `feed.xml` (parity with the RSS feed by construction)
+- `GET /:pair/episodes/:docId/words` - vocabulary of one episode; docId must be in that pair's published manifest and the lesson must be global (`userId: null`)
 
 ### Legacy Endpoints (backward compatibility)
 - `GET /api/challenge` → Random word challenge

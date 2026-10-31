@@ -223,6 +223,53 @@ xmllint --noout /tmp/podcast/vocabulary/fr-pt/feed.xml
 python3 -m unittest podcast/test_generate_podcast_feed.py -v
 ```
 
+## Website page (`/podcasts`)
+
+The same episodes are also published on the website at `https://dialecthub.net/podcasts`, free and
+without an account.
+
+| | |
+|---|---|
+| Page | `/podcasts` — `src/client/components/PodcastsPage.tsx`, public route in `src/client/App.tsx` |
+| API | `GET /api/podcasts` — `src/routes/podcasts.ts`, no session, `Cache-Control: public, max-age=300` |
+| Word list API | `GET /api/podcasts/:pair/episodes/:docId/words` |
+| Data source | `episodes.json`, written by the **same** `generate_podcast_feed.py` run as `feed.xml` |
+
+**Parity is structural, not synchronised.** The manifest and the feed are produced together from
+the same query, so the page cannot drift from the RSS: whatever the job publishes is what the page
+lists. When the job switches to `weeklychallenge_templates` (see [TODO](TODO.md)), the page follows
+with no code change — it reads the manifest, not the database.
+
+The API never queries MongoDB to list episodes, and it rewrites each enclosure URL to a relative
+`/weekly-audio/<filename>` so the player and the `download` attribute work on any host (dev,
+staging, production) without CORS.
+
+### Word list (expandable)
+
+`GET /api/podcasts/:pair/episodes/:docId/words` returns the vocabulary of one episode, but only if
+
+- the `docId` appears in the published manifest for that pair, **and**
+- the `weeklychallenges` document is a global lesson (`userId: null`).
+
+Both checks form the allow-list that keeps private per-user lessons unreadable through a public
+route — do not relax them.
+
+### When the page is empty
+
+The page renders *No episodes published yet* whenever `episodes.json` is missing, unreadable or an
+empty array. In practice that means the feed job has not run yet (or produced no episode): the
+manifest is only ever written by the CronJob, never by the app image. Check `feed.xml` first — if
+that is missing too, the problem is in the job, not in the page.
+
+`PODCAST_PAIRS` selects the tabs (fallback `fr-pt`) and `PODCAST_SHOW` (default `vocabulary`)
+selects the directory; both are set on the app Deployment from `podcast.pairs` / `podcast.show`.
+
+### Tests
+
+`tests/podcasts.spec.ts` (Playwright, tagged `@smoke`) drives both the page and the API against
+`tests/fixtures/podcast/vocabulary/fr-pt/episodes.json`, which `tests/start-mongo.js` exposes via
+`PODCAST_PATH` in `.env.test` and whose lessons it seeds into the in-memory database.
+
 ## Submitting the show
 
 Do this once, after the feed contains **at least one episode** and returns HTTP 200:
@@ -269,6 +316,8 @@ must not get one without excluding the published episodes.
 | Apple rejects the feed | Missing/invalid cover art at `/podcast/<pair>/cover.jpg` (check `src/images/podcast/<pair>/cover.jpg` was committed and the client rebuilt), or the feed URL redirects (must be plain HTTPS 200) |
 | Episode order looks wrong in Apple | `episodic` shows newest first by `pubDate`; verify the container clock is UTC |
 | Numbering jumps after editing `firstWeek` | Expected for newly included lessons; existing episodes keep their numbers |
+| `/podcasts` says "No episodes published yet" | `episodes.json` missing — run the feed job (`kubectl create job --from=cronjob/<release>-podcast-feed-fr-pt -n portuguese-learning <name>`) |
+| Word list fails on `/podcasts` | The `weeklychallenges` document is gone, or it is a per-user lesson (only global `userId: null` lessons are exposed) |
 
 ## Related Documentation
 

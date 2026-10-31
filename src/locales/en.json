@@ -33,6 +33,7 @@
     "practiceModeHelper": "Wrong answers are re-asked until you get them all right. Challenge completes only when 100% mastered.",
     "language": "Language",
     "guestAccount": "Guest Account",
+    "podcasts": "Podcasts",
     "usefulnessFilter": "Word Usefulness Filter",
     "usefulness1Plus": "All words (1+)",
     "usefulness2Plus": "Useful+ (2+)",
@@ -149,6 +150,38 @@
       "beginner": "Beginner",
       "intermediate": "Intermediate",
       "advanced": "Advanced"
+    }
+  },
+
+  "podcasts": {
+    "title": "Weekly Podcast",
+    "description": "Listen to our weekly European Portuguese lesson, free for everyone. Stream each episode in your browser or download the MP3.",
+    "landingDescription": "Listen to or download the audio of every weekly lesson, free and without an account.",
+    "listenButton": "Listen to Episodes",
+    "showTitle": "DialectHub – European Portuguese Vocabulary Lesson",
+    "showSubtitle": "A weekly vocabulary lesson with native pronunciation, translations and example sentences.",
+    "coverAlt": "Podcast cover art",
+    "subscribe": "Subscribe",
+    "copyRss": "Copy RSS feed",
+    "copied": "RSS feed URL copied to the clipboard",
+    "applePodcasts": "Apple Podcasts",
+    "spotify": "Spotify",
+    "episodeNumber": "Episode {{number}}",
+    "episodeFallback": "Episode {{number}}",
+    "duration": "{{duration}}",
+    "fileSize": "{{size}}",
+    "download": "Download MP3",
+    "wordList": "Words in this lesson",
+    "wordCount": "{{count}} words",
+    "wordListError": "Could not load the word list for this episode.",
+    "wordListEmpty": "No word list is available for this episode.",
+    "audioUnsupported": "Your browser does not support audio playback.",
+    "emptyTitle": "No episodes published yet",
+    "emptyBody": "A new lesson is published every Monday. Come back soon!",
+    "error": "Could not load the episodes. Please try again.",
+    "pairLabel": {
+      "fr": "French speakers",
+      "en": "English speakers"
     }
   },
 

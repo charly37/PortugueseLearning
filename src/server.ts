@@ -14,6 +14,7 @@ import authRoutes from './routes/auth';
 import challengeRoutes from './routes/challenge';
 import weeklyChallengeRoutes from './routes/weeklyChallenge';
 import weeklyStoryRoutes from './routes/weeklyStory';
+import podcastRoutes from './routes/podcasts';
 import { metricsHandler } from './routes/metrics';
 
 const log = logger.child({ module: 'server' });
@@ -71,6 +72,9 @@ app.use('/api/weekly-challenge', weeklyChallengeRoutes);
 
 // Weekly story routes
 app.use('/api/weekly-story', weeklyStoryRoutes);
+
+// Public podcast routes (no auth): same episodes as the RSS feed
+app.use('/api/podcasts', podcastRoutes);
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../public')));
