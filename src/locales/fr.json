@@ -191,7 +191,22 @@
       "practiceTitle": "Pratique de Verbes",
       "header": "Verbes Portugais",
       "instruction": "Traduire du {{language}} vers le portugais",
-      "conjugate": "Conjuguez le verbe \"{{verb}}\" pour \"{{pronoun}}\""
+      "conjugate": "Conjuguez le verbe \"{{verb}}\" pour \"{{pronoun}}\"",
+      "presentTense": "Présent de l'indicatif",
+      "detailedResults": "Résultats détaillés",
+      "yourAnswerLabel": "Votre réponse :",
+      "correctAnswerLabel": "Bonne réponse :",
+      "difficultyAllRandom": "Tout aléatoire",
+      "difficultyAllWeak": "Toutes les zones faibles",
+      "difficultyWeakPercent": "{{percent}}% de zones faibles",
+      "difficultyHelper": "0 = verbes aléatoires, 10 = se concentrer sur vos points faibles",
+      "errors": {
+        "loginRequired": "Veuillez vous connecter pour utiliser les défis personnalisés",
+        "generateFailed": "Impossible de générer le défi",
+        "generic": "Une erreur est survenue",
+        "guestFailed": "Impossible de créer le compte invité",
+        "fetchFailed": "Impossible de récupérer un défi de verbes"
+      }
     },
     "idiom": {
       "title": "Défi d'Expressions - Tour {{current}}/{{total}}",

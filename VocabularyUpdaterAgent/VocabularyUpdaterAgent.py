@@ -302,7 +302,12 @@ def update_translation(
             section["use_exemple"] = target_language_example
             updated_fields.append("examples")
 
-        if section.get("note") == "todo" and note:
+        # Note semantics: "todo" = never written, "" = reviewed with nothing to add,
+        # any other text = the note. Fill either empty state (never overwrite a real
+        # note) so words created by VocabularyCreatorAgent — which writes "" when it
+        # has nothing — can still gain a note on a later review.
+        current_note = section.get("note")
+        if note and (not current_note or current_note == "todo"):
             section["note"] = note
             updated_fields.append("note")
 

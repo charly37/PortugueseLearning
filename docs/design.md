@@ -186,6 +186,29 @@ The Portuguese Learning application runs on Kubernetes (k3s) with Traefik as the
 
 ## Publishing Pipelines
 
+### Weekly Challenge Content Model
+
+Weekly challenges are generated from **language templates** plus **per-user copies**:
+
+| Collection | Document | Purpose |
+|---|---|---|
+| `weeklychallenge_templates` | one per `{weekStart, language}` (`fr`, `en`) | Canonical challenge list and template audio for the week |
+| `weeklychallenges` | one per `{userId, weekStart}`, referencing `templateId` | Per-user progress (`completed`, `results`) and optional personalized audio |
+
+- `create_weekly_challenge.py` writes both: templates for every supported language, then one
+  document per registered user (personalized challenge selection for non-guest users, a straight
+  copy of the language-matched template for guests).
+- `GET /api/weekly-challenge` returns the caller's private document, creating it from the
+  language-matched template on first access if the CronJob did not create one.
+- Audio is produced per template **and** per user; a user document whose challenge list is an exact
+  copy of its template reuses the template MP3 instead of rebuilding it.
+- Legacy `userId: null` documents are read-only during the transition: the API clones them for users
+  whose template is missing, and the generator no longer writes new ones.
+
+Unique indexes (`weeklychallenges_user_week_unique`, `templates_week_language_unique`) keep the
+cron job and API from creating duplicates; create them with
+`python scripts/ensure_weekly_indexes.py` (see [DEPLOYMENT.md](DEPLOYMENT.md)).
+
 The weekly lesson is published to two channels with different delivery models:
 
 ```mermaid
@@ -205,7 +228,9 @@ flowchart TD
 | YouTube | `weekly_*.mp4` | Uploaded with the YouTube Data API; YouTube rehosts and serves the file | [YOUTUBE_UPLOADER.md](YOUTUBE_UPLOADER.md) |
 | Podcast | `weekly_*.mp3` | RSS `feed.xml` whose `<enclosure>` URLs point at `/weekly-audio/*.mp3`; directories stream from this site on every play | [PODCAST.md](PODCAST.md) |
 
-Only the **global** weekly challenge (`userId: null`) is published — per-user lessons are private.
+Only the **global** weekly challenge (`userId: null`, legacy) is published — per-user lessons are
+private. The template migration stops writing new global documents, so the podcast and YouTube jobs
+produce no new episodes until they are migrated to read templates (see [TODO.md](TODO.md)).
 Both pipelines are idempotent: MongoDB records the result (`youtube.videoId`, `podcast.episodeNumber`)
 so a CronJob retry never duplicates work.
 

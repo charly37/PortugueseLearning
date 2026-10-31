@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """
-Create a weekly challenge by selecting 20 word challenges from challenges.json
-and storing it in MongoDB, linked to a specific user.
+Create the weekly challenge content and per-user challenge documents.
+
+For the current week this writes:
+  * one language-specific template per supported language
+    (``weeklychallenge_templates``, unique on weekStart + language)
+  * one personalized challenge per registered user
+    (``weeklychallenges``, linked to its template)
+
+Guests and newly registered users get a personal copy of the template from
+the API on first access.
 
 Usage:
     python create_weekly_challenge.py --user-id <mongodb_user_id>
@@ -29,6 +37,11 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
+SUPPORTED_LANGUAGES = ('fr', 'en')
+DEFAULT_LANGUAGE = 'fr'
+WEEKLY_COLLECTION = 'weeklychallenges'
+TEMPLATES_COLLECTION = 'weeklychallenge_templates'
+
 
 @dataclass
 class CreationStats:
@@ -40,9 +53,14 @@ class CreationStats:
     total_challenges: int = 0    # sum of challenges across all users
     users_with_weak_data: int = 0  # users whose selection was weakness-biased
     total_weak_slots_used: int = 0  # weak words actually injected
+    templates_created: int = 0   # templates newly inserted
+    templates_replaced: int = 0  # existing templates overwritten
 
     def log_summary(self) -> None:
         log.info("--- Creation Statistics ---")
+        log.info("Templates created    : %d (new)", self.templates_created)
+        if self.templates_replaced:
+            log.info("Templates replaced   : %d (overwrote existing)", self.templates_replaced)
         log.info("Users found          : %d", self.users_found)
         log.info("Challenges created   : %d (new)", self.users_created)
         if self.users_replaced:
@@ -57,6 +75,23 @@ class CreationStats:
 
 
 # ── helpers ────────────────────────────────────────────────────────────────────
+
+def current_week_bounds() -> tuple:
+    """Return (Monday 00:00 UTC of the current week, +7 days)."""
+    now = datetime.now(timezone.utc)
+    week_start = now - timedelta(days=now.weekday())
+    week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
+    return week_start, week_start + timedelta(days=7)
+
+
+def ensure_template_index(db) -> None:
+    """Create the unique (weekStart, language) index used by templates."""
+    db[TEMPLATES_COLLECTION].create_index(
+        [('weekStart', 1), ('language', 1)],
+        unique=True,
+        name='templates_week_language_unique',
+    )
+
 
 def load_word_challenges(db) -> list:
     """Load word challenges from the MongoDB challenges collection."""
@@ -116,19 +151,60 @@ def pick_challenges(all_challenges: list, user_doc: dict, n: int = 20) -> tuple[
     return selected[:n], weak_slots
 
 
-def build_weekly_challenge_doc(user_id: str | None, challenges: list) -> dict:
-    """Build the document to insert into the weeklychallenges collection."""
-    now = datetime.now(timezone.utc)
-    # Week starts on Monday of the current week
-    week_start = now - timedelta(days=now.weekday())
-    week_start = week_start.replace(hour=0, minute=0, second=0, microsecond=0)
-    week_end   = week_start + timedelta(days=7)
-
+def build_template_doc(language: str, challenges: list, week_start, week_end) -> dict:
+    """Build a language-specific weekly template (content only, no progress)."""
     return {
-        'userId': user_id,
         'weekStart': week_start,
         'weekEnd': week_end,
-        'createdAt': now,
+        'language': language,
+        'createdAt': datetime.now(timezone.utc),
+        'challenges': [
+            {
+                'challengeId': c['id'],
+                'portuguese': c.get('port', ''),
+                'translation_fr': c.get('fr', {}).get('translation', ''),
+                'translation_en': c.get('en', {}).get('translation', ''),
+            }
+            for c in challenges
+        ],
+        'totalChallenges': len(challenges),
+    }
+
+
+def upsert_template(db, language: str, challenges: list, week_start, week_end) -> tuple:
+    """Insert or replace the template for (weekStart, language)."""
+    doc = build_template_doc(language, challenges, week_start, week_end)
+    collection = db[TEMPLATES_COLLECTION]
+
+    result = collection.replace_one(
+        {'weekStart': week_start, 'language': language},
+        doc,
+        upsert=True,
+    )
+
+    if result.upserted_id:
+        return str(result.upserted_id), True
+    existing = collection.find_one({'weekStart': week_start, 'language': language})
+    return (str(existing['_id']) if existing else 'unknown'), False
+
+
+def build_weekly_challenge_doc(
+    user_id: str | None,
+    challenges: list,
+    *,
+    week_start,
+    week_end,
+    language: str = DEFAULT_LANGUAGE,
+    template_id: str | None = None,
+) -> dict:
+    """Build the per-user weekly challenge document."""
+    return {
+        'userId': user_id,
+        'templateId': template_id,
+        'language': language,
+        'weekStart': week_start,
+        'weekEnd': week_end,
+        'createdAt': datetime.now(timezone.utc),
         'challenges': [
             {
                 'challengeId': c['id'],
@@ -148,13 +224,37 @@ def build_weekly_challenge_doc(user_id: str | None, challenges: list) -> dict:
     }
 
 
-def upsert_weekly_challenge(db, user_id: str | None, challenges: list) -> tuple[str, bool]:
+def upsert_weekly_challenge(
+    db,
+    user_id: str | None,
+    challenges: list,
+    *,
+    week_start,
+    week_end,
+    language: str = DEFAULT_LANGUAGE,
+    template_id: str | None = None,
+) -> tuple[str, bool]:
     """
     Insert or replace the weekly challenge for this user for the current week.
+    Preserves an already-generated audio block when the word list is unchanged.
     Returns (document_id, was_new_insert).
     """
-    doc = build_weekly_challenge_doc(user_id, challenges)
-    collection = db['weeklychallenges']
+    doc = build_weekly_challenge_doc(
+        user_id,
+        challenges,
+        week_start=week_start,
+        week_end=week_end,
+        language=language,
+        template_id=template_id,
+    )
+    collection = db[WEEKLY_COLLECTION]
+
+    existing = collection.find_one({'userId': user_id, 'weekStart': week_start})
+    if existing:
+        old_ids = [c.get('challengeId') for c in existing.get('challenges', [])]
+        new_ids = [c['challengeId'] for c in doc['challenges']]
+        if old_ids == new_ids and existing.get('audio'):
+            doc['audio'] = existing['audio']
 
     result = collection.replace_one(
         {
@@ -231,6 +331,9 @@ def parse_args():
                         help='Number of challenges to include (default: 20)')
     parser.add_argument('--min-usefulness', type=int, default=2,
                         help='Minimum usefulness value for a challenge to be included (default: 2)')
+    parser.add_argument('--template-languages', nargs='+', choices=list(SUPPORTED_LANGUAGES),
+                        default=list(SUPPORTED_LANGUAGES), metavar='LANG',
+                        help='Languages to create weekly templates for (default: fr en)')
     parser.add_argument(
         '--log-level',
         default='INFO',
@@ -255,22 +358,65 @@ def main():
     all_challenges = load_word_challenges(db)
     if args.min_usefulness > 1:
         before = len(all_challenges)
-        all_challenges = [c for c in all_challenges if c.get('usefulness', 2) >= args.min_usefulness]
+        all_challenges = [c for c in all_challenges
+                          if c.get('user_usefulness', 2) >= args.min_usefulness]
         log.info("Filtered by min_usefulness=%d: %d → %d challenges",
                  args.min_usefulness, before, len(all_challenges))
+    if not all_challenges:
+        log.error("No challenges available after filtering — aborting.")
+        client.close()
+        sys.exit(1)
+
+    stats = CreationStats()
 
     try:
+        ensure_template_index(db)
+        week_start, week_end = current_week_bounds()
+
+        # Templates are the fallback content for guests/new users, and the
+        # language-specific source for the weekly audio lessons.
+        template_selection, _ = pick_challenges(all_challenges, {}, n=args.count)
+        template_ids: dict[str, tuple[str, str]] = {}
+        for tpl_language in args.template_languages:
+            tpl_id, tpl_is_new = upsert_template(
+                db, tpl_language, template_selection, week_start, week_end
+            )
+            template_ids[tpl_language] = (tpl_id, tpl_language)
+            if tpl_is_new:
+                stats.templates_created += 1
+            else:
+                stats.templates_replaced += 1
+            log.info(
+                "Template %s — %s (id=%s, %d words)",
+                tpl_language, "inserted" if tpl_is_new else "replaced",
+                tpl_id, len(template_selection),
+            )
+
         users = resolve_user(db, args)
-        stats = CreationStats(users_found=len(users))
+        stats.users_found = len(users)
         log.info("Processing %d user(s)...", len(users))
 
         for user in users:
             user_id  = str(user['_id'])
             username = user.get('username', user_id)
+            raw_language = str(user.get('preferredLanguage') or '').lower()
+            user_language = raw_language if raw_language in SUPPORTED_LANGUAGES else DEFAULT_LANGUAGE
+            template_id, template_language = template_ids.get(
+                user_language,
+                next(iter(template_ids.values())),
+            )
 
             try:
                 selected, weak_slots = pick_challenges(all_challenges, user, n=args.count)
-                doc_id, is_new = upsert_weekly_challenge(db, user_id, selected)
+                doc_id, is_new = upsert_weekly_challenge(
+                    db,
+                    user_id,
+                    selected,
+                    week_start=week_start,
+                    week_end=week_end,
+                    language=template_language,
+                    template_id=template_id,
+                )
             except Exception as exc:
                 log.error("%s — failed: %s", username, exc)
                 stats.users_failed += 1
@@ -288,16 +434,12 @@ def main():
             words_preview = ', '.join(c.get('port', '') for c in selected[:5])
             action = "inserted" if is_new else "replaced"
             log.info(
-                "%s — %s (id=%s, %d words, %d weak: %s...)",
-                username, action, doc_id, len(selected), weak_slots, words_preview,
+                "%s — %s (id=%s, %d words, %d weak, %s; template=%s: %s...)",
+                username, action, doc_id, len(selected), weak_slots,
+                template_language, template_id, words_preview,
             )
 
         stats.log_summary()
-
-        # Upsert a global fallback challenge (userId=None) for guest users
-        global_selected, _ = pick_challenges(all_challenges, {}, n=args.count)
-        upsert_weekly_challenge(db, None, global_selected)
-        log.info("Global fallback challenge (userId=null) upserted with %d words.", len(global_selected))
 
     finally:
         client.close()

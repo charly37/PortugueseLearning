@@ -18,7 +18,7 @@ Examples:
     # Combine specific MP3 files directly
     python combine_mp3.py --files ../sounds/abc.mp3 ../sounds/def.mp3 --output out.mp3
 
-    # Create one MP3 per user based on their current weekly challenge
+    # Create template MP3s (fr + en) and one MP3 per registered user
     python combine_mp3.py --weekly-challenge --lang fr
     python combine_mp3.py --weekly-challenge --no-mp4
     python combine_mp3.py --weekly-challenge --force
@@ -98,7 +98,32 @@ class UserSummary:
     user_id: str
     challenges: int
     duration_s: float
-    status: str  # generated | generated-no-mp4 | skipped-not-found | skipped-guest | skipped-no-challenges | skipped-no-audio | skipped-error | skipped-stale | skipped-already-generated
+    status: str  # generated | generated-no-mp4 | reused-template | skipped-not-found | skipped-guest | skipped-no-challenges | skipped-no-audio | skipped-error | skipped-stale | skipped-already-generated
+
+
+@dataclass
+class TemplateSummary:
+    template_id: str
+    language: str
+    challenges: int
+    duration_s: float
+    status: str  # generated | generated-no-mp4 | skipped-no-challenges | skipped-no-audio | skipped-stale | skipped-already-generated
+
+
+def log_template_summary(summaries: list["TemplateSummary"]) -> None:
+    if not summaries:
+        return
+    log.info("")
+    log.info("=== Weekly Template Audio Summary ===")
+    for s in summaries:
+        dur = f"{s.duration_s:.1f}s" if s.duration_s else "-"
+        chall = str(s.challenges) if s.challenges else "-"
+        log.info("template:%s [%s] challenges=%s duration=%s status=%s",
+                 s.template_id, s.language, chall, dur, s.status)
+    generated = [s for s in summaries if s.status in {"generated", "generated-no-mp4"}]
+    log.info("Templates processed : %d", len(summaries))
+    log.info("Templates generated : %d", len(generated))
+    log.info("")
 
 
 def log_weekly_summary(summaries: list["UserSummary"]) -> None:
@@ -120,10 +145,13 @@ def log_weekly_summary(summaries: list["UserSummary"]) -> None:
     not_found   = [s for s in summaries if s.status == "skipped-not-found"]
     guests      = [s for s in summaries if s.status == "skipped-guest"]
     already     = [s for s in summaries if s.status == "skipped-already-generated"]
-    other_skip  = [s for s in summaries if s.status not in {"generated", "generated-no-mp4", "skipped-not-found", "skipped-guest", "skipped-already-generated"}]
-    total_dur   = sum(s.duration_s for s in generated)
+    reused      = [s for s in summaries if s.status == "reused-template"]
+    other_skip  = [s for s in summaries if s.status not in {"generated", "generated-no-mp4", "reused-template", "skipped-not-found", "skipped-guest", "skipped-already-generated"}]
+    total_dur   = sum(s.duration_s for s in generated + reused)
     log.info("Users processed  : %d", len(summaries))
     log.info("Generated        : %d", len(generated))
+    if reused:
+        log.info("Reused template  : %d", len(reused))
     if no_mp4:
         log.info("Generated (no MP4): %d", len(no_mp4))
     log.info("Skipped (missing): %d", len(not_found))
@@ -441,6 +469,46 @@ def current_week_start_utc() -> datetime:
 
 
 VALID_LANGS = {"en", "fr"}
+WEEKLY_COLLECTION = "weeklychallenges"
+TEMPLATES_COLLECTION = "weeklychallenge_templates"
+
+
+def _challenge_ids(doc: dict) -> list[str]:
+    return [c.get("challengeId") for c in doc.get("challenges", []) if c.get("challengeId")]
+
+
+def _is_stale(doc: dict) -> bool:
+    doc_week = doc.get("weekStart")
+    if doc_week is None:
+        return False
+    if doc_week.tzinfo is None:
+        doc_week = doc_week.replace(tzinfo=timezone.utc)
+    age_days = (datetime.now(tz=timezone.utc) - doc_week).days
+    return age_days > MAX_CHALLENGE_AGE_WEEKS * 7
+
+
+def _already_generated_today(
+    doc: dict,
+    output_dir: Path,
+    today: str,
+    force: bool,
+    language: str | None = None,
+) -> tuple[bool, str | None, Path | None]:
+    """Return (already_done, filename, path), respecting a language change."""
+    audio_meta = doc.get("audio") or {}
+    existing_name = audio_meta.get("filename")
+    existing_path = (output_dir / existing_name) if existing_name else None
+    already = (
+        not force
+        and audio_meta.get("last_update") == today
+        and existing_path is not None
+        and existing_path.exists()
+    )
+    if already and language is not None:
+        doc_language = doc.get("language")
+        if doc_language in VALID_LANGS and doc_language != language:
+            already = False
+    return already, existing_name, existing_path
 
 
 def _persist_weekly_audio(
@@ -451,6 +519,7 @@ def _persist_weekly_audio(
     mp4_ok: bool | None,
     duration_s: float | None = None,
     size_bytes: int | None = None,
+    language: str | None = None,
 ) -> None:
     """Record that today's MP3 exists so a Job retry will not rebuild it.
 
@@ -462,6 +531,8 @@ def _persist_weekly_audio(
     previous = doc.get("audio") or {}
 
     payload = {"filename": filename, "last_update": today}
+    if language is not None:
+        payload["language"] = language
 
     resolved_duration = duration_s if duration_s is not None else previous.get("duration_s")
     if resolved_duration is not None:
@@ -474,7 +545,10 @@ def _persist_weekly_audio(
     if mp4_ok is not None:
         payload["mp4"] = mp4_ok
 
-    collection.update_one({"_id": doc["_id"]}, {"$set": {"audio": payload}})
+    update = {"audio": payload}
+    if language is not None:
+        update["language"] = language
+    collection.update_one({"_id": doc["_id"]}, {"$set": update})
     log.info(
         "[%s] Updated MongoDB audio metadata: %s (mp4=%s, duration=%ss, size=%sB)",
         doc["_id"], filename, mp4_ok, payload.get("duration_s"), payload.get("size_bytes"),
@@ -482,11 +556,12 @@ def _persist_weekly_audio(
 
 
 def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR, generate_mp4: bool = False, force: bool = False) -> None:
-    """Fetch current week's challenges from MongoDB and create one MP3 per user.
+    """Build weekly lessons from templates and per-user challenge documents.
 
-    The language used for each lesson is taken from the user's ``preferredLanguage``
-    field in the ``users`` collection.  ``lang`` is used only as a fallback when
-    the profile cannot be found or contains an unsupported value.
+    Templates (``weeklychallenge_templates``) are generated first, one lesson
+    per language. User documents (``weeklychallenges``) are then generated in
+    the user's language; when a user's challenge list is an exact copy of its
+    template, the template audio is reused instead of rebuilding it.
     """
     try:
         from pymongo import MongoClient
@@ -502,63 +577,207 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
 
     client = MongoClient(mongodb_uri)
     db = client.get_default_database()
-    collection = db["weeklychallenges"]
+    collection = db[WEEKLY_COLLECTION]
+    templates_collection = db[TEMPLATES_COLLECTION]
     users_collection = db["users"]
 
-    week_start = current_week_start_utc()
     cutoff = datetime.now(tz=timezone.utc) - timedelta(weeks=MAX_CHALLENGE_AGE_WEEKS)
-    docs = list(collection.find({"weekStart": {"$gte": cutoff}}))
+    templates = list(templates_collection.find({"weekStart": {"$gte": cutoff}}))
+    # Legacy shared documents (userId = null) are content-only and are ignored.
+    docs = [
+        d for d in collection.find({"weekStart": {"$gte": cutoff}})
+        if d.get("userId") is not None
+    ]
 
-    if not docs:
+    if not templates and not docs:
         client.close()
-        log.warning("No weekly challenge documents found within the last %d weeks.", MAX_CHALLENGE_AGE_WEEKS)
+        log.warning("No weekly templates or challenges found within the last %d weeks.",
+                    MAX_CHALLENGE_AGE_WEEKS)
         return
 
-    log.info("Found %d weekly challenge document(s) since %s", len(docs), cutoff.date())
+    log.info("Found %d weekly template(s) and %d user challenge document(s) since %s",
+             len(templates), len(docs), cutoff.date())
     output_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     today = datetime.now().strftime("%Y-%m-%d")
+    template_summaries: list[TemplateSummary] = []
     summaries: list[UserSummary] = []
+    # templateId is stored as a string by the generator but as an ObjectId on
+    # the template itself, so key the lookup by its string form.
+    templates_by_id = {str(t["_id"]): t for t in templates}
 
     try:
+        # ── Template lessons: one per language ──
+        for tdoc in templates:
+            template_id = str(tdoc["_id"])
+            language = tdoc.get("language") if tdoc.get("language") in VALID_LANGS else lang
+
+            if _is_stale(tdoc):
+                log.warning("[template:%s] Skipping stale template.", template_id)
+                template_summaries.append(TemplateSummary(
+                    template_id, language, 0, 0.0, "skipped-stale"))
+                continue
+
+            uids = _challenge_ids(tdoc)
+            if not uids:
+                log.warning("[template:%s] No challenge IDs found, skipping.", template_id)
+                template_summaries.append(TemplateSummary(
+                    template_id, language, 0, 0.0, "skipped-no-challenges"))
+                continue
+
+            already_today, existing_name, existing_path = _already_generated_today(
+                tdoc, output_dir, today, force, language)
+            if already_today:
+                log.info("[template:%s] Audio already generated today (%s), skipping rebuild.",
+                         template_id, existing_name)
+                status = "skipped-already-generated"
+                if generate_mp4 and existing_path is not None:
+                    mp4_path = existing_path.with_suffix(".mp4")
+                    if not mp4_path.exists() or mp4_path.stat().st_size == 0:
+                        mp4_ok = export_mp4(existing_path) is not None
+                        _persist_weekly_audio(
+                            templates_collection, tdoc, existing_name, today, mp4_ok,
+                            duration_s=_ffprobe_duration_s(existing_path),
+                            size_bytes=existing_path.stat().st_size,
+                            language=language,
+                        )
+                        status = "generated" if mp4_ok else "generated-no-mp4"
+                template_summaries.append(TemplateSummary(
+                    template_id, language, len(uids), 0.0, status))
+                continue
+
+            log.info("[template:%s] Building %s lesson from %d challenge(s)...",
+                     template_id, language, len(uids))
+            combined, tpl_stats = combine_from_ids(
+                uids, lang=language, include_examples=include_examples,
+                pause_ms=pause_ms, sounds_dir=sounds_dir)
+            tpl_stats.log_summary(label=f"template:{language}")
+
+            if len(combined) == 0:
+                log.warning("[template:%s] No audio generated, skipping.", template_id)
+                template_summaries.append(TemplateSummary(
+                    template_id, language, 0, 0.0, "skipped-no-audio"))
+                continue
+
+            from pydub import effects as pydub_effects
+            combined = pydub_effects.normalize(combined, headroom=0.1)
+            filename = f"weekly_template_{template_id}_{timestamp}.mp3"
+            output_path = output_dir / filename
+            combined.export(str(output_path), format="mp3")
+            duration_s = len(combined) / 1000
+            size_bytes = output_path.stat().st_size
+            log.info("[template:%s] Lesson duration: %.1fs -> %s",
+                     template_id, duration_s, output_path)
+
+            _persist_weekly_audio(
+                templates_collection, tdoc, filename, today, mp4_ok=None,
+                duration_s=duration_s, size_bytes=size_bytes, language=language,
+            )
+            mp4_ok: bool | None = None
+            if generate_mp4:
+                mp4_ok = export_mp4(output_path) is not None
+                _persist_weekly_audio(
+                    templates_collection, tdoc, filename, today, mp4_ok,
+                    duration_s=duration_s, size_bytes=size_bytes, language=language,
+                )
+                if not mp4_ok:
+                    log.warning("[template:%s] MP3 saved but MP4 generation failed; continuing.",
+                                template_id)
+
+            template_summaries.append(TemplateSummary(
+                template_id, language, tpl_stats.challenges_generated,
+                duration_s, "generated" if mp4_ok is not False else "generated-no-mp4"))
+
+        # Refresh template audio metadata: the pass above just rewrote it, and the
+        # user pass below copies it for documents that mirror their template.
+        if templates:
+            templates_by_id = {
+                str(t["_id"]): t
+                for t in templates_collection.find(
+                    {"_id": {"$in": [t["_id"] for t in templates]}},
+                    {"language": 1, "audio": 1, "challenges.challengeId": 1},
+                )
+            }
+
+        # ── Per-user lessons ──
         for doc in docs:
             doc_id = str(doc["_id"])
             user_id = str(doc.get("userId", "unknown"))
 
-            doc_week = doc.get("weekStart")
-            if doc_week is not None:
-                if doc_week.tzinfo is None:
-                    doc_week = doc_week.replace(tzinfo=timezone.utc)
-                age_days = (datetime.now(tz=timezone.utc) - doc_week).days
-                if age_days > MAX_CHALLENGE_AGE_WEEKS * 7:
-                    log.warning(
-                        "[%s] Skipping stale challenge: weekStart %s is %d days old (limit: %d weeks)",
-                        doc_id, doc_week.date(), age_days, MAX_CHALLENGE_AGE_WEEKS,
-                    )
-                    summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-stale"))
-                    continue
-
-            challenges = doc.get("challenges", [])
-            uids = [c["challengeId"] for c in challenges if c.get("challengeId")]
-
-            if not uids:
-                log.warning("[%s] No challenge IDs found, skipping.", doc_id)
-                summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-no-challenges"))
+            if _is_stale(doc):
+                log.warning("[%s] Skipping stale challenge.", doc_id)
+                summaries.append(UserSummary(
+                    user_id=user_id, challenges=0, duration_s=0.0, status="skipped-stale"))
                 continue
 
-            audio_meta = doc.get("audio") or {}
-            existing_name = audio_meta.get("filename")
-            existing_path = (output_dir / existing_name) if existing_name else None
-            already_today = (
-                not force
-                and audio_meta.get("last_update") == today
-                and existing_path is not None
-                and existing_path.exists()
+            uids = _challenge_ids(doc)
+            if not uids:
+                log.warning("[%s] No challenge IDs found, skipping.", doc_id)
+                summaries.append(UserSummary(
+                    user_id=user_id, challenges=0, duration_s=0.0, status="skipped-no-challenges"))
+                continue
+
+            # Language: user preference wins, then the doc language, then CLI.
+            user_lang = doc.get("language") if doc.get("language") in VALID_LANGS else lang
+            try:
+                user_doc = users_collection.find_one(
+                    {"_id": ObjectId(str(doc.get("userId")))},
+                    {"preferredLanguage": 1, "isGuest": 1},
+                )
+            except Exception as exc:
+                log.warning("[%s] Could not look up user (%s), skipping.", doc_id, exc)
+                summaries.append(UserSummary(
+                    user_id=user_id, challenges=0, duration_s=0.0, status="skipped-error"))
+                continue
+
+            if user_doc is None:
+                log.warning("[%s] User %s not found in users collection, skipping.", doc_id, user_id)
+                summaries.append(UserSummary(
+                    user_id=user_id, challenges=0, duration_s=0.0, status="skipped-not-found"))
+                continue
+            if user_doc.get("isGuest"):
+                log.warning("[%s] User %s is a guest account, skipping.", doc_id, user_id)
+                summaries.append(UserSummary(
+                    user_id=user_id, challenges=0, duration_s=0.0, status="skipped-guest"))
+                continue
+            if user_doc.get("preferredLanguage") in VALID_LANGS:
+                user_lang = user_doc["preferredLanguage"]
+                log.info("[%s] Using user language: %s", doc_id, user_lang)
+            else:
+                log.info("[%s] Using document language: %s", doc_id, user_lang)
+
+            # Exact template copy → reuse its language-specific audio.
+            raw_template_id = doc.get("templateId")
+            template = (
+                templates_by_id.get(str(raw_template_id)) if raw_template_id is not None else None
             )
+            if (
+                template is not None
+                and template.get("audio")
+                and doc.get("language") == template.get("language") == user_lang
+                and _challenge_ids(template) == uids
+            ):
+                log.info("[%s] Reusing template audio %s",
+                         doc_id, template["audio"].get("filename"))
+                collection.update_one(
+                    {"_id": doc["_id"]},
+                    {"$set": {"audio": template["audio"], "language": user_lang}},
+                )
+                summaries.append(UserSummary(
+                    user_id=user_id,
+                    challenges=len(uids),
+                    duration_s=float(template["audio"].get("duration_s") or 0.0),
+                    status="reused-template",
+                ))
+                continue
+
+            already_today, existing_name, existing_path = _already_generated_today(
+                doc, output_dir, today, force, user_lang)
             if already_today:
-                log.info("[%s] Audio already generated today (%s), skipping rebuild.", doc_id, existing_name)
+                log.info("[%s] Audio already generated today (%s), skipping rebuild.",
+                         doc_id, existing_name)
                 status = "skipped-already-generated"
-                if generate_mp4:
+                if generate_mp4 and existing_path is not None:
                     mp4_path = existing_path.with_suffix(".mp4")
                     if not mp4_path.exists() or mp4_path.stat().st_size == 0:
                         mp4_ok = export_mp4(existing_path) is not None
@@ -566,6 +785,7 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                             collection, doc, existing_name, today, mp4_ok,
                             duration_s=_ffprobe_duration_s(existing_path),
                             size_bytes=existing_path.stat().st_size,
+                            language=user_lang,
                         )
                         status = "generated" if mp4_ok else "generated-no-mp4"
                 summaries.append(UserSummary(
@@ -576,40 +796,17 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                 ))
                 continue
 
-            # Resolve language and validate user exists and is not a guest
-            user_lang = lang
-            raw_uid = doc.get("userId")
-            if raw_uid is not None:
-                try:
-                    user_doc = users_collection.find_one(
-                        {"_id": ObjectId(str(raw_uid))},
-                        {"preferredLanguage": 1, "isGuest": 1},
-                    )
-                    if user_doc is None:
-                        log.warning("[%s] User %s not found in users collection, skipping.", doc_id, user_id)
-                        summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-not-found"))
-                        continue
-                    if user_doc.get("isGuest"):
-                        log.warning("[%s] User %s is a guest account, skipping.", doc_id, user_id)
-                        summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-guest"))
-                        continue
-                    if user_doc.get("preferredLanguage") in VALID_LANGS:
-                        user_lang = user_doc["preferredLanguage"]
-                        log.info("[%s] Using user language: %s", doc_id, user_lang)
-                    else:
-                        log.warning("[%s] No valid preferredLanguage for user %s, using default: %s", doc_id, user_id, user_lang)
-                except Exception as exc:
-                    log.warning("[%s] Could not look up user (%s), skipping.", doc_id, exc)
-                    summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-error"))
-                    continue
-
-            log.info("[%s] Building lesson for user %s from %d challenge(s)...", doc_id, user_id, len(uids))
-            combined, user_stats = combine_from_ids(uids, lang=user_lang, include_examples=include_examples, pause_ms=pause_ms, sounds_dir=sounds_dir)
+            log.info("[%s] Building lesson for user %s from %d challenge(s)...",
+                     doc_id, user_id, len(uids))
+            combined, user_stats = combine_from_ids(
+                uids, lang=user_lang, include_examples=include_examples,
+                pause_ms=pause_ms, sounds_dir=sounds_dir)
             user_stats.log_summary(label=doc_id)
 
             if len(combined) == 0:
                 log.warning("[%s] No audio generated, skipping.", doc_id)
-                summaries.append(UserSummary(user_id=user_id, challenges=0, duration_s=0.0, status="skipped-no-audio"))
+                summaries.append(UserSummary(
+                    user_id=user_id, challenges=0, duration_s=0.0, status="skipped-no-audio"))
                 continue
 
             from pydub import effects as pydub_effects
@@ -619,21 +816,18 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             combined.export(str(output_path), format="mp3")
             duration_s = len(combined) / 1000
             size_bytes = output_path.stat().st_size
-            log.info("[%s] Lesson duration: %.1fs  ->  %s", doc_id, duration_s, output_path)
+            log.info("[%s] Lesson duration: %.1fs -> %s", doc_id, duration_s, output_path)
 
-            # Persist MP3 metadata BEFORE ffmpeg. If the Job is OOM-killed during
-            # MP4 encoding, the next retry will skip this user instead of looping.
             _persist_weekly_audio(
                 collection, doc, filename, today, mp4_ok=None,
-                duration_s=duration_s, size_bytes=size_bytes,
+                duration_s=duration_s, size_bytes=size_bytes, language=user_lang,
             )
-
             mp4_ok: bool | None = None
             if generate_mp4:
                 mp4_ok = export_mp4(output_path) is not None
                 _persist_weekly_audio(
                     collection, doc, filename, today, mp4_ok,
-                    duration_s=duration_s, size_bytes=size_bytes,
+                    duration_s=duration_s, size_bytes=size_bytes, language=user_lang,
                 )
                 if not mp4_ok:
                     log.warning("[%s] MP3 saved but MP4 generation failed; continuing.", doc_id)
@@ -641,12 +835,13 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             summaries.append(UserSummary(
                 user_id=user_id,
                 challenges=user_stats.challenges_generated,
-                duration_s=len(combined) / 1000,
+                duration_s=duration_s,
                 status="generated" if mp4_ok is not False else "generated-no-mp4",
             ))
     finally:
         client.close()
 
+    log_template_summary(template_summaries)
     if summaries:
         log_weekly_summary(summaries)
 
@@ -677,7 +872,10 @@ def main():
     source.add_argument(
         "--weekly-challenge",
         action="store_true",
-        help="Fetch current week's challenges from MongoDB and create one MP3 per user (requires MONGODB_URI)",
+        help=(
+            "Fetch current week's templates and challenges from MongoDB, build one MP3 per "
+            "template language and one per registered user (requires MONGODB_URI)"
+        ),
     )
 
     parser.add_argument(

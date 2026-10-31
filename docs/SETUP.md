@@ -88,7 +88,7 @@ npm start
 
 Two Python scripts in `scripts/` handle full BSON backups via the [MongoDB Database Tools](https://www.mongodb.com/docs/database-tools/installation/) (`mongodump` / `mongorestore`). These must be installed separately and available on your PATH.
 
-**Collections covered:** `users`, `challengeattempts`, `challenges`, `challengequalityflags`, `userwordvotes`, `weeklychallenges`, `weeklystories` (sessions are excluded — ephemeral data).
+**Collections covered:** `users`, `challengeattempts`, `challenges`, `challengequalityflags`, `userwordvotes`, `weeklychallenge_templates`, `weeklychallenges`, `weeklystories` (sessions are excluded — ephemeral data). Collections are discovered at runtime, so new ones are picked up automatically.
 
 ### Backup
 

@@ -74,9 +74,17 @@ python combine_mp3.py --files ../sounds/abc.mp3 ../sounds/def.mp3 --output out.m
 
 ### Mode 4 — Weekly challenge (MongoDB, used in production)
 
-Builds one lesson per `weeklychallenges` document found in the last two weeks. Each lesson uses the
-owner's `preferredLanguage`, so a French-speaking user gets French translations and an English
-speaker gets English ones. Guests and deleted users are skipped.
+Runs in two passes over documents from the last two weeks:
+
+1. **Templates** (`weeklychallenge_templates`) — one lesson per language. The language comes from
+   the template's own `language` field, so the French and English templates each get their own MP3
+   (`weekly_template_<templateId>_<timestamp>.mp3`).
+2. **Users** (`weeklychallenges` with a real `userId`) — one lesson per registered, non-guest user in
+   their `preferredLanguage` (falling back to the document's `language`, then `--lang`). If a user's
+   challenge list is an exact copy of its template and both are in the same language, the template
+   audio is **reused** and recorded on the user document instead of being rebuilt.
+
+Legacy shared documents (`userId: null`) are ignored: they are content-only and never get new audio.
 
 ```bash
 python combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio
@@ -88,6 +96,7 @@ Requires `MONGODB_URI`. For every generated lesson it writes to the document:
 "audio": {
   "filename": "weekly_<docId>_20261026_040000.mp3",
   "last_update": "2026-10-26",
+  "language": "fr",
   "mp4": true,
   "duration_s": 1234.5,
   "size_bytes": 24680123
@@ -95,8 +104,10 @@ Requires `MONGODB_URI`. For every generated lesson it writes to the document:
 ```
 
 `duration_s` and `size_bytes` exist for the podcast feed (`<itunes:duration>` and the enclosure
-`length`) — see [PODCAST.md](PODCAST.md). With `--force` a lesson is rebuilt even if it was already
-generated today; MP4 generation is skipped by default because it is only needed for YouTube.
+`length`) — see [PODCAST.md](PODCAST.md). The `language` in `audio` is the language the MP3 was built
+in, so a user who switches language gets a rebuilt lesson instead of a stale file. With `--force` a
+lesson is rebuilt even if it was already generated today; MP4 generation is skipped by default
+because it is only needed for YouTube.
 
 ## Options
 
@@ -105,7 +116,7 @@ generated today; MP4 generation is skipped by default because it is only needed 
 | `--ids UUID ...` | — | Challenge UUIDs to combine |
 | `--file FILE` | — | Text file with one UUID or `.mp3` path per line |
 | `--files PATH ...` | — | Explicit MP3 paths |
-| `--weekly-challenge` | off | Mongo-driven mode: one lesson per `weeklychallenges` document |
+| `--weekly-challenge` | off | Mongo-driven mode: one lesson per template language and one per registered user |
 | `--lang en\|fr` | `en` | Language for translations/examples (fallback only in weekly mode) |
 | `--no-examples` | off | Include only the translation and the Portuguese pronunciation |
 | `--pause MS` | `2000` | Silence inserted between challenges |

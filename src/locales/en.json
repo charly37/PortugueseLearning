@@ -193,7 +193,22 @@
       "practiceTitle": "Verb Practice",
       "header": "Portuguese Verbs",
       "instruction": "Translate from {{language}} to Portuguese",
-      "conjugate": "Conjugate the verb \"{{verb}}\" for \"{{pronoun}}\""
+      "conjugate": "Conjugate the verb \"{{verb}}\" for \"{{pronoun}}\"",
+      "presentTense": "Present indicative",
+      "detailedResults": "Detailed Results",
+      "yourAnswerLabel": "Your answer:",
+      "correctAnswerLabel": "Correct answer:",
+      "difficultyAllRandom": "All random",
+      "difficultyAllWeak": "All weak areas",
+      "difficultyWeakPercent": "{{percent}}% weak areas",
+      "difficultyHelper": "0 = random verbs, 10 = focus on your weak areas",
+      "errors": {
+        "loginRequired": "Please log in to use personalized challenges",
+        "generateFailed": "Failed to generate challenge set",
+        "generic": "An error occurred",
+        "guestFailed": "Failed to create guest account",
+        "fetchFailed": "Failed to fetch verb challenge"
+      }
     },
     "idiom": {
       "title": "Idiom Challenge - Turn {{current}}/{{total}}",

@@ -1,9 +1,16 @@
 import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import { getWordChallenges } from '../challengeCache';
+import User from '../models/User';
 import logger from '../logger';
 
 const log = logger.child({ module: 'weekly-challenge' });
+
+const WEEKLY_COLLECTION = 'weeklychallenges';
+const TEMPLATES_COLLECTION = 'weeklychallenge_templates';
+const SUPPORTED_LANGUAGES = ['fr', 'en'] as const;
+type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
+const DEFAULT_LANGUAGE: SupportedLanguage = 'fr';
 
 const router = express.Router();
 
@@ -23,6 +30,122 @@ function currentWeekStart(now: Date): Date {
   return d;
 }
 
+function normalizeLanguage(value: unknown): SupportedLanguage | null {
+  const normalized = typeof value === 'string' ? value.toLowerCase() : '';
+  return (SUPPORTED_LANGUAGES as readonly string[]).includes(normalized)
+    ? (normalized as SupportedLanguage)
+    : null;
+}
+
+async function resolveUserLanguage(userId: string): Promise<SupportedLanguage> {
+  try {
+    const user = await User.findById(userId)
+      .select('preferredLanguage')
+      .lean<{ preferredLanguage?: string }>();
+    return normalizeLanguage(user?.preferredLanguage) ?? DEFAULT_LANGUAGE;
+  } catch {
+    return DEFAULT_LANGUAGE;
+  }
+}
+
+async function findWeekTemplate(
+  db: mongoose.mongo.Db,
+  weekStart: Date,
+  language: SupportedLanguage,
+) {
+  const templates = db.collection(TEMPLATES_COLLECTION);
+
+  // Exact week + preferred language first.
+  const exact = await templates.findOne({ weekStart, language });
+  if (exact) return exact;
+
+  // Same week, any language (content is bilingual; only the audio differs).
+  const sameWeek = await templates.findOne({ weekStart });
+  if (sameWeek) return sameWeek;
+
+  // Transition/clock-skew: earliest upcoming template for this language.
+  const languageDoc = await templates
+    .find({ weekStart: { $gte: weekStart }, language })
+    .sort({ weekStart: 1 })
+    .limit(1)
+    .next();
+  if (languageDoc) return languageDoc;
+
+  return templates
+    .find({ weekStart: { $gte: weekStart } })
+    .sort({ weekStart: 1 })
+    .limit(1)
+    .next();
+}
+
+/**
+ * Return the user's weekly challenge for this week, creating a private copy
+ * from the language-matched template on first access.
+ */
+async function ensurePersonalWeeklyDoc(
+  db: mongoose.mongo.Db,
+  userId: string,
+  weekStart: Date,
+) {
+  const collection = db.collection(WEEKLY_COLLECTION);
+
+  const existing = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+  if (existing) return existing;
+
+  const language = await resolveUserLanguage(userId);
+  const template = await findWeekTemplate(db, weekStart, language);
+  // Transition safety: until the first template run, clone the legacy shared doc.
+  const legacy = template
+    ? null
+    : await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
+  const source = template ?? legacy;
+  if (!source) {
+    log.warn(
+      { userId, weekStart: weekStart.toISOString(), language },
+      'no weekly template or legacy fallback found; run create_weekly_challenge.py --all-users'
+    );
+    return null;
+  }
+
+  const sourceChallenges = Array.isArray(source.challenges) ? source.challenges : [];
+  const personalDoc = {
+    userId,
+    templateId: template ? template._id : null,
+    language: normalizeLanguage(template?.language) ?? language,
+    weekStart: source.weekStart ?? weekStart,
+    weekEnd: source.weekEnd ?? new Date(weekStart.getTime() + 7 * 24 * 60 * 60 * 1000),
+    createdAt: new Date(),
+    challenges: sourceChallenges.map((c: any) => ({
+      challengeId: c.challengeId,
+      portuguese: c.portuguese ?? '',
+      translation_fr: c.translation_fr ?? '',
+      translation_en: c.translation_en ?? '',
+      completed: false,
+      correct: null,
+      attemptedAt: null,
+    })),
+    totalChallenges: source.totalChallenges ?? sourceChallenges.length,
+    completedCount: 0,
+    correctCount: 0,
+    status: 'active',
+    // Give the new user a language-correct lesson immediately (templates only).
+    ...(template?.audio ? { audio: template.audio } : {}),
+  };
+
+  try {
+    await collection.updateOne(
+      { userId, weekStart: personalDoc.weekStart },
+      { $setOnInsert: personalDoc },
+      { upsert: true },
+    );
+  } catch (error) {
+    // A concurrent request may have created the personal doc first.
+    log.debug({ err: error, userId }, 'weekly challenge lazy creation raced; re-reading');
+  }
+
+  return collection.findOne({ userId, weekStart: { $gte: weekStart } });
+}
+
 // GET /api/weekly-challenge
 // Progress is read exclusively from the weeklychallenges document.
 // Regular challenge attempts have NO effect on weekly progress.
@@ -32,46 +155,12 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
     const db = mongoose.connection.db;
     if (!db) return res.status(503).json({ message: 'Database not available' });
 
-    const collection = db.collection('weeklychallenges');
+    const collection = db.collection(WEEKLY_COLLECTION);
     const weekStart = currentWeekStart(new Date());
 
-    let doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    let doc = await ensurePersonalWeeklyDoc(db, userId, weekStart);
     if (!doc) {
-      doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
-    }
-    if (!doc && getWordChallenges().length > 0) {
-      log.warn(
-        { weekStart: weekStart.toISOString() },
-        'no global fallback weekly challenge found; auto-creating from cache — run create_weekly_challenge.py --all-users to fix this'
-      );
-      const weekEnd = new Date(weekStart);
-      weekEnd.setUTCDate(weekEnd.getUTCDate() + 7);
-      const shuffled = [...getWordChallenges()].sort(() => Math.random() - 0.5);
-      const selected = shuffled.slice(0, 20);
-      const globalDoc = {
-        userId: null,
-        weekStart,
-        weekEnd,
-        createdAt: new Date(),
-        challenges: selected.map((c: any) => ({
-          challengeId: c.id,
-          portuguese: c.port ?? '',
-          translation_fr: c.fr?.translation ?? '',
-          translation_en: c.en?.translation ?? '',
-          completed: false,
-          correct: null,
-          attemptedAt: null,
-        })),
-        totalChallenges: selected.length,
-        completedCount: 0,
-        correctCount: 0,
-        status: 'active',
-      };
-      try {
-        await collection.insertOne(globalDoc);
-      } catch {
-        // Another concurrent request may have inserted first
-      }
+      // Temporary transition fallback: the legacy shared document (userId = null).
       doc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
     }
     if (!doc) {
@@ -85,6 +174,8 @@ router.get('/', requireAuth, async (req: Request, res: Response) => {
       _id: doc._id,
       weekStart: doc.weekStart,
       weekEnd: doc.weekEnd,
+      language: doc.language ?? null,
+      templateId: doc.templateId ?? null,
       totalChallenges: doc.totalChallenges,
       completedCount,
       correctCount,
@@ -125,40 +216,12 @@ router.post('/submit', requireAuth, async (req: Request, res: Response) => {
     const db = mongoose.connection.db;
     if (!db) return res.status(503).json({ message: 'Database not available' });
 
-    const collection = db.collection('weeklychallenges');
+    const collection = db.collection(WEEKLY_COLLECTION);
     const weekStart = currentWeekStart(new Date());
 
-    let doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    const doc = await ensurePersonalWeeklyDoc(db, userId, weekStart);
     if (!doc) {
-      // Lazy clone: on first submit by a guest, copy the global doc into a personal one
-      const globalDoc = await collection.findOne({ userId: null, weekStart: { $gte: weekStart } });
-      if (!globalDoc) {
-        return res.status(404).json({ message: 'No active weekly challenge found' });
-      }
-      const { _id: _ignored, ...templateFields } = globalDoc;
-      const cloned = {
-        ...templateFields,
-        userId,
-        challenges: globalDoc.challenges.map((c: any) => ({
-          ...c,
-          completed: false,
-          correct: null,
-          attemptedAt: null,
-        })),
-        completedCount: 0,
-        correctCount: 0,
-        status: 'active',
-        createdAt: new Date(),
-      };
-      try {
-        await collection.insertOne(cloned);
-      } catch {
-        // Another concurrent request may have already inserted — proceed to re-fetch
-      }
-      doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
-      if (!doc) {
-        return res.status(500).json({ message: 'Failed to initialize weekly challenge' });
-      }
+      return res.status(404).json({ message: 'No active weekly challenge found' });
     }
 
     const wordIndex = doc.challenges.findIndex(
@@ -217,10 +280,10 @@ router.post('/reset', requireAuth, async (req: Request, res: Response) => {
     const db = mongoose.connection.db;
     if (!db) return res.status(503).json({ message: 'Database not available' });
 
-    const collection = db.collection('weeklychallenges');
+    const collection = db.collection(WEEKLY_COLLECTION);
     const weekStart = currentWeekStart(new Date());
 
-    const doc = await collection.findOne({ userId, weekStart: { $gte: weekStart } });
+    const doc = await ensurePersonalWeeklyDoc(db, userId, weekStart);
     if (!doc) {
       return res.status(404).json({ message: 'No active weekly challenge found' });
     }

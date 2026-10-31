@@ -72,8 +72,8 @@ A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) prod
 
 | CronJob | Schedule | Command | Output |
 |---|---|---|---|
-| `<release>-weekly-challenge` | Mon 03:00 | `create_weekly_challenge.py --all-users` | `weeklychallenges` documents |
-| `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_*.mp3` (+ `.mp4`) |
+| `<release>-weekly-challenge` | Mon 03:00 | `create_weekly_challenge.py --all-users` | `weeklychallenge_templates` (fr + en) + per-user `weeklychallenges` documents |
+| `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_template_*.mp3` + `/weekly-audio/weekly_*.mp3` (+ `.mp4`) |
 | `<release>-weekly-story` | Mon 05:00 | `StoryCreatorGetter.py` | `weeklystories` documents |
 | `<release>-vocabulary-updater-agent-fr` | Mon 06:00 | `VocabularyUpdaterAgent.py --language fr --max-words 50` | `challenges` FR translations + clears FR flags |
 | `<release>-youtube-uploader` | Mon 06:30 | `upload_to_youtube.py --weekly-audio-dir /weekly-audio` | `youtube.videoId` on the document |
@@ -85,7 +85,16 @@ A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) prod
 > other language's changes. `--skip-validator` keeps the language-independent Portuguese-word
 > validation (phase 1) to a single run per week.
 
-Only global lessons (`userId: null`) are published — per-user lessons stay private. See [PODCAST.md](PODCAST.md) for the feed format, cover-art requirements and platform submission steps.
+Only global lessons (`userId: null`, legacy) are published — per-user lessons stay private. See [PODCAST.md](PODCAST.md) for the feed format, cover-art requirements and platform submission steps.
+
+> **One-time step after upgrading past the template migration:** run
+> `python scripts/ensure_weekly_indexes.py` once against production. It aborts on existing
+> duplicates and otherwise creates the unique indexes `weeklychallenges_user_week_unique`
+> (`userId` + `weekStart`) and `templates_week_language_unique` (`weekStart` + `language`) that keep
+> the Monday job and the API from inserting two documents for the same week.
+
+> **Cutover:** templates are applied from the next Monday run onwards. Older weeks are untouched, and
+> the API still falls back to legacy `userId: null` documents until a template exists for the week.
 
 ```bash
 # Inspect the last runs

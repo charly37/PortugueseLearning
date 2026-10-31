@@ -111,9 +111,9 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       });
       if (!response.ok) {
         if (response.status === 401) {
-          throw new Error('Please log in to use personalized challenges');
+          throw new Error(t('challenge.verb.errors.loginRequired'));
         }
-        throw new Error('Failed to generate challenge set');
+        throw new Error(t('challenge.verb.errors.generateFailed'));
       }
       const data = await response.json();
       setGeneratedChallenges(data.challenges);
@@ -122,7 +122,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       setChallengeStarted(true);
       setStartTime(Date.now());
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      setError(err instanceof Error ? err.message : t('challenge.verb.errors.generic'));
     } finally {
       setLoading(false);
     }
@@ -134,7 +134,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       const guestUser = await onCreateGuest();
       setLoading(false);
       if (!guestUser) {
-        setError('Failed to create guest account');
+        setError(t('challenge.verb.errors.guestFailed'));
       }
       // Don't start the challenge yet - let the user configure it first
       // The component will re-render with user set, showing the configuration screen
@@ -178,12 +178,12 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       try {
         const response = await fetch('/api/verb-challenge');
         if (!response.ok) {
-          throw new Error('Failed to fetch verb challenge');
+          throw new Error(t('challenge.verb.errors.fetchFailed'));
         }
         const data = await response.json();
         setChallenge(data);
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'An error occurred');
+        setError(err instanceof Error ? err.message : t('challenge.verb.errors.generic'));
       } finally {
         setLoading(false);
       }
@@ -260,7 +260,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
       
       // Store attempt details
       setAttemptHistory([...attemptHistory, {
-        challengeId: challenge.fr.translation,
+        challengeId: challenge[preferredLanguage].translation,
         userAnswer: userAnswer.trim(),
         correctAnswer: challenge.port,
         correct: isCorrect,
@@ -410,7 +410,11 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                 </Box>
                 <Box sx={{ mb: 3 }}>
                   <Typography variant="body2" gutterBottom>
-                    {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0 ? 'All random' : difficulty === 10 ? 'All weak areas' : `${difficulty * 10}% weak areas`})
+                    {t('common.difficulty')}: {difficulty}/10 ({difficulty === 0
+                      ? t('challenge.verb.difficultyAllRandom')
+                      : difficulty === 10
+                      ? t('challenge.verb.difficultyAllWeak')
+                      : t('challenge.verb.difficultyWeakPercent', { percent: difficulty * 10 })})
                   </Typography>
                   <Slider
                     value={difficulty}
@@ -422,7 +426,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                     sx={{ width: '100%' }}
                   />
                   <Typography variant="caption" color="text.secondary">
-                    0 = random verbs, 10 = focus on your weak areas
+                    {t('challenge.verb.difficultyHelper')}
                   </Typography>
                 </Box>
                 <Box sx={{ mb: 3 }}>
@@ -561,7 +565,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                   </Box>
                   
                   <Typography variant="h6" gutterBottom sx={{ mt: 3, mb: 2 }}>
-                    Detailed Results
+                    {t('challenge.verb.detailedResults')}
                   </Typography>
                   <List sx={{ maxHeight: 400, overflow: 'auto' }}>
                     {attemptHistory.map((attempt, index) => (
@@ -598,11 +602,11 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                               />
                             </Box>
                             <Typography variant="body2" color="text.secondary">
-                              Your answer: <strong>{attempt.userAnswer}</strong>
+                              {t('challenge.verb.yourAnswerLabel')} <strong>{attempt.userAnswer}</strong>
                             </Typography>
                             {!attempt.correct && (
                               <Typography variant="body2" color="text.secondary">
-                                Correct answer: <strong>{attempt.correctAnswer}</strong>
+                                {t('challenge.verb.correctAnswerLabel')} <strong>{attempt.correctAnswer}</strong>
                               </Typography>
                             )}
                           </Box>
@@ -752,7 +756,7 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                   <Box sx={{ mt: 3, mb: 3 }}>
                     <Divider sx={{ mb: 2 }} />
                     <Typography variant="subtitle1" color="text.secondary" gutterBottom sx={{ fontWeight: 600 }}>
-                      Présent de l'indicatif
+                      {t('challenge.verb.presentTense')}
                     </Typography>
                     <List dense>
                       {challenge.present.map((conjugation, index) => (
@@ -767,14 +771,14 @@ const VerbChallengePage: React.FC<VerbChallengePageProps> = ({ mode, onBackHome,
                   </Box>
                 )}
 
-                {feedback && challenge.fr.note && challenge.fr.note !== "todo" && showAnswer && (
+                {feedback && challenge[preferredLanguage].note && challenge[preferredLanguage].note !== "todo" && showAnswer && (
                   <Box sx={{ mt: 2, mb: 2, p: 2, bgcolor: 'info.lighter', borderRadius: 1, border: '1px solid', borderColor: 'info.light' }}>
                     <Typography variant="subtitle2" color="info.dark" gutterBottom sx={{ fontWeight: 600, display: 'flex', alignItems: 'center', gap: 1 }}>
                       <InfoIcon fontSize="small" />
                       Note
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      {challenge.fr.note}
+                      {challenge[preferredLanguage].note}
                     </Typography>
                   </Box>
                 )}

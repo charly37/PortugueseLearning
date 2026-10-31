@@ -154,11 +154,11 @@ without touching code — see *Moving the audio to a CDN* below.
 4. Deploy. Helm renders one CronJob per pair: `<release>-podcast-feed-en-pt`.
 5. Run it manually, validate the feed, then submit it as a **separate show** to Apple/Spotify.
 
-> ⚠️ **Current limitation.** Every pair publishes the same global weekly lesson, because
-> `weeklychallenges` still stores a single `userId: null` document rendered with `--lang fr`.
-> Listing a second pair before per-language lessons exist would publish the French audio under the
-> new URL. The fix is one global document per language (`userId: null, language: "xx"`), selected
-> by the generator — planned as the next step, not part of the URL change.
+> ⚠️ **Current limitation.** Every pair publishes the same global weekly lesson, because the feed
+> reads `weeklychallenges` documents and those are now per-user; the generator no longer writes a
+> `userId: null` document. Per-language audio *does* exist — `weeklychallenge_templates` holds one
+> document (and one MP3) per `{weekStart, language}` — so the fix is to point the feed at the
+> language-matched template for each pair. That migration is not part of this change.
 
 ## Deployment
 

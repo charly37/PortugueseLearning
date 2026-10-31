@@ -1,5 +1,25 @@
 # TODO List
 
+## Migrate Podcast and YouTube Pipelines to Weekly Templates
+
+**Status:** Not started — deliberately left out of the template migration.
+
+`create_weekly_challenge.py` now writes one template document per `{weekStart, language}` into
+`weeklychallenge_templates` and one private document per registered user into `weeklychallenges`.
+It no longer writes the shared `userId: null` document that the podcast feed and the YouTube
+uploader read, so both pipelines stop producing new episodes once the migration lands.
+
+**Work needed:**
+1. `podcast/generate_podcast_feed.py`: select the language-matched template for each pair
+   (`fr-pt` → `language: "fr"`, `en-pt` → `language: "en"`) instead of the global document, and read
+   `template.audio.filename` / `duration_s` / `size_bytes`.
+2. `youtube-uploader/upload_to_youtube.py`: resolve the `<mongoId>` in filenames against
+   `weeklychallenge_templates` (filenames are now `weekly_template_<id>_<timestamp>.mp4`).
+3. Keep episode numbering / `youtube.videoId` idempotency keys working across the change.
+
+**Why it matters:** without this, `fr-pt` and `en-pt` feeds go silent and no new MP4 is uploaded
+even though per-language audio is already generated every Monday.
+
 ## Implement TTL Index for Challenge Attempts Cleanup
 
 To prevent unbounded growth of the `challengeattempts` collection, implement MongoDB TTL (Time To Live) indexing:
