@@ -374,7 +374,7 @@ class EnglishShowTest(unittest.TestCase):
         ElementTree.fromstring(xml)
         self.assertIn("<language>en</language>", xml)
         self.assertIn(
-            "<title>DialectHub – European Portuguese Vocabulary Lesson</title>", xml
+            "<title>DialectHub – European Portuguese Lessons</title>", xml
         )
         self.assertIn('<itunes:image href="https://dialecthub.net/podcast/en-pt/cover.jpg"/>', xml)
 

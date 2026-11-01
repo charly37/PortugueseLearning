@@ -13,6 +13,9 @@ test.describe('Podcasts Page', () => {
     await page.goto('/podcasts');
 
     await expect(page.getByRole('heading', { level: 1, name: 'Weekly Podcast' })).toBeVisible();
+    // Show identity is lesson-generic: vocabulary is today's only lesson type, but
+    // grammar episodes will join the same feed (the slug stays "vocabulary").
+    await expect(page.getByText('DialectHub – European Portuguese Lessons')).toBeVisible();
     // Public page: no redirect to /login, no guest/account call-to-action.
     await expect(page).toHaveURL(/\/podcasts$/);
     await expect(page.getByRole('button', { name: 'Start Challenge' })).toHaveCount(0);

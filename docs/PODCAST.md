@@ -1,8 +1,12 @@
 # Podcast RSS Feed
 
-Publishes the weekly vocabulary lesson MP3 (the same audio that is uploaded to YouTube) as a
+Publishes the weekly lesson MP3 (the same audio that is uploaded to YouTube) as a
 podcast, via a standard **RSS 2.0 + iTunes** feed consumed by Apple Podcasts, Spotify, YouTube
 Music, Pocket Casts and any other podcast directory.
+
+The show name is deliberately lesson-*type*-agnostic (*European Portuguese Lessons*): today every
+episode is a vocabulary lesson, but grammar lessons will be added to this same feed. Episode titles
+remain content-specific (`Vocabulary Lesson – Week of …`) so listeners always know what they get.
 
 | | |
 |---|---|
@@ -53,8 +57,10 @@ incremental publishing step and no "publish" button.
 /podcast/{pair}/cover.jpg           show artwork   (ships with the app image)
 ```
 
-- `{show}` — content type. Today `vocabulary`; a future *stories* or *verbs* podcast gets its own
-  segment and therefore its own show entry.
+- `{show}` — **URL slug, not a display name.** Today `vocabulary`, and it stays `vocabulary`
+  because the feed URL is permanent: grammar lessons are published in this same feed, with the
+  lesson type carried by the episode title. A genuinely different podcast (e.g. *stories*) would get
+  its own segment and therefore its own show entry.
 - `{pair}` — `{native}-{learning}`, e.g. `fr-pt` (French speaker learning Portuguese) or, later,
   `en-pt`. Native **first**: do not read it as "Portuguese speaker learning French".
 - Artwork is pair-scoped, not show-scoped, so every show for the same pair can share it.
@@ -63,11 +69,17 @@ incremental publishing step and no "publish" button.
 
 Channel level (pair `fr-pt`):
 
-- `title` — *DialectHub – Leçon de vocabulaire portugais européen*
+- `title` — *DialectHub – Leçons de portugais européen* (`fr-pt`),
+  *DialectHub – European Portuguese Lessons* (`en-pt`)
 - `itunes:author` / `itunes:owner` — DialectHub, `admin@dialecthub.net`
 - `itunes:category` — `Education > Language Learning` (Apple requires these exact English names)
 - `itunes:type` — `episodic` (`podcast.episodeType` in `values.yaml`)
 - `itunes:explicit` — `false`, `language` — `fr`
+
+> ⚠️ **Two sources of the same copy.** `title` / `subtitle` / `description` / `summary` come from
+> `SHOWS` in `podcast/generate_podcast_feed.py` (what podcast directories show); the website renders
+> `podcasts.showTitle` / `showSubtitle` / `description` from `src/locales/{fr,en}.json`. Change both
+> together or the page and Apple/Spotify will disagree.
 
 Episode level:
 
@@ -158,7 +170,8 @@ without touching code — see *Moving the audio to a CDN* below.
 ## Adding a language pair
 
 1. Add the channel metadata in `podcast/generate_podcast_feed.py` → `SHOWS` (keyed by pair, e.g.
-   `"en-pt"`), with the copy in the learner's language.
+   `"en-pt"`), with the copy in the learner's language, and mirror the title/subtitle in
+   `src/locales/{fr,en}.json` (`podcasts.showTitle` / `showSubtitle`).
 2. Add the artwork at `src/images/podcast/en-pt/cover.jpg` (3000×3000, under 512 KB).
 3. Append the pair to `podcast.pairs` in `values.yaml`, commit, and let CI build the images.
 4. Deploy. Helm renders one CronJob per pair: `<release>-podcast-feed-en-pt`.

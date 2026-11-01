@@ -1,9 +1,6 @@
 import React from 'react';
 import { Container, Box, Typography, Paper, Grid, Divider, Link } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
-import TranslateIcon from '@mui/icons-material/Translate';
-import SchoolIcon from '@mui/icons-material/School';
-import RecordVoiceOverIcon from '@mui/icons-material/RecordVoiceOver';
 import PersonIcon from '@mui/icons-material/Person';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -155,64 +152,6 @@ const AboutPage: React.FC = () => {
                 https://grafana.dialecthub.net/
               </Link>
             </Box>
-          </Paper>
-
-          {/* Language Options */}
-          <Paper elevation={2} sx={{ p: 4, mb: 4 }}>
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-              <TranslateIcon sx={{ fontSize: 32, color: 'primary.main', mr: 2 }} />
-              <Typography variant="h4" sx={{ fontWeight: 600 }}>
-                {t('about.languagesTitle')}
-              </Typography>
-            </Box>
-            <Typography variant="body1" color="text.secondary"sx={{ mb: 2 }}>
-              {t('about.languagesText')}
-            </Typography>
-          </Paper>
-
-          {/* Challenge Types */}
-          <Paper elevation={2} sx={{ p: 4, mb: 4 }}>
-            <Typography variant="h4" gutterBottom sx={{ fontWeight: 600, mb: 3 }}>
-              {t('about.challengeTypesTitle')}
-            </Typography>
-            
-            <Grid container spacing={3}>
-              <Grid size={{ xs: 12, md: 4 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <TranslateIcon sx={{ fontSize: 48, color: 'primary.main', mb: 2 }} />
-                  <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-                    {t('about.wordChallengeTitle')}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('about.wordChallengeText')}
-                  </Typography>
-                </Box>
-              </Grid>
-
-              <Grid size={{ xs: 12, md: 4 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <SchoolIcon sx={{ fontSize: 48, color: 'secondary.main', mb: 2 }} />
-                  <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-                    {t('about.verbChallengeTitle')}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('about.verbChallengeText')}
-                  </Typography>
-                </Box>
-              </Grid>
-
-              <Grid size={{ xs: 12, md: 4 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <RecordVoiceOverIcon sx={{ fontSize: 48, color: '#ff9800', mb: 2 }} />
-                  <Typography variant="h6" gutterBottom sx={{ fontWeight: 600 }}>
-                    {t('about.idiomChallengeTitle')}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('about.idiomChallengeText')}
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
           </Paper>
 
           {/* Guest vs Registered Accounts */}

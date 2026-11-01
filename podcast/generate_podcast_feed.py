@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-generate_podcast_feed.py - Build the podcast RSS feed for the weekly vocabulary lesson.
+generate_podcast_feed.py - Build the podcast RSS feed for the weekly lessons.
 
 The weekly lesson MP3 produced by ``vocal_lesson_creator/combine_mp3.py`` is
 already published to YouTube.  This script turns the same audio into a standard
@@ -81,20 +81,25 @@ MONTHS = {
 # Channel metadata keyed by language pair `{native}-{learning}`.  The key is also
 # the last URL segment: /podcast/<show>/<pair>/feed.xml.  Adding a pair means adding
 # an entry here plus the artwork in src/images/podcast/<pair>/cover.jpg.
+#
+# `title`, `subtitle`, `description` and `summary` are also rendered by the website
+# (src/locales/{fr,en}.json -> podcasts.showTitle / showSubtitle / description), so a
+# change here must be mirrored there or the page and Apple/Spotify will disagree.
+# `episode_title` stays content-specific on purpose: each episode says what it is.
 SHOWS = {
     "fr-pt": {
         "pair": "fr-pt",
         "language": "fr",
-        "title": "DialectHub – Leçon de vocabulaire portugais européen",
-        "subtitle": "Une leçon hebdomadaire de vocabulaire en portugais européen",
+        "title": "DialectHub – Leçons de portugais européen",
+        "subtitle": "Des leçons hebdomadaires de portugais européen pour les francophones",
         "description": (
-            "Chaque semaine, une leçon de vocabulaire en portugais européen pour "
-            "les francophones : les mots essentiels avec la prononciation native, "
-            "leur traduction et des exemples en contexte."
+            "Chaque semaine, une leçon de portugais européen pour les francophones, "
+            "avec la prononciation native, les traductions et des exemples en "
+            "contexte."
         ),
         "summary": (
-            "Leçon hebdomadaire de vocabulaire en portugais européen pour les "
-            "francophones, avec prononciation native, traductions et exemples."
+            "Leçons hebdomadaires de portugais européen pour les francophones, "
+            "avec prononciation native, traductions et exemples."
         ),
         "author": "DialectHub",
         "owner_name": "DialectHub",
@@ -115,16 +120,15 @@ SHOWS = {
     "en-pt": {
         "pair": "en-pt",
         "language": "en",
-        "title": "DialectHub – European Portuguese Vocabulary Lesson",
-        "subtitle": "A weekly European Portuguese vocabulary lesson for English speakers",
+        "title": "DialectHub – European Portuguese Lessons",
+        "subtitle": "Weekly European Portuguese lessons for English speakers",
         "description": (
-            "Every week, a European Portuguese vocabulary lesson for English "
-            "speakers: the essential words with native pronunciation, their "
-            "translation and example sentences in context."
+            "Every week, a European Portuguese lesson for English speakers, with "
+            "native pronunciation, translations and example sentences in context."
         ),
         "summary": (
-            "Weekly European Portuguese vocabulary lesson for English speakers, "
-            "with native pronunciation, translations and example sentences."
+            "Weekly European Portuguese lessons for English speakers, with native "
+            "pronunciation, translations and example sentences."
         ),
         "author": "DialectHub",
         "owner_name": "DialectHub",
@@ -628,7 +632,7 @@ def validate_cover(path: Path) -> None:
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate the podcast RSS feed for the weekly vocabulary lesson.",
+        description="Generate the podcast RSS feed for the weekly lessons.",
     )
     parser.add_argument(
         "--audio-dir", default=str(DEFAULT_AUDIO_DIR),
