@@ -3,9 +3,8 @@
 generate_podcast_feed.py - Build the podcast RSS feed for the weekly lessons.
 
 The weekly lesson MP3 produced by ``vocal_lesson_creator/combine_mp3.py`` is
-already published to YouTube.  This script turns the same audio into a standard
-RSS 2.0 + iTunes feed so Apple Podcasts, Spotify and other podcast directories
-can ingest it.
+published as a standard RSS 2.0 + iTunes feed so Apple Podcasts, Spotify and
+other podcast directories can ingest it.
 
 One feed is produced per language pair.  Episodes come from the language's
 ``weeklychallenge_templates`` document (one per ``weekStart`` + ``language``),

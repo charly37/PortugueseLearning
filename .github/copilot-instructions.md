@@ -11,6 +11,7 @@ This project follows a **lean README + detailed docs** pattern:
   - `TESTING.md` - Playwright setup, test patterns
   - `DEPLOYMENT.md` - Docker, CI/CD, deployment scripts
   - `AUTHENTICATION_SETUP.md` - User auth implementation
+  - `PROVIDERS.md` - External providers, AI models in use, and where to update them
   - `HTTPS_SETUP.md` - SSL certificate setup
   - `PODCAST.md` - Podcast RSS feed (weekly lesson → Apple Podcasts/Spotify)
   - `PROGRESS_TRACKING.md` - Development milestones

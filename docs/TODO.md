@@ -1,34 +1,5 @@
 # TODO List
 
-## Migrate the YouTube Uploader to Weekly Templates
-
-**Status:** Podcast half done (2026-10-31); YouTube uploader still on the old model.
-
-`create_weekly_challenge.py` writes one template document per `{weekStart, language}` into
-`weeklychallenge_templates` and one private document per registered user into `weeklychallenges`.
-It no longer writes the shared `userId: null` document that both pipelines used to read.
-
-Done for the podcast (see [PODCAST.md](PODCAST.md)):
-
-1. `podcast/generate_podcast_feed.py` now selects the language-matched template for each pair
-   (`fr-pt` → `language: "fr"`, `en-pt` → `language: "en"`) and reads
-   `template.audio.filename` / `duration_s` / `size_bytes`.
-2. Episode numbers moved to the `podcast_episodes` collection, keyed by `(pair, docId)`, because
-   `upsert_template` replaces the whole template document every week.
-3. `upsert_template` now preserves an existing `audio` block when the word list is unchanged, like
-   `upsert_weekly_challenge` already did.
-4. Nothing to change on the website: `/podcasts` reads the `episodes.json` manifest the job writes.
-
-Still to do — `youtube-uploader/upload_to_youtube.py`:
-
-1. It looks up `{"_id": ObjectId(doc_id), "userId": None}` and only matches `weekly_<id>_*.mp4`.
-   Resolve `<mongoId>` against `weeklychallenge_templates` and accept `weekly_template_<id>_*.mp4`.
-2. Keep the `youtube.videoId` idempotency key working across the change (store it on the template
-   document, or in a small collection like `podcast_episodes`, since templates are replaced weekly).
-
-**Why it matters:** no new MP4 is uploaded even though per-language audio/video is already generated
-every Monday.
-
 ## Implement TTL Index for Challenge Attempts Cleanup
 
 To prevent unbounded growth of the `challengeattempts` collection, implement MongoDB TTL (Time To Live) indexing:

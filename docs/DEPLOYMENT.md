@@ -73,10 +73,9 @@ A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) prod
 | CronJob | Schedule | Command | Output |
 |---|---|---|---|
 | `<release>-weekly-challenge` | Mon 03:00 | `create_weekly_challenge.py --all-users` | `weeklychallenge_templates` (fr + en) + per-user `weeklychallenges` documents |
-| `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_template_*.mp3` + `/weekly-audio/weekly_*.mp3` (+ `.mp4`) |
+| `<release>-wchal-sounds` | Mon 04:00 | `combine_mp3.py --weekly-challenge --lang fr --output-dir /weekly-audio` | `/weekly-audio/weekly_template_*.mp3` + `/weekly-audio/weekly_*.mp3` |
 | `<release>-weekly-story` | Mon 05:00 | `StoryCreatorGetter.py --generate --all-users --languages fr en` | `weeklystory_templates` (fr + en) + per-user `weeklystories` links |
 | `<release>-vocabulary-updater-agent-fr` | Mon 06:00 | `VocabularyUpdaterAgent.py --language fr --max-words 50` | `challenges` FR translations + clears FR flags |
-| `<release>-youtube-uploader` | Mon 06:30 | `upload_to_youtube.py --weekly-audio-dir /weekly-audio` | `youtube.videoId` on the document |
 | `<release>-podcast-feed-<pair>` | Mon 07:00 | `generate_podcast_feed.py --show vocabulary --pair fr-pt --output-root /podcast` | `/podcast/vocabulary/fr-pt/feed.xml` |
 | `<release>-vocabulary-updater-agent-en` | Mon 08:00 | `VocabularyUpdaterAgent.py --language en --max-words 50 --skip-validator` | `challenges` EN translations + clears EN flags |
 

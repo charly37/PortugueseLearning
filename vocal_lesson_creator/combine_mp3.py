@@ -20,14 +20,12 @@ Examples:
 
     # Create template MP3s (fr + en) and one MP3 per registered user
     python combine_mp3.py --weekly-challenge --lang fr
-    python combine_mp3.py --weekly-challenge --no-mp4
     python combine_mp3.py --weekly-challenge --force
 """
 
 import argparse
 import logging
 import os
-import subprocess
 import sys
 from dataclasses import dataclass, field
 from datetime import datetime, timezone, timedelta
@@ -98,7 +96,7 @@ class UserSummary:
     user_id: str
     challenges: int
     duration_s: float
-    status: str  # generated | generated-no-mp4 | reused-template | skipped-not-found | skipped-guest | skipped-no-challenges | skipped-no-audio | skipped-error | skipped-stale | skipped-already-generated
+    status: str  # generated | reused-template | skipped-not-found | skipped-guest | skipped-no-challenges | skipped-no-audio | skipped-error | skipped-stale | skipped-already-generated
 
 
 @dataclass
@@ -107,7 +105,7 @@ class TemplateSummary:
     language: str
     challenges: int
     duration_s: float
-    status: str  # generated | generated-no-mp4 | skipped-no-challenges | skipped-no-audio | skipped-stale | skipped-already-generated
+    status: str  # generated | skipped-no-challenges | skipped-no-audio | skipped-stale | skipped-already-generated
 
 
 def log_template_summary(summaries: list["TemplateSummary"]) -> None:
@@ -120,7 +118,7 @@ def log_template_summary(summaries: list["TemplateSummary"]) -> None:
         chall = str(s.challenges) if s.challenges else "-"
         log.info("template:%s [%s] challenges=%s duration=%s status=%s",
                  s.template_id, s.language, chall, dur, s.status)
-    generated = [s for s in summaries if s.status in {"generated", "generated-no-mp4"}]
+    generated = [s for s in summaries if s.status == "generated"]
     log.info("Templates processed : %d", len(summaries))
     log.info("Templates generated : %d", len(generated))
     log.info("")
@@ -140,20 +138,17 @@ def log_weekly_summary(summaries: list["UserSummary"]) -> None:
         chall = str(s.challenges) if s.challenges else "-"
         log.info(f"{s.user_id:<{col_uid}}  {chall:>10}  {dur:>10}  {s.status}")
     log.info(sep)
-    generated   = [s for s in summaries if s.status in {"generated", "generated-no-mp4"}]
-    no_mp4      = [s for s in summaries if s.status == "generated-no-mp4"]
+    generated   = [s for s in summaries if s.status == "generated"]
     not_found   = [s for s in summaries if s.status == "skipped-not-found"]
     guests      = [s for s in summaries if s.status == "skipped-guest"]
     already     = [s for s in summaries if s.status == "skipped-already-generated"]
     reused      = [s for s in summaries if s.status == "reused-template"]
-    other_skip  = [s for s in summaries if s.status not in {"generated", "generated-no-mp4", "reused-template", "skipped-not-found", "skipped-guest", "skipped-already-generated"}]
+    other_skip  = [s for s in summaries if s.status not in {"generated", "reused-template", "skipped-not-found", "skipped-guest", "skipped-already-generated"}]
     total_dur   = sum(s.duration_s for s in generated + reused)
     log.info("Users processed  : %d", len(summaries))
     log.info("Generated        : %d", len(generated))
     if reused:
         log.info("Reused template  : %d", len(reused))
-    if no_mp4:
-        log.info("Generated (no MP4): %d", len(no_mp4))
     log.info("Skipped (missing): %d", len(not_found))
     log.info("Skipped (guest)  : %d", len(guests))
     if already:
@@ -172,164 +167,6 @@ INNER_PAUSE_MS = 1300
 MAX_CHALLENGE_AGE_WEEKS = 2
 # Target perceptual loudness (LUFS, ITU-R BS.1770). -16 is standard for voice content.
 TARGET_LUFS = -16.0
-
-
-# Static frame used as the video track (audio is the real payload).
-# 320x180 = 16:9, even dims for yuv420p, ~36x fewer pixels than 1080p.
-_MP4_BG_COLOR = "0x1a1a2e"  # dark navy
-_MP4_RESOLUTION = "320x180"
-_MP4_STILL_NAME = ".weekly_still.png"
-# Extra seconds allowed on top of the audio duration before ffmpeg is killed
-_MP4_TIMEOUT_SLACK_S = 120
-_MP4_FFMPEG_LOG_TAIL = 30
-
-
-def _flush_logs() -> None:
-    """Push log lines out before a long/risky subprocess (e.g. ffmpeg)."""
-    for handler in log.handlers:
-        try:
-            handler.flush()
-        except Exception:
-            pass
-    try:
-        sys.stdout.flush()
-        sys.stderr.flush()
-    except Exception:
-        pass
-
-
-def _ffprobe_duration_s(path: Path) -> float | None:
-    """Return media duration in seconds, or None if ffprobe is unavailable."""
-    try:
-        result = subprocess.run(
-            [
-                "ffprobe", "-v", "error",
-                "-show_entries", "format=duration",
-                "-of", "default=noprint_wrappers=1:nokey=1",
-                str(path),
-            ],
-            check=True,
-            capture_output=True,
-            text=True,
-            timeout=30,
-        )
-        return float(result.stdout.strip())
-    except Exception as exc:
-        log.warning("Could not probe duration of %s (%s)", path.name, exc)
-        return None
-
-
-def _ensure_still_png(directory: Path) -> Path | None:
-    """Create (or reuse) a single tiny PNG used as the looping video frame."""
-    still = directory / _MP4_STILL_NAME
-    if still.exists() and still.stat().st_size > 0:
-        return still
-    try:
-        subprocess.run(
-            [
-                "ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
-                "-f", "lavfi",
-                "-i", f"color=c={_MP4_BG_COLOR}:s={_MP4_RESOLUTION}:r=1",
-                "-frames:v", "1",
-                str(still),
-            ],
-            check=True,
-            capture_output=True,
-            timeout=30,
-        )
-        return still
-    except Exception as exc:
-        log.warning("Could not create still frame (%s); falling back to lavfi", exc)
-        return None
-
-
-def export_mp4(mp3_path: Path) -> Path | None:
-    """Mux the MP3 under a looping 320x180 still (H.264 + AAC 192k stereo).
-
-    Video exists only so players/YouTube accept the file; quality is irrelevant.
-    Tuned for a small Kubernetes memory limit: one cached PNG, 1 fps, 1 thread,
-    ultrafast x264. Never raises.
-
-    ffmpeg stderr is written to a sidecar ``*.ffmpeg.log`` instead of being
-    buffered in the Python process.
-    """
-    mp4_path = mp3_path.with_suffix(".mp4")
-    log_path = mp3_path.with_suffix(".ffmpeg.log")
-
-    duration_s = _ffprobe_duration_s(mp3_path)
-    timeout_s = (duration_s + _MP4_TIMEOUT_SLACK_S) if duration_s else 600.0
-    still = _ensure_still_png(mp3_path.parent)
-
-    cmd = [
-        "ffmpeg", "-y",
-        "-hide_banner",
-        "-loglevel", "error",
-        "-threads", "1",
-        "-filter_threads", "1",
-    ]
-    if still is not None:
-        cmd.extend(["-loop", "1", "-framerate", "1", "-i", str(still)])
-    else:
-        if duration_s:
-            cmd.extend(["-t", f"{duration_s:.3f}"])
-        cmd.extend([
-            "-f", "lavfi",
-            "-i", f"color=c={_MP4_BG_COLOR}:s={_MP4_RESOLUTION}:r=1",
-        ])
-    cmd.extend(["-i", str(mp3_path)])
-    if duration_s:
-        cmd.extend(["-t", f"{duration_s:.3f}"])
-    cmd.extend([
-        "-c:v", "libx264",
-        "-tune", "stillimage",
-        "-preset", "ultrafast",
-        "-crf", "40",
-        "-pix_fmt", "yuv420p",
-        "-x264-params", "frame-threads=1:sliced-threads=0:scenecut=0:keyint=infinite",
-        "-c:a", "aac",
-        "-b:a", "192k",
-        "-shortest",
-        "-max_muxing_queue_size", "16",
-        "-movflags", "+faststart",
-        str(mp4_path),
-    ])
-
-    log.info("Generating MP4: %s (%s still @ 1fps, aac 192k)", mp4_path, _MP4_RESOLUTION)
-    _flush_logs()
-    try:
-        with open(log_path, "w", encoding="utf-8") as ffmpeg_log:
-            subprocess.run(
-                cmd,
-                check=True,
-                stdout=ffmpeg_log,
-                stderr=subprocess.STDOUT,
-                timeout=timeout_s,
-            )
-    except FileNotFoundError:
-        log.error("ffmpeg not found on PATH. Install it to generate MP4 files.")
-        return None
-    except subprocess.TimeoutExpired:
-        log.error("ffmpeg timed out after %.0fs while writing %s", timeout_s, mp4_path)
-        return None
-    except subprocess.CalledProcessError:
-        tail = ""
-        try:
-            lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
-            tail = "\n".join(lines[-_MP4_FFMPEG_LOG_TAIL:])
-        except Exception:
-            pass
-        log.error("ffmpeg failed writing %s%s", mp4_path, f":\n{tail}" if tail else "")
-        return None
-    except Exception as exc:
-        log.error("Unexpected error generating MP4 %s: %s", mp4_path, exc)
-        return None
-
-    if not mp4_path.exists() or mp4_path.stat().st_size == 0:
-        log.error("ffmpeg exited 0 but MP4 is missing or empty: %s", mp4_path)
-        return None
-
-    log.info("Done! MP4 -> %s", mp4_path)
-    return mp4_path
 
 
 def normalize_lufs(segment: AudioSegment, label: str = "") -> AudioSegment:
@@ -516,7 +353,6 @@ def _persist_weekly_audio(
     doc,
     filename: str,
     today: str,
-    mp4_ok: bool | None,
     duration_s: float | None = None,
     size_bytes: int | None = None,
     language: str | None = None,
@@ -525,8 +361,7 @@ def _persist_weekly_audio(
 
     ``duration_s`` and ``size_bytes`` feed the podcast RSS generator
     (``<itunes:duration>`` and the enclosure ``length`` attribute).  When they
-    are not supplied the existing values are preserved, so a retry that only
-    re-encodes the MP4 does not wipe them.
+    are not supplied the existing values are preserved.
     """
     previous = doc.get("audio") or {}
 
@@ -542,20 +377,17 @@ def _persist_weekly_audio(
     if resolved_size is not None:
         payload["size_bytes"] = int(resolved_size)
 
-    if mp4_ok is not None:
-        payload["mp4"] = mp4_ok
-
     update = {"audio": payload}
     if language is not None:
         update["language"] = language
     collection.update_one({"_id": doc["_id"]}, {"$set": update})
     log.info(
-        "[%s] Updated MongoDB audio metadata: %s (mp4=%s, duration=%ss, size=%sB)",
-        doc["_id"], filename, mp4_ok, payload.get("duration_s"), payload.get("size_bytes"),
+        "[%s] Updated MongoDB audio metadata: %s (duration=%ss, size=%sB)",
+        doc["_id"], filename, payload.get("duration_s"), payload.get("size_bytes"),
     )
 
 
-def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR, generate_mp4: bool = False, force: bool = False) -> None:
+def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sounds_dir: Path = SOUNDS_DIR, output_dir: Path = OUTPUT_DIR, force: bool = False) -> None:
     """Build weekly lessons from templates and per-user challenge documents.
 
     Templates (``weeklychallenge_templates``) are generated first, one lesson
@@ -625,25 +457,13 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                     template_id, language, 0, 0.0, "skipped-no-challenges"))
                 continue
 
-            already_today, existing_name, existing_path = _already_generated_today(
+            already_today, existing_name, _existing_path = _already_generated_today(
                 tdoc, output_dir, today, force, language)
             if already_today:
                 log.info("[template:%s] Audio already generated today (%s), skipping rebuild.",
                          template_id, existing_name)
-                status = "skipped-already-generated"
-                if generate_mp4 and existing_path is not None:
-                    mp4_path = existing_path.with_suffix(".mp4")
-                    if not mp4_path.exists() or mp4_path.stat().st_size == 0:
-                        mp4_ok = export_mp4(existing_path) is not None
-                        _persist_weekly_audio(
-                            templates_collection, tdoc, existing_name, today, mp4_ok,
-                            duration_s=_ffprobe_duration_s(existing_path),
-                            size_bytes=existing_path.stat().st_size,
-                            language=language,
-                        )
-                        status = "generated" if mp4_ok else "generated-no-mp4"
                 template_summaries.append(TemplateSummary(
-                    template_id, language, len(uids), 0.0, status))
+                    template_id, language, len(uids), 0.0, "skipped-already-generated"))
                 continue
 
             log.info("[template:%s] Building %s lesson from %d challenge(s)...",
@@ -670,23 +490,13 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                      template_id, duration_s, output_path)
 
             _persist_weekly_audio(
-                templates_collection, tdoc, filename, today, mp4_ok=None,
+                templates_collection, tdoc, filename, today,
                 duration_s=duration_s, size_bytes=size_bytes, language=language,
             )
-            mp4_ok: bool | None = None
-            if generate_mp4:
-                mp4_ok = export_mp4(output_path) is not None
-                _persist_weekly_audio(
-                    templates_collection, tdoc, filename, today, mp4_ok,
-                    duration_s=duration_s, size_bytes=size_bytes, language=language,
-                )
-                if not mp4_ok:
-                    log.warning("[template:%s] MP3 saved but MP4 generation failed; continuing.",
-                                template_id)
 
             template_summaries.append(TemplateSummary(
                 template_id, language, tpl_stats.challenges_generated,
-                duration_s, "generated" if mp4_ok is not False else "generated-no-mp4"))
+                duration_s, "generated"))
 
         # Refresh template audio metadata: the pass above just rewrote it, and the
         # user pass below copies it for documents that mirror their template.
@@ -771,28 +581,16 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
                 ))
                 continue
 
-            already_today, existing_name, existing_path = _already_generated_today(
+            already_today, existing_name, _existing_path = _already_generated_today(
                 doc, output_dir, today, force, user_lang)
             if already_today:
                 log.info("[%s] Audio already generated today (%s), skipping rebuild.",
                          doc_id, existing_name)
-                status = "skipped-already-generated"
-                if generate_mp4 and existing_path is not None:
-                    mp4_path = existing_path.with_suffix(".mp4")
-                    if not mp4_path.exists() or mp4_path.stat().st_size == 0:
-                        mp4_ok = export_mp4(existing_path) is not None
-                        _persist_weekly_audio(
-                            collection, doc, existing_name, today, mp4_ok,
-                            duration_s=_ffprobe_duration_s(existing_path),
-                            size_bytes=existing_path.stat().st_size,
-                            language=user_lang,
-                        )
-                        status = "generated" if mp4_ok else "generated-no-mp4"
                 summaries.append(UserSummary(
                     user_id=user_id,
                     challenges=len(uids),
                     duration_s=0.0,
-                    status=status,
+                    status="skipped-already-generated",
                 ))
                 continue
 
@@ -819,24 +617,15 @@ def build_weekly_lessons(lang: str, include_examples: bool, pause_ms: int, sound
             log.info("[%s] Lesson duration: %.1fs -> %s", doc_id, duration_s, output_path)
 
             _persist_weekly_audio(
-                collection, doc, filename, today, mp4_ok=None,
+                collection, doc, filename, today,
                 duration_s=duration_s, size_bytes=size_bytes, language=user_lang,
             )
-            mp4_ok: bool | None = None
-            if generate_mp4:
-                mp4_ok = export_mp4(output_path) is not None
-                _persist_weekly_audio(
-                    collection, doc, filename, today, mp4_ok,
-                    duration_s=duration_s, size_bytes=size_bytes, language=user_lang,
-                )
-                if not mp4_ok:
-                    log.warning("[%s] MP3 saved but MP4 generation failed; continuing.", doc_id)
 
             summaries.append(UserSummary(
                 user_id=user_id,
                 challenges=user_stats.challenges_generated,
                 duration_s=duration_s,
-                status="generated" if mp4_ok is not False else "generated-no-mp4",
+                status="generated",
             ))
     finally:
         client.close()
@@ -915,11 +704,6 @@ def main():
         help=f"Directory to write output MP3 files into, used with --weekly-challenge (default: {OUTPUT_DIR})",
     )
     parser.add_argument(
-        "--no-mp4",
-        action="store_true",
-        help="Skip MP4 generation (MP4 is produced by default alongside the MP3)",
-    )
-    parser.add_argument(
         "--force",
         action="store_true",
         help="Rebuild weekly lessons even if audio was already generated today",
@@ -951,7 +735,6 @@ def main():
             pause_ms=args.pause,
             sounds_dir=sounds_dir,
             output_dir=Path(args.output_dir),
-            generate_mp4=not args.no_mp4,
             force=args.force,
         )
         return
@@ -1028,9 +811,6 @@ def main():
     total_stats.log_summary()
     combined.export(str(output_path), format="mp3")
     log.info("Done! Lesson duration: %.1fs  ->  %s", len(combined) / 1000, output_path)
-
-    if not args.no_mp4:
-        export_mp4(output_path)
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 # Podcast RSS Feed
 
-Publishes the weekly lesson MP3 (the same audio that is uploaded to YouTube) as a
-podcast, via a standard **RSS 2.0 + iTunes** feed consumed by Apple Podcasts, Spotify, YouTube
-Music, Pocket Casts and any other podcast directory.
+Publishes the weekly lesson MP3 as a podcast, via a standard **RSS 2.0 + iTunes** feed
+consumed by Apple Podcasts, Spotify, YouTube Music, Pocket Casts and any other podcast
+directory.
 
 The show name is deliberately lesson-*type*-agnostic (*European Portuguese Lessons*): today every
 episode is a vocabulary lesson, but grammar lessons will be added to this same feed. Episode titles
@@ -28,14 +28,13 @@ remain content-specific (`Vocabulary Lesson – Week of …`) so listeners alway
 flowchart LR
     A["Mon 03:00<br/>create_weekly_challenge.py<br/>--all-users"] --> B["Mon 04:00<br/>combine_mp3.py<br/>--weekly-challenge"]
     B --> C["weekly-audio/weekly_{id}_{ts}.mp3<br/>+ Mongo audio.duration_s / size_bytes"]
-    C --> D["Mon 06:30<br/>upload_to_youtube.py"]
     C --> E["Mon 07:00<br/>generate_podcast_feed.py"]
     E --> F["podcast/vocabulary/fr-pt/feed.xml<br/>served at /podcast/vocabulary/fr-pt/feed.xml"]
 ```
 
 1. The published lesson is the **language template** in `weeklychallenge_templates` (one document
    per `{weekStart, language}`). Per-user `weeklychallenges` documents are private — they are never
-   published to YouTube or the podcast.
+   published to the podcast.
 2. `combine_mp3.py` writes `weekly_template_{templateId}_{YYYYmmdd}_{HHmmss}.mp3` into
    `/weekly-audio` and stores `audio.filename`, `audio.last_update`, `audio.duration_s`,
    `audio.size_bytes` and `audio.language` on the template document.
@@ -311,9 +310,9 @@ There is **no API** for podcast submission: all of the above is manual UI work, 
 
 ## Moving the audio to a CDN later
 
-Spotify and Apple stream from the `<enclosure>` URL on **every play** (unlike YouTube, which
-downloads and rehosts). A 30 MB weekly episode served from the k3s node is fine for a small
-audience; if traffic grows:
+Spotify and Apple stream from the `<enclosure>` URL on **every play** (they do not rehost the
+file). A 30 MB weekly episode served from the k3s node is fine for a small audience; if traffic
+grows:
 
 1. **Cloudflare in front of the apex** — all URLs stay identical, but the apex must then use a
    **DNS-01** challenge (the current HTTP-01 renewal breaks behind an orange-cloud proxy). This is
@@ -345,5 +344,4 @@ must not get one without excluding the published episodes.
 
 - [Audio Generation](AUDIO_GENERATION.md) — how `sounds/*.mp3` are produced
 - [Vocal Lesson Creator](VOCAL_LESSON_CREATOR.md) — the weekly MP3 builder
-- [YouTube Uploader](YOUTUBE_UPLOADER.md) — the video counterpart of this pipeline
 - [Deployment](DEPLOYMENT.md) — Helm, k3s and hostPath layout

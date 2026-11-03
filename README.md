@@ -32,6 +32,7 @@ Comprehensive documentation is available in the [`docs/`](docs/) folder:
 - **[Testing Guide](docs/TESTING.md)** - Playwright testing setup and usage
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Kubernetes (k3s) and CI/CD deployment
 - **[Analytics](docs/ANALYTICS.md)** - Weakness analysis, usefulness aggregation, and quality monitoring
+- **[External Providers](docs/PROVIDERS.md)** - Third-party services, AI models, and where to update them
 - **[Audio Generation](docs/AUDIO_GENERATION.md)** - TTS audio generation for words and example sentences
 - **[Podcast RSS Feed](docs/PODCAST.md)** - Publishing the weekly lesson as a podcast (Apple Podcasts, Spotify)
 - **[Authentication Setup](docs/AUTHENTICATION_SETUP.md)** - User authentication implementation
