@@ -1,5 +1,5 @@
 # Python Services Container (analytics + weekly challenge + vocal lesson creator)
-FROM python:3.14-alpine
+FROM python:3.15-alpine
 
 # Create non-root user
 RUN addgroup -g 1000 appuser && \
