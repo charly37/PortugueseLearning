@@ -48,7 +48,7 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       name: portuguese-learning-secrets
-                      key: open-ai-key
+                      key: open-ai-key-weekly-story
                 # Stable per Job, so a pod retry replays the same story instead of
                 # generating (and paying for) a second one.
                 - name: STORYCREATOR_IDEMPOTENCY_KEY
