@@ -33,6 +33,6 @@ spec:
                   valueFrom:
                     secretKeyRef:
                       name: portuguese-learning-secrets
-                      key: open-ai-key
+                      key: open-ai-key-vocabulary-creator
               resources:
                 {{- toYaml .Values.resources.vocabularyCreatorAgent | nindent 16 }}
