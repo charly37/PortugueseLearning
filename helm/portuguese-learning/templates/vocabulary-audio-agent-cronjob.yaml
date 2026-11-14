@@ -1,0 +1,55 @@
+{{- if .Values.vocabularyAudioAgent.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-vocabulary-audio-agent
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "portuguese-learning.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.vocabularyAudioAgent.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: {{ .Values.vocabularyAudioAgent.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.vocabularyAudioAgent.failedJobsHistoryLimit }}
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      # Multiple TTS calls with a 0.5s delay each: allow up to 2h for a full run.
+      activeDeadlineSeconds: 7200
+      ttlSecondsAfterFinished: 86400
+      template:
+        metadata:
+          labels:
+            app: portuguese-learning-vocabulary-audio-agent
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: vocabulary-audio-agent
+              image: "{{ .Values.image.analytics.repository }}:{{ .Values.image.analytics.tag }}"
+              imagePullPolicy: {{ .Values.image.analytics.pullPolicy }}
+              command: ["python", "-u", "VocabularyAudioAgent.py",
+                        "--output-dir", "/sounds",
+                        "--max-conversions", {{ .Values.vocabularyAudioAgent.maxConversions | quote }},
+                        "--months", {{ .Values.vocabularyAudioAgent.months | quote }}]
+              env:
+                - name: MONGODB_URI
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: mongodb-uri
+                - name: TEXT_TO_SPEECH_API_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: portuguese-learning-secrets
+                      key: text-to-speech-api-key
+              resources:
+                {{- toYaml .Values.resources.vocabularyAudioAgent | nindent 16 }}
+              volumeMounts:
+                - name: sounds
+                  mountPath: /sounds
+          volumes:
+            - name: sounds
+              hostPath:
+                path: {{ .Values.sounds.hostPath }}
+                type: Directory
+{{- end }}

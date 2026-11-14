@@ -1,3 +1,13 @@
+"""Vocabulary Audio Agent.
+
+Generates ElevenLabs text-to-speech MP3s for Portuguese words and their
+French/English example sentences, writing the files to the sounds directory
+and recording the audio metadata on each MongoDB challenge document.
+
+Run weekly by the `vocabulary-audio-agent` CronJob (see
+helm/portuguese-learning/templates/vocabulary-audio-agent-cronjob.yaml).
+"""
+
 import argparse
 import logging
 import os
@@ -134,12 +144,16 @@ def generate_tts_audio(client, text, language_code, voice_id, output_file, speed
 def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True, max_conversions=50, generate_examples=False, months=6):
     """
     Generate audio files for all word challenges stored in MongoDB.
+
+    Only files older than `months` are regenerated when `skip_existing` is set,
+    so a run with nothing new to do makes no TTS calls.
     """
     # Initialize ElevenLabs client
     api_key = os.environ.get('TEXT_TO_SPEECH_API_KEY')
     if not api_key:
+        # Exit non-zero so the CronJob is marked failed instead of silently succeeding.
         log.error("TEXT_TO_SPEECH_API_KEY environment variable not set!")
-        return
+        sys.exit(1)
     
     client = ElevenLabs(api_key=api_key)
     
@@ -430,7 +444,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Text-to-Speech Audio Generator for Portuguese Challenges")
+    parser = argparse.ArgumentParser(description="Vocabulary Audio Agent - ElevenLabs TTS for Portuguese challenges")
     parser.add_argument(
         "--months",
         type=int,
@@ -449,25 +463,24 @@ if __name__ == "__main__":
         help="Regenerate all audio files, ignoring recency check"
     )
     parser.add_argument(
-        "--examples",
+        "--no-examples",
         action="store_true",
-        default=True,
-        help="Also generate audio for example sentences (default: True)"
+        help="Only generate main word audio, skip example sentences"
     )
     parser.add_argument(
         "--output-dir",
         type=str,
         default=None,
-        help="Directory where MP3 files will be saved (default: script directory)"
+        help="Directory where MP3 files will be saved (default: <repo>/sounds)"
     )
     args = parser.parse_args()
 
     script_dir = Path(__file__).parent
-    output_directory = Path(args.output_dir) if args.output_dir else script_dir
+    output_directory = Path(args.output_dir) if args.output_dir else script_dir.parent / "sounds"
 
     mongo_client, collection = get_challenges_collection()
 
-    log.info("Text-to-Speech Audio Generator for Portuguese Challenges")
+    log.info("Vocabulary Audio Agent - ElevenLabs TTS for Portuguese Challenges")
     log.info("%s", "=" * 60)
 
     try:
@@ -476,7 +489,7 @@ if __name__ == "__main__":
             output_dir=output_directory,
             skip_existing=not args.no_skip,
             max_conversions=args.max_conversions,
-            generate_examples=args.examples,
+            generate_examples=not args.no_examples,
             months=args.months,
         )
     finally:

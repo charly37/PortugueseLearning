@@ -1,30 +1,30 @@
-# Audio Generation for Example Sentences - README
+# Audio Generation (Vocabulary Audio Agent)
 
 ## Overview
 
-The `TextToSpeechGenerator.py` script has been updated to generate audio files not only for the main Portuguese words, but also for example sentences in each language (French, Portuguese, English).
+`VocabularyAudioAgent/VocabularyAudioAgent.py` generates ElevenLabs audio files for the main Portuguese words and for example sentences in each language (French, Portuguese, English). It runs weekly as the `vocabulary-audio-agent` CronJob and can also be run manually.
 
 > **Data source:** The script now reads from and writes to the MongoDB `challenges` collection directly. The `challenges.json` file is no longer used at runtime — audio metadata fields (`audio`, `fr.translation_audio`, etc.) are updated in MongoDB via targeted `$set` operations per challenge.
 
-## What's New
+## Audio Metadata in MongoDB
 
-### Updated JSON Structure
+After a run, each challenge document has audio information for:
 
-After running the script with `generate_examples=True`, each challenge entry will have audio information for:
-
-1. **Main Portuguese word** - stored in `audio` field (existing)
-2. **French example sentence** - stored in `fr.use_exemple_audio` field (NEW)
-3. **Portuguese example in French section** - stored in `fr.port_exemple_audio` field (NEW)
-4. **English example sentence** - stored in `en.use_exemple_audio` field (NEW)
-5. **Portuguese example in English section** - stored in `en.port_exemple_audio` field (NEW)
-
-See `data/example-updated-structure.json` for a complete example.
+1. **Main Portuguese word** - stored in the `audio` field
+2. **French translation** - stored in `fr.translation_audio`
+3. **French example sentence** - stored in `fr.use_exemple_audio`
+4. **Portuguese example in French section** - stored in `fr.port_exemple_audio`
+5. **English translation** - stored in `en.translation_audio`
+6. **English example sentence** - stored in `en.use_exemple_audio`
+7. **Portuguese example in English section** - stored in `en.port_exemple_audio`
 
 ### Audio File Naming Convention
 
 - Main word: `{challenge_id}.mp3`
+- French translation: `{challenge_id}_fr_translation.mp3`
 - French example: `{challenge_id}_fr_exemple.mp3`
 - Portuguese example (FR section): `{challenge_id}_fr_pt_exemple.mp3`
+- English translation: `{challenge_id}_en_translation.mp3`
 - English example: `{challenge_id}_en_exemple.mp3`
 - Portuguese example (EN section): `{challenge_id}_en_pt_exemple.mp3`
 
@@ -33,7 +33,7 @@ See `data/example-updated-structure.json` for a complete example.
 The script uses different ElevenLabs voices for each language:
 
 - **Portuguese (pt)**: `aLFUti4k8YKvtQGXv0UO` - Portuguese EU accent
-- **French (fr)**: `21m00Tcm4TlvDq8ikWAM` - Rachel voice
+- **French (fr)**: `ICk609TItINMseDpChFt` - French voice
 - **English (en)**: `pNInz6obpgDQGcFmaJgB` - Adam voice
 
 ## How to Use
@@ -45,47 +45,75 @@ The script uses different ElevenLabs voices for each language:
    export TEXT_TO_SPEECH_API_KEY="your-api-key-here"
    ```
 
-2. Ensure the `elevenlabs` Python package is installed:
+2. Install the agent requirements (the `elevenlabs` package):
    ```bash
-   pip install elevenlabs
+   pip install -r VocabularyAudioAgent/requirements.txt
    ```
 
 ### Running the Script
 
-#### Generate Only Main Words (Original Functionality)
+Run it from the repository root:
 
 ```bash
-cd /workspaces/PortugueseLearning/data
-python TextToSpeechGenerator.py
+python VocabularyAudioAgent/VocabularyAudioAgent.py
 ```
 
-By default, the script is configured to:
-- Skip existing audio files generated within the last 6 months
-- Generate up to 300 audio files per run
-- **Generate example sentences** (set to `True`)
+By default the script:
+- Writes MP3s to `<repo>/sounds` (the directory served by Express at `/sounds`)
+- Skips audio generated within the last 6 months
+- Makes at most 300 TTS API calls per run (main words + examples combined)
+- Generates example sentences as well as main words
 
-#### Configuration Options
+> The deployed CronJob overrides the refresh window and cap: it keeps audio for 12 months and
+> allows 50 TTS calls per run (see [Kubernetes CronJob](#kubernetes-cronjob)).
 
-You can modify the script's behavior by editing the main block at the bottom of `TextToSpeechGenerator.py`:
+### Configuration Options
 
-```python
-generate_audio_for_challenges(
-    json_file_path=challenges_json,
-    output_dir=output_directory,
-    skip_existing=True,      # False = regenerate all audio
-    max_conversions=300,     # Maximum files per run (cost control)
-    generate_examples=True   # True = generate example sentences
-)
+All options are command-line flags:
+
+```bash
+python VocabularyAudioAgent/VocabularyAudioAgent.py --help
 ```
 
-**Options:**
+| Flag | Default | Meaning |
+|---|---|---|
+| `--output-dir DIR` | `<repo>/sounds` | Where MP3 files are written |
+| `--max-conversions N` | `300` | Hard cap on TTS calls per run (cost control) |
+| `--months N` | `6` | Regenerate audio older than N months |
+| `--no-skip` | off | Regenerate everything, ignoring the recency check |
+| `--no-examples` | off | Only generate main word audio |
 
-- `skip_existing=True`: Skip audio files generated within the last 6 months
-- `skip_existing=False`: Regenerate all audio files (useful for quality improvements)
-- `max_conversions=50`: Limit to 50 audio files per run (to control API costs)
-- `max_conversions=300`: Generate up to 300 audio files per run
-- `generate_examples=True`: Generate audio for example sentences
-- `generate_examples=False`: Only generate audio for main words
+Examples:
+
+```bash
+# Daily scheduled run: fill in missing audio, cap cost
+python VocabularyAudioAgent/VocabularyAudioAgent.py --max-conversions 300
+
+# Force a full regeneration after a voice change
+python VocabularyAudioAgent/VocabularyAudioAgent.py --no-skip
+
+# Main words only
+python VocabularyAudioAgent/VocabularyAudioAgent.py --no-examples
+```
+
+### Kubernetes CronJob
+
+The Helm chart deploys `vocabulary-audio-agent` (see
+`helm/portuguese-learning/templates/vocabulary-audio-agent-cronjob.yaml`). It runs every Monday at
+09:00 — after the vocabulary agents — mounts the `sounds.hostPath` directory at `/sounds`, and passes
+`--output-dir /sounds`.
+
+- Deployed cost settings: `months: 12` (keep existing audio for a year) and
+  `maxConversions: 50` (at most 50 TTS calls per run). Raise `maxConversions` for a one-off backfill
+  and set it back afterwards — at 50/week, a full pass over ~19k files takes years.
+- Schedule, refresh window (`months`) and cap (`maxConversions`) live under `vocabularyAudioAgent`
+  in `helm/portuguese-learning/values.yaml`.
+- It expects a `text-to-speech-api-key` key in the `portuguese-learning-secrets` secret.
+- The `sounds` directory must be writable by uid **1000** (the Python CronJob user).
+- Set `vocabularyAudioAgent.enabled: false` to skip the CronJob on a release (staging does this to
+  avoid duplicating prod's TTS spend against the shared sounds directory).
+- Do not run it at the same time as `VocabularyUpdaterAgent`: the updater rewrites whole documents
+  with `$set` and could revert the `audio` metadata written here.
 
 ### Example Run
 
@@ -93,21 +121,19 @@ generate_audio_for_challenges(
 # Set API key
 export TEXT_TO_SPEECH_API_KEY="sk-..."
 
-# Run the script
-cd /workspaces/PortugueseLearning/data
-python TextToSpeechGenerator.py
+# Run the agent from the repository root
+python VocabularyAudioAgent/VocabularyAudioAgent.py
 ```
 
 ### Expected Output
 
 ```
-Text-to-Speech Audio Generator for Portuguese Challenges
+Vocabulary Audio Agent - ElevenLabs TTS for Portuguese Challenges
 ============================================================
-
-Loaded 2803 challenges from /workspaces/PortugueseLearning/data/challenges.json
+Loaded 2803 challenges from MongoDB
 
 Starting audio generation...
-Output directory: /workspaces/PortugueseLearning/data
+Output directory: /workspaces/PortugueseLearning/sounds
 Skip existing files: True
 Audio refresh policy: Regenerate if older than 6 months
 Max conversions per run: 300
@@ -138,7 +164,7 @@ With ~2803 challenges and 2 example sentences per challenge (French use_exemple 
 - Main words already generated: ~2803 audio files
 - Example sentences to generate: ~2803 × 2 = ~5606 audio files
 
-If running with `max_conversions=300`, you would need approximately:
+If running with `--max-conversions 300`, you would need approximately:
 - 5606 / 300 = ~19 runs to complete all examples
 
 **ElevenLabs Pricing (as of Feb 2026):**
@@ -177,7 +203,8 @@ If running with `max_conversions=300`, you would need approximately:
 
 ### API Key Not Set
 
-Error: `ERROR: TEXT_TO_SPEECH_API_KEY environment variable not set!`
+Error: `TEXT_TO_SPEECH_API_KEY environment variable not set!` — the script exits with status 1, so the
+CronJob job is marked failed instead of succeeding silently.
 
 Solution:
 ```bash
@@ -186,7 +213,7 @@ export TEXT_TO_SPEECH_API_KEY="your-api-key-here"
 
 ### Rate Limit Errors
 
-If you hit rate limits, reduce `max_conversions` or increase the delay in the script:
+If you hit rate limits, reduce `--max-conversions` or increase the delay in the script:
 ```python
 time.sleep(1.0)  # Increase from 0.5 to 1.0 seconds
 ```

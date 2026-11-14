@@ -26,3 +26,8 @@ certManager:
 # would replace the production feed with staging links.
 podcast:
   hostPath: /home/ubuntu/PortugueseLearning/podcast-staging
+
+# Staging shares the prod sounds hostPath and MongoDB, so the audio CronJob would
+# duplicate prod's TTS work (and cost). Run it manually here if ever needed.
+vocabularyAudioAgent:
+  enabled: false

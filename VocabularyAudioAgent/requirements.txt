@@ -1,0 +1,2 @@
+# pymongo moved to shared lib in image build
+elevenlabs==2.77.0

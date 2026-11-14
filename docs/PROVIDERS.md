@@ -12,7 +12,7 @@ be changed.
 |---|---|---|---|---|
 | [StoryCreator](#storycreator-bilingualstorynet) (`bilingualstory.net`) | Writes the weekly bilingual story | `story_writter/StoryCreatorGetter.py` | Server-side model, selectable per request (see below) | `STORYCREATOR_API_KEY` |
 | [OpenAI](#openai) | Idea/planning/translation agents | `story_writter/`, `VocabularyCreatorAgent/`, `VocabularyUpdaterAgent/` | `gpt-4.1`, `gpt-4.1-mini` | `OPEN_AI_KEY` |
-| [ElevenLabs](#elevenlabs) | Text-to-speech audio for words and examples | `data/TextToSpeechGenerator.py` | `eleven_flash_v2_5` | `TEXT_TO_SPEECH_API_KEY` |
+| [ElevenLabs](#elevenlabs) | Text-to-speech audio for words and examples | `VocabularyAudioAgent/VocabularyAudioAgent.py` | `eleven_flash_v2_5` | `TEXT_TO_SPEECH_API_KEY` |
 
 StoryCreator and OpenAI are the two AI providers used today. ElevenLabs is the other
 external API that owns credentials and quota, so it is tracked here too.
@@ -72,16 +72,16 @@ Text-to-speech used to generate `sounds/*.mp3` (word pronunciation and example s
 
 | Item | Value |
 |---|---|
-| Script | `data/TextToSpeechGenerator.py` |
+| Script | `VocabularyAudioAgent/VocabularyAudioAgent.py` |
+| CronJob | `helm/portuguese-learning/templates/vocabulary-audio-agent-cronjob.yaml` (Mon 09:00) |
 | Model | `eleven_flash_v2_5` (set in `generate_tts_audio`) |
-| Key | `TEXT_TO_SPEECH_API_KEY` |
+| Key | `TEXT_TO_SPEECH_API_KEY` (secret key `text-to-speech-api-key`) |
 | Portuguese voice | `aLFUti4k8YKvtQGXv0UO` (European Portuguese accent) |
 | French voice | `ICk609TItINMseDpChFt` (see `VOICES` in the script) |
 | English voice | `pNInz6obpgDQGcFmaJgB` (Adam) |
 
-The model ID and voice IDs are hard-coded in the script. `docs/AUDIO_GENERATION.md` lists a
-different French voice ID (`21m00Tcm4TlvDq8ikWAM`); check which one is intended before
-changing either.
+The model ID and voice IDs are hard-coded in the script. `docs/AUDIO_GENERATION.md` lists the same
+voice IDs; update both if a voice changes.
 
 Details: [AUDIO_GENERATION.md](AUDIO_GENERATION.md).
 

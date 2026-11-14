@@ -21,6 +21,13 @@ The application runs on Kubernetes using k3s on a single Ubuntu VM, packaged as 
 > sudo mkdir -p /home/ubuntu/PortugueseLearning/podcast
 > sudo chown 1000:1000 /home/ubuntu/PortugueseLearning/podcast
 > ```
+>
+> The `sounds` directory is written by the `vocabulary-audio-agent` CronJob, so it must also be
+> writable by uid **1000** (the app mounts it read-only):
+>
+> ```bash
+> sudo chown 1000:1000 /home/ubuntu/PortugueseLearning/sounds
+> ```
 
 ### One-Time Setup (production)
 
@@ -30,7 +37,11 @@ The application runs on Kubernetes using k3s on a single Ubuntu VM, packaged as 
 kubectl create secret generic portuguese-learning-secrets \
   --namespace=portuguese-learning \
   --from-literal=mongodb-uri='your-atlas-uri' \
-  --from-literal=session-secret='your-secret-key'
+  --from-literal=session-secret='your-secret-key' \
+  --from-literal=open-ai-key-vocabulary-creator='sk-...' \
+  --from-literal=open-ai-key-vocabulary-updater='sk-...' \
+  --from-literal=open-ai-key-weekly-story='sk-...' \
+  --from-literal=text-to-speech-api-key='your-elevenlabs-key'
 ```
 
 > The namespace is created by the chart on first install. If the secret creation fails because the namespace doesn't exist yet, run `kubectl create namespace portuguese-learning` first.
@@ -78,6 +89,7 @@ A chain of CronJobs (Python image `charly37/portuguese-learning-analytics`) prod
 | `<release>-vocabulary-updater-agent-fr` | Mon 06:00 | `VocabularyUpdaterAgent.py --language fr --max-words 50` | `challenges` FR translations + clears FR flags |
 | `<release>-podcast-feed-<pair>` | Mon 07:00 | `generate_podcast_feed.py --show vocabulary --pair fr-pt --output-root /podcast` | `/podcast/vocabulary/fr-pt/feed.xml` |
 | `<release>-vocabulary-updater-agent-en` | Mon 08:00 | `VocabularyUpdaterAgent.py --language en --max-words 50 --skip-validator` | `challenges` EN translations + clears EN flags |
+| `<release>-vocabulary-audio-agent` | Mon 09:00 | `VocabularyAudioAgent.py --output-dir /sounds --max-conversions 50 --months 12` | `sounds/*.mp3` + `audio` metadata on `challenges` |
 
 > The two `vocabulary-updater-agent-*` jobs **must not overlap**: the script reloads every
 > challenge and rewrites whole documents with `$set`, so a concurrent run would clobber the
@@ -117,8 +129,10 @@ The chart supports running a full second instance (staging) side-by-side with pr
 # Separate data directories — avoids any risk of corrupting prod data
 mkdir -p /home/ubuntu/PortugueseLearning/data-staging
 cp /home/ubuntu/PortugueseLearning/data/*.json /home/ubuntu/PortugueseLearning/data-staging/
-# Sounds and weekly-audio are read-only inputs/outputs; staging can share the prod
-# sounds folder (read-only) but needs its own weekly-audio output directory.
+# Sounds and weekly-audio are read-only inputs for the app; staging can share the
+# prod sounds folder but needs its own weekly-audio output directory.
+# The vocabulary-audio-agent CronJob is disabled on staging (values-staging.yaml)
+# so it does not duplicate prod's TTS work against the shared sounds folder.
 mkdir -p /home/ubuntu/PortugueseLearning/weekly-audio-staging
 # Podcast feed must be separate too: the staging CronJob regenerates feed.xml and
 # uses the staging hostname in every URL, which would overwrite the prod feed.
@@ -130,7 +144,11 @@ kubectl create namespace portuguese-learning-staging
 kubectl create secret generic portuguese-learning-secrets \
   --namespace=portuguese-learning-staging \
   --from-literal=mongodb-uri='your-atlas-uri' \
-  --from-literal=session-secret='your-staging-secret-key'
+  --from-literal=session-secret='your-staging-secret-key' \
+  --from-literal=open-ai-key-vocabulary-creator='sk-...' \
+  --from-literal=open-ai-key-vocabulary-updater='sk-...' \
+  --from-literal=open-ai-key-weekly-story='sk-...' \
+  --from-literal=text-to-speech-api-key='your-elevenlabs-key'
 ```
 
 **Patch CoreDNS to resolve the staging subdomain inside the cluster:**

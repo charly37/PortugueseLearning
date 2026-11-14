@@ -119,7 +119,7 @@ Do **not** migrate `challenges` in place. Build a new collection and switch a po
 **Preserve `_id` verbatim.** `weeklychallenges.challengeId`, `ChallengeAttempt.challengeId`, votes, quality
 flags and the audio filenames (`{id}.mp3`, `{id}_fr_translation.mp3`) all key off it.
 
-**Writers to freeze (or re-sync right before cutover):** `data/TextToSpeechGenerator.py`,
+**Writers to freeze (or re-sync right before cutover):** `VocabularyAudioAgent/`,
 `VocabularyUpdaterAgent/`, `VocabularyCreatorAgent/`, `usefulness_aggregator/`, `data/seed-mongodb.py`.
 The Node app appears read-only on `challenges`.
 
@@ -136,7 +136,7 @@ Playwright seeding must be migrated in the same commit — otherwise the next re
 | Node model | `src/models/Challenge.ts` | two fields → one map |
 | Routes | `src/routes/challenge.ts`, `src/routes/weeklyChallenge.ts` | keep API field names (`translation_fr`, `fr_note`) to avoid touching `WeeklyChallengePage.tsx` |
 | React | `ChallengePage`, `FlashcardLearnPage`, `IdiomChallengePage`, `VerbChallengePage` | 35 call sites + `preferredLanguage: 'fr' \| 'en'` in ~9 files. Also fixes a latent bug: `challenge.fr.note` is hardcoded in 4 places, so English users currently see French notes |
-| TTS | `data/TextToSpeechGenerator.py` | two duplicated blocks (~150 lines) → one loop over `VOICES`; **keep the existing audio filenames** |
+| TTS | `VocabularyAudioAgent/VocabularyAudioAgent.py` | two duplicated blocks (~150 lines) → one loop over `VOICES`; **keep the existing audio filenames** |
 | Weekly | `weekly_challenge/create_weekly_challenge.py` | reads `c['fr']` / `c['en']` (4 spots) |
 | Agents | `VocabularyCreatorAgent.py` (8 params → one translations param), `VocabularyUpdaterAgent.py` (`--language {fr,en}` choices) | do last |
 | Tests | `tests/word-challenge.spec.ts` | reads `c.fr?.translation` / `c.en?.translation` |
@@ -175,7 +175,7 @@ per phase, so a job performed ~5 500 writes and held a wide clobber window.
   `bulk_write(..., ordered=False)`. Writes per job drop from ~5 500 to ~50.
 - `--dry-run` was added at the same time: it runs both agents but skips every MongoDB write and flag
   deletion, logging what would have changed (useful to verify without touching data).
-- Caveat: writes are still **whole-document** `$set`. Do not run `TextToSpeechGenerator.py` (which writes
+- Caveat: writes are still **whole-document** `$set`. Do not run `VocabularyAudioAgent.py` (which writes
   `audio` metadata) while an updater job is in flight, or those fields can be reverted for the 1–2 docs
   touched by the run.
 

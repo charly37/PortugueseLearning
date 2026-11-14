@@ -133,6 +133,13 @@ resources:
     limits:
       memory: "256Mi"
       cpu: "200m"
+  vocabularyAudioAgent:
+    requests:
+      memory: "128Mi"
+      cpu: "50m"
+    limits:
+      memory: "512Mi"
+      cpu: "200m"
   podcastFeed:
     requests:
       memory: "64Mi"
@@ -209,6 +216,25 @@ vocabularyUpdaterAgent:
 # Runs every Friday at 7 AM 
 vocabularyCreatorAgent:
   schedule: "0 7 * * 5"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+
+# Generates ElevenLabs MP3s for words/examples missing audio (or older than
+# `months`) into the sounds hostPath, then records the filenames on `challenges`.
+# Runs Monday at 9 AM — after the vocabulary agents (6 AM / 8 AM) so it picks up
+# newly created words, and so it never overlaps the updater's whole-document $set.
+# Requires the `text-to-speech-api-key` key in portuguese-learning-secrets.
+vocabularyAudioAgent:
+  # Disable on secondary releases (staging) that share the prod sounds hostPath:
+  # both releases would generate the same files and double ElevenLabs spend.
+  enabled: true
+  schedule: "0 9 * * 1"
+  # Regenerate audio older than this (months). 12 keeps existing MP3s for a year.
+  months: 12
+  # Hard cap on TTS calls per run, main words + examples combined (cost control).
+  # At 50/week a full pass over the whole vocabulary takes years — raise this for
+  # a one-off backfill, then put it back to 50.
+  maxConversions: 50
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
 
