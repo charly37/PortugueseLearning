@@ -212,7 +212,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
         # Skip if audio was recently generated (within last 6 months)
         if skip_existing and is_audio_recent(challenge, months=months):
             last_update = challenge.get('audio', {}).get('last_update', 'unknown')
-            log.info("[%d/%d] Skipping '%s' (audio generated on %s)", idx, total, portuguese_text, last_update)
+            log.debug("[%d/%d] Skipping '%s' (audio generated on %s)", idx, total, portuguese_text, last_update)
             skipped += 1
         else:
             log.info("[%d/%d] Generating audio for '%s'...", idx, total, portuguese_text)
@@ -256,7 +256,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if fr_translation:
                     audio_dict = fr_data.get('translation_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        log.info("[%d/%d] Skipping FR translation (recent)", idx, total)
+                        log.debug("[%d/%d] Skipping FR translation (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
@@ -284,7 +284,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if fr_use_exemple:
                     audio_dict = fr_data.get('use_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        log.info("[%d/%d] Skipping FR example (recent)", idx, total)
+                        log.debug("[%d/%d] Skipping FR example (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
@@ -312,7 +312,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if fr_port_exemple:
                     audio_dict = fr_data.get('port_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        log.info("[%d/%d] Skipping PT example in FR section (recent)", idx, total)
+                        log.debug("[%d/%d] Skipping PT example in FR section (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
@@ -343,7 +343,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if en_translation:
                     audio_dict = en_data.get('translation_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        log.info("[%d/%d] Skipping EN translation (recent)", idx, total)
+                        log.debug("[%d/%d] Skipping EN translation (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
@@ -371,7 +371,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if en_use_exemple:
                     audio_dict = en_data.get('use_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        log.info("[%d/%d] Skipping EN example (recent)", idx, total)
+                        log.debug("[%d/%d] Skipping EN example (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
@@ -399,7 +399,7 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
                 if en_port_exemple:
                     audio_dict = en_data.get('port_exemple_audio', {})
                     if skip_existing and is_example_audio_recent(audio_dict, months=months):
-                        log.info("[%d/%d] Skipping PT example in EN section (recent)", idx, total)
+                        log.debug("[%d/%d] Skipping PT example in EN section (recent)", idx, total)
                         examples_skipped += 1
                     else:
                         if total_converted >= max_conversions:
@@ -424,6 +424,14 @@ def generate_audio_for_challenges(collection, output_dir=".", skip_existing=True
           except QuotaExceededException as e:
             log.warning("Quota exceeded — stopping generation. (%s)", e)
             quota_exceeded = True
+        
+        # Periodic heartbeat so a mostly-skipping run is still visible in the logs
+        if idx % 100 == 0:
+            log.info(
+                "[%d/%d] Progress — generated: %d, skipped: %d, examples: %d, errors: %d, conversions: %d/%d",
+                idx, total, generated, skipped, examples_generated, errors,
+                total_converted, max_conversions,
+            )
     
     log.info("%s", "=" * 60)
     log.info("Audio Generation Complete!")
@@ -473,7 +481,15 @@ if __name__ == "__main__":
         default=None,
         help="Directory where MP3 files will be saved (default: <repo>/sounds)"
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Enable DEBUG logging (per-challenge skip messages)"
+    )
     args = parser.parse_args()
+
+    if args.verbose:
+        logging.getLogger().setLevel(logging.DEBUG)
 
     script_dir = Path(__file__).parent
     output_directory = Path(args.output_dir) if args.output_dir else script_dir.parent / "sounds"
