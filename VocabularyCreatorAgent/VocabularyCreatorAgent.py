@@ -15,6 +15,13 @@ logging.basicConfig(
     stream=sys.stdout,
     format="%(levelname)s %(message)s",
 )
+
+# The Agents SDK performs its calls through httpx, which logs one INFO line per
+# HTTP request ("HTTP Request: POST https://api.openai.com/... 200 OK"). Those
+# are not useful; only surface warnings and errors from those libraries.
+for _noisy_logger in ("httpx", "httpcore"):
+    logging.getLogger(_noisy_logger).setLevel(logging.WARNING)
+
 log = logging.getLogger(__name__)
 
 # Allow importing from the repo-level scripts/ directory

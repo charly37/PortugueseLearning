@@ -75,13 +75,14 @@ def _configure_logging() -> None:
     root.setLevel(logging.INFO)
     root.addHandler(handler)
 
-    # httpx/httpcore log each request at INFO; keep them on the same stdout
-    # handler instead of letting logging fall back to stderr.
+    # httpx/httpcore log one INFO line per HTTP request ("HTTP Request: GET ..."),
+    # which is mostly noise. Keep them on the same stdout handler but only let
+    # warnings/errors through.
     for name in ("httpx", "httpcore"):
         logger = logging.getLogger(name)
         logger.handlers = [handler]
         logger.propagate = False
-        logger.setLevel(logging.INFO)
+        logger.setLevel(logging.WARNING)
 
 
 _configure_logging()

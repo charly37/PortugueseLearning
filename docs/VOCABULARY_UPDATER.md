@@ -142,4 +142,18 @@ Total tokens used: 124500
 
 ## Cost Considerations
 
-Each word processed makes one OpenAI API call. Use `--max-words` to limit spending per run. The `last_update` timestamp mechanism ensures you only pay to process each word once per refresh window (default: 6 months, configurable with `--months`).
+Each word processed costs exactly **one** OpenAI round-trip (`update_translation` is the only tool called per challenge — the review log line is emitted from inside it). Because the Agents SDK resends the whole conversation on every turn, token usage grows faster than the word count: the `get_pending_challenges` batch sits at the front of every subsequent request. Use `--max-words` to limit spending per run. The `last_update` timestamp mechanism ensures you only pay to process each word once per refresh window (default: 6 months, configurable with `--months`).
+
+### Monitoring a run
+
+Every run ends with two diagnostic lines per phase, so two runs that cost different amounts can be compared after the fact:
+
+```
+INFO Usage phase2-translator: 104 model request(s), 104 tool call(s), input=1038000 (cached=912000), output=18600, total=1056600
+INFO Run stats: offered=50 flagged=3 updated=50 not_found=0
+```
+
+- `model request(s)` — actual API round-trips. Read it against `offered` (words): ~1 request per word plus 4 fixed ones is normal; ~2 per word means the model split each word over two turns; a much higher number means it re-called `get_pending_challenges`/`save_all_changes` or retried after errors.
+- `tool call(s)` — how many function calls were made inside those requests. `tool call(s)` ≈ `model request(s)` means one tool per turn (the expensive shape).
+- `cached` — part of the input that OpenAI served from its prompt cache (cheaper, and it is why the raw token count looks larger than the bill).
+- `Run stats` — `offered` from the pending list vs. `updated` actually written; `not_found` counts hallucinated/stale challenge ids, which each burn a retry turn.

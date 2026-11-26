@@ -26,6 +26,13 @@ logging.basicConfig(
     stream=sys.stdout,
     format="%(levelname)s %(message)s",
 )
+
+# The ElevenLabs SDK performs its calls through httpx, which logs one INFO line
+# per HTTP request ("HTTP Request: POST https://api.elevenlabs.io/... 200 OK").
+# Those are not useful; only surface warnings and errors from those libraries.
+for _noisy_logger in ("httpx", "httpcore", "elevenlabs"):
+    logging.getLogger(_noisy_logger).setLevel(logging.WARNING)
+
 log = logging.getLogger(__name__)
 
 
