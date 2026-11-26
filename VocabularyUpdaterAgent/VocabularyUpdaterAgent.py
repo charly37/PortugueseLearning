@@ -20,6 +20,13 @@ logging.basicConfig(
     stream=sys.stdout,
     format="%(levelname)s %(message)s",
 )
+
+# The Agents SDK performs its calls through httpx, which logs one INFO line per
+# HTTP request ("HTTP Request: POST https://api.openai.com/... 200 OK"). Those
+# are not useful; only surface warnings and errors from those libraries.
+for _noisy_logger in ("httpx", "httpcore"):
+    logging.getLogger(_noisy_logger).setLevel(logging.WARNING)
+
 log = logging.getLogger(__name__)
 
 
@@ -37,6 +44,55 @@ def _one_line(text: Any, limit: int = 4000) -> str:
     return " ".join(s.split())
 
 
+def _num(value: Any) -> int:
+    """Token counters on the OpenAI types are optional; treat a missing value as 0."""
+    try:
+        return int(value or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _log_run_usage(label: str, result: Any) -> None:
+    """Log what a Runner.run() phase actually cost.
+
+    One line per phase, so run-to-run variance in API traffic can be explained after
+    the fact: `requests` is the number of API round-trips (one per model turn, not per
+    word), `tool call(s)` is how many function calls the model made in those turns, and
+    `cached` shows how much of the input was a repeated prefix (OpenAI caches it).
+    """
+    responses = list(getattr(result, "raw_responses", None) or [])
+    input_tokens = 0
+    cached_tokens = 0
+    output_tokens = 0
+    tool_calls = 0
+    for response in responses:
+        usage = getattr(response, "usage", None)
+        if usage is not None:
+            input_tokens += _num(getattr(usage, "input_tokens", 0))
+            output_tokens += _num(getattr(usage, "output_tokens", 0))
+            details = getattr(usage, "input_tokens_details", None)
+            cached_tokens += _num(getattr(details, "cached_tokens", 0))
+        for item in (getattr(response, "output", None) or []):
+            if getattr(item, "type", "") == "function_call":
+                tool_calls += 1
+
+    log.info(
+        "Usage %s: %d model request(s), %d tool call(s), input=%d (cached=%d), "
+        "output=%d, total=%d",
+        label, len(responses), tool_calls, input_tokens, cached_tokens,
+        output_tokens, input_tokens + output_tokens,
+    )
+
+
+def _log_run_stats() -> None:
+    """Log how much work the run discovered vs. how much it finished."""
+    log.info(
+        "Run stats: offered=%d flagged=%d updated=%d not_found=%d",
+        _run_stats["pending_offered"], _run_stats["flagged_total"],
+        _run_stats["translations_applied"], _run_stats["challenges_not_found"],
+    )
+
+
 # Allow importing from the repo-level scripts/ directory
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'scripts'))
 from db_utils import get_challenges_collection
@@ -52,6 +108,19 @@ _mongodb_uri: str = ""
 # add its id here, otherwise the change will not be persisted by save_all_changes().
 _dirty_ids: set[str] = set()
 _dry_run: bool = False
+# Ids flagged by users for the active language, refreshed by get_pending_challenges().
+# Stored here so update_translation() can log the "[USER FLAGGED]" marker itself instead
+# of the model having to repeat the flag in every tool call.
+_flagged_ids: set[str] = set()
+# Per-run counters, reset by _run_agent(). Purely diagnostic: they let a job's log say
+# how many words were offered vs. actually processed, which is what explains a run that
+# costs noticeably more or less than the previous one.
+_run_stats: dict[str, int] = {
+    "pending_offered": 0,
+    "flagged_total": 0,
+    "translations_applied": 0,
+    "challenges_not_found": 0,
+}
 
 # ---------------------------------------------------------------------------
 # Helper utilities (not tools — pure Python helpers)
@@ -158,6 +227,11 @@ def get_pending_challenges(max_words: int) -> str:
         except Exception as e:
             log.warning("Could not fetch flagged challenges from MongoDB: %s", e)
 
+    # Cache for update_translation()'s review log line (mutation, no `global` needed).
+    _flagged_ids.clear()
+    _flagged_ids.update(flagged_ids)
+    _run_stats["flagged_total"] = len(flagged_ids)
+
     # Sort: flagged first (by flag count), then by natural order
     ordered = sorted(
         _challenges,
@@ -187,35 +261,8 @@ def get_pending_challenges(max_words: int) -> str:
         if len(pending) >= max_words:
             break
 
+    _run_stats["pending_offered"] = len(pending)
     return json.dumps(pending, ensure_ascii=False)
-
-
-@function_tool
-def log_review(
-    portuguese_word: str,
-    current_translation: str,
-    assessment: str,
-    planned_changes: str,
-    flagged_by_users: bool,
-) -> str:
-    """
-    Emit a human-readable log line before processing a challenge.
-    Call this once per challenge, just before calling update_challenge.
-
-    - portuguese_word: the Portuguese word being reviewed.
-    - current_translation: the existing translation in the target language.
-    - assessment: one sentence explaining whether the translation is good or why
-      it needs changing (e.g. "Translation is accurate.", "Better word exists: X").
-    - planned_changes: comma-separated list of fields that will be updated
-      (e.g. "translation, examples, note"), or "timestamp only" if nothing needs
-      changing.
-    - flagged_by_users: whether this challenge was flagged by users in the app.
-    """
-    flag_marker = " [USER FLAGGED]" if flagged_by_users else ""
-    log.info("Reviewing: '%s'%s | translation=%s | assessment=%s | changes=%s",
-             _one_line(portuguese_word), flag_marker, _one_line(current_translation),
-             _one_line(assessment), _one_line(planned_changes))
-    return "logged"
 
 
 @function_tool
@@ -266,10 +313,12 @@ def update_translation(
     target_language_example: str,
     note: str,
     translation_was_accurate: bool,
+    assessment: str = "",
 ) -> str:
     """
     Persist an updated translation (and optionally examples and note) for a
-    challenge identified by challenge_id.
+    challenge identified by challenge_id, and log the review decision.
+    This is the only tool called per challenge.
 
     - new_translation: the best translation in the active target language.
     - portuguese_example: a simple example sentence in Portuguese.
@@ -278,6 +327,8 @@ def update_translation(
       empty string if you have nothing useful to add.
     - translation_was_accurate: True if the existing translation was already
       correct (so only examples / note / timestamp are updated).
+    - assessment: one sentence explaining whether the existing translation was
+      good or why it needed changing (e.g. "Accurate.", "Better word: X").
 
     Returns a short status string.
     """
@@ -292,6 +343,9 @@ def update_translation(
             challenge[_language] = {}
 
         section = challenge[_language]
+        # Captured for the review log line below, before anything is overwritten.
+        portuguese_word = challenge.get("port", "")
+        current_translation = section.get("translation", "")
 
         if not translation_was_accurate:
             section["translation"] = new_translation
@@ -315,10 +369,23 @@ def update_translation(
         updated_fields.append("last_update")
         _dirty_ids.add(challenge_id)
 
+        # The line the removed log_review tool used to emit, folded in here so the model
+        # does not spend a separate turn (one API round-trip) on it. `changes` is derived
+        # from what actually changed instead of being guessed beforehand, and the flag
+        # marker comes from _flagged_ids instead of a model-supplied argument.
+        filled = [f for f in updated_fields if f != "last_update"]
+        flag_marker = " [USER FLAGGED]" if challenge_id in _flagged_ids else ""
+        log.info("Reviewing: '%s'%s | translation=%s | assessment=%s | changes=%s",
+                 _one_line(portuguese_word), flag_marker, _one_line(current_translation),
+                 _one_line(assessment), _one_line(", ".join(filled) or "timestamp only"))
+
         msg = f"Updated challenge {challenge_id}: {', '.join(updated_fields)}"
         log.info("%s", msg)
+        _run_stats["translations_applied"] += 1
         return msg
 
+    _run_stats["challenges_not_found"] += 1
+    log.warning("Challenge %s not found", challenge_id)
     return f"Challenge {challenge_id} not found."
 
 
@@ -417,9 +484,9 @@ Workflow:
    c. Translate that example sentence into {lang_name}.
    d. Optionally write a brief remark (≤ 2 sentences) in {lang_name} about the word's
       usage, nuances, or register — leave it empty if nothing useful to add.
-   e. Call log_review with the word, current translation, your one-sentence assessment,
-      and the list of fields you plan to change.
-   f. Call update_translation with your results.
+   e. Call update_translation once with your results, plus a one-sentence assessment of
+      the existing translation. Exactly one update_translation call per challenge —
+      never call a second tool for the same challenge.
 3. After processing all challenges, call save_all_changes exactly once.
 4. Collect the IDs of all challenges where flagged_by_users=true and call
    clear_quality_flags with those IDs.
@@ -438,7 +505,7 @@ Guidelines:
     return Agent(
         name="TranslationUpdaterAgent",
         instructions=instructions,
-        tools=[get_pending_challenges, log_review, update_translation, save_all_changes, clear_quality_flags],
+        tools=[get_pending_challenges, update_translation, save_all_changes, clear_quality_flags],
         model=model,
     )
 
@@ -463,6 +530,8 @@ async def _run_agent(
     _mongodb_uri = os.environ.get("MONGODB_URI", "")
     _dry_run = dry_run
     _dirty_ids.clear()
+    for _key in _run_stats:
+        _run_stats[_key] = 0
     if not _mongodb_uri:
         log.error("MONGODB_URI environment variable not set!")
         sys.exit(1)
@@ -492,6 +561,7 @@ async def _run_agent(
             f"Review up to {max_words} Portuguese vocabulary words for correctness.",
             max_turns=max_words * 3 + 20,
         )
+        _log_run_usage("phase1-validator", validator_result)
         log.info("Validator Report: %s", _one_line(validator_result.final_output))
 
     # ------------------------------------------------------------------
@@ -508,6 +578,8 @@ async def _run_agent(
         f"and update their {language.upper()} translations.",
         max_turns=max_words * 5 + 20,
     )
+    _log_run_usage("phase2-translator", translation_result)
+    _log_run_stats()
     log.info("Translation Agent Report: %s", _one_line(translation_result.final_output))
     log.info("%s", "=" * 60)
 
